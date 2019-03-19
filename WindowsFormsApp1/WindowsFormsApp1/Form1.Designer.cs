@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -35,10 +35,14 @@
             this.lbHouseLiege = new System.Windows.Forms.Label();
             this.tbHouseName = new System.Windows.Forms.TextBox();
             this.tbHouseSeatOfPower = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbHouseLiege = new System.Windows.Forms.TextBox();
             this.cbHouseRealm = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbHouseLiegeLord = new System.Windows.Forms.TextBox();
             this.lbHouseResources = new System.Windows.Forms.Label();
+            this.lbHouseCurrent = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgHouseDetails = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // lbHouseName
@@ -107,13 +111,13 @@
             this.tbHouseSeatOfPower.Size = new System.Drawing.Size(341, 29);
             this.tbHouseSeatOfPower.TabIndex = 6;
             // 
-            // textBox2
+            // tbHouseLiege
             // 
-            this.textBox2.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(670, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(220, 29);
-            this.textBox2.TabIndex = 7;
+            this.tbHouseLiege.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHouseLiege.Location = new System.Drawing.Point(670, 85);
+            this.tbHouseLiege.Name = "tbHouseLiege";
+            this.tbHouseLiege.Size = new System.Drawing.Size(220, 29);
+            this.tbHouseLiege.TabIndex = 7;
             // 
             // cbHouseRealm
             // 
@@ -137,13 +141,13 @@
             this.cbHouseRealm.Size = new System.Drawing.Size(200, 31);
             this.cbHouseRealm.TabIndex = 8;
             // 
-            // textBox3
+            // tbHouseLiegeLord
             // 
-            this.textBox3.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(401, 85);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(188, 29);
-            this.textBox3.TabIndex = 9;
+            this.tbHouseLiegeLord.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHouseLiegeLord.Location = new System.Drawing.Point(401, 85);
+            this.tbHouseLiegeLord.Name = "tbHouseLiegeLord";
+            this.tbHouseLiegeLord.Size = new System.Drawing.Size(188, 29);
+            this.tbHouseLiegeLord.TabIndex = 9;
             // 
             // lbHouseResources
             // 
@@ -156,16 +160,50 @@
             this.lbHouseResources.Text = "Wealth:\r\nPower:\r\nPopulation:\r\nLaw:\r\nLands:\r\nInfluence:\r\nDefense:";
             this.lbHouseResources.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Form1
+            // lbHouseCurrent
+            // 
+            this.lbHouseCurrent.AutoSize = true;
+            this.lbHouseCurrent.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseCurrent.Location = new System.Drawing.Point(123, 148);
+            this.lbHouseCurrent.Name = "lbHouseCurrent";
+            this.lbHouseCurrent.Size = new System.Drawing.Size(76, 184);
+            this.lbHouseCurrent.TabIndex = 11;
+            this.lbHouseCurrent.Text = "Current\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000";
+            this.lbHouseCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(205, 148);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 184);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Spare\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dgHouseDetails
+            // 
+            this.dgHouseDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgHouseDetails.Location = new System.Drawing.Point(650, 368);
+            this.dgHouseDetails.Name = "dgHouseDetails";
+            this.dgHouseDetails.Size = new System.Drawing.Size(240, 150);
+            this.dgHouseDetails.TabIndex = 13;
+            this.dgHouseDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgHouseDetails_CellContentClick);
+            // 
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(912, 540);
+            this.Controls.Add(this.dgHouseDetails);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbHouseCurrent);
             this.Controls.Add(this.lbHouseResources);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbHouseLiegeLord);
             this.Controls.Add(this.cbHouseRealm);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbHouseLiege);
             this.Controls.Add(this.tbHouseSeatOfPower);
             this.Controls.Add(this.tbHouseName);
             this.Controls.Add(this.lbHouseLiege);
@@ -173,9 +211,10 @@
             this.Controls.Add(this.lbHouseSeatOfPower);
             this.Controls.Add(this.lbHouseRealm);
             this.Controls.Add(this.lbHouseName);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormMain";
+            this.Text = "ASoIaF Tracker";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,10 +229,13 @@
         private System.Windows.Forms.Label lbHouseLiege;
         private System.Windows.Forms.TextBox tbHouseName;
         private System.Windows.Forms.TextBox tbHouseSeatOfPower;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbHouseLiege;
         private System.Windows.Forms.ComboBox cbHouseRealm;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbHouseLiegeLord;
         private System.Windows.Forms.Label lbHouseResources;
+        private System.Windows.Forms.Label lbHouseCurrent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgHouseDetails;
     }
 }
 

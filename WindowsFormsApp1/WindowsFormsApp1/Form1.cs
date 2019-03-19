@@ -11,7 +11,7 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
 
         /// <sumary>
@@ -33,15 +33,50 @@ namespace WindowsFormsApp1
             { devlog.WriteLine(DateTime.Now + " --- " + logItem); }//Concat current time and logItem and write to DevLog file
         }
 
+        public void dbReturn(string returnWhat, string dataGrid)
+        {//makes a query to the database
+            devLogs(returnWhat + " sql run to " + dataGrid);
+            if (mysqlConn.connOpen() == true)
+            {
+                switch (dataGrid)
+                {
+                    case "house detail":
+                        dgHouseDetails.DataSource = mysqlConn.qry(returnWhat).Tables[0];
+                        break;
+                }
+
+            }
+        }
 
         ///// METHODS END //////////////////////////////////////////////////////////
 
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            File.WriteAllText("DevLog.txt", String.Empty);//Clear contents of DevLog
+            devLogs("Program started");
+            mysqlConn.dbConfig(); //sets database settings
+            mysqlConn.connect();
+            dbReturn("SELECT * FROM `tbl_House`", "house detail");
+            tbHouseName.Text = dgHouseDetails.Rows[0].Cells[1].Value.ToString();
+            tbHouseSeatOfPower.Text = dgHouseDetails.Rows[0].Cells[4].Value.ToString();
+            cbHouseRealm.Text = dgHouseDetails.Rows[0].Cells[3].Value.ToString();
+            tbHouseLiegeLord.Text = dgHouseDetails.Rows[0].Cells[5].Value.ToString();
+            lbHouseCurrent.Text = "Current" + Environment.NewLine +
+                dgHouseDetails.Rows[0].Cells[7].Value + Environment.NewLine + 
+                dgHouseDetails.Rows[0].Cells[8].Value + Environment.NewLine + 
+                dgHouseDetails.Rows[0].Cells[9].Value + Environment.NewLine + 
+                dgHouseDetails.Rows[0].Cells[10].Value + Environment.NewLine + 
+                dgHouseDetails.Rows[0].Cells[11].Value + Environment.NewLine + 
+                dgHouseDetails.Rows[0].Cells[12].Value + Environment.NewLine + 
+                dgHouseDetails.Rows[0].Cells[13].Value + Environment.NewLine;
+        }
+
+        private void dgHouseDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
