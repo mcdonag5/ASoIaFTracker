@@ -83,6 +83,7 @@ namespace WindowsFormsApp1
             DataSet ds = new DataSet();
             mySQLda.Fill(ds);
             connClose();
+            
             return ds;
 
         }

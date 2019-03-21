@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.lbHouseName = new System.Windows.Forms.Label();
             this.lbHouseRealm = new System.Windows.Forms.Label();
             this.lbHouseSeatOfPower = new System.Windows.Forms.Label();
@@ -40,9 +41,15 @@
             this.tbHouseLiegeLord = new System.Windows.Forms.TextBox();
             this.lbHouseResources = new System.Windows.Forms.Label();
             this.lbHouseCurrent = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbHouseSpare = new System.Windows.Forms.Label();
             this.dgHouseDetails = new System.Windows.Forms.DataGridView();
+            this.dgCalculation = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsMenu = new System.Windows.Forms.ToolStripDropDownButton();
+            this.devLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCalculation)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbHouseName
@@ -171,16 +178,16 @@
             this.lbHouseCurrent.Text = "Current\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000";
             this.lbHouseCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lbHouseSpare
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(205, 148);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 184);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Spare\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbHouseSpare.AutoSize = true;
+            this.lbHouseSpare.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseSpare.Location = new System.Drawing.Point(205, 148);
+            this.lbHouseSpare.Name = "lbHouseSpare";
+            this.lbHouseSpare.Size = new System.Drawing.Size(59, 184);
+            this.lbHouseSpare.TabIndex = 12;
+            this.lbHouseSpare.Text = "Spare\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000\r\n000";
+            this.lbHouseSpare.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgHouseDetails
             // 
@@ -189,7 +196,42 @@
             this.dgHouseDetails.Name = "dgHouseDetails";
             this.dgHouseDetails.Size = new System.Drawing.Size(240, 150);
             this.dgHouseDetails.TabIndex = 13;
-            this.dgHouseDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgHouseDetails_CellContentClick);
+            // 
+            // dgCalculation
+            // 
+            this.dgCalculation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCalculation.Location = new System.Drawing.Point(333, 320);
+            this.dgCalculation.Name = "dgCalculation";
+            this.dgCalculation.Size = new System.Drawing.Size(240, 150);
+            this.dgCalculation.TabIndex = 14;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsMenu});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(912, 25);
+            this.toolStrip1.TabIndex = 15;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsMenu
+            // 
+            this.tsMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.devLogToolStripMenuItem});
+            this.tsMenu.Image = ((System.Drawing.Image)(resources.GetObject("tsMenu.Image")));
+            this.tsMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsMenu.Name = "tsMenu";
+            this.tsMenu.Size = new System.Drawing.Size(51, 22);
+            this.tsMenu.Text = "Menu";
+            // 
+            // devLogToolStripMenuItem
+            // 
+            this.devLogToolStripMenuItem.Name = "devLogToolStripMenuItem";
+            this.devLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.devLogToolStripMenuItem.Text = "DevLog";
+            this.devLogToolStripMenuItem.Click += new System.EventHandler(this.devLogToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -197,8 +239,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(912, 540);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.dgCalculation);
             this.Controls.Add(this.dgHouseDetails);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbHouseSpare);
             this.Controls.Add(this.lbHouseCurrent);
             this.Controls.Add(this.lbHouseResources);
             this.Controls.Add(this.tbHouseLiegeLord);
@@ -215,6 +259,9 @@
             this.Text = "ASoIaF Tracker";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCalculation)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,8 +281,12 @@
         private System.Windows.Forms.TextBox tbHouseLiegeLord;
         private System.Windows.Forms.Label lbHouseResources;
         private System.Windows.Forms.Label lbHouseCurrent;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbHouseSpare;
         private System.Windows.Forms.DataGridView dgHouseDetails;
+        private System.Windows.Forms.DataGridView dgCalculation;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton tsMenu;
+        private System.Windows.Forms.ToolStripMenuItem devLogToolStripMenuItem;
     }
 }
 
