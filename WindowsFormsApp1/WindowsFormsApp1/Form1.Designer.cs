@@ -47,6 +47,16 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.devLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbHouseInfHol = new System.Windows.Forms.Label();
+            this.lbHouInfHolList = new System.Windows.Forms.Label();
+            this.lbHouseHF = new System.Windows.Forms.Label();
+            this.lbHouseDefGain = new System.Windows.Forms.Label();
+            this.lbHouseWeaGain = new System.Windows.Forms.Label();
+            this.lbHousePowGain = new System.Windows.Forms.Label();
+            this.lbHousePopGain = new System.Windows.Forms.Label();
+            this.lbHouseLawGain = new System.Windows.Forms.Label();
+            this.lbHouseLanGain = new System.Windows.Forms.Label();
+            this.lbHouseInfGain = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCalculation)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -200,7 +210,7 @@
             // dgCalculation
             // 
             this.dgCalculation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCalculation.Location = new System.Drawing.Point(333, 320);
+            this.dgCalculation.Location = new System.Drawing.Point(223, 335);
             this.dgCalculation.Name = "dgCalculation";
             this.dgCalculation.Size = new System.Drawing.Size(240, 150);
             this.dgCalculation.TabIndex = 14;
@@ -229,9 +239,118 @@
             // devLogToolStripMenuItem
             // 
             this.devLogToolStripMenuItem.Name = "devLogToolStripMenuItem";
-            this.devLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.devLogToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.devLogToolStripMenuItem.Text = "DevLog";
-            this.devLogToolStripMenuItem.Click += new System.EventHandler(this.devLogToolStripMenuItem_Click);
+            this.devLogToolStripMenuItem.Click += new System.EventHandler(this.DevLogToolStripMenuItem_Click);
+            // 
+            // lbHouseInfHol
+            // 
+            this.lbHouseInfHol.AutoSize = true;
+            this.lbHouseInfHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseInfHol.Location = new System.Drawing.Point(30, 351);
+            this.lbHouseInfHol.Name = "lbHouseInfHol";
+            this.lbHouseInfHol.Size = new System.Drawing.Size(169, 23);
+            this.lbHouseInfHol.TabIndex = 16;
+            this.lbHouseInfHol.Text = "Influence Holdings";
+            this.lbHouseInfHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouInfHolList
+            // 
+            this.lbHouInfHolList.AutoSize = true;
+            this.lbHouInfHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouInfHolList.Location = new System.Drawing.Point(30, 386);
+            this.lbHouInfHolList.Name = "lbHouInfHolList";
+            this.lbHouInfHolList.Size = new System.Drawing.Size(139, 18);
+            this.lbHouInfHolList.TabIndex = 17;
+            this.lbHouInfHolList.Text = "Influence Holdings";
+            // 
+            // lbHouseHF
+            // 
+            this.lbHouseHF.AutoSize = true;
+            this.lbHouseHF.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseHF.Location = new System.Drawing.Point(427, 178);
+            this.lbHouseHF.Name = "lbHouseHF";
+            this.lbHouseHF.Size = new System.Drawing.Size(36, 46);
+            this.lbHouseHF.TabIndex = 18;
+            this.lbHouseHF.Text = "HF\r\n0";
+            this.lbHouseHF.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouseDefGain
+            // 
+            this.lbHouseDefGain.AutoSize = true;
+            this.lbHouseDefGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseDefGain.Location = new System.Drawing.Point(807, 178);
+            this.lbHouseDefGain.Name = "lbHouseDefGain";
+            this.lbHouseDefGain.Size = new System.Drawing.Size(47, 46);
+            this.lbHouseDefGain.TabIndex = 19;
+            this.lbHouseDefGain.Text = "DEF\r\n0";
+            this.lbHouseDefGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouseWeaGain
+            // 
+            this.lbHouseWeaGain.AutoSize = true;
+            this.lbHouseWeaGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseWeaGain.Location = new System.Drawing.Point(469, 178);
+            this.lbHouseWeaGain.Name = "lbHouseWeaGain";
+            this.lbHouseWeaGain.Size = new System.Drawing.Size(54, 46);
+            this.lbHouseWeaGain.TabIndex = 20;
+            this.lbHouseWeaGain.Text = "WEA\r\n0";
+            this.lbHouseWeaGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHousePowGain
+            // 
+            this.lbHousePowGain.AutoSize = true;
+            this.lbHousePowGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHousePowGain.Location = new System.Drawing.Point(529, 178);
+            this.lbHousePowGain.Name = "lbHousePowGain";
+            this.lbHousePowGain.Size = new System.Drawing.Size(55, 46);
+            this.lbHousePowGain.TabIndex = 21;
+            this.lbHousePowGain.Text = "POW\r\n0";
+            this.lbHousePowGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHousePopGain
+            // 
+            this.lbHousePopGain.AutoSize = true;
+            this.lbHousePopGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHousePopGain.Location = new System.Drawing.Point(590, 178);
+            this.lbHousePopGain.Name = "lbHousePopGain";
+            this.lbHousePopGain.Size = new System.Drawing.Size(48, 46);
+            this.lbHousePopGain.TabIndex = 22;
+            this.lbHousePopGain.Text = "POP\r\n0";
+            this.lbHousePopGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouseLawGain
+            // 
+            this.lbHouseLawGain.AutoSize = true;
+            this.lbHouseLawGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseLawGain.Location = new System.Drawing.Point(644, 178);
+            this.lbHouseLawGain.Name = "lbHouseLawGain";
+            this.lbHouseLawGain.Size = new System.Drawing.Size(53, 46);
+            this.lbHouseLawGain.TabIndex = 23;
+            this.lbHouseLawGain.Text = "LAW\r\n0";
+            this.lbHouseLawGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouseLanGain
+            // 
+            this.lbHouseLanGain.AutoSize = true;
+            this.lbHouseLanGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseLanGain.Location = new System.Drawing.Point(703, 178);
+            this.lbHouseLanGain.Name = "lbHouseLanGain";
+            this.lbHouseLanGain.Size = new System.Drawing.Size(49, 46);
+            this.lbHouseLanGain.TabIndex = 24;
+            this.lbHouseLanGain.Text = "LAN\r\n0";
+            this.lbHouseLanGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouseInfGain
+            // 
+            this.lbHouseInfGain.AutoSize = true;
+            this.lbHouseInfGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseInfGain.Location = new System.Drawing.Point(758, 178);
+            this.lbHouseInfGain.Name = "lbHouseInfGain";
+            this.lbHouseInfGain.Size = new System.Drawing.Size(43, 46);
+            this.lbHouseInfGain.TabIndex = 25;
+            this.lbHouseInfGain.Text = "INF\r\n0";
+            this.lbHouseInfGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormMain
             // 
@@ -239,6 +358,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(912, 540);
+            this.Controls.Add(this.lbHouseInfGain);
+            this.Controls.Add(this.lbHouseLanGain);
+            this.Controls.Add(this.lbHouseLawGain);
+            this.Controls.Add(this.lbHousePopGain);
+            this.Controls.Add(this.lbHousePowGain);
+            this.Controls.Add(this.lbHouseWeaGain);
+            this.Controls.Add(this.lbHouseDefGain);
+            this.Controls.Add(this.lbHouseHF);
+            this.Controls.Add(this.lbHouInfHolList);
+            this.Controls.Add(this.lbHouseInfHol);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgCalculation);
             this.Controls.Add(this.dgHouseDetails);
@@ -287,6 +416,16 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton tsMenu;
         private System.Windows.Forms.ToolStripMenuItem devLogToolStripMenuItem;
+        private System.Windows.Forms.Label lbHouseInfHol;
+        private System.Windows.Forms.Label lbHouInfHolList;
+        private System.Windows.Forms.Label lbHouseHF;
+        private System.Windows.Forms.Label lbHouseDefGain;
+        private System.Windows.Forms.Label lbHouseWeaGain;
+        private System.Windows.Forms.Label lbHousePowGain;
+        private System.Windows.Forms.Label lbHousePopGain;
+        private System.Windows.Forms.Label lbHouseLawGain;
+        private System.Windows.Forms.Label lbHouseLanGain;
+        private System.Windows.Forms.Label lbHouseInfGain;
     }
 }
 

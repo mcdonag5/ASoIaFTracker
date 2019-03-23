@@ -10,49 +10,49 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    class dbConn
+    class DbConn
     {
         //Notes//
 
         //DB config//
-        private string varConfigServer { get; set; }
-        private string varConfigDatabase { get; set; }
-        private string varConfigUser { get; set; }
-        private string varConfigPass { get; set; }
+        private string VarConfigServer { get; set; }
+        private string VarConfigDatabase { get; set; }
+        private string VarConfigUser { get; set; }
+        private string VarConfigPass { get; set; }
 
         private string connString;
         public MySqlConnection conn;
         public MySqlDataAdapter mySQLda;
 
-        public bool logIn(string username, string password)
+        public bool LogIn(string username, string password)
         {
             bool correct = false;
-            varConfigUser = "mcdonag5_" + username;
-            varConfigPass = password;
-            connect();
-            correct = connOpen();
-            connClose();
+            VarConfigUser = "mcdonag5_" + username;
+            VarConfigPass = password;
+            Connect();
+            correct = ConnOpen();
+            ConnClose();
             return correct;
         }
 
-        public void dbConfig()
+        public void DbConfig()
         {
-            varConfigServer = "mcdonag5.z14it.cucstudents.org";
-            varConfigDatabase = "mcdonag5_ASoIaF";
-            varConfigUser = "mcdonag5_IaFuser";
-            varConfigPass = "8Kl-H1?cwSn[";
+            VarConfigServer = "mcdonag5.z14it.cucstudents.org";
+            VarConfigDatabase = "mcdonag5_ASoIaF";
+            VarConfigUser = "mcdonag5_IaFuser";
+            VarConfigPass = "8Kl-H1?cwSn[";
         }
-        public void connect()
+        public void Connect()
         {//Connect to database (insecure, not using SSL or stored procedures)
-            connString = "SERVER=" + varConfigServer + ";" +
-                "DATABASE=" + varConfigDatabase + ";" +
-                "UID=" + varConfigUser + ";" +
-                "PASSWORD=" + varConfigPass + ";" +
+            connString = "SERVER=" + VarConfigServer + ";" +
+                "DATABASE=" + VarConfigDatabase + ";" +
+                "UID=" + VarConfigUser + ";" +
+                "PASSWORD=" + VarConfigPass + ";" +
                 "SslMode=None;";
             conn = new MySqlConnection(connString);
 
         }
-        public bool connOpen()
+        public bool ConnOpen()
         {
             try { conn.Open(); return true; }
             catch (MySqlException err)
@@ -72,17 +72,17 @@ namespace WindowsFormsApp1
                 return false;
             }
         }
-        public bool connClose()
+        public bool ConnClose()
         {//Connection close with error handling
             try { conn.Close(); return true; }
             catch (MySqlException err) { MessageBox.Show("Error: " + err.Message); return false; }
         }
-        public DataSet qry(string sql)
+        public DataSet Qry(string sql)
         {//Run sql qry in argument and return dataset
             mySQLda = new MySqlDataAdapter(sql, conn);
             DataSet ds = new DataSet();
             mySQLda.Fill(ds);
-            connClose();
+            ConnClose();
             
             return ds;
 
