@@ -23,9 +23,31 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         public int houseID;
+        public int houWea;
+        public int houPow;
+        public int houPop;
+        public int houLaw;
+        public int houLan;
+        public int houInf;
+        public int houDef;
+        public int houHF;
+        public int houWeaGain;
+        public int houPowGain;
+        public int houPopGain;
+        public int houLawGain;
+        public int houLanGain;
+        public int houInfGain;
+        public int houDefGain;
+        public int houWeaLoss;
+        public int houPowLoss;
+        public int houPopLoss;
+        public int houLawLoss;
+        public int houLanLoss;
+        public int houInfLoss;
+        public int houDefLoss;
 
         ///// VARIABLES END ////////////////////////////////////////////////////////
-        
+
         ///// METHODS START ////////////////////////////////////////////////////////
 
         public void DevLogs(string logItem)
@@ -45,7 +67,13 @@ namespace WindowsFormsApp1
                         dgHouseDetails.DataSource = mysqlConn.Qry(returnWhat).Tables[0];
                         break;
                     case "1":
-                        dgCalculation.DataSource = mysqlConn.Qry(returnWhat).Tables[0];
+                        dgCal1.DataSource = mysqlConn.Qry(returnWhat).Tables[0];
+                        break;
+                    case "2":
+                        dgCal2.DataSource = mysqlConn.Qry(returnWhat).Tables[0];
+                        break;
+                    case "3":
+                        dgCal3.DataSource = mysqlConn.Qry(returnWhat).Tables[0];
                         break;
                 }
 
@@ -63,30 +91,31 @@ namespace WindowsFormsApp1
             tbHouseLiege.Text = dgHouseDetails.Rows[0].Cells[6].Value.ToString();
             tbHouseLiegeLord.Text = dgHouseDetails.Rows[0].Cells[5].Value.ToString();
             //get current house resources
-            int houWea = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[7].Value);
-            int houPow = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[8].Value);
-            int houPop = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[9].Value);
-            int houLaw = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[10].Value);
-            int houLan = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[11].Value);
-            int houInf = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[12].Value);
-            int houDef = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[13].Value);
-            int houHF = 0;
-            int houWeaGain = 0;
-            int houPowGain = 0;
-            int houPopGain = 0;
-            int houLawGain = 0;
-            int houLanGain = 0;
-            int houInfGain = 0;
-            int houDefGain = 0;
-            int houWeaLoss = 0;
-            int houPowLoss = 0;
-            int houPopLoss = 0;
-            int houLawLoss = 0;
-            int houLanLoss = 0;
-            int houInfLoss = 0;
-            int houDefLoss = 0;
+              houWea = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[7].Value);
+              houPow = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[8].Value);
+              houPop = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[9].Value);
+              houLaw = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[10].Value);
+              houLan = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[11].Value);
+              houInf = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[12].Value);
+              houDef = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[13].Value);
+              houHF = 0;
+              houWeaGain = 0;
+              houPowGain = 0;
+              houPopGain = 0;
+              houLawGain = 0;
+              houLanGain = 0;
+              houInfGain = 0;
+              houDefGain = 0;
+              houWeaLoss = 0;
+              houPowLoss = 0;
+              houPopLoss = 0;
+              houLawLoss = 0;
+              houLanLoss = 0;
+              houInfLoss = 0;
+              houDefLoss = 0;
             //clear labels
             lbHouInfHolList.Text = "";
+            lbHouLanHolList.Text = "";
             //set current resources to label
             lbHouseCurrent.Text = "Current" + Environment.NewLine +
                 houWea + Environment.NewLine +
@@ -98,10 +127,10 @@ namespace WindowsFormsApp1
                 houDef;
             //Power table
             DbReturn("SELECT `tbl_PowerHolding`.*, `tbl_UnitType`.`Uni_ID`, `tbl_UnitType`.* FROM `tbl_PowerHolding`, `tbl_UnitType` WHERE `tbl_PowerHolding`.`Hou_ID` = '" + ID + "' AND `tbl_UnitType`.`Uni_ID` = `tbl_PowerHolding`.`Uni_ID`; ", "house detail");
-            for (int i = 0; i < dgHouseDetails.RowCount - 1; i++)
+            for ( int i = 0; i < dgHouseDetails.RowCount - 1; i++)
             {//Main table 31
-                int traningCost=0;
-                switch(dgHouseDetails.Rows[i].Cells[4].Value)
+                int traningCost = 0;
+                switch (dgHouseDetails.Rows[i].Cells[4].Value)
                 {
                     case "Green":
                         traningCost = 1;
@@ -116,17 +145,17 @@ namespace WindowsFormsApp1
                         traningCost = 7;
                         break;
                     default:
-                        DevLogs("Traning cost error: "+ dgHouseDetails.Rows[i].Cells[4].Value);
+                        DevLogs("Traning cost error: " + dgHouseDetails.Rows[i].Cells[4].Value);
                         break;
                 }
                 houPow -= (Convert.ToInt32(dgHouseDetails.Rows[i].Cells[32].Value) + traningCost) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[5].Value);
             }
 
             //Influence table
-            DbReturn("SELECT `tbl_InfluenceHoldings`.`Hou_ID`, `tbl_InfluenceHoldings`.*, `tbl_Influence`.`Inf_ID`, `tbl_Influence`.* FROM `tbl_InfluenceHoldings`, `tbl_Influence` WHERE `tbl_InfluenceHoldings`.`Hou_ID` = '"+ID+"' AND `tbl_Influence`.`Inf_ID` = `tbl_InfluenceHoldings`.`Inf_ID`;", "house detail");
+            DbReturn("SELECT `tbl_InfluenceHoldings`.`Hou_ID`, `tbl_InfluenceHoldings`.*, `tbl_Influence`.`Inf_ID`, `tbl_Influence`.* FROM `tbl_InfluenceHoldings`, `tbl_Influence` WHERE `tbl_InfluenceHoldings`.`Hou_ID` = '" + ID + "' AND `tbl_Influence`.`Inf_ID` = `tbl_InfluenceHoldings`.`Inf_ID`;", "house detail");
             for (int i = 0; i < dgHouseDetails.RowCount - 1; i++)
             {//Main table
-                houInf -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[11].Value) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[7].Value); DevLogs("houInf: "+houInf);
+                houInf -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[11].Value) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[7].Value); DevLogs("houInf: " + houInf);
                 houDefGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[14].Value);
                 houInfGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[15].Value);
                 houLanGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[16].Value);
@@ -136,27 +165,60 @@ namespace WindowsFormsApp1
                 houWeaGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[20].Value);
                 lbHouInfHolList.Text += dgHouseDetails.Rows[i].Cells[10].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[4].Value.ToString() + Environment.NewLine;
                 DbReturn("SELECT `tbl_InfluenceHoldingImprovement`.*, `tbl_InfluenceImprovemnt`.* FROM `tbl_InfluenceHoldingImprovement`, `tbl_InfluenceImprovemnt` WHERE `tbl_InfluenceHoldingImprovement`.`InfHol_ID` = '" + dgHouseDetails.Rows[i].Cells[1].Value + "' AND `tbl_InfluenceImprovemnt`.`InfImp_ID` = `tbl_InfluenceHoldingImprovement`.`InfImp_ID`; ", "1");
-                for (int n = 0; n < dgCalculation.RowCount-1;n++)
+                for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {//Imp Table
-                    houInf -= Convert.ToInt32(dgCalculation.Rows[n].Cells[7].Value);
-                    lbHouInfHolList.Text += "    "+dgCalculation.Rows[n].Cells[6].Value.ToString()+Environment.NewLine;
+                    houInf -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
+                    lbHouInfHolList.Text += "    " + dgCal1.Rows[n].Cells[6].Value.ToString() + Environment.NewLine;
                 }
             }
 
-            //dbReturn("SELECT Hou_Defense FROM `tbl_House` WHERE Hou_ID = '"+ID+"'", "house detail");
-            //int start = Convert.ToInt32(dgHouseDetails.Rows[0].Cells[0].Value);
-            //int sum = 0;
-            //dbReturn("SELECT * FROM `tbl_LandHolding` WHERE Hou_ID = '" + houseID + "'", "house detail");
-            //for (int i = 0; i < dgHouseDetails.RowCount-1; i++)
-            //{
+            //Land table
+            DbReturn("SELECT `tbl_LandHolding`.`Hou_ID`, `tbl_LandHolding`.*, `tbl_Land`.`Lan_ID`, `tbl_Land`.* FROM `tbl_LandHolding`, `tbl_Land` WHERE `tbl_LandHolding`.`Hou_ID` = '" + houseID + "' AND `tbl_Land`.`Lan_ID` = `tbl_LandHolding`.`Lan_ID`; ", "house detail");
+            for (int i = 0; i < dgHouseDetails.RowCount - 1; i++)
+            {
+                houLan -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[10].Value) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[6].Value);
+                lbHouLanHolList.Text += dgHouseDetails.Rows[i].Cells[9].Value.ToString() + "-" + dgHouseDetails.Rows[i].Cells[4].Value.ToString() + Environment.NewLine;
+                //Land Features
+                DbReturn("SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.* FROM `tbl_LandHoldingFeature`, `tbl_LandFeature` WHERE `tbl_LandHoldingFeature`.`LanHol_ID` = '" + dgHouseDetails.Rows[i].Cells[1].Value.ToString() + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID` AND `tbl_LandFeature`.`LanFea_Spaces` = '0'; ", "1");
+                for (int n = 0; n < dgCal1.RowCount - 1; n++)
+                {
+                    houLan -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
+                    lbHouLanHolList.Text += "    " + dgCal1.Rows[n].Cells[6].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                }
+                //Wealth Holdings on Land (Estate)
+                CheckWealthHolding("LanHol_ID", Convert.ToInt32(dgHouseDetails.Rows[i].Cells[1].Value.ToString()), 1,"      ");
 
-            //    dbReturn("SELECT `tbl_DefenseHolding`.`LanHol_ID`, `tbl_Defense`.`Def_ID`, `tbl_Defense`.`Def_DefenseCost`,`tbl_DefenseHolding`.`DefHol_Discount` FROM `tbl_DefenseHolding`, `tbl_Defense` WHERE `tbl_DefenseHolding`.`LanHol_ID` = '" + Convert.ToUInt32(dgHouseDetails.Rows[i].Cells[0].Value)+"' AND `tbl_Defense`.`Def_ID` = `tbl_DefenseHolding`.`Def_ID`;", "calculation");
-            //    devLogs("Times: "+i);
-            //    for(int n = 0; i < dgCalculation.RowCount-1;i++)
-            //    {
-            //        sum += Convert.ToInt32(dgCalculation.Rows[i].Cells[2].Value) - Convert.ToInt32(dgCalculation.Rows[i].Cells[3].Value);
-            //    }
-            //}
+                //Wealth Holdings on Land (non-Estate)
+                CheckWealthHolding("LanHol_ID", Convert.ToInt32(dgHouseDetails.Rows[i].Cells[1].Value.ToString()), 0,"      ");
+
+                //Land Features Towns
+                DbReturn("SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.* FROM `tbl_LandHoldingFeature`, `tbl_LandFeature` WHERE `tbl_LandHoldingFeature`.`LanHol_ID` = '" + dgHouseDetails.Rows[i].Cells[1].Value.ToString() + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID` AND `tbl_LandFeature`.`LanFea_Spaces` > '0'; ", "1");
+                for (int n = 0; n < dgCal1.RowCount - 1; n++)
+                {
+                    houLan -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
+                    lbHouLanHolList.Text += "    " + dgCal1.Rows[n].Cells[6].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+
+
+                    //Wealth holding in LandHolFea
+                    CheckWealthHolding("LanHolFea_ID",Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 1, "           ");
+                    CheckWealthHolding("LanHolFea_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 0, "           ");
+                    
+                }
+                //Wealth holdings in Def
+                DbReturn("SELECT `tbl_DefenseHolding`.*, `tbl_Defense`.`Def_ID`, `tbl_Defense`.* FROM `tbl_DefenseHolding`, `tbl_Defense` WHERE `tbl_DefenseHolding`.`LanHol_ID` = '"+ dgHouseDetails.Rows[i].Cells[1].Value.ToString() + "' AND `tbl_Defense`.`Def_ID` = `tbl_DefenseHolding`.`Def_ID`; ", "1");
+                for (int n = 0; n < dgCal1.RowCount - 1; n++)
+                {
+                    houDef -= Convert.ToInt32(dgCal1.Rows[n].Cells[9].Value) - Convert.ToInt32(dgCal1.Rows[n].Cells[5].Value);
+                    lbHouLanHolList.Text += "    " + dgCal1.Rows[n].Cells[8].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+
+
+                    //Wealth holding in LandHolFea
+                    CheckWealthHolding("DefHol_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 1, "           ");
+                    CheckWealthHolding("DefHol_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 0, "           ");
+
+                }
+
+            }
             //set labels
             lbHouseSpare.Text = "Current" + Environment.NewLine +
                 houWea + Environment.NewLine +
@@ -167,15 +229,91 @@ namespace WindowsFormsApp1
                 houInf + Environment.NewLine +
                 houDef;
 
-            lbHouseHF.Text = "HF" + Environment.NewLine + houHF;
+            lbHouseHF.Text = "HF" + Environment.NewLine + houHF + Environment.NewLine + BounusCal(houHF);
+            lbHouseWeaGain.Text = "WEA" + Environment.NewLine + houWeaGain + Environment.NewLine + BounusCal(houWeaGain);
+            lbHousePowGain.Text = "POW" + Environment.NewLine + houPowGain + Environment.NewLine + BounusCal(houPowGain);
+            lbHousePopGain.Text = "POP" + Environment.NewLine + houPopGain + Environment.NewLine + BounusCal(houPowGain);
+            lbHouseLawGain.Text = "LAW" + Environment.NewLine + houLawGain + Environment.NewLine + BounusCal(houLawGain);
+            lbHouseLanGain.Text = "LAN" + Environment.NewLine + houLanGain + Environment.NewLine + BounusCal(houLanGain);
+            lbHouseInfGain.Text = "INF" + Environment.NewLine + houInfGain + Environment.NewLine + BounusCal(houInfGain);
+            lbHouseDefGain.Text = "DEF" + Environment.NewLine + houDefGain + Environment.NewLine + BounusCal(houDefGain);
+            lbHouseWeaLoss.Text = "WEA" + Environment.NewLine + houWeaLoss + Environment.NewLine + BounusCal(houWeaLoss);
+            lbHousePowLoss.Text = "POW" + Environment.NewLine + houPowLoss + Environment.NewLine + BounusCal(houPowLoss);
+            lbHousePopLoss.Text = "POP" + Environment.NewLine + houPopLoss + Environment.NewLine + BounusCal(houPowLoss);
+            lbHouseLawLoss.Text = "LAW" + Environment.NewLine + houLawLoss + Environment.NewLine + BounusCal(houLawLoss);
+            lbHouseLanLoss.Text = "LAN" + Environment.NewLine + houLanLoss + Environment.NewLine + BounusCal(houLanLoss);
+            lbHouseInfLoss.Text = "INF" + Environment.NewLine + houInfLoss + Environment.NewLine + BounusCal(houInfLoss);
+            lbHouseDefLoss.Text = "DEF" + Environment.NewLine + houDefLoss + Environment.NewLine + BounusCal(houDefLoss);
         }
 
-        public string BounusCal(int bounus)
+        public void CheckWealthHolding(string place, int ID,int space,string indent)
+        {
+
+            DbReturn("SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* FROM `tbl_WealthHolding`, `tbl_Wealth` WHERE `tbl_WealthHolding`.`"+place+"` = '" +ID+ "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID` AND `tbl_Wealth`.`Wea_TakesSpace` = '"+space+"'; ", "2");
+            for (int n = 0; n < dgCal2.RowCount - 1; n++)
+            {
+                houWea -= Convert.ToInt32(dgCal2.Rows[n].Cells[15].Value);
+                houDef -= Convert.ToInt32(dgCal2.Rows[n].Cells[16].Value);
+                houLan -= Convert.ToInt32(dgCal2.Rows[n].Cells[17].Value);
+                houPow -= Convert.ToInt32(dgCal2.Rows[n].Cells[18].Value);
+                houHF += Convert.ToInt32(dgCal2.Rows[n].Cells[23].Value);
+                houWeaGain += Convert.ToInt32(dgCal2.Rows[n].Cells[24].Value);
+                houPowGain += Convert.ToInt32(dgCal2.Rows[n].Cells[25].Value);
+                houPopGain += Convert.ToInt32(dgCal2.Rows[n].Cells[26].Value);
+                houLawGain += Convert.ToInt32(dgCal2.Rows[n].Cells[27].Value);
+                houLanGain += Convert.ToInt32(dgCal2.Rows[n].Cells[28].Value);
+                houInfGain += Convert.ToInt32(dgCal2.Rows[n].Cells[29].Value);
+                houDefGain += Convert.ToInt32(dgCal2.Rows[n].Cells[30].Value);
+                houWeaLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[31].Value);
+                houPowLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[32].Value);
+                houPopLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[33].Value);
+                houLawLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[34].Value);
+                houLanLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[35].Value);
+                houInfLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[36].Value);
+                houDefLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[37].Value);
+                houDefLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[38].Value);
+
+                lbHouLanHolList.Text += indent + dgCal2.Rows[n].Cells[12].Value.ToString() + " - " + dgCal2.Rows[n].Cells[6].Value.ToString() + Environment.NewLine;
+
+                DbReturn("SELECT `tbl_WealthHoldingImprovement`.`WeaHol_ID`, `tbl_WealthHoldingImprovement`.*, `tbl_WealthImprovement`.`WeaImp_ID`, `tbl_WealthImprovement`.* FROM `tbl_WealthHoldingImprovement`, `tbl_WealthImprovement` WHERE `tbl_WealthHoldingImprovement`.`WeaHol_ID` = '" + Convert.ToInt32(dgCal2.Rows[n].Cells[1].Value) + "' AND `tbl_WealthImprovement`.`WeaImp_ID` = `tbl_WealthHoldingImprovement`.`WeaImp_ID`; ", "3");
+                for (int t = 0; t < dgCal3.RowCount - 1; t++)
+                {
+                    houWea -= Convert.ToInt32(dgCal3.Rows[t].Cells[10].Value);
+                    houDef -= Convert.ToInt32(dgCal3.Rows[t].Cells[11].Value);
+                    houLan -= Convert.ToInt32(dgCal3.Rows[t].Cells[12].Value);
+                    houPow -= Convert.ToInt32(dgCal3.Rows[t].Cells[13].Value);
+                    houInf -= Convert.ToInt32(dgCal3.Rows[t].Cells[14].Value);
+                    houHF += Convert.ToInt32(dgCal3.Rows[t].Cells[19].Value);
+                    houWeaGain += Convert.ToInt32(dgCal3.Rows[t].Cells[20].Value);
+                    houPowGain += Convert.ToInt32(dgCal3.Rows[t].Cells[21].Value);
+                    houPopGain += Convert.ToInt32(dgCal3.Rows[t].Cells[22].Value);
+                    houLawGain += Convert.ToInt32(dgCal3.Rows[t].Cells[23].Value);
+                    houLanGain += Convert.ToInt32(dgCal3.Rows[t].Cells[24].Value);
+                    houInfGain += Convert.ToInt32(dgCal3.Rows[t].Cells[25].Value);
+                    houDefGain += Convert.ToInt32(dgCal3.Rows[t].Cells[26].Value);
+                    houWeaLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[27].Value);
+                    houPowLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[28].Value);
+                    houPopLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[29].Value);
+                    houLawLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[30].Value);
+                    houLanLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[31].Value);
+                    houInfLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[32].Value);
+                    houDefLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[33].Value);
+                    houDefLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[34].Value);
+                    
+
+                    lbHouLanHolList.Text += indent+ "       " + dgCal3.Rows[t].Cells[8].Value.ToString() + Environment.NewLine;
+
+                }
+
+            }
+        }
+
+        public string BounusCal(double bounus)
         {
             string text = "";
             if(bounus < 2){ text = bounus.ToString(); }
             else if(bounus>1 && bounus<4) { text = "1d3"; }
-            else { double x = bounus / 6; text = Math.Ceiling(x).ToString(); }
+            else { text= Math.Ceiling(bounus / 6).ToString() +"d6"; }
             return text;
         }
         ///// METHODS END //////////////////////////////////////////////////////////
@@ -191,7 +329,7 @@ namespace WindowsFormsApp1
             DevLogs("Program started");
             mysqlConn.DbConfig(); //sets database settings
             mysqlConn.Connect();
-            houseID = 3;
+            houseID = 1;
             UpdateHouse(houseID);
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
@@ -228,7 +366,7 @@ namespace WindowsFormsApp1
             devForm.Show();
         }
 
-        
+
 
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

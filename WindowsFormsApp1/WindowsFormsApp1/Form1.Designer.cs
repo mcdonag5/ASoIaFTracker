@@ -43,7 +43,7 @@
             this.lbHouseCurrent = new System.Windows.Forms.Label();
             this.lbHouseSpare = new System.Windows.Forms.Label();
             this.dgHouseDetails = new System.Windows.Forms.DataGridView();
-            this.dgCalculation = new System.Windows.Forms.DataGridView();
+            this.dgCal1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.devLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,9 +57,22 @@
             this.lbHouseLawGain = new System.Windows.Forms.Label();
             this.lbHouseLanGain = new System.Windows.Forms.Label();
             this.lbHouseInfGain = new System.Windows.Forms.Label();
+            this.lbHouLanHol = new System.Windows.Forms.Label();
+            this.lbHouLanHolList = new System.Windows.Forms.Label();
+            this.dgCal2 = new System.Windows.Forms.DataGridView();
+            this.dgCal3 = new System.Windows.Forms.DataGridView();
+            this.lbHouseInfLoss = new System.Windows.Forms.Label();
+            this.lbHouseLanLoss = new System.Windows.Forms.Label();
+            this.lbHouseLawLoss = new System.Windows.Forms.Label();
+            this.lbHousePopLoss = new System.Windows.Forms.Label();
+            this.lbHousePowLoss = new System.Windows.Forms.Label();
+            this.lbHouseWeaLoss = new System.Windows.Forms.Label();
+            this.lbHouseDefLoss = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCalculation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCal3)).BeginInit();
             this.SuspendLayout();
             // 
             // lbHouseName
@@ -202,18 +215,18 @@
             // dgHouseDetails
             // 
             this.dgHouseDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgHouseDetails.Location = new System.Drawing.Point(650, 368);
+            this.dgHouseDetails.Location = new System.Drawing.Point(1114, 28);
             this.dgHouseDetails.Name = "dgHouseDetails";
             this.dgHouseDetails.Size = new System.Drawing.Size(240, 150);
             this.dgHouseDetails.TabIndex = 13;
             // 
-            // dgCalculation
+            // dgCal1
             // 
-            this.dgCalculation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCalculation.Location = new System.Drawing.Point(223, 335);
-            this.dgCalculation.Name = "dgCalculation";
-            this.dgCalculation.Size = new System.Drawing.Size(240, 150);
-            this.dgCalculation.TabIndex = 14;
+            this.dgCal1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCal1.Location = new System.Drawing.Point(1114, 182);
+            this.dgCal1.Name = "dgCal1";
+            this.dgCal1.Size = new System.Drawing.Size(240, 150);
+            this.dgCal1.TabIndex = 14;
             // 
             // toolStrip1
             // 
@@ -221,7 +234,7 @@
             this.tsMenu});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(912, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1354, 25);
             this.toolStrip1.TabIndex = 15;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -247,7 +260,7 @@
             // 
             this.lbHouseInfHol.AutoSize = true;
             this.lbHouseInfHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseInfHol.Location = new System.Drawing.Point(30, 351);
+            this.lbHouseInfHol.Location = new System.Drawing.Point(354, 332);
             this.lbHouseInfHol.Name = "lbHouseInfHol";
             this.lbHouseInfHol.Size = new System.Drawing.Size(169, 23);
             this.lbHouseInfHol.TabIndex = 16;
@@ -258,7 +271,7 @@
             // 
             this.lbHouInfHolList.AutoSize = true;
             this.lbHouInfHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouInfHolList.Location = new System.Drawing.Point(30, 386);
+            this.lbHouInfHolList.Location = new System.Drawing.Point(355, 355);
             this.lbHouInfHolList.Name = "lbHouInfHolList";
             this.lbHouInfHolList.Size = new System.Drawing.Size(139, 18);
             this.lbHouInfHolList.TabIndex = 17;
@@ -268,7 +281,7 @@
             // 
             this.lbHouseHF.AutoSize = true;
             this.lbHouseHF.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseHF.Location = new System.Drawing.Point(427, 178);
+            this.lbHouseHF.Location = new System.Drawing.Point(290, 171);
             this.lbHouseHF.Name = "lbHouseHF";
             this.lbHouseHF.Size = new System.Drawing.Size(36, 46);
             this.lbHouseHF.TabIndex = 18;
@@ -279,7 +292,7 @@
             // 
             this.lbHouseDefGain.AutoSize = true;
             this.lbHouseDefGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseDefGain.Location = new System.Drawing.Point(807, 178);
+            this.lbHouseDefGain.Location = new System.Drawing.Point(670, 171);
             this.lbHouseDefGain.Name = "lbHouseDefGain";
             this.lbHouseDefGain.Size = new System.Drawing.Size(47, 46);
             this.lbHouseDefGain.TabIndex = 19;
@@ -290,7 +303,7 @@
             // 
             this.lbHouseWeaGain.AutoSize = true;
             this.lbHouseWeaGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseWeaGain.Location = new System.Drawing.Point(469, 178);
+            this.lbHouseWeaGain.Location = new System.Drawing.Point(332, 171);
             this.lbHouseWeaGain.Name = "lbHouseWeaGain";
             this.lbHouseWeaGain.Size = new System.Drawing.Size(54, 46);
             this.lbHouseWeaGain.TabIndex = 20;
@@ -301,7 +314,7 @@
             // 
             this.lbHousePowGain.AutoSize = true;
             this.lbHousePowGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHousePowGain.Location = new System.Drawing.Point(529, 178);
+            this.lbHousePowGain.Location = new System.Drawing.Point(392, 171);
             this.lbHousePowGain.Name = "lbHousePowGain";
             this.lbHousePowGain.Size = new System.Drawing.Size(55, 46);
             this.lbHousePowGain.TabIndex = 21;
@@ -312,7 +325,7 @@
             // 
             this.lbHousePopGain.AutoSize = true;
             this.lbHousePopGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHousePopGain.Location = new System.Drawing.Point(590, 178);
+            this.lbHousePopGain.Location = new System.Drawing.Point(453, 171);
             this.lbHousePopGain.Name = "lbHousePopGain";
             this.lbHousePopGain.Size = new System.Drawing.Size(48, 46);
             this.lbHousePopGain.TabIndex = 22;
@@ -323,7 +336,7 @@
             // 
             this.lbHouseLawGain.AutoSize = true;
             this.lbHouseLawGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseLawGain.Location = new System.Drawing.Point(644, 178);
+            this.lbHouseLawGain.Location = new System.Drawing.Point(507, 171);
             this.lbHouseLawGain.Name = "lbHouseLawGain";
             this.lbHouseLawGain.Size = new System.Drawing.Size(53, 46);
             this.lbHouseLawGain.TabIndex = 23;
@@ -334,7 +347,7 @@
             // 
             this.lbHouseLanGain.AutoSize = true;
             this.lbHouseLanGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseLanGain.Location = new System.Drawing.Point(703, 178);
+            this.lbHouseLanGain.Location = new System.Drawing.Point(566, 171);
             this.lbHouseLanGain.Name = "lbHouseLanGain";
             this.lbHouseLanGain.Size = new System.Drawing.Size(49, 46);
             this.lbHouseLanGain.TabIndex = 24;
@@ -345,19 +358,145 @@
             // 
             this.lbHouseInfGain.AutoSize = true;
             this.lbHouseInfGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseInfGain.Location = new System.Drawing.Point(758, 178);
+            this.lbHouseInfGain.Location = new System.Drawing.Point(621, 171);
             this.lbHouseInfGain.Name = "lbHouseInfGain";
             this.lbHouseInfGain.Size = new System.Drawing.Size(43, 46);
             this.lbHouseInfGain.TabIndex = 25;
             this.lbHouseInfGain.Text = "INF\r\n0";
             this.lbHouseInfGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbHouLanHol
+            // 
+            this.lbHouLanHol.AutoSize = true;
+            this.lbHouLanHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouLanHol.Location = new System.Drawing.Point(12, 332);
+            this.lbHouLanHol.Name = "lbHouLanHol";
+            this.lbHouLanHol.Size = new System.Drawing.Size(134, 23);
+            this.lbHouLanHol.TabIndex = 26;
+            this.lbHouLanHol.Text = "Land Holdings";
+            this.lbHouLanHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouLanHolList
+            // 
+            this.lbHouLanHolList.AutoSize = true;
+            this.lbHouLanHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouLanHolList.Location = new System.Drawing.Point(13, 355);
+            this.lbHouLanHolList.Name = "lbHouLanHolList";
+            this.lbHouLanHolList.Size = new System.Drawing.Size(109, 18);
+            this.lbHouLanHolList.TabIndex = 27;
+            this.lbHouLanHolList.Text = "Land Holdings";
+            // 
+            // dgCal2
+            // 
+            this.dgCal2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCal2.Location = new System.Drawing.Point(1114, 332);
+            this.dgCal2.Name = "dgCal2";
+            this.dgCal2.Size = new System.Drawing.Size(240, 150);
+            this.dgCal2.TabIndex = 28;
+            // 
+            // dgCal3
+            // 
+            this.dgCal3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgCal3.Location = new System.Drawing.Point(1114, 488);
+            this.dgCal3.Name = "dgCal3";
+            this.dgCal3.Size = new System.Drawing.Size(240, 150);
+            this.dgCal3.TabIndex = 29;
+            // 
+            // lbHouseInfLoss
+            // 
+            this.lbHouseInfLoss.AutoSize = true;
+            this.lbHouseInfLoss.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseInfLoss.Location = new System.Drawing.Point(1012, 171);
+            this.lbHouseInfLoss.Name = "lbHouseInfLoss";
+            this.lbHouseInfLoss.Size = new System.Drawing.Size(43, 46);
+            this.lbHouseInfLoss.TabIndex = 36;
+            this.lbHouseInfLoss.Text = "INF\r\n0";
+            this.lbHouseInfLoss.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouseLanLoss
+            // 
+            this.lbHouseLanLoss.AutoSize = true;
+            this.lbHouseLanLoss.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseLanLoss.Location = new System.Drawing.Point(957, 171);
+            this.lbHouseLanLoss.Name = "lbHouseLanLoss";
+            this.lbHouseLanLoss.Size = new System.Drawing.Size(49, 46);
+            this.lbHouseLanLoss.TabIndex = 35;
+            this.lbHouseLanLoss.Text = "LAN\r\n0";
+            this.lbHouseLanLoss.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouseLawLoss
+            // 
+            this.lbHouseLawLoss.AutoSize = true;
+            this.lbHouseLawLoss.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseLawLoss.Location = new System.Drawing.Point(898, 171);
+            this.lbHouseLawLoss.Name = "lbHouseLawLoss";
+            this.lbHouseLawLoss.Size = new System.Drawing.Size(53, 46);
+            this.lbHouseLawLoss.TabIndex = 34;
+            this.lbHouseLawLoss.Text = "LAW\r\n0";
+            this.lbHouseLawLoss.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHousePopLoss
+            // 
+            this.lbHousePopLoss.AutoSize = true;
+            this.lbHousePopLoss.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHousePopLoss.Location = new System.Drawing.Point(844, 171);
+            this.lbHousePopLoss.Name = "lbHousePopLoss";
+            this.lbHousePopLoss.Size = new System.Drawing.Size(48, 46);
+            this.lbHousePopLoss.TabIndex = 33;
+            this.lbHousePopLoss.Text = "POP\r\n0";
+            this.lbHousePopLoss.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHousePowLoss
+            // 
+            this.lbHousePowLoss.AutoSize = true;
+            this.lbHousePowLoss.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHousePowLoss.Location = new System.Drawing.Point(783, 171);
+            this.lbHousePowLoss.Name = "lbHousePowLoss";
+            this.lbHousePowLoss.Size = new System.Drawing.Size(55, 46);
+            this.lbHousePowLoss.TabIndex = 32;
+            this.lbHousePowLoss.Text = "POW\r\n0";
+            this.lbHousePowLoss.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouseWeaLoss
+            // 
+            this.lbHouseWeaLoss.AutoSize = true;
+            this.lbHouseWeaLoss.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseWeaLoss.Location = new System.Drawing.Point(723, 171);
+            this.lbHouseWeaLoss.Name = "lbHouseWeaLoss";
+            this.lbHouseWeaLoss.Size = new System.Drawing.Size(54, 46);
+            this.lbHouseWeaLoss.TabIndex = 31;
+            this.lbHouseWeaLoss.Text = "WEA\r\n0";
+            this.lbHouseWeaLoss.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouseDefLoss
+            // 
+            this.lbHouseDefLoss.AutoSize = true;
+            this.lbHouseDefLoss.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseDefLoss.Location = new System.Drawing.Point(1061, 171);
+            this.lbHouseDefLoss.Name = "lbHouseDefLoss";
+            this.lbHouseDefLoss.Size = new System.Drawing.Size(47, 46);
+            this.lbHouseDefLoss.TabIndex = 30;
+            this.lbHouseDefLoss.Text = "DEF\r\n0";
+            this.lbHouseDefLoss.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(912, 540);
+            this.ClientSize = new System.Drawing.Size(1129, 612);
+            this.Controls.Add(this.lbHouseInfLoss);
+            this.Controls.Add(this.lbHouseLanLoss);
+            this.Controls.Add(this.lbHouseLawLoss);
+            this.Controls.Add(this.lbHousePopLoss);
+            this.Controls.Add(this.lbHousePowLoss);
+            this.Controls.Add(this.lbHouseWeaLoss);
+            this.Controls.Add(this.lbHouseDefLoss);
+            this.Controls.Add(this.dgCal3);
+            this.Controls.Add(this.dgCal2);
+            this.Controls.Add(this.lbHouLanHolList);
+            this.Controls.Add(this.lbHouLanHol);
             this.Controls.Add(this.lbHouseInfGain);
             this.Controls.Add(this.lbHouseLanGain);
             this.Controls.Add(this.lbHouseLawGain);
@@ -369,7 +508,7 @@
             this.Controls.Add(this.lbHouInfHolList);
             this.Controls.Add(this.lbHouseInfHol);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dgCalculation);
+            this.Controls.Add(this.dgCal1);
             this.Controls.Add(this.dgHouseDetails);
             this.Controls.Add(this.lbHouseSpare);
             this.Controls.Add(this.lbHouseCurrent);
@@ -388,9 +527,11 @@
             this.Text = "ASoIaF Tracker";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCalculation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCal3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,7 +553,7 @@
         private System.Windows.Forms.Label lbHouseCurrent;
         private System.Windows.Forms.Label lbHouseSpare;
         private System.Windows.Forms.DataGridView dgHouseDetails;
-        private System.Windows.Forms.DataGridView dgCalculation;
+        private System.Windows.Forms.DataGridView dgCal1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton tsMenu;
         private System.Windows.Forms.ToolStripMenuItem devLogToolStripMenuItem;
@@ -426,6 +567,17 @@
         private System.Windows.Forms.Label lbHouseLawGain;
         private System.Windows.Forms.Label lbHouseLanGain;
         private System.Windows.Forms.Label lbHouseInfGain;
+        private System.Windows.Forms.Label lbHouLanHol;
+        private System.Windows.Forms.Label lbHouLanHolList;
+        private System.Windows.Forms.DataGridView dgCal2;
+        private System.Windows.Forms.DataGridView dgCal3;
+        private System.Windows.Forms.Label lbHouseInfLoss;
+        private System.Windows.Forms.Label lbHouseLanLoss;
+        private System.Windows.Forms.Label lbHouseLawLoss;
+        private System.Windows.Forms.Label lbHousePopLoss;
+        private System.Windows.Forms.Label lbHousePowLoss;
+        private System.Windows.Forms.Label lbHouseWeaLoss;
+        private System.Windows.Forms.Label lbHouseDefLoss;
     }
 }
 
