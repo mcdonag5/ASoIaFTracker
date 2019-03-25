@@ -45,7 +45,10 @@ namespace WindowsFormsApp1
         public int houLanLoss;
         public int houInfLoss;
         public int houDefLoss;
-
+        public int houPopMit;
+        public int houLawMit;
+        int[,] LawModifierArry = { {0,0,-20 }, { 1,10,-10},{ 11, 20, -5 },{21,30,-2 },{31,40,-1 },{ 41,50,0},{51,60,1 },{61,70,2 },{71,999,5 } };
+        int[,] PopModifierArry = { { 0, 0, -10 }, { 1, 10, -5 } ,{11,20,0 },{21,30,1 },{31,40,3 },{14,50,1 },{51,60,0 },{61,70,-5 },{ 71, 999, -10 } };
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
@@ -112,7 +115,9 @@ namespace WindowsFormsApp1
               houLawLoss = 0;
               houLanLoss = 0;
               houInfLoss = 0;
-              houDefLoss = 0;
+            houDefLoss = 0;
+            houPopMit = 0;
+            houLawMit = 0;
             //clear labels
             lbHouInfHolList.Text = "";
             lbHouLanHolList.Text = "";
@@ -178,6 +183,9 @@ namespace WindowsFormsApp1
                 houPopGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[18].Value);
                 houPowGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[19].Value);
                 houWeaGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[20].Value);
+                houLawMit += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[21].Value);
+                houPopMit += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[22].Value);
+
                 lbHouInfHolList.Text += dgHouseDetails.Rows[i].Cells[10].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[4].Value.ToString() + Environment.NewLine;
                 DbReturn("SELECT `tbl_InfluenceHoldingImprovement`.*, `tbl_InfluenceImprovemnt`.* FROM `tbl_InfluenceHoldingImprovement`, `tbl_InfluenceImprovemnt` WHERE `tbl_InfluenceHoldingImprovement`.`InfHol_ID` = '" + dgHouseDetails.Rows[i].Cells[1].Value + "' AND `tbl_InfluenceImprovemnt`.`InfImp_ID` = `tbl_InfluenceHoldingImprovement`.`InfImp_ID`; ", "1");
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
@@ -254,11 +262,13 @@ namespace WindowsFormsApp1
             lbHouseDefGain.Text = "DEF" + Environment.NewLine + houDefGain + Environment.NewLine + BounusCal(houDefGain);
             lbHouseWeaLoss.Text = "WEA" + Environment.NewLine + houWeaLoss + Environment.NewLine + BounusCal(houWeaLoss);
             lbHousePowLoss.Text = "POW" + Environment.NewLine + houPowLoss + Environment.NewLine + BounusCal(houPowLoss);
-            lbHousePopLoss.Text = "POP" + Environment.NewLine + houPopLoss + Environment.NewLine + BounusCal(houPowLoss);
+            lbHousePopLoss.Text = "POP" + Environment.NewLine + houPopLoss + Environment.NewLine + BounusCal(houPopLoss);
             lbHouseLawLoss.Text = "LAW" + Environment.NewLine + houLawLoss + Environment.NewLine + BounusCal(houLawLoss);
             lbHouseLanLoss.Text = "LAN" + Environment.NewLine + houLanLoss + Environment.NewLine + BounusCal(houLanLoss);
             lbHouseInfLoss.Text = "INF" + Environment.NewLine + houInfLoss + Environment.NewLine + BounusCal(houInfLoss);
             lbHouseDefLoss.Text = "DEF" + Environment.NewLine + houDefLoss + Environment.NewLine + BounusCal(houDefLoss);
+            lbHouPopMod.Text = HousePopModifier(houPop);
+            lbHouLawMod.Text = HouseLawModifier(houLaw);
         }
 
         public void CheckWealthHolding(string place, int ID,int space,string indent)
@@ -289,7 +299,8 @@ namespace WindowsFormsApp1
                     houLanLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[35].Value);
                     houInfLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[36].Value);
                     houDefLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[37].Value);
-                    houDefLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[38].Value);
+                    houLawMit += Convert.ToInt32(dgCal2.Rows[n].Cells[38].Value);
+                    houPopMit += Convert.ToInt32(dgCal2.Rows[n].Cells[39].Value);
                 } else { lbHouLanHolList.Text += "B: "; }
 
                 lbHouLanHolList.Text += dgCal2.Rows[n].Cells[12].Value.ToString() + " - " + dgCal2.Rows[n].Cells[6].Value.ToString() + Environment.NewLine;
@@ -320,7 +331,8 @@ namespace WindowsFormsApp1
                         houLanLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[31].Value);
                         houInfLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[32].Value);
                         houDefLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[33].Value);
-                        houDefLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[34].Value);
+                        houLawMit += Convert.ToInt32(dgCal3.Rows[t].Cells[34].Value);
+                        houPopMit += Convert.ToInt32(dgCal3.Rows[t].Cells[35].Value);
                     } else { lbHouLanHolList.Text += "B: "; }
 
 
@@ -345,14 +357,53 @@ namespace WindowsFormsApp1
             dgHouseDetails.Visible = true;
             lbHouInfHolList.Text = "";
             lbHouLanHolList.Text = "";
-            string qry = "SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Hou_Realm` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` FROM `tbl_House`";
+            string qry = "SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` FROM `tbl_House`";
             if(player != "all") { qry += " WHERE hou_Player = '" + player + "'"; }
             qry += ";";
             DbReturn(qry, "house detail");
             dgHouseDetails.Visible = true;
            
         }
+        public string HouseLawModifier(int lawMod)
+        {
+            string text ="";
+            int modifier = 0;
+            for( int i = 0;i < LawModifierArry.GetLength(0);i++ )
+            {
+                if (Between(lawMod, LawModifierArry[i, 0], LawModifierArry[i,1])) { modifier = LawModifierArry[i, 2]; }
+            }
+            if(modifier>0) { text += "+"; }
+            else if (modifier < 0)
+            {
+                modifier += houLawMit;
+                if (modifier>0) { modifier = 0; }
+            }
+            text += modifier.ToString();
+            return text;
+        }
 
+        public string HousePopModifier(int popMod)
+        {
+            string text = "";
+            int modifier = 0;
+            for (int i = 0; i < LawModifierArry.GetLength(0); i++)
+            {
+                if (Between(popMod, PopModifierArry[i, 0], PopModifierArry[i, 1])) { modifier = PopModifierArry[i, 2]; }
+            }
+            if (modifier > 0) { text += "+"; }
+            else if (modifier < 0)
+            {
+                modifier += houPopMit;
+                if (modifier > 0) { modifier = 0; }
+            }
+            text += modifier.ToString();
+            return text;
+        }
+        public bool Between(int x, int y,int z)
+        {
+            if(x>=y&&x<=z) { return true; }
+            else { return false; }
+        }
         ///// METHODS END //////////////////////////////////////////////////////////
 
         public FormMain()
@@ -366,7 +417,7 @@ namespace WindowsFormsApp1
             DevLogs("Program started");
             mysqlConn.DbConfig(); //sets database settings
             mysqlConn.Connect();
-            DbReturn("SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Hou_Realm` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` FROM `tbl_House`; ", "house detail");
+            DbReturn("SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` FROM `tbl_House`; ", "house detail");
             Size size = new Size(1108, 559);
             dgHouseDetails.Size = size;
         }
