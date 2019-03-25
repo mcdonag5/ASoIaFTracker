@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.lbHouseName = new System.Windows.Forms.Label();
             this.lbHouseRealm = new System.Windows.Forms.Label();
@@ -47,6 +50,11 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.devLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsddViewHouse = new System.Windows.Forms.ToolStripDropDownButton();
+            this.allHousesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nPCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rossToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbHouseInfHol = new System.Windows.Forms.Label();
             this.lbHouInfHolList = new System.Windows.Forms.Label();
             this.lbHouseHF = new System.Windows.Forms.Label();
@@ -68,6 +76,12 @@
             this.lbHousePowLoss = new System.Windows.Forms.Label();
             this.lbHouseWeaLoss = new System.Windows.Forms.Label();
             this.lbHouseDefLoss = new System.Windows.Forms.Label();
+            this.lbResourceGain = new System.Windows.Forms.Label();
+            this.lbResourceLossMitigation = new System.Windows.Forms.Label();
+            this.lbHouPowHolList = new System.Windows.Forms.Label();
+            this.lBHouPowHol = new System.Windows.Forms.Label();
+            this.lbHouBanList = new System.Windows.Forms.Label();
+            this.lbHouBan = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -99,7 +113,7 @@
             // 
             this.lbHouseSeatOfPower.AutoSize = true;
             this.lbHouseSeatOfPower.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseSeatOfPower.Location = new System.Drawing.Point(407, 47);
+            this.lbHouseSeatOfPower.Location = new System.Drawing.Point(440, 47);
             this.lbHouseSeatOfPower.Name = "lbHouseSeatOfPower";
             this.lbHouseSeatOfPower.Size = new System.Drawing.Size(150, 25);
             this.lbHouseSeatOfPower.TabIndex = 2;
@@ -109,7 +123,7 @@
             // 
             this.lbHouseLiegeLord.AutoSize = true;
             this.lbHouseLiegeLord.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseLiegeLord.Location = new System.Drawing.Point(288, 85);
+            this.lbHouseLiegeLord.Location = new System.Drawing.Point(381, 85);
             this.lbHouseLiegeLord.Name = "lbHouseLiegeLord";
             this.lbHouseLiegeLord.Size = new System.Drawing.Size(119, 25);
             this.lbHouseLiegeLord.TabIndex = 3;
@@ -119,7 +133,7 @@
             // 
             this.lbHouseLiege.AutoSize = true;
             this.lbHouseLiege.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseLiege.Location = new System.Drawing.Point(595, 85);
+            this.lbHouseLiege.Location = new System.Drawing.Point(737, 85);
             this.lbHouseLiege.Name = "lbHouseLiege";
             this.lbHouseLiege.Size = new System.Drawing.Size(69, 25);
             this.lbHouseLiege.TabIndex = 4;
@@ -136,7 +150,7 @@
             // tbHouseSeatOfPower
             // 
             this.tbHouseSeatOfPower.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHouseSeatOfPower.Location = new System.Drawing.Point(549, 44);
+            this.tbHouseSeatOfPower.Location = new System.Drawing.Point(582, 44);
             this.tbHouseSeatOfPower.Name = "tbHouseSeatOfPower";
             this.tbHouseSeatOfPower.Size = new System.Drawing.Size(341, 29);
             this.tbHouseSeatOfPower.TabIndex = 6;
@@ -144,9 +158,9 @@
             // tbHouseLiege
             // 
             this.tbHouseLiege.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHouseLiege.Location = new System.Drawing.Point(670, 85);
+            this.tbHouseLiege.Location = new System.Drawing.Point(812, 85);
             this.tbHouseLiege.Name = "tbHouseLiege";
-            this.tbHouseLiege.Size = new System.Drawing.Size(220, 29);
+            this.tbHouseLiege.Size = new System.Drawing.Size(281, 29);
             this.tbHouseLiege.TabIndex = 7;
             // 
             // cbHouseRealm
@@ -168,15 +182,15 @@
             "Dorne"});
             this.cbHouseRealm.Location = new System.Drawing.Point(82, 83);
             this.cbHouseRealm.Name = "cbHouseRealm";
-            this.cbHouseRealm.Size = new System.Drawing.Size(200, 31);
+            this.cbHouseRealm.Size = new System.Drawing.Size(293, 31);
             this.cbHouseRealm.TabIndex = 8;
             // 
             // tbHouseLiegeLord
             // 
             this.tbHouseLiegeLord.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHouseLiegeLord.Location = new System.Drawing.Point(401, 85);
+            this.tbHouseLiegeLord.Location = new System.Drawing.Point(494, 85);
             this.tbHouseLiegeLord.Name = "tbHouseLiegeLord";
-            this.tbHouseLiegeLord.Size = new System.Drawing.Size(188, 29);
+            this.tbHouseLiegeLord.Size = new System.Drawing.Size(237, 29);
             this.tbHouseLiegeLord.TabIndex = 9;
             // 
             // lbHouseResources
@@ -214,24 +228,58 @@
             // 
             // dgHouseDetails
             // 
+            this.dgHouseDetails.AllowUserToAddRows = false;
+            this.dgHouseDetails.AllowUserToDeleteRows = false;
+            this.dgHouseDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgHouseDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgHouseDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgHouseDetails.Location = new System.Drawing.Point(1114, 28);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgHouseDetails.Location = new System.Drawing.Point(0, 28);
             this.dgHouseDetails.Name = "dgHouseDetails";
-            this.dgHouseDetails.Size = new System.Drawing.Size(240, 150);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgHouseDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgHouseDetails.Size = new System.Drawing.Size(76, 44);
             this.dgHouseDetails.TabIndex = 13;
+            this.dgHouseDetails.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgHouseDetails_CellMouseDoubleClick);
             // 
             // dgCal1
             // 
             this.dgCal1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCal1.Location = new System.Drawing.Point(1114, 182);
+            this.dgCal1.Location = new System.Drawing.Point(1114, 176);
             this.dgCal1.Name = "dgCal1";
             this.dgCal1.Size = new System.Drawing.Size(240, 150);
             this.dgCal1.TabIndex = 14;
+            this.dgCal1.Visible = false;
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsMenu});
+            this.tsMenu,
+            this.tsddViewHouse});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1354, 25);
@@ -256,13 +304,55 @@
             this.devLogToolStripMenuItem.Text = "DevLog";
             this.devLogToolStripMenuItem.Click += new System.EventHandler(this.DevLogToolStripMenuItem_Click);
             // 
+            // tsddViewHouse
+            // 
+            this.tsddViewHouse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddViewHouse.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allHousesToolStripMenuItem,
+            this.playersToolStripMenuItem});
+            this.tsddViewHouse.Image = ((System.Drawing.Image)(resources.GetObject("tsddViewHouse.Image")));
+            this.tsddViewHouse.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddViewHouse.Name = "tsddViewHouse";
+            this.tsddViewHouse.Size = new System.Drawing.Size(82, 22);
+            this.tsddViewHouse.Text = "View House";
+            // 
+            // allHousesToolStripMenuItem
+            // 
+            this.allHousesToolStripMenuItem.Name = "allHousesToolStripMenuItem";
+            this.allHousesToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.allHousesToolStripMenuItem.Text = "All Houses";
+            this.allHousesToolStripMenuItem.Click += new System.EventHandler(this.AllHousesToolStripMenuItem_Click);
+            // 
+            // playersToolStripMenuItem
+            // 
+            this.playersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nPCToolStripMenuItem,
+            this.rossToolStripMenuItem});
+            this.playersToolStripMenuItem.Name = "playersToolStripMenuItem";
+            this.playersToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.playersToolStripMenuItem.Text = "Players";
+            // 
+            // nPCToolStripMenuItem
+            // 
+            this.nPCToolStripMenuItem.Name = "nPCToolStripMenuItem";
+            this.nPCToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.nPCToolStripMenuItem.Text = "NPC";
+            this.nPCToolStripMenuItem.Click += new System.EventHandler(this.NPCToolStripMenuItem_Click);
+            // 
+            // rossToolStripMenuItem
+            // 
+            this.rossToolStripMenuItem.Name = "rossToolStripMenuItem";
+            this.rossToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.rossToolStripMenuItem.Text = "Ross";
+            this.rossToolStripMenuItem.Click += new System.EventHandler(this.RossToolStripMenuItem_Click);
+            // 
             // lbHouseInfHol
             // 
             this.lbHouseInfHol.AutoSize = true;
-            this.lbHouseInfHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseInfHol.Location = new System.Drawing.Point(354, 332);
+            this.lbHouseInfHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseInfHol.Location = new System.Drawing.Point(402, 344);
             this.lbHouseInfHol.Name = "lbHouseInfHol";
-            this.lbHouseInfHol.Size = new System.Drawing.Size(169, 23);
+            this.lbHouseInfHol.Size = new System.Drawing.Size(198, 23);
             this.lbHouseInfHol.TabIndex = 16;
             this.lbHouseInfHol.Text = "Influence Holdings";
             this.lbHouseInfHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -271,7 +361,7 @@
             // 
             this.lbHouInfHolList.AutoSize = true;
             this.lbHouInfHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouInfHolList.Location = new System.Drawing.Point(355, 355);
+            this.lbHouInfHolList.Location = new System.Drawing.Point(403, 367);
             this.lbHouInfHolList.Name = "lbHouInfHolList";
             this.lbHouInfHolList.Size = new System.Drawing.Size(139, 18);
             this.lbHouInfHolList.TabIndex = 17;
@@ -368,10 +458,10 @@
             // lbHouLanHol
             // 
             this.lbHouLanHol.AutoSize = true;
-            this.lbHouLanHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouLanHol.Location = new System.Drawing.Point(12, 332);
+            this.lbHouLanHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouLanHol.Location = new System.Drawing.Point(12, 344);
             this.lbHouLanHol.Name = "lbHouLanHol";
-            this.lbHouLanHol.Size = new System.Drawing.Size(134, 23);
+            this.lbHouLanHol.Size = new System.Drawing.Size(155, 23);
             this.lbHouLanHol.TabIndex = 26;
             this.lbHouLanHol.Text = "Land Holdings";
             this.lbHouLanHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -380,11 +470,12 @@
             // 
             this.lbHouLanHolList.AutoSize = true;
             this.lbHouLanHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouLanHolList.Location = new System.Drawing.Point(13, 355);
+            this.lbHouLanHolList.Location = new System.Drawing.Point(13, 367);
+            this.lbHouLanHolList.MaximumSize = new System.Drawing.Size(379, 0);
             this.lbHouLanHolList.Name = "lbHouLanHolList";
-            this.lbHouLanHolList.Size = new System.Drawing.Size(109, 18);
+            this.lbHouLanHolList.Size = new System.Drawing.Size(379, 18);
             this.lbHouLanHolList.TabIndex = 27;
-            this.lbHouLanHolList.Text = "Land Holdings";
+            this.lbHouLanHolList.Text = "Land Holdings000000000000000000000000000";
             // 
             // dgCal2
             // 
@@ -393,6 +484,7 @@
             this.dgCal2.Name = "dgCal2";
             this.dgCal2.Size = new System.Drawing.Size(240, 150);
             this.dgCal2.TabIndex = 28;
+            this.dgCal2.Visible = false;
             // 
             // dgCal3
             // 
@@ -401,6 +493,7 @@
             this.dgCal3.Name = "dgCal3";
             this.dgCal3.Size = new System.Drawing.Size(240, 150);
             this.dgCal3.TabIndex = 29;
+            this.dgCal3.Visible = false;
             // 
             // lbHouseInfLoss
             // 
@@ -479,13 +572,84 @@
             this.lbHouseDefLoss.Text = "DEF\r\n0";
             this.lbHouseDefLoss.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbResourceGain
+            // 
+            this.lbResourceGain.AutoSize = true;
+            this.lbResourceGain.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbResourceGain.Location = new System.Drawing.Point(469, 148);
+            this.lbResourceGain.Name = "lbResourceGain";
+            this.lbResourceGain.Size = new System.Drawing.Size(133, 23);
+            this.lbResourceGain.TabIndex = 37;
+            this.lbResourceGain.Text = "Resource Gain";
+            this.lbResourceGain.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbResourceLossMitigation
+            // 
+            this.lbResourceLossMitigation.AutoSize = true;
+            this.lbResourceLossMitigation.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbResourceLossMitigation.Location = new System.Drawing.Point(799, 148);
+            this.lbResourceLossMitigation.Name = "lbResourceLossMitigation";
+            this.lbResourceLossMitigation.Size = new System.Drawing.Size(225, 23);
+            this.lbResourceLossMitigation.TabIndex = 38;
+            this.lbResourceLossMitigation.Text = "Resource Loss Mitigation";
+            this.lbResourceLossMitigation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouPowHolList
+            // 
+            this.lbHouPowHolList.AutoSize = true;
+            this.lbHouPowHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouPowHolList.Location = new System.Drawing.Point(641, 367);
+            this.lbHouPowHolList.Name = "lbHouPowHolList";
+            this.lbHouPowHolList.Size = new System.Drawing.Size(118, 18);
+            this.lbHouPowHolList.TabIndex = 40;
+            this.lbHouPowHolList.Text = "Power Holdings";
+            // 
+            // lBHouPowHol
+            // 
+            this.lBHouPowHol.AutoSize = true;
+            this.lBHouPowHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBHouPowHol.Location = new System.Drawing.Point(640, 344);
+            this.lBHouPowHol.Name = "lBHouPowHol";
+            this.lBHouPowHol.Size = new System.Drawing.Size(167, 23);
+            this.lBHouPowHol.TabIndex = 39;
+            this.lBHouPowHol.Text = "Power Holdings";
+            this.lBHouPowHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbHouBanList
+            // 
+            this.lbHouBanList.AutoSize = true;
+            this.lbHouBanList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouBanList.Location = new System.Drawing.Point(908, 367);
+            this.lbHouBanList.Name = "lbHouBanList";
+            this.lbHouBanList.Size = new System.Drawing.Size(139, 18);
+            this.lbHouBanList.TabIndex = 42;
+            this.lbHouBanList.Text = "Influence Holdings";
+            // 
+            // lbHouBan
+            // 
+            this.lbHouBan.AutoSize = true;
+            this.lbHouBan.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouBan.Location = new System.Drawing.Point(907, 344);
+            this.lbHouBan.Name = "lbHouBan";
+            this.lbHouBan.Size = new System.Drawing.Size(92, 23);
+            this.lbHouBan.TabIndex = 41;
+            this.lbHouBan.Text = "Banners";
+            this.lbHouBan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1129, 612);
+            this.ClientSize = new System.Drawing.Size(1127, 612);
+            this.Controls.Add(this.dgHouseDetails);
+            this.Controls.Add(this.lbHouBanList);
+            this.Controls.Add(this.lbHouBan);
+            this.Controls.Add(this.lbHouPowHolList);
+            this.Controls.Add(this.lBHouPowHol);
+            this.Controls.Add(this.lbResourceLossMitigation);
+            this.Controls.Add(this.lbResourceGain);
             this.Controls.Add(this.lbHouseInfLoss);
             this.Controls.Add(this.lbHouseLanLoss);
             this.Controls.Add(this.lbHouseLawLoss);
@@ -509,7 +673,6 @@
             this.Controls.Add(this.lbHouseInfHol);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgCal1);
-            this.Controls.Add(this.dgHouseDetails);
             this.Controls.Add(this.lbHouseSpare);
             this.Controls.Add(this.lbHouseCurrent);
             this.Controls.Add(this.lbHouseResources);
@@ -578,6 +741,17 @@
         private System.Windows.Forms.Label lbHousePowLoss;
         private System.Windows.Forms.Label lbHouseWeaLoss;
         private System.Windows.Forms.Label lbHouseDefLoss;
+        private System.Windows.Forms.Label lbResourceGain;
+        private System.Windows.Forms.Label lbResourceLossMitigation;
+        private System.Windows.Forms.ToolStripDropDownButton tsddViewHouse;
+        private System.Windows.Forms.ToolStripMenuItem allHousesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nPCToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rossToolStripMenuItem;
+        private System.Windows.Forms.Label lbHouPowHolList;
+        private System.Windows.Forms.Label lBHouPowHol;
+        private System.Windows.Forms.Label lbHouBanList;
+        private System.Windows.Forms.Label lbHouBan;
     }
 }
 
