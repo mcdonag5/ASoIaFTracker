@@ -85,9 +85,9 @@ namespace WindowsFormsApp1
 
         public void UpdateHouse(int ID)
         {
-            DevLogs("Updating resources");
+            DevLogs("Updating resources start");
             DbReturn("SELECT * FROM `tbl_House` WHERE hou_ID = '" + ID + "'", "house detail");
-
+            houseID = ID;
             tbHouseName.Text = dgHouseDetails.Rows[0].Cells[1].Value.ToString();
             tbHouseSeatOfPower.Text = dgHouseDetails.Rows[0].Cells[4].Value.ToString();
             cbHouseRealm.Text = dgHouseDetails.Rows[0].Cells[3].Value.ToString();
@@ -133,6 +133,7 @@ namespace WindowsFormsApp1
                 houInf + Environment.NewLine +
                 houDef;
             //Power table
+            DevLogs("Getting units");
             DbReturn("SELECT `tbl_PowerHolding`.*, `tbl_UnitType`.`Uni_ID`, `tbl_UnitType`.* FROM `tbl_PowerHolding`, `tbl_UnitType` WHERE `tbl_PowerHolding`.`Hou_ID` = '" + ID + "' AND `tbl_UnitType`.`Uni_ID` = `tbl_PowerHolding`.`Uni_ID`; ", "house detail");
             for ( int i = 0; i < dgHouseDetails.RowCount; i++)
             {//Main table 
@@ -159,7 +160,7 @@ namespace WindowsFormsApp1
 
                 lbHouPowHolList.Text += dgHouseDetails.Rows[i].Cells[4].Value.ToString() + " " + dgHouseDetails.Rows[i].Cells[31].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[3].Value.ToString() + Environment.NewLine;
             }
-
+            DevLogs("Getting Banners");
             //Banner Table
             DbReturn("SELECT `tbl_Banner`.`HouLie_ID`, `tbl_House`.* FROM `tbl_Banner`, `tbl_House` WHERE `tbl_Banner`.`HouLie_ID` = '" + ID + "' AND `tbl_House`.`Hou_ID` = `tbl_Banner`.`HouBan_ID`; ", "house detail");
             for (int i = 0; i < dgHouseDetails.RowCount; i ++)
@@ -172,6 +173,7 @@ namespace WindowsFormsApp1
 
 
             //Influence table
+            DevLogs("Getting Influence Holdings");
             DbReturn("SELECT `tbl_InfluenceHoldings`.`Hou_ID`, `tbl_InfluenceHoldings`.*, `tbl_Influence`.`Inf_ID`, `tbl_Influence`.* FROM `tbl_InfluenceHoldings`, `tbl_Influence` WHERE `tbl_InfluenceHoldings`.`Hou_ID` = '" + ID + "' AND `tbl_Influence`.`Inf_ID` = `tbl_InfluenceHoldings`.`Inf_ID`;", "house detail");
             for (int i = 0; i < dgHouseDetails.RowCount; i++)
             {//Main table
@@ -196,6 +198,7 @@ namespace WindowsFormsApp1
             }
 
             //Land table
+            DevLogs("Getting land holdings");
             DbReturn("SELECT `tbl_LandHolding`.`Hou_ID`, `tbl_LandHolding`.*, `tbl_Land`.`Lan_ID`, `tbl_Land`.* FROM `tbl_LandHolding`, `tbl_Land` WHERE `tbl_LandHolding`.`Hou_ID` = '" + ID + "' AND `tbl_Land`.`Lan_ID` = `tbl_LandHolding`.`Lan_ID`; ", "house detail");
             for (int i = 0; i < dgHouseDetails.RowCount; i++)
             {
@@ -242,6 +245,7 @@ namespace WindowsFormsApp1
                 }
 
             }
+            DevLogs("Setting spare resources");
             //set labels
             lbHouseSpare.Text = "Current" + Environment.NewLine +
                 houWea + Environment.NewLine +
@@ -251,7 +255,7 @@ namespace WindowsFormsApp1
                 houLan + Environment.NewLine +
                 houInf + Environment.NewLine +
                 houDef;
-
+            DevLogs("Setting Gain and Loss");
             lbHouseHF.Text = "HF" + Environment.NewLine + houHF + Environment.NewLine + BounusCal(houHF);
             lbHouseWeaGain.Text = "WEA" + Environment.NewLine + houWeaGain + Environment.NewLine + BounusCal(houWeaGain);
             lbHousePowGain.Text = "POW" + Environment.NewLine + houPowGain + Environment.NewLine + BounusCal(houPowGain);
@@ -269,11 +273,13 @@ namespace WindowsFormsApp1
             lbHouseDefLoss.Text = "DEF" + Environment.NewLine + houDefLoss + Environment.NewLine + BounusCal(houDefLoss);
             lbHouPopMod.Text = HousePopModifier(houPop);
             lbHouLawMod.Text = HouseLawModifier(houLaw);
+            dgHouseDetails.Visible = false;
+            DevLogs("Updating end");
         }
 
         public void CheckWealthHolding(string place, int ID,int space,string indent)
         {
-
+            DevLogs("Getting Wealth Holdings");
             DbReturn("SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* FROM `tbl_WealthHolding`, `tbl_Wealth` WHERE `tbl_WealthHolding`.`"+place+"` = '" +ID+ "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID` AND `tbl_Wealth`.`Wea_TakesSpace` = '"+space+"'; ", "2");
             for (int n = 0; n < dgCal2.RowCount - 1; n++)
             {
@@ -354,6 +360,7 @@ namespace WindowsFormsApp1
 
         public void ResetViewHouse(string player)
         {
+            DevLogs("Reset House and view " + player + " Houses");
             dgHouseDetails.Visible = true;
             lbHouInfHolList.Text = "";
             lbHouLanHolList.Text = "";
@@ -457,8 +464,15 @@ namespace WindowsFormsApp1
 
         private void DgHouseDetails_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            UpdateHouse(Convert.ToInt32(dgHouseDetails.Rows[e.RowIndex].Cells[0].Value));
-            dgHouseDetails.Visible = false;
+            switch (dgHouseDetails.Columns[0].Name)
+            {
+                case "ID":
+                    UpdateHouse(Convert.ToInt32(dgHouseDetails.Rows[e.RowIndex].Cells[0].Value));
+                    break;
+                case "Lie ID":
+                    UpdateHouse(Convert.ToInt32(dgHouseDetails.Rows[e.RowIndex].Cells[1].Value));
+                    break;
+            }
         }
         private void NPCToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -473,6 +487,18 @@ namespace WindowsFormsApp1
         private void AllHousesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetViewHouse("all");
+        }
+
+        private void TbHouBanView_Click(object sender, EventArgs e)
+        {
+            DbReturn("SELECT `tbl_Banner`.`HouLie_ID` AS `Lie ID`, `tbl_House`.`Hou_ID` AS `ID`, `tbl_House`.`Hou_Name` AS `Name`, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord` FROM `tbl_Banner`, `tbl_House` WHERE `tbl_Banner`.`HouLie_ID` = '"+houseID+"' AND `tbl_House`.`Hou_ID` = `tbl_Banner`.`HouBan_ID`; ","house detail");
+            dgHouseDetails.Visible = true;
+        }
+
+        private void tbHouPowView_Click(object sender, EventArgs e)
+        {
+            PowerHolForm power = new PowerHolForm();
+            power.ShowDialog();
         }
 
         ///// EVENTS END ////////////////////////////////////////////////////////////
