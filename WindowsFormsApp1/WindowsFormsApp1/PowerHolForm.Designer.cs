@@ -28,478 +28,511 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbHouseResources = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.tbHouseName = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.cbHouseRealm = new System.Windows.Forms.ComboBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PowerHolForm));
+            this.lbPowStats11 = new System.Windows.Forms.Label();
+            this.lbPowStats21 = new System.Windows.Forms.Label();
+            this.lbPowCun1 = new System.Windows.Forms.Label();
+            this.lbPowAwa1 = new System.Windows.Forms.Label();
+            this.lbPowAth1 = new System.Windows.Forms.Label();
+            this.lbPowAni1 = new System.Windows.Forms.Label();
+            this.lbPowAgi1 = new System.Windows.Forms.Label();
+            this.lbPowEnd1 = new System.Windows.Forms.Label();
+            this.lbPowFig1 = new System.Windows.Forms.Label();
+            this.lbPowHea1 = new System.Windows.Forms.Label();
+            this.lbPowLan1 = new System.Windows.Forms.Label();
+            this.lbPowWil1 = new System.Windows.Forms.Label();
+            this.lbPowWar1 = new System.Windows.Forms.Label();
+            this.lbPowThi1 = new System.Windows.Forms.Label();
+            this.lbPowSur1 = new System.Windows.Forms.Label();
+            this.lbPowKno1 = new System.Windows.Forms.Label();
+            this.lbPowMar1 = new System.Windows.Forms.Label();
+            this.lbPowPer1 = new System.Windows.Forms.Label();
+            this.lbPowSta1 = new System.Windows.Forms.Label();
+            this.lbPowSte1 = new System.Windows.Forms.Label();
+            this.lbPowName1 = new System.Windows.Forms.Label();
+            this.tbPowName1 = new System.Windows.Forms.TextBox();
+            this.lbPowCost1 = new System.Windows.Forms.Label();
+            this.lbPowCostNumber1 = new System.Windows.Forms.Label();
+            this.lbPowType1 = new System.Windows.Forms.Label();
+            this.lbPowTypeText1 = new System.Windows.Forms.Label();
+            this.lbPowTraining1 = new System.Windows.Forms.Label();
+            this.cbPowTraining1 = new System.Windows.Forms.ComboBox();
+            this.lbPowStats31 = new System.Windows.Forms.Label();
+            this.lbPowMov1 = new System.Windows.Forms.Label();
+            this.lbPowDef1 = new System.Windows.Forms.Label();
+            this.lbPowDiscipText1 = new System.Windows.Forms.Label();
+            this.rtbPowNotes1 = new System.Windows.Forms.RichTextBox();
+            this.nudPowHea1 = new System.Windows.Forms.NumericUpDown();
+            this.nudPowDis = new System.Windows.Forms.NumericUpDown();
+            this.lbPowDiscip1 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPowHea1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPowDis)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lbHouseResources
+            // lbPowStats11
             // 
-            this.lbHouseResources.AutoSize = true;
-            this.lbHouseResources.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseResources.Location = new System.Drawing.Point(13, 89);
-            this.lbHouseResources.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbHouseResources.Name = "lbHouseResources";
-            this.lbHouseResources.Size = new System.Drawing.Size(137, 180);
-            this.lbHouseResources.TabIndex = 11;
-            this.lbHouseResources.Text = "Agility:\r\nAnimal Hand:\r\nAthletics:\r\nAwareness:\r\nCunning:\r\nEndurance:\r\nFighting:\r\n" +
+            this.lbPowStats11.AutoSize = true;
+            this.lbPowStats11.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowStats11.Location = new System.Drawing.Point(10, 72);
+            this.lbPowStats11.Name = "lbPowStats11";
+            this.lbPowStats11.Size = new System.Drawing.Size(110, 153);
+            this.lbPowStats11.TabIndex = 11;
+            this.lbPowStats11.Text = "Agility:\r\nAnimal Hand:\r\nAthletics:\r\nAwareness:\r\nCunning:\r\nEndurance:\r\nFighting:\r\n" +
     "Healing:\r\nLanguage:";
-            this.lbHouseResources.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowStats11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label1
+            // lbPowStats21
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(185, 89);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 180);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Knowledge:\r\nMarksmanship:\r\nPersuasion:\r\nStatus:\r\nStealth:\r\nSurvival:\r\nThievery:\r\n" +
+            this.lbPowStats21.AutoSize = true;
+            this.lbPowStats21.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowStats21.Location = new System.Drawing.Point(139, 72);
+            this.lbPowStats21.Name = "lbPowStats21";
+            this.lbPowStats21.Size = new System.Drawing.Size(122, 153);
+            this.lbPowStats21.TabIndex = 12;
+            this.lbPowStats21.Text = "Knowledge:\r\nMarksmanship:\r\nPersuasion:\r\nStatus:\r\nStealth:\r\nSurvival:\r\nThievery:\r\n" +
     "Warfare:\r\nWill:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowStats21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label2
+            // lbPowCun1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(158, 169);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 20);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "0";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowCun1.AutoSize = true;
+            this.lbPowCun1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowCun1.Location = new System.Drawing.Point(118, 137);
+            this.lbPowCun1.Name = "lbPowCun1";
+            this.lbPowCun1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowCun1.TabIndex = 13;
+            this.lbPowCun1.Text = "0";
+            this.lbPowCun1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // lbPowAwa1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(158, 149);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(19, 20);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowAwa1.AutoSize = true;
+            this.lbPowAwa1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowAwa1.Location = new System.Drawing.Point(118, 121);
+            this.lbPowAwa1.Name = "lbPowAwa1";
+            this.lbPowAwa1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowAwa1.TabIndex = 14;
+            this.lbPowAwa1.Text = "0";
+            this.lbPowAwa1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label4
+            // lbPowAth1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(158, 129);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 20);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "0";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowAth1.AutoSize = true;
+            this.lbPowAth1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowAth1.Location = new System.Drawing.Point(118, 105);
+            this.lbPowAth1.Name = "lbPowAth1";
+            this.lbPowAth1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowAth1.TabIndex = 15;
+            this.lbPowAth1.Text = "0";
+            this.lbPowAth1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label5
+            // lbPowAni1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(158, 109);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 20);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowAni1.AutoSize = true;
+            this.lbPowAni1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowAni1.Location = new System.Drawing.Point(118, 89);
+            this.lbPowAni1.Name = "lbPowAni1";
+            this.lbPowAni1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowAni1.TabIndex = 16;
+            this.lbPowAni1.Text = "0";
+            this.lbPowAni1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label6
+            // lbPowAgi1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(158, 89);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 20);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "0";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowAgi1.AutoSize = true;
+            this.lbPowAgi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowAgi1.Location = new System.Drawing.Point(118, 72);
+            this.lbPowAgi1.Name = "lbPowAgi1";
+            this.lbPowAgi1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowAgi1.TabIndex = 17;
+            this.lbPowAgi1.Text = "0";
+            this.lbPowAgi1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label7
+            // lbPowEnd1
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(158, 189);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 20);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "0";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowEnd1.AutoSize = true;
+            this.lbPowEnd1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowEnd1.Location = new System.Drawing.Point(118, 154);
+            this.lbPowEnd1.Name = "lbPowEnd1";
+            this.lbPowEnd1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowEnd1.TabIndex = 18;
+            this.lbPowEnd1.Text = "0";
+            this.lbPowEnd1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label8
+            // lbPowFig1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(158, 209);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(19, 20);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "0";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowFig1.AutoSize = true;
+            this.lbPowFig1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowFig1.Location = new System.Drawing.Point(118, 174);
+            this.lbPowFig1.Name = "lbPowFig1";
+            this.lbPowFig1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowFig1.TabIndex = 19;
+            this.lbPowFig1.Text = "0";
+            this.lbPowFig1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label9
+            // lbPowHea1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(158, 229);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(19, 20);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "0";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowHea1.AutoSize = true;
+            this.lbPowHea1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowHea1.Location = new System.Drawing.Point(118, 191);
+            this.lbPowHea1.Name = "lbPowHea1";
+            this.lbPowHea1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowHea1.TabIndex = 20;
+            this.lbPowHea1.Text = "0";
+            this.lbPowHea1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label10
+            // lbPowLan1
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(158, 249);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(19, 20);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "0";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowLan1.AutoSize = true;
+            this.lbPowLan1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowLan1.Location = new System.Drawing.Point(118, 208);
+            this.lbPowLan1.Name = "lbPowLan1";
+            this.lbPowLan1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowLan1.TabIndex = 21;
+            this.lbPowLan1.Text = "0";
+            this.lbPowLan1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label11
+            // lbPowWil1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(346, 249);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 20);
-            this.label11.TabIndex = 30;
-            this.label11.Text = "0";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowWil1.AutoSize = true;
+            this.lbPowWil1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowWil1.Location = new System.Drawing.Point(260, 208);
+            this.lbPowWil1.Name = "lbPowWil1";
+            this.lbPowWil1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowWil1.TabIndex = 30;
+            this.lbPowWil1.Text = "0";
+            this.lbPowWil1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label12
+            // lbPowWar1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(346, 229);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(19, 20);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "0";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowWar1.AutoSize = true;
+            this.lbPowWar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowWar1.Location = new System.Drawing.Point(260, 191);
+            this.lbPowWar1.Name = "lbPowWar1";
+            this.lbPowWar1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowWar1.TabIndex = 29;
+            this.lbPowWar1.Text = "0";
+            this.lbPowWar1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label13
+            // lbPowThi1
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(346, 209);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(19, 20);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "0";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowThi1.AutoSize = true;
+            this.lbPowThi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowThi1.Location = new System.Drawing.Point(260, 174);
+            this.lbPowThi1.Name = "lbPowThi1";
+            this.lbPowThi1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowThi1.TabIndex = 28;
+            this.lbPowThi1.Text = "0";
+            this.lbPowThi1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label14
+            // lbPowSur1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(346, 189);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(19, 20);
-            this.label14.TabIndex = 27;
-            this.label14.Text = "0";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowSur1.AutoSize = true;
+            this.lbPowSur1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowSur1.Location = new System.Drawing.Point(260, 154);
+            this.lbPowSur1.Name = "lbPowSur1";
+            this.lbPowSur1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowSur1.TabIndex = 27;
+            this.lbPowSur1.Text = "0";
+            this.lbPowSur1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label15
+            // lbPowKno1
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(346, 89);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(19, 20);
-            this.label15.TabIndex = 26;
-            this.label15.Text = "0";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowKno1.AutoSize = true;
+            this.lbPowKno1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowKno1.Location = new System.Drawing.Point(260, 72);
+            this.lbPowKno1.Name = "lbPowKno1";
+            this.lbPowKno1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowKno1.TabIndex = 26;
+            this.lbPowKno1.Text = "0";
+            this.lbPowKno1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label16
+            // lbPowMar1
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(346, 109);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(19, 20);
-            this.label16.TabIndex = 25;
-            this.label16.Text = "0";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowMar1.AutoSize = true;
+            this.lbPowMar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowMar1.Location = new System.Drawing.Point(260, 89);
+            this.lbPowMar1.Name = "lbPowMar1";
+            this.lbPowMar1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowMar1.TabIndex = 25;
+            this.lbPowMar1.Text = "0";
+            this.lbPowMar1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label17
+            // lbPowPer1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(346, 129);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(19, 20);
-            this.label17.TabIndex = 24;
-            this.label17.Text = "0";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowPer1.AutoSize = true;
+            this.lbPowPer1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowPer1.Location = new System.Drawing.Point(260, 105);
+            this.lbPowPer1.Name = "lbPowPer1";
+            this.lbPowPer1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowPer1.TabIndex = 24;
+            this.lbPowPer1.Text = "0";
+            this.lbPowPer1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label18
+            // lbPowSta1
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(346, 149);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(19, 20);
-            this.label18.TabIndex = 23;
-            this.label18.Text = "0";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowSta1.AutoSize = true;
+            this.lbPowSta1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowSta1.Location = new System.Drawing.Point(260, 121);
+            this.lbPowSta1.Name = "lbPowSta1";
+            this.lbPowSta1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowSta1.TabIndex = 23;
+            this.lbPowSta1.Text = "0";
+            this.lbPowSta1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label19
+            // lbPowSte1
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(346, 169);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(19, 20);
-            this.label19.TabIndex = 22;
-            this.label19.Text = "0";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowSte1.AutoSize = true;
+            this.lbPowSte1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowSte1.Location = new System.Drawing.Point(260, 137);
+            this.lbPowSte1.Name = "lbPowSte1";
+            this.lbPowSte1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowSte1.TabIndex = 22;
+            this.lbPowSte1.Text = "0";
+            this.lbPowSte1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label20
+            // lbPowName1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(13, 33);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(67, 20);
-            this.label20.TabIndex = 31;
-            this.label20.Text = "Name:";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowName1.AutoSize = true;
+            this.lbPowName1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowName1.Location = new System.Drawing.Point(10, 30);
+            this.lbPowName1.Name = "lbPowName1";
+            this.lbPowName1.Size = new System.Drawing.Size(56, 17);
+            this.lbPowName1.TabIndex = 31;
+            this.lbPowName1.Text = "Name:";
+            this.lbPowName1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tbHouseName
+            // tbPowName1
             // 
-            this.tbHouseName.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHouseName.Location = new System.Drawing.Point(88, 30);
-            this.tbHouseName.Margin = new System.Windows.Forms.Padding(4);
-            this.tbHouseName.Name = "tbHouseName";
-            this.tbHouseName.Size = new System.Drawing.Size(153, 27);
-            this.tbHouseName.TabIndex = 32;
+            this.tbPowName1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPowName1.Location = new System.Drawing.Point(66, 27);
+            this.tbPowName1.Name = "tbPowName1";
+            this.tbPowName1.Size = new System.Drawing.Size(116, 23);
+            this.tbPowName1.TabIndex = 32;
             // 
-            // label21
+            // lbPowCost1
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(249, 37);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(54, 20);
-            this.label21.TabIndex = 33;
-            this.label21.Text = "Cost:";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowCost1.AutoSize = true;
+            this.lbPowCost1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowCost1.Location = new System.Drawing.Point(188, 30);
+            this.lbPowCost1.Name = "lbPowCost1";
+            this.lbPowCost1.Size = new System.Drawing.Size(45, 17);
+            this.lbPowCost1.TabIndex = 33;
+            this.lbPowCost1.Text = "Cost:";
+            this.lbPowCost1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label22
+            // lbPowCostNumber1
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(311, 37);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(29, 20);
-            this.label22.TabIndex = 34;
-            this.label22.Text = "00";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowCostNumber1.AutoSize = true;
+            this.lbPowCostNumber1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowCostNumber1.Location = new System.Drawing.Point(239, 30);
+            this.lbPowCostNumber1.Name = "lbPowCostNumber1";
+            this.lbPowCostNumber1.Size = new System.Drawing.Size(26, 17);
+            this.lbPowCostNumber1.TabIndex = 34;
+            this.lbPowCostNumber1.Text = "00";
+            this.lbPowCostNumber1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label23
+            // lbPowType1
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(13, 61);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(59, 20);
-            this.label23.TabIndex = 35;
-            this.label23.Text = "Type:";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowType1.AutoSize = true;
+            this.lbPowType1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowType1.Location = new System.Drawing.Point(10, 50);
+            this.lbPowType1.Name = "lbPowType1";
+            this.lbPowType1.Size = new System.Drawing.Size(50, 17);
+            this.lbPowType1.TabIndex = 35;
+            this.lbPowType1.Text = "Type:";
+            this.lbPowType1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label24
+            // lbPowTypeText1
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(76, 61);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(165, 20);
-            this.label24.TabIndex = 36;
-            this.label24.Text = "XXXXXXXXXXXXX";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowTypeText1.AutoSize = true;
+            this.lbPowTypeText1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowTypeText1.Location = new System.Drawing.Point(57, 50);
+            this.lbPowTypeText1.Name = "lbPowTypeText1";
+            this.lbPowTypeText1.Size = new System.Drawing.Size(138, 17);
+            this.lbPowTypeText1.TabIndex = 36;
+            this.lbPowTypeText1.Text = "XXXXXXXXXXXXX";
+            this.lbPowTypeText1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label25
+            // lbPowTraining1
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(241, 61);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(95, 20);
-            this.label25.TabIndex = 37;
-            this.label25.Text = "Training:";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowTraining1.AutoSize = true;
+            this.lbPowTraining1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowTraining1.Location = new System.Drawing.Point(199, 50);
+            this.lbPowTraining1.Name = "lbPowTraining1";
+            this.lbPowTraining1.Size = new System.Drawing.Size(77, 17);
+            this.lbPowTraining1.TabIndex = 37;
+            this.lbPowTraining1.Text = "Training:";
+            this.lbPowTraining1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cbHouseRealm
+            // cbPowTraining1
             // 
-            this.cbHouseRealm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbHouseRealm.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHouseRealm.FormattingEnabled = true;
-            this.cbHouseRealm.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cbHouseRealm.Items.AddRange(new object[] {
+            this.cbPowTraining1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPowTraining1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPowTraining1.FormattingEnabled = true;
+            this.cbPowTraining1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.cbPowTraining1.Items.AddRange(new object[] {
             "Green",
             "Trained",
             "Veteran",
             "Elite"});
-            this.cbHouseRealm.Location = new System.Drawing.Point(344, 58);
-            this.cbHouseRealm.Margin = new System.Windows.Forms.Padding(4);
-            this.cbHouseRealm.Name = "cbHouseRealm";
-            this.cbHouseRealm.Size = new System.Drawing.Size(127, 28);
-            this.cbHouseRealm.TabIndex = 38;
+            this.cbPowTraining1.Location = new System.Drawing.Point(276, 47);
+            this.cbPowTraining1.Name = "cbPowTraining1";
+            this.cbPowTraining1.Size = new System.Drawing.Size(107, 25);
+            this.cbPowTraining1.TabIndex = 38;
             // 
-            // label26
+            // lbPowStats31
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(373, 90);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(135, 100);
-            this.label26.TabIndex = 39;
-            this.label26.Text = "Health:\r\nDisorganized:\r\nDefense:\r\nMovement:\r\nNotes:";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowStats31.AutoSize = true;
+            this.lbPowStats31.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowStats31.Location = new System.Drawing.Point(280, 73);
+            this.lbPowStats31.Name = "lbPowStats31";
+            this.lbPowStats31.Size = new System.Drawing.Size(107, 85);
+            this.lbPowStats31.TabIndex = 39;
+            this.lbPowStats31.Text = "Health:\r\nDisorganized:\r\nDefense:\r\nMovement:\r\nNotes:";
+            this.lbPowStats31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label29
+            // lbPowMov1
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(516, 130);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(19, 20);
-            this.label29.TabIndex = 42;
-            this.label29.Text = "0";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowMov1.AutoSize = true;
+            this.lbPowMov1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowMov1.Location = new System.Drawing.Point(393, 124);
+            this.lbPowMov1.Name = "lbPowMov1";
+            this.lbPowMov1.Size = new System.Drawing.Size(26, 17);
+            this.lbPowMov1.TabIndex = 42;
+            this.lbPowMov1.Text = "00";
+            this.lbPowMov1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label30
+            // lbPowDef1
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(516, 110);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(19, 20);
-            this.label30.TabIndex = 43;
-            this.label30.Text = "0";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowDef1.AutoSize = true;
+            this.lbPowDef1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowDef1.Location = new System.Drawing.Point(393, 107);
+            this.lbPowDef1.Name = "lbPowDef1";
+            this.lbPowDef1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowDef1.TabIndex = 43;
+            this.lbPowDef1.Text = "0";
+            this.lbPowDef1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label31
+            // lbPowDiscipText1
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(516, 90);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(19, 20);
-            this.label31.TabIndex = 44;
-            this.label31.Text = "0";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowDiscipText1.AutoSize = true;
+            this.lbPowDiscipText1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowDiscipText1.Location = new System.Drawing.Point(371, 30);
+            this.lbPowDiscipText1.Name = "lbPowDiscipText1";
+            this.lbPowDiscipText1.Size = new System.Drawing.Size(17, 17);
+            this.lbPowDiscipText1.TabIndex = 44;
+            this.lbPowDiscipText1.Text = "0";
+            this.lbPowDiscipText1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // richTextBox1
+            // rtbPowNotes1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(377, 189);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(158, 76);
-            this.richTextBox1.TabIndex = 45;
-            this.richTextBox1.Text = "";
+            this.rtbPowNotes1.Location = new System.Drawing.Point(349, 191);
+            this.rtbPowNotes1.Margin = new System.Windows.Forms.Padding(2);
+            this.rtbPowNotes1.Name = "rtbPowNotes1";
+            this.rtbPowNotes1.Size = new System.Drawing.Size(151, 56);
+            this.rtbPowNotes1.TabIndex = 45;
+            this.rtbPowNotes1.Text = "";
+            // 
+            // nudPowHea1
+            // 
+            this.nudPowHea1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudPowHea1.Location = new System.Drawing.Point(393, 73);
+            this.nudPowHea1.Name = "nudPowHea1";
+            this.nudPowHea1.Size = new System.Drawing.Size(41, 20);
+            this.nudPowHea1.TabIndex = 46;
+            // 
+            // nudPowDis
+            // 
+            this.nudPowDis.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudPowDis.Location = new System.Drawing.Point(393, 90);
+            this.nudPowDis.Name = "nudPowDis";
+            this.nudPowDis.Size = new System.Drawing.Size(41, 20);
+            this.nudPowDis.TabIndex = 47;
+            // 
+            // lbPowDiscip1
+            // 
+            this.lbPowDiscip1.AutoSize = true;
+            this.lbPowDiscip1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowDiscip1.Location = new System.Drawing.Point(279, 30);
+            this.lbPowDiscip1.Name = "lbPowDiscip1";
+            this.lbPowDiscip1.Size = new System.Drawing.Size(86, 17);
+            this.lbPowDiscip1.TabIndex = 48;
+            this.lbPowDiscip1.Text = "Discipline:";
+            this.lbPowDiscip1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(674, 25);
+            this.toolStrip1.TabIndex = 49;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "New Unit";
             // 
             // PowerHolForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 560);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.label30);
-            this.Controls.Add(this.label29);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.cbHouseRealm);
-            this.Controls.Add(this.label25);
-            this.Controls.Add(this.label24);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label22);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.tbHouseName);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbHouseResources);
+            this.ClientSize = new System.Drawing.Size(674, 455);
+            this.Controls.Add(this.lbPowCostNumber1);
+            this.Controls.Add(this.lbPowCost1);
+            this.Controls.Add(this.tbPowName1);
+            this.Controls.Add(this.lbPowName1);
+            this.Controls.Add(this.rtbPowNotes1);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.lbPowDiscip1);
+            this.Controls.Add(this.nudPowDis);
+            this.Controls.Add(this.nudPowHea1);
+            this.Controls.Add(this.lbPowDiscipText1);
+            this.Controls.Add(this.lbPowDef1);
+            this.Controls.Add(this.lbPowMov1);
+            this.Controls.Add(this.lbPowStats31);
+            this.Controls.Add(this.cbPowTraining1);
+            this.Controls.Add(this.lbPowTraining1);
+            this.Controls.Add(this.lbPowTypeText1);
+            this.Controls.Add(this.lbPowType1);
+            this.Controls.Add(this.lbPowWil1);
+            this.Controls.Add(this.lbPowWar1);
+            this.Controls.Add(this.lbPowThi1);
+            this.Controls.Add(this.lbPowSur1);
+            this.Controls.Add(this.lbPowKno1);
+            this.Controls.Add(this.lbPowMar1);
+            this.Controls.Add(this.lbPowPer1);
+            this.Controls.Add(this.lbPowSta1);
+            this.Controls.Add(this.lbPowSte1);
+            this.Controls.Add(this.lbPowLan1);
+            this.Controls.Add(this.lbPowHea1);
+            this.Controls.Add(this.lbPowFig1);
+            this.Controls.Add(this.lbPowEnd1);
+            this.Controls.Add(this.lbPowAgi1);
+            this.Controls.Add(this.lbPowAni1);
+            this.Controls.Add(this.lbPowAth1);
+            this.Controls.Add(this.lbPowAwa1);
+            this.Controls.Add(this.lbPowCun1);
+            this.Controls.Add(this.lbPowStats21);
+            this.Controls.Add(this.lbPowStats11);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PowerHolForm";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.PowerHolForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudPowHea1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPowDis)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,38 +540,43 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbHouseResources;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox tbHouseName;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox cbHouseRealm;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label lbPowStats11;
+        private System.Windows.Forms.Label lbPowStats21;
+        private System.Windows.Forms.Label lbPowCun1;
+        private System.Windows.Forms.Label lbPowAwa1;
+        private System.Windows.Forms.Label lbPowAth1;
+        private System.Windows.Forms.Label lbPowAni1;
+        private System.Windows.Forms.Label lbPowAgi1;
+        private System.Windows.Forms.Label lbPowEnd1;
+        private System.Windows.Forms.Label lbPowFig1;
+        private System.Windows.Forms.Label lbPowHea1;
+        private System.Windows.Forms.Label lbPowLan1;
+        private System.Windows.Forms.Label lbPowWil1;
+        private System.Windows.Forms.Label lbPowWar1;
+        private System.Windows.Forms.Label lbPowThi1;
+        private System.Windows.Forms.Label lbPowSur1;
+        private System.Windows.Forms.Label lbPowKno1;
+        private System.Windows.Forms.Label lbPowMar1;
+        private System.Windows.Forms.Label lbPowPer1;
+        private System.Windows.Forms.Label lbPowSta1;
+        private System.Windows.Forms.Label lbPowSte1;
+        private System.Windows.Forms.Label lbPowName1;
+        private System.Windows.Forms.TextBox tbPowName1;
+        private System.Windows.Forms.Label lbPowCost1;
+        private System.Windows.Forms.Label lbPowCostNumber1;
+        private System.Windows.Forms.Label lbPowType1;
+        private System.Windows.Forms.Label lbPowTypeText1;
+        private System.Windows.Forms.Label lbPowTraining1;
+        private System.Windows.Forms.ComboBox cbPowTraining1;
+        private System.Windows.Forms.Label lbPowStats31;
+        private System.Windows.Forms.Label lbPowMov1;
+        private System.Windows.Forms.Label lbPowDef1;
+        private System.Windows.Forms.Label lbPowDiscipText1;
+        private System.Windows.Forms.RichTextBox rtbPowNotes1;
+        private System.Windows.Forms.NumericUpDown nudPowHea1;
+        private System.Windows.Forms.NumericUpDown nudPowDis;
+        private System.Windows.Forms.Label lbPowDiscip1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

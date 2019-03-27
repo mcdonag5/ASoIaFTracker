@@ -87,6 +87,7 @@ namespace WindowsFormsApp1
         {
             DevLogs("Updating resources start");
             DbReturn("SELECT * FROM `tbl_House` WHERE hou_ID = '" + ID + "'", "house detail");
+            dgHouseDetails.Enabled = false;
             houseID = ID;
             tbHouseName.Text = dgHouseDetails.Rows[0].Cells[1].Value.ToString();
             tbHouseSeatOfPower.Text = dgHouseDetails.Rows[0].Cells[4].Value.ToString();
@@ -274,6 +275,7 @@ namespace WindowsFormsApp1
             lbHouPopMod.Text = HousePopModifier(houPop);
             lbHouLawMod.Text = HouseLawModifier(houLaw);
             dgHouseDetails.Visible = false;
+            dgHouseDetails.Enabled = true;
             DevLogs("Updating end");
         }
 
@@ -427,6 +429,8 @@ namespace WindowsFormsApp1
             DbReturn("SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` FROM `tbl_House`; ", "house detail");
             Size size = new Size(1108, 559);
             dgHouseDetails.Size = size;
+            LandsHolForm landsForm = new LandsHolForm();
+            landsForm.ShowDialog();
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void DevLogToolStripMenuItem_Click(object sender, EventArgs e)
