@@ -49,9 +49,12 @@ namespace WindowsFormsApp1
         ///// METHODS START ////////////////////////////////////////////////////////
         public HouseViewForm(int ID)
         {
+            mysqlConn.DbConfig(); //sets database settings
+            mysqlConn.Connect();
             DevLog.LogItem("Opened House View From with ID: " + ID);
             houseID = ID;
             InitializeComponent();
+            UpdateHouse();
         }
 
         public void DbReturn(string returnWhat, string dataGrid)
@@ -241,14 +244,12 @@ namespace WindowsFormsApp1
             }
             DevLog.LogItem("Setting spare resources");
             //set labels
-            lbHouseSpare.Text = "Current" + Environment.NewLine +
-                houWea + Environment.NewLine +
-                houPow + Environment.NewLine +
-                houPop + Environment.NewLine +
-                Environment.NewLine +
-                houLan + Environment.NewLine +
-                houInf + Environment.NewLine +
-                houDef;
+            lbSpareWeaText.Text = houWea.ToString();
+            lbSparePowText.Text = houPow.ToString();
+            lbSparePopText.Text = houPop.ToString();
+            lbSpareLanText.Text = houLan.ToString();
+            lbSpareInfText.Text = houInf.ToString();
+            lbSpareDefText.Text = houDef.ToString();
             DevLog.LogItem("Setting Gain and Loss");
             lbHFText.Text = houHF.ToString(); lbHFGainDice.Text = BounusDiceCal(houHF);
             lbWeaGainText.Text = houWeaGain.ToString(); lbWeaGainDice.Text = BounusDiceCal(houWeaGain);
@@ -265,11 +266,9 @@ namespace WindowsFormsApp1
             lbLanLossText.Text = houLanLoss.ToString(); lbLanLossDice.Text = BounusDiceCal(houLanLoss);
             lbInfLossText.Text = houInfLoss.ToString(); lbInfLossDice.Text = BounusDiceCal(houInfLoss);
             lbDefLossText.Text = houDefLoss.ToString(); lbDefLossDice.Text = BounusDiceCal(houDefLoss);
-            
-            lbHouPopMod.Text = HousePopModifier(houPop);
-            lbHouLawMod.Text = HouseLawModifier(houLaw);
-            dgHouseDetails.Visible = false;
-            dgHouseDetails.Enabled = true;
+
+            lbModifierPopText.Text = HouseModifier(Convert.ToInt32(lbTotalPopText.Text), PopModifierArry);
+            lbModifierLawText.Text = HouseModifier(Convert.ToInt32(lbTotalLawText.Text), LawModifierArry);
             DevLog.LogItem("Updating end");
         }
 
@@ -354,6 +353,29 @@ namespace WindowsFormsApp1
             else if (bounus >= 2 && bounus <= 3) { text = "1d3"; }
             else { text = Math.Ceiling(bounus / 6).ToString() + "d6"; }
             return text;
+        }
+
+        public string HouseModifier(int stat,int[,] array)
+        {
+            string text = "";
+            int modifier = 0;
+            for (int i = 0; i < LawModifierArry.GetLength(0); i++)
+            {
+                if (Between(stat, array[i, 0], array[i, 1])) { modifier = array[i, 2]; }
+            }
+            if (modifier > 0) { text += "+"; }
+            else if (modifier < 0)
+            {
+                modifier += houLawMit;
+                if (modifier > 0) { modifier = 0; }
+            }
+            text += modifier.ToString();
+            return text;
+        }
+        public bool Between(int x, int y, int z)
+        {
+            if (x >= y && x <= z) { return true; }
+            else { return false; }
         }
     }
 }
