@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
 
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
+        DevLog DevLog = new DevLog();
         public int houseID;
         public int houWea;
         public int houPow;
@@ -53,15 +54,11 @@ namespace WindowsFormsApp1
 
         ///// METHODS START ////////////////////////////////////////////////////////
 
-        public void DevLogs(string logItem)
-        {//Write development log to DevLog
-            using (StreamWriter devlog = new StreamWriter("DevLog.txt", append: true))
-            { devlog.WriteLine(DateTime.Now + " --- " + logItem); }//Concat current time and logItem and write to DevLog file
-        }
+        
 
         public void DbReturn(string returnWhat, string dataGrid)
         {//makes a query to the database
-            DevLogs(returnWhat + " sql run to " + dataGrid);
+            DevLog.LogItem(returnWhat + " sql run to " + dataGrid);
             if (mysqlConn.ConnOpen() == true)
             {
                 switch (dataGrid)
@@ -85,7 +82,7 @@ namespace WindowsFormsApp1
 
         public void UpdateHouse(int ID)
         {
-            DevLogs("Updating resources start");
+            DevLog.LogItem("Updating resources start");
             DbReturn("SELECT * FROM `tbl_House` WHERE hou_ID = '" + ID + "'", "house detail");
             dgHouseDetails.Enabled = false;
             houseID = ID;
@@ -134,7 +131,7 @@ namespace WindowsFormsApp1
                 houInf + Environment.NewLine +
                 houDef;
             //Power table
-            DevLogs("Getting units");
+            DevLog.LogItem("Getting units");
             DbReturn("SELECT `tbl_PowerHolding`.*, `tbl_UnitType`.`Uni_ID`, `tbl_UnitType`.* FROM `tbl_PowerHolding`, `tbl_UnitType` WHERE `tbl_PowerHolding`.`Hou_ID` = '" + ID + "' AND `tbl_UnitType`.`Uni_ID` = `tbl_PowerHolding`.`Uni_ID`; ", "house detail");
             for ( int i = 0; i < dgHouseDetails.RowCount; i++)
             {//Main table 
@@ -154,14 +151,14 @@ namespace WindowsFormsApp1
                         traningCost = 7;
                         break;
                     default:
-                        DevLogs("Traning cost error: " + dgHouseDetails.Rows[i].Cells[4].Value);
+                        DevLog.LogItem("Traning cost error: " + dgHouseDetails.Rows[i].Cells[4].Value);
                         break;
                 }
                 houPow -= (Convert.ToInt32(dgHouseDetails.Rows[i].Cells[32].Value) + traningCost) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[5].Value);
 
                 lbHouPowHolList.Text += dgHouseDetails.Rows[i].Cells[4].Value.ToString() + " " + dgHouseDetails.Rows[i].Cells[31].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[3].Value.ToString() + Environment.NewLine;
             }
-            DevLogs("Getting Banners");
+            DevLog.LogItem("Getting Banners");
             //Banner Table
             DbReturn("SELECT `tbl_Banner`.`HouLie_ID`, `tbl_House`.* FROM `tbl_Banner`, `tbl_House` WHERE `tbl_Banner`.`HouLie_ID` = '" + ID + "' AND `tbl_House`.`Hou_ID` = `tbl_Banner`.`HouBan_ID`; ", "house detail");
             for (int i = 0; i < dgHouseDetails.RowCount; i ++)
@@ -174,11 +171,11 @@ namespace WindowsFormsApp1
 
 
             //Influence table
-            DevLogs("Getting Influence Holdings");
+            DevLog.LogItem("Getting Influence Holdings");
             DbReturn("SELECT `tbl_InfluenceHoldings`.`Hou_ID`, `tbl_InfluenceHoldings`.*, `tbl_Influence`.`Inf_ID`, `tbl_Influence`.* FROM `tbl_InfluenceHoldings`, `tbl_Influence` WHERE `tbl_InfluenceHoldings`.`Hou_ID` = '" + ID + "' AND `tbl_Influence`.`Inf_ID` = `tbl_InfluenceHoldings`.`Inf_ID`;", "house detail");
             for (int i = 0; i < dgHouseDetails.RowCount; i++)
             {//Main table
-                houInf -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[11].Value) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[7].Value); DevLogs("houInf: " + houInf);
+                houInf -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[11].Value) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[7].Value); DevLog.LogItem("houInf: " + houInf);
                 houDefGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[14].Value);
                 houInfGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[15].Value);
                 houLanGain += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[16].Value);
@@ -199,7 +196,7 @@ namespace WindowsFormsApp1
             }
 
             //Land table
-            DevLogs("Getting land holdings");
+            DevLog.LogItem("Getting land holdings");
             DbReturn("SELECT `tbl_LandHolding`.`Hou_ID`, `tbl_LandHolding`.*, `tbl_Land`.`Lan_ID`, `tbl_Land`.* FROM `tbl_LandHolding`, `tbl_Land` WHERE `tbl_LandHolding`.`Hou_ID` = '" + ID + "' AND `tbl_Land`.`Lan_ID` = `tbl_LandHolding`.`Lan_ID`; ", "house detail");
             for (int i = 0; i < dgHouseDetails.RowCount; i++)
             {
@@ -246,7 +243,7 @@ namespace WindowsFormsApp1
                 }
 
             }
-            DevLogs("Setting spare resources");
+            DevLog.LogItem("Setting spare resources");
             //set labels
             lbHouseSpare.Text = "Current" + Environment.NewLine +
                 houWea + Environment.NewLine +
@@ -256,7 +253,7 @@ namespace WindowsFormsApp1
                 houLan + Environment.NewLine +
                 houInf + Environment.NewLine +
                 houDef;
-            DevLogs("Setting Gain and Loss");
+            DevLog.LogItem("Setting Gain and Loss");
             lbHouseHF.Text = "HF" + Environment.NewLine + houHF + Environment.NewLine + BounusCal(houHF);
             lbHouseWeaGain.Text = "WEA" + Environment.NewLine + houWeaGain + Environment.NewLine + BounusCal(houWeaGain);
             lbHousePowGain.Text = "POW" + Environment.NewLine + houPowGain + Environment.NewLine + BounusCal(houPowGain);
@@ -276,12 +273,12 @@ namespace WindowsFormsApp1
             lbHouLawMod.Text = HouseLawModifier(houLaw);
             dgHouseDetails.Visible = false;
             dgHouseDetails.Enabled = true;
-            DevLogs("Updating end");
+            DevLog.LogItem("Updating end");
         }
 
         public void CheckWealthHolding(string place, int ID,int space,string indent)
         {
-            DevLogs("Getting Wealth Holdings");
+            DevLog.LogItem("Getting Wealth Holdings");
             DbReturn("SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* FROM `tbl_WealthHolding`, `tbl_Wealth` WHERE `tbl_WealthHolding`.`"+place+"` = '" +ID+ "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID` AND `tbl_Wealth`.`Wea_TakesSpace` = '"+space+"'; ", "2");
             for (int n = 0; n < dgCal2.RowCount - 1; n++)
             {
@@ -362,7 +359,7 @@ namespace WindowsFormsApp1
 
         public void ResetViewHouse(string player)
         {
-            DevLogs("Reset House and view " + player + " Houses");
+            DevLog.LogItem("Reset House and view " + player + " Houses");
             dgHouseDetails.Visible = true;
             lbHouInfHolList.Text = "";
             lbHouLanHolList.Text = "";
@@ -423,7 +420,7 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             File.WriteAllText("DevLog.txt", String.Empty);//Clear contents of DevLog
-            DevLogs("Program started");
+            DevLog.LogItem("Program started");
             mysqlConn.DbConfig(); //sets database settings
             mysqlConn.Connect();
             DbReturn("SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` FROM `tbl_House`; ", "house detail");
@@ -435,20 +432,20 @@ namespace WindowsFormsApp1
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void DevLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form devForm = new Form {Text = "DevLogs"};
-            RichTextBox rtbDevLogs = new RichTextBox();
-            Timer timerRefreshDevLogs = new Timer {Interval = 2500};
-            timerRefreshDevLogs.Tick += new EventHandler(devRefreshTimer_Tick);
-            timerRefreshDevLogs.Start();
-            rtbDevLogs.Location = new Point(0, 0);
-            rtbDevLogs.Size = new Size(300, 380);
-            rtbDevLogs.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+            Form devForm = new Form {Text = "DevLog.LogItem"};
+            RichTextBox rtbDevLog.LogItem = new RichTextBox();
+            Timer timerRefreshDevLog.LogItem = new Timer {Interval = 2500};
+            timerRefreshDevLog.LogItem.Tick += new EventHandler(devRefreshTimer_Tick);
+            timerRefreshDevLog.LogItem.Start();
+            rtbDevLog.LogItem.Location = new Point(0, 0);
+            rtbDevLog.LogItem.Size = new Size(300, 380);
+            rtbDevLog.LogItem.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
             devForm.Size = new Size(300, 400);
-            devForm.Controls.Add(rtbDevLogs);
-            DevLogs("devlogs viewed");
+            devForm.Controls.Add(rtbDevLog.LogItem);
+            DevLog.LogItem("DevLog.LogItem viewed");
             void devRefreshTimer_Tick(object timer, EventArgs args)
             {
-                rtbDevLogs.Text = "";
+                rtbDevLog.LogItem.Text = "";
                 string line;
                 try
                 {
@@ -456,12 +453,12 @@ namespace WindowsFormsApp1
                     line = sr.ReadLine();
                     while (line != null)
                     {
-                        rtbDevLogs.Text += line + "\r\n";
+                        rtbDevLog.LogItem.Text += line + "\r\n";
                         line = sr.ReadLine();
                     }
                     sr.Close();
                 }
-                catch (Exception ex) { DevLogs("ex: " + ex); DevLogs("error reading devlogs"); }
+                catch (Exception ex) { DevLog.LogItem("ex: " + ex); DevLog.LogItem("error reading DevLog.LogItem"); }
             }
             devForm.Show();
         }

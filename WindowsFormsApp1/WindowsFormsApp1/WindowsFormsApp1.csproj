@@ -59,7 +59,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DevLog.cs" />
     <Compile Include="dbConn.cs" />
+    <Compile Include="HouseViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HouseViewForm.Designer.cs">
+      <DependentUpon>HouseViewForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LandsHolForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HouseViewForm.resx">
+      <DependentUpon>HouseViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LandsHolForm.resx">
       <DependentUpon>LandsHolForm.cs</DependentUpon>
     </EmbeddedResource>
