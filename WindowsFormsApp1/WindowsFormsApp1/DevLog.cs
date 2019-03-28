@@ -20,20 +20,22 @@ namespace WindowsFormsApp1
         }
         public void OpenLog()
         {
-            Form devForm = new Form { Text = "DevLog.LogItem" };
-            RichTextBox rtbDevLog.DevLog = new RichTextBox();
-            Timer timerRefreshDevLog.DevLog = new Timer { Interval = 2500 };
-            timerRefreshDevLog.LogItem.Tick += new EventHandler(devRefreshTimer_Tick);
-            timerRefreshDevLog.LogItem.Start();
-            rtbDevLog.LogItem.Location = new Point(0, 0);
-            rtbDevLog.LogItem.Size = new Size(300, 380);
-            rtbDevLog.LogItem.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
+            Form devForm = new Form();
+            devForm.Text = "DevLogs";
+            RichTextBox rtbDevLogs = new RichTextBox();
+            Timer timerRefreshDevLogs = new Timer();
+            timerRefreshDevLogs.Interval = 2500;
+            timerRefreshDevLogs.Tick += new EventHandler(devRefreshTimer_Tick);
+            timerRefreshDevLogs.Start();
+            rtbDevLogs.Location = new Point(0, 0);
+            rtbDevLogs.Size = new Size(300, 380);
+            rtbDevLogs.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
             devForm.Size = new Size(300, 400);
-            devForm.Controls.Add(rtbDevLog.LogItem);
-            DevLog.LogItem("DevLog.LogItem viewed");
+            devForm.Controls.Add(rtbDevLogs);
+            LogItem("devlogs viewed");
             void devRefreshTimer_Tick(object timer, EventArgs args)
             {
-                rtbDevLog.LogItem.Text = "";
+                rtbDevLogs.Text = "";
                 string line;
                 try
                 {
@@ -41,12 +43,12 @@ namespace WindowsFormsApp1
                     line = sr.ReadLine();
                     while (line != null)
                     {
-                        rtbDevLog.LogItem.Text += line + "\r\n";
+                        rtbDevLogs.Text += line + "\r\n";
                         line = sr.ReadLine();
                     }
                     sr.Close();
                 }
-                catch (Exception ex) { DevLog.LogItem("ex: " + ex); DevLog.LogItem("error reading DevLog.LogItem"); }
+                catch (Exception ex) { LogItem("ex: " + ex); LogItem("error reading devlogs"); }
             }
             devForm.Show();
         }

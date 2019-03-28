@@ -155,7 +155,7 @@
             // 
             this.tbHouseName.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHouseName.Location = new System.Drawing.Point(109, 54);
-            this.tbHouseName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbHouseName.Margin = new System.Windows.Forms.Padding(4);
             this.tbHouseName.Name = "tbHouseName";
             this.tbHouseName.Size = new System.Drawing.Size(424, 34);
             this.tbHouseName.TabIndex = 5;
@@ -164,7 +164,7 @@
             // 
             this.tbHouseSeatOfPower.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHouseSeatOfPower.Location = new System.Drawing.Point(776, 54);
-            this.tbHouseSeatOfPower.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbHouseSeatOfPower.Margin = new System.Windows.Forms.Padding(4);
             this.tbHouseSeatOfPower.Name = "tbHouseSeatOfPower";
             this.tbHouseSeatOfPower.Size = new System.Drawing.Size(453, 34);
             this.tbHouseSeatOfPower.TabIndex = 6;
@@ -173,7 +173,7 @@
             // 
             this.tbHouseLiege.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHouseLiege.Location = new System.Drawing.Point(1083, 105);
-            this.tbHouseLiege.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbHouseLiege.Margin = new System.Windows.Forms.Padding(4);
             this.tbHouseLiege.Name = "tbHouseLiege";
             this.tbHouseLiege.Size = new System.Drawing.Size(373, 34);
             this.tbHouseLiege.TabIndex = 7;
@@ -197,7 +197,7 @@
             "Dorne",
             "The Wall"});
             this.cbHouseRealm.Location = new System.Drawing.Point(109, 102);
-            this.cbHouseRealm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbHouseRealm.Margin = new System.Windows.Forms.Padding(4);
             this.cbHouseRealm.Name = "cbHouseRealm";
             this.cbHouseRealm.Size = new System.Drawing.Size(389, 37);
             this.cbHouseRealm.TabIndex = 8;
@@ -206,7 +206,7 @@
             // 
             this.tbHouseLiegeLord.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHouseLiegeLord.Location = new System.Drawing.Point(659, 105);
-            this.tbHouseLiegeLord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbHouseLiegeLord.Margin = new System.Windows.Forms.Padding(4);
             this.tbHouseLiegeLord.Name = "tbHouseLiegeLord";
             this.tbHouseLiegeLord.Size = new System.Drawing.Size(315, 34);
             this.tbHouseLiegeLord.TabIndex = 9;
@@ -272,8 +272,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgHouseDetails.Location = new System.Drawing.Point(109, 124);
-            this.dgHouseDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgHouseDetails.Location = new System.Drawing.Point(235, 136);
+            this.dgHouseDetails.Margin = new System.Windows.Forms.Padding(4);
             this.dgHouseDetails.Name = "dgHouseDetails";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -292,7 +292,7 @@
             // 
             this.dgCal1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCal1.Location = new System.Drawing.Point(1485, 217);
-            this.dgCal1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgCal1.Margin = new System.Windows.Forms.Padding(4);
             this.dgCal1.Name = "dgCal1";
             this.dgCal1.Size = new System.Drawing.Size(320, 185);
             this.dgCal1.TabIndex = 14;
@@ -326,7 +326,6 @@
             this.devLogToolStripMenuItem.Name = "devLogToolStripMenuItem";
             this.devLogToolStripMenuItem.Size = new System.Drawing.Size(135, 26);
             this.devLogToolStripMenuItem.Text = "DevLog";
-            this.devLogToolStripMenuItem.Click += new System.EventHandler(this.DevLogToolStripMenuItem_Click);
             // 
             // tsddViewHouse
             // 
@@ -518,7 +517,7 @@
             // 
             this.dgCal2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCal2.Location = new System.Drawing.Point(1485, 409);
-            this.dgCal2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgCal2.Margin = new System.Windows.Forms.Padding(4);
             this.dgCal2.Name = "dgCal2";
             this.dgCal2.Size = new System.Drawing.Size(320, 185);
             this.dgCal2.TabIndex = 28;
@@ -528,7 +527,7 @@
             // 
             this.dgCal3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCal3.Location = new System.Drawing.Point(1485, 601);
-            this.dgCal3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgCal3.Margin = new System.Windows.Forms.Padding(4);
             this.dgCal3.Name = "dgCal3";
             this.dgCal3.Size = new System.Drawing.Size(320, 185);
             this.dgCal3.TabIndex = 29;
@@ -778,7 +777,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1367, 795);
+            this.ClientSize = new System.Drawing.Size(1535, 795);
             this.Controls.Add(this.dgHouseDetails);
             this.Controls.Add(this.tbHouLanView);
             this.Controls.Add(this.tbHouBanView);
@@ -829,7 +828,7 @@
             this.Controls.Add(this.lbHouLawMod);
             this.Controls.Add(this.lbHouPopMod);
             this.Controls.Add(this.lbHouMod);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.Text = "ASoIaF Tracker";
             this.Load += new System.EventHandler(this.Form1_Load);

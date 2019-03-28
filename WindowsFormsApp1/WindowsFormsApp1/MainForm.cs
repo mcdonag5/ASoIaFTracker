@@ -426,42 +426,10 @@ namespace WindowsFormsApp1
             DbReturn("SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` FROM `tbl_House`; ", "house detail");
             Size size = new Size(1108, 559);
             dgHouseDetails.Size = size;
-            LandsHolForm landsForm = new LandsHolForm();
-            landsForm.ShowDialog();
+            HouseViewForm houseForm = new HouseViewForm(1);
+            houseForm.ShowDialog();
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
-        private void DevLogToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form devForm = new Form {Text = "DevLog.LogItem"};
-            RichTextBox rtbDevLog.LogItem = new RichTextBox();
-            Timer timerRefreshDevLog.LogItem = new Timer {Interval = 2500};
-            timerRefreshDevLog.LogItem.Tick += new EventHandler(devRefreshTimer_Tick);
-            timerRefreshDevLog.LogItem.Start();
-            rtbDevLog.LogItem.Location = new Point(0, 0);
-            rtbDevLog.LogItem.Size = new Size(300, 380);
-            rtbDevLog.LogItem.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-            devForm.Size = new Size(300, 400);
-            devForm.Controls.Add(rtbDevLog.LogItem);
-            DevLog.LogItem("DevLog.LogItem viewed");
-            void devRefreshTimer_Tick(object timer, EventArgs args)
-            {
-                rtbDevLog.LogItem.Text = "";
-                string line;
-                try
-                {
-                    StreamReader sr = new StreamReader("DevLog.txt");
-                    line = sr.ReadLine();
-                    while (line != null)
-                    {
-                        rtbDevLog.LogItem.Text += line + "\r\n";
-                        line = sr.ReadLine();
-                    }
-                    sr.Close();
-                }
-                catch (Exception ex) { DevLog.LogItem("ex: " + ex); DevLog.LogItem("error reading DevLog.LogItem"); }
-            }
-            devForm.Show();
-        }
 
         private void DgHouseDetails_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
