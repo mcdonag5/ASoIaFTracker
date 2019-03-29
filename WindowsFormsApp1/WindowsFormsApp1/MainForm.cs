@@ -135,10 +135,6 @@ namespace WindowsFormsApp1
             mysqlConn.DbConfig(); //sets database settings
             mysqlConn.Connect();
             DbReturn("SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` FROM `tbl_House`; ", "house detail");
-            Size size = new Size(1108, 559);
-            dgHouseDetails.Size = size;
-            //HouseViewForm houseForm = new HouseViewForm(1);
-            //houseForm.ShowDialog();
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
 
@@ -167,19 +163,41 @@ namespace WindowsFormsApp1
             //        break;
             //}
         }
-        private void NPCToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void AllHousesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetViewHouse("NPC");
         }
 
-        private void RossToolStripMenuItem_Click(object sender, EventArgs e)
+        private void playersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetViewHouse("Ross");
         }
 
-        private void AllHousesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void kyleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResetViewHouse("Kyle");
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
             ResetViewHouse("all");
+        }
+
+        private void devLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DevLog.OpenLog();
+        }
+
+        private void tsbMenuDevLog(object sender, EventArgs e)
+        {
+            DevLog.OpenLog();
+        }
+
+        private void tsbCreateHouse_Click(object sender, EventArgs e)
+        {
+            CreateHouseForm createHouseForm = new CreateHouseForm();
+            createHouseForm.ShowDialog();
         }
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

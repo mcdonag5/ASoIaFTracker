@@ -47,15 +47,6 @@ namespace WindowsFormsApp1
         
 
         ///// METHODS START ////////////////////////////////////////////////////////
-        public HouseViewForm(int ID)
-        {
-            mysqlConn.DbConfig(); //sets database settings
-            mysqlConn.Connect();
-            DevLog.LogItem("Opened House View From with ID: " + ID);
-            houseID = ID;
-            InitializeComponent();
-            UpdateHouse();
-        }
 
         public void DbReturn(string returnWhat, string dataGrid)
         {//makes a query to the database
@@ -262,7 +253,7 @@ namespace WindowsFormsApp1
             lbWeaLossText.Text = houWeaLoss.ToString(); lbWeaLossDice.Text = BounusDiceCal(houWeaLoss);
             lbPowLossText.Text = houPowLoss.ToString(); lbPowLossDice.Text = BounusDiceCal(houPowLoss);
             lbPopLossText.Text = houPopLoss.ToString(); lbPopLossDice.Text = BounusDiceCal(houPopLoss);
-            lbLawLossText.Text = houLanLoss.ToString(); lbLawLossDice.Text = BounusDiceCal(houLawLoss);
+            lbLawLossText.Text = houLawLoss.ToString(); lbLawLossDice.Text = BounusDiceCal(houLawLoss);
             lbLanLossText.Text = houLanLoss.ToString(); lbLanLossDice.Text = BounusDiceCal(houLanLoss);
             lbInfLossText.Text = houInfLoss.ToString(); lbInfLossDice.Text = BounusDiceCal(houInfLoss);
             lbDefLossText.Text = houDefLoss.ToString(); lbDefLossDice.Text = BounusDiceCal(houDefLoss);
@@ -377,5 +368,23 @@ namespace WindowsFormsApp1
             if (x >= y && x <= z) { return true; }
             else { return false; }
         }
+
+        ///// METHODS END //////////////////////////////////////////////////////////
+        public HouseViewForm(int ID)
+        {
+            houseID = ID;
+            DevLog.LogItem("Opened House View From with ID: " + ID);
+            InitializeComponent();
+            
+        }
+
+        private void HouseViewForm_Load(object sender, EventArgs e)
+        {
+            mysqlConn.DbConfig(); //sets database settings
+            mysqlConn.Connect();
+            UpdateHouse();
+        }
+        ///// EVENTS START //////////////////////////////////////////////////////////
+
     }
 }

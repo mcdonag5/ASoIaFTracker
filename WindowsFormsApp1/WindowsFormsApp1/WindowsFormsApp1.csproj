@@ -61,6 +61,12 @@
   <ItemGroup>
     <Compile Include="DevLog.cs" />
     <Compile Include="dbConn.cs" />
+    <Compile Include="CreateHouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateHouseForm.Designer.cs">
+      <DependentUpon>CreateHouseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="HouseViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateHouseForm.resx">
+      <DependentUpon>CreateHouseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HouseViewForm.resx">
       <DependentUpon>HouseViewForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +116,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -121,6 +131,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\Arryn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\Baratheon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\Greyjoy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\Lannister.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\Martell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\Stark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\Targaryen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\Tully.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\Tyrell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HouseShield\NightsWatch.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
