@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHouseHeadings = new System.Windows.Forms.TableLayoutPanel();
@@ -167,7 +167,7 @@
             this.tlpMain.Controls.Add(this.tlpHouseDetails, 0, 1);
             this.tlpMain.Controls.Add(this.tableLayoutPanel1, 0, 2);
             this.tlpMain.Location = new System.Drawing.Point(0, 23);
-            this.tlpMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMain.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.tlpMain.RowCount = 3;
@@ -200,7 +200,7 @@
             this.tlpHouseHeadings.Controls.Add(this.lbSeatOfPower, 3, 0);
             this.tlpHouseHeadings.Controls.Add(this.cbRealm, 1, 1);
             this.tlpHouseHeadings.Location = new System.Drawing.Point(2, 10);
-            this.tlpHouseHeadings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpHouseHeadings.Margin = new System.Windows.Forms.Padding(2);
             this.tlpHouseHeadings.Name = "tlpHouseHeadings";
             this.tlpHouseHeadings.RowCount = 2;
             this.tlpHouseHeadings.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -448,9 +448,9 @@
             this.tlpHouseDetails.Controls.Add(this.lbTotalInfText, 1, 6);
             this.tlpHouseDetails.Controls.Add(this.lbTotalDefText, 1, 7);
             this.tlpHouseDetails.Location = new System.Drawing.Point(2, 95);
-            this.tlpHouseDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpHouseDetails.Margin = new System.Windows.Forms.Padding(2);
             this.tlpHouseDetails.Name = "tlpHouseDetails";
-            this.tlpHouseDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpHouseDetails.Padding = new System.Windows.Forms.Padding(4);
             this.tlpHouseDetails.RowCount = 8;
             this.tlpHouseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpHouseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1546,7 +1546,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lbLanHolList, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbBanList, 6, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 298);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1595,7 +1595,7 @@
             // 
             this.tbHouLanView.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbHouLanView.Location = new System.Drawing.Point(163, 2);
-            this.tbHouLanView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbHouLanView.Margin = new System.Windows.Forms.Padding(2);
             this.tbHouLanView.Name = "tbHouLanView";
             this.tbHouLanView.Size = new System.Drawing.Size(56, 24);
             this.tbHouLanView.TabIndex = 50;
@@ -1643,7 +1643,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(571, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 24);
             this.button1.TabIndex = 51;
@@ -1654,7 +1654,7 @@
             // 
             this.button2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(804, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 24);
             this.button2.TabIndex = 52;
@@ -1665,7 +1665,7 @@
             // 
             this.button3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(964, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(56, 24);
             this.button3.TabIndex = 53;
@@ -1707,35 +1707,35 @@
             this.dgHouseDetails.AllowUserToDeleteRows = false;
             this.dgHouseDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgHouseDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgHouseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgHouseDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgHouseDetails.Location = new System.Drawing.Point(1138, 358);
             this.dgHouseDetails.Name = "dgHouseDetails";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgHouseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgHouseDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgHouseDetails.Size = new System.Drawing.Size(38, 32);
             this.dgHouseDetails.TabIndex = 14;
@@ -1779,7 +1779,7 @@
             this.Controls.Add(this.dgHouseDetails);
             this.Controls.Add(this.tlpMain);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HouseViewForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.HouseViewForm_Load);
