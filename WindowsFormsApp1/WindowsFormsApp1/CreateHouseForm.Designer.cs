@@ -46,6 +46,7 @@
             this.tlpHouseDetails = new System.Windows.Forms.TableLayoutPanel();
             this.lbTotalDefText = new System.Windows.Forms.Label();
             this.lbTotalInfText = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.lbTotalWeaText = new System.Windows.Forms.Label();
             this.lbHistoryWeaText = new System.Windows.Forms.Label();
             this.lbHistoryPopText = new System.Windows.Forms.Label();
@@ -84,9 +85,14 @@
             this.lbTotalPopText = new System.Windows.Forms.Label();
             this.lbTotalLanText = new System.Windows.Forms.Label();
             this.lbTotalLawText = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dgCal1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.dgCal1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.tlpMain.SuspendLayout();
             this.tlpHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHouseShield)).BeginInit();
@@ -316,14 +322,24 @@
             this.tlpHouseDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpHouseDetails.ColumnCount = 7;
+            this.tlpHouseDetails.ColumnCount = 12;
             this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 509F));
-            this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpHouseDetails.Controls.Add(this.textBox2, 10, 0);
+            this.tlpHouseDetails.Controls.Add(this.label3, 9, 0);
+            this.tlpHouseDetails.Controls.Add(this.label2, 8, 0);
+            this.tlpHouseDetails.Controls.Add(this.textBox1, 7, 0);
+            this.tlpHouseDetails.Controls.Add(this.label1, 6, 0);
             this.tlpHouseDetails.Controls.Add(this.lbTotalDefText, 4, 7);
             this.tlpHouseDetails.Controls.Add(this.lbTotalInfText, 4, 6);
             this.tlpHouseDetails.Controls.Add(this.button1, 0, 8);
@@ -366,6 +382,7 @@
             this.tlpHouseDetails.Controls.Add(this.lbTotalLanText, 4, 5);
             this.tlpHouseDetails.Controls.Add(this.lbTotalLawText, 4, 4);
             this.tlpHouseDetails.Controls.Add(this.button2, 1, 8);
+            this.tlpHouseDetails.Controls.Add(this.button3, 11, 0);
             this.tlpHouseDetails.Location = new System.Drawing.Point(2, 262);
             this.tlpHouseDetails.Margin = new System.Windows.Forms.Padding(2);
             this.tlpHouseDetails.Name = "tlpHouseDetails";
@@ -390,7 +407,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalDefText.AutoSize = true;
             this.lbTotalDefText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalDefText.Location = new System.Drawing.Point(328, 231);
+            this.lbTotalDefText.Location = new System.Drawing.Point(328, 242);
             this.lbTotalDefText.Name = "lbTotalDefText";
             this.lbTotalDefText.Size = new System.Drawing.Size(54, 34);
             this.lbTotalDefText.TabIndex = 13;
@@ -404,12 +421,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalInfText.AutoSize = true;
             this.lbTotalInfText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalInfText.Location = new System.Drawing.Point(328, 197);
+            this.lbTotalInfText.Location = new System.Drawing.Point(328, 208);
             this.lbTotalInfText.Name = "lbTotalInfText";
             this.lbTotalInfText.Size = new System.Drawing.Size(54, 34);
             this.lbTotalInfText.TabIndex = 13;
             this.lbTotalInfText.Text = "000";
             this.lbTotalInfText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(66, 279);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 14);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "7d6";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbTotalWeaText
             // 
@@ -418,7 +446,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalWeaText.AutoSize = true;
             this.lbTotalWeaText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalWeaText.Location = new System.Drawing.Point(328, 27);
+            this.lbTotalWeaText.Location = new System.Drawing.Point(328, 38);
             this.lbTotalWeaText.Name = "lbTotalWeaText";
             this.lbTotalWeaText.Size = new System.Drawing.Size(54, 34);
             this.lbTotalWeaText.TabIndex = 13;
@@ -432,7 +460,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHistoryWeaText.AutoSize = true;
             this.lbHistoryWeaText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHistoryWeaText.Location = new System.Drawing.Point(249, 27);
+            this.lbHistoryWeaText.Location = new System.Drawing.Point(249, 38);
             this.lbHistoryWeaText.Name = "lbHistoryWeaText";
             this.lbHistoryWeaText.Size = new System.Drawing.Size(73, 34);
             this.lbHistoryWeaText.TabIndex = 13;
@@ -446,7 +474,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHistoryPopText.AutoSize = true;
             this.lbHistoryPopText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHistoryPopText.Location = new System.Drawing.Point(249, 95);
+            this.lbHistoryPopText.Location = new System.Drawing.Point(249, 106);
             this.lbHistoryPopText.Name = "lbHistoryPopText";
             this.lbHistoryPopText.Size = new System.Drawing.Size(73, 34);
             this.lbHistoryPopText.TabIndex = 13;
@@ -460,7 +488,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHistoryLawText.AutoSize = true;
             this.lbHistoryLawText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHistoryLawText.Location = new System.Drawing.Point(249, 129);
+            this.lbHistoryLawText.Location = new System.Drawing.Point(249, 140);
             this.lbHistoryLawText.Name = "lbHistoryLawText";
             this.lbHistoryLawText.Size = new System.Drawing.Size(73, 34);
             this.lbHistoryLawText.TabIndex = 13;
@@ -474,7 +502,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHistoryLanText.AutoSize = true;
             this.lbHistoryLanText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHistoryLanText.Location = new System.Drawing.Point(249, 163);
+            this.lbHistoryLanText.Location = new System.Drawing.Point(249, 174);
             this.lbHistoryLanText.Name = "lbHistoryLanText";
             this.lbHistoryLanText.Size = new System.Drawing.Size(73, 34);
             this.lbHistoryLanText.TabIndex = 13;
@@ -488,7 +516,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHistoryInfText.AutoSize = true;
             this.lbHistoryInfText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHistoryInfText.Location = new System.Drawing.Point(249, 197);
+            this.lbHistoryInfText.Location = new System.Drawing.Point(249, 208);
             this.lbHistoryInfText.Name = "lbHistoryInfText";
             this.lbHistoryInfText.Size = new System.Drawing.Size(73, 34);
             this.lbHistoryInfText.TabIndex = 13;
@@ -502,7 +530,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHistoryDefText.AutoSize = true;
             this.lbHistoryDefText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHistoryDefText.Location = new System.Drawing.Point(249, 231);
+            this.lbHistoryDefText.Location = new System.Drawing.Point(249, 242);
             this.lbHistoryDefText.Name = "lbHistoryDefText";
             this.lbHistoryDefText.Size = new System.Drawing.Size(73, 34);
             this.lbHistoryDefText.TabIndex = 13;
@@ -516,7 +544,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHistoryPowText.AutoSize = true;
             this.lbHistoryPowText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHistoryPowText.Location = new System.Drawing.Point(249, 61);
+            this.lbHistoryPowText.Location = new System.Drawing.Point(249, 72);
             this.lbHistoryPowText.Name = "lbHistoryPowText";
             this.lbHistoryPowText.Size = new System.Drawing.Size(73, 34);
             this.lbHistoryPowText.TabIndex = 13;
@@ -532,7 +560,7 @@
             this.lbTotal.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.Location = new System.Drawing.Point(328, 4);
             this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(54, 23);
+            this.lbTotal.Size = new System.Drawing.Size(54, 34);
             this.lbTotal.TabIndex = 13;
             this.lbTotal.Text = "Total";
             // 
@@ -543,7 +571,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbRealmDefText.AutoSize = true;
             this.lbRealmDefText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRealmDefText.Location = new System.Drawing.Point(179, 231);
+            this.lbRealmDefText.Location = new System.Drawing.Point(179, 242);
             this.lbRealmDefText.Name = "lbRealmDefText";
             this.lbRealmDefText.Size = new System.Drawing.Size(64, 34);
             this.lbRealmDefText.TabIndex = 12;
@@ -557,7 +585,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbRealmInfText.AutoSize = true;
             this.lbRealmInfText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRealmInfText.Location = new System.Drawing.Point(179, 197);
+            this.lbRealmInfText.Location = new System.Drawing.Point(179, 208);
             this.lbRealmInfText.Name = "lbRealmInfText";
             this.lbRealmInfText.Size = new System.Drawing.Size(64, 34);
             this.lbRealmInfText.TabIndex = 12;
@@ -571,7 +599,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbRealmLanText.AutoSize = true;
             this.lbRealmLanText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRealmLanText.Location = new System.Drawing.Point(179, 163);
+            this.lbRealmLanText.Location = new System.Drawing.Point(179, 174);
             this.lbRealmLanText.Name = "lbRealmLanText";
             this.lbRealmLanText.Size = new System.Drawing.Size(64, 34);
             this.lbRealmLanText.TabIndex = 12;
@@ -587,7 +615,7 @@
             this.lbRealmMod.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbRealmMod.Location = new System.Drawing.Point(179, 4);
             this.lbRealmMod.Name = "lbRealmMod";
-            this.lbRealmMod.Size = new System.Drawing.Size(64, 23);
+            this.lbRealmMod.Size = new System.Drawing.Size(64, 34);
             this.lbRealmMod.TabIndex = 11;
             this.lbRealmMod.Text = "Realm";
             // 
@@ -598,7 +626,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbRealmPopText.AutoSize = true;
             this.lbRealmPopText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRealmPopText.Location = new System.Drawing.Point(179, 95);
+            this.lbRealmPopText.Location = new System.Drawing.Point(179, 106);
             this.lbRealmPopText.Name = "lbRealmPopText";
             this.lbRealmPopText.Size = new System.Drawing.Size(64, 34);
             this.lbRealmPopText.TabIndex = 12;
@@ -612,7 +640,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbRealmWeaText.AutoSize = true;
             this.lbRealmWeaText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRealmWeaText.Location = new System.Drawing.Point(179, 27);
+            this.lbRealmWeaText.Location = new System.Drawing.Point(179, 38);
             this.lbRealmWeaText.Name = "lbRealmWeaText";
             this.lbRealmWeaText.Size = new System.Drawing.Size(64, 34);
             this.lbRealmWeaText.TabIndex = 12;
@@ -628,7 +656,7 @@
             this.lbBase.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBase.Location = new System.Drawing.Point(122, 4);
             this.lbBase.Name = "lbBase";
-            this.lbBase.Size = new System.Drawing.Size(51, 23);
+            this.lbBase.Size = new System.Drawing.Size(51, 34);
             this.lbBase.TabIndex = 10;
             this.lbBase.Text = "Base";
             this.lbBase.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -640,7 +668,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbDefense.AutoSize = true;
             this.lbDefense.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDefense.Location = new System.Drawing.Point(7, 231);
+            this.lbDefense.Location = new System.Drawing.Point(7, 242);
             this.lbDefense.Name = "lbDefense";
             this.lbDefense.Size = new System.Drawing.Size(109, 34);
             this.lbDefense.TabIndex = 15;
@@ -654,7 +682,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbInfluence.AutoSize = true;
             this.lbInfluence.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfluence.Location = new System.Drawing.Point(7, 197);
+            this.lbInfluence.Location = new System.Drawing.Point(7, 208);
             this.lbInfluence.Name = "lbInfluence";
             this.lbInfluence.Size = new System.Drawing.Size(109, 34);
             this.lbInfluence.TabIndex = 14;
@@ -670,7 +698,7 @@
             this.lbResources.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbResources.Location = new System.Drawing.Point(7, 4);
             this.lbResources.Name = "lbResources";
-            this.lbResources.Size = new System.Drawing.Size(109, 23);
+            this.lbResources.Size = new System.Drawing.Size(109, 34);
             this.lbResources.TabIndex = 8;
             this.lbResources.Text = "Resources";
             this.lbResources.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -682,7 +710,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbWealth.AutoSize = true;
             this.lbWealth.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWealth.Location = new System.Drawing.Point(7, 27);
+            this.lbWealth.Location = new System.Drawing.Point(7, 38);
             this.lbWealth.Name = "lbWealth";
             this.lbWealth.Size = new System.Drawing.Size(109, 34);
             this.lbWealth.TabIndex = 9;
@@ -696,7 +724,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPower.AutoSize = true;
             this.lbPower.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPower.Location = new System.Drawing.Point(7, 61);
+            this.lbPower.Location = new System.Drawing.Point(7, 72);
             this.lbPower.Name = "lbPower";
             this.lbPower.Size = new System.Drawing.Size(109, 34);
             this.lbPower.TabIndex = 10;
@@ -710,7 +738,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLand.AutoSize = true;
             this.lbLand.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLand.Location = new System.Drawing.Point(7, 163);
+            this.lbLand.Location = new System.Drawing.Point(7, 174);
             this.lbLand.Name = "lbLand";
             this.lbLand.Size = new System.Drawing.Size(109, 34);
             this.lbLand.TabIndex = 11;
@@ -724,7 +752,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLaw.AutoSize = true;
             this.lbLaw.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLaw.Location = new System.Drawing.Point(7, 129);
+            this.lbLaw.Location = new System.Drawing.Point(7, 140);
             this.lbLaw.Name = "lbLaw";
             this.lbLaw.Size = new System.Drawing.Size(109, 34);
             this.lbLaw.TabIndex = 12;
@@ -738,7 +766,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPopulation.AutoSize = true;
             this.lbPopulation.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPopulation.Location = new System.Drawing.Point(7, 95);
+            this.lbPopulation.Location = new System.Drawing.Point(7, 106);
             this.lbPopulation.Name = "lbPopulation";
             this.lbPopulation.Size = new System.Drawing.Size(109, 34);
             this.lbPopulation.TabIndex = 13;
@@ -748,7 +776,7 @@
             // tbBaseWea
             // 
             this.tbBaseWea.Font = new System.Drawing.Font("Georgia", 13.8F);
-            this.tbBaseWea.Location = new System.Drawing.Point(122, 30);
+            this.tbBaseWea.Location = new System.Drawing.Point(122, 41);
             this.tbBaseWea.MaxLength = 3;
             this.tbBaseWea.Name = "tbBaseWea";
             this.tbBaseWea.Size = new System.Drawing.Size(51, 28);
@@ -760,7 +788,7 @@
             // tbBasePow
             // 
             this.tbBasePow.Font = new System.Drawing.Font("Georgia", 13.8F);
-            this.tbBasePow.Location = new System.Drawing.Point(122, 64);
+            this.tbBasePow.Location = new System.Drawing.Point(122, 75);
             this.tbBasePow.MaxLength = 3;
             this.tbBasePow.Name = "tbBasePow";
             this.tbBasePow.Size = new System.Drawing.Size(51, 28);
@@ -772,7 +800,7 @@
             // tbBasePop
             // 
             this.tbBasePop.Font = new System.Drawing.Font("Georgia", 13.8F);
-            this.tbBasePop.Location = new System.Drawing.Point(122, 98);
+            this.tbBasePop.Location = new System.Drawing.Point(122, 109);
             this.tbBasePop.MaxLength = 3;
             this.tbBasePop.Name = "tbBasePop";
             this.tbBasePop.Size = new System.Drawing.Size(51, 28);
@@ -784,7 +812,7 @@
             // tbBaseLaw
             // 
             this.tbBaseLaw.Font = new System.Drawing.Font("Georgia", 13.8F);
-            this.tbBaseLaw.Location = new System.Drawing.Point(122, 132);
+            this.tbBaseLaw.Location = new System.Drawing.Point(122, 143);
             this.tbBaseLaw.MaxLength = 3;
             this.tbBaseLaw.Name = "tbBaseLaw";
             this.tbBaseLaw.Size = new System.Drawing.Size(51, 28);
@@ -796,7 +824,7 @@
             // tbBaseLan
             // 
             this.tbBaseLan.Font = new System.Drawing.Font("Georgia", 13.8F);
-            this.tbBaseLan.Location = new System.Drawing.Point(122, 166);
+            this.tbBaseLan.Location = new System.Drawing.Point(122, 177);
             this.tbBaseLan.MaxLength = 3;
             this.tbBaseLan.Name = "tbBaseLan";
             this.tbBaseLan.Size = new System.Drawing.Size(51, 28);
@@ -808,7 +836,7 @@
             // tbBaseInf
             // 
             this.tbBaseInf.Font = new System.Drawing.Font("Georgia", 13.8F);
-            this.tbBaseInf.Location = new System.Drawing.Point(122, 200);
+            this.tbBaseInf.Location = new System.Drawing.Point(122, 211);
             this.tbBaseInf.MaxLength = 3;
             this.tbBaseInf.Name = "tbBaseInf";
             this.tbBaseInf.Size = new System.Drawing.Size(51, 28);
@@ -820,7 +848,7 @@
             // tbBaseDef
             // 
             this.tbBaseDef.Font = new System.Drawing.Font("Georgia", 13.8F);
-            this.tbBaseDef.Location = new System.Drawing.Point(122, 234);
+            this.tbBaseDef.Location = new System.Drawing.Point(122, 245);
             this.tbBaseDef.MaxLength = 3;
             this.tbBaseDef.Name = "tbBaseDef";
             this.tbBaseDef.Size = new System.Drawing.Size(51, 28);
@@ -836,7 +864,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbRealmLawText.AutoSize = true;
             this.lbRealmLawText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRealmLawText.Location = new System.Drawing.Point(179, 129);
+            this.lbRealmLawText.Location = new System.Drawing.Point(179, 140);
             this.lbRealmLawText.Name = "lbRealmLawText";
             this.lbRealmLawText.Size = new System.Drawing.Size(64, 34);
             this.lbRealmLawText.TabIndex = 29;
@@ -850,7 +878,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbRealmPowText.AutoSize = true;
             this.lbRealmPowText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRealmPowText.Location = new System.Drawing.Point(179, 61);
+            this.lbRealmPowText.Location = new System.Drawing.Point(179, 72);
             this.lbRealmPowText.Name = "lbRealmPowText";
             this.lbRealmPowText.Size = new System.Drawing.Size(64, 34);
             this.lbRealmPowText.TabIndex = 12;
@@ -866,7 +894,7 @@
             this.lbHistory.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHistory.Location = new System.Drawing.Point(249, 4);
             this.lbHistory.Name = "lbHistory";
-            this.lbHistory.Size = new System.Drawing.Size(73, 23);
+            this.lbHistory.Size = new System.Drawing.Size(73, 34);
             this.lbHistory.TabIndex = 12;
             this.lbHistory.Text = "History";
             // 
@@ -877,7 +905,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalPowText.AutoSize = true;
             this.lbTotalPowText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalPowText.Location = new System.Drawing.Point(328, 61);
+            this.lbTotalPowText.Location = new System.Drawing.Point(328, 72);
             this.lbTotalPowText.Name = "lbTotalPowText";
             this.lbTotalPowText.Size = new System.Drawing.Size(54, 34);
             this.lbTotalPowText.TabIndex = 30;
@@ -891,7 +919,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalPopText.AutoSize = true;
             this.lbTotalPopText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalPopText.Location = new System.Drawing.Point(328, 95);
+            this.lbTotalPopText.Location = new System.Drawing.Point(328, 106);
             this.lbTotalPopText.Name = "lbTotalPopText";
             this.lbTotalPopText.Size = new System.Drawing.Size(54, 34);
             this.lbTotalPopText.TabIndex = 31;
@@ -905,7 +933,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalLanText.AutoSize = true;
             this.lbTotalLanText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalLanText.Location = new System.Drawing.Point(328, 163);
+            this.lbTotalLanText.Location = new System.Drawing.Point(328, 174);
             this.lbTotalLanText.Name = "lbTotalLanText";
             this.lbTotalLanText.Size = new System.Drawing.Size(54, 34);
             this.lbTotalLanText.TabIndex = 33;
@@ -919,23 +947,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTotalLawText.AutoSize = true;
             this.lbTotalLawText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalLawText.Location = new System.Drawing.Point(328, 129);
+            this.lbTotalLawText.Location = new System.Drawing.Point(328, 140);
             this.lbTotalLawText.Name = "lbTotalLawText";
             this.lbTotalLawText.Size = new System.Drawing.Size(54, 34);
             this.lbTotalLawText.TabIndex = 32;
             this.lbTotalLawText.Text = "000";
             this.lbTotalLawText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(66, 268);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 21);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "7d6";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Location = new System.Drawing.Point(122, 279);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(50, 14);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "5d6";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dgCal1
             // 
@@ -946,15 +973,75 @@
             this.dgCal1.TabIndex = 1;
             this.dgCal1.Visible = false;
             // 
-            // button2
+            // label1
             // 
-            this.button2.Location = new System.Drawing.Point(122, 268);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 21);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "5d6";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(498, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 34);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Founding";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Georgia", 13.8F);
+            this.textBox1.Location = new System.Drawing.Point(595, 7);
+            this.textBox1.MaxLength = 3;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(20, 28);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(621, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 34);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Founding";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(718, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 34);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Events";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Georgia", 13.8F);
+            this.textBox2.Location = new System.Drawing.Point(790, 7);
+            this.textBox2.MaxLength = 3;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(20, 28);
+            this.textBox2.TabIndex = 24;
+            this.textBox2.Text = "0";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(816, 7);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 35;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // CreateHouseForm
             // 
@@ -1037,5 +1124,11 @@
         private System.Windows.Forms.Label lbTotalLawText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button3;
     }
 }

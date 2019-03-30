@@ -84,6 +84,7 @@ namespace WindowsFormsApp1
                     break;
             }
             DbReturn("SELECT `tbl_Realms`.`Rea_Name`, `tbl_Realms`.* FROM `tbl_Realms` WHERE `tbl_Realms`.`Rea_Name` = '"+cbRealm.Text+"'; ", "1");
+            tbLiege.Text = dgCal1.Rows[0].Cells[2].Value.ToString();
             lbRealmDescription.Text = dgCal1.Rows[0].Cells[3].Value.ToString();
             lbRealmWeaText.Text = dgCal1.Rows[0].Cells[4].Value.ToString();
             lbRealmPowText.Text = dgCal1.Rows[0].Cells[5].Value.ToString();
