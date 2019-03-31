@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
+        
         int foundingMod = 3;
         int currentEvent = 1;
 
@@ -100,13 +101,20 @@ namespace WindowsFormsApp1
 
         public void UpdateTotals()
         {
-            if (tbBaseWea.Text != "") { lbTotalWeaText.Text = "0"; lbTotalWeaText.Text = Convert.ToString(Convert.ToInt32(tbBaseWea.Text) + Convert.ToInt32(lbRealmWeaText.Text) + Convert.ToInt32(lbHistoryWeaText.Text)); }
-            if (tbBasePow.Text != "") { lbTotalPowText.Text = Convert.ToString(Convert.ToInt32(tbBasePow.Text) + Convert.ToInt32(lbRealmPowText.Text) + Convert.ToInt32(lbHistoryPowText.Text)); }
-            if (tbBasePop.Text != "") { lbTotalPopText.Text = Convert.ToString(Convert.ToInt32(tbBasePop.Text) + Convert.ToInt32(lbRealmPopText.Text) + Convert.ToInt32(lbHistoryPopText.Text)); }
-            if (tbBaseLaw.Text != "") { lbTotalLawText.Text = Convert.ToString(Convert.ToInt32(tbBaseLaw.Text) + Convert.ToInt32(lbRealmLawText.Text) + Convert.ToInt32(lbHistoryLawText.Text)); }
-            if (tbBaseLan.Text != "") { lbTotalLanText.Text = Convert.ToString(Convert.ToInt32(tbBaseLan.Text) + Convert.ToInt32(lbRealmLanText.Text) + Convert.ToInt32(lbHistoryLanText.Text)); }
-            if (tbBaseInf.Text != "") { lbTotalInfText.Text = Convert.ToString(Convert.ToInt32(tbBaseInf.Text) + Convert.ToInt32(lbRealmInfText.Text) + Convert.ToInt32(lbHistoryInfText.Text)); }
-            if (tbBaseDef.Text != "") { lbTotalDefText.Text = Convert.ToString(Convert.ToInt32(tbBaseDef.Text) + Convert.ToInt32(lbRealmDefText.Text) + Convert.ToInt32(lbHistoryDefText.Text)); }
+            if (tbBaseWea.Text != "") { lbTotalWeaText.Text = UpdateResource(Convert.ToInt32(tbBaseWea.Text), Convert.ToInt32(lbRealmWeaText.Text), Convert.ToInt32(lbHistoryWeaText.Text)); }
+            if (tbBasePow.Text != "") { lbTotalPowText.Text = UpdateResource(Convert.ToInt32(tbBasePow.Text), Convert.ToInt32(lbRealmPowText.Text), Convert.ToInt32(lbHistoryPowText.Text)); }
+            if (tbBasePop.Text != "") { lbTotalPopText.Text = UpdateResource(Convert.ToInt32(tbBasePop.Text), Convert.ToInt32(lbRealmPopText.Text), Convert.ToInt32(lbHistoryPopText.Text)); }
+            if (tbBaseLaw.Text != "") { lbTotalLawText.Text = UpdateResource(Convert.ToInt32(tbBaseLaw.Text), Convert.ToInt32(lbRealmLawText.Text), Convert.ToInt32(lbHistoryLawText.Text)); }
+            if (tbBaseLan.Text != "") { lbTotalLanText.Text = UpdateResource(Convert.ToInt32(tbBaseLan.Text), Convert.ToInt32(lbRealmLanText.Text), Convert.ToInt32(lbHistoryLanText.Text)); }
+            if (tbBaseInf.Text != "") { lbTotalInfText.Text = UpdateResource(Convert.ToInt32(tbBaseInf.Text), Convert.ToInt32(lbRealmInfText.Text), Convert.ToInt32(lbHistoryInfText.Text)); }
+            if (tbBaseDef.Text != "") { lbTotalDefText.Text = UpdateResource(Convert.ToInt32(tbBaseDef.Text), Convert.ToInt32(lbRealmDefText.Text), Convert.ToInt32(lbHistoryDefText.Text)); }
+        }
+
+        public string UpdateResource(int x,int y, int z)
+        {
+            int sum = x + y + z;
+            if (sum < 0) { sum = 0; }
+            return sum.ToString();
         }
 
         public string RollD6(int amount,int mod)
@@ -212,6 +220,13 @@ namespace WindowsFormsApp1
                     foundingMod = -2;
                     break;
             }
+            if (tbFoundingNumber.TextLength > 0 && tbEventNumber.TextLength > 0)
+            {
+                if (Convert.ToInt32(tbFoundingNumber.Text) > 0 && Convert.ToInt32(tbFoundingNumber.Text) < 7 && Convert.ToInt32(tbEventNumber.Text) > 0 && Convert.ToInt32(tbEventNumber.Text) < 10)
+                {
+                    btEventRoll.Enabled = true;
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -225,7 +240,7 @@ namespace WindowsFormsApp1
         {
             if (tbEventRoll.TextLength>0 && Convert.ToInt32(tbEventRoll.Text) >=3 && Convert.ToInt32(tbEventRoll.Text) <= 18)
             {
-                tbEventRoll.Enabled = true;
+                btNextEvent.Enabled = true;
                 DbReturn("SELECT * FROM `tbl_HistoricalEvents` WHERE `His_ID` = " + tbEventRoll.Text, "1");
                 lbEventName.Text = dgCal1.Rows[0].Cells[1].Value.ToString();
                 lbEventDescription.Text = dgCal1.Rows[0].Cells[2].Value.ToString();
@@ -245,20 +260,135 @@ namespace WindowsFormsApp1
                 lbDefHistoryMod.Text = dgCal1.Rows[0].Cells[10].Value.ToString() + "d6" + mod;
             } else
             {
-                btEventRoll.Enabled = false;
+                btNextEvent.Enabled = false;
+                lbEventName.Text = "";
+                lbEventDescription.Text = "";
+                tbWeaHistory.Text = "";
+                tbPowHistory.Text = "";
+                tbPopHistory.Text = "";
+                tbLawHistory.Text = "";
+                tbLanHistory.Text = "";
+                tbInfHistory.Text = "";
+                tbDefHistory.Text = "";
+                lbWeaHistoryMod.Text = "";
+                lbPowHistoryMod.Text = "";
+                lbPopHistoryMod.Text = "";
+                lbLawHistoryMod.Text = "";
+                lbLanHistoryMod.Text = "";
+                lbInfHistoryMod.Text = "";
+                lbDefHistoryMod.Text = "";
             }
         }
 
         private void btEventRoll_Click(object sender, EventArgs e)
         {
             tbEventRoll.Text = RollD6(3);
-            tbWeaHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[4].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
-            tbPowHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[5].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
-            tbPopHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[6].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
-            tbLawHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[7].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
-            tbLanHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[8].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
-            tbInfHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[9].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
-            tbDefHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[10].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+            btFoundingRoll.Enabled = false;
+            tbFoundingNumber.Enabled = false;
+            tbEventNumber.Enabled = false;
+            if (tbEventRoll.Text == "11")
+            {
+                Random rnd = new Random();
+                int rndResource = 0;
+                int lastResource = 0;
+                for(int i =0;i<1;i++)
+                {
+                    while(rndResource == lastResource)
+                    {
+                        rndResource = rnd.Next(1, 8);
+                    }
+                    lastResource = rndResource;
+                    switch(rndResource)
+                    {
+                        case 1:
+                            tbWeaHistory.Text = RollD6(1);
+                            break;
+                        case 2:
+                            tbPowHistory.Text = RollD6(1);
+                            break;
+                        case 3:
+                            tbPopHistory.Text = RollD6(1);
+                            break;
+                        case 4:
+                            tbLawHistory.Text = RollD6(1);
+                            break;
+                        case 5:
+                            tbLanHistory.Text = RollD6(1);
+                            break;
+                        case 6:
+                            tbInfHistory.Text = RollD6(1);
+                            break;
+                        case 7:
+                            tbDefHistory.Text = RollD6(1);
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                tbWeaHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[4].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+                tbPowHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[5].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+                tbPopHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[6].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+                tbLawHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[7].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+                tbLanHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[8].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+                tbInfHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[9].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+                tbDefHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[10].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(tbFoundingNumber.Text) > 0 && Convert.ToInt32(tbFoundingNumber.Text) < 7 && Convert.ToInt32(tbFoundingNumber.Text) > 0 && Convert.ToInt32(tbFoundingNumber.Text) < 10)
+            {
+                if (tbEventRoll.TextLength > 0 && Convert.ToInt32(tbEventRoll.Text) >= 3 && Convert.ToInt32(tbEventRoll.Text) <= 18)
+                {
+                    btFoundingRoll.Enabled = false;
+                    tbFoundingNumber.Enabled = false;
+                    tbEventNumber.Enabled = false;
+                    if (tbWeaHistory.Text.Length > 0) { lbHistoryWeaText.Text = Convert.ToString(Convert.ToInt32(lbHistoryWeaText.Text) + Convert.ToInt32(tbWeaHistory.Text)); }
+                    if (tbPowHistory.Text.Length > 0) { lbHistoryPowText.Text = Convert.ToString(Convert.ToInt32(lbHistoryPowText.Text) + Convert.ToInt32(tbPowHistory.Text)); }
+                    if (tbPopHistory.Text.Length > 0) { lbHistoryPopText.Text = Convert.ToString(Convert.ToInt32(lbHistoryPopText.Text) + Convert.ToInt32(tbPopHistory.Text)); }
+                    if (tbLawHistory.Text.Length > 0) { lbHistoryLawText.Text = Convert.ToString(Convert.ToInt32(lbHistoryLawText.Text) + Convert.ToInt32(tbLawHistory.Text)); }
+                    if (tbLanHistory.Text.Length > 0) { lbHistoryLanText.Text = Convert.ToString(Convert.ToInt32(lbHistoryLanText.Text) + Convert.ToInt32(tbLanHistory.Text)); }
+                    if (tbInfHistory.Text.Length > 0) { lbHistoryInfText.Text = Convert.ToString(Convert.ToInt32(lbHistoryInfText.Text) + Convert.ToInt32(tbInfHistory.Text)); }
+                    if (tbDefHistory.Text.Length > 0) { lbHistoryDefText.Text = Convert.ToString(Convert.ToInt32(lbHistoryDefText.Text) + Convert.ToInt32(tbDefHistory.Text)); }
+                    lbHistoryList.Text += currentEvent + ": " + lbEventName.Text + Environment.NewLine;
+                    currentEvent++;
+                    if (currentEvent > Convert.ToInt32(tbEventNumber.Text)) { btNextEvent.Enabled = false; }
+                    UpdateTotals();
+                    tbEventRoll.Text = "";
+                    tbWeaHistory.Text = "";
+                    tbPowHistory.Text = "";
+                    tbPopHistory.Text = "";
+                    tbLawHistory.Text = "";
+                    tbLanHistory.Text = "";
+                    tbInfHistory.Text = "";
+                    tbDefHistory.Text = "";
+                }
+            }
+        }
+
+        private void tbEventNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (tbFoundingNumber.TextLength > 0 && tbEventNumber.TextLength > 0)
+            {
+                if (Convert.ToInt32(tbFoundingNumber.Text) > 0 && Convert.ToInt32(tbFoundingNumber.Text) < 7 && Convert.ToInt32(tbEventNumber.Text) > 0 && Convert.ToInt32(tbEventNumber.Text) < 10)
+                {
+                    btEventRoll.Enabled = true;
+                }
+            }
+        }
+
+        private void tbCreateHouse_Click(object sender, EventArgs e)
+        {
+            if (tbName.TextLength > 0 && lbPlayer.Text.Length > 0)
+            {
+                if (mysqlConn.ConnOpen() == true)
+                {
+                    mysqlConn.InsertHouse(tbName.Text, tbPlayer.Text, cbRealm.Text, tbSeatOfPower.Text, tbLiegeLord.Text, tbLiege.Text, lbTotalWeaText.Text, lbTotalPowText.Text, lbTotalPopText.Text, lbTotalLawText.Text, lbTotalLanText.Text, lbTotalInfText.Text, lbTotalDefText.Text, lbFoundingText.Text, lbHistoryList.Text);
+                    Close();
+                }
+            }
         }
     }
 }

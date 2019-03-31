@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\House.cs" />
     <Compile Include="Classes\DevLog.cs" />
     <Compile Include="Classes\dbConn.cs" />
     <Compile Include="Forms\CreateHouseForm.cs">
