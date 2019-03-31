@@ -59,53 +59,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DevLog.cs" />
-    <Compile Include="dbConn.cs" />
-    <Compile Include="CreateHouseForm.cs">
+    <Compile Include="Classes\DevLog.cs" />
+    <Compile Include="Classes\dbConn.cs" />
+    <Compile Include="Forms\CreateHouseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateHouseForm.Designer.cs">
+    <Compile Include="Forms\CreateHouseForm.Designer.cs">
       <DependentUpon>CreateHouseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HouseViewForm.cs">
+    <Compile Include="Forms\HouseViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HouseViewForm.Designer.cs">
+    <Compile Include="Forms\HouseViewForm.Designer.cs">
       <DependentUpon>HouseViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LandsHolForm.cs">
+    <Compile Include="Forms\LandsHolForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LandsHolForm.Designer.cs">
+    <Compile Include="Forms\LandsHolForm.Designer.cs">
       <DependentUpon>LandsHolForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PowerHolForm.cs">
+    <Compile Include="Forms\PowerHolForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PowerHolForm.Designer.cs">
+    <Compile Include="Forms\PowerHolForm.Designer.cs">
       <DependentUpon>PowerHolForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreateHouseForm.resx">
+    <EmbeddedResource Include="Forms\CreateHouseForm.resx">
       <DependentUpon>CreateHouseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HouseViewForm.resx">
+    <EmbeddedResource Include="Forms\HouseViewForm.resx">
       <DependentUpon>HouseViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LandsHolForm.resx">
+    <EmbeddedResource Include="Forms\LandsHolForm.resx">
       <DependentUpon>LandsHolForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PowerHolForm.resx">
+    <EmbeddedResource Include="Forms\PowerHolForm.resx">
       <DependentUpon>PowerHolForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

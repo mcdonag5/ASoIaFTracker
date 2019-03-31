@@ -16,6 +16,7 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
+        int foundingMod = 3;
 
 
         public CreateHouseForm()
@@ -107,6 +108,20 @@ namespace WindowsFormsApp1
             if (tbBaseDef.Text != "") { lbTotalDefText.Text = Convert.ToString(Convert.ToInt32(tbBaseDef.Text) + Convert.ToInt32(lbRealmDefText.Text) + Convert.ToInt32(lbHistoryDefText.Text)); }
         }
 
+        public string RollD6(int amount,int mod)
+        {
+            int sum = 0;
+            Random rnd = new Random();
+            for (int i = 0; i < amount; i++)
+            {
+                int x = rnd.Next(1, 7);
+                sum += x;
+                DevLog.LogItem("Random Number: " + x);
+            }
+            sum += mod;
+            return sum.ToString();
+        }
+
         public string RollD6(int amount)
         {
             int sum = 0;
@@ -145,6 +160,84 @@ namespace WindowsFormsApp1
             tbBaseLan.Text = RollD6(5);
             tbBaseInf.Text = RollD6(5);
             tbBaseDef.Text = RollD6(5);
+        }
+
+        private void tbFoundingNumber_TextChanged(object sender, EventArgs e)
+        {
+            switch(tbFoundingNumber.Text)
+            {
+                case "1":
+                    lbFoundingText.Text = "Ancient";
+                    lbEventText.Text = "Events (1d6+3)";
+                    foundingMod = 3;
+                    break;
+                case "2":
+                    lbFoundingText.Text = "Very Old";
+                    lbEventText.Text = "Events (1d6+2)";
+                    foundingMod = 2;
+                    break;
+                case "3":
+                    lbFoundingText.Text = "Old";
+                    lbEventText.Text = "Events (1d6+1)";
+                    foundingMod = 1;
+                    break;
+                case "4":
+                    lbFoundingText.Text = "Established";
+                    lbEventText.Text = "Events (1d6)";
+                    foundingMod = 0;
+                    break;
+                case "5":
+                    lbFoundingText.Text = "Recent";
+                    lbEventText.Text = "Events (1d6-1)";
+                    foundingMod = -1;
+                    break;
+                case "6":
+                    lbFoundingText.Text = "New";
+                    lbEventText.Text = "Events (1d6-2)";
+                    foundingMod = -2;
+                    break;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tbFoundingNumber.Text = RollD6(1);
+            tbEventNumber.Text = RollD6(1, foundingMod);
+            if(Convert.ToInt32(tbEventNumber.Text)<1) { tbEventNumber.Text = "1"; }
+        }
+
+        private void tbEventRoll_TextChanged(object sender, EventArgs e)
+        {
+            if (tbEventRoll.TextLength>0 && Convert.ToInt32(tbEventRoll.Text) >=3 && Convert.ToInt32(tbEventRoll.Text) <= 18)
+            {
+                tbEventRoll.Enabled = true;
+                DbReturn("SELECT * FROM `tbl_HistoricalEvents` WHERE `His_ID` = " + tbEventRoll.Text, "1");
+                lbEventName.Text = dgCal1.Rows[0].Cells[1].Value.ToString();
+                lbEventDescription.Text = dgCal1.Rows[0].Cells[2].Value.ToString();
+                if (tbEventNumber.Text == "1") { lbEventDescription.Text += dgCal1.Rows[0].Cells[3].Value.ToString(); }
+                string mod ="";
+                if(dgCal1.Rows[0].Cells[11].Value.ToString()!="0")
+                {
+                    if(Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value)>0) { mod += "+"; }
+                    mod += dgCal1.Rows[0].Cells[11].Value.ToString();
+                }
+                lbWeaHistoryMod.Text = dgCal1.Rows[0].Cells[4].Value.ToString() + "d6" + mod;
+                lbPowHistoryMod.Text = dgCal1.Rows[0].Cells[5].Value.ToString() + "d6" + mod;
+                lbPopHistoryMod.Text = dgCal1.Rows[0].Cells[6].Value.ToString() + "d6" + mod;
+                lbLawHistoryMod.Text = dgCal1.Rows[0].Cells[7].Value.ToString() + "d6" + mod;
+                lbLanHistoryMod.Text = dgCal1.Rows[0].Cells[8].Value.ToString() + "d6" + mod;
+                lbInfHistoryMod.Text = dgCal1.Rows[0].Cells[9].Value.ToString() + "d6" + mod;
+                lbDefHistoryMod.Text = dgCal1.Rows[0].Cells[10].Value.ToString() + "d6" + mod;
+            } else
+            {
+                btEventRoll.Enabled = false;
+            }
+        }
+
+        private void btEventRoll_Click(object sender, EventArgs e)
+        {
+            tbEventRoll.Text = RollD6(3);
+
         }
     }
 }
