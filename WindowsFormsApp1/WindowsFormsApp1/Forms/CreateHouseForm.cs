@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
         int foundingMod = 3;
+        int currentEvent = 1;
 
 
         public CreateHouseForm()
@@ -135,6 +136,20 @@ namespace WindowsFormsApp1
             return sum.ToString();
         }
 
+        public string RollHistory (int dice, int mod)
+        {
+            string roll ="";
+            if(dice>0)
+            {
+                roll = RollD6(dice, mod);
+            } else if(dice<0)
+            {
+                roll = "-"+RollD6(Math.Abs(dice), mod);
+            }
+            Thread.Sleep(100);
+            return roll;
+        }
+
         private void textbox_TextChanged(object sender, EventArgs e)
         {
             UpdateTotals();
@@ -214,7 +229,7 @@ namespace WindowsFormsApp1
                 DbReturn("SELECT * FROM `tbl_HistoricalEvents` WHERE `His_ID` = " + tbEventRoll.Text, "1");
                 lbEventName.Text = dgCal1.Rows[0].Cells[1].Value.ToString();
                 lbEventDescription.Text = dgCal1.Rows[0].Cells[2].Value.ToString();
-                if (tbEventNumber.Text == "1") { lbEventDescription.Text += dgCal1.Rows[0].Cells[3].Value.ToString(); }
+                if (currentEvent == 1) { lbEventDescription.Text += dgCal1.Rows[0].Cells[3].Value.ToString(); }
                 string mod ="";
                 if(dgCal1.Rows[0].Cells[11].Value.ToString()!="0")
                 {
@@ -237,7 +252,13 @@ namespace WindowsFormsApp1
         private void btEventRoll_Click(object sender, EventArgs e)
         {
             tbEventRoll.Text = RollD6(3);
-
+            tbWeaHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[4].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+            tbPowHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[5].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+            tbPopHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[6].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+            tbLawHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[7].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+            tbLanHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[8].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+            tbInfHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[9].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
+            tbDefHistory.Text = RollHistory(Convert.ToInt32(dgCal1.Rows[0].Cells[10].Value), Convert.ToInt32(dgCal1.Rows[0].Cells[11].Value));
         }
     }
 }
