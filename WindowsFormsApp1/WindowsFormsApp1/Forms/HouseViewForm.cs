@@ -77,6 +77,7 @@ namespace WindowsFormsApp1
             DevLog.LogItem("Updating resources start");
             DbReturn("SELECT * FROM `tbl_House` WHERE hou_ID = '" + houseID + "'", "house detail");
             tbName.Text = dgHouseDetails.Rows[0].Cells[1].Value.ToString();
+            this.Text = "House "+ dgHouseDetails.Rows[0].Cells[1].Value.ToString();
             tbSeatOfPower.Text = dgHouseDetails.Rows[0].Cells[4].Value.ToString();
             cbRealm.Text = dgHouseDetails.Rows[0].Cells[3].Value.ToString();
             tbLiege.Text = dgHouseDetails.Rows[0].Cells[6].Value.ToString();

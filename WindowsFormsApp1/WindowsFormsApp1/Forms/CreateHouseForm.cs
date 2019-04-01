@@ -240,7 +240,10 @@ namespace WindowsFormsApp1
         {
             if (tbEventRoll.TextLength>0 && Convert.ToInt32(tbEventRoll.Text) >=3 && Convert.ToInt32(tbEventRoll.Text) <= 18)
             {
-                btNextEvent.Enabled = true;
+                if (currentEvent <= Convert.ToInt32(tbEventNumber.Text)) {
+                    btNextEvent.Enabled = true;
+                    btEventRoll.Enabled = true;
+                } 
                 DbReturn("SELECT * FROM `tbl_HistoricalEvents` WHERE `His_ID` = " + tbEventRoll.Text, "1");
                 lbEventName.Text = dgCal1.Rows[0].Cells[1].Value.ToString();
                 lbEventDescription.Text = dgCal1.Rows[0].Cells[2].Value.ToString();
@@ -364,6 +367,7 @@ namespace WindowsFormsApp1
                     tbLanHistory.Text = "";
                     tbInfHistory.Text = "";
                     tbDefHistory.Text = "";
+                    if (currentEvent>Convert.ToInt32(tbEventNumber.Text)) { btEventRoll.Enabled = false; }
                 }
             }
         }
