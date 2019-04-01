@@ -385,6 +385,12 @@ namespace WindowsFormsApp1
             mysqlConn.Connect();
             UpdateHouse();
         }
+
+        private void tbHouLanView_Click(object sender, EventArgs e)
+        {
+            LandsHolForm landsHolForm = new LandsHolForm(houseID);
+            landsHolForm.ShowDialog();
+        }
         ///// EVENTS START //////////////////////////////////////////////////////////
 
     }
