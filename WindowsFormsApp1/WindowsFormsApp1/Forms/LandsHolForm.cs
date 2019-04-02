@@ -33,6 +33,9 @@ namespace WindowsFormsApp1
                     case "3":
                         dgCal3.DataSource = mysqlConn.Qry(returnWhat).Tables[0];
                         break;
+                    case "4":
+                        dgCal4.DataSource = mysqlConn.Qry(returnWhat).Tables[0];
+                        break;
                 }
 
             }
@@ -58,6 +61,40 @@ namespace WindowsFormsApp1
                 landHoldings[i] = dgCal1.Rows[i].Cells[9].Value.ToString() + "-" + dgCal1.Rows[i].Cells[4].Value.ToString();
             }
             cbLandHolding.Items.AddRange(landHoldings);
+        }
+
+        private void cbLandHolding_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbCost.Text = "";
+            lbDesc.Text = "";
+            lbBenfits.Text = "";
+            lbAddions.Text = "";
+            lbImprovemnt.Text = "";
+            rtbNotes.Text = "";
+
+            int index = cbLandHolding.SelectedIndex;
+            lbName.Text = dgCal1.Rows[index].Cells[9].Value.ToString() + "-" + dgCal1.Rows[index].Cells[4].Value.ToString();
+            int costLand = Convert.ToInt32(dgCal1.Rows[index].Cells[10].Value) - Convert.ToInt32(dgCal1.Rows[index].Cells[6].Value);
+            rtbNotes.Text = dgCal1.Rows[index].Cells[5].Value.ToString();
+            //Land Fea
+            DbReturn("SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.* FROM `tbl_LandHoldingFeature`, `tbl_LandFeature` WHERE `tbl_LandHoldingFeature`.`LanHol_ID` = '" + dgCal1.Rows[index].Cells[1].Value.ToString() + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID` AND `tbl_LandFeature`.`LanFea_Spaces` = '0'; ", "4");
+            for (int n = 0; n < dgCal4.RowCount - 1; n++)
+            {
+                costLand += Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
+                lbAddions.Text += dgCal4.Rows[n].Cells[6].Value.ToString() + " - " + dgCal4.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+            }
+            //Land Fea Towns
+            DbReturn("SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.* FROM `tbl_LandHoldingFeature`, `tbl_LandFeature` WHERE `tbl_LandHoldingFeature`.`LanHol_ID` = '" + dgCal1.Rows[index].Cells[1].Value.ToString() + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID` AND `tbl_LandFeature`.`LanFea_Spaces` > '0'; ", "4");
+            for (int n = 0; n < dgCal4.RowCount - 1; n++)
+            {
+                costLand += Convert.ToInt32(dgCal4.Rows[n].Cells[7].Value);
+                lbAddions.Text += dgCal4.Rows[n].Cells[6].Value.ToString() + " - " + dgCal4.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                
+
+            }
+            lbCost.Text = "";
+            lbCost.Text += "Land: "+costLand+" ";
+            lbType.Text = "Land Holding";
         }
     }
 }
