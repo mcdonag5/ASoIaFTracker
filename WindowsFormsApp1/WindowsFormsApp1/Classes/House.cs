@@ -11,19 +11,28 @@ namespace WindowsFormsApp1.Classes
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
 
-        public void HouseQry(string information, object dataGrid)
+        public object HouseQry(string information,int ID)
         {//makes a query to the database
-            DevLog.LogItem(information + " sql run to " + dataGrid);
+            DevLog.LogItem(information + " sql run");
             if (mysqlConn.ConnOpen() == true)
             {
-                string Qry = "";
+                string qry = "";
                 switch(information)
                 {
+                    //tbl_PowerHoldings
                     case "PowerHolUnits":
+                        qry = "SELECT `tbl_PowerHolding`.`Hou_ID`, `tbl_PowerHolding`.*, `tbl_UnitType`.`Uni_ID`, `tbl_UnitType`.*, `tbl_UnitTraning`.`Tra_Name`, `tbl_UnitTraning`.* "+
+                            "FROM `tbl_PowerHolding`, `tbl_UnitType`, `tbl_UnitTraning` "+
+                            "WHERE `tbl_PowerHolding`.`Hou_ID` = '"+ID+"' AND `tbl_UnitType`.`Uni_ID` = `tbl_PowerHolding`.`Uni_ID` AND `tbl_UnitTraning`.`Tra_Name` = `tbl_PowerHolding`.`PowHol_Training`;";
+                        
+                        break;
+                    default:
 
                         break;
                 }
-                if (Qry != "") { dataGrid = mysqlConn.Qry(Qry).Tables[0]; }
+
+                return mysqlConn.Qry(qry).Tables[0];
+                //if (Qry != "") { dataGrid = mysqlConn.Qry(Qry).Tables[0]; }
             }
         }
 

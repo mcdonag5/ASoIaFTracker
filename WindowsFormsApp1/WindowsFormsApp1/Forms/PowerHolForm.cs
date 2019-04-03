@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
+        Classes.House house = new Classes.House();
         public int houseID;
 
 
@@ -28,6 +29,9 @@ namespace WindowsFormsApp1
         {
             mysqlConn.DbConfig(); //sets database settings
             mysqlConn.Connect();
+
+            dgCal1.DataSource = 
+            lbPowName1.Text = 
         }
     }
 }

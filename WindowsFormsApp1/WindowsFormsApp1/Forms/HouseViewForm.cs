@@ -389,7 +389,13 @@ namespace WindowsFormsApp1
         private void tbHouLanView_Click(object sender, EventArgs e)
         {
             LandsHolForm landsHolForm = new LandsHolForm(houseID);
-            landsHolForm.ShowDialog();
+            landsHolForm.Show();
+        }
+
+        private void btPowerHolForm_Click(object sender, EventArgs e)
+        {
+            PowerHolForm powerHolForm = new PowerHolForm(houseID);
+            powerHolForm.Show();
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
 
