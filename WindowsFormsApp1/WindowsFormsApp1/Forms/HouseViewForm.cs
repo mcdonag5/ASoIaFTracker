@@ -145,9 +145,9 @@ namespace WindowsFormsApp1
                         DevLog.LogItem("Traning cost error: " + dgHouseDetails.Rows[i].Cells[4].Value);
                         break;
                 }
-                houPow -= (Convert.ToInt32(dgHouseDetails.Rows[i].Cells[32].Value) + traningCost) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[5].Value);
+                houPow -= (Convert.ToInt32(dgHouseDetails.Rows[i].Cells[33].Value) + traningCost) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[5].Value);
 
-                lbPowHolList.Text += dgHouseDetails.Rows[i].Cells[4].Value.ToString() + " " + dgHouseDetails.Rows[i].Cells[31].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[3].Value.ToString() + Environment.NewLine;
+                lbPowHolList.Text += dgHouseDetails.Rows[i].Cells[4].Value.ToString() + " " + dgHouseDetails.Rows[i].Cells[32].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[3].Value.ToString() + Environment.NewLine;
             }
             DevLog.LogItem("Getting Banners");
             //Banner Table

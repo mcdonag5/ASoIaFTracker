@@ -34,26 +34,28 @@
             this.cbLandHolding = new System.Windows.Forms.ComboBox();
             this.cbDefLanFea = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbImprovemnt = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbCost = new System.Windows.Forms.Label();
             this.lbType = new System.Windows.Forms.Label();
             this.lbDesc = new System.Windows.Forms.Label();
             this.lbBenfits = new System.Windows.Forms.Label();
-            this.lbAddions = new System.Windows.Forms.Label();
             this.rtbNotes = new System.Windows.Forms.RichTextBox();
+            this.lbAddions = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dgCal3 = new System.Windows.Forms.DataGridView();
-            this.dgCal2 = new System.Windows.Forms.DataGridView();
-            this.dgCal1 = new System.Windows.Forms.DataGridView();
-            this.lbImprovemnt = new System.Windows.Forms.Label();
-            this.dgCal4 = new System.Windows.Forms.DataGridView();
+            this.dgDef = new System.Windows.Forms.DataGridView();
+            this.dgLandFea = new System.Windows.Forms.DataGridView();
+            this.dgLand = new System.Windows.Forms.DataGridView();
+            this.dgWea = new System.Windows.Forms.DataGridView();
+            this.dgImp = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCal3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCal4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDef)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLandFea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLand)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgWea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgImp)).BeginInit();
             this.SuspendLayout();
             // 
             // lbName
@@ -95,37 +97,42 @@
             this.cbWealthHolding.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbWealthHolding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbWealthHolding.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbWealthHolding.FormattingEnabled = true;
             this.cbWealthHolding.Location = new System.Drawing.Point(413, 3);
             this.cbWealthHolding.Name = "cbWealthHolding";
             this.cbWealthHolding.Size = new System.Drawing.Size(201, 24);
             this.cbWealthHolding.TabIndex = 2;
+            this.cbWealthHolding.SelectedIndexChanged += new System.EventHandler(this.CbWealthHolding_SelectedIndexChanged);
             // 
             // cbLandHolding
             // 
             this.cbLandHolding.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbLandHolding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLandHolding.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLandHolding.FormattingEnabled = true;
             this.cbLandHolding.Location = new System.Drawing.Point(3, 3);
             this.cbLandHolding.Name = "cbLandHolding";
             this.cbLandHolding.Size = new System.Drawing.Size(199, 24);
             this.cbLandHolding.TabIndex = 1;
-            this.cbLandHolding.SelectedIndexChanged += new System.EventHandler(this.cbLandHolding_SelectedIndexChanged);
+            this.cbLandHolding.SelectedIndexChanged += new System.EventHandler(this.CbLandHolding_SelectedIndexChanged);
             // 
             // cbDefLanFea
             // 
             this.cbDefLanFea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbDefLanFea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDefLanFea.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDefLanFea.FormattingEnabled = true;
             this.cbDefLanFea.Location = new System.Drawing.Point(208, 3);
             this.cbDefLanFea.Name = "cbDefLanFea";
             this.cbDefLanFea.Size = new System.Drawing.Size(199, 24);
             this.cbDefLanFea.TabIndex = 0;
+            this.cbDefLanFea.SelectedIndexChanged += new System.EventHandler(this.CbDefLanFea_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -156,6 +163,18 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(623, 555);
             this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // lbImprovemnt
+            // 
+            this.lbImprovemnt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbImprovemnt.AutoSize = true;
+            this.lbImprovemnt.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbImprovemnt.Location = new System.Drawing.Point(3, 195);
+            this.lbImprovemnt.Name = "lbImprovemnt";
+            this.lbImprovemnt.Size = new System.Drawing.Size(617, 18);
+            this.lbImprovemnt.TabIndex = 7;
+            this.lbImprovemnt.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
             // tableLayoutPanel3
             // 
@@ -228,6 +247,20 @@
             this.lbBenfits.TabIndex = 3;
             this.lbBenfits.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
+            // rtbNotes
+            // 
+            this.rtbNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbNotes.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbNotes.Location = new System.Drawing.Point(3, 216);
+            this.rtbNotes.Name = "rtbNotes";
+            this.rtbNotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbNotes.Size = new System.Drawing.Size(617, 336);
+            this.rtbNotes.TabIndex = 5;
+            this.rtbNotes.Text = "";
+            // 
             // lbAddions
             // 
             this.lbAddions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -240,20 +273,6 @@
             this.lbAddions.TabIndex = 4;
             this.lbAddions.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
-            // rtbNotes
-            // 
-            this.rtbNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtbNotes.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbNotes.Location = new System.Drawing.Point(3, 216);
-            this.rtbNotes.Name = "rtbNotes";
-            this.rtbNotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbNotes.Size = new System.Drawing.Size(617, 370);
-            this.rtbNotes.TabIndex = 5;
-            this.rtbNotes.Text = "";
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -262,63 +281,61 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // dgCal3
+            // dgDef
             // 
-            this.dgCal3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCal3.Location = new System.Drawing.Point(304, 310);
-            this.dgCal3.Name = "dgCal3";
-            this.dgCal3.Size = new System.Drawing.Size(38, 32);
-            this.dgCal3.TabIndex = 35;
-            this.dgCal3.Visible = false;
+            this.dgDef.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDef.Location = new System.Drawing.Point(304, 310);
+            this.dgDef.Name = "dgDef";
+            this.dgDef.Size = new System.Drawing.Size(38, 32);
+            this.dgDef.TabIndex = 35;
+            this.dgDef.Visible = false;
             // 
-            // dgCal2
+            // dgLandFea
             // 
-            this.dgCal2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCal2.Location = new System.Drawing.Point(304, 284);
-            this.dgCal2.Name = "dgCal2";
-            this.dgCal2.Size = new System.Drawing.Size(38, 32);
-            this.dgCal2.TabIndex = 34;
-            this.dgCal2.Visible = false;
+            this.dgLandFea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgLandFea.Location = new System.Drawing.Point(304, 284);
+            this.dgLandFea.Name = "dgLandFea";
+            this.dgLandFea.Size = new System.Drawing.Size(38, 32);
+            this.dgLandFea.TabIndex = 34;
+            this.dgLandFea.Visible = false;
             // 
-            // dgCal1
+            // dgLand
             // 
-            this.dgCal1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCal1.Location = new System.Drawing.Point(304, 252);
-            this.dgCal1.Name = "dgCal1";
-            this.dgCal1.Size = new System.Drawing.Size(38, 32);
-            this.dgCal1.TabIndex = 33;
-            this.dgCal1.Visible = false;
+            this.dgLand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgLand.Location = new System.Drawing.Point(304, 252);
+            this.dgLand.Name = "dgLand";
+            this.dgLand.Size = new System.Drawing.Size(38, 32);
+            this.dgLand.TabIndex = 33;
+            this.dgLand.Visible = false;
             // 
-            // lbImprovemnt
+            // dgWea
             // 
-            this.lbImprovemnt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbImprovemnt.AutoSize = true;
-            this.lbImprovemnt.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbImprovemnt.Location = new System.Drawing.Point(3, 195);
-            this.lbImprovemnt.Name = "lbImprovemnt";
-            this.lbImprovemnt.Size = new System.Drawing.Size(617, 18);
-            this.lbImprovemnt.TabIndex = 7;
-            this.lbImprovemnt.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
+            this.dgWea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgWea.Location = new System.Drawing.Point(304, 281);
+            this.dgWea.Name = "dgWea";
+            this.dgWea.Size = new System.Drawing.Size(38, 32);
+            this.dgWea.TabIndex = 36;
+            this.dgWea.Visible = false;
             // 
-            // dgCal4
+            // dgImp
             // 
-            this.dgCal4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCal4.Location = new System.Drawing.Point(304, 281);
-            this.dgCal4.Name = "dgCal4";
-            this.dgCal4.Size = new System.Drawing.Size(38, 32);
-            this.dgCal4.TabIndex = 36;
-            this.dgCal4.Visible = false;
+            this.dgImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgImp.Location = new System.Drawing.Point(312, 289);
+            this.dgImp.Name = "dgImp";
+            this.dgImp.Size = new System.Drawing.Size(38, 32);
+            this.dgImp.TabIndex = 37;
+            this.dgImp.Visible = false;
             // 
             // LandsHolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 595);
-            this.Controls.Add(this.dgCal4);
-            this.Controls.Add(this.dgCal3);
-            this.Controls.Add(this.dgCal2);
-            this.Controls.Add(this.dgCal1);
+            this.Controls.Add(this.dgImp);
+            this.Controls.Add(this.dgWea);
+            this.Controls.Add(this.dgDef);
+            this.Controls.Add(this.dgLandFea);
+            this.Controls.Add(this.dgLand);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "LandsHolForm";
@@ -329,10 +346,11 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCal3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCal4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgDef)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLandFea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgLand)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgWea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgImp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,10 +372,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lbCost;
         private System.Windows.Forms.Label lbType;
-        private System.Windows.Forms.DataGridView dgCal3;
-        private System.Windows.Forms.DataGridView dgCal2;
-        private System.Windows.Forms.DataGridView dgCal1;
+        private System.Windows.Forms.DataGridView dgDef;
+        private System.Windows.Forms.DataGridView dgLandFea;
+        private System.Windows.Forms.DataGridView dgLand;
         private System.Windows.Forms.Label lbImprovemnt;
-        private System.Windows.Forms.DataGridView dgCal4;
+        private System.Windows.Forms.DataGridView dgWea;
+        private System.Windows.Forms.DataGridView dgImp;
     }
 }
