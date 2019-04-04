@@ -5,7 +5,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 02, 2019 at 09:14 AM
+-- Generation Time: Apr 04, 2019 at 09:47 AM
 -- Server version: 5.7.25
 -- PHP Version: 7.2.7
 
@@ -359,6 +359,8 @@ CREATE TABLE `tbl_UnitType` (
   `Uni_PowerCost` int(2) NOT NULL,
   `Uni_DisciplineModifier` int(3) NOT NULL,
   `Uni_KeyAbilities` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Uni_KeyAbilitie2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Uni_KeyAbilitie3` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Uni_Description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `Uni_ArmorRating` int(2) NOT NULL,
   `Uni_UpArmorRating` int(2) NOT NULL,
@@ -453,10 +455,10 @@ CREATE TABLE `tbl_WealthImprovement` (
   `Wea_ID` int(11) NOT NULL,
   `WeaImp_Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `WeaImp_Limit` tinyint(1) DEFAULT NULL,
-  `WeaImp_WealthCost` int(2) DEFAULT NULL,
-  `WeaImp_DefenseCost` int(2) DEFAULT NULL,
-  `WeaImp_LandCost` int(2) DEFAULT NULL,
-  `WeaImp_PowerCost` int(2) DEFAULT NULL,
+  `WeaImp_WealthCost` int(2) NOT NULL,
+  `WeaImp_DefenseCost` int(2) NOT NULL,
+  `WeaImp_LandCost` int(2) NOT NULL,
+  `WeaImp_PowerCost` int(2) NOT NULL,
   `WeaImp_InfluenceCost` int(2) DEFAULT NULL,
   `WeaImp_Time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `WeaImp_Requirement` text COLLATE utf8mb4_unicode_ci,
