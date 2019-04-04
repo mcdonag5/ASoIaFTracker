@@ -30,8 +30,12 @@ namespace WindowsFormsApp1
             mysqlConn.DbConfig(); //sets database settings
             mysqlConn.Connect();
 
-            dgCal1.DataSource = 
-            lbPowName1.Text = 
+            dgCal1.DataSource = house.HouseQry("PowerHolUnits", houseID);
+            tbName1.Text = dgCal1.Rows[0].Cells[4].Value.ToString();
+            lbCostNumber1.Text = Convert.ToString(Convert.ToInt32(dgCal1.Rows[0].Cells[34].Value) + Convert.ToInt32(dgCal1.Rows[0].Cells[52].Value) - Convert.ToInt32(dgCal1.Rows[0].Cells[6].Value));
+            lbDiscipText1.Text = Convert.ToString(Convert.ToInt32(dgCal1.Rows[0].Cells[35].Value) + Convert.ToInt32(dgCal1.Rows[0].Cells[53].Value));
+            lbTypeText1.Text = dgCal1.Rows[0].Cells[33].Value.ToString();
+            cbTraining1.Text = dgCal1.Rows[0].Cells[5].Value.ToString();
         }
     }
 }

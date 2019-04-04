@@ -386,13 +386,13 @@ namespace WindowsFormsApp1
             UpdateHouse();
         }
 
-        private void tbHouLanView_Click(object sender, EventArgs e)
+        private void TbHouLanView_Click(object sender, EventArgs e)
         {
             LandsHolForm landsHolForm = new LandsHolForm(houseID);
             landsHolForm.Show();
         }
 
-        private void btPowerHolForm_Click(object sender, EventArgs e)
+        private void BtPowerHolForm_Click(object sender, EventArgs e)
         {
             PowerHolForm powerHolForm = new PowerHolForm(houseID);
             powerHolForm.Show();

@@ -169,32 +169,32 @@ namespace WindowsFormsApp1
             ResetViewHouse("NPC");
         }
 
-        private void playersToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PlayersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetViewHouse("Ross");
         }
 
-        private void kyleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void KyleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ResetViewHouse("Kyle");
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void ToolStripButton1_Click(object sender, EventArgs e)
         {
             ResetViewHouse("all");
         }
 
-        private void devLogToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DevLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DevLog.OpenLog();
         }
 
-        private void tsbMenuDevLog(object sender, EventArgs e)
+        private void TsbMenuDevLog(object sender, EventArgs e)
         {
             DevLog.OpenLog();
         }
 
-        private void tsbCreateHouse_Click(object sender, EventArgs e)
+        private void TsbCreateHouse_Click(object sender, EventArgs e)
         {
             CreateHouseForm createHouseForm = new CreateHouseForm();
             createHouseForm.ShowDialog();

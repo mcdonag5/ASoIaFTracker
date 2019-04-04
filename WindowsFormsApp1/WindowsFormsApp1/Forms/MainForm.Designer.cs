@@ -119,7 +119,7 @@
             this.devLogToolStripMenuItem.Name = "devLogToolStripMenuItem";
             this.devLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.devLogToolStripMenuItem.Text = "DevLog";
-            this.devLogToolStripMenuItem.Click += new System.EventHandler(this.tsbMenuDevLog);
+            this.devLogToolStripMenuItem.Click += new System.EventHandler(this.TsbMenuDevLog);
             // 
             // tsddViewHouse
             // 
@@ -146,7 +146,7 @@
             this.tsbPlayerRoss.Name = "tsbPlayerRoss";
             this.tsbPlayerRoss.Size = new System.Drawing.Size(180, 22);
             this.tsbPlayerRoss.Text = "Ross";
-            this.tsbPlayerRoss.Click += new System.EventHandler(this.playersToolStripMenuItem_Click);
+            this.tsbPlayerRoss.Click += new System.EventHandler(this.PlayersToolStripMenuItem_Click);
             // 
             // tsbAllHouses
             // 
@@ -156,14 +156,14 @@
             this.tsbAllHouses.Name = "tsbAllHouses";
             this.tsbAllHouses.Size = new System.Drawing.Size(62, 22);
             this.tsbAllHouses.Text = "All House";
-            this.tsbAllHouses.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.tsbAllHouses.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // tsbPlayerKyle
             // 
             this.tsbPlayerKyle.Name = "tsbPlayerKyle";
             this.tsbPlayerKyle.Size = new System.Drawing.Size(180, 22);
             this.tsbPlayerKyle.Text = "Kyle";
-            this.tsbPlayerKyle.Click += new System.EventHandler(this.kyleToolStripMenuItem_Click);
+            this.tsbPlayerKyle.Click += new System.EventHandler(this.KyleToolStripMenuItem_Click);
             // 
             // tsbCreateHouse
             // 
@@ -173,7 +173,7 @@
             this.tsbCreateHouse.Name = "tsbCreateHouse";
             this.tsbCreateHouse.Size = new System.Drawing.Size(82, 22);
             this.tsbCreateHouse.Text = "Create House";
-            this.tsbCreateHouse.Click += new System.EventHandler(this.tsbCreateHouse_Click);
+            this.tsbCreateHouse.Click += new System.EventHandler(this.TsbCreateHouse_Click);
             // 
             // FormMain
             // 

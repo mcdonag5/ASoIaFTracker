@@ -14,9 +14,11 @@ namespace WindowsFormsApp1.Classes
         public object HouseQry(string information,int ID)
         {//makes a query to the database
             DevLog.LogItem(information + " sql run");
+            string qry = "";
+            mysqlConn.DbConfig(); //sets database settings
+            mysqlConn.Connect();
             if (mysqlConn.ConnOpen() == true)
             {
-                string qry = "";
                 switch(information)
                 {
                     //tbl_PowerHoldings
@@ -34,6 +36,7 @@ namespace WindowsFormsApp1.Classes
                 return mysqlConn.Qry(qry).Tables[0];
                 //if (Qry != "") { dataGrid = mysqlConn.Qry(Qry).Tables[0]; }
             }
+            return mysqlConn.Qry(qry).Tables[0];
         }
 
 
