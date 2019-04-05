@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using WindowsFormsApp1.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -249,6 +251,10 @@ namespace WindowsFormsApp1
             if (costInf > 0) { lbCost.Text += "Influence: " + costInf + " "; }
         }
 
-        
+        private void landHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewLandForm newLandForm = new NewLandForm(houseID);
+            newLandForm.ShowDialog();
+        }
     }
 }
