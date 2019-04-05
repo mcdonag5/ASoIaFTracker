@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LandsHolForm));
             this.lbName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cbWealthHolding = new System.Windows.Forms.ComboBox();
@@ -48,9 +49,16 @@
             this.dgLand = new System.Windows.Forms.DataGridView();
             this.dgWea = new System.Windows.Forms.DataGridView();
             this.dgImp = new System.Windows.Forms.DataGridView();
+            this.tsddbNew = new System.Windows.Forms.ToolStripDropDownButton();
+            this.landHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.landFeatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.defenseHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wealthHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wealthImprovementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDef)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgLandFea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgLand)).BeginInit();
@@ -275,6 +283,8 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddbNew});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(647, 25);
@@ -326,6 +336,55 @@
             this.dgImp.TabIndex = 37;
             this.dgImp.Visible = false;
             // 
+            // tsddbNew
+            // 
+            this.tsddbNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.landHoldingToolStripMenuItem,
+            this.landFeatureToolStripMenuItem,
+            this.defenseHoldingToolStripMenuItem,
+            this.wealthHoldingToolStripMenuItem,
+            this.wealthImprovementToolStripMenuItem});
+            this.tsddbNew.Image = ((System.Drawing.Image)(resources.GetObject("tsddbNew.Image")));
+            this.tsddbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbNew.Name = "tsddbNew";
+            this.tsddbNew.Size = new System.Drawing.Size(44, 22);
+            this.tsddbNew.Text = "New";
+            // 
+            // landHoldingToolStripMenuItem
+            // 
+            this.landHoldingToolStripMenuItem.Name = "landHoldingToolStripMenuItem";
+            this.landHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.landHoldingToolStripMenuItem.Text = "Land Holding";
+            // 
+            // landFeatureToolStripMenuItem
+            // 
+            this.landFeatureToolStripMenuItem.Enabled = false;
+            this.landFeatureToolStripMenuItem.Name = "landFeatureToolStripMenuItem";
+            this.landFeatureToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.landFeatureToolStripMenuItem.Text = "Land Feature";
+            // 
+            // defenseHoldingToolStripMenuItem
+            // 
+            this.defenseHoldingToolStripMenuItem.Enabled = false;
+            this.defenseHoldingToolStripMenuItem.Name = "defenseHoldingToolStripMenuItem";
+            this.defenseHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.defenseHoldingToolStripMenuItem.Text = "Defense Holding";
+            // 
+            // wealthHoldingToolStripMenuItem
+            // 
+            this.wealthHoldingToolStripMenuItem.Enabled = false;
+            this.wealthHoldingToolStripMenuItem.Name = "wealthHoldingToolStripMenuItem";
+            this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wealthHoldingToolStripMenuItem.Text = "Wealth Holding";
+            // 
+            // wealthImprovementToolStripMenuItem
+            // 
+            this.wealthImprovementToolStripMenuItem.Enabled = false;
+            this.wealthImprovementToolStripMenuItem.Name = "wealthImprovementToolStripMenuItem";
+            this.wealthImprovementToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wealthImprovementToolStripMenuItem.Text = "Wealth Improvement";
+            // 
             // LandsHolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,6 +405,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDef)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgLandFea)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgLand)).EndInit();
@@ -378,5 +439,11 @@
         private System.Windows.Forms.Label lbImprovemnt;
         private System.Windows.Forms.DataGridView dgWea;
         private System.Windows.Forms.DataGridView dgImp;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbNew;
+        private System.Windows.Forms.ToolStripMenuItem landHoldingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem landFeatureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem defenseHoldingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wealthHoldingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wealthImprovementToolStripMenuItem;
     }
 }

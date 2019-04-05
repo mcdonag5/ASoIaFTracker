@@ -44,6 +44,30 @@ namespace WindowsFormsApp1
             }
         }
 
+        public void ToolStripEnabled (string toolStrip)
+        {
+            switch (toolStrip)
+            {
+                case "Land":
+                    landFeatureToolStripMenuItem.Enabled = true;
+                    defenseHoldingToolStripMenuItem.Enabled = true;
+                    wealthHoldingToolStripMenuItem.Enabled = true;
+                    wealthImprovementToolStripMenuItem.Enabled = false;
+                    break;
+                case "Defense/Feature":
+                    landFeatureToolStripMenuItem.Enabled = false;
+                    defenseHoldingToolStripMenuItem.Enabled = false;
+                    wealthHoldingToolStripMenuItem.Enabled = true;
+                    wealthImprovementToolStripMenuItem.Enabled = false;
+                    break;
+                case "Wealth":
+                    landFeatureToolStripMenuItem.Enabled = true;
+                    defenseHoldingToolStripMenuItem.Enabled = false;
+                    wealthHoldingToolStripMenuItem.Enabled = false;
+                    wealthImprovementToolStripMenuItem.Enabled = true;
+                    break;
+            }
+        }
 
         public LandsHolForm(int ID)
         {
@@ -69,6 +93,7 @@ namespace WindowsFormsApp1
 
         private void CbLandHolding_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ToolStripEnabled("Land");
             lbCost.Text = "";
             lbDesc.Text = "";
             lbBenfits.Text = "";
@@ -128,6 +153,7 @@ namespace WindowsFormsApp1
 
         private void CbDefLanFea_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ToolStripEnabled("Defense/Feature");
             int costDef = 0;
             int costLan = 0;
             int costPop = 0;
@@ -138,7 +164,7 @@ namespace WindowsFormsApp1
             lbImprovemnt.Text = "";
             rtbNotes.Text = "";
             if(cbDefLanFea.SelectedIndex<dgDef.RowCount-1)
-            {
+            {//Defense Holding
                 lbName.Text = dgDef.Rows[cbDefLanFea.SelectedIndex].Cells[8].Value.ToString() + " - " + dgDef.Rows[cbDefLanFea.SelectedIndex].Cells[3].Value.ToString();
                 lbType.Text = "Defense Holding";
                 lbDesc.Text = dgDef.Rows[cbDefLanFea.SelectedIndex].Cells[11].Value.ToString();
@@ -146,20 +172,41 @@ namespace WindowsFormsApp1
                 rtbNotes.Text = dgDef.Rows[cbDefLanFea.SelectedIndex].Cells[4].Value.ToString();
                 costDef += Convert.ToInt32(dgDef.Rows[cbDefLanFea.SelectedIndex].Cells[9].Value);
 
-                if(costDef>0) { lbCost.Text += "Defense: " + costDef; }
-            } else {
+                DbReturn("SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.*FROM `tbl_WealthHolding`, `tbl_Wealth` WHERE `tbl_WealthHolding`.`DefHol_ID` = '" + dgDef.Rows[cbDefLanFea.SelectedIndex].Cells[0].Value + "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID`; ", "Wea");
+                object[] weaHoldings = new object[dgWea.RowCount - 1];
+                for (int i = 0; i < dgWea.RowCount - 1; i++)
+                {
+                    weaHoldings[i] = dgWea.Rows[i].Cells[12].Value.ToString() + "-" + dgWea.Rows[i].Cells[6].Value.ToString();
+                }
+                cbWealthHolding.Items.Clear();
+                cbWealthHolding.Items.AddRange(weaHoldings);
+
+                if (costDef>0) { lbCost.Text += "Defense: " + costDef + " "; }
+            } else {//Land Feature
                 lbName.Text = dgLandFea.Rows[cbDefLanFea.SelectedIndex - dgDef.RowCount+1].Cells[6].Value.ToString() + " - " + dgLandFea.Rows[cbDefLanFea.SelectedIndex - dgDef.RowCount+1].Cells[3].Value.ToString();
                 lbType.Text = "Land Feature Holding";
-                lbDesc.Text = "";
-                rtbNotes.Text = "";
-                costLan += 0;
-                costPop += 0;
+                rtbNotes.Text = dgLandFea.Rows[cbDefLanFea.SelectedIndex - dgDef.RowCount + 1].Cells[4].Value.ToString();
+                costLan += Convert.ToInt32(dgLandFea.Rows[cbDefLanFea.SelectedIndex - dgDef.RowCount + 1].Cells[7].Value);
+                costPop += Convert.ToInt32(dgLandFea.Rows[cbDefLanFea.SelectedIndex - dgDef.RowCount + 1].Cells[8].Value);
+
+                DbReturn("SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.*FROM `tbl_WealthHolding`, `tbl_Wealth` WHERE `tbl_WealthHolding`.`LanHolFea_ID` = '" + dgLandFea.Rows[cbDefLanFea.SelectedIndex - dgDef.RowCount +1].Cells[0].Value + "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID`; ", "Wea");
+                object[] weaHoldings = new object[dgWea.RowCount - 1];
+                for (int i = 0; i < dgWea.RowCount - 1; i++)
+                {
+                    weaHoldings[i] = dgWea.Rows[i].Cells[12].Value.ToString() + "-" + dgWea.Rows[i].Cells[6].Value.ToString();
+                }
+                cbWealthHolding.Items.Clear();
+                cbWealthHolding.Items.AddRange(weaHoldings);
+
+                if (costLan > 0) { lbCost.Text += "land: " + costLan + " "; }
+                if (costPop > 0) { lbCost.Text += "Population: " + costPop + " "; }
             }
 
         }
 
         private void CbWealthHolding_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ToolStripEnabled("Wealth");
             int costWea = 0;
             int costDef = 0;
             int costLan = 0;
@@ -195,11 +242,11 @@ namespace WindowsFormsApp1
 
             }
             
-            if (costWea > 0) { lbCost.Text += "Wealth: "+ costWea; }
-            if (costDef > 0) { lbCost.Text += "Defense: "+ costDef; }
-            if (costLan > 0) { lbCost.Text += "Land: "+costLan; }
-            if (costPow > 0) { lbCost.Text += "Power: "+costPow; }
-            if (costInf > 0) { lbCost.Text += "Influence: " + costInf; }
+            if (costWea > 0) { lbCost.Text += "Wealth: "+ costWea + " "; }
+            if (costDef > 0) { lbCost.Text += "Defense: "+ costDef + " "; }
+            if (costLan > 0) { lbCost.Text += "Land: "+costLan + " "; }
+            if (costPow > 0) { lbCost.Text += "Power: "+costPow + " "; }
+            if (costInf > 0) { lbCost.Text += "Influence: " + costInf + " "; }
         }
 
         
