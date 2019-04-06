@@ -72,7 +72,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen() == true)
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
-                comm.CommandText = "INSERT INTO `tblLandHoldings` (`Hou_ID`, `Lan_ID`, `LanHol_Name`, `LanHol_Note`, `LanHol_Discount`) VALUES (@Hou_ID, @Lan_ID, @LanHol_Name, @LanHol_Note, @LanHol_Discount);";
+                comm.CommandText = "INSERT INTO `tbl_LandHolding` (`Hou_ID`, `Lan_ID`, `LanHol_Name`, `LanHol_Note`, `LanHol_Discount`) VALUES (@Hou_ID, @Lan_ID, @LanHol_Name, @LanHol_Note, @LanHol_Discount);";
                 comm.Parameters.AddWithValue("@Hou_ID", houseID);
                 comm.Parameters.AddWithValue("@Lan_ID", landID);
                 comm.Parameters.AddWithValue("@LanHol_Name", name);

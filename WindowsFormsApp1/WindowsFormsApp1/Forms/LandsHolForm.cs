@@ -89,7 +89,9 @@ namespace WindowsFormsApp1
             {
                 landHoldings[i] = dgLand.Rows[i].Cells[9].Value.ToString() + "-" + dgLand.Rows[i].Cells[4].Value.ToString();
             }
+            cbLandHolding.Items.Clear();
             cbLandHolding.Items.AddRange(landHoldings);
+            this.Visible = true;
 
         }
 
@@ -254,6 +256,8 @@ namespace WindowsFormsApp1
         private void landHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewLandForm newLandForm = new NewLandForm(houseID);
+            newLandForm.FormClosing += new FormClosingEventHandler(this.LandsHolForm_Load);
+            this.Visible = false;
             newLandForm.ShowDialog();
         }
     }

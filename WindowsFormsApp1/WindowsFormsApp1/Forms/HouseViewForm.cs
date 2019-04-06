@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
+        House House = new House();
         public int houseID;
         public int houWea;
         public int houPow;
@@ -390,6 +391,7 @@ namespace WindowsFormsApp1
         private void TbHouLanView_Click(object sender, EventArgs e)
         {
             LandsHolForm landsHolForm = new LandsHolForm(houseID);
+            landsHolForm.VisibleChanged += new EventHandler(this.HouseViewForm_Load);
             landsHolForm.Show();
         }
 

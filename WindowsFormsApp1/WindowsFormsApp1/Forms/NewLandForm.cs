@@ -16,7 +16,7 @@ namespace WindowsFormsApp1.Forms
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
-        House house = new House();
+        House House = new House();
         public int houseID;
 
 
@@ -28,7 +28,31 @@ namespace WindowsFormsApp1.Forms
 
         private void NewLandForm_Load(object sender, EventArgs e)
         {
-            dgLand.DataSource = house.HouseQry("Land");
+            dgLand.DataSource = House.HouseQry("Land");
+            object[] land = new object[dgLand.RowCount - 1];
+            for (int i = 0; i < dgLand.RowCount - 1; i++)
+            {
+                land[i] = dgLand.Rows[i].Cells[1].Value.ToString() + " - Land: " + dgLand.Rows[i].Cells[2].Value.ToString();
+            }
+            cbLand.Items.Clear();
+            cbLand.Items.AddRange(land);
+            cbLand.SelectedIndex = 0;
+        }
+
+        private void cbLand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbCost.Text = Convert.ToString(Convert.ToInt32(dgLand.Rows[cbLand.SelectedIndex].Cells[2].Value) - Convert.ToInt32(tbDiscount.Text));
+        }
+
+        private void tbDiscount_TextChanged(object sender, EventArgs e)
+        {
+            lbCost.Text = Convert.ToString(Convert.ToInt32(dgLand.Rows[cbLand.SelectedIndex].Cells[2].Value) - Convert.ToInt32(tbDiscount.Text));
+        }
+
+        private void btBuy_Click(object sender, EventArgs e)
+        {
+            House.InsertLandHolding(houseID.ToString(), dgLand.Rows[cbLand.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, rtbNote.Text, tbDiscount.Text);
+            Close();
         }
     }
 }
