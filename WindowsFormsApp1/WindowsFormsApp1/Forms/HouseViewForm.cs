@@ -378,7 +378,6 @@ namespace WindowsFormsApp1
             houseID = ID;
             DevLog.LogItem("Opened House View From with ID: " + ID);
             InitializeComponent();
-            
         }
 
         private void HouseViewForm_Load(object sender, EventArgs e)

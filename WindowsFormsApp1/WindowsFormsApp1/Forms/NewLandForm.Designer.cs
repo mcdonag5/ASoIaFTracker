@@ -124,9 +124,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 239);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 269);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // label2
@@ -217,7 +217,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btBuy.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuy.Location = new System.Drawing.Point(290, 204);
+            this.btBuy.Location = new System.Drawing.Point(290, 234);
             this.btBuy.Margin = new System.Windows.Forms.Padding(2);
             this.btBuy.Name = "btBuy";
             this.btBuy.Size = new System.Drawing.Size(111, 33);
@@ -249,7 +249,7 @@
             this.rtbNote.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbNote.Location = new System.Drawing.Point(3, 155);
             this.rtbNote.Name = "rtbNote";
-            this.rtbNote.Size = new System.Drawing.Size(397, 44);
+            this.rtbNote.Size = new System.Drawing.Size(397, 74);
             this.rtbNote.TabIndex = 52;
             this.rtbNote.Text = "";
             // 
@@ -261,7 +261,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dgLand);
             this.Name = "NewLandForm";
-            this.Text = "B";
+            this.Text = "Buy Land Holding";
             this.Load += new System.EventHandler(this.NewLandForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgLand)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
