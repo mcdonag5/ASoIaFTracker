@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using WindowsFormsApp1.Forms;
 using WindowsFormsApp1.Classes;
 
 namespace WindowsFormsApp1
@@ -398,6 +399,12 @@ namespace WindowsFormsApp1
         {
             PowerHolForm powerHolForm = new PowerHolForm(houseID);
             powerHolForm.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ChangeResourcesForm changeResourcesForm = new ChangeResourcesForm(houseID);
+            changeResourcesForm.Show();
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
 

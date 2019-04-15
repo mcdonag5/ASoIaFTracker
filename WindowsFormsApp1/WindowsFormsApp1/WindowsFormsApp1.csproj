@@ -68,6 +68,12 @@
     <Compile Include="Forms\CreateHouseForm.Designer.cs">
       <DependentUpon>CreateHouseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ChangeResourcesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChangeResourcesForm.Designer.cs">
+      <DependentUpon>ChangeResourcesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewLandForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ChangeResourcesForm.resx">
+      <DependentUpon>ChangeResourcesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateHouseForm.resx">
       <DependentUpon>CreateHouseForm.cs</DependentUpon>
     </EmbeddedResource>

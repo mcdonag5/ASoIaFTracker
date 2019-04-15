@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseViewForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHouseHeadings = new System.Windows.Forms.TableLayoutPanel();
@@ -137,6 +138,8 @@
             this.dgCal3 = new System.Windows.Forms.DataGridView();
             this.dgCal2 = new System.Windows.Forms.DataGridView();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tlpHouseHeadings.SuspendLayout();
             this.tlpHouseDetails.SuspendLayout();
@@ -150,6 +153,8 @@
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1371, 25);
@@ -1768,6 +1773,16 @@
             this.dgCal1.TabIndex = 30;
             this.dgCal1.Visible = false;
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
+            this.toolStripButton1.Text = "Change Resources";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // HouseViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1785,6 +1800,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.HouseViewForm_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.tlpMain.ResumeLayout(false);
             this.tlpMain.PerformLayout();
             this.tlpHouseHeadings.ResumeLayout(false);
@@ -1910,5 +1927,6 @@
         private System.Windows.Forms.Label lbModifierPopText;
         private System.Windows.Forms.Label lbModifierLaw;
         private System.Windows.Forms.Label lbModifierPop;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

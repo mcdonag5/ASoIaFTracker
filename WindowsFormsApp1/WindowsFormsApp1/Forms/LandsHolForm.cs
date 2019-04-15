@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using WindowsFormsApp1.Forms;
+using WindowsFormsApp1.Classes;
 
 namespace WindowsFormsApp1
 {
@@ -17,6 +18,7 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
+        House House = new House();
         public int houseID;
 
         public void DbReturn(string returnWhat, string dataGrid)
