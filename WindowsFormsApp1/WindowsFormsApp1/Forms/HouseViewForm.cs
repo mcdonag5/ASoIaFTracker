@@ -128,7 +128,7 @@ namespace WindowsFormsApp1
             DevLog.LogItem("Getting units");
             DbReturn("SELECT `tbl_PowerHolding`.*, `tbl_UnitType`.`Uni_ID`, `tbl_UnitType`.* FROM `tbl_PowerHolding`, `tbl_UnitType` WHERE `tbl_PowerHolding`.`Hou_ID` = '" + houseID + "' AND `tbl_UnitType`.`Uni_ID` = `tbl_PowerHolding`.`Uni_ID`; ", "house detail");
             for (int i = 0; i < dgHouseDetails.RowCount; i++)
-            {//Main table 
+            {//Power List
                 int traningCost = 0;
                 switch (dgHouseDetails.Rows[i].Cells[4].Value)
                 {
@@ -153,10 +153,14 @@ namespace WindowsFormsApp1
                 lbPowHolList.Text += dgHouseDetails.Rows[i].Cells[4].Value.ToString() + " " + dgHouseDetails.Rows[i].Cells[32].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[3].Value.ToString() + Environment.NewLine;
             }
             DevLog.LogItem("Getting Banners");
+
             //Banner Table
             DbReturn("SELECT `tbl_Banner`.`HouLie_ID`, `tbl_House`.* FROM `tbl_Banner`, `tbl_House` WHERE `tbl_Banner`.`HouLie_ID` = '" + houseID + "' AND `tbl_House`.`Hou_ID` = `tbl_Banner`.`HouBan_ID`; ", "house detail");
+            //set Banner Dice
+            lbBannerDiceText.Text = "+"+dgHouseDetails.RowCount.ToString() + "d6";
             for (int i = 0; i < dgHouseDetails.RowCount; i++)
             {
+                //Banners List
                 if (i == 0) { houPow -= 20; }
                 else if (i == 1) { houPow += 10; }
                 else { houPow += 5; }

@@ -25,22 +25,75 @@ namespace WindowsFormsApp1.Forms
             1,1,1,1,2,3,1,1,1,1,
             1,3};
 
+        public void UpdateChanges()
+        {
+
+        }
+
+        public void GetChanges(int year, int month)
+        {
+            bool found = false;
+            for(int i = 0; i < dgCal1.RowCount; i++)
+            {
+                if (year == Convert.ToInt32(dgCal1.Rows[i].Cells[2].Value))
+                {
+                    if (month == Convert.ToInt32(dgCal1.Rows[i].Cells[3].Value))
+                    {
+                        tbRoll.Text = dgCal1.Rows[i].Cells[4].Value.ToString();
+                        if(tbRoll.Text == "") { cbFortune.Text = dgCal1.Rows[i].Cells[5].Value.ToString(); }
+                        tbWealthHF.Text = dgCal1.Rows[i].Cells[6].Value.ToString();
+                        tbWealthOther.Text = dgCal1.Rows[i].Cells[7].Value.ToString();
+                        tbPowerHF.Text = dgCal1.Rows[i].Cells[8].Value.ToString();
+                        tbPowerOther.Text = dgCal1.Rows[i].Cells[9].Value.ToString();
+                        tbPopulationHF.Text = dgCal1.Rows[i].Cells[10].Value.ToString();
+                        tbPopulationOther.Text = dgCal1.Rows[i].Cells[11].Value.ToString();
+                        tbLawHF.Text = dgCal1.Rows[i].Cells[12].Value.ToString();
+                        tbLawOther.Text = dgCal1.Rows[i].Cells[13].Value.ToString();
+                        tbLandHF.Text = dgCal1.Rows[i].Cells[14].Value.ToString();
+                        tbLandOther.Text = dgCal1.Rows[i].Cells[15].Value.ToString();
+                        tbInfluenceHF.Text = dgCal1.Rows[i].Cells[16].Value.ToString();
+                        tbInfluenceOther.Text = dgCal1.Rows[i].Cells[17].Value.ToString();
+                        tbDefenseHF.Text = dgCal1.Rows[i].Cells[18].Value.ToString();
+                        tbDefenseOther.Text = dgCal1.Rows[i].Cells[19].Value.ToString();
+                        found = true;
+                    }
+                }
+            }
+            if (!found)
+            {
+                tbRoll.Text = "";
+                tbWealthHF.Text = tbPowerOther.Text = tbPopulationHF.Text = tbPopulationOther.Text = tbLawHF.Text = tbLawOther.Text = tbLandHF.Text = tbLandOther.Text = tbInfluenceHF.Text = tbInfluenceOther.Text = tbDefenseHF.Text = tbDefenseOther.Text = "0";
+            }
+
+        }
+
         public ChangeResourcesForm(int ID)
         {
             houseID = ID;
             InitializeComponent();
+            dgCal1.DataSource = House.HouseQry("HouseChanges", houseID);
+            if (dgCal1.RowCount > 0)
+            {
+                tbYear.Text = dgCal1.Rows[dgCal1.RowCount-1].Cells[2].Value.ToString();
+                tbMonth.Text = dgCal1.Rows[dgCal1.RowCount-1].Cells[3].Value.ToString();
+                tbRoll.Text = dgCal1.Rows[dgCal1.RowCount - 1].Cells[4].Value.ToString();
+
+                GetChanges(Convert.ToInt32(dgCal1.Rows[dgCal1.RowCount - 1].Cells[2].Value), Convert.ToInt32(dgCal1.Rows[dgCal1.RowCount - 1].Cells[3].Value));
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (tbRoll.Text != "" && Convert.ToInt32(tbRoll.Text) >= 0)
+            if (tbRoll.Text != "")
             {
                 int x = 0;
                 if (Convert.ToInt32(tbRoll.Text) < HouseFortunesArry.Length-1)
                 {
                     x = HouseFortunesArry[Convert.ToInt32(tbRoll.Text)];
-                } else
+                } else if (Convert.ToInt32(tbRoll.Text)<0)
                 {
+                    x = HouseFortunesArry[0];
+                } else {
                     x = HouseFortunesArry[HouseFortunesArry.Length-1];
                 }
                 string fortune = "";
@@ -71,6 +124,7 @@ namespace WindowsFormsApp1.Forms
             {
 
                 lbFortuneText.Text = "";
+                cbFortune.SelectedIndex = -1;
             }
         }
 
@@ -79,6 +133,9 @@ namespace WindowsFormsApp1.Forms
             string fortuneText = "";
             switch (cbFortune.Text)
             {
+                case "Take Growth":
+                    fortuneText = "A Growth result reflects the improvement of one or more of the house’s resources. It might result in a gift of land, a sudden swell in population, an upturn in the economy, and so on. Growth should improve one resource by 1 point.";
+                    break;
                 case "Disaster":
                     fortuneText = "A Disaster is an event of catastrophic proportions and sets the house back in a significant way. Examples include the outbreak of plague, the disfavor of a lord or king, the disgrace of a staunch ally, widespread lawlessness, or a combination of any of these dire events. Disaster reduces a single resource by 1–6 points or two resources by 1–3 points.";
                     break;
@@ -99,6 +156,58 @@ namespace WindowsFormsApp1.Forms
                     break;
             }
             lbFortuneText.Text = fortuneText;
+        }
+
+        private void btSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbYear_TextChanged(object sender, EventArgs e)
+        {
+            if (!(tbYear.Text == "" || tbMonth.Text == ""))
+            {
+                GetChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text));
+            }
+        }
+
+        private void tbMonth_TextChanged(object sender, EventArgs e)
+        {
+            if (!(tbYear.Text == "" || tbMonth.Text == ""))
+            {
+                GetChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text));
+            }
+        }
+
+        private void btDateNext_Click(object sender, EventArgs e)
+        {
+            if (!(tbYear.Text == "" || tbMonth.Text == ""))
+            {
+                if(Convert.ToInt32(tbMonth.Text)==12)
+                {
+                    tbYear.Text = Convert.ToString(Convert.ToInt32(tbYear.Text)+1);
+                    tbMonth.Text = "1";
+                } else
+                {
+                    tbMonth.Text = Convert.ToString(Convert.ToInt32(tbMonth.Text) + 1);
+                }
+            }
+        }
+
+        private void btDateBack_Click(object sender, EventArgs e)
+        {
+            if (!(tbYear.Text == "" || tbMonth.Text == ""))
+            {
+                if (Convert.ToInt32(tbMonth.Text) == 1)
+                {
+                    tbYear.Text = Convert.ToString(Convert.ToInt32(tbYear.Text) - 1);
+                    tbMonth.Text = "12";
+                }
+                else
+                {
+                    tbMonth.Text = Convert.ToString(Convert.ToInt32(tbMonth.Text) - 1);
+                }
+            }
         }
     }
 }

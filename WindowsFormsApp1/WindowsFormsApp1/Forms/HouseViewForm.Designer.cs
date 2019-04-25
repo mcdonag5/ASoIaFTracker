@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseViewForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseViewForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHouseHeadings = new System.Windows.Forms.TableLayoutPanel();
             this.tbSeatOfPower = new System.Windows.Forms.TextBox();
@@ -46,6 +47,7 @@
             this.lbSeatOfPower = new System.Windows.Forms.Label();
             this.cbRealm = new System.Windows.Forms.ComboBox();
             this.tlpHouseDetails = new System.Windows.Forms.TableLayoutPanel();
+            this.lbBannerDice = new System.Windows.Forms.Label();
             this.lbModifierLawText = new System.Windows.Forms.Label();
             this.lbModifierPopText = new System.Windows.Forms.Label();
             this.lbModifierLaw = new System.Windows.Forms.Label();
@@ -121,29 +123,34 @@
             this.lbTotalLanText = new System.Windows.Forms.Label();
             this.lbTotalInfText = new System.Windows.Forms.Label();
             this.lbTotalDefText = new System.Windows.Forms.Label();
+            this.lbBannerDiceText = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbHouLanHol = new System.Windows.Forms.Label();
-            this.lbHouseInfHol = new System.Windows.Forms.Label();
-            this.lbInfHolList = new System.Windows.Forms.Label();
             this.tbHouLanView = new System.Windows.Forms.Button();
             this.lbHouBan = new System.Windows.Forms.Label();
-            this.lbPowHolList = new System.Windows.Forms.Label();
-            this.lBHouPowHol = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btPowerHolForm = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.lbLanHolList = new System.Windows.Forms.Label();
             this.lbBanList = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbHouseInfHol = new System.Windows.Forms.Label();
+            this.lbInfHolList = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbPowHolList = new System.Windows.Forms.Label();
+            this.lBHouPowHol = new System.Windows.Forms.Label();
+            this.btPowerHolForm = new System.Windows.Forms.Button();
             this.dgHouseDetails = new System.Windows.Forms.DataGridView();
             this.dgCal3 = new System.Windows.Forms.DataGridView();
             this.dgCal2 = new System.Windows.Forms.DataGridView();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.lbHair = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lbHairList = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tlpHouseHeadings.SuspendLayout();
             this.tlpHouseDetails.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).BeginInit();
@@ -160,6 +167,16 @@
             this.toolStrip1.Size = new System.Drawing.Size(1371, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
+            this.toolStripButton1.Text = "Change Resources";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // tlpMain
             // 
@@ -377,6 +394,7 @@
             this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpHouseDetails.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpHouseDetails.Controls.Add(this.lbBannerDice, 6, 6);
             this.tlpHouseDetails.Controls.Add(this.lbModifierLawText, 5, 7);
             this.tlpHouseDetails.Controls.Add(this.lbModifierPopText, 5, 6);
             this.tlpHouseDetails.Controls.Add(this.lbModifierLaw, 4, 7);
@@ -452,6 +470,7 @@
             this.tlpHouseDetails.Controls.Add(this.lbTotalLanText, 1, 5);
             this.tlpHouseDetails.Controls.Add(this.lbTotalInfText, 1, 6);
             this.tlpHouseDetails.Controls.Add(this.lbTotalDefText, 1, 7);
+            this.tlpHouseDetails.Controls.Add(this.lbBannerDiceText, 6, 7);
             this.tlpHouseDetails.Location = new System.Drawing.Point(2, 95);
             this.tlpHouseDetails.Margin = new System.Windows.Forms.Padding(2);
             this.tlpHouseDetails.Name = "tlpHouseDetails";
@@ -467,6 +486,21 @@
             this.tlpHouseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpHouseDetails.Size = new System.Drawing.Size(1367, 199);
             this.tlpHouseDetails.TabIndex = 1;
+            // 
+            // lbBannerDice
+            // 
+            this.lbBannerDice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBannerDice.AutoSize = true;
+            this.tlpHouseDetails.SetColumnSpan(this.lbBannerDice, 3);
+            this.lbBannerDice.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBannerDice.Location = new System.Drawing.Point(626, 142);
+            this.lbBannerDice.Name = "lbBannerDice";
+            this.lbBannerDice.Size = new System.Drawing.Size(168, 23);
+            this.lbBannerDice.TabIndex = 56;
+            this.lbBannerDice.Text = "Banner Dice:";
+            this.lbBannerDice.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbModifierLawText
             // 
@@ -530,14 +564,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbModifiers.AutoSize = true;
-            this.tlpHouseDetails.SetColumnSpan(this.lbModifiers, 2);
+            this.tlpHouseDetails.SetColumnSpan(this.lbModifiers, 6);
             this.lbModifiers.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbModifiers.Location = new System.Drawing.Point(509, 119);
             this.lbModifiers.Name = "lbModifiers";
-            this.lbModifiers.Size = new System.Drawing.Size(111, 23);
+            this.lbModifiers.Size = new System.Drawing.Size(340, 23);
             this.lbModifiers.TabIndex = 55;
-            this.lbModifiers.Text = "Modifiers";
-            this.lbModifiers.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lbModifiers.Text = "House Fortune Modifiers";
+            this.lbModifiers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbDefLossDice
             // 
@@ -1521,11 +1555,25 @@
             this.lbTotalDefText.Text = "000";
             this.lbTotalDefText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lbBannerDiceText
+            // 
+            this.lbBannerDiceText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBannerDiceText.AutoSize = true;
+            this.tlpHouseDetails.SetColumnSpan(this.lbBannerDiceText, 3);
+            this.lbBannerDiceText.Font = new System.Drawing.Font("Georgia", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBannerDiceText.Location = new System.Drawing.Point(626, 165);
+            this.lbBannerDiceText.Name = "lbBannerDiceText";
+            this.lbBannerDiceText.Size = new System.Drawing.Size(168, 30);
+            this.lbBannerDiceText.TabIndex = 57;
+            this.lbBannerDiceText.Text = "00";
+            this.lbBannerDiceText.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 8;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -1537,24 +1585,22 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.lbHouLanHol, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbHouseInfHol, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbInfHolList, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbHouLanView, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbHouBan, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowHolList, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lBHouPowHol, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btPowerHolForm, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbLanHolList, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbBanList, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbPowHolList, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lBHouPowHol, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btPowerHolForm, 4, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 298);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1367, 64);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1367, 231);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // lbHouLanHol
@@ -1567,32 +1613,6 @@
             this.lbHouLanHol.TabIndex = 27;
             this.lbHouLanHol.Text = "Land Holdings";
             this.lbHouLanHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbHouseInfHol
-            // 
-            this.lbHouseInfHol.AutoSize = true;
-            this.lbHouseInfHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouseInfHol.Location = new System.Drawing.Point(368, 0);
-            this.lbHouseInfHol.Name = "lbHouseInfHol";
-            this.lbHouseInfHol.Size = new System.Drawing.Size(198, 23);
-            this.lbHouseInfHol.TabIndex = 28;
-            this.lbHouseInfHol.Text = "Influence Holdings";
-            this.lbHouseInfHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbInfHolList
-            // 
-            this.lbInfHolList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbInfHolList.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lbInfHolList, 2);
-            this.lbInfHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfHolList.Location = new System.Drawing.Point(368, 28);
-            this.lbInfHolList.MaximumSize = new System.Drawing.Size(236, 0);
-            this.lbInfHolList.Name = "lbInfHolList";
-            this.lbInfHolList.Size = new System.Drawing.Size(236, 36);
-            this.lbInfHolList.TabIndex = 44;
-            this.lbInfHolList.Text = "Influence Holdings00000000000";
             // 
             // tbHouLanView
             // 
@@ -1610,66 +1630,17 @@
             // 
             this.lbHouBan.AutoSize = true;
             this.lbHouBan.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouBan.Location = new System.Drawing.Point(867, 0);
+            this.lbHouBan.Location = new System.Drawing.Point(909, 0);
             this.lbHouBan.Name = "lbHouBan";
             this.lbHouBan.Size = new System.Drawing.Size(92, 23);
             this.lbHouBan.TabIndex = 42;
             this.lbHouBan.Text = "Banners";
             this.lbHouBan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbPowHolList
-            // 
-            this.lbPowHolList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbPowHolList.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lbPowHolList, 2);
-            this.lbPowHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowHolList.Location = new System.Drawing.Point(632, 28);
-            this.lbPowHolList.MaximumSize = new System.Drawing.Size(258, 0);
-            this.lbPowHolList.Name = "lbPowHolList";
-            this.lbPowHolList.Size = new System.Drawing.Size(229, 36);
-            this.lbPowHolList.TabIndex = 45;
-            this.lbPowHolList.Text = "Power Holdings0000000000000000\r\n";
-            // 
-            // lBHouPowHol
-            // 
-            this.lBHouPowHol.AutoSize = true;
-            this.lBHouPowHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lBHouPowHol.Location = new System.Drawing.Point(632, 0);
-            this.lBHouPowHol.Name = "lBHouPowHol";
-            this.lBHouPowHol.Size = new System.Drawing.Size(167, 23);
-            this.lBHouPowHol.TabIndex = 40;
-            this.lBHouPowHol.Text = "Power Holdings";
-            this.lBHouPowHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(571, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 24);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "View";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btPowerHolForm
-            // 
-            this.btPowerHolForm.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPowerHolForm.Location = new System.Drawing.Point(804, 2);
-            this.btPowerHolForm.Margin = new System.Windows.Forms.Padding(2);
-            this.btPowerHolForm.Name = "btPowerHolForm";
-            this.btPowerHolForm.Size = new System.Drawing.Size(56, 24);
-            this.btPowerHolForm.TabIndex = 52;
-            this.btPowerHolForm.Text = "View";
-            this.btPowerHolForm.UseVisualStyleBackColor = true;
-            this.btPowerHolForm.Click += new System.EventHandler(this.BtPowerHolForm_Click);
-            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(964, 2);
+            this.button3.Location = new System.Drawing.Point(1006, 2);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(56, 24);
@@ -1679,7 +1650,8 @@
             // 
             // lbLanHolList
             // 
-            this.lbLanHolList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbLanHolList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLanHolList.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lbLanHolList, 2);
@@ -1687,7 +1659,7 @@
             this.lbLanHolList.Location = new System.Drawing.Point(3, 28);
             this.lbLanHolList.MaximumSize = new System.Drawing.Size(367, 0);
             this.lbLanHolList.Name = "lbLanHolList";
-            this.lbLanHolList.Size = new System.Drawing.Size(359, 36);
+            this.lbLanHolList.Size = new System.Drawing.Size(359, 203);
             this.lbLanHolList.TabIndex = 43;
             this.lbLanHolList.Text = "Land Holdings00000000000000000000000000000\r\n";
             // 
@@ -1699,12 +1671,111 @@
             this.lbBanList.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lbBanList, 2);
             this.lbBanList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBanList.Location = new System.Drawing.Point(867, 28);
+            this.lbBanList.Location = new System.Drawing.Point(909, 28);
             this.lbBanList.MaximumSize = new System.Drawing.Size(200, 0);
             this.lbBanList.Name = "lbBanList";
-            this.lbBanList.Size = new System.Drawing.Size(200, 36);
+            this.lbBanList.Size = new System.Drawing.Size(200, 203);
             this.lbBanList.TabIndex = 54;
             this.lbBanList.Text = "Influence Holdings0000000";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.lbHouseInfHol, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lbInfHolList, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lbHair, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lbHairList, 0, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(368, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel1.SetRowSpan(this.tableLayoutPanel2, 2);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(300, 225);
+            this.tableLayoutPanel2.TabIndex = 33;
+            // 
+            // lbHouseInfHol
+            // 
+            this.lbHouseInfHol.AutoSize = true;
+            this.lbHouseInfHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHouseInfHol.Location = new System.Drawing.Point(3, 0);
+            this.lbHouseInfHol.Name = "lbHouseInfHol";
+            this.lbHouseInfHol.Size = new System.Drawing.Size(198, 23);
+            this.lbHouseInfHol.TabIndex = 28;
+            this.lbHouseInfHol.Text = "Influence Holdings";
+            this.lbHouseInfHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbInfHolList
+            // 
+            this.lbInfHolList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbInfHolList.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lbInfHolList, 2);
+            this.lbInfHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfHolList.Location = new System.Drawing.Point(3, 28);
+            this.lbInfHolList.MaximumSize = new System.Drawing.Size(236, 0);
+            this.lbInfHolList.Name = "lbInfHolList";
+            this.lbInfHolList.Size = new System.Drawing.Size(236, 36);
+            this.lbInfHolList.TabIndex = 44;
+            this.lbInfHolList.Text = "Influence Holdings00000000000";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(206, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(56, 24);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "View";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lbPowHolList
+            // 
+            this.lbPowHolList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPowHolList.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lbPowHolList, 2);
+            this.lbPowHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPowHolList.Location = new System.Drawing.Point(674, 28);
+            this.lbPowHolList.MaximumSize = new System.Drawing.Size(258, 0);
+            this.lbPowHolList.Name = "lbPowHolList";
+            this.lbPowHolList.Size = new System.Drawing.Size(229, 203);
+            this.lbPowHolList.TabIndex = 45;
+            this.lbPowHolList.Text = "Power Holdings0000000000000000\r\n";
+            // 
+            // lBHouPowHol
+            // 
+            this.lBHouPowHol.AutoSize = true;
+            this.lBHouPowHol.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lBHouPowHol.Location = new System.Drawing.Point(674, 0);
+            this.lBHouPowHol.Name = "lBHouPowHol";
+            this.lBHouPowHol.Size = new System.Drawing.Size(167, 23);
+            this.lBHouPowHol.TabIndex = 40;
+            this.lBHouPowHol.Text = "Power Holdings";
+            this.lBHouPowHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btPowerHolForm
+            // 
+            this.btPowerHolForm.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPowerHolForm.Location = new System.Drawing.Point(846, 2);
+            this.btPowerHolForm.Margin = new System.Windows.Forms.Padding(2);
+            this.btPowerHolForm.Name = "btPowerHolForm";
+            this.btPowerHolForm.Size = new System.Drawing.Size(56, 24);
+            this.btPowerHolForm.TabIndex = 52;
+            this.btPowerHolForm.Text = "View";
+            this.btPowerHolForm.UseVisualStyleBackColor = true;
+            this.btPowerHolForm.Click += new System.EventHandler(this.BtPowerHolForm_Click);
             // 
             // dgHouseDetails
             // 
@@ -1773,15 +1844,42 @@
             this.dgCal1.TabIndex = 30;
             this.dgCal1.Visible = false;
             // 
-            // toolStripButton1
+            // lbHair
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
-            this.toolStripButton1.Text = "Change Resources";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.lbHair.AutoSize = true;
+            this.lbHair.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHair.Location = new System.Drawing.Point(3, 64);
+            this.lbHair.Name = "lbHair";
+            this.lbHair.Size = new System.Drawing.Size(198, 23);
+            this.lbHair.TabIndex = 52;
+            this.lbHair.Text = "Influence Holdings";
+            this.lbHair.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(206, 66);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 24);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "View";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // lbHairList
+            // 
+            this.lbHairList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbHairList.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lbHairList, 2);
+            this.lbHairList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHairList.Location = new System.Drawing.Point(3, 92);
+            this.lbHairList.MaximumSize = new System.Drawing.Size(236, 0);
+            this.lbHairList.Name = "lbHairList";
+            this.lbHairList.Size = new System.Drawing.Size(236, 133);
+            this.lbHairList.TabIndex = 54;
+            this.lbHairList.Text = "Influence Holdings00000000000";
             // 
             // HouseViewForm
             // 
@@ -1810,6 +1908,8 @@
             this.tlpHouseDetails.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).EndInit();
@@ -1928,5 +2028,11 @@
         private System.Windows.Forms.Label lbModifierLaw;
         private System.Windows.Forms.Label lbModifierPop;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Label lbBannerDice;
+        private System.Windows.Forms.Label lbBannerDiceText;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label lbHair;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbHairList;
     }
 }

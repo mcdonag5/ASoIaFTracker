@@ -28,7 +28,10 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT `tbl_PowerHolding`.`Hou_ID`, `tbl_PowerHolding`.*, `tbl_UnitType`.`Uni_ID`, `tbl_UnitType`.*, `tbl_UnitTraning`.`Tra_Name`, `tbl_UnitTraning`.* " +
                             "FROM `tbl_PowerHolding`, `tbl_UnitType`, `tbl_UnitTraning` " +
                             "WHERE `tbl_PowerHolding`.`Hou_ID` = '" + ID + "' AND `tbl_UnitType`.`Uni_ID` = `tbl_PowerHolding`.`Uni_ID` AND `tbl_UnitTraning`.`Tra_Name` = `tbl_PowerHolding`.`PowHol_Training`;";
-
+                        break;
+                    case "HouseChanges":
+                        qry = "SELECT * FROM `tbl_HouseChanges` WHERE `Hou_ID` = '" + ID + "'" +
+                            "ORDER BY `HouCha_Year`, `HouCha_Month`; ";
                         break;
                     default:
 
