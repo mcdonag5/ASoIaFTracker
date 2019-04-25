@@ -5,7 +5,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 04, 2019 at 09:47 AM
+-- Generation Time: Apr 16, 2019 at 08:42 AM
 -- Server version: 5.7.25
 -- PHP Version: 7.2.7
 
@@ -133,26 +133,26 @@ CREATE TABLE `tbl_House` (
 --
 
 CREATE TABLE `tbl_HouseChanges` (
-  `Cha_ID` int(11) NOT NULL,
+  `HouCha_ID` int(11) NOT NULL,
   `Hou_ID` int(11) NOT NULL,
-  `Cha_Year` int(3) NOT NULL,
-  `Cha_Month` int(2) DEFAULT NULL,
-  `Cha_Roll` int(2) DEFAULT NULL,
-  `Cha_Fortune` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Cha_WealthHF` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_WealthOther` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_PowerHF` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_PowerOther` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_PopulationHF` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_PopulationOther` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_LawHF` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_LawOther` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_LandsHF` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_LandsOther` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_InfluenceHF` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_InfluenceOther` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_DefenseHF` smallint(2) NOT NULL DEFAULT '0',
-  `Cha_DefenseOther` smallint(2) NOT NULL DEFAULT '0'
+  `HouCha_Year` int(3) NOT NULL,
+  `HouCha_Month` int(2) DEFAULT NULL,
+  `HouCha_Roll` int(2) DEFAULT NULL,
+  `HouCha_Fortune` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `HouCha_WealthHF` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_WealthOther` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_PowerHF` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_PowerOther` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_PopulationHF` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_PopulationOther` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_LawHF` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_LawOther` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_LandsHF` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_LandsOther` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_InfluenceHF` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_InfluenceOther` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_DefenseHF` smallint(2) NOT NULL DEFAULT '0',
+  `HouCha_DefenseOther` smallint(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -244,6 +244,7 @@ CREATE TABLE `tbl_LandFeature` (
   `LanFea_ID` int(11) NOT NULL,
   `LanFea_Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `LanFea_LandCost` int(2) NOT NULL,
+  `LanFea_PopulationCost` int(2) NOT NULL,
   `LanFea_Spaces` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -311,7 +312,23 @@ CREATE TABLE `tbl_PowerHolding` (
   `PowHol_FightingUp` tinyint(1) DEFAULT NULL,
   `PowHol_MarksmashipUp` tinyint(1) DEFAULT NULL,
   `PowHol_Damage` int(2) NOT NULL DEFAULT '0',
-  `PowHol_Disorganized` int(2) NOT NULL DEFAULT '0'
+  `PowHol_Disorganized` int(2) NOT NULL DEFAULT '0',
+  `PowHol_Notes` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_Qualities`
+--
+
+CREATE TABLE `tbl_Qualities` (
+  `Qua_ID` int(11) NOT NULL,
+  `Qua_Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Qua_Type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Qua_Description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Qua_Requirement` text COLLATE utf8mb4_unicode_ci,
+  `Qua_Effects` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -371,7 +388,8 @@ CREATE TABLE `tbl_UnitType` (
   `Uni_FightingDamage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Uni_UpFightingDamage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Uni_MarksmanshipDamage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Uni_UpMarksmanshipDamage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `Uni_UpMarksmanshipDamage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Uni_MarksmanshipRange` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -539,8 +557,8 @@ ALTER TABLE `tbl_House`
 -- Indexes for table `tbl_HouseChanges`
 --
 ALTER TABLE `tbl_HouseChanges`
-  ADD PRIMARY KEY (`Cha_ID`),
-  ADD UNIQUE KEY `Cha_ID` (`Cha_ID`),
+  ADD PRIMARY KEY (`HouCha_ID`),
+  ADD UNIQUE KEY `Cha_ID` (`HouCha_ID`),
   ADD KEY `Hou_ID` (`Hou_ID`);
 
 --
@@ -617,6 +635,13 @@ ALTER TABLE `tbl_PowerHolding`
   ADD KEY `Uni_ID` (`Uni_ID`),
   ADD KEY `Hou_ID` (`Hou_ID`),
   ADD KEY `PowHol_Training` (`PowHol_Training`);
+
+--
+-- Indexes for table `tbl_Qualities`
+--
+ALTER TABLE `tbl_Qualities`
+  ADD PRIMARY KEY (`Qua_ID`),
+  ADD UNIQUE KEY `Qua_ID` (`Qua_ID`);
 
 --
 -- Indexes for table `tbl_Realms`
@@ -711,7 +736,7 @@ ALTER TABLE `tbl_House`
 -- AUTO_INCREMENT for table `tbl_HouseChanges`
 --
 ALTER TABLE `tbl_HouseChanges`
-  MODIFY `Cha_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `HouCha_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_Influence`
@@ -766,6 +791,12 @@ ALTER TABLE `tbl_LandHoldingFeature`
 --
 ALTER TABLE `tbl_PowerHolding`
   MODIFY `PowHol_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_Qualities`
+--
+ALTER TABLE `tbl_Qualities`
+  MODIFY `Qua_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_UnitType`
