@@ -135,6 +135,9 @@
             this.lbHouseInfHol = new System.Windows.Forms.Label();
             this.lbInfHolList = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbHeir = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lbHeirList = new System.Windows.Forms.Label();
             this.lbPowHolList = new System.Windows.Forms.Label();
             this.lBHouPowHol = new System.Windows.Forms.Label();
             this.btPowerHolForm = new System.Windows.Forms.Button();
@@ -142,9 +145,6 @@
             this.dgCal3 = new System.Windows.Forms.DataGridView();
             this.dgCal2 = new System.Windows.Forms.DataGridView();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
-            this.lbHair = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.lbHairList = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tlpHouseHeadings.SuspendLayout();
@@ -1688,9 +1688,9 @@
             this.tableLayoutPanel2.Controls.Add(this.lbHouseInfHol, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.lbInfHolList, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.lbHair, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lbHeir, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.button2, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lbHairList, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lbHeirList, 0, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(368, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -1738,6 +1738,43 @@
             this.button1.TabIndex = 51;
             this.button1.Text = "View";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // lbHeir
+            // 
+            this.lbHeir.AutoSize = true;
+            this.lbHeir.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeir.Location = new System.Drawing.Point(3, 64);
+            this.lbHeir.Name = "lbHeir";
+            this.lbHeir.Size = new System.Drawing.Size(65, 23);
+            this.lbHeir.TabIndex = 52;
+            this.lbHeir.Text = "Heirs";
+            this.lbHeir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(206, 66);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(56, 24);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "View";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // lbHeirList
+            // 
+            this.lbHeirList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbHeirList.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.lbHeirList, 2);
+            this.lbHeirList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeirList.Location = new System.Drawing.Point(3, 92);
+            this.lbHeirList.MaximumSize = new System.Drawing.Size(236, 0);
+            this.lbHeirList.Name = "lbHeirList";
+            this.lbHeirList.Size = new System.Drawing.Size(236, 133);
+            this.lbHeirList.TabIndex = 54;
+            this.lbHeirList.Text = "Influence Holdings00000000000";
             // 
             // lbPowHolList
             // 
@@ -1843,43 +1880,6 @@
             this.dgCal1.Size = new System.Drawing.Size(38, 32);
             this.dgCal1.TabIndex = 30;
             this.dgCal1.Visible = false;
-            // 
-            // lbHair
-            // 
-            this.lbHair.AutoSize = true;
-            this.lbHair.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHair.Location = new System.Drawing.Point(3, 64);
-            this.lbHair.Name = "lbHair";
-            this.lbHair.Size = new System.Drawing.Size(198, 23);
-            this.lbHair.TabIndex = 52;
-            this.lbHair.Text = "Influence Holdings";
-            this.lbHair.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(206, 66);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 24);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "View";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // lbHairList
-            // 
-            this.lbHairList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbHairList.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.lbHairList, 2);
-            this.lbHairList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHairList.Location = new System.Drawing.Point(3, 92);
-            this.lbHairList.MaximumSize = new System.Drawing.Size(236, 0);
-            this.lbHairList.Name = "lbHairList";
-            this.lbHairList.Size = new System.Drawing.Size(236, 133);
-            this.lbHairList.TabIndex = 54;
-            this.lbHairList.Text = "Influence Holdings00000000000";
             // 
             // HouseViewForm
             // 
@@ -2031,8 +2031,8 @@
         private System.Windows.Forms.Label lbBannerDice;
         private System.Windows.Forms.Label lbBannerDiceText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Label lbHair;
+        private System.Windows.Forms.Label lbHeir;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label lbHairList;
+        private System.Windows.Forms.Label lbHeirList;
     }
 }

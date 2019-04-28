@@ -17,6 +17,7 @@ namespace WindowsFormsApp1.Forms
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
         House House = new House();
+        Validation Validation = new Validation();
         public int houseID;
         int[] HouseFortunesArry = 
             {-3,-3,-3,-2,-1,-3,1,-1,1,-2,-1,
@@ -165,14 +166,13 @@ namespace WindowsFormsApp1.Forms
 
         private void tbYear_TextChanged(object sender, EventArgs e)
         {
-            if (!(tbYear.Text == "" || tbMonth.Text == ""))
-            {
-                GetChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text));
-            }
+
         }
 
         private void tbMonth_TextChanged(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(tbMonth.Text) < 1) { tbMonth.Text = "1"; }
+            else if (Convert.ToInt32(tbMonth.Text) > 12) { tbMonth.Text = "12"; }
             if (!(tbYear.Text == "" || tbMonth.Text == ""))
             {
                 GetChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text));
@@ -183,7 +183,7 @@ namespace WindowsFormsApp1.Forms
         {
             if (!(tbYear.Text == "" || tbMonth.Text == ""))
             {
-                if(Convert.ToInt32(tbMonth.Text)==12)
+                if(Convert.ToInt32(tbMonth.Text)>=12)
                 {
                     tbYear.Text = Convert.ToString(Convert.ToInt32(tbYear.Text)+1);
                     tbMonth.Text = "1";
@@ -198,7 +198,7 @@ namespace WindowsFormsApp1.Forms
         {
             if (!(tbYear.Text == "" || tbMonth.Text == ""))
             {
-                if (Convert.ToInt32(tbMonth.Text) == 1)
+                if (Convert.ToInt32(tbMonth.Text) <= 1)
                 {
                     tbYear.Text = Convert.ToString(Convert.ToInt32(tbYear.Text) - 1);
                     tbMonth.Text = "12";
@@ -208,6 +208,11 @@ namespace WindowsFormsApp1.Forms
                     tbMonth.Text = Convert.ToString(Convert.ToInt32(tbMonth.Text) - 1);
                 }
             }
+        }
+
+        private void OnlyDigit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validation.OnlyDigit(e);
         }
     }
 }
