@@ -285,11 +285,6 @@ namespace WindowsFormsApp1.Forms
             Validation.OnlyDigitWithNegatives(sender, e);
         }
 
-        private void SetNullToZero_TextChanged(object sender, EventArgs e)
-        {
-            Validation.SetNullToZero(sender);
-        }
-
         ///// EVENTS END ////////////////////////////////////////////////////////////
     }
 }

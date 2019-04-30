@@ -159,7 +159,6 @@
             this.tbPopulationOther.TabIndex = 37;
             this.tbPopulationOther.Text = "0";
             this.tbPopulationOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbPopulationOther.VisibleChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbPopulationOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbPowerOther
@@ -174,7 +173,6 @@
             this.tbPowerOther.TabIndex = 36;
             this.tbPowerOther.Text = "0";
             this.tbPowerOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbPowerOther.VisibleChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbPowerOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbDefenseHF
@@ -189,7 +187,6 @@
             this.tbDefenseHF.TabIndex = 35;
             this.tbDefenseHF.Text = "0";
             this.tbDefenseHF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbDefenseHF.VisibleChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbDefenseHF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbInfluenceHF
@@ -204,7 +201,6 @@
             this.tbInfluenceHF.TabIndex = 35;
             this.tbInfluenceHF.Text = "0";
             this.tbInfluenceHF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbInfluenceHF.VisibleChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbInfluenceHF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbLandHF
@@ -219,7 +215,6 @@
             this.tbLandHF.TabIndex = 35;
             this.tbLandHF.Text = "0";
             this.tbLandHF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbLandHF.TextChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbLandHF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbWealthOther
@@ -234,7 +229,6 @@
             this.tbWealthOther.TabIndex = 35;
             this.tbWealthOther.Text = "0";
             this.tbWealthOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbWealthOther.VisibleChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbWealthOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbLawHF
@@ -249,7 +243,6 @@
             this.tbLawHF.TabIndex = 35;
             this.tbLawHF.Text = "0";
             this.tbLawHF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbLawHF.TextChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbLawHF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbPopulationHF
@@ -264,7 +257,6 @@
             this.tbPopulationHF.TabIndex = 35;
             this.tbPopulationHF.Text = "0";
             this.tbPopulationHF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbPopulationHF.TextChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbPopulationHF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbPowerHF
@@ -279,7 +271,6 @@
             this.tbPowerHF.TabIndex = 35;
             this.tbPowerHF.Text = "0";
             this.tbPowerHF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbPowerHF.TextChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbPowerHF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbWealthHF
@@ -294,7 +285,6 @@
             this.tbWealthHF.TabIndex = 35;
             this.tbWealthHF.Text = "0";
             this.tbWealthHF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbWealthHF.TextChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbWealthHF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // label5
@@ -582,7 +572,6 @@
             this.tbLawOther.TabIndex = 50;
             this.tbLawOther.Text = "0";
             this.tbLawOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbLawOther.VisibleChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbLawOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbLandOther
@@ -597,7 +586,6 @@
             this.tbLandOther.TabIndex = 51;
             this.tbLandOther.Text = "0";
             this.tbLandOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbLandOther.VisibleChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbLandOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbInfluenceOther
@@ -612,7 +600,6 @@
             this.tbInfluenceOther.TabIndex = 52;
             this.tbInfluenceOther.Text = "0";
             this.tbInfluenceOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbInfluenceOther.VisibleChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbInfluenceOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbDefenseOther
@@ -627,7 +614,6 @@
             this.tbDefenseOther.TabIndex = 53;
             this.tbDefenseOther.Text = "0";
             this.tbDefenseOther.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbDefenseOther.VisibleChanged += new System.EventHandler(this.SetNullToZero_TextChanged);
             this.tbDefenseOther.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // btSubmit
