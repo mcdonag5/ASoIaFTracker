@@ -16,74 +16,93 @@ namespace WindowsFormsApp1.Forms
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
-        House House = new House();
+        House House;
         Validation Validation = new Validation();
         public int houseID;
+        public int changeRow;
         int[] HouseFortunesArry = 
             {-3,-3,-3,-2,-1,-3,1,-1,1,-2,-1,
             1,3,-1,2,1,-2,-1,2,-2,2,
             1,1,-2,1,1,2,2,3,-2,2,
             1,1,1,1,2,3,1,1,1,1,
             1,3};
+        ///// VARIABLES END ////////////////////////////////////////////////////////
 
-        public void UpdateChanges()
+        ///// METHODS START ////////////////////////////////////////////////////////
+        //Gets the changes 
+        public void GetChanges()
         {
-
+            DevLog.LogItem("Getting changes from " + dgCal1.Rows[changeRow].Cells[2].Value.ToString()+" AL month "+ dgCal1.Rows[changeRow].Cells[3].Value.ToString());
+            tbRoll.Text = dgCal1.Rows[changeRow].Cells[4].Value.ToString();
+            if(tbRoll.Text == "") { cbFortune.Text = dgCal1.Rows[changeRow].Cells[5].Value.ToString(); }
+            tbWealthHF.Text = dgCal1.Rows[changeRow].Cells[6].Value.ToString();
+            tbWealthOther.Text = dgCal1.Rows[changeRow].Cells[7].Value.ToString();
+            tbPowerHF.Text = dgCal1.Rows[changeRow].Cells[8].Value.ToString();
+            tbPowerOther.Text = dgCal1.Rows[changeRow].Cells[9].Value.ToString();
+            tbPopulationHF.Text = dgCal1.Rows[changeRow].Cells[10].Value.ToString();
+            tbPopulationOther.Text = dgCal1.Rows[changeRow].Cells[11].Value.ToString();
+            tbLawHF.Text = dgCal1.Rows[changeRow].Cells[12].Value.ToString();
+            tbLawOther.Text = dgCal1.Rows[changeRow].Cells[13].Value.ToString();
+            tbLandHF.Text = dgCal1.Rows[changeRow].Cells[14].Value.ToString();
+            tbLandOther.Text = dgCal1.Rows[changeRow].Cells[15].Value.ToString();
+            tbInfluenceHF.Text = dgCal1.Rows[changeRow].Cells[16].Value.ToString();
+            tbInfluenceOther.Text = dgCal1.Rows[changeRow].Cells[17].Value.ToString();
+            tbDefenseHF.Text = dgCal1.Rows[changeRow].Cells[18].Value.ToString();
+            tbDefenseOther.Text = dgCal1.Rows[changeRow].Cells[19].Value.ToString();
         }
-
-        public void GetChanges(int year, int month)
+        //check if a date is in the data grid
+        public bool CheckDate(int year,int month)
         {
-            bool found = false;
-            for(int i = 0; i < dgCal1.RowCount; i++)
+            DevLog.LogItem("Checking date " + year + " AL month " + month);
+            for (int i = 0; i < dgCal1.RowCount; i++)
             {
                 if (year == Convert.ToInt32(dgCal1.Rows[i].Cells[2].Value))
                 {
                     if (month == Convert.ToInt32(dgCal1.Rows[i].Cells[3].Value))
                     {
-                        tbRoll.Text = dgCal1.Rows[i].Cells[4].Value.ToString();
-                        if(tbRoll.Text == "") { cbFortune.Text = dgCal1.Rows[i].Cells[5].Value.ToString(); }
-                        tbWealthHF.Text = dgCal1.Rows[i].Cells[6].Value.ToString();
-                        tbWealthOther.Text = dgCal1.Rows[i].Cells[7].Value.ToString();
-                        tbPowerHF.Text = dgCal1.Rows[i].Cells[8].Value.ToString();
-                        tbPowerOther.Text = dgCal1.Rows[i].Cells[9].Value.ToString();
-                        tbPopulationHF.Text = dgCal1.Rows[i].Cells[10].Value.ToString();
-                        tbPopulationOther.Text = dgCal1.Rows[i].Cells[11].Value.ToString();
-                        tbLawHF.Text = dgCal1.Rows[i].Cells[12].Value.ToString();
-                        tbLawOther.Text = dgCal1.Rows[i].Cells[13].Value.ToString();
-                        tbLandHF.Text = dgCal1.Rows[i].Cells[14].Value.ToString();
-                        tbLandOther.Text = dgCal1.Rows[i].Cells[15].Value.ToString();
-                        tbInfluenceHF.Text = dgCal1.Rows[i].Cells[16].Value.ToString();
-                        tbInfluenceOther.Text = dgCal1.Rows[i].Cells[17].Value.ToString();
-                        tbDefenseHF.Text = dgCal1.Rows[i].Cells[18].Value.ToString();
-                        tbDefenseOther.Text = dgCal1.Rows[i].Cells[19].Value.ToString();
-                        found = true;
+                        DevLog.LogItem("Date found on row " + i);
+                        changeRow = i;
+                        return true;
                     }
                 }
             }
-            if (!found)
-            {
-                tbRoll.Text = "";
-                tbWealthHF.Text = tbPowerOther.Text = tbPopulationHF.Text = tbPopulationOther.Text = tbLawHF.Text = tbLawOther.Text = tbLandHF.Text = tbLandOther.Text = tbInfluenceHF.Text = tbInfluenceOther.Text = tbDefenseHF.Text = tbDefenseOther.Text = "0";
-            }
-
+            DevLog.LogItem("Date not Found");
+            return false;
         }
 
+        public void UpdateChanges(int year, int month)
+        {
+            if (CheckDate(year, month))
+            {
+                GetChanges();
+            } else {
+                DevLog.LogItem("Values reset");
+                tbRoll.Text = "";
+                tbWealthHF.Text = tbWealthOther.Text = tbPowerHF.Text = tbPowerOther.Text = tbPopulationHF.Text = tbPopulationOther.Text = tbLawHF.Text = tbLawOther.Text = tbLandHF.Text = tbLandOther.Text = tbInfluenceHF.Text = tbInfluenceOther.Text = tbDefenseHF.Text = tbDefenseOther.Text = "0";
+            }
+        }
+
+        ///// METHODS END //////////////////////////////////////////////////////////
+        
         public ChangeResourcesForm(int ID)
         {
-            houseID = ID;
+            DevLog.LogItem("Opening Change Resource Form");
+            House = new House(ID);
             InitializeComponent();
-            dgCal1.DataSource = House.HouseQry("HouseChanges", houseID);
+            dgCal1.DataSource = House.HouseQry("HouseChanges");
             if (dgCal1.RowCount > 0)
             {
+                DevLog.LogItem("Oldest change set");
                 tbYear.Text = dgCal1.Rows[dgCal1.RowCount-1].Cells[2].Value.ToString();
                 tbMonth.Text = dgCal1.Rows[dgCal1.RowCount-1].Cells[3].Value.ToString();
                 tbRoll.Text = dgCal1.Rows[dgCal1.RowCount - 1].Cells[4].Value.ToString();
 
-                GetChanges(Convert.ToInt32(dgCal1.Rows[dgCal1.RowCount - 1].Cells[2].Value), Convert.ToInt32(dgCal1.Rows[dgCal1.RowCount - 1].Cells[3].Value));
-            }
+                UpdateChanges(Convert.ToInt32(dgCal1.Rows[dgCal1.RowCount - 1].Cells[2].Value), Convert.ToInt32(dgCal1.Rows[dgCal1.RowCount - 1].Cells[3].Value));
+            } else { DevLog.LogItem("No chsnges found"); }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        ///// EVENTS START //////////////////////////////////////////////////////////
+        private void TbRoll_TextChanged(object sender, EventArgs e)
         {
             if (tbRoll.Text != "")
             {
@@ -119,18 +138,20 @@ namespace WindowsFormsApp1.Forms
                         fortune = "Boon";
                         break;
                 }
+                DevLog.LogItem("Roll:" + tbRoll.Text + " Fortune:" + fortune);
                 cbFortune.Text = fortune;
             }
             else
             {
-
+                DevLog.LogItem("tbRoll empty reset fortune text and combo box");
                 lbFortuneText.Text = "";
                 cbFortune.SelectedIndex = -1;
             }
         }
 
-        private void cbRealm_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbRealm_SelectedIndexChanged(object sender, EventArgs e)
         {
+            DevLog.LogItem("Combo box change: "+cbFortune.Text+" setting fortune text");
             string fortuneText = "";
             switch (cbFortune.Text)
             {
@@ -159,27 +180,71 @@ namespace WindowsFormsApp1.Forms
             lbFortuneText.Text = fortuneText;
         }
 
-        private void btSubmit_Click(object sender, EventArgs e)
+        private void BtSubmit_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void tbYear_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbMonth_TextChanged(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(tbMonth.Text) < 1) { tbMonth.Text = "1"; }
-            else if (Convert.ToInt32(tbMonth.Text) > 12) { tbMonth.Text = "12"; }
+            DevLog.LogItem("Pressed Submit button");
             if (!(tbYear.Text == "" || tbMonth.Text == ""))
             {
-                GetChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text));
+                dgCal2.DataSource = House.HouseQry("ThisHouse");
+                int wealthChange = 0;
+                int powerChange = 0;
+                int populationChange = 0;
+                int lawChange = 0;
+                int landsChange = 0;
+                int influenceChange = 0;
+                int defenseChange = 0;
+                if(CheckDate(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text))) {
+                    House.UpdateHouseChanges(Convert.ToInt32(dgCal1.Rows[changeRow].Cells[0].Value), Convert.ToInt32(tbRoll.Text), cbFortune.Text, Convert.ToInt32(tbWealthHF.Text), Convert.ToInt32(tbWealthOther.Text), Convert.ToInt32(tbPowerHF.Text), Convert.ToInt32(tbPowerOther.Text), Convert.ToInt32(tbPopulationHF.Text), Convert.ToInt32(tbPopulationOther.Text), Convert.ToInt32(tbLawHF.Text), Convert.ToInt32(tbLawOther.Text), Convert.ToInt32(tbLandHF.Text), Convert.ToInt32(tbLandOther.Text), Convert.ToInt32(tbInfluenceHF.Text), Convert.ToInt32(tbInfluenceOther.Text), Convert.ToInt32(tbDefenseHF.Text), Convert.ToInt32(tbDefenseOther.Text));
+                    wealthChange = Convert.ToInt32(tbWealthHF.Text) + Convert.ToInt32(tbWealthOther.Text)-(Convert.ToInt32(dgCal1.Rows[changeRow].Cells[6].Value)+ Convert.ToInt32(dgCal1.Rows[changeRow].Cells[7].Value));
+                    powerChange = Convert.ToInt32(tbPowerHF.Text) + Convert.ToInt32(tbPowerOther.Text) - (Convert.ToInt32(dgCal1.Rows[changeRow].Cells[8].Value) + Convert.ToInt32(dgCal1.Rows[changeRow].Cells[9].Value));
+                    populationChange = Convert.ToInt32(tbPopulationHF.Text) + Convert.ToInt32(tbPopulationOther.Text) - (Convert.ToInt32(dgCal1.Rows[changeRow].Cells[10].Value) + Convert.ToInt32(dgCal1.Rows[changeRow].Cells[11].Value));
+                    lawChange = Convert.ToInt32(tbLawHF.Text) + Convert.ToInt32(tbLawOther.Text) - (Convert.ToInt32(dgCal1.Rows[changeRow].Cells[12].Value) + Convert.ToInt32(dgCal1.Rows[changeRow].Cells[13].Value));
+                    landsChange = Convert.ToInt32(tbLandHF.Text) + Convert.ToInt32(tbLandOther.Text) - (Convert.ToInt32(dgCal1.Rows[changeRow].Cells[14].Value) + Convert.ToInt32(dgCal1.Rows[changeRow].Cells[15].Value));
+                    influenceChange = Convert.ToInt32(tbInfluenceHF.Text) + Convert.ToInt32(tbInfluenceOther.Text) - (Convert.ToInt32(dgCal1.Rows[changeRow].Cells[16].Value) + Convert.ToInt32(dgCal1.Rows[changeRow].Cells[17].Value));
+                    defenseChange = Convert.ToInt32(tbDefenseHF.Text) + Convert.ToInt32(tbDefenseOther.Text) - (Convert.ToInt32(dgCal1.Rows[changeRow].Cells[18].Value) + Convert.ToInt32(dgCal1.Rows[changeRow].Cells[19].Value));
+                    DevLog.LogItem("Update change ID: " + dgCal1.Rows[changeRow].Cells[0].Value.ToString());
+                }
+                else
+                {
+                    House.InsertHouseChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text), Convert.ToInt32(tbRoll.Text), cbFortune.Text, Convert.ToInt32(tbWealthHF.Text), Convert.ToInt32(tbWealthOther.Text), Convert.ToInt32(tbPowerHF.Text), Convert.ToInt32(tbPowerOther.Text), Convert.ToInt32(tbPopulationHF.Text), Convert.ToInt32(tbPopulationOther.Text), Convert.ToInt32(tbLawHF.Text), Convert.ToInt32(tbLawOther.Text), Convert.ToInt32(tbLandHF.Text), Convert.ToInt32(tbLandOther.Text), Convert.ToInt32(tbInfluenceHF.Text), Convert.ToInt32(tbInfluenceOther.Text), Convert.ToInt32(tbDefenseHF.Text), Convert.ToInt32(tbDefenseOther.Text));
+                    wealthChange = Convert.ToInt32(tbWealthHF.Text) + Convert.ToInt32(tbWealthOther.Text);
+                    powerChange = Convert.ToInt32(tbPowerHF.Text) + Convert.ToInt32(tbPowerOther.Text);
+                    populationChange = Convert.ToInt32(tbPopulationHF.Text) + Convert.ToInt32(tbPopulationOther.Text);
+                    lawChange = Convert.ToInt32(tbLawHF.Text) + Convert.ToInt32(tbLawOther.Text);
+                    landsChange = Convert.ToInt32(tbLandHF.Text) + Convert.ToInt32(tbLandOther.Text);
+                    influenceChange = Convert.ToInt32(tbInfluenceHF.Text) + Convert.ToInt32(tbInfluenceOther.Text);
+                    defenseChange = Convert.ToInt32(tbDefenseHF.Text) + Convert.ToInt32(tbDefenseOther.Text);
+                    DevLog.LogItem("New change inserted");
+                }
+                House.UpdateHouse(Convert.ToInt32(dgCal2.Rows[0].Cells[7].Value) + wealthChange, Convert.ToInt32(dgCal2.Rows[0].Cells[8].Value) + powerChange, Convert.ToInt32(dgCal2.Rows[0].Cells[9].Value) + populationChange, Convert.ToInt32(dgCal2.Rows[0].Cells[10].Value) + lawChange, Convert.ToInt32(dgCal2.Rows[0].Cells[11].Value) + landsChange, Convert.ToInt32(dgCal2.Rows[0].Cells[12].Value) + influenceChange, Convert.ToInt32(dgCal2.Rows[0].Cells[13].Value) + defenseChange);
+                dgCal1.DataSource = House.HouseQry("HouseChanges");
+                DevLog.LogItem("House resources updated");
+
+            }
+            else { MessageBox.Show("Need a year and month to save change"); DevLog.LogItem("No year or month entered"); }
+        }
+
+        private void TbYear_TextChanged(object sender, EventArgs e)
+        {
+            if (!(tbYear.Text == "" || tbMonth.Text == ""))
+            {
+                UpdateChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text));
             }
         }
 
-        private void btDateNext_Click(object sender, EventArgs e)
+        private void TbMonth_TextChanged(object sender, EventArgs e)
+        {
+            if (!(tbMonth.Text == "")) {
+                if (Convert.ToInt32(tbMonth.Text) < 1) { tbMonth.Text = "1"; }
+                else if (Convert.ToInt32(tbMonth.Text) > 12) { tbMonth.Text = "12"; }
+                if (!(tbYear.Text == ""))
+                {
+                    UpdateChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text));
+                }
+            }
+        }
+
+        private void BtDateNext_Click(object sender, EventArgs e)
         {
             if (!(tbYear.Text == "" || tbMonth.Text == ""))
             {
@@ -194,7 +259,7 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
-        private void btDateBack_Click(object sender, EventArgs e)
+        private void BtDateBack_Click(object sender, EventArgs e)
         {
             if (!(tbYear.Text == "" || tbMonth.Text == ""))
             {
@@ -209,10 +274,22 @@ namespace WindowsFormsApp1.Forms
                 }
             }
         }
-
+        //Validation
         private void OnlyDigit_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validation.OnlyDigit(e);
         }
+
+        private void OnlyDigitWithNegatives_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validation.OnlyDigitWithNegatives(sender, e);
+        }
+
+        private void SetNullToZero_TextChanged(object sender, EventArgs e)
+        {
+            Validation.SetNullToZero(sender);
+        }
+
+        ///// EVENTS END ////////////////////////////////////////////////////////////
     }
 }

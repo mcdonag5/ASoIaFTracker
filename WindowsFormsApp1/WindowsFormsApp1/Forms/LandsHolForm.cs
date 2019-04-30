@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
-        House House = new House();
+        House House;
         public int houseID;
 
         public void DbReturn(string returnWhat, string dataGrid)
@@ -75,6 +75,7 @@ namespace WindowsFormsApp1
 
         public LandsHolForm(int ID)
         {
+            House = new House(ID);
             houseID = ID;
             InitializeComponent();
         }
@@ -255,7 +256,7 @@ namespace WindowsFormsApp1
             if (costInf > 0) { lbCost.Text += "Influence: " + costInf + " "; }
         }
 
-        private void landHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LandHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NewLandForm newLandForm = new NewLandForm(houseID);
             newLandForm.FormClosing += new FormClosingEventHandler(this.LandsHolForm_Load);

@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
-        House house = new House();
+        House house = new House(0);
 
         int foundingMod = 3;
         int currentEvent = 1;

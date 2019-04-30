@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.dgHouseDetails = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.devLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbAllHouses = new System.Windows.Forms.ToolStripButton();
             this.tsddViewHouse = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsbPlayerNPC = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbPlayerRoss = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbAllHouses = new System.Windows.Forms.ToolStripButton();
             this.tsbPlayerKyle = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbCreateHouse = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
@@ -55,35 +55,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgHouseDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgHouseDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgHouseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgHouseDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgHouseDetails.Location = new System.Drawing.Point(0, 25);
             this.dgHouseDetails.Name = "dgHouseDetails";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgHouseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgHouseDetails.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgHouseDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgHouseDetails.Size = new System.Drawing.Size(1371, 604);
             this.dgHouseDetails.TabIndex = 13;
@@ -117,9 +118,19 @@
             // devLogToolStripMenuItem
             // 
             this.devLogToolStripMenuItem.Name = "devLogToolStripMenuItem";
-            this.devLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.devLogToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.devLogToolStripMenuItem.Text = "DevLog";
             this.devLogToolStripMenuItem.Click += new System.EventHandler(this.TsbMenuDevLog);
+            // 
+            // tsbAllHouses
+            // 
+            this.tsbAllHouses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbAllHouses.Image = ((System.Drawing.Image)(resources.GetObject("tsbAllHouses.Image")));
+            this.tsbAllHouses.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAllHouses.Name = "tsbAllHouses";
+            this.tsbAllHouses.Size = new System.Drawing.Size(62, 22);
+            this.tsbAllHouses.Text = "All House";
+            this.tsbAllHouses.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // tsddViewHouse
             // 
@@ -137,31 +148,21 @@
             // tsbPlayerNPC
             // 
             this.tsbPlayerNPC.Name = "tsbPlayerNPC";
-            this.tsbPlayerNPC.Size = new System.Drawing.Size(180, 22);
+            this.tsbPlayerNPC.Size = new System.Drawing.Size(98, 22);
             this.tsbPlayerNPC.Text = "NPC";
             this.tsbPlayerNPC.Click += new System.EventHandler(this.AllHousesToolStripMenuItem_Click);
             // 
             // tsbPlayerRoss
             // 
             this.tsbPlayerRoss.Name = "tsbPlayerRoss";
-            this.tsbPlayerRoss.Size = new System.Drawing.Size(180, 22);
+            this.tsbPlayerRoss.Size = new System.Drawing.Size(98, 22);
             this.tsbPlayerRoss.Text = "Ross";
             this.tsbPlayerRoss.Click += new System.EventHandler(this.PlayersToolStripMenuItem_Click);
-            // 
-            // tsbAllHouses
-            // 
-            this.tsbAllHouses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbAllHouses.Image = ((System.Drawing.Image)(resources.GetObject("tsbAllHouses.Image")));
-            this.tsbAllHouses.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAllHouses.Name = "tsbAllHouses";
-            this.tsbAllHouses.Size = new System.Drawing.Size(62, 22);
-            this.tsbAllHouses.Text = "All House";
-            this.tsbAllHouses.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // tsbPlayerKyle
             // 
             this.tsbPlayerKyle.Name = "tsbPlayerKyle";
-            this.tsbPlayerKyle.Size = new System.Drawing.Size(180, 22);
+            this.tsbPlayerKyle.Size = new System.Drawing.Size(98, 22);
             this.tsbPlayerKyle.Text = "Kyle";
             this.tsbPlayerKyle.Click += new System.EventHandler(this.KyleToolStripMenuItem_Click);
             // 

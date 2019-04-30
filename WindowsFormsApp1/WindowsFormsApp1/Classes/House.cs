@@ -11,9 +11,15 @@ namespace WindowsFormsApp1.Classes
     {
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
+        readonly int ID;
 
-        //SELECT
-        public object HouseQry(string information, int ID)
+        public House(int houseID)
+        {
+            ID = houseID;
+        }
+
+        ///// SELECT ////////////////////////////////////////////////////////////////
+        public object HouseQry(string information)
         {//makes a query to the database
             DevLog.LogItem(information + " sql run");
             string qry = "";
@@ -23,12 +29,25 @@ namespace WindowsFormsApp1.Classes
             {
                 switch (information)
                 {
-                    //tbl_PowerHoldings
-                    case "PowerHolUnits":
+                    //tbl_House
+                    case "House":
+                        qry = "SELECT * FROM `tbl_House`";
+                        break;
+                    case "ThisHouse":
+                        qry = "SELECT * FROM `tbl_House` WHERE `Hou_ID` = '"+ID+"';";
+                        break;
+                    //tbl_Land
+                    case "Land":
+                        qry = "SELECT * FROM `tbl_Land`";
+
+                        break;
+                    //tbl_PowerHolding
+                    case "PowerHolding":
                         qry = "SELECT `tbl_PowerHolding`.`Hou_ID`, `tbl_PowerHolding`.*, `tbl_UnitType`.`Uni_ID`, `tbl_UnitType`.*, `tbl_UnitTraning`.`Tra_Name`, `tbl_UnitTraning`.* " +
                             "FROM `tbl_PowerHolding`, `tbl_UnitType`, `tbl_UnitTraning` " +
                             "WHERE `tbl_PowerHolding`.`Hou_ID` = '" + ID + "' AND `tbl_UnitType`.`Uni_ID` = `tbl_PowerHolding`.`Uni_ID` AND `tbl_UnitTraning`.`Tra_Name` = `tbl_PowerHolding`.`PowHol_Training`;";
                         break;
+                    //tbl_HouseChanges
                     case "HouseChanges":
                         qry = "SELECT * FROM `tbl_HouseChanges` WHERE `Hou_ID` = '" + ID + "'" +
                             "ORDER BY `HouCha_Year`, `HouCha_Month`; ";
@@ -43,44 +62,50 @@ namespace WindowsFormsApp1.Classes
             }
             return mysqlConn.Qry(qry).Tables[0];
         }
-        public object HouseQry(string information)
-        {//makes a query to the database
-            DevLog.LogItem(information + " sql run");
-            string qry = "";
-            mysqlConn.DbConfig(); //sets database settings
-            mysqlConn.Connect();
-            if (mysqlConn.ConnOpen() == true)
-            {
-                switch (information)
-                {
-                    //tbl_Land
-                    case "Land":
-                        qry = "SELECT * FROM `tbl_Land`";
-
-                        break;
-                    default:
-
-                        break;
-                }
-
-                return mysqlConn.Qry(qry).Tables[0];
-                //if (Qry != "") { dataGrid = mysqlConn.Qry(Qry).Tables[0]; }
-            }
-            return mysqlConn.Qry(qry).Tables[0];
-        }
-
-        //INSERT
-        public void InsertLandHolding(string houseID,string landID, string name, string note, string discount)
+        ///// INSERT ////////////////////////////////////////////////////////////////
+        public void InsertLandHolding(string landID, string name, string note, string discount)
         {
             if (mysqlConn.ConnOpen() == true)
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
-                comm.CommandText = "INSERT INTO `tbl_LandHolding` (`Hou_ID`, `Lan_ID`, `LanHol_Name`, `LanHol_Note`, `LanHol_Discount`) VALUES (@Hou_ID, @Lan_ID, @LanHol_Name, @LanHol_Note, @LanHol_Discount);";
-                comm.Parameters.AddWithValue("@Hou_ID", houseID);
-                comm.Parameters.AddWithValue("@Lan_ID", landID);
-                comm.Parameters.AddWithValue("@LanHol_Name", name);
-                comm.Parameters.AddWithValue("@LanHol_Note", note);
-                comm.Parameters.AddWithValue("@LanHol_Discount", discount);
+                comm.CommandText = "INSERT INTO `tbl_LandHolding` (`Hou_ID`, `Lan_ID`, `LanHol_Name`, `LanHol_Note`, `LanHol_Discount`) "+
+                    "VALUES ('"+ID+"', '"+ landID+"', '"+name+"', '"+note+"', '"+discount+"');";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        public void InsertHouseChanges (int year, int month,int roll, string fortune,int wealthHF,int wealthOther,int powerHF, int powerOther,int populationHF,int populationOther, int lawHF,int lawOther, int landsHF,int landsOther,int influenceHF,int influenceOther,int defenseHF,int defenseOther)
+        {
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_HouseChanges` (`Hou_ID`,`HouCha_Year`,`HouCha_Month`,`HouCha_Roll`,`HouCha_Fortune`,`HouCha_WealthHF`,`HouCha_WealthOther`,`HouCha_PowerHF`,`HouCha_PowerOther`,`HouCha_PopulationHF`,`HouCha_PopulationOther`,`HouCha_LawHF`,`HouCha_LawOther`,`HouCha_LandsHF`,`HouCha_LandsOther`,`HouCha_InfluenceHF`,`HouCha_InfluenceOther`,`HouCha_DefenseHF`,`HouCha_DefenseOther`) "+
+                    "VALUES ('"+ID+ "','"+year+"', '"+month+"', '"+roll+"', '"+fortune+"', '"+wealthHF+"', '"+wealthOther+"', '"+powerHF+"', '"+powerOther+"', '"+populationHF+"', '"+populationOther+"', '"+lawHF+"', '"+lawOther+"', '"+landsHF+"', '"+landsOther+"', '"+influenceHF+"', '"+influenceOther+"', '"+defenseHF+"', '"+defenseOther+"');";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        ///// UPDATE ////////////////////////////////////////////////////////////////
+        public void UpdateHouse (int wealth, int power,int population, int law, int lands, int influence, int defense)
+        {
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_House` " +
+                    "SET `Hou_Wealth` = '"+wealth+"', `Hou_Power` = '"+power+"', `Hou_Population` = '"+population+"', `Hou_Law` = '"+law+"', `Hou_Lands` = '"+lands+"', `Hou_Influence` = '"+influence+"', `Hou_Defense` = '"+defense+"' "+
+                    "WHERE `Hou_ID` = '"+ID+"'";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        public void UpdateHouseChanges(int HouChaID,int roll, string fortune, int wealthHF, int wealthOther, int powerHF, int powerOther, int populationHF, int populationOther, int lawHF, int lawOther, int landsHF, int landsOther, int influenceHF, int influenceOther, int defenseHF, int defenseOther)
+        {
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_HouseChanges` " +
+                    "SET `HouCha_Roll` = '" + roll + "', `HouCha_Fortune` = '" + fortune + "', `HouCha_WealthHF` = '" + wealthHF + "', `HouCha_WealthOther` = '" + wealthOther + "', `HouCha_PowerHF` = '" + powerHF + "', `HouCha_PowerOther` = '" + powerOther + "', `HouCha_PopulationHF` = '" + populationHF + "', `HouCha_PopulationOther` = '" + populationOther + "', `HouCha_LawHF` = '" + lawHF + "', `HouCha_LawOther` = '" + lawOther + "', `HouCha_LandsHF` = '" + landsHF + "', `HouCha_LandsOther` = '" + landsOther + "', `HouCha_InfluenceHF` = '" + influenceHF + "', `HouCha_InfluenceOther` = '" + influenceOther + "', `HouCha_DefenseHF` = '" + defenseHF + "', `HouCha_DefenseOther` = '" + defenseOther + "' " +
+                    "WHERE `HouCha_ID` = '" + HouChaID + "'";
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }

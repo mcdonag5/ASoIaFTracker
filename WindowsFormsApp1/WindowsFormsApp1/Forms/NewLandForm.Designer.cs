@@ -80,7 +80,7 @@
             this.cbLand.Name = "cbLand";
             this.cbLand.Size = new System.Drawing.Size(397, 31);
             this.cbLand.TabIndex = 4;
-            this.cbLand.SelectedIndexChanged += new System.EventHandler(this.cbLand_SelectedIndexChanged);
+            this.cbLand.SelectedIndexChanged += new System.EventHandler(this.CbLand_SelectedIndexChanged);
             // 
             // lbName
             // 
@@ -155,7 +155,7 @@
             this.tbDiscount.TabIndex = 12;
             this.tbDiscount.Text = "0";
             this.tbDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbDiscount.TextChanged += new System.EventHandler(this.tbDiscount_TextChanged);
+            this.tbDiscount.TextChanged += new System.EventHandler(this.TbDiscount_TextChanged);
             // 
             // label3
             // 
@@ -224,7 +224,7 @@
             this.btBuy.TabIndex = 51;
             this.btBuy.Text = "Buy";
             this.btBuy.UseVisualStyleBackColor = true;
-            this.btBuy.Click += new System.EventHandler(this.btBuy_Click);
+            this.btBuy.Click += new System.EventHandler(this.BtBuy_Click);
             // 
             // label4
             // 

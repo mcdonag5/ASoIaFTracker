@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Classes;
 
 namespace WindowsFormsApp1
 {
@@ -15,14 +16,14 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
-        Classes.House house = new Classes.House();
+        House House;
         public int houseID;
 
 
         public PowerHolForm(int ID)
         {
             InitializeComponent();
-            houseID = ID;
+            House = new House(ID);
         }
 
         private void PowerHolForm_Load(object sender, EventArgs e)
@@ -30,7 +31,7 @@ namespace WindowsFormsApp1
             mysqlConn.DbConfig(); //sets database settings
             mysqlConn.Connect();
 
-            dgCal1.DataSource = house.HouseQry("PowerHolUnits", houseID);
+            dgCal1.DataSource = House.HouseQry("PowerHolding");
             tbName1.Text = dgCal1.Rows[0].Cells[4].Value.ToString();
             lbCostNumber1.Text = Convert.ToString(Convert.ToInt32(dgCal1.Rows[0].Cells[34].Value) + Convert.ToInt32(dgCal1.Rows[0].Cells[52].Value) - Convert.ToInt32(dgCal1.Rows[0].Cells[6].Value));
             lbDiscipText1.Text = Convert.ToString(Convert.ToInt32(dgCal1.Rows[0].Cells[35].Value) + Convert.ToInt32(dgCal1.Rows[0].Cells[53].Value));

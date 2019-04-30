@@ -310,7 +310,7 @@
             this.landHoldingToolStripMenuItem.Name = "landHoldingToolStripMenuItem";
             this.landHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.landHoldingToolStripMenuItem.Text = "Land Holding";
-            this.landHoldingToolStripMenuItem.Click += new System.EventHandler(this.landHoldingToolStripMenuItem_Click);
+            this.landHoldingToolStripMenuItem.Click += new System.EventHandler(this.LandHoldingToolStripMenuItem_Click);
             // 
             // landFeatureToolStripMenuItem
             // 

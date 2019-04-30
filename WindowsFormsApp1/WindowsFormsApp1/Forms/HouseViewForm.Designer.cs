@@ -176,7 +176,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
             this.toolStripButton1.Text = "Change Resources";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // tlpMain
             // 
@@ -1742,10 +1742,10 @@
             // lbHeir
             // 
             this.lbHeir.AutoSize = true;
-            this.lbHeir.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeir.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHeir.Location = new System.Drawing.Point(3, 64);
             this.lbHeir.Name = "lbHeir";
-            this.lbHeir.Size = new System.Drawing.Size(65, 23);
+            this.lbHeir.Size = new System.Drawing.Size(53, 18);
             this.lbHeir.TabIndex = 52;
             this.lbHeir.Text = "Heirs";
             this.lbHeir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

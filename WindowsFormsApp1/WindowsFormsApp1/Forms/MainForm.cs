@@ -150,6 +150,7 @@ namespace WindowsFormsApp1
             {
                 x = (Convert.ToInt32(dgHouseDetails.Rows[e.RowIndex].Cells[1].Value));
             }
+            DevLog.LogItem("x = " + x);
             HouseViewForm houseForm = new HouseViewForm(x);
             houseForm.ShowDialog();
             //switch (dgHouseDetails.Columns[0].Name)

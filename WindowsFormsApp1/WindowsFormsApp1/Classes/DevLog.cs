@@ -15,16 +15,19 @@ namespace WindowsFormsApp1
     {
         public void LogItem(string logItem)
         {//Write development log to DevLog
+            Form frm = Form.ActiveForm;
             using (StreamWriter devlog = new StreamWriter("DevLog.txt", append: true))
-            { devlog.WriteLine(DateTime.Now + " --- " + logItem); }//Concat current time and logItem and write to DevLog file
+            { devlog.WriteLine(DateTime.Now + " "+ frm +" --- " + logItem); }//Concat current time and logItem and write to DevLog file
         }
         public void OpenLog()
         {
             Form devForm = new Form();
             devForm.Text = "DevLogs";
             RichTextBox rtbDevLogs = new RichTextBox();
-            Timer timerRefreshDevLogs = new Timer();
-            timerRefreshDevLogs.Interval = 2500;
+            Timer timerRefreshDevLogs = new Timer
+            {
+                Interval = 2500
+            };
             timerRefreshDevLogs.Tick += new EventHandler(devRefreshTimer_Tick);
             timerRefreshDevLogs.Start();
             rtbDevLogs.Location = new Point(0, 0);

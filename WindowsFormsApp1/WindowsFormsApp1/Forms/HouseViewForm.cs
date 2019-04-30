@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
         ///// VARIABLES START ////////////////////////////////////////////////////// 
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
-        House House = new House();
+        House House;
         public int houseID;
         public int houWea;
         public int houPow;
@@ -380,6 +380,7 @@ namespace WindowsFormsApp1
         ///// METHODS END //////////////////////////////////////////////////////////
         public HouseViewForm(int ID)
         {
+            House = new House(ID);
             houseID = ID;
             DevLog.LogItem("Opened House View From with ID: " + ID);
             InitializeComponent();
@@ -405,9 +406,10 @@ namespace WindowsFormsApp1
             powerHolForm.Show();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void ToolStripButton1_Click(object sender, EventArgs e)
         {
             ChangeResourcesForm changeResourcesForm = new ChangeResourcesForm(houseID);
+            changeResourcesForm.FormClosing += new FormClosingEventHandler(this.HouseViewForm_Load);
             changeResourcesForm.Show();
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
