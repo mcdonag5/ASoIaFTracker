@@ -28,14 +28,9 @@ namespace WindowsFormsApp1.Classes
                 e.Handled = true;
             }
             // only allow one decimal point
-            if ((e.KeyChar == '-') && !((sender as TextBox).Text.Length==0))
+            if ((e.KeyChar == '-') && ((sender as TextBox).Text.IndexOf('-') > -1))
             {
                 e.Handled = true;
-            }
-            //Set to 0 if no text
-            if((sender as TextBox).Text=="")
-            {
-                (sender as TextBox).Text = "0";
             }
         }
         public void SetNullToZero(object sender)

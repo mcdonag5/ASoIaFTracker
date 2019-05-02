@@ -82,6 +82,15 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
+        public void SetNullToZero()
+        {
+            Object[] resourceTextboxArry = { tbWealthHF, tbWealthOther, tbPowerHF, tbPowerOther, tbPopulationHF, tbPopulationOther, tbLawHF, tbLawOther, tbLandHF, tbLandOther, tbInfluenceHF, tbInfluenceOther, tbDefenseHF, tbDefenseOther };
+            foreach(Object x in resourceTextboxArry)
+            {
+                Validation.SetNullToZero(x);
+            }
+        }
+
         ///// METHODS END //////////////////////////////////////////////////////////
         
         public ChangeResourcesForm(int ID)
@@ -90,6 +99,7 @@ namespace WindowsFormsApp1.Forms
             House = new House(ID);
             InitializeComponent();
             dgCal1.DataSource = House.HouseQry("HouseChanges");
+            
             if (dgCal1.RowCount > 0)
             {
                 DevLog.LogItem("Oldest change set");
@@ -193,7 +203,9 @@ namespace WindowsFormsApp1.Forms
                 int landsChange = 0;
                 int influenceChange = 0;
                 int defenseChange = 0;
-                if(CheckDate(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text))) {
+                SetNullToZero();
+                if (CheckDate(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text)))
+                {
                     House.UpdateHouseChanges(Convert.ToInt32(dgCal1.Rows[changeRow].Cells[0].Value), Convert.ToInt32(tbRoll.Text), cbFortune.Text, Convert.ToInt32(tbWealthHF.Text), Convert.ToInt32(tbWealthOther.Text), Convert.ToInt32(tbPowerHF.Text), Convert.ToInt32(tbPowerOther.Text), Convert.ToInt32(tbPopulationHF.Text), Convert.ToInt32(tbPopulationOther.Text), Convert.ToInt32(tbLawHF.Text), Convert.ToInt32(tbLawOther.Text), Convert.ToInt32(tbLandHF.Text), Convert.ToInt32(tbLandOther.Text), Convert.ToInt32(tbInfluenceHF.Text), Convert.ToInt32(tbInfluenceOther.Text), Convert.ToInt32(tbDefenseHF.Text), Convert.ToInt32(tbDefenseOther.Text));
                     wealthChange = Convert.ToInt32(tbWealthHF.Text) + Convert.ToInt32(tbWealthOther.Text)-(Convert.ToInt32(dgCal1.Rows[changeRow].Cells[6].Value)+ Convert.ToInt32(dgCal1.Rows[changeRow].Cells[7].Value));
                     powerChange = Convert.ToInt32(tbPowerHF.Text) + Convert.ToInt32(tbPowerOther.Text) - (Convert.ToInt32(dgCal1.Rows[changeRow].Cells[8].Value) + Convert.ToInt32(dgCal1.Rows[changeRow].Cells[9].Value));
