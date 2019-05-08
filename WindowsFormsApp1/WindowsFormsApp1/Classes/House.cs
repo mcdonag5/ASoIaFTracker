@@ -13,9 +13,16 @@ namespace WindowsFormsApp1.Classes
         DevLog DevLog = new DevLog();
         readonly int ID;
 
+        public House()
+        {
+            mysqlConn.DbConfig(); //sets database settings
+            mysqlConn.Connect();
+        }
         public House(int houseID)
         {
             ID = houseID;
+            mysqlConn.DbConfig(); //sets database settings
+            mysqlConn.Connect();
         }
 
         ///// SELECT ////////////////////////////////////////////////////////////////
@@ -23,8 +30,7 @@ namespace WindowsFormsApp1.Classes
         {//makes a query to the database
             DevLog.LogItem(information + " sql run");
             string qry = "";
-            mysqlConn.DbConfig(); //sets database settings
-            mysqlConn.Connect();
+            
             if (mysqlConn.ConnOpen() == true)
             {
                 switch (information)
@@ -36,21 +42,42 @@ namespace WindowsFormsApp1.Classes
                     case "ThisHouse":
                         qry = "SELECT * FROM `tbl_House` WHERE `Hou_ID` = '"+ID+"';";
                         break;
-                    //tbl_Land
-                    case "Land":
-                        qry = "SELECT * FROM `tbl_Land`";
-
+                    //tbl_LandHolding
+                    case "LandHolding":
+                        qry = "SELECT `tbl_LandHolding`.`Hou_ID`, `tbl_LandHolding`.*, `tbl_Land`.`Lan_ID`, `tbl_Land`.* "+
+                            "FROM `tbl_LandHolding`, `tbl_Land` "+
+                            "WHERE `tbl_LandHolding`.`Hou_ID` = '" + ID + "' AND `tbl_Land`.`Lan_ID` = `tbl_LandHolding`.`Lan_ID`; ";
+                        break;
+                    //tbl_InfluenceHoldings
+                    case "InfluenceHoldings":
+                        qry = "SELECT `tbl_InfluenceHoldings`.`Hou_ID`, `tbl_InfluenceHoldings`.*, `tbl_Influence`.`Inf_ID`, `tbl_Influence`.* "+
+                            "FROM `tbl_InfluenceHoldings`, `tbl_Influence` "+
+                            "WHERE `tbl_InfluenceHoldings`.`Hou_ID` = '" + ID + "' AND `tbl_Influence`.`Inf_ID` = `tbl_InfluenceHoldings`.`Inf_ID`;";
+                        break;
+                    //tbl_Heir
+                    case "Heir":
+                        qry = "SELECT * FROM `tbl_Heir` WHERE `Hou_ID` = '"+ID+"'";
                         break;
                     //tbl_PowerHolding
                     case "PowerHolding":
-                        qry = "SELECT `tbl_PowerHolding`.`Hou_ID`, `tbl_PowerHolding`.*, `tbl_UnitType`.`Uni_ID`, `tbl_UnitType`.*, `tbl_UnitTraning`.`Tra_Name`, `tbl_UnitTraning`.* " +
-                            "FROM `tbl_PowerHolding`, `tbl_UnitType`, `tbl_UnitTraning` " +
-                            "WHERE `tbl_PowerHolding`.`Hou_ID` = '" + ID + "' AND `tbl_UnitType`.`Uni_ID` = `tbl_PowerHolding`.`Uni_ID` AND `tbl_UnitTraning`.`Tra_Name` = `tbl_PowerHolding`.`PowHol_Training`;";
+                        qry = "SELECT `tbl_PowerHolding`.*, `tbl_UnitType`.`Uni_ID`, `tbl_UnitType`.*" +
+                            "FROM `tbl_PowerHolding`, `tbl_UnitType` " +
+                            "WHERE `tbl_PowerHolding`.`Hou_ID` = '" + ID + "' AND `tbl_UnitType`.`Uni_ID` = `tbl_PowerHolding`.`Uni_ID`; ";
+                        break;
+                    //tbl_Banner
+                    case "Banner":
+                        qry = "SELECT `tbl_Banner`.`HouLie_ID`, `tbl_House`.*"+
+                            "FROM `tbl_Banner`, `tbl_House` "+
+                            "WHERE `tbl_Banner`.`HouLie_ID` = '" + ID + "' AND `tbl_House`.`Hou_ID` = `tbl_Banner`.`HouBan_ID`;";
                         break;
                     //tbl_HouseChanges
                     case "HouseChanges":
                         qry = "SELECT * FROM `tbl_HouseChanges` WHERE `Hou_ID` = '" + ID + "'" +
                             "ORDER BY `HouCha_Year`, `HouCha_Month`; ";
+                        break;
+                    //tbl_Land
+                    case "Land":
+                        qry = "SELECT * FROM `tbl_Land`";
                         break;
                     default:
 
@@ -58,10 +85,112 @@ namespace WindowsFormsApp1.Classes
                 }
 
                 return mysqlConn.Qry(qry).Tables[0];
-                //if (Qry != "") { dataGrid = mysqlConn.Qry(Qry).Tables[0]; }
             }
             return mysqlConn.Qry(qry).Tables[0];
         }
+
+        public object HouseQry(string information, string holdingID)
+        {//makes a query to the database
+            DevLog.LogItem(information + " sql run");
+            string qry = "";
+            if (mysqlConn.ConnOpen() == true)
+            {
+                switch (information)
+                {
+                    //tbl_InfluenceHoldings
+                    case "InfluenceHolding":
+                        qry = "SELECT `tbl_InfluenceHoldingImprovement`.*, `tbl_InfluenceImprovemnt`.* "+
+                            "FROM `tbl_InfluenceHoldingImprovement`, `tbl_InfluenceImprovemnt` "+
+                            "WHERE `tbl_InfluenceHoldingImprovement`.`InfHol_ID` = '" + holdingID + "' AND `tbl_InfluenceImprovemnt`.`InfImp_ID` = `tbl_InfluenceHoldingImprovement`.`InfImp_ID`;";
+                        break;
+                    //tbl_LandHoldingFeature No Community
+                    case "LandHoldingFeature":
+                        qry = "SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.* "+
+                            "FROM `tbl_LandHoldingFeature`, `tbl_LandFeature` "+
+                            "WHERE `tbl_LandHoldingFeature`.`LanHol_ID` = '" + holdingID + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID` AND `tbl_LandFeature`.`LanFea_Spaces` = '0'; ";
+                        break;
+                    //tbl_LandHoldingFeature Community only
+                    case "LandHoldingCommunity":
+                        qry = "SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.* " +
+                            "FROM `tbl_LandHoldingFeature`, `tbl_LandFeature` " +
+                            "WHERE `tbl_LandHoldingFeature`.`LanHol_ID` = '" + holdingID + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID` AND `tbl_LandFeature`.`LanFea_Spaces` > '0'; ";
+                        break;
+                    //tbl_WealthHoldingImprovement
+                    case "WealthHoldingImprovement":
+                        qry = "SELECT `tbl_WealthHoldingImprovement`.`WeaHol_ID`, `tbl_WealthHoldingImprovement`.*, `tbl_WealthImprovement`.`WeaImp_ID`, `tbl_WealthImprovement`.* "+
+                            "FROM `tbl_WealthHoldingImprovement`, `tbl_WealthImprovement` "+
+                            "WHERE `tbl_WealthHoldingImprovement`.`WeaHol_ID` = '" + holdingID + "' AND `tbl_WealthImprovement`.`WeaImp_ID` = `tbl_WealthHoldingImprovement`.`WeaImp_ID`; ";
+                        break;
+                    //tbl_DefenseHolding
+                    case "DefenseHolding":
+                        qry = "SELECT `tbl_DefenseHolding`.*, `tbl_Defense`.`Def_ID`, `tbl_Defense`.* "+
+                            "FROM `tbl_DefenseHolding`, `tbl_Defense` "+
+                            "WHERE `tbl_DefenseHolding`.`LanHol_ID` = '" + holdingID + "' AND `tbl_Defense`.`Def_ID` = `tbl_DefenseHolding`.`Def_ID`; ";
+                        break;
+                }
+
+                return mysqlConn.Qry(qry).Tables[0];
+            }
+            return mysqlConn.Qry(qry).Tables[0];
+        }
+
+        public object HouseTableQry()
+        {
+            DevLog.LogItem("Wealth Holding sql run");
+            string qry = "";
+            if (mysqlConn.ConnOpen() == true)
+            {
+                qry = "SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` " +
+                    "FROM `tbl_House`"+
+                    "WHERE `Hou_Player` != 'Test'";
+                return mysqlConn.Qry(qry).Tables[0];
+            }
+            return mysqlConn.Qry(qry).Tables[0];
+        }
+
+        public object HouseTableQry(string column, string condition)
+        {
+            DevLog.LogItem("Wealth Holding sql run");
+            string qry = "";
+            if (mysqlConn.ConnOpen() == true)
+            {
+                qry = "SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` " +
+                    "FROM `tbl_House`" +
+                    "WHERE `" + column + "` = '" + condition + "';";
+
+                return mysqlConn.Qry(qry).Tables[0];
+            }
+            return mysqlConn.Qry(qry).Tables[0];
+        }
+        public object WealthHolding(string place, string ID)
+        {
+            DevLog.LogItem("Wealth Holding sql run");
+            string qry = "";
+            if (mysqlConn.ConnOpen() == true)
+            {
+                qry = "SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* " +
+                    "FROM `tbl_WealthHolding`, `tbl_Wealth` " +
+                    "WHERE `tbl_WealthHolding`.`" + place + "` = '" + ID + "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID`;";
+
+                return mysqlConn.Qry(qry).Tables[0];
+            }
+            return mysqlConn.Qry(qry).Tables[0];
+        }
+        public object WealthHolding(string place, string ID, int space)
+        {
+            DevLog.LogItem("Wealth Holding sql run");
+            string qry = "";
+            if (mysqlConn.ConnOpen() == true)
+            {
+                qry = "SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* " +
+                    "FROM `tbl_WealthHolding`, `tbl_Wealth` " +
+                    "WHERE `tbl_WealthHolding`.`" + place + "` = '" + ID + "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID` AND `tbl_Wealth`.`Wea_TakesSpace` = '" + space + "';";
+
+                return mysqlConn.Qry(qry).Tables[0];
+            }
+            return mysqlConn.Qry(qry).Tables[0];
+        }
+
         ///// INSERT ////////////////////////////////////////////////////////////////
         public void InsertLandHolding(string landID, string name, string note, string discount)
         {
@@ -86,7 +215,21 @@ namespace WindowsFormsApp1.Classes
             }
         }
         ///// UPDATE ////////////////////////////////////////////////////////////////
-        public void UpdateHouse (int wealth, int power,int population, int law, int lands, int influence, int defense)
+        //tbl_House
+        public void UpdateHouseDetails(string name, string realm, string seatOfPower, string liegeLord,string liege)
+        {
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_House` " +
+                    "SET `Hou_Name` = '" + name + "', `Rea_Name` = '" + realm + "', `Hou_SeatOfPower` = '" + seatOfPower + "', `Hou_LiegeLord` = '" + liegeLord + "', `Hou_Liege` = '" + liege + "' " +
+                    "WHERE `Hou_ID` = '" + ID + "'";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+
+        public void UpdateHouseResources (int wealth, int power,int population, int law, int lands, int influence, int defense)
         {
             if (mysqlConn.ConnOpen() == true)
             {
@@ -98,6 +241,8 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+
+        //tbl_HouseChanges
         public void UpdateHouseChanges(int HouChaID,int roll, string fortune, int wealthHF, int wealthOther, int powerHF, int powerOther, int populationHF, int populationOther, int lawHF, int lawOther, int landsHF, int landsOther, int influenceHF, int influenceOther, int defenseHF, int defenseOther)
         {
             if (mysqlConn.ConnOpen() == true)
@@ -106,6 +251,34 @@ namespace WindowsFormsApp1.Classes
                 comm.CommandText = "UPDATE `tbl_HouseChanges` " +
                     "SET `HouCha_Roll` = '" + roll + "', `HouCha_Fortune` = '" + fortune + "', `HouCha_WealthHF` = '" + wealthHF + "', `HouCha_WealthOther` = '" + wealthOther + "', `HouCha_PowerHF` = '" + powerHF + "', `HouCha_PowerOther` = '" + powerOther + "', `HouCha_PopulationHF` = '" + populationHF + "', `HouCha_PopulationOther` = '" + populationOther + "', `HouCha_LawHF` = '" + lawHF + "', `HouCha_LawOther` = '" + lawOther + "', `HouCha_LandsHF` = '" + landsHF + "', `HouCha_LandsOther` = '" + landsOther + "', `HouCha_InfluenceHF` = '" + influenceHF + "', `HouCha_InfluenceOther` = '" + influenceOther + "', `HouCha_DefenseHF` = '" + defenseHF + "', `HouCha_DefenseOther` = '" + defenseOther + "' " +
                     "WHERE `HouCha_ID` = '" + HouChaID + "'";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+
+        //tbl_LandHolding
+        public void UpdateLandDetails(int LanHolID, string name, string notes)
+        {
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_LandHolding` " +
+                    "SET `LanHol_Name` = '" + name + "', `LanHol_Note` = '" + notes + "' " +
+                    "WHERE `LanHol_ID` = '" + LanHolID + "'";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_DefenseHolding
+        public void UpdateDefenseDetails(string DefHolID, string name, string notes, string built)
+        {
+            built = built == "True" ? "1" : "0";
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_DefenseHolding` " +
+                    "SET `DefHol_Name` = '" + name + "', `DefHol_Notes` = '" + notes + "', `DefHol_Built` = '" + built + "' " +
+                    "WHERE `DefHol_ID` = '" + DefHolID + "'";
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }

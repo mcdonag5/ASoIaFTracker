@@ -228,7 +228,7 @@ namespace WindowsFormsApp1.Forms
                     defenseChange = Convert.ToInt32(tbDefenseHF.Text) + Convert.ToInt32(tbDefenseOther.Text);
                     DevLog.LogItem("New change inserted");
                 }
-                House.UpdateHouse(Convert.ToInt32(dgCal2.Rows[0].Cells[7].Value) + wealthChange, Convert.ToInt32(dgCal2.Rows[0].Cells[8].Value) + powerChange, Convert.ToInt32(dgCal2.Rows[0].Cells[9].Value) + populationChange, Convert.ToInt32(dgCal2.Rows[0].Cells[10].Value) + lawChange, Convert.ToInt32(dgCal2.Rows[0].Cells[11].Value) + landsChange, Convert.ToInt32(dgCal2.Rows[0].Cells[12].Value) + influenceChange, Convert.ToInt32(dgCal2.Rows[0].Cells[13].Value) + defenseChange);
+                House.UpdateHouseResources(Convert.ToInt32(dgCal2.Rows[0].Cells[7].Value) + wealthChange, Convert.ToInt32(dgCal2.Rows[0].Cells[8].Value) + powerChange, Convert.ToInt32(dgCal2.Rows[0].Cells[9].Value) + populationChange, Convert.ToInt32(dgCal2.Rows[0].Cells[10].Value) + lawChange, Convert.ToInt32(dgCal2.Rows[0].Cells[11].Value) + landsChange, Convert.ToInt32(dgCal2.Rows[0].Cells[12].Value) + influenceChange, Convert.ToInt32(dgCal2.Rows[0].Cells[13].Value) + defenseChange);
                 dgCal1.DataSource = House.HouseQry("HouseChanges");
                 DevLog.LogItem("House resources updated");
 

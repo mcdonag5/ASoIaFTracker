@@ -32,6 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
@@ -145,6 +148,7 @@
             this.dgCal3 = new System.Windows.Forms.DataGridView();
             this.dgCal2 = new System.Windows.Forms.DataGridView();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
+            this.dgHouse = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tlpHouseHeadings.SuspendLayout();
@@ -155,6 +159,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgCal3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHouse)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -196,6 +201,7 @@
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpMain.Size = new System.Drawing.Size(1371, 608);
             this.tlpMain.TabIndex = 1;
             // 
@@ -1741,14 +1747,16 @@
             // 
             // lbHeir
             // 
+            this.lbHeir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbHeir.AutoSize = true;
             this.lbHeir.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHeir.Location = new System.Drawing.Point(3, 64);
             this.lbHeir.Name = "lbHeir";
-            this.lbHeir.Size = new System.Drawing.Size(53, 18);
+            this.lbHeir.Size = new System.Drawing.Size(53, 28);
             this.lbHeir.TabIndex = 52;
             this.lbHeir.Text = "Heirs";
-            this.lbHeir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbHeir.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // button2
             // 
@@ -1881,12 +1889,53 @@
             this.dgCal1.TabIndex = 30;
             this.dgCal1.Visible = false;
             // 
+            // dgHouse
+            // 
+            this.dgHouse.AllowUserToAddRows = false;
+            this.dgHouse.AllowUserToDeleteRows = false;
+            this.dgHouse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgHouse.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgHouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgHouse.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgHouse.Location = new System.Drawing.Point(666, 300);
+            this.dgHouse.Name = "dgHouse";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouse.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgHouse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgHouse.Size = new System.Drawing.Size(38, 32);
+            this.dgHouse.TabIndex = 33;
+            this.dgHouse.Visible = false;
+            // 
             // HouseViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1371, 632);
+            this.Controls.Add(this.dgHouse);
             this.Controls.Add(this.dgCal3);
             this.Controls.Add(this.dgCal2);
             this.Controls.Add(this.dgCal1);
@@ -1897,6 +1946,7 @@
             this.Name = "HouseViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HouseViewForm_FormClosing);
             this.Load += new System.EventHandler(this.HouseViewForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -1914,6 +1964,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgCal3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHouse)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2034,5 +2085,6 @@
         private System.Windows.Forms.Label lbHeir;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lbHeirList;
+        private System.Windows.Forms.DataGridView dgHouse;
     }
 }

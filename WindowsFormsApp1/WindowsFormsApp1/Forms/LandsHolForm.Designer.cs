@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LandsHolForm));
-            this.lbName = new System.Windows.Forms.Label();
+            this.lbTypeName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cbWealthHolding = new System.Windows.Forms.ComboBox();
             this.cbLandHolding = new System.Windows.Forms.ComboBox();
@@ -37,6 +37,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lbImprovemnt = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.lbCost = new System.Windows.Forms.Label();
             this.lbType = new System.Windows.Forms.Label();
             this.lbDesc = new System.Windows.Forms.Label();
@@ -55,6 +56,8 @@
             this.dgLand = new System.Windows.Forms.DataGridView();
             this.dgWea = new System.Windows.Forms.DataGridView();
             this.dgImp = new System.Windows.Forms.DataGridView();
+            this.tsbDeleteCurrent = new System.Windows.Forms.ToolStripButton();
+            this.chbBuilt = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -66,20 +69,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgImp)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbName
+            // lbTypeName
             // 
-            this.lbName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbTypeName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(3, 0);
-            this.lbName.Name = "lbName";
-            this.tableLayoutPanel3.SetRowSpan(this.lbName, 2);
-            this.lbName.Size = new System.Drawing.Size(408, 100);
-            this.lbName.TabIndex = 0;
-            this.lbName.Text = "Maester - Maester Dasher";
-            this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbTypeName.AutoSize = true;
+            this.lbTypeName.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTypeName.Location = new System.Drawing.Point(3, 0);
+            this.lbTypeName.Name = "lbTypeName";
+            this.tableLayoutPanel3.SetRowSpan(this.lbTypeName, 2);
+            this.lbTypeName.Size = new System.Drawing.Size(408, 64);
+            this.lbTypeName.TabIndex = 0;
+            this.lbTypeName.Text = "Maester - Maester Dasher";
+            this.lbTypeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -191,16 +194,30 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.tbName, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.lbCost, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lbName, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.lbType, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lbType, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lbTypeName, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.chbBuilt, 1, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 38);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(617, 100);
             this.tableLayoutPanel3.TabIndex = 6;
+            // 
+            // tbName
+            // 
+            this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbName.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbName.Location = new System.Drawing.Point(3, 67);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(408, 31);
+            this.tbName.TabIndex = 3;
             // 
             // lbCost
             // 
@@ -211,7 +228,7 @@
             this.lbCost.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCost.Location = new System.Drawing.Point(417, 0);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(197, 50);
+            this.lbCost.Size = new System.Drawing.Size(197, 36);
             this.lbCost.TabIndex = 1;
             this.lbCost.Text = "Cost: 10 Wealth, 5 Defense";
             this.lbCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -223,9 +240,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbType.AutoSize = true;
             this.lbType.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbType.Location = new System.Drawing.Point(417, 50);
+            this.lbType.Location = new System.Drawing.Point(417, 64);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(197, 50);
+            this.lbType.Size = new System.Drawing.Size(197, 36);
             this.lbType.TabIndex = 2;
             this.lbType.Text = "Personage";
             this.lbType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -283,7 +300,8 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsddbNew});
+            this.tsddbNew,
+            this.tsbDeleteCurrent});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(647, 25);
@@ -302,7 +320,8 @@
             this.tsddbNew.Image = ((System.Drawing.Image)(resources.GetObject("tsddbNew.Image")));
             this.tsddbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddbNew.Name = "tsddbNew";
-            this.tsddbNew.Size = new System.Drawing.Size(44, 22);
+            this.tsddbNew.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsddbNew.Size = new System.Drawing.Size(54, 22);
             this.tsddbNew.Text = "New";
             // 
             // landHoldingToolStripMenuItem
@@ -342,15 +361,17 @@
             // 
             // dgDef
             // 
+            this.dgDef.AllowUserToAddRows = false;
             this.dgDef.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDef.Location = new System.Drawing.Point(304, 310);
             this.dgDef.Name = "dgDef";
-            this.dgDef.Size = new System.Drawing.Size(38, 32);
+            this.dgDef.Size = new System.Drawing.Size(206, 148);
             this.dgDef.TabIndex = 35;
             this.dgDef.Visible = false;
             // 
             // dgLandFea
             // 
+            this.dgLandFea.AllowUserToAddRows = false;
             this.dgLandFea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLandFea.Location = new System.Drawing.Point(304, 284);
             this.dgLandFea.Name = "dgLandFea";
@@ -360,6 +381,7 @@
             // 
             // dgLand
             // 
+            this.dgLand.AllowUserToAddRows = false;
             this.dgLand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgLand.Location = new System.Drawing.Point(304, 252);
             this.dgLand.Name = "dgLand";
@@ -369,6 +391,7 @@
             // 
             // dgWea
             // 
+            this.dgWea.AllowUserToAddRows = false;
             this.dgWea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgWea.Location = new System.Drawing.Point(304, 281);
             this.dgWea.Name = "dgWea";
@@ -378,12 +401,38 @@
             // 
             // dgImp
             // 
+            this.dgImp.AllowUserToAddRows = false;
             this.dgImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgImp.Location = new System.Drawing.Point(312, 289);
             this.dgImp.Name = "dgImp";
             this.dgImp.Size = new System.Drawing.Size(38, 32);
             this.dgImp.TabIndex = 37;
             this.dgImp.Visible = false;
+            // 
+            // tsbDeleteCurrent
+            // 
+            this.tsbDeleteCurrent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbDeleteCurrent.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteCurrent.Image")));
+            this.tsbDeleteCurrent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDeleteCurrent.Name = "tsbDeleteCurrent";
+            this.tsbDeleteCurrent.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbDeleteCurrent.Size = new System.Drawing.Size(97, 22);
+            this.tsbDeleteCurrent.Text = "Delete Current";
+            // 
+            // chbBuilt
+            // 
+            this.chbBuilt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.chbBuilt.AutoSize = true;
+            this.chbBuilt.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbBuilt.Location = new System.Drawing.Point(417, 39);
+            this.chbBuilt.Name = "chbBuilt";
+            this.chbBuilt.Padding = new System.Windows.Forms.Padding(60, 0, 60, 0);
+            this.chbBuilt.Size = new System.Drawing.Size(197, 22);
+            this.chbBuilt.TabIndex = 4;
+            this.chbBuilt.Text = "Built";
+            this.chbBuilt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chbBuilt.UseVisualStyleBackColor = true;
             // 
             // LandsHolForm
             // 
@@ -420,7 +469,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbName;
+        private System.Windows.Forms.Label lbTypeName;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -446,5 +495,8 @@
         private System.Windows.Forms.ToolStripMenuItem defenseHoldingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wealthHoldingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wealthImprovementToolStripMenuItem;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.ToolStripButton tsbDeleteCurrent;
+        private System.Windows.Forms.CheckBox chbBuilt;
     }
 }

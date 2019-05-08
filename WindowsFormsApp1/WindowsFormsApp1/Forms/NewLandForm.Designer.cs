@@ -32,6 +32,7 @@
             this.cbLand = new System.Windows.Forms.ComboBox();
             this.lbName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbDiscount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.btBuy = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgLand)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -129,6 +129,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 269);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 127);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 25);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Notes:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -151,11 +165,12 @@
             this.tbDiscount.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDiscount.Location = new System.Drawing.Point(111, 95);
             this.tbDiscount.Name = "tbDiscount";
-            this.tbDiscount.Size = new System.Drawing.Size(109, 29);
+            this.tbDiscount.Size = new System.Drawing.Size(82, 29);
             this.tbDiscount.TabIndex = 12;
             this.tbDiscount.Text = "0";
             this.tbDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbDiscount.TextChanged += new System.EventHandler(this.TbDiscount_TextChanged);
+            this.tbDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDiscount_KeyPress);
             // 
             // label3
             // 
@@ -164,11 +179,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(226, 92);
+            this.label3.Location = new System.Drawing.Point(199, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 35);
+            this.label3.Size = new System.Drawing.Size(112, 35);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Cost:";
+            this.label3.Text = "Land Cost:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbCost
@@ -178,9 +193,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCost.AutoSize = true;
             this.lbCost.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCost.Location = new System.Drawing.Point(291, 92);
+            this.lbCost.Location = new System.Drawing.Point(317, 92);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(109, 35);
+            this.lbCost.Size = new System.Drawing.Size(83, 35);
             this.lbCost.TabIndex = 11;
             this.lbCost.Text = "0";
             this.lbCost.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -217,28 +232,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btBuy.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuy.Location = new System.Drawing.Point(290, 234);
+            this.btBuy.Location = new System.Drawing.Point(316, 234);
             this.btBuy.Margin = new System.Windows.Forms.Padding(2);
             this.btBuy.Name = "btBuy";
-            this.btBuy.Size = new System.Drawing.Size(111, 33);
+            this.btBuy.Size = new System.Drawing.Size(85, 33);
             this.btBuy.TabIndex = 51;
             this.btBuy.Text = "Buy";
             this.btBuy.UseVisualStyleBackColor = true;
             this.btBuy.Click += new System.EventHandler(this.BtBuy_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 127);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 25);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Notes:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // rtbNote
             // 
