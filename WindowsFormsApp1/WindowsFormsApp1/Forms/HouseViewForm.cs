@@ -214,6 +214,7 @@ namespace WindowsFormsApp1
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {
                     houLan -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
+                    houPop -= Convert.ToInt32(dgCal1.Rows[n].Cells[8].Value);
                     lbLanHolList.Text += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
 
 

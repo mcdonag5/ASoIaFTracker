@@ -134,7 +134,7 @@
             this.tsbseeTestHouses.Name = "tsbseeTestHouses";
             this.tsbseeTestHouses.Size = new System.Drawing.Size(158, 22);
             this.tsbseeTestHouses.Text = "See Test Houses";
-            this.tsbseeTestHouses.Click += new System.EventHandler(this.tsbseeTestHouses_Click);
+            this.tsbseeTestHouses.Click += new System.EventHandler(this.TsbseeTestHouses_Click);
             // 
             // tsbAllHouses
             // 
@@ -202,7 +202,7 @@
             this.tsbViewHouse.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
             this.tsbViewHouse.Size = new System.Drawing.Size(88, 22);
             this.tsbViewHouse.Text = "View House";
-            this.tsbViewHouse.Click += new System.EventHandler(this.tsbViewHouse_Click);
+            this.tsbViewHouse.Click += new System.EventHandler(this.TsbViewHouse_Click);
             // 
             // tsbDeleteHouse
             // 
@@ -213,7 +213,7 @@
             this.tsbDeleteHouse.Name = "tsbDeleteHouse";
             this.tsbDeleteHouse.Size = new System.Drawing.Size(81, 22);
             this.tsbDeleteHouse.Text = "Delete House";
-            this.tsbDeleteHouse.Click += new System.EventHandler(this.tsbDeleteHouse_Click);
+            this.tsbDeleteHouse.Click += new System.EventHandler(this.TsbDeleteHouse_Click);
             // 
             // FormMain
             // 

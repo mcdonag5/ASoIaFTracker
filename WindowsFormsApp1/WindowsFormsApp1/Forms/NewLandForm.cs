@@ -59,7 +59,7 @@ namespace WindowsFormsApp1.Forms
         }
 
         //Validation
-        private void tbDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        private void TbDiscount_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validation.OnlyDigit(e);
         }

@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
             dgHouseDetails.DataSource = House.HouseTableQry();
         }
 
-        private void tsbseeTestHouses_Click(object sender, EventArgs e)
+        private void TsbseeTestHouses_Click(object sender, EventArgs e)
         {
             DevLog.LogItem("See test house button pressed");
             dgHouseDetails.DataSource = House.HouseTableQry("Hou_Player", "Test");
@@ -100,12 +100,12 @@ namespace WindowsFormsApp1
             DevLog.OpenLog();
         }
 
-        private void tsbViewHouse_Click(object sender, EventArgs e)
+        private void TsbViewHouse_Click(object sender, EventArgs e)
         {
             ViewHouse();
         }
 
-        private void tsbDeleteHouse_Click(object sender, EventArgs e)
+        private void TsbDeleteHouse_Click(object sender, EventArgs e)
         {
             int x = GetSelectedHouseID();
             DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete House "+ dgHouseDetails.Rows[Convert.ToInt32(dgHouseDetails.SelectedCells[0].RowIndex)].Cells[1].Value + ". ID: "+x+".", "Delete House", MessageBoxButtons.YesNo);
