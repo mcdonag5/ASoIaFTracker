@@ -25,7 +25,6 @@ namespace WindowsFormsApp1.Forms
         ///// METHODS END //////////////////////////////////////////////////////////
         public NewDefenseForm(int ID, int holdingID, string landName)
         {
-
             House = new House(ID);
             landID = holdingID.ToString();
             InitializeComponent();
@@ -41,7 +40,6 @@ namespace WindowsFormsApp1.Forms
             cbDefense.Items.Clear();
             cbDefense.Items.AddRange(defense);
             cbDefense.SelectedIndex = 0;
-
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
 
@@ -69,12 +67,7 @@ namespace WindowsFormsApp1.Forms
             Close();
         }
         //Validation
-        private void tbDiscount_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Validation.OnlyDigit(e);
-        }
-
-        
+        private void tbDiscount_KeyPress(object sender, KeyPressEventArgs e) => Validation.OnlyDigit(e);
 
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

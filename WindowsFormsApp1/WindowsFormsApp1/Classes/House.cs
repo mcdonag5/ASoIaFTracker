@@ -89,8 +89,26 @@ namespace WindowsFormsApp1.Classes
                     case "Defense":
                         qry = "SELECT * FROM `tbl_Defense`";
                         break;
-                    default:
-
+                    //tblWealth
+                    case "Estate":
+                        qry = "SELECT * FROM `tbl_Wealth` " +
+                            "WHERE `Wea_Type` = 'Estate' " +
+                            "ORDER BY `tbl_Wealth`.`Wea_Name` ASC";
+                        break;
+                    case "Lifestyle":
+                        qry = "SELECT * FROM `tbl_Wealth` " +
+                            "WHERE `Wea_Type` = 'Lifestyle' " +
+                            "ORDER BY `tbl_Wealth`.`Wea_Name` ASC";
+                        break;
+                    case "Personage":
+                        qry = "SELECT * FROM `tbl_Wealth` " +
+                            "WHERE `Wea_Type` = 'Personage' " +
+                            "ORDER BY `tbl_Wealth`.`Wea_Name` ASC";
+                        break;
+                    case "Settlement":
+                        qry = "SELECT * FROM `tbl_Wealth` " +
+                            "WHERE `Wea_Type` = 'Settlement' " +
+                            "ORDER BY `tbl_Wealth`.`Wea_Name` ASC";
                         break;
                 }
 

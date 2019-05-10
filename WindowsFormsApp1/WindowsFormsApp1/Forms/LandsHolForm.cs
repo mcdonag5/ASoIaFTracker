@@ -23,6 +23,7 @@ namespace WindowsFormsApp1
         NewLandForm newLandForm;
         NewLandFeatureForm newLandFeatureForm;
         NewDefenseForm newDefenseForm;
+        NewWealthForm NewWealthForm;
 
         public int houseID;
         public string currentView = "";
@@ -324,6 +325,15 @@ namespace WindowsFormsApp1
             Visible = false;
             newDefenseForm.ShowDialog();
         }
+
+        private void wealthHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeHolding("");
+            NewWealthForm = new NewWealthForm(House.ID, "", 0, "");
+            NewWealthForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
+            Visible = false;
+            NewWealthForm.ShowDialog();
+        }
         //Closing
         private void LandsHolForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -331,7 +341,10 @@ namespace WindowsFormsApp1
             if (newLandForm != null) { newLandForm.Close(); }
             if (newLandFeatureForm != null) { newLandFeatureForm.Close(); }
             if (newDefenseForm != null) { newDefenseForm.Close(); }
+            if (NewWealthForm != null) { NewWealthForm.Close(); }
         }
+
+
 
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

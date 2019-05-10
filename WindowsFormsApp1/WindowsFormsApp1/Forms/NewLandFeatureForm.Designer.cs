@@ -62,7 +62,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -79,7 +79,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 92);
+            this.label4.Location = new System.Drawing.Point(3, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 25);
             this.label4.TabIndex = 11;
@@ -93,7 +93,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 57);
+            this.label1.Location = new System.Drawing.Point(3, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 35);
             this.label1.TabIndex = 9;
@@ -107,7 +107,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.tbName, 3);
             this.tbName.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbName.Location = new System.Drawing.Point(84, 60);
+            this.tbName.Location = new System.Drawing.Point(84, 65);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(316, 29);
             this.tbName.TabIndex = 11;
@@ -134,7 +134,7 @@
             "The Stormlands",
             "Dorne",
             "The Wall"});
-            this.cbLandFeature.Location = new System.Drawing.Point(3, 23);
+            this.cbLandFeature.Location = new System.Drawing.Point(3, 28);
             this.cbLandFeature.Name = "cbLandFeature";
             this.cbLandFeature.Size = new System.Drawing.Size(397, 31);
             this.cbLandFeature.TabIndex = 4;
@@ -150,7 +150,7 @@
             this.lbName.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.Location = new System.Drawing.Point(3, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(397, 20);
+            this.lbName.Size = new System.Drawing.Size(397, 25);
             this.lbName.TabIndex = 8;
             this.lbName.Text = "New Land Feature";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -161,7 +161,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btBuy.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuy.Location = new System.Drawing.Point(323, 199);
+            this.btBuy.Location = new System.Drawing.Point(323, 204);
             this.btBuy.Margin = new System.Windows.Forms.Padding(2);
             this.btBuy.MaximumSize = new System.Drawing.Size(0, 40);
             this.btBuy.Name = "btBuy";
@@ -179,7 +179,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.rtbNote, 4);
             this.rtbNote.Enabled = false;
             this.rtbNote.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbNote.Location = new System.Drawing.Point(3, 120);
+            this.rtbNote.Location = new System.Drawing.Point(3, 125);
             this.rtbNote.Name = "rtbNote";
             this.rtbNote.Size = new System.Drawing.Size(397, 74);
             this.rtbNote.TabIndex = 52;
