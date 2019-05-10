@@ -40,5 +40,12 @@ namespace WindowsFormsApp1.Classes
                 (sender as TextBox).Text = "0";
             }
         }
+        public void CheckIfSame(object label, string newText)
+        {
+            if((label as Label).Text != newText)
+            {
+                (label as Label).Text = newText;
+            }
+        }
     }
 }

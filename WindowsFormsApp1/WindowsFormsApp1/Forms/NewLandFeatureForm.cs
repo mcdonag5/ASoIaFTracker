@@ -57,6 +57,7 @@ namespace WindowsFormsApp1.Forms
             string notes = "";
             if(Convert.ToInt32(dgLandFeature.Rows[cbLandFeature.SelectedIndex].Cells[4].Value) > 0) { notes = rtbNote.Text; }
             House.InsertLandFeatureHolding(dgLandFeature.Rows[cbLandFeature.SelectedIndex].Cells[0].Value.ToString(), landID, tbName.Text, "");
+            Close();
         }
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

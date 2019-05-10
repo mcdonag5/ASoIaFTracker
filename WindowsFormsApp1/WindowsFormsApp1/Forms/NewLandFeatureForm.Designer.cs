@@ -161,10 +161,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btBuy.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuy.Location = new System.Drawing.Point(297, 199);
+            this.btBuy.Location = new System.Drawing.Point(323, 199);
             this.btBuy.Margin = new System.Windows.Forms.Padding(2);
+            this.btBuy.MaximumSize = new System.Drawing.Size(0, 40);
             this.btBuy.Name = "btBuy";
-            this.btBuy.Size = new System.Drawing.Size(104, 50);
+            this.btBuy.Size = new System.Drawing.Size(78, 40);
             this.btBuy.TabIndex = 51;
             this.btBuy.Text = "Buy";
             this.btBuy.UseVisualStyleBackColor = true;

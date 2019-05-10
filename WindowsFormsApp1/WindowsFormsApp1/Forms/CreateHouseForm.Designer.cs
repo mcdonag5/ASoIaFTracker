@@ -470,9 +470,9 @@
             this.tlpHouseDetails.Controls.Add(this.lbHistoryList, 11, 3);
             this.tlpHouseDetails.Controls.Add(this.label8, 11, 2);
             this.tlpHouseDetails.Location = new System.Drawing.Point(2, 262);
-            this.tlpHouseDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpHouseDetails.Margin = new System.Windows.Forms.Padding(2);
             this.tlpHouseDetails.Name = "tlpHouseDetails";
-            this.tlpHouseDetails.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tlpHouseDetails.Padding = new System.Windows.Forms.Padding(4);
             this.tlpHouseDetails.RowCount = 10;
             this.tlpHouseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpHouseDetails.RowStyles.Add(new System.Windows.Forms.RowStyle());

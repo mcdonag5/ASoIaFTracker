@@ -16,8 +16,15 @@ namespace WindowsFormsApp1
     public partial class HouseViewForm : Form
     {
         ///// VARIABLES START ////////////////////////////////////////////////////// 
+        //classes
         DevLog DevLog = new DevLog();
+        Validation Validation = new Validation();
         House House;
+        //forms
+        LandsHolForm landsHolForm;
+        PowerHolForm powerHolForm;
+        ChangeResourcesForm changeResourcesForm;
+
         public int houseID;
         public int houWea;
         public int houPow;
@@ -43,6 +50,11 @@ namespace WindowsFormsApp1
         public int houDefLoss;
         public int houPopMit;
         public int houLawMit;
+        string landHoldings;
+        string powerHoldings;
+        string bannerHoldings;
+        string influenceHoldings;
+        string heirHoldings;
         int[,] LawModifierArry = { { 0, 0, -20 }, { 1, 10, -10 }, { 11, 20, -5 }, { 21, 30, -2 }, { 31, 40, -1 }, { 41, 50, 0 }, { 51, 60, 1 }, { 61, 70, 2 }, { 71, 999, 5 } };
         int[,] PopModifierArry = { { 0, 0, -10 }, { 1, 10, -5 }, { 11, 20, 0 }, { 21, 30, 1 }, { 31, 40, 3 }, { 14, 50, 1 }, { 51, 60, 0 }, { 61, 70, -5 }, { 71, 999, -10 } };
         ///// VARIABLES END ////////////////////////////////////////////////////////
@@ -68,6 +80,7 @@ namespace WindowsFormsApp1
             houLan = Convert.ToInt32(dgHouse.Rows[0].Cells[11].Value);
             houInf = Convert.ToInt32(dgHouse.Rows[0].Cells[12].Value);
             houDef = Convert.ToInt32(dgHouse.Rows[0].Cells[13].Value);
+
             houHF = 0;
             houWeaGain = 0;
             houPowGain = 0;
@@ -85,20 +98,19 @@ namespace WindowsFormsApp1
             houDefLoss = 0;
             houPopMit = 0;
             houLawMit = 0;
-            //clear labels
-            lbInfHolList.Text = "";
-            lbLanHolList.Text = "";
-            lbPowHolList.Text = "";
-            lbBanList.Text = "";
-            lbHeirList.Text = "";
+            powerHoldings = "";
+            bannerHoldings = "";
+            influenceHoldings = "";
+            heirHoldings = "";
+            landHoldings = "";
             //set current resources to label
-            lbTotalWeaText.Text = houWea.ToString();
-            lbTotalPowText.Text = houPow.ToString();
-            lbTotalPopText.Text = houPop.ToString();
-            lbTotalLawText.Text = houLaw.ToString();
-            lbTotalLanText.Text = houLan.ToString();
-            lbTotalInfText.Text = houInf.ToString();
-            lbTotalDefText.Text = houDef.ToString();
+            Validation.CheckIfSame(lbTotalWeaText, houWea.ToString());
+            Validation.CheckIfSame(lbTotalPowText, houPow.ToString());
+            Validation.CheckIfSame(lbTotalPopText, houPop.ToString());
+            Validation.CheckIfSame(lbTotalLawText, houLaw.ToString());
+            Validation.CheckIfSame(lbTotalLanText, houLan.ToString());
+            Validation.CheckIfSame(lbTotalInfText, houInf.ToString());
+            Validation.CheckIfSame(lbTotalDefText, houDef.ToString());
 
             //Power table
             DevLog.LogItem("Getting units");
@@ -124,9 +136,9 @@ namespace WindowsFormsApp1
                         DevLog.LogItem("Traning cost error: " + dgHouseDetails.Rows[i].Cells[4].Value);
                         break;
                 }
-                houPow -= (Convert.ToInt32(dgHouseDetails.Rows[i].Cells[33].Value) + traningCost) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[5].Value);
+                houPow -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[33].Value) + traningCost - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[5].Value);
 
-                lbPowHolList.Text += dgHouseDetails.Rows[i].Cells[4].Value.ToString() + " " + dgHouseDetails.Rows[i].Cells[32].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[3].Value.ToString() + Environment.NewLine;
+                powerHoldings += dgHouseDetails.Rows[i].Cells[4].Value.ToString() + " " + dgHouseDetails.Rows[i].Cells[32].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[3].Value.ToString() + Environment.NewLine;
             }
             DevLog.LogItem("Getting Banners");
 
@@ -140,9 +152,8 @@ namespace WindowsFormsApp1
                 if (i == 0) { houPow -= 20; }
                 else if (i == 1) { houPow += 10; }
                 else { houPow += 5; }
-                lbBanList.Text += "House " + dgHouseDetails.Rows[i].Cells[2].Value.ToString() + Environment.NewLine;
+                bannerHoldings += "House " + dgHouseDetails.Rows[i].Cells[2].Value.ToString() + Environment.NewLine;
             }
-
 
             //Influence table
             DevLog.LogItem("Getting Influence Holdings");
@@ -160,12 +171,12 @@ namespace WindowsFormsApp1
                 houLawMit += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[21].Value);
                 houPopMit += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[22].Value);
 
-                lbInfHolList.Text += dgHouseDetails.Rows[i].Cells[10].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[4].Value.ToString() + Environment.NewLine;
+                influenceHoldings += dgHouseDetails.Rows[i].Cells[10].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[4].Value.ToString() + Environment.NewLine;
                 dgCal1.DataSource = House.HouseQry("InfluenceHolding", dgHouseDetails.Rows[i].Cells[1].Value.ToString());
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {//Imp Table
                     houInf -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
-                    lbInfHolList.Text += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + Environment.NewLine;
+                    influenceHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + Environment.NewLine;
                 }
             }
             //Heir table
@@ -186,22 +197,21 @@ namespace WindowsFormsApp1
                     if(female==1) { houInf -= 10; }
                     else { houInf -= 5; }
                 }
-                lbHeirList.Text += dgHouseDetails.Rows[i].Cells[2].Value.ToString() + Environment.NewLine;
+                heirHoldings += dgHouseDetails.Rows[i].Cells[2].Value.ToString() + Environment.NewLine;
             }
-
             //Land table
             DevLog.LogItem("Getting land holdings");
             dgHouseDetails.DataSource = House.HouseQry("LandHolding");
             for (int i = 0; i < dgHouseDetails.RowCount; i++)
             {
                 houLan -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[10].Value) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[6].Value);
-                lbLanHolList.Text += dgHouseDetails.Rows[i].Cells[9].Value.ToString() + "-" + dgHouseDetails.Rows[i].Cells[4].Value.ToString() + Environment.NewLine;
+                landHoldings += dgHouseDetails.Rows[i].Cells[9].Value.ToString() + "-" + dgHouseDetails.Rows[i].Cells[4].Value.ToString() + Environment.NewLine;
                 //Land Features
                 dgCal1.DataSource = House.HouseQry("LandHoldingFeature", dgHouseDetails.Rows[i].Cells[1].Value.ToString());
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {
                     houLan -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
-                    lbLanHolList.Text += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                    landHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
                 }
                 //Wealth Holdings on Land (Estate)
                 CheckWealthHolding("LanHol_ID", Convert.ToInt32(dgHouseDetails.Rows[i].Cells[1].Value.ToString()), 1, "          ");
@@ -215,7 +225,7 @@ namespace WindowsFormsApp1
                 {
                     houLan -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
                     houPop -= Convert.ToInt32(dgCal1.Rows[n].Cells[8].Value);
-                    lbLanHolList.Text += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                    landHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
 
 
                     //Wealth holding in LandHolFea
@@ -228,7 +238,7 @@ namespace WindowsFormsApp1
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {
                     houDef -= Convert.ToInt32(dgCal1.Rows[n].Cells[10].Value) - Convert.ToInt32(dgCal1.Rows[n].Cells[6].Value);
-                    lbLanHolList.Text += "    " + dgCal1.Rows[n].Cells[9].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                    landHoldings += "    " + dgCal1.Rows[n].Cells[9].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
 
 
                     //Wealth holding in LandHolFea
@@ -238,33 +248,40 @@ namespace WindowsFormsApp1
                 }
 
             }
+            //set list labels
+            Validation.CheckIfSame(lbLanHolList, landHoldings);
+            Validation.CheckIfSame(lbInfHolList, influenceHoldings);
+            Validation.CheckIfSame(lbHeirList, heirHoldings);
+            Validation.CheckIfSame(lbPowHolList, powerHoldings);
+            Validation.CheckIfSame(lbBanList, bannerHoldings);
+            //set spare labels
             DevLog.LogItem("Setting spare resources");
-            //set labels
-            lbSpareWeaText.Text = houWea.ToString();
-            lbSparePowText.Text = houPow.ToString();
-            lbSparePopText.Text = houPop.ToString();
-            lbSpareLanText.Text = houLan.ToString();
-            lbSpareInfText.Text = houInf.ToString();
-            lbSpareDefText.Text = houDef.ToString();
+            Validation.CheckIfSame(lbSpareWeaText, houWea.ToString());
+            Validation.CheckIfSame(lbSparePowText, houPow.ToString());
+            Validation.CheckIfSame(lbSparePopText, houPop.ToString());
+            Validation.CheckIfSame(lbSpareLanText, houLan.ToString());
+            Validation.CheckIfSame(lbSpareInfText, houInf.ToString());
+            Validation.CheckIfSame(lbSpareDefText, houDef.ToString());
+            //set Gain and loss labels
             DevLog.LogItem("Setting Gain and Loss");
-            lbHFText.Text = houHF.ToString(); lbHFGainDice.Text = BounusDiceCal(houHF);
-            lbWeaGainText.Text = houWeaGain.ToString(); lbWeaGainDice.Text = BounusDiceCal(houWeaGain);
-            lbPowGainText.Text = houPowGain.ToString(); lbPowGainDice.Text = BounusDiceCal(houPowGain);
-            lbPopGainText.Text = houPopGain.ToString(); lbPopGainDice.Text = BounusDiceCal(houPopGain);
-            lbLawGainText.Text = houLanGain.ToString(); lbLawGainDice.Text = BounusDiceCal(houLawGain);
-            lbLanGainText.Text = houLanGain.ToString(); lbLanGainDice.Text = BounusDiceCal(houLanGain);
-            lbInfGainText.Text = houInfGain.ToString(); lbInfGainDice.Text = BounusDiceCal(houInfGain);
-            lbDefGainText.Text = houDefGain.ToString(); lbDefGainDice.Text = BounusDiceCal(houDefGain);
-            lbWeaLossText.Text = houWeaLoss.ToString(); lbWeaLossDice.Text = BounusDiceCal(houWeaLoss);
-            lbPowLossText.Text = houPowLoss.ToString(); lbPowLossDice.Text = BounusDiceCal(houPowLoss);
-            lbPopLossText.Text = houPopLoss.ToString(); lbPopLossDice.Text = BounusDiceCal(houPopLoss);
-            lbLawLossText.Text = houLawLoss.ToString(); lbLawLossDice.Text = BounusDiceCal(houLawLoss);
-            lbLanLossText.Text = houLanLoss.ToString(); lbLanLossDice.Text = BounusDiceCal(houLanLoss);
-            lbInfLossText.Text = houInfLoss.ToString(); lbInfLossDice.Text = BounusDiceCal(houInfLoss);
-            lbDefLossText.Text = houDefLoss.ToString(); lbDefLossDice.Text = BounusDiceCal(houDefLoss);
+            Validation.CheckIfSame(lbHFText, houHF.ToString()); Validation.CheckIfSame(lbHFGainDice, BounusDiceCal(houHF));
+            Validation.CheckIfSame(lbWeaGainText, houWeaGain.ToString()); Validation.CheckIfSame(lbWeaGainDice, BounusDiceCal(houWeaGain));
+            Validation.CheckIfSame(lbPowGainText, houPowGain.ToString()); Validation.CheckIfSame(lbPowGainDice, BounusDiceCal(houPowGain));
+            Validation.CheckIfSame(lbPopGainText, houPopGain.ToString()); Validation.CheckIfSame(lbPopGainDice, BounusDiceCal(houPopGain));
+            Validation.CheckIfSame(lbLawGainText, houLanGain.ToString()); Validation.CheckIfSame(lbLawGainDice, BounusDiceCal(houLawGain));
+            Validation.CheckIfSame(lbLanGainText, houLanGain.ToString()); Validation.CheckIfSame(lbLanGainDice, BounusDiceCal(houLanGain));
+            Validation.CheckIfSame(lbInfGainText, houInfGain.ToString()); Validation.CheckIfSame(lbInfGainDice, BounusDiceCal(houInfGain));
+            Validation.CheckIfSame(lbDefGainText, houDefGain.ToString()); Validation.CheckIfSame(lbDefGainDice, BounusDiceCal(houDefGain));
+            Validation.CheckIfSame(lbWeaLossText, houWeaLoss.ToString()); Validation.CheckIfSame(lbWeaLossDice, BounusDiceCal(houWeaLoss));
+            Validation.CheckIfSame(lbPowLossText, houPowLoss.ToString()); Validation.CheckIfSame(lbPowLossDice, BounusDiceCal(houPowLoss));
+            Validation.CheckIfSame(lbPopLossText, houPopLoss.ToString()); Validation.CheckIfSame(lbPopLossDice, BounusDiceCal(houPopLoss));
+            Validation.CheckIfSame(lbLawLossText, houLawLoss.ToString()); Validation.CheckIfSame(lbLawLossDice, BounusDiceCal(houLawLoss));
+            Validation.CheckIfSame(lbLanLossText, houLanLoss.ToString()); Validation.CheckIfSame(lbLanLossDice, BounusDiceCal(houLanLoss));
+            Validation.CheckIfSame(lbInfLossText, houInfLoss.ToString()); Validation.CheckIfSame(lbInfLossDice, BounusDiceCal(houInfLoss));
+            Validation.CheckIfSame(lbDefLossText, houDefLoss.ToString()); Validation.CheckIfSame(lbDefLossDice, BounusDiceCal(houDefLoss));
 
-            lbModifierPopText.Text = HouseModifier(Convert.ToInt32(lbTotalPopText.Text), PopModifierArry);
-            lbModifierLawText.Text = HouseModifier(Convert.ToInt32(lbTotalLawText.Text), LawModifierArry);
+            Validation.CheckIfSame(lbModifierPopText, HouseModifier(Convert.ToInt32(lbTotalPopText.Text), PopModifierArry));
+            Validation.CheckIfSame(lbModifierLawText, HouseModifier(Convert.ToInt32(lbTotalLawText.Text), LawModifierArry));
             DevLog.LogItem("Updating end");
         }
 
@@ -278,7 +295,7 @@ namespace WindowsFormsApp1
                 houDef -= Convert.ToInt32(dgCal2.Rows[n].Cells[16].Value);
                 houLan -= Convert.ToInt32(dgCal2.Rows[n].Cells[17].Value);
                 houPow -= Convert.ToInt32(dgCal2.Rows[n].Cells[18].Value);
-                lbLanHolList.Text += indent;
+                landHoldings += indent;
                 if (Convert.ToInt32(dgCal2.Rows[n].Cells[7].Value) == 1)
                 {
                     houHF += Convert.ToInt32(dgCal2.Rows[n].Cells[23].Value);
@@ -299,9 +316,9 @@ namespace WindowsFormsApp1
                     houLawMit += Convert.ToInt32(dgCal2.Rows[n].Cells[38].Value);
                     houPopMit += Convert.ToInt32(dgCal2.Rows[n].Cells[39].Value);
                 }
-                else { lbLanHolList.Text += "B: "; }
+                else { landHoldings += "B: "; }
 
-                lbLanHolList.Text += dgCal2.Rows[n].Cells[12].Value.ToString() + " - " + dgCal2.Rows[n].Cells[6].Value.ToString() + Environment.NewLine;
+                landHoldings += dgCal2.Rows[n].Cells[12].Value.ToString() + " - " + dgCal2.Rows[n].Cells[6].Value.ToString() + Environment.NewLine;
 
                 dgCal3.DataSource = House.HouseQry("WealthHoldingImprovement", dgCal2.Rows[n].Cells[1].Value.ToString());
                 for (int t = 0; t < dgCal3.RowCount - 1; t++)
@@ -311,7 +328,7 @@ namespace WindowsFormsApp1
                     houLan -= Convert.ToInt32(dgCal3.Rows[t].Cells[12].Value);
                     houPow -= Convert.ToInt32(dgCal3.Rows[t].Cells[13].Value);
                     houInf -= Convert.ToInt32(dgCal3.Rows[t].Cells[14].Value);
-                    lbLanHolList.Text += indent + "   ";
+                    landHoldings += indent + "   ";
                     if (Convert.ToInt32(dgCal3.Rows[t].Cells[4].Value) == 1)
                     {
                         houHF += Convert.ToInt32(dgCal3.Rows[t].Cells[19].Value);
@@ -332,10 +349,10 @@ namespace WindowsFormsApp1
                         houLawMit += Convert.ToInt32(dgCal3.Rows[t].Cells[34].Value);
                         houPopMit += Convert.ToInt32(dgCal3.Rows[t].Cells[35].Value);
                     }
-                    else { lbLanHolList.Text += "B: "; }
+                    else { landHoldings += "B: "; }
 
 
-                    lbLanHolList.Text += dgCal3.Rows[t].Cells[8].Value.ToString() + Environment.NewLine;
+                    landHoldings += dgCal3.Rows[t].Cells[8].Value.ToString() + Environment.NewLine;
 
                 }
 
@@ -390,7 +407,7 @@ namespace WindowsFormsApp1
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void TbHouLanView_Click(object sender, EventArgs e)
         {
-            LandsHolForm landsHolForm = new LandsHolForm(houseID);
+            landsHolForm = new LandsHolForm(houseID);
             landsHolForm.VisibleChanged += new EventHandler(this.HouseViewForm_Load);
             landsHolForm.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
             landsHolForm.Show();
@@ -398,13 +415,13 @@ namespace WindowsFormsApp1
 
         private void BtPowerHolForm_Click(object sender, EventArgs e)
         {
-            PowerHolForm powerHolForm = new PowerHolForm(houseID);
+            powerHolForm = new PowerHolForm(houseID);
             powerHolForm.Show();
         }
 
         private void ToolStripButton1_Click(object sender, EventArgs e)
         {
-            ChangeResourcesForm changeResourcesForm = new ChangeResourcesForm(houseID);
+            changeResourcesForm = new ChangeResourcesForm(houseID);
             changeResourcesForm.FormClosing += new FormClosingEventHandler(this.HouseViewForm_Load);
             changeResourcesForm.Show();
         }
@@ -412,11 +429,14 @@ namespace WindowsFormsApp1
         private void HouseViewForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DevLog.LogItem("Closing House View");
-            if (!(tbName.Text == dgHouse.Rows[0].Cells[1].Value.ToString()) || !(tbSeatOfPower.Text == dgHouse.Rows[0].Cells[4].Value.ToString()) || !(cbRealm.Text == dgHouse.Rows[0].Cells[3].Value.ToString()) || !(tbLiege.Text == dgHouse.Rows[0].Cells[6].Value.ToString()) || !(tbLiegeLord.Text == dgHouse.Rows[0].Cells[5].Value.ToString()))
+            if (tbName.Text != dgHouse.Rows[0].Cells[1].Value.ToString() || tbSeatOfPower.Text != dgHouse.Rows[0].Cells[4].Value.ToString() || cbRealm.Text != dgHouse.Rows[0].Cells[3].Value.ToString() || tbLiege.Text != dgHouse.Rows[0].Cells[6].Value.ToString() || tbLiegeLord.Text != dgHouse.Rows[0].Cells[5].Value.ToString())
             {
                 DevLog.LogItem("Details do not match");
                 House.UpdateHouseDetails(tbName.Text, cbRealm.Text, tbSeatOfPower.Text, tbLiegeLord.Text, tbLiege.Text);
             }
+            if (landsHolForm != null) { landsHolForm.Close(); }
+            if (powerHolForm != null) { powerHolForm.Close(); }
+            if (changeResourcesForm != null) { changeResourcesForm.Close(); }
         }
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

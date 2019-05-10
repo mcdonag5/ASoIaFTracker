@@ -149,6 +149,8 @@
             this.dgCal2 = new System.Windows.Forms.DataGridView();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
             this.dgHouse = new System.Windows.Forms.DataGridView();
+            this.lbPlayer = new System.Windows.Forms.Label();
+            this.tbPlayer = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tlpHouseHeadings.SuspendLayout();
@@ -197,7 +199,7 @@
             this.tlpMain.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.tlpMain.RowCount = 3;
+            this.tlpMain.RowCount = 4;
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -217,7 +219,8 @@
             this.tlpHouseHeadings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpHouseHeadings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tlpHouseHeadings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpHouseHeadings.Controls.Add(this.tbSeatOfPower, 4, 0);
+            this.tlpHouseHeadings.Controls.Add(this.tbPlayer, 5, 0);
+            this.tlpHouseHeadings.Controls.Add(this.lbPlayer, 4, 0);
             this.tlpHouseHeadings.Controls.Add(this.tbLiege, 5, 1);
             this.tlpHouseHeadings.Controls.Add(this.lbLiege, 4, 1);
             this.tlpHouseHeadings.Controls.Add(this.tbLiegeLord, 3, 1);
@@ -225,14 +228,16 @@
             this.tlpHouseHeadings.Controls.Add(this.lbRealm, 0, 1);
             this.tlpHouseHeadings.Controls.Add(this.tbName, 1, 0);
             this.tlpHouseHeadings.Controls.Add(this.lbName, 0, 0);
-            this.tlpHouseHeadings.Controls.Add(this.lbSeatOfPower, 3, 0);
             this.tlpHouseHeadings.Controls.Add(this.cbRealm, 1, 1);
+            this.tlpHouseHeadings.Controls.Add(this.lbSeatOfPower, 2, 0);
+            this.tlpHouseHeadings.Controls.Add(this.tbSeatOfPower, 3, 0);
             this.tlpHouseHeadings.Location = new System.Drawing.Point(2, 10);
             this.tlpHouseHeadings.Margin = new System.Windows.Forms.Padding(2);
             this.tlpHouseHeadings.Name = "tlpHouseHeadings";
             this.tlpHouseHeadings.RowCount = 2;
             this.tlpHouseHeadings.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpHouseHeadings.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpHouseHeadings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpHouseHeadings.Size = new System.Drawing.Size(1367, 81);
             this.tlpHouseHeadings.TabIndex = 0;
             // 
@@ -241,11 +246,10 @@
             this.tbSeatOfPower.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpHouseHeadings.SetColumnSpan(this.tbSeatOfPower, 2);
             this.tbSeatOfPower.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSeatOfPower.Location = new System.Drawing.Point(934, 3);
+            this.tbSeatOfPower.Location = new System.Drawing.Point(588, 3);
             this.tbSeatOfPower.Name = "tbSeatOfPower";
-            this.tbSeatOfPower.Size = new System.Drawing.Size(430, 29);
+            this.tbSeatOfPower.Size = new System.Drawing.Size(342, 29);
             this.tbSeatOfPower.TabIndex = 2;
             // 
             // tbLiege
@@ -254,9 +258,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbLiege.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLiege.Location = new System.Drawing.Point(1009, 38);
+            this.tbLiege.Location = new System.Drawing.Point(1020, 38);
             this.tbLiege.Name = "tbLiege";
-            this.tbLiege.Size = new System.Drawing.Size(355, 29);
+            this.tbLiege.Size = new System.Drawing.Size(344, 29);
             this.tbLiege.TabIndex = 5;
             // 
             // lbLiege
@@ -266,9 +270,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLiege.AutoSize = true;
             this.lbLiege.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLiege.Location = new System.Drawing.Point(934, 35);
+            this.lbLiege.Location = new System.Drawing.Point(936, 35);
             this.lbLiege.Name = "lbLiege";
-            this.lbLiege.Size = new System.Drawing.Size(69, 46);
+            this.lbLiege.Size = new System.Drawing.Size(78, 46);
             this.lbLiege.TabIndex = 5;
             this.lbLiege.Text = "Liege:";
             // 
@@ -278,9 +282,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbLiegeLord.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLiegeLord.Location = new System.Drawing.Point(574, 38);
+            this.tbLiegeLord.Location = new System.Drawing.Point(588, 38);
             this.tbLiegeLord.Name = "tbLiegeLord";
-            this.tbLiegeLord.Size = new System.Drawing.Size(354, 29);
+            this.tbLiegeLord.Size = new System.Drawing.Size(342, 29);
             this.tbLiegeLord.TabIndex = 4;
             // 
             // lbLiegeLord
@@ -290,9 +294,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLiegeLord.AutoSize = true;
             this.lbLiegeLord.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLiegeLord.Location = new System.Drawing.Point(449, 35);
+            this.lbLiegeLord.Location = new System.Drawing.Point(437, 35);
             this.lbLiegeLord.Name = "lbLiegeLord";
-            this.lbLiegeLord.Size = new System.Drawing.Size(119, 46);
+            this.lbLiegeLord.Size = new System.Drawing.Size(145, 46);
             this.lbLiegeLord.TabIndex = 11;
             this.lbLiegeLord.Text = "Liege Lord:";
             // 
@@ -314,11 +318,10 @@
             this.tbName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tlpHouseHeadings.SetColumnSpan(this.tbName, 2);
             this.tbName.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.Location = new System.Drawing.Point(89, 3);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(479, 29);
+            this.tbName.Size = new System.Drawing.Size(342, 29);
             this.tbName.TabIndex = 1;
             // 
             // lbName
@@ -342,9 +345,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSeatOfPower.AutoSize = true;
             this.lbSeatOfPower.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSeatOfPower.Location = new System.Drawing.Point(574, 0);
+            this.lbSeatOfPower.Location = new System.Drawing.Point(437, 0);
             this.lbSeatOfPower.Name = "lbSeatOfPower";
-            this.lbSeatOfPower.Size = new System.Drawing.Size(354, 35);
+            this.lbSeatOfPower.Size = new System.Drawing.Size(145, 35);
             this.lbSeatOfPower.TabIndex = 8;
             this.lbSeatOfPower.Text = "Seat of Power:";
             this.lbSeatOfPower.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -372,7 +375,7 @@
             "The Wall"});
             this.cbRealm.Location = new System.Drawing.Point(89, 38);
             this.cbRealm.Name = "cbRealm";
-            this.cbRealm.Size = new System.Drawing.Size(354, 31);
+            this.cbRealm.Size = new System.Drawing.Size(342, 31);
             this.cbRealm.TabIndex = 3;
             // 
             // tlpHouseDetails
@@ -1929,6 +1932,30 @@
             this.dgHouse.TabIndex = 33;
             this.dgHouse.Visible = false;
             // 
+            // lbPlayer
+            // 
+            this.lbPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPlayer.AutoSize = true;
+            this.lbPlayer.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlayer.Location = new System.Drawing.Point(936, 0);
+            this.lbPlayer.Name = "lbPlayer";
+            this.lbPlayer.Size = new System.Drawing.Size(78, 35);
+            this.lbPlayer.TabIndex = 6;
+            this.lbPlayer.Text = "Player:";
+            // 
+            // tbPlayer
+            // 
+            this.tbPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPlayer.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPlayer.Location = new System.Drawing.Point(1020, 3);
+            this.tbPlayer.Name = "tbPlayer";
+            this.tbPlayer.Size = new System.Drawing.Size(344, 29);
+            this.tbPlayer.TabIndex = 6;
+            // 
             // HouseViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2086,5 +2113,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lbHeirList;
         private System.Windows.Forms.DataGridView dgHouse;
+        private System.Windows.Forms.TextBox tbPlayer;
+        private System.Windows.Forms.Label lbPlayer;
     }
 }

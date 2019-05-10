@@ -85,6 +85,10 @@ namespace WindowsFormsApp1.Classes
                     case "LandFeature":
                         qry = "SELECT * FROM `tbl_LandFeature`";
                         break;
+                    //tbl_Defense
+                    case "Defense":
+                        qry = "SELECT * FROM `tbl_Defense`";
+                        break;
                     default:
 
                         break;
@@ -216,6 +220,17 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_LandHoldingFeature` (`LanFea_ID`, `LanHol_ID`, `LanHolFea_Name`, `LanHolFea_Note`) "+
                     "VALUES ('"+landFeaID+"', '"+landHolID+"', '"+name+"', '"+notes+"');";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        public void InsertDefenseHolding(string defID, string landHolID, string name, string notes, string discount)
+        {
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_DefenseHolding` (`Def_ID`, `LanHol_ID`, `DefHol_Name`, `DefHol_Built`, `DefHol_Notes`, `DefHol_Discount`) "+
+                    "VALUES ('"+defID+"', '"+landHolID+"', '"+name+"', '0', '"+notes+"', '"+discount+"');";
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }

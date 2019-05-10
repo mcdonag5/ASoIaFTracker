@@ -16,8 +16,14 @@ namespace WindowsFormsApp1
     public partial class LandsHolForm : Form
     {
         ///// VARIABLES START //////////////////////////////////////////////////////
+        //Classes
         DevLog DevLog = new DevLog();
         House House;
+        //Forms
+        NewLandForm newLandForm;
+        NewLandFeatureForm newLandFeatureForm;
+        NewDefenseForm newDefenseForm;
+
         public int houseID;
         public string currentView = "";
         public int currentIndex;
@@ -191,6 +197,13 @@ namespace WindowsFormsApp1
 
                     }
                     break;
+                default:
+                    landFeatureToolStripMenuItem.Enabled = false;
+                    defenseHoldingToolStripMenuItem.Enabled = false;
+                    wealthHoldingToolStripMenuItem.Enabled = false;
+                    wealthImprovementToolStripMenuItem.Enabled = false;
+
+                    break;
             }
             //Display Cost
             if (costWea > 0) { lbCost.Text += "Wealth: " + costWea + " "; }
@@ -262,6 +275,7 @@ namespace WindowsFormsApp1
             Visible = true;
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
+        //Combo boxes
         private void CbLandHolding_SelectedIndexChanged(object sender, EventArgs e)
         {
             ChangeHolding("Land");
@@ -283,11 +297,11 @@ namespace WindowsFormsApp1
         {
             ChangeHolding("Wealth");
         }
-
+        //Stripmenu
         private void LandHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeHolding("");
-            NewLandForm newLandForm = new NewLandForm(houseID);
+            newLandForm = new NewLandForm(houseID);
             newLandForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             this.Visible = false;
             newLandForm.ShowDialog();
@@ -296,15 +310,27 @@ namespace WindowsFormsApp1
         private void landFeatureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeHolding("");
-            NewLandFeatureForm newLandFeatureForm = new NewLandFeatureForm(House.ID, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
+            newLandFeatureForm = new NewLandFeatureForm(House.ID, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
             newLandFeatureForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             newLandFeatureForm.ShowDialog();
         }
 
+        private void defenseHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeHolding("");
+            newDefenseForm = new NewDefenseForm(House.ID, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
+            newDefenseForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
+            Visible = false;
+            newDefenseForm.ShowDialog();
+        }
+        //Closing
         private void LandsHolForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             ChangeHolding("");
+            if (newLandForm != null) { newLandForm.Close(); }
+            if (newLandFeatureForm != null) { newLandFeatureForm.Close(); }
+            if (newDefenseForm != null) { newDefenseForm.Close(); }
         }
 
 

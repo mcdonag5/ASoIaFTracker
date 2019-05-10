@@ -46,11 +46,6 @@
             this.rtbNotes = new System.Windows.Forms.RichTextBox();
             this.lbAddions = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dgDef = new System.Windows.Forms.DataGridView();
-            this.dgLandFea = new System.Windows.Forms.DataGridView();
-            this.dgLand = new System.Windows.Forms.DataGridView();
-            this.dgWea = new System.Windows.Forms.DataGridView();
-            this.dgImp = new System.Windows.Forms.DataGridView();
             this.tsddbNew = new System.Windows.Forms.ToolStripDropDownButton();
             this.landHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.landFeatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +53,11 @@
             this.wealthHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wealthImprovementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbDeleteCurrent = new System.Windows.Forms.ToolStripButton();
+            this.dgDef = new System.Windows.Forms.DataGridView();
+            this.dgLandFea = new System.Windows.Forms.DataGridView();
+            this.dgLand = new System.Windows.Forms.DataGridView();
+            this.dgWea = new System.Windows.Forms.DataGridView();
+            this.dgImp = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -323,6 +323,69 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // tsddbNew
+            // 
+            this.tsddbNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.landHoldingToolStripMenuItem,
+            this.landFeatureToolStripMenuItem,
+            this.defenseHoldingToolStripMenuItem,
+            this.wealthHoldingToolStripMenuItem,
+            this.wealthImprovementToolStripMenuItem});
+            this.tsddbNew.Image = ((System.Drawing.Image)(resources.GetObject("tsddbNew.Image")));
+            this.tsddbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbNew.Name = "tsddbNew";
+            this.tsddbNew.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsddbNew.Size = new System.Drawing.Size(54, 22);
+            this.tsddbNew.Text = "New";
+            // 
+            // landHoldingToolStripMenuItem
+            // 
+            this.landHoldingToolStripMenuItem.Name = "landHoldingToolStripMenuItem";
+            this.landHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.landHoldingToolStripMenuItem.Text = "Land Holding";
+            this.landHoldingToolStripMenuItem.Click += new System.EventHandler(this.LandHoldingToolStripMenuItem_Click);
+            // 
+            // landFeatureToolStripMenuItem
+            // 
+            this.landFeatureToolStripMenuItem.Enabled = false;
+            this.landFeatureToolStripMenuItem.Name = "landFeatureToolStripMenuItem";
+            this.landFeatureToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.landFeatureToolStripMenuItem.Text = "Land Feature";
+            this.landFeatureToolStripMenuItem.Click += new System.EventHandler(this.landFeatureToolStripMenuItem_Click);
+            // 
+            // defenseHoldingToolStripMenuItem
+            // 
+            this.defenseHoldingToolStripMenuItem.Enabled = false;
+            this.defenseHoldingToolStripMenuItem.Name = "defenseHoldingToolStripMenuItem";
+            this.defenseHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.defenseHoldingToolStripMenuItem.Text = "Defense Holding";
+            this.defenseHoldingToolStripMenuItem.Click += new System.EventHandler(this.defenseHoldingToolStripMenuItem_Click);
+            // 
+            // wealthHoldingToolStripMenuItem
+            // 
+            this.wealthHoldingToolStripMenuItem.Enabled = false;
+            this.wealthHoldingToolStripMenuItem.Name = "wealthHoldingToolStripMenuItem";
+            this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wealthHoldingToolStripMenuItem.Text = "Wealth Holding";
+            // 
+            // wealthImprovementToolStripMenuItem
+            // 
+            this.wealthImprovementToolStripMenuItem.Enabled = false;
+            this.wealthImprovementToolStripMenuItem.Name = "wealthImprovementToolStripMenuItem";
+            this.wealthImprovementToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wealthImprovementToolStripMenuItem.Text = "Wealth Improvement";
+            // 
+            // tsbDeleteCurrent
+            // 
+            this.tsbDeleteCurrent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbDeleteCurrent.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteCurrent.Image")));
+            this.tsbDeleteCurrent.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDeleteCurrent.Name = "tsbDeleteCurrent";
+            this.tsbDeleteCurrent.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbDeleteCurrent.Size = new System.Drawing.Size(97, 22);
+            this.tsbDeleteCurrent.Text = "Delete Current";
+            // 
             // dgDef
             // 
             this.dgDef.AllowUserToAddRows = false;
@@ -372,68 +435,6 @@
             this.dgImp.Size = new System.Drawing.Size(38, 32);
             this.dgImp.TabIndex = 37;
             this.dgImp.Visible = false;
-            // 
-            // tsddbNew
-            // 
-            this.tsddbNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsddbNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.landHoldingToolStripMenuItem,
-            this.landFeatureToolStripMenuItem,
-            this.defenseHoldingToolStripMenuItem,
-            this.wealthHoldingToolStripMenuItem,
-            this.wealthImprovementToolStripMenuItem});
-            this.tsddbNew.Image = ((System.Drawing.Image)(resources.GetObject("tsddbNew.Image")));
-            this.tsddbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsddbNew.Name = "tsddbNew";
-            this.tsddbNew.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsddbNew.Size = new System.Drawing.Size(54, 22);
-            this.tsddbNew.Text = "New";
-            // 
-            // landHoldingToolStripMenuItem
-            // 
-            this.landHoldingToolStripMenuItem.Name = "landHoldingToolStripMenuItem";
-            this.landHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.landHoldingToolStripMenuItem.Text = "Land Holding";
-            this.landHoldingToolStripMenuItem.Click += new System.EventHandler(this.LandHoldingToolStripMenuItem_Click);
-            // 
-            // landFeatureToolStripMenuItem
-            // 
-            this.landFeatureToolStripMenuItem.Enabled = false;
-            this.landFeatureToolStripMenuItem.Name = "landFeatureToolStripMenuItem";
-            this.landFeatureToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.landFeatureToolStripMenuItem.Text = "Land Feature";
-            this.landFeatureToolStripMenuItem.Click += new System.EventHandler(this.landFeatureToolStripMenuItem_Click);
-            // 
-            // defenseHoldingToolStripMenuItem
-            // 
-            this.defenseHoldingToolStripMenuItem.Enabled = false;
-            this.defenseHoldingToolStripMenuItem.Name = "defenseHoldingToolStripMenuItem";
-            this.defenseHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.defenseHoldingToolStripMenuItem.Text = "Defense Holding";
-            // 
-            // wealthHoldingToolStripMenuItem
-            // 
-            this.wealthHoldingToolStripMenuItem.Enabled = false;
-            this.wealthHoldingToolStripMenuItem.Name = "wealthHoldingToolStripMenuItem";
-            this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.wealthHoldingToolStripMenuItem.Text = "Wealth Holding";
-            // 
-            // wealthImprovementToolStripMenuItem
-            // 
-            this.wealthImprovementToolStripMenuItem.Enabled = false;
-            this.wealthImprovementToolStripMenuItem.Name = "wealthImprovementToolStripMenuItem";
-            this.wealthImprovementToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.wealthImprovementToolStripMenuItem.Text = "Wealth Improvement";
-            // 
-            // tsbDeleteCurrent
-            // 
-            this.tsbDeleteCurrent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbDeleteCurrent.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteCurrent.Image")));
-            this.tsbDeleteCurrent.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDeleteCurrent.Name = "tsbDeleteCurrent";
-            this.tsbDeleteCurrent.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsbDeleteCurrent.Size = new System.Drawing.Size(97, 22);
-            this.tsbDeleteCurrent.Text = "Delete Current";
             // 
             // LandsHolForm
             // 
