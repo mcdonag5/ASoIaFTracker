@@ -32,7 +32,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbBenefits = new System.Windows.Forms.Label();
             this.lbDescription = new System.Windows.Forms.Label();
-            this.lbBuildTime = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbDiscount = new System.Windows.Forms.TextBox();
@@ -44,12 +43,13 @@
             this.btBuy = new System.Windows.Forms.Button();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
             this.cbWealth = new System.Windows.Forms.ComboBox();
-            this.lbRequirement = new System.Windows.Forms.Label();
             this.lbName = new System.Windows.Forms.Label();
-            this.dgWealth = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.lbBuildTime = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lbRequirement = new System.Windows.Forms.Label();
             this.chbBuilt = new System.Windows.Forms.CheckBox();
+            this.dgWealth = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgWealth)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +59,7 @@
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -99,7 +100,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(688, 555);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(675, 555);
             this.tableLayoutPanel1.TabIndex = 11;
             // 
             // lbBenefits
@@ -111,7 +112,7 @@
             this.lbBenefits.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBenefits.Location = new System.Drawing.Point(3, 295);
             this.lbBenefits.Name = "lbBenefits";
-            this.lbBenefits.Size = new System.Drawing.Size(682, 90);
+            this.lbBenefits.Size = new System.Drawing.Size(669, 90);
             this.lbBenefits.TabIndex = 20;
             this.lbBenefits.Text = resources.GetString("lbBenefits.Text");
             // 
@@ -124,22 +125,9 @@
             this.lbDescription.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDescription.Location = new System.Drawing.Point(3, 187);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(682, 108);
+            this.lbDescription.Size = new System.Drawing.Size(669, 108);
             this.lbDescription.TabIndex = 20;
             this.lbDescription.Text = resources.GetString("lbDescription.Text");
-            // 
-            // lbBuildTime
-            // 
-            this.lbBuildTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbBuildTime.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lbBuildTime, 3);
-            this.lbBuildTime.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBuildTime.Location = new System.Drawing.Point(150, 137);
-            this.lbBuildTime.Name = "lbBuildTime";
-            this.lbBuildTime.Size = new System.Drawing.Size(535, 18);
-            this.lbBuildTime.TabIndex = 19;
-            this.lbBuildTime.Text = "Build Time: 2d6+12 months";
             // 
             // label4
             // 
@@ -177,12 +165,12 @@
             this.tbDiscount.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDiscount.Location = new System.Drawing.Point(150, 105);
             this.tbDiscount.Name = "tbDiscount";
-            this.tbDiscount.Size = new System.Drawing.Size(89, 29);
+            this.tbDiscount.Size = new System.Drawing.Size(86, 29);
             this.tbDiscount.TabIndex = 12;
             this.tbDiscount.Text = "0";
             this.tbDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbDiscount.TextChanged += new System.EventHandler(this.tbDiscount_TextChanged);
-            this.tbDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDiscount_KeyPress);
+            this.tbDiscount.TextChanged += new System.EventHandler(this.TbDiscount_TextChanged);
+            this.tbDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbDiscount_KeyPress);
             // 
             // label3
             // 
@@ -191,7 +179,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(245, 102);
+            this.label3.Location = new System.Drawing.Point(242, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 35);
             this.label3.TabIndex = 10;
@@ -205,9 +193,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCost.AutoSize = true;
             this.lbCost.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCost.Location = new System.Drawing.Point(310, 102);
+            this.lbCost.Location = new System.Drawing.Point(307, 102);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(375, 35);
+            this.lbCost.Size = new System.Drawing.Size(365, 35);
             this.lbCost.TabIndex = 11;
             this.lbCost.Text = "0";
             this.lbCost.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -235,7 +223,7 @@
             this.tbName.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.Location = new System.Drawing.Point(150, 70);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(535, 29);
+            this.tbName.Size = new System.Drawing.Size(522, 29);
             this.tbName.TabIndex = 11;
             // 
             // cbType
@@ -255,9 +243,9 @@
             "Settlement"});
             this.cbType.Location = new System.Drawing.Point(3, 33);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(236, 31);
+            this.cbType.Size = new System.Drawing.Size(233, 31);
             this.cbType.TabIndex = 4;
-            this.cbType.SelectedIndexChanged += new System.EventHandler(this.cbType_SelectedIndexChanged);
+            this.cbType.SelectedIndexChanged += new System.EventHandler(this.CbType_SelectedIndexChanged);
             // 
             // btBuy
             // 
@@ -265,14 +253,15 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btBuy.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuy.Location = new System.Drawing.Point(309, 495);
+            this.btBuy.Location = new System.Drawing.Point(306, 495);
             this.btBuy.Margin = new System.Windows.Forms.Padding(2);
             this.btBuy.MaximumSize = new System.Drawing.Size(0, 40);
             this.btBuy.Name = "btBuy";
-            this.btBuy.Size = new System.Drawing.Size(377, 40);
+            this.btBuy.Size = new System.Drawing.Size(367, 40);
             this.btBuy.TabIndex = 51;
             this.btBuy.Text = "Buy";
             this.btBuy.UseVisualStyleBackColor = true;
+            this.btBuy.Click += new System.EventHandler(this.BtBuy_Click);
             // 
             // rtbNote
             // 
@@ -283,7 +272,7 @@
             this.rtbNote.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbNote.Location = new System.Drawing.Point(3, 416);
             this.rtbNote.Name = "rtbNote";
-            this.rtbNote.Size = new System.Drawing.Size(682, 74);
+            this.rtbNote.Size = new System.Drawing.Size(669, 74);
             this.rtbNote.TabIndex = 52;
             this.rtbNote.Text = "";
             // 
@@ -309,24 +298,11 @@
             "The Stormlands",
             "Dorne",
             "The Wall"});
-            this.cbWealth.Location = new System.Drawing.Point(245, 33);
+            this.cbWealth.Location = new System.Drawing.Point(242, 33);
             this.cbWealth.Name = "cbWealth";
-            this.cbWealth.Size = new System.Drawing.Size(440, 31);
+            this.cbWealth.Size = new System.Drawing.Size(430, 31);
             this.cbWealth.TabIndex = 53;
-            this.cbWealth.SelectedIndexChanged += new System.EventHandler(this.cbWealth_SelectedIndexChanged);
-            // 
-            // lbRequirement
-            // 
-            this.lbRequirement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbRequirement.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lbRequirement, 3);
-            this.lbRequirement.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRequirement.Location = new System.Drawing.Point(150, 162);
-            this.lbRequirement.Name = "lbRequirement";
-            this.lbRequirement.Size = new System.Drawing.Size(535, 18);
-            this.lbRequirement.TabIndex = 54;
-            this.lbRequirement.Text = "Requirement: Small Town or larger community";
+            this.cbWealth.SelectedIndexChanged += new System.EventHandler(this.CbWealth_SelectedIndexChanged);
             // 
             // lbName
             // 
@@ -338,20 +314,10 @@
             this.lbName.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.Location = new System.Drawing.Point(3, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(682, 30);
+            this.lbName.Size = new System.Drawing.Size(669, 30);
             this.lbName.TabIndex = 8;
             this.lbName.Text = "New Land Holding";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // dgWealth
-            // 
-            this.dgWealth.AllowUserToAddRows = false;
-            this.dgWealth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgWealth.Location = new System.Drawing.Point(336, 269);
-            this.dgWealth.Name = "dgWealth";
-            this.dgWealth.Size = new System.Drawing.Size(40, 40);
-            this.dgWealth.TabIndex = 13;
-            this.dgWealth.Visible = false;
             // 
             // label5
             // 
@@ -367,6 +333,19 @@
             this.label5.Text = "Build Time:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lbBuildTime
+            // 
+            this.lbBuildTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBuildTime.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lbBuildTime, 3);
+            this.lbBuildTime.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBuildTime.Location = new System.Drawing.Point(150, 137);
+            this.lbBuildTime.Name = "lbBuildTime";
+            this.lbBuildTime.Size = new System.Drawing.Size(522, 18);
+            this.lbBuildTime.TabIndex = 19;
+            this.lbBuildTime.Text = "Build Time: 2d6+12 months";
+            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -381,20 +360,43 @@
             this.label6.Text = "Requirement:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lbRequirement
+            // 
+            this.lbRequirement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbRequirement.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lbRequirement, 3);
+            this.lbRequirement.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRequirement.Location = new System.Drawing.Point(150, 162);
+            this.lbRequirement.Name = "lbRequirement";
+            this.lbRequirement.Size = new System.Drawing.Size(522, 18);
+            this.lbRequirement.TabIndex = 54;
+            this.lbRequirement.Text = "Requirement: Small Town or larger community";
+            // 
             // chbBuilt
             // 
             this.chbBuilt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chbBuilt.AutoSize = true;
             this.chbBuilt.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbBuilt.Location = new System.Drawing.Point(310, 388);
+            this.chbBuilt.Location = new System.Drawing.Point(307, 388);
             this.chbBuilt.Name = "chbBuilt";
             this.chbBuilt.Padding = new System.Windows.Forms.Padding(100, 0, 100, 0);
-            this.chbBuilt.Size = new System.Drawing.Size(375, 22);
+            this.chbBuilt.Size = new System.Drawing.Size(365, 22);
             this.chbBuilt.TabIndex = 57;
             this.chbBuilt.Text = "Built";
             this.chbBuilt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chbBuilt.UseVisualStyleBackColor = true;
+            // 
+            // dgWealth
+            // 
+            this.dgWealth.AllowUserToAddRows = false;
+            this.dgWealth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgWealth.Location = new System.Drawing.Point(336, 269);
+            this.dgWealth.Name = "dgWealth";
+            this.dgWealth.Size = new System.Drawing.Size(40, 40);
+            this.dgWealth.TabIndex = 13;
+            this.dgWealth.Visible = false;
             // 
             // NewWealthForm
             // 

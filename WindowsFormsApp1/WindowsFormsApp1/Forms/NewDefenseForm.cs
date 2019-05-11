@@ -43,7 +43,7 @@ namespace WindowsFormsApp1.Forms
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
 
-        private void cbDefense_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbDefense_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbBuildTime.Text = "Build Time: " + dgDefense.Rows[cbDefense.SelectedIndex].Cells[3].Value.ToString();
             lbDescription.Text =  dgDefense.Rows[cbDefense.SelectedIndex].Cells[4].Value.ToString();
@@ -53,21 +53,21 @@ namespace WindowsFormsApp1.Forms
             lbCost.Text = cost.ToString();
         }
 
-        private void tbDiscount_TextChanged(object sender, EventArgs e)
+        private void TbDiscount_TextChanged(object sender, EventArgs e)
         {
             int cost = Convert.ToInt32(dgDefense.Rows[cbDefense.SelectedIndex].Cells[2].Value);
             if (tbDiscount.Text != "") { cost -= Convert.ToInt32(tbDiscount.Text); }
             lbCost.Text = cost.ToString();
         }
 
-        private void btBuy_Click(object sender, EventArgs e)
+        private void BtBuy_Click(object sender, EventArgs e)
         {
             Validation.SetNullToZero(tbDiscount);
             House.InsertDefenseHolding(dgDefense.Rows[cbDefense.SelectedIndex].Cells[0].Value.ToString(), landID, tbName.Text, rtbNote.Text, tbDiscount.Text);
             Close();
         }
         //Validation
-        private void tbDiscount_KeyPress(object sender, KeyPressEventArgs e) => Validation.OnlyDigit(e);
+        private void TbDiscount_KeyPress(object sender, KeyPressEventArgs e) => Validation.OnlyDigit(e);
 
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

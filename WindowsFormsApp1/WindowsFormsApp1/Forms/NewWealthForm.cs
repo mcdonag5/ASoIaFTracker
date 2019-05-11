@@ -41,33 +41,27 @@ namespace WindowsFormsApp1.Forms
             cbWealth.SelectedIndex = 0;
         }
         ///// METHODS END //////////////////////////////////////////////////////////
-        public NewWealthForm(int HouseID, string type, int ID, string hoildingName)
+        public NewWealthForm(int HouseID, string type, string ID, string holdingName)
         {
             House = new House(HouseID);
             holdingType = type;
-            holdingID = ID.ToString();
+            holdingID = ID;
 
             InitializeComponent();
 
+            lbName.Text = holdingName;
             cbType.SelectedIndex = 0;
 
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
-        private void cbType_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbType_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectWealthTypes(cbType.Text);
         }
 
-        private void cbWealth_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbWealth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int cost = Convert.ToInt32(dgWealth.Rows[cbWealth.SelectedIndex].Cells[4].Value);
-            if (tbDiscount.Text != "") { cost -= Convert.ToInt32(tbDiscount.Text); }
-            string text = "";
-            if (cost > 0) { text += "Wealth: " + cost; }
-            if (Convert.ToInt32(dgWealth.Rows[cbWealth.SelectedIndex].Cells[5].Value) > 0) { text += " Defense: " + dgWealth.Rows[cbWealth.SelectedIndex].Cells[5].Value.ToString(); }
-            if (Convert.ToInt32(dgWealth.Rows[cbWealth.SelectedIndex].Cells[6].Value) > 0) { text += " Land: " + dgWealth.Rows[cbWealth.SelectedIndex].Cells[6].Value.ToString(); }
-            if (Convert.ToInt32(dgWealth.Rows[cbWealth.SelectedIndex].Cells[7].Value) > 0) { text += " Power: " + dgWealth.Rows[cbWealth.SelectedIndex].Cells[7].Value.ToString(); }
-            lbCost.Text = text;
+            TbDiscount_TextChanged(tbDiscount,e);
 
             lbBuildTime.Text = dgWealth.Rows[cbWealth.SelectedIndex].Cells[8].Value.ToString();
             lbRequirement.Text = dgWealth.Rows[cbWealth.SelectedIndex].Cells[9].Value.ToString();
@@ -75,7 +69,7 @@ namespace WindowsFormsApp1.Forms
             lbBenefits.Text = Environment.NewLine + dgWealth.Rows[cbWealth.SelectedIndex].Cells[11].Value.ToString();
         }
 
-        private void tbDiscount_TextChanged(object sender, EventArgs e)
+        private void TbDiscount_TextChanged(object sender, EventArgs e)
         {
             int cost = Convert.ToInt32(dgWealth.Rows[cbWealth.SelectedIndex].Cells[4].Value);
             if (tbDiscount.Text != "") { cost -= Convert.ToInt32(tbDiscount.Text); }
@@ -86,12 +80,17 @@ namespace WindowsFormsApp1.Forms
             if (Convert.ToInt32(dgWealth.Rows[cbWealth.SelectedIndex].Cells[7].Value) > 0) { text += " Power: " + dgWealth.Rows[cbWealth.SelectedIndex].Cells[7].Value.ToString(); }
             lbCost.Text = text;
         }
+
+        private void BtBuy_Click(object sender, EventArgs e)
+        {
+            Validation.SetNullToZero(tbDiscount);
+            House.InsertWealthHolding(dgWealth.Rows[cbWealth.SelectedIndex].Cells[0].Value.ToString(), holdingType, holdingID, tbName.Text, chbBuilt.Checked.ToString(), rtbNote.Text, tbDiscount.Text);
+            Close();
+        }
         //Validation
-        private void tbDiscount_KeyPress(object sender, KeyPressEventArgs e) => Validation.OnlyDigit(e);
+        private void TbDiscount_KeyPress(object sender, KeyPressEventArgs e) => Validation.OnlyDigit(e);
 
-
-
-
+        
 
         ///// EVENTS END ////////////////////////////////////////////////////////////
     }

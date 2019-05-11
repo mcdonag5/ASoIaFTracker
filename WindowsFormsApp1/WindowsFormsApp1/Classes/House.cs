@@ -242,13 +242,26 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
-        public void InsertDefenseHolding(string defID, string landHolID, string name, string notes, string discount)
+        public void InsertDefenseHolding(string defID, string landHolID, string name, string built, string notes, string discount)
         {
+            built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen() == true)
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_DefenseHolding` (`Def_ID`, `LanHol_ID`, `DefHol_Name`, `DefHol_Built`, `DefHol_Notes`, `DefHol_Discount`) "+
-                    "VALUES ('"+defID+"', '"+landHolID+"', '"+name+"', '0', '"+notes+"', '"+discount+"');";
+                    "VALUES ('"+defID+"', '"+landHolID+"', '"+name+"', '"+ built+"', '"+notes+"', '"+discount+"');";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        public void InsertWealthHolding(string WeaID, string place, string placeID, string name, string built, string notes, string discount)
+        {
+            built = built == "True" ? "1" : "0";
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_WealthHolding` (`Wea_ID`, `"+place+"`, `WeaHol_Name`, `WeaHol_Built`, `WeaHol_Note`, `WeaHol_Discount`) "+
+                    "VALUES ('"+WeaID+"', '"+placeID+"', '"+name+"', '"+built+"', '"+notes+"', '"+ discount+"');";
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }

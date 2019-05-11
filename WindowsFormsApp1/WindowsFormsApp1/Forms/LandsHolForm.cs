@@ -308,7 +308,7 @@ namespace WindowsFormsApp1
             newLandForm.ShowDialog();
         }
 
-        private void landFeatureToolStripMenuItem_Click(object sender, EventArgs e)
+        private void LandFeatureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeHolding("");
             newLandFeatureForm = new NewLandFeatureForm(House.ID, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
@@ -317,7 +317,7 @@ namespace WindowsFormsApp1
             newLandFeatureForm.ShowDialog();
         }
 
-        private void defenseHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DefenseHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeHolding("");
             newDefenseForm = new NewDefenseForm(House.ID, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
@@ -326,10 +326,34 @@ namespace WindowsFormsApp1
             newDefenseForm.ShowDialog();
         }
 
-        private void wealthHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void WealthHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string place = "";
+            string ID = "";
+            string placeName = "";
+            switch(currentView)
+            {
+                case "Land":
+                    place = "LanHol_ID";
+                    ID = dgLand.Rows[currentIndex].Cells[1].Value.ToString();
+                    placeName = dgLand.Rows[currentIndex].Cells[9].Value.ToString();
+                    if(dgLand.Rows[currentIndex].Cells[4].Value.ToString() != "") { placeName += " - " + dgLand.Rows[cbLandHolding.SelectedIndex].Cells[4].Value.ToString(); }
+                    break;
+                case "Defense":
+                    place = "DefHol_ID";
+                    ID = dgDef.Rows[currentIndex].Cells[0].Value.ToString();
+                    placeName = dgDef.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgDef.Rows[currentIndex].Cells[3].Value.ToString();
+                    if (dgDef.Rows[currentIndex].Cells[3].Value.ToString() != "") { placeName += " - " + dgDef.Rows[currentIndex].Cells[3].Value.ToString(); }
+                    break;
+                case "Feature":
+                    place = "LanHolFea_ID";
+                    ID = dgLand.Rows[cbLandHolding.SelectedIndex].Cells[1].Value.ToString();
+                    placeName = dgLand.Rows[cbLandHolding.SelectedIndex].Cells[9].Value.ToString();
+                    if (dgLand.Rows[cbLandHolding.SelectedIndex].Cells[4].Value.ToString() != "") { placeName += " - " + dgLand.Rows[cbLandHolding.SelectedIndex].Cells[4].Value.ToString(); }
+                    break;
+            }
             ChangeHolding("");
-            NewWealthForm = new NewWealthForm(House.ID, "", 0, "");
+            NewWealthForm = new NewWealthForm(House.ID, place, ID, placeName);
             NewWealthForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             NewWealthForm.ShowDialog();

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewDefenseForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbBenefits = new System.Windows.Forms.Label();
+            this.lbDescription = new System.Windows.Forms.Label();
             this.lbBuildTime = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,8 +45,7 @@
             this.btBuy = new System.Windows.Forms.Button();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
             this.dgDefense = new System.Windows.Forms.DataGridView();
-            this.lbDescription = new System.Windows.Forms.Label();
-            this.lbBenefits = new System.Windows.Forms.Label();
+            this.chbBuilt = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgDefense)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lbName, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btBuy, 3, 10);
             this.tableLayoutPanel1.Controls.Add(this.rtbNote, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.chbBuilt, 2, 8);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
@@ -89,6 +91,33 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 445);
             this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // lbBenefits
+            // 
+            this.lbBenefits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBenefits.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lbBenefits, 4);
+            this.lbBenefits.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBenefits.Location = new System.Drawing.Point(3, 258);
+            this.lbBenefits.Name = "lbBenefits";
+            this.lbBenefits.Size = new System.Drawing.Size(397, 36);
+            this.lbBenefits.TabIndex = 20;
+            this.lbBenefits.Text = "Benfits: Units defending a castle gain a +8 bonus to their Defense. Can Hold 4 se" +
+    "ttlement Wealth holdings.";
+            // 
+            // lbDescription
+            // 
+            this.lbDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbDescription.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.lbDescription, 4);
+            this.lbDescription.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescription.Location = new System.Drawing.Point(3, 150);
+            this.lbDescription.Name = "lbDescription";
+            this.lbDescription.Size = new System.Drawing.Size(397, 108);
+            this.lbDescription.TabIndex = 20;
+            this.lbDescription.Text = resources.GetString("lbDescription.Text");
             // 
             // lbBuildTime
             // 
@@ -112,7 +141,7 @@
             this.label4.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 294);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 25);
+            this.label4.Size = new System.Drawing.Size(102, 28);
             this.label4.TabIndex = 11;
             this.label4.Text = "Notes:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -143,8 +172,8 @@
             this.tbDiscount.TabIndex = 12;
             this.tbDiscount.Text = "0";
             this.tbDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbDiscount.TextChanged += new System.EventHandler(this.tbDiscount_TextChanged);
-            this.tbDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbDiscount_KeyPress);
+            this.tbDiscount.TextChanged += new System.EventHandler(this.TbDiscount_TextChanged);
+            this.tbDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbDiscount_KeyPress);
             // 
             // label3
             // 
@@ -226,7 +255,7 @@
             this.cbDefense.Name = "cbDefense";
             this.cbDefense.Size = new System.Drawing.Size(397, 31);
             this.cbDefense.TabIndex = 4;
-            this.cbDefense.SelectedIndexChanged += new System.EventHandler(this.cbDefense_SelectedIndexChanged);
+            this.cbDefense.SelectedIndexChanged += new System.EventHandler(this.CbDefense_SelectedIndexChanged);
             // 
             // lbName
             // 
@@ -249,7 +278,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btBuy.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuy.Location = new System.Drawing.Point(329, 401);
+            this.btBuy.Location = new System.Drawing.Point(329, 404);
             this.btBuy.Margin = new System.Windows.Forms.Padding(2);
             this.btBuy.MaximumSize = new System.Drawing.Size(0, 40);
             this.btBuy.Name = "btBuy";
@@ -257,7 +286,7 @@
             this.btBuy.TabIndex = 51;
             this.btBuy.Text = "Buy";
             this.btBuy.UseVisualStyleBackColor = true;
-            this.btBuy.Click += new System.EventHandler(this.btBuy_Click);
+            this.btBuy.Click += new System.EventHandler(this.BtBuy_Click);
             // 
             // rtbNote
             // 
@@ -266,7 +295,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.rtbNote, 4);
             this.rtbNote.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbNote.Location = new System.Drawing.Point(3, 322);
+            this.rtbNote.Location = new System.Drawing.Point(3, 325);
             this.rtbNote.Name = "rtbNote";
             this.rtbNote.Size = new System.Drawing.Size(397, 74);
             this.rtbNote.TabIndex = 52;
@@ -282,32 +311,21 @@
             this.dgDefense.TabIndex = 12;
             this.dgDefense.Visible = false;
             // 
-            // lbDescription
+            // chbBuilt
             // 
-            this.lbDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chbBuilt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbDescription.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lbDescription, 4);
-            this.lbDescription.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescription.Location = new System.Drawing.Point(3, 150);
-            this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(397, 108);
-            this.lbDescription.TabIndex = 20;
-            this.lbDescription.Text = resources.GetString("lbDescription.Text");
-            // 
-            // lbBenefits
-            // 
-            this.lbBenefits.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbBenefits.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.lbBenefits, 4);
-            this.lbBenefits.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBenefits.Location = new System.Drawing.Point(3, 258);
-            this.lbBenefits.Name = "lbBenefits";
-            this.lbBenefits.Size = new System.Drawing.Size(397, 36);
-            this.lbBenefits.TabIndex = 20;
-            this.lbBenefits.Text = "Benfits: Units defending a castle gain a +8 bonus to their Defense. Can Hold 4 se" +
-    "ttlement Wealth holdings.";
+            this.chbBuilt.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.chbBuilt, 2);
+            this.chbBuilt.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbBuilt.Location = new System.Drawing.Point(186, 297);
+            this.chbBuilt.Name = "chbBuilt";
+            this.chbBuilt.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.chbBuilt.Size = new System.Drawing.Size(214, 22);
+            this.chbBuilt.TabIndex = 58;
+            this.chbBuilt.Text = "Built";
+            this.chbBuilt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.chbBuilt.UseVisualStyleBackColor = true;
             // 
             // NewDefenseForm
             // 
@@ -343,5 +361,6 @@
         private System.Windows.Forms.Label lbBuildTime;
         private System.Windows.Forms.Label lbBenefits;
         private System.Windows.Forms.Label lbDescription;
+        private System.Windows.Forms.CheckBox chbBuilt;
     }
 }

@@ -402,7 +402,7 @@
             this.landFeatureToolStripMenuItem.Name = "landFeatureToolStripMenuItem";
             this.landFeatureToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.landFeatureToolStripMenuItem.Text = "Land Feature";
-            this.landFeatureToolStripMenuItem.Click += new System.EventHandler(this.landFeatureToolStripMenuItem_Click);
+            this.landFeatureToolStripMenuItem.Click += new System.EventHandler(this.LandFeatureToolStripMenuItem_Click);
             // 
             // defenseHoldingToolStripMenuItem
             // 
@@ -410,7 +410,7 @@
             this.defenseHoldingToolStripMenuItem.Name = "defenseHoldingToolStripMenuItem";
             this.defenseHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.defenseHoldingToolStripMenuItem.Text = "Defense Holding";
-            this.defenseHoldingToolStripMenuItem.Click += new System.EventHandler(this.defenseHoldingToolStripMenuItem_Click);
+            this.defenseHoldingToolStripMenuItem.Click += new System.EventHandler(this.DefenseHoldingToolStripMenuItem_Click);
             // 
             // wealthHoldingToolStripMenuItem
             // 
@@ -418,7 +418,7 @@
             this.wealthHoldingToolStripMenuItem.Name = "wealthHoldingToolStripMenuItem";
             this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.wealthHoldingToolStripMenuItem.Text = "Wealth Holding";
-            this.wealthHoldingToolStripMenuItem.Click += new System.EventHandler(this.wealthHoldingToolStripMenuItem_Click);
+            this.wealthHoldingToolStripMenuItem.Click += new System.EventHandler(this.WealthHoldingToolStripMenuItem_Click);
             // 
             // wealthImprovementToolStripMenuItem
             // 
