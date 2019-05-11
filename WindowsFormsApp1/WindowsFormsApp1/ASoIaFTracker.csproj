@@ -117,6 +117,12 @@
     <Compile Include="Forms\NewWealthForm.Designer.cs">
       <DependentUpon>NewWealthForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewWealthImprovement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewWealthImprovement.Designer.cs">
+      <DependentUpon>NewWealthImprovement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PowerHolForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewWealthForm.resx">
       <DependentUpon>NewWealthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewWealthImprovement.resx">
+      <DependentUpon>NewWealthImprovement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PowerHolForm.resx">
       <DependentUpon>PowerHolForm.cs</DependentUpon>

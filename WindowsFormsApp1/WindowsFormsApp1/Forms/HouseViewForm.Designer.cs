@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseViewForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseViewForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHouseHeadings = new System.Windows.Forms.TableLayoutPanel();
-            this.tbSeatOfPower = new System.Windows.Forms.TextBox();
+            this.tbPlayer = new System.Windows.Forms.TextBox();
+            this.lbPlayer = new System.Windows.Forms.Label();
             this.tbLiege = new System.Windows.Forms.TextBox();
             this.lbLiege = new System.Windows.Forms.Label();
             this.tbLiegeLord = new System.Windows.Forms.TextBox();
@@ -46,8 +48,9 @@
             this.lbRealm = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.lbName = new System.Windows.Forms.Label();
-            this.lbSeatOfPower = new System.Windows.Forms.Label();
             this.cbRealm = new System.Windows.Forms.ComboBox();
+            this.lbSeatOfPower = new System.Windows.Forms.Label();
+            this.tbSeatOfPower = new System.Windows.Forms.TextBox();
             this.tlpHouseDetails = new System.Windows.Forms.TableLayoutPanel();
             this.lbBannerDice = new System.Windows.Forms.Label();
             this.lbModifierLawText = new System.Windows.Forms.Label();
@@ -148,9 +151,6 @@
             this.dgCal2 = new System.Windows.Forms.DataGridView();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
             this.dgHouse = new System.Windows.Forms.DataGridView();
-            this.lbPlayer = new System.Windows.Forms.Label();
-            this.tbPlayer = new System.Windows.Forms.TextBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tlpHouseHeadings.SuspendLayout();
@@ -174,6 +174,16 @@
             this.toolStrip1.Size = new System.Drawing.Size(1371, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
+            this.toolStripButton1.Text = "Change Resources";
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // tlpMain
             // 
@@ -231,16 +241,29 @@
             this.tlpHouseHeadings.Size = new System.Drawing.Size(1367, 81);
             this.tlpHouseHeadings.TabIndex = 0;
             // 
-            // tbSeatOfPower
+            // tbPlayer
             // 
-            this.tbSeatOfPower.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tbPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSeatOfPower.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSeatOfPower.Location = new System.Drawing.Point(588, 3);
-            this.tbSeatOfPower.Name = "tbSeatOfPower";
-            this.tbSeatOfPower.Size = new System.Drawing.Size(342, 29);
-            this.tbSeatOfPower.TabIndex = 2;
+            this.tbPlayer.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPlayer.Location = new System.Drawing.Point(1020, 3);
+            this.tbPlayer.Name = "tbPlayer";
+            this.tbPlayer.Size = new System.Drawing.Size(344, 29);
+            this.tbPlayer.TabIndex = 6;
+            // 
+            // lbPlayer
+            // 
+            this.lbPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPlayer.AutoSize = true;
+            this.lbPlayer.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlayer.Location = new System.Drawing.Point(936, 0);
+            this.lbPlayer.Name = "lbPlayer";
+            this.lbPlayer.Size = new System.Drawing.Size(78, 35);
+            this.lbPlayer.TabIndex = 6;
+            this.lbPlayer.Text = "Player:";
             // 
             // tbLiege
             // 
@@ -328,20 +351,6 @@
             this.lbName.Text = "Name:";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // lbSeatOfPower
-            // 
-            this.lbSeatOfPower.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbSeatOfPower.AutoSize = true;
-            this.lbSeatOfPower.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSeatOfPower.Location = new System.Drawing.Point(437, 0);
-            this.lbSeatOfPower.Name = "lbSeatOfPower";
-            this.lbSeatOfPower.Size = new System.Drawing.Size(145, 35);
-            this.lbSeatOfPower.TabIndex = 8;
-            this.lbSeatOfPower.Text = "Seat of Power:";
-            this.lbSeatOfPower.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // cbRealm
             // 
             this.cbRealm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -367,6 +376,31 @@
             this.cbRealm.Name = "cbRealm";
             this.cbRealm.Size = new System.Drawing.Size(342, 31);
             this.cbRealm.TabIndex = 3;
+            // 
+            // lbSeatOfPower
+            // 
+            this.lbSeatOfPower.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSeatOfPower.AutoSize = true;
+            this.lbSeatOfPower.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSeatOfPower.Location = new System.Drawing.Point(437, 0);
+            this.lbSeatOfPower.Name = "lbSeatOfPower";
+            this.lbSeatOfPower.Size = new System.Drawing.Size(145, 35);
+            this.lbSeatOfPower.TabIndex = 8;
+            this.lbSeatOfPower.Text = "Seat of Power:";
+            this.lbSeatOfPower.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // tbSeatOfPower
+            // 
+            this.tbSeatOfPower.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSeatOfPower.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSeatOfPower.Location = new System.Drawing.Point(588, 3);
+            this.tbSeatOfPower.Name = "tbSeatOfPower";
+            this.tbSeatOfPower.Size = new System.Drawing.Size(342, 29);
+            this.tbSeatOfPower.TabIndex = 2;
             // 
             // tlpHouseDetails
             // 
@@ -1921,40 +1955,6 @@
             this.dgHouse.Size = new System.Drawing.Size(38, 32);
             this.dgHouse.TabIndex = 33;
             this.dgHouse.Visible = false;
-            // 
-            // lbPlayer
-            // 
-            this.lbPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbPlayer.AutoSize = true;
-            this.lbPlayer.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPlayer.Location = new System.Drawing.Point(936, 0);
-            this.lbPlayer.Name = "lbPlayer";
-            this.lbPlayer.Size = new System.Drawing.Size(78, 35);
-            this.lbPlayer.TabIndex = 6;
-            this.lbPlayer.Text = "Player:";
-            // 
-            // tbPlayer
-            // 
-            this.tbPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPlayer.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPlayer.Location = new System.Drawing.Point(1020, 3);
-            this.tbPlayer.Name = "tbPlayer";
-            this.tbPlayer.Size = new System.Drawing.Size(344, 29);
-            this.tbPlayer.TabIndex = 6;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
-            this.toolStripButton1.Text = "Change Resources";
-            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // HouseViewForm
             // 
