@@ -155,6 +155,12 @@ namespace WindowsFormsApp1.Classes
                             "FROM `tbl_DefenseHolding`, `tbl_Defense` "+
                             "WHERE `tbl_DefenseHolding`.`LanHol_ID` = '" + holdingID + "' AND `tbl_Defense`.`Def_ID` = `tbl_DefenseHolding`.`Def_ID`; ";
                         break;
+                    //Lookup Table
+                    //tbl_WealthImprovement
+                    case "WealthImprovement":
+                        qry = "SELECT * FROM `tbl_WealthImprovement` "+
+                            "WHERE `Wea_ID` = '"+ holdingID+"'";
+                        break;
                 }
 
                 return mysqlConn.Qry(qry).Tables[0];
@@ -266,6 +272,18 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        public void InsertWealthImprovementHolding(string WeaHolID, string weaImpID, string built)
+        {
+            built = built == "True" ? "1" : "0";
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_WealthHoldingImprovement` (`WeaHol_ID`, `WeaImp_ID`, `WeaHolImp_Built`) "+
+                    "VALUES ('"+WeaHolID+"', '"+weaImpID+"', '"+built+"');";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         public void InsertHouseChanges (int year, int month,int roll, string fortune,int wealthHF,int wealthOther,int powerHF, int powerOther,int populationHF,int populationOther, int lawHF,int lawOther, int landsHF,int landsOther,int influenceHF,int influenceOther,int defenseHF,int defenseOther)
         {
             if (mysqlConn.ConnOpen() == true)
@@ -279,13 +297,13 @@ namespace WindowsFormsApp1.Classes
         }
         ///// UPDATE ////////////////////////////////////////////////////////////////
         //tbl_House
-        public void UpdateHouseDetails(string name, string realm, string seatOfPower, string liegeLord,string liege)
+        public void UpdateHouseDetails(string name, string player, string realm, string seatOfPower, string liegeLord,string liege)
         {
             if (mysqlConn.ConnOpen() == true)
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_House` " +
-                    "SET `Hou_Name` = '" + name + "', `Rea_Name` = '" + realm + "', `Hou_SeatOfPower` = '" + seatOfPower + "', `Hou_LiegeLord` = '" + liegeLord + "', `Hou_Liege` = '" + liege + "' " +
+                    "SET `Hou_Name` = '" + name + "', `Hou_Player` = '" + player + "', `Rea_Name` = '" + realm + "', `Hou_SeatOfPower` = '" + seatOfPower + "', `Hou_LiegeLord` = '" + liegeLord + "', `Hou_Liege` = '" + liege + "' " +
                     "WHERE `Hou_ID` = '" + ID + "'";
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();

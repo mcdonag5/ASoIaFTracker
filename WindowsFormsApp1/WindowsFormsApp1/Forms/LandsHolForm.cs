@@ -24,6 +24,7 @@ namespace WindowsFormsApp1
         NewLandFeatureForm newLandFeatureForm;
         NewDefenseForm newDefenseForm;
         NewWealthForm NewWealthForm;
+        NewWealthImprovement NewWealthImprovement;
 
         public int houseID;
         public string currentView = "";
@@ -337,7 +338,7 @@ namespace WindowsFormsApp1
                     place = "LanHol_ID";
                     ID = dgLand.Rows[currentIndex].Cells[1].Value.ToString();
                     placeName = dgLand.Rows[currentIndex].Cells[9].Value.ToString();
-                    if(dgLand.Rows[currentIndex].Cells[4].Value.ToString() != "") { placeName += " - " + dgLand.Rows[cbLandHolding.SelectedIndex].Cells[4].Value.ToString(); }
+                    if(dgLand.Rows[currentIndex].Cells[4].Value.ToString() != "") { placeName += " - " + dgLand.Rows[currentIndex].Cells[4].Value.ToString(); }
                     break;
                 case "Defense":
                     place = "DefHol_ID";
@@ -349,7 +350,7 @@ namespace WindowsFormsApp1
                     place = "LanHolFea_ID";
                     ID = dgLand.Rows[cbLandHolding.SelectedIndex].Cells[1].Value.ToString();
                     placeName = dgLand.Rows[cbLandHolding.SelectedIndex].Cells[9].Value.ToString();
-                    if (dgLand.Rows[cbLandHolding.SelectedIndex].Cells[4].Value.ToString() != "") { placeName += " - " + dgLand.Rows[cbLandHolding.SelectedIndex].Cells[4].Value.ToString(); }
+                    if (dgLand.Rows[currentIndex].Cells[4].Value.ToString() != "") { placeName += " - " + dgLand.Rows[currentIndex].Cells[4].Value.ToString(); }
                     break;
             }
             ChangeHolding("");
@@ -357,6 +358,16 @@ namespace WindowsFormsApp1
             NewWealthForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             NewWealthForm.ShowDialog();
+        }
+
+        private void WealthImprovementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string name = dgWea.Rows[currentIndex].Cells[12].Value.ToString();
+            if(dgWea.Rows[currentIndex].Cells[6].Value.ToString() != "") { name += "-"+dgWea.Rows[currentIndex].Cells[6].Value.ToString(); }
+            NewWealthImprovement = new NewWealthImprovement(House.ID, dgWea.Rows[currentIndex].Cells[1].Value.ToString(), dgWea.Rows[currentIndex].Cells[2].Value.ToString(),name);
+            NewWealthImprovement.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
+            Visible = false;
+            NewWealthImprovement.ShowDialog();
         }
         //Closing
         private void LandsHolForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -366,7 +377,10 @@ namespace WindowsFormsApp1
             if (newLandFeatureForm != null) { newLandFeatureForm.Close(); }
             if (newDefenseForm != null) { newDefenseForm.Close(); }
             if (NewWealthForm != null) { NewWealthForm.Close(); }
+            if (NewWealthImprovement != null) { NewWealthImprovement.Close(); }
         }
+
+
 
 
 

@@ -46,11 +46,6 @@
             this.rtbNotes = new System.Windows.Forms.RichTextBox();
             this.lbAddions = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dgDef = new System.Windows.Forms.DataGridView();
-            this.dgLandFea = new System.Windows.Forms.DataGridView();
-            this.dgLand = new System.Windows.Forms.DataGridView();
-            this.dgWea = new System.Windows.Forms.DataGridView();
-            this.dgImp = new System.Windows.Forms.DataGridView();
             this.tsddbNew = new System.Windows.Forms.ToolStripDropDownButton();
             this.landHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.landFeatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +53,11 @@
             this.wealthHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wealthImprovementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbDeleteCurrent = new System.Windows.Forms.ToolStripButton();
+            this.dgDef = new System.Windows.Forms.DataGridView();
+            this.dgLandFea = new System.Windows.Forms.DataGridView();
+            this.dgLand = new System.Windows.Forms.DataGridView();
+            this.dgWea = new System.Windows.Forms.DataGridView();
+            this.dgImp = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -323,56 +323,6 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // dgDef
-            // 
-            this.dgDef.AllowUserToAddRows = false;
-            this.dgDef.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDef.Location = new System.Drawing.Point(304, 310);
-            this.dgDef.Name = "dgDef";
-            this.dgDef.Size = new System.Drawing.Size(206, 148);
-            this.dgDef.TabIndex = 35;
-            this.dgDef.Visible = false;
-            // 
-            // dgLandFea
-            // 
-            this.dgLandFea.AllowUserToAddRows = false;
-            this.dgLandFea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgLandFea.Location = new System.Drawing.Point(304, 284);
-            this.dgLandFea.Name = "dgLandFea";
-            this.dgLandFea.Size = new System.Drawing.Size(38, 32);
-            this.dgLandFea.TabIndex = 34;
-            this.dgLandFea.Visible = false;
-            // 
-            // dgLand
-            // 
-            this.dgLand.AllowUserToAddRows = false;
-            this.dgLand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgLand.Location = new System.Drawing.Point(304, 252);
-            this.dgLand.Name = "dgLand";
-            this.dgLand.Size = new System.Drawing.Size(38, 32);
-            this.dgLand.TabIndex = 33;
-            this.dgLand.Visible = false;
-            // 
-            // dgWea
-            // 
-            this.dgWea.AllowUserToAddRows = false;
-            this.dgWea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgWea.Location = new System.Drawing.Point(304, 281);
-            this.dgWea.Name = "dgWea";
-            this.dgWea.Size = new System.Drawing.Size(38, 32);
-            this.dgWea.TabIndex = 36;
-            this.dgWea.Visible = false;
-            // 
-            // dgImp
-            // 
-            this.dgImp.AllowUserToAddRows = false;
-            this.dgImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgImp.Location = new System.Drawing.Point(312, 289);
-            this.dgImp.Name = "dgImp";
-            this.dgImp.Size = new System.Drawing.Size(38, 32);
-            this.dgImp.TabIndex = 37;
-            this.dgImp.Visible = false;
-            // 
             // tsddbNew
             // 
             this.tsddbNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -426,6 +376,7 @@
             this.wealthImprovementToolStripMenuItem.Name = "wealthImprovementToolStripMenuItem";
             this.wealthImprovementToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.wealthImprovementToolStripMenuItem.Text = "Wealth Improvement";
+            this.wealthImprovementToolStripMenuItem.Click += new System.EventHandler(this.WealthImprovementToolStripMenuItem_Click);
             // 
             // tsbDeleteCurrent
             // 
@@ -436,6 +387,56 @@
             this.tsbDeleteCurrent.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.tsbDeleteCurrent.Size = new System.Drawing.Size(97, 22);
             this.tsbDeleteCurrent.Text = "Delete Current";
+            // 
+            // dgDef
+            // 
+            this.dgDef.AllowUserToAddRows = false;
+            this.dgDef.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDef.Location = new System.Drawing.Point(304, 310);
+            this.dgDef.Name = "dgDef";
+            this.dgDef.Size = new System.Drawing.Size(206, 148);
+            this.dgDef.TabIndex = 35;
+            this.dgDef.Visible = false;
+            // 
+            // dgLandFea
+            // 
+            this.dgLandFea.AllowUserToAddRows = false;
+            this.dgLandFea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgLandFea.Location = new System.Drawing.Point(304, 284);
+            this.dgLandFea.Name = "dgLandFea";
+            this.dgLandFea.Size = new System.Drawing.Size(38, 32);
+            this.dgLandFea.TabIndex = 34;
+            this.dgLandFea.Visible = false;
+            // 
+            // dgLand
+            // 
+            this.dgLand.AllowUserToAddRows = false;
+            this.dgLand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgLand.Location = new System.Drawing.Point(304, 252);
+            this.dgLand.Name = "dgLand";
+            this.dgLand.Size = new System.Drawing.Size(38, 32);
+            this.dgLand.TabIndex = 33;
+            this.dgLand.Visible = false;
+            // 
+            // dgWea
+            // 
+            this.dgWea.AllowUserToAddRows = false;
+            this.dgWea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgWea.Location = new System.Drawing.Point(304, 281);
+            this.dgWea.Name = "dgWea";
+            this.dgWea.Size = new System.Drawing.Size(38, 32);
+            this.dgWea.TabIndex = 36;
+            this.dgWea.Visible = false;
+            // 
+            // dgImp
+            // 
+            this.dgImp.AllowUserToAddRows = false;
+            this.dgImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgImp.Location = new System.Drawing.Point(312, 289);
+            this.dgImp.Name = "dgImp";
+            this.dgImp.Size = new System.Drawing.Size(38, 32);
+            this.dgImp.TabIndex = 37;
+            this.dgImp.Visible = false;
             // 
             // LandsHolForm
             // 

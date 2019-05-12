@@ -67,6 +67,7 @@ namespace WindowsFormsApp1
             DevLog.LogItem("Updating resources start");
             dgHouse.DataSource = House.HouseQry("ThisHouse");
             tbName.Text = dgHouse.Rows[0].Cells[1].Value.ToString();
+            tbPlayer.Text = dgHouse.Rows[0].Cells[2].Value.ToString();
             Text = "House "+ dgHouse.Rows[0].Cells[1].Value.ToString();
             tbSeatOfPower.Text = dgHouse.Rows[0].Cells[4].Value.ToString();
             cbRealm.Text = dgHouse.Rows[0].Cells[3].Value.ToString();
@@ -429,10 +430,10 @@ namespace WindowsFormsApp1
         private void HouseViewForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             DevLog.LogItem("Closing House View");
-            if (tbName.Text != dgHouse.Rows[0].Cells[1].Value.ToString() || tbSeatOfPower.Text != dgHouse.Rows[0].Cells[4].Value.ToString() || cbRealm.Text != dgHouse.Rows[0].Cells[3].Value.ToString() || tbLiege.Text != dgHouse.Rows[0].Cells[6].Value.ToString() || tbLiegeLord.Text != dgHouse.Rows[0].Cells[5].Value.ToString())
+            if (tbName.Text != dgHouse.Rows[0].Cells[1].Value.ToString() || tbPlayer.Text != dgHouse.Rows[0].Cells[2].Value.ToString() || tbSeatOfPower.Text != dgHouse.Rows[0].Cells[4].Value.ToString() || cbRealm.Text != dgHouse.Rows[0].Cells[3].Value.ToString() || tbLiege.Text != dgHouse.Rows[0].Cells[6].Value.ToString() || tbLiegeLord.Text != dgHouse.Rows[0].Cells[5].Value.ToString())
             {
                 DevLog.LogItem("Details do not match");
-                House.UpdateHouseDetails(tbName.Text, cbRealm.Text, tbSeatOfPower.Text, tbLiegeLord.Text, tbLiege.Text);
+                House.UpdateHouseDetails(tbName.Text, tbPlayer.Text, cbRealm.Text, tbSeatOfPower.Text, tbLiegeLord.Text, tbLiege.Text);
             }
             if (landsHolForm != null) { landsHolForm.Close(); }
             if (powerHolForm != null) { powerHolForm.Close(); }
