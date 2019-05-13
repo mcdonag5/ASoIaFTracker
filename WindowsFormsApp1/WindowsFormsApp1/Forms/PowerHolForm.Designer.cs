@@ -29,25 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PowerHolForm));
-            this.lbPowStats11 = new System.Windows.Forms.Label();
-            this.lbPowStats21 = new System.Windows.Forms.Label();
-            this.lbCunNum1 = new System.Windows.Forms.Label();
-            this.lbAwaNum1 = new System.Windows.Forms.Label();
-            this.lbAthNum1 = new System.Windows.Forms.Label();
-            this.lbAniNum1 = new System.Windows.Forms.Label();
-            this.lbEndNum1 = new System.Windows.Forms.Label();
-            this.lbFigNum1 = new System.Windows.Forms.Label();
-            this.lbHeaNum1 = new System.Windows.Forms.Label();
-            this.lbPowLan1 = new System.Windows.Forms.Label();
-            this.lbPowWil1 = new System.Windows.Forms.Label();
-            this.lbPowWar1 = new System.Windows.Forms.Label();
-            this.lbPowThi1 = new System.Windows.Forms.Label();
-            this.lbPowSur1 = new System.Windows.Forms.Label();
-            this.lbPowKno1 = new System.Windows.Forms.Label();
-            this.lbPowMar1 = new System.Windows.Forms.Label();
-            this.lbPowPer1 = new System.Windows.Forms.Label();
-            this.lbPowSta1 = new System.Windows.Forms.Label();
-            this.lbPowSte1 = new System.Windows.Forms.Label();
+            this.lbLan1 = new System.Windows.Forms.Label();
+            this.lbWil1 = new System.Windows.Forms.Label();
             this.lbPowName1 = new System.Windows.Forms.Label();
             this.tbName1 = new System.Windows.Forms.TextBox();
             this.lbPowCost1 = new System.Windows.Forms.Label();
@@ -57,42 +40,41 @@
             this.lbPowTraining1 = new System.Windows.Forms.Label();
             this.cbTraining1 = new System.Windows.Forms.ComboBox();
             this.lbPowStats31 = new System.Windows.Forms.Label();
-            this.lbPowMov1 = new System.Windows.Forms.Label();
-            this.lbPowDef1 = new System.Windows.Forms.Label();
+            this.lbMov1 = new System.Windows.Forms.Label();
+            this.lbDef1 = new System.Windows.Forms.Label();
             this.lbDiscipText1 = new System.Windows.Forms.Label();
             this.rtbNotes1 = new System.Windows.Forms.RichTextBox();
             this.nudHea1 = new System.Windows.Forms.NumericUpDown();
             this.nudDis1 = new System.Windows.Forms.NumericUpDown();
             this.lbPowDiscip1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tplUnit1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lbMarDMGNum1 = new System.Windows.Forms.Label();
+            this.lbFigDMGNum1 = new System.Windows.Forms.Label();
+            this.lbBulNum1 = new System.Windows.Forms.Label();
+            this.lbArmPenNum1 = new System.Windows.Forms.Label();
+            this.lbArmRTGNum1 = new System.Windows.Forms.Label();
+            this.chbArmor1 = new System.Windows.Forms.CheckBox();
+            this.chbFightDMG1 = new System.Windows.Forms.CheckBox();
+            this.chbMarkDMG1 = new System.Windows.Forms.CheckBox();
+            this.lbBul1 = new System.Windows.Forms.Label();
+            this.lbArmPen1 = new System.Windows.Forms.Label();
+            this.lbArmRTG1 = new System.Windows.Forms.Label();
+            this.lbMarDMG1 = new System.Windows.Forms.Label();
+            this.lbFigDMG1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbWar1 = new System.Windows.Forms.Label();
+            this.lbThi1 = new System.Windows.Forms.Label();
+            this.lbSur1 = new System.Windows.Forms.Label();
+            this.lbSte1 = new System.Windows.Forms.Label();
+            this.lbSta1 = new System.Windows.Forms.Label();
+            this.lbPer1 = new System.Windows.Forms.Label();
+            this.lbMar1 = new System.Windows.Forms.Label();
             this.lbHea1 = new System.Windows.Forms.Label();
             this.lbFig1 = new System.Windows.Forms.Label();
             this.lbEnd1 = new System.Windows.Forms.Label();
@@ -101,47 +83,87 @@
             this.lbAth1 = new System.Windows.Forms.Label();
             this.lbAni1 = new System.Windows.Forms.Label();
             this.lbAgi1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbKno1 = new System.Windows.Forms.Label();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
+            this.btNext = new System.Windows.Forms.Button();
+            this.btDelete1 = new System.Windows.Forms.Button();
+            this.tbAgi1 = new System.Windows.Forms.TextBox();
+            this.tbKno1 = new System.Windows.Forms.TextBox();
+            this.tbAni1 = new System.Windows.Forms.TextBox();
+            this.tbMar1 = new System.Windows.Forms.TextBox();
+            this.tbAth1 = new System.Windows.Forms.TextBox();
+            this.tbPer1 = new System.Windows.Forms.TextBox();
+            this.tbAwa1 = new System.Windows.Forms.TextBox();
+            this.tbSta1 = new System.Windows.Forms.TextBox();
+            this.tbCun1 = new System.Windows.Forms.TextBox();
+            this.tbSte1 = new System.Windows.Forms.TextBox();
+            this.tbEnd1 = new System.Windows.Forms.TextBox();
+            this.tbSur1 = new System.Windows.Forms.TextBox();
+            this.tbFig1 = new System.Windows.Forms.TextBox();
+            this.tbThi1 = new System.Windows.Forms.TextBox();
+            this.tbHea1 = new System.Windows.Forms.TextBox();
+            this.tbWar1 = new System.Windows.Forms.TextBox();
+            this.tbLan1 = new System.Windows.Forms.TextBox();
+            this.tbWil1 = new System.Windows.Forms.TextBox();
+            this.tsbNewUnit = new System.Windows.Forms.ToolStripButton();
+            this.tlpUnit2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbWil2 = new System.Windows.Forms.TextBox();
+            this.tbLan2 = new System.Windows.Forms.TextBox();
+            this.tbWar2 = new System.Windows.Forms.TextBox();
+            this.tbHea2 = new System.Windows.Forms.TextBox();
+            this.tbThi2 = new System.Windows.Forms.TextBox();
+            this.tbFig2 = new System.Windows.Forms.TextBox();
+            this.tbSur2 = new System.Windows.Forms.TextBox();
+            this.tbEnd2 = new System.Windows.Forms.TextBox();
+            this.tbSte2 = new System.Windows.Forms.TextBox();
+            this.tbCun2 = new System.Windows.Forms.TextBox();
+            this.tbSta2 = new System.Windows.Forms.TextBox();
+            this.tbAwa2 = new System.Windows.Forms.TextBox();
+            this.tbPer2 = new System.Windows.Forms.TextBox();
+            this.tbAth2 = new System.Windows.Forms.TextBox();
+            this.tbMar2 = new System.Windows.Forms.TextBox();
+            this.tbAni2 = new System.Windows.Forms.TextBox();
+            this.tbKno2 = new System.Windows.Forms.TextBox();
+            this.tbAgi2 = new System.Windows.Forms.TextBox();
+            this.btDelete2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbMarDMGNum2 = new System.Windows.Forms.Label();
+            this.lbFigDMGNum2 = new System.Windows.Forms.Label();
+            this.lbBulNum2 = new System.Windows.Forms.Label();
+            this.lbArmPenNum2 = new System.Windows.Forms.Label();
+            this.lbArmRTGNum2 = new System.Windows.Forms.Label();
+            this.chbArmor2 = new System.Windows.Forms.CheckBox();
+            this.chbFightDMG2 = new System.Windows.Forms.CheckBox();
+            this.chbMarkDMG2 = new System.Windows.Forms.CheckBox();
+            this.lbBul2 = new System.Windows.Forms.Label();
+            this.lbArmPen2 = new System.Windows.Forms.Label();
+            this.lbArmRTG2 = new System.Windows.Forms.Label();
+            this.lbMarDMG2 = new System.Windows.Forms.Label();
+            this.lbFigDMG2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.lbCostNumber2 = new System.Windows.Forms.Label();
             this.cbTraining2 = new System.Windows.Forms.ComboBox();
             this.lbDiscipText2 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tbName2 = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lbTypeText2 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbWar2 = new System.Windows.Forms.Label();
             this.rtbNotes2 = new System.Windows.Forms.RichTextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
+            this.lbThi2 = new System.Windows.Forms.Label();
+            this.lbSur2 = new System.Windows.Forms.Label();
+            this.lbSte2 = new System.Windows.Forms.Label();
+            this.lbSta2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbPer2 = new System.Windows.Forms.Label();
+            this.lbMar2 = new System.Windows.Forms.Label();
             this.lbHea2 = new System.Windows.Forms.Label();
             this.lbFig2 = new System.Windows.Forms.Label();
             this.lbEnd2 = new System.Windows.Forms.Label();
@@ -149,71 +171,72 @@
             this.lbAwa2 = new System.Windows.Forms.Label();
             this.lbAth2 = new System.Windows.Forms.Label();
             this.lbAni2 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
+            this.lbWil2 = new System.Windows.Forms.Label();
             this.lbAgi2 = new System.Windows.Forms.Label();
             this.nudDis2 = new System.Windows.Forms.NumericUpDown();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.lbAgiNum2 = new System.Windows.Forms.Label();
+            this.lbMov2 = new System.Windows.Forms.Label();
+            this.lbDef2 = new System.Windows.Forms.Label();
             this.nudHea2 = new System.Windows.Forms.NumericUpDown();
-            this.label73 = new System.Windows.Forms.Label();
-            this.lbAniNum2 = new System.Windows.Forms.Label();
-            this.lbAthNum2 = new System.Windows.Forms.Label();
-            this.lbAwaNum2 = new System.Windows.Forms.Label();
-            this.lbCunNum2 = new System.Windows.Forms.Label();
-            this.lbEndNum2 = new System.Windows.Forms.Label();
-            this.lbFigNum2 = new System.Windows.Forms.Label();
-            this.lbHeaNum2 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
-            this.label83 = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.label90 = new System.Windows.Forms.Label();
-            this.label91 = new System.Windows.Forms.Label();
+            this.lbLan2 = new System.Windows.Forms.Label();
+            this.lbKno2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbWil3 = new System.Windows.Forms.TextBox();
+            this.tbLan3 = new System.Windows.Forms.TextBox();
+            this.tbWar3 = new System.Windows.Forms.TextBox();
+            this.tbHea3 = new System.Windows.Forms.TextBox();
+            this.tbThi3 = new System.Windows.Forms.TextBox();
+            this.tbFig3 = new System.Windows.Forms.TextBox();
+            this.tbSur3 = new System.Windows.Forms.TextBox();
+            this.tbEnd3 = new System.Windows.Forms.TextBox();
+            this.tbSte3 = new System.Windows.Forms.TextBox();
+            this.tbCun3 = new System.Windows.Forms.TextBox();
+            this.tbSta3 = new System.Windows.Forms.TextBox();
+            this.tbAwa3 = new System.Windows.Forms.TextBox();
+            this.tbPer3 = new System.Windows.Forms.TextBox();
+            this.tbAth3 = new System.Windows.Forms.TextBox();
+            this.tbMar3 = new System.Windows.Forms.TextBox();
+            this.tbAni3 = new System.Windows.Forms.TextBox();
+            this.tbKno3 = new System.Windows.Forms.TextBox();
+            this.tbAgi3 = new System.Windows.Forms.TextBox();
+            this.btDelete3 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbMarDMGNum3 = new System.Windows.Forms.Label();
+            this.lbFigDMGNum3 = new System.Windows.Forms.Label();
+            this.lbBulNum3 = new System.Windows.Forms.Label();
+            this.lbArmPenNum3 = new System.Windows.Forms.Label();
+            this.lbArmRTGNum3 = new System.Windows.Forms.Label();
+            this.chbArmor3 = new System.Windows.Forms.CheckBox();
+            this.chbFightDMG3 = new System.Windows.Forms.CheckBox();
+            this.chbMarkDMG3 = new System.Windows.Forms.CheckBox();
+            this.lbBul3 = new System.Windows.Forms.Label();
+            this.lbArmPen3 = new System.Windows.Forms.Label();
+            this.lbArmRTG3 = new System.Windows.Forms.Label();
+            this.lbMarDMG3 = new System.Windows.Forms.Label();
+            this.lbFigDMG3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label92 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
-            this.label96 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.label97 = new System.Windows.Forms.Label();
-            this.label98 = new System.Windows.Forms.Label();
-            this.label99 = new System.Windows.Forms.Label();
-            this.label100 = new System.Windows.Forms.Label();
-            this.label101 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.label102 = new System.Windows.Forms.Label();
-            this.label103 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.lbCostNumber3 = new System.Windows.Forms.Label();
             this.cbTraining3 = new System.Windows.Forms.ComboBox();
             this.lbDiscipText3 = new System.Windows.Forms.Label();
-            this.label106 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tbName3 = new System.Windows.Forms.TextBox();
-            this.label107 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.lbTypeText3 = new System.Windows.Forms.Label();
-            this.label109 = new System.Windows.Forms.Label();
-            this.label110 = new System.Windows.Forms.Label();
-            this.label111 = new System.Windows.Forms.Label();
-            this.label112 = new System.Windows.Forms.Label();
-            this.label113 = new System.Windows.Forms.Label();
-            this.label114 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.lbWar3 = new System.Windows.Forms.Label();
             this.rtbNotes3 = new System.Windows.Forms.RichTextBox();
-            this.label115 = new System.Windows.Forms.Label();
-            this.label116 = new System.Windows.Forms.Label();
-            this.label117 = new System.Windows.Forms.Label();
-            this.label118 = new System.Windows.Forms.Label();
-            this.label119 = new System.Windows.Forms.Label();
-            this.label120 = new System.Windows.Forms.Label();
-            this.label121 = new System.Windows.Forms.Label();
+            this.lbThi3 = new System.Windows.Forms.Label();
+            this.lbSur3 = new System.Windows.Forms.Label();
+            this.lbSte3 = new System.Windows.Forms.Label();
+            this.lbSta3 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lbPer3 = new System.Windows.Forms.Label();
+            this.lbMar3 = new System.Windows.Forms.Label();
             this.lbHea3 = new System.Windows.Forms.Label();
             this.lbFig3 = new System.Windows.Forms.Label();
             this.lbEnd3 = new System.Windows.Forms.Label();
@@ -221,71 +244,72 @@
             this.lbAwa3 = new System.Windows.Forms.Label();
             this.lbAth3 = new System.Windows.Forms.Label();
             this.lbAni3 = new System.Windows.Forms.Label();
-            this.label129 = new System.Windows.Forms.Label();
+            this.lbWil3 = new System.Windows.Forms.Label();
             this.lbAgi3 = new System.Windows.Forms.Label();
             this.nudDis3 = new System.Windows.Forms.NumericUpDown();
-            this.label131 = new System.Windows.Forms.Label();
-            this.label132 = new System.Windows.Forms.Label();
-            this.lbAgiNum3 = new System.Windows.Forms.Label();
+            this.lbMov3 = new System.Windows.Forms.Label();
+            this.lbDef3 = new System.Windows.Forms.Label();
             this.nudHea3 = new System.Windows.Forms.NumericUpDown();
-            this.label134 = new System.Windows.Forms.Label();
-            this.lbAniNum3 = new System.Windows.Forms.Label();
-            this.lbAthNum3 = new System.Windows.Forms.Label();
-            this.lbAwaNum3 = new System.Windows.Forms.Label();
-            this.lbCunNum3 = new System.Windows.Forms.Label();
-            this.lbEndNum3 = new System.Windows.Forms.Label();
-            this.lbFigNum3 = new System.Windows.Forms.Label();
-            this.lbHeaNum3 = new System.Windows.Forms.Label();
-            this.label142 = new System.Windows.Forms.Label();
-            this.label143 = new System.Windows.Forms.Label();
-            this.label144 = new System.Windows.Forms.Label();
-            this.label145 = new System.Windows.Forms.Label();
-            this.label146 = new System.Windows.Forms.Label();
-            this.label147 = new System.Windows.Forms.Label();
-            this.label148 = new System.Windows.Forms.Label();
-            this.label149 = new System.Windows.Forms.Label();
-            this.label150 = new System.Windows.Forms.Label();
-            this.label151 = new System.Windows.Forms.Label();
-            this.label152 = new System.Windows.Forms.Label();
+            this.lbLan3 = new System.Windows.Forms.Label();
+            this.lbKno3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbWil4 = new System.Windows.Forms.TextBox();
+            this.tbLan4 = new System.Windows.Forms.TextBox();
+            this.tbWar4 = new System.Windows.Forms.TextBox();
+            this.tbHea4 = new System.Windows.Forms.TextBox();
+            this.tbThi4 = new System.Windows.Forms.TextBox();
+            this.tbFig4 = new System.Windows.Forms.TextBox();
+            this.tbSur4 = new System.Windows.Forms.TextBox();
+            this.tbEnd4 = new System.Windows.Forms.TextBox();
+            this.tbSte4 = new System.Windows.Forms.TextBox();
+            this.tbCun4 = new System.Windows.Forms.TextBox();
+            this.tbSta4 = new System.Windows.Forms.TextBox();
+            this.tbAwa4 = new System.Windows.Forms.TextBox();
+            this.tbPer4 = new System.Windows.Forms.TextBox();
+            this.tbAth4 = new System.Windows.Forms.TextBox();
+            this.tbMar4 = new System.Windows.Forms.TextBox();
+            this.tbAni4 = new System.Windows.Forms.TextBox();
+            this.tbKno4 = new System.Windows.Forms.TextBox();
+            this.tbAgi4 = new System.Windows.Forms.TextBox();
+            this.btDelete4 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbMarDMGNum4 = new System.Windows.Forms.Label();
+            this.lbFigDMGNum4 = new System.Windows.Forms.Label();
+            this.lbBulNum4 = new System.Windows.Forms.Label();
+            this.lbArmPenNum4 = new System.Windows.Forms.Label();
+            this.lbArmRTGNum4 = new System.Windows.Forms.Label();
+            this.chbArmor4 = new System.Windows.Forms.CheckBox();
+            this.chbFightDMG4 = new System.Windows.Forms.CheckBox();
+            this.chbMarkDMG4 = new System.Windows.Forms.CheckBox();
+            this.lbBul4 = new System.Windows.Forms.Label();
+            this.lbArmPen4 = new System.Windows.Forms.Label();
+            this.lbArmRTG4 = new System.Windows.Forms.Label();
+            this.lbMarDMG4 = new System.Windows.Forms.Label();
+            this.lbFigDMG4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.label153 = new System.Windows.Forms.Label();
-            this.label154 = new System.Windows.Forms.Label();
-            this.label155 = new System.Windows.Forms.Label();
-            this.label156 = new System.Windows.Forms.Label();
-            this.label157 = new System.Windows.Forms.Label();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.label158 = new System.Windows.Forms.Label();
-            this.label159 = new System.Windows.Forms.Label();
-            this.label160 = new System.Windows.Forms.Label();
-            this.label161 = new System.Windows.Forms.Label();
-            this.label162 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.label163 = new System.Windows.Forms.Label();
-            this.label164 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.lbCostNumber4 = new System.Windows.Forms.Label();
             this.cbTraining4 = new System.Windows.Forms.ComboBox();
             this.lbDiscipText4 = new System.Windows.Forms.Label();
-            this.label167 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tbName4 = new System.Windows.Forms.TextBox();
-            this.label168 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.lbTypeText4 = new System.Windows.Forms.Label();
-            this.label170 = new System.Windows.Forms.Label();
-            this.label171 = new System.Windows.Forms.Label();
-            this.label172 = new System.Windows.Forms.Label();
-            this.label173 = new System.Windows.Forms.Label();
-            this.label174 = new System.Windows.Forms.Label();
-            this.label175 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.lbWar4 = new System.Windows.Forms.Label();
             this.rtbNotes4 = new System.Windows.Forms.RichTextBox();
-            this.label176 = new System.Windows.Forms.Label();
-            this.label177 = new System.Windows.Forms.Label();
-            this.label178 = new System.Windows.Forms.Label();
-            this.label179 = new System.Windows.Forms.Label();
-            this.label180 = new System.Windows.Forms.Label();
-            this.label181 = new System.Windows.Forms.Label();
-            this.label182 = new System.Windows.Forms.Label();
+            this.lbThi4 = new System.Windows.Forms.Label();
+            this.lbSur4 = new System.Windows.Forms.Label();
+            this.lbSte4 = new System.Windows.Forms.Label();
+            this.lbSta4 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lbPer4 = new System.Windows.Forms.Label();
+            this.lbMar4 = new System.Windows.Forms.Label();
             this.lbHea4 = new System.Windows.Forms.Label();
             this.lbFig4 = new System.Windows.Forms.Label();
             this.lbEnd4 = new System.Windows.Forms.Label();
@@ -293,268 +317,64 @@
             this.lbAwa4 = new System.Windows.Forms.Label();
             this.lbAth4 = new System.Windows.Forms.Label();
             this.lbAni4 = new System.Windows.Forms.Label();
-            this.label190 = new System.Windows.Forms.Label();
+            this.lbWil4 = new System.Windows.Forms.Label();
             this.lbAgi4 = new System.Windows.Forms.Label();
             this.nudDis4 = new System.Windows.Forms.NumericUpDown();
-            this.label192 = new System.Windows.Forms.Label();
-            this.label193 = new System.Windows.Forms.Label();
-            this.lbAgiNum4 = new System.Windows.Forms.Label();
+            this.lbMov4 = new System.Windows.Forms.Label();
+            this.lbDef4 = new System.Windows.Forms.Label();
             this.nudHea4 = new System.Windows.Forms.NumericUpDown();
-            this.label195 = new System.Windows.Forms.Label();
-            this.lbAniNum4 = new System.Windows.Forms.Label();
-            this.lbAthNum4 = new System.Windows.Forms.Label();
-            this.lbAwaNum4 = new System.Windows.Forms.Label();
-            this.lbCunNum4 = new System.Windows.Forms.Label();
-            this.lbEndNum4 = new System.Windows.Forms.Label();
-            this.lbFigNum4 = new System.Windows.Forms.Label();
-            this.lbHeaNum4 = new System.Windows.Forms.Label();
-            this.label203 = new System.Windows.Forms.Label();
-            this.label204 = new System.Windows.Forms.Label();
-            this.label205 = new System.Windows.Forms.Label();
-            this.label206 = new System.Windows.Forms.Label();
-            this.label207 = new System.Windows.Forms.Label();
-            this.label208 = new System.Windows.Forms.Label();
-            this.label209 = new System.Windows.Forms.Label();
-            this.label210 = new System.Windows.Forms.Label();
-            this.label211 = new System.Windows.Forms.Label();
-            this.label212 = new System.Windows.Forms.Label();
-            this.label213 = new System.Windows.Forms.Label();
-            this.btNext = new System.Windows.Forms.Button();
-            this.lbAgiNum1 = new System.Windows.Forms.Label();
+            this.lbLan4 = new System.Windows.Forms.Label();
+            this.lbKno4 = new System.Windows.Forms.Label();
+            this.btPrevious = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis1)).BeginInit();
             this.toolStrip1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tplUnit1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).BeginInit();
+            this.tlpUnit2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea2)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea3)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
-            this.tableLayoutPanel11.SuspendLayout();
-            this.tableLayoutPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea4)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbPowStats11
+            // lbLan1
             // 
-            this.lbPowStats11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbPowStats11.AutoSize = true;
-            this.lbPowStats11.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowStats11.Location = new System.Drawing.Point(30, 232);
-            this.lbPowStats11.Name = "lbPowStats11";
-            this.lbPowStats11.Size = new System.Drawing.Size(83, 17);
-            this.lbPowStats11.TabIndex = 11;
-            this.lbPowStats11.Text = "Language:";
-            this.lbPowStats11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbLan1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbLan1.AutoSize = true;
+            this.lbLan1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLan1.Location = new System.Drawing.Point(30, 301);
+            this.lbLan1.Name = "lbLan1";
+            this.lbLan1.Size = new System.Drawing.Size(83, 29);
+            this.lbLan1.TabIndex = 11;
+            this.lbLan1.Text = "Language:";
+            this.lbLan1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbPowStats21
+            // lbWil1
             // 
-            this.lbPowStats21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbPowStats21.AutoSize = true;
-            this.lbPowStats21.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowStats21.Location = new System.Drawing.Point(220, 232);
-            this.lbPowStats21.Name = "lbPowStats21";
-            this.lbPowStats21.Size = new System.Drawing.Size(44, 17);
-            this.lbPowStats21.TabIndex = 12;
-            this.lbPowStats21.Text = "Will:";
-            this.lbPowStats21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbCunNum1
-            // 
-            this.lbCunNum1.AutoSize = true;
-            this.lbCunNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCunNum1.Location = new System.Drawing.Point(119, 155);
-            this.lbCunNum1.Name = "lbCunNum1";
-            this.lbCunNum1.Size = new System.Drawing.Size(17, 17);
-            this.lbCunNum1.TabIndex = 13;
-            this.lbCunNum1.Text = "0";
-            this.lbCunNum1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbAwaNum1
-            // 
-            this.lbAwaNum1.AutoSize = true;
-            this.lbAwaNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAwaNum1.Location = new System.Drawing.Point(119, 138);
-            this.lbAwaNum1.Name = "lbAwaNum1";
-            this.lbAwaNum1.Size = new System.Drawing.Size(17, 17);
-            this.lbAwaNum1.TabIndex = 14;
-            this.lbAwaNum1.Text = "0";
-            this.lbAwaNum1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbAthNum1
-            // 
-            this.lbAthNum1.AutoSize = true;
-            this.lbAthNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAthNum1.Location = new System.Drawing.Point(119, 121);
-            this.lbAthNum1.Name = "lbAthNum1";
-            this.lbAthNum1.Size = new System.Drawing.Size(17, 17);
-            this.lbAthNum1.TabIndex = 15;
-            this.lbAthNum1.Text = "0";
-            this.lbAthNum1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbAniNum1
-            // 
-            this.lbAniNum1.AutoSize = true;
-            this.lbAniNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAniNum1.Location = new System.Drawing.Point(119, 95);
-            this.lbAniNum1.Name = "lbAniNum1";
-            this.lbAniNum1.Size = new System.Drawing.Size(17, 17);
-            this.lbAniNum1.TabIndex = 16;
-            this.lbAniNum1.Text = "0";
-            this.lbAniNum1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbEndNum1
-            // 
-            this.lbEndNum1.AutoSize = true;
-            this.lbEndNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndNum1.Location = new System.Drawing.Point(119, 172);
-            this.lbEndNum1.Name = "lbEndNum1";
-            this.lbEndNum1.Size = new System.Drawing.Size(17, 17);
-            this.lbEndNum1.TabIndex = 18;
-            this.lbEndNum1.Text = "0";
-            this.lbEndNum1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbFigNum1
-            // 
-            this.lbFigNum1.AutoSize = true;
-            this.lbFigNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFigNum1.Location = new System.Drawing.Point(119, 189);
-            this.lbFigNum1.Name = "lbFigNum1";
-            this.lbFigNum1.Size = new System.Drawing.Size(17, 17);
-            this.lbFigNum1.TabIndex = 19;
-            this.lbFigNum1.Text = "0";
-            this.lbFigNum1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbHeaNum1
-            // 
-            this.lbHeaNum1.AutoSize = true;
-            this.lbHeaNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeaNum1.Location = new System.Drawing.Point(119, 206);
-            this.lbHeaNum1.Name = "lbHeaNum1";
-            this.lbHeaNum1.Size = new System.Drawing.Size(17, 17);
-            this.lbHeaNum1.TabIndex = 20;
-            this.lbHeaNum1.Text = "0";
-            this.lbHeaNum1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowLan1
-            // 
-            this.lbPowLan1.AutoSize = true;
-            this.lbPowLan1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowLan1.Location = new System.Drawing.Point(119, 232);
-            this.lbPowLan1.Name = "lbPowLan1";
-            this.lbPowLan1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowLan1.TabIndex = 21;
-            this.lbPowLan1.Text = "0";
-            this.lbPowLan1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowWil1
-            // 
-            this.lbPowWil1.AutoSize = true;
-            this.lbPowWil1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowWil1.Location = new System.Drawing.Point(270, 232);
-            this.lbPowWil1.Name = "lbPowWil1";
-            this.lbPowWil1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowWil1.TabIndex = 30;
-            this.lbPowWil1.Text = "0";
-            this.lbPowWil1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowWar1
-            // 
-            this.lbPowWar1.AutoSize = true;
-            this.lbPowWar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowWar1.Location = new System.Drawing.Point(270, 206);
-            this.lbPowWar1.Name = "lbPowWar1";
-            this.lbPowWar1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowWar1.TabIndex = 29;
-            this.lbPowWar1.Text = "0";
-            this.lbPowWar1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowThi1
-            // 
-            this.lbPowThi1.AutoSize = true;
-            this.lbPowThi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowThi1.Location = new System.Drawing.Point(270, 189);
-            this.lbPowThi1.Name = "lbPowThi1";
-            this.lbPowThi1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowThi1.TabIndex = 28;
-            this.lbPowThi1.Text = "0";
-            this.lbPowThi1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowSur1
-            // 
-            this.lbPowSur1.AutoSize = true;
-            this.lbPowSur1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowSur1.Location = new System.Drawing.Point(270, 172);
-            this.lbPowSur1.Name = "lbPowSur1";
-            this.lbPowSur1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowSur1.TabIndex = 27;
-            this.lbPowSur1.Text = "0";
-            this.lbPowSur1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowKno1
-            // 
-            this.lbPowKno1.AutoSize = true;
-            this.lbPowKno1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowKno1.Location = new System.Drawing.Point(270, 69);
-            this.lbPowKno1.Name = "lbPowKno1";
-            this.lbPowKno1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowKno1.TabIndex = 26;
-            this.lbPowKno1.Text = "0";
-            this.lbPowKno1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowMar1
-            // 
-            this.lbPowMar1.AutoSize = true;
-            this.lbPowMar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowMar1.Location = new System.Drawing.Point(270, 95);
-            this.lbPowMar1.Name = "lbPowMar1";
-            this.lbPowMar1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowMar1.TabIndex = 25;
-            this.lbPowMar1.Text = "0";
-            this.lbPowMar1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowPer1
-            // 
-            this.lbPowPer1.AutoSize = true;
-            this.lbPowPer1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowPer1.Location = new System.Drawing.Point(270, 121);
-            this.lbPowPer1.Name = "lbPowPer1";
-            this.lbPowPer1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowPer1.TabIndex = 24;
-            this.lbPowPer1.Text = "0";
-            this.lbPowPer1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowSta1
-            // 
-            this.lbPowSta1.AutoSize = true;
-            this.lbPowSta1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowSta1.Location = new System.Drawing.Point(270, 138);
-            this.lbPowSta1.Name = "lbPowSta1";
-            this.lbPowSta1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowSta1.TabIndex = 23;
-            this.lbPowSta1.Text = "0";
-            this.lbPowSta1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbPowSte1
-            // 
-            this.lbPowSte1.AutoSize = true;
-            this.lbPowSte1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowSte1.Location = new System.Drawing.Point(270, 155);
-            this.lbPowSte1.Name = "lbPowSte1";
-            this.lbPowSte1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowSte1.TabIndex = 22;
-            this.lbPowSte1.Text = "0";
-            this.lbPowSte1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbWil1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWil1.AutoSize = true;
+            this.lbWil1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWil1.Location = new System.Drawing.Point(220, 301);
+            this.lbWil1.Name = "lbWil1";
+            this.lbWil1.Size = new System.Drawing.Size(44, 29);
+            this.lbWil1.TabIndex = 12;
+            this.lbWil1.Text = "Will:";
+            this.lbWil1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbPowName1
             // 
@@ -657,36 +477,39 @@
             // 
             // lbPowStats31
             // 
+            this.lbPowStats31.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPowStats31.AutoSize = true;
             this.lbPowStats31.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowStats31.Location = new System.Drawing.Point(293, 155);
+            this.lbPowStats31.Location = new System.Drawing.Point(293, 185);
             this.lbPowStats31.Name = "lbPowStats31";
-            this.lbPowStats31.Size = new System.Drawing.Size(55, 17);
+            this.lbPowStats31.Size = new System.Drawing.Size(107, 29);
             this.lbPowStats31.TabIndex = 39;
             this.lbPowStats31.Text = "Notes:";
-            this.lbPowStats31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPowStats31.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // lbPowMov1
+            // lbMov1
             // 
-            this.lbPowMov1.AutoSize = true;
-            this.lbPowMov1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowMov1.Location = new System.Drawing.Point(406, 138);
-            this.lbPowMov1.Name = "lbPowMov1";
-            this.lbPowMov1.Size = new System.Drawing.Size(26, 17);
-            this.lbPowMov1.TabIndex = 42;
-            this.lbPowMov1.Text = "00";
-            this.lbPowMov1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMov1.AutoSize = true;
+            this.lbMov1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMov1.Location = new System.Drawing.Point(406, 156);
+            this.lbMov1.Name = "lbMov1";
+            this.lbMov1.Size = new System.Drawing.Size(26, 17);
+            this.lbMov1.TabIndex = 42;
+            this.lbMov1.Text = "00";
+            this.lbMov1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbPowDef1
+            // lbDef1
             // 
-            this.lbPowDef1.AutoSize = true;
-            this.lbPowDef1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPowDef1.Location = new System.Drawing.Point(406, 121);
-            this.lbPowDef1.Name = "lbPowDef1";
-            this.lbPowDef1.Size = new System.Drawing.Size(17, 17);
-            this.lbPowDef1.TabIndex = 43;
-            this.lbPowDef1.Text = "0";
-            this.lbPowDef1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbDef1.AutoSize = true;
+            this.lbDef1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDef1.Location = new System.Drawing.Point(406, 127);
+            this.lbDef1.Name = "lbDef1";
+            this.lbDef1.Size = new System.Drawing.Size(17, 17);
+            this.lbDef1.TabIndex = 43;
+            this.lbDef1.Text = "0";
+            this.lbDef1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbDiscipText1
             // 
@@ -704,12 +527,12 @@
             this.rtbNotes1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.rtbNotes1, 2);
-            this.rtbNotes1.Location = new System.Drawing.Point(292, 174);
-            this.rtbNotes1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tplUnit1.SetColumnSpan(this.rtbNotes1, 2);
+            this.rtbNotes1.Location = new System.Drawing.Point(292, 216);
+            this.rtbNotes1.Margin = new System.Windows.Forms.Padding(2);
             this.rtbNotes1.Name = "rtbNotes1";
-            this.tableLayoutPanel1.SetRowSpan(this.rtbNotes1, 3);
-            this.rtbNotes1.Size = new System.Drawing.Size(213, 56);
+            this.tplUnit1.SetRowSpan(this.rtbNotes1, 3);
+            this.rtbNotes1.Size = new System.Drawing.Size(213, 83);
             this.rtbNotes1.TabIndex = 45;
             this.rtbNotes1.Text = "";
             // 
@@ -724,7 +547,7 @@
             // nudDis1
             // 
             this.nudDis1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudDis1.Location = new System.Drawing.Point(406, 98);
+            this.nudDis1.Location = new System.Drawing.Point(406, 101);
             this.nudDis1.Name = "nudDis1";
             this.nudDis1.Size = new System.Drawing.Size(41, 20);
             this.nudDis1.TabIndex = 47;
@@ -745,103 +568,95 @@
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.tsbNewUnit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1040, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1040, 25);
             this.toolStrip1.TabIndex = 49;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // tplUnit1
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
-            this.toolStripButton1.Text = "New Unit";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 6;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 10);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label20, 4, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label19, 4, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label18, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label17, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label16, 2, 8);
-            this.tableLayoutPanel1.Controls.Add(this.rtbNotes1, 4, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label15, 2, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 2, 6);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowStats31, 4, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lbHea1, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.lbFig1, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.lbEnd1, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.lbCun1, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lbAwa1, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lbAth1, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbAni1, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowStats21, 2, 9);
-            this.tableLayoutPanel1.Controls.Add(this.lbAgi1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.nudDis1, 5, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowMov1, 5, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowDef1, 5, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbAgiNum1, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.nudHea1, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowStats11, 0, 9);
-            this.tableLayoutPanel1.Controls.Add(this.lbAniNum1, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lbAthNum1, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbAwaNum1, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lbCunNum1, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lbEndNum1, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.lbFigNum1, 1, 7);
-            this.tableLayoutPanel1.Controls.Add(this.lbHeaNum1, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowLan1, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowWil1, 3, 9);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowKno1, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowWar1, 3, 8);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowMar1, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowThi1, 3, 7);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowPer1, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowSur1, 3, 6);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowSta1, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lbPowSte1, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 30);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 11;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(507, 296);
-            this.tableLayoutPanel1.TabIndex = 50;
+            this.tplUnit1.ColumnCount = 6;
+            this.tplUnit1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tplUnit1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tplUnit1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tplUnit1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tplUnit1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tplUnit1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tplUnit1.Controls.Add(this.tbWil1, 3, 9);
+            this.tplUnit1.Controls.Add(this.tbLan1, 1, 9);
+            this.tplUnit1.Controls.Add(this.tbWar1, 3, 8);
+            this.tplUnit1.Controls.Add(this.tbHea1, 1, 8);
+            this.tplUnit1.Controls.Add(this.tbThi1, 3, 7);
+            this.tplUnit1.Controls.Add(this.tbFig1, 1, 7);
+            this.tplUnit1.Controls.Add(this.tbSur1, 3, 6);
+            this.tplUnit1.Controls.Add(this.tbEnd1, 1, 6);
+            this.tplUnit1.Controls.Add(this.tbSte1, 3, 5);
+            this.tplUnit1.Controls.Add(this.tbCun1, 1, 5);
+            this.tplUnit1.Controls.Add(this.tbSta1, 3, 4);
+            this.tplUnit1.Controls.Add(this.tbAwa1, 1, 4);
+            this.tplUnit1.Controls.Add(this.tbPer1, 3, 3);
+            this.tplUnit1.Controls.Add(this.tbAth1, 1, 3);
+            this.tplUnit1.Controls.Add(this.tbMar1, 3, 2);
+            this.tplUnit1.Controls.Add(this.tbAni1, 1, 2);
+            this.tplUnit1.Controls.Add(this.tbKno1, 3, 1);
+            this.tplUnit1.Controls.Add(this.tbAgi1, 1, 1);
+            this.tplUnit1.Controls.Add(this.btDelete1, 5, 9);
+            this.tplUnit1.Controls.Add(this.tableLayoutPanel3, 0, 10);
+            this.tplUnit1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tplUnit1.Controls.Add(this.label20, 4, 4);
+            this.tplUnit1.Controls.Add(this.label19, 4, 3);
+            this.tplUnit1.Controls.Add(this.label18, 4, 2);
+            this.tplUnit1.Controls.Add(this.label17, 4, 1);
+            this.tplUnit1.Controls.Add(this.lbWar1, 2, 8);
+            this.tplUnit1.Controls.Add(this.rtbNotes1, 4, 6);
+            this.tplUnit1.Controls.Add(this.lbThi1, 2, 7);
+            this.tplUnit1.Controls.Add(this.lbSur1, 2, 6);
+            this.tplUnit1.Controls.Add(this.lbSte1, 2, 5);
+            this.tplUnit1.Controls.Add(this.lbSta1, 2, 4);
+            this.tplUnit1.Controls.Add(this.lbPowStats31, 4, 5);
+            this.tplUnit1.Controls.Add(this.lbPer1, 2, 3);
+            this.tplUnit1.Controls.Add(this.lbMar1, 2, 2);
+            this.tplUnit1.Controls.Add(this.lbHea1, 0, 8);
+            this.tplUnit1.Controls.Add(this.lbFig1, 0, 7);
+            this.tplUnit1.Controls.Add(this.lbEnd1, 0, 6);
+            this.tplUnit1.Controls.Add(this.lbCun1, 0, 5);
+            this.tplUnit1.Controls.Add(this.lbAwa1, 0, 4);
+            this.tplUnit1.Controls.Add(this.lbAth1, 0, 3);
+            this.tplUnit1.Controls.Add(this.lbAni1, 0, 2);
+            this.tplUnit1.Controls.Add(this.lbWil1, 2, 9);
+            this.tplUnit1.Controls.Add(this.lbAgi1, 0, 1);
+            this.tplUnit1.Controls.Add(this.nudDis1, 5, 2);
+            this.tplUnit1.Controls.Add(this.lbMov1, 5, 4);
+            this.tplUnit1.Controls.Add(this.lbDef1, 5, 3);
+            this.tplUnit1.Controls.Add(this.nudHea1, 5, 1);
+            this.tplUnit1.Controls.Add(this.lbLan1, 0, 9);
+            this.tplUnit1.Controls.Add(this.lbKno1, 2, 1);
+            this.tplUnit1.Location = new System.Drawing.Point(12, 28);
+            this.tplUnit1.Name = "tplUnit1";
+            this.tplUnit1.RowCount = 11;
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tplUnit1.Size = new System.Drawing.Size(507, 379);
+            this.tplUnit1.TabIndex = 50;
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 8;
-            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel3, 6);
+            this.tplUnit1.SetColumnSpan(this.tableLayoutPanel3, 6);
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -850,188 +665,189 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.label30, 6, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label29, 4, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label28, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label27, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label26, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.checkBox3, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.checkBox2, 5, 0);
-            this.tableLayoutPanel3.Controls.Add(this.checkBox1, 7, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label23, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label22, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label21, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label25, 6, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label24, 4, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 252);
+            this.tableLayoutPanel3.Controls.Add(this.lbMarDMGNum1, 6, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lbFigDMGNum1, 4, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lbBulNum1, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lbArmPenNum1, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lbArmRTGNum1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.chbArmor1, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.chbFightDMG1, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.chbMarkDMG1, 7, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lbBul1, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lbArmPen1, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lbArmRTG1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lbMarDMG1, 6, 0);
+            this.tableLayoutPanel3.Controls.Add(this.lbFigDMG1, 4, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 333);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(501, 40);
             this.tableLayoutPanel3.TabIndex = 51;
             // 
-            // label30
+            // lbMarDMGNum1
             // 
-            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbMarDMGNum1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label30.AutoSize = true;
-            this.tableLayoutPanel3.SetColumnSpan(this.label30, 2);
-            this.label30.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(379, 20);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(119, 17);
-            this.label30.TabIndex = 51;
-            this.label30.Text = "0";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbMarDMGNum1.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.lbMarDMGNum1, 2);
+            this.lbMarDMGNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarDMGNum1.Location = new System.Drawing.Point(379, 20);
+            this.lbMarDMGNum1.Name = "lbMarDMGNum1";
+            this.lbMarDMGNum1.Size = new System.Drawing.Size(119, 17);
+            this.lbMarDMGNum1.TabIndex = 51;
+            this.lbMarDMGNum1.Text = "0";
+            this.lbMarDMGNum1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label29
+            // lbFigDMGNum1
             // 
-            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbFigDMGNum1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label29.AutoSize = true;
-            this.tableLayoutPanel3.SetColumnSpan(this.label29, 2);
-            this.label29.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(266, 20);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(107, 17);
-            this.label29.TabIndex = 51;
-            this.label29.Text = "0";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbFigDMGNum1.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.lbFigDMGNum1, 2);
+            this.lbFigDMGNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFigDMGNum1.Location = new System.Drawing.Point(266, 20);
+            this.lbFigDMGNum1.Name = "lbFigDMGNum1";
+            this.lbFigDMGNum1.Size = new System.Drawing.Size(107, 17);
+            this.lbFigDMGNum1.TabIndex = 51;
+            this.lbFigDMGNum1.Text = "0";
+            this.lbFigDMGNum1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label28
+            // lbBulNum1
             // 
-            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbBulNum1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label28.AutoSize = true;
-            this.tableLayoutPanel3.SetColumnSpan(this.label28, 2);
-            this.label28.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(197, 20);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(63, 17);
-            this.label28.TabIndex = 51;
-            this.label28.Text = "0";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbBulNum1.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.lbBulNum1, 2);
+            this.lbBulNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBulNum1.Location = new System.Drawing.Point(197, 20);
+            this.lbBulNum1.Name = "lbBulNum1";
+            this.lbBulNum1.Size = new System.Drawing.Size(63, 17);
+            this.lbBulNum1.TabIndex = 51;
+            this.lbBulNum1.Text = "0";
+            this.lbBulNum1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label27
+            // lbArmPenNum1
             // 
-            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbArmPenNum1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(103, 20);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(88, 17);
-            this.label27.TabIndex = 51;
-            this.label27.Text = "0";
-            this.label27.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbArmPenNum1.AutoSize = true;
+            this.lbArmPenNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmPenNum1.Location = new System.Drawing.Point(103, 20);
+            this.lbArmPenNum1.Name = "lbArmPenNum1";
+            this.lbArmPenNum1.Size = new System.Drawing.Size(88, 17);
+            this.lbArmPenNum1.TabIndex = 51;
+            this.lbArmPenNum1.Text = "0";
+            this.lbArmPenNum1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // label26
+            // lbArmRTGNum1
             // 
-            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lbArmRTGNum1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(3, 20);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(94, 17);
-            this.label26.TabIndex = 51;
-            this.label26.Text = "0";
-            this.label26.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbArmRTGNum1.AutoSize = true;
+            this.lbArmRTGNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmRTGNum1.Location = new System.Drawing.Point(3, 20);
+            this.lbArmRTGNum1.Name = "lbArmRTGNum1";
+            this.lbArmRTGNum1.Size = new System.Drawing.Size(94, 17);
+            this.lbArmRTGNum1.TabIndex = 51;
+            this.lbArmRTGNum1.Text = "0";
+            this.lbArmRTGNum1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // checkBox3
+            // chbArmor1
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(245, 3);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 53;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chbArmor1.AutoSize = true;
+            this.chbArmor1.Location = new System.Drawing.Point(245, 3);
+            this.chbArmor1.Name = "chbArmor1";
+            this.chbArmor1.Size = new System.Drawing.Size(15, 14);
+            this.chbArmor1.TabIndex = 53;
+            this.chbArmor1.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chbFightDMG1
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(358, 3);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 53;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chbFightDMG1.AutoSize = true;
+            this.chbFightDMG1.Location = new System.Drawing.Point(358, 3);
+            this.chbFightDMG1.Name = "chbFightDMG1";
+            this.chbFightDMG1.Size = new System.Drawing.Size(15, 14);
+            this.chbFightDMG1.TabIndex = 53;
+            this.chbFightDMG1.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chbMarkDMG1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(478, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 52;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chbMarkDMG1.AutoSize = true;
+            this.chbMarkDMG1.Location = new System.Drawing.Point(478, 3);
+            this.chbMarkDMG1.Name = "chbMarkDMG1";
+            this.chbMarkDMG1.Size = new System.Drawing.Size(15, 14);
+            this.chbMarkDMG1.TabIndex = 52;
+            this.chbMarkDMG1.UseVisualStyleBackColor = true;
             // 
-            // label23
+            // lbBul1
             // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(197, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(42, 17);
-            this.label23.TabIndex = 52;
-            this.label23.Text = "Bulk";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbBul1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBul1.AutoSize = true;
+            this.lbBul1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBul1.Location = new System.Drawing.Point(197, 0);
+            this.lbBul1.Name = "lbBul1";
+            this.lbBul1.Size = new System.Drawing.Size(42, 17);
+            this.lbBul1.TabIndex = 52;
+            this.lbBul1.Text = "Bulk";
+            this.lbBul1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label22
+            // lbArmPen1
             // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(103, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(88, 17);
-            this.label22.TabIndex = 52;
-            this.label22.Text = "Armor Pen";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbArmPen1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmPen1.AutoSize = true;
+            this.lbArmPen1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmPen1.Location = new System.Drawing.Point(103, 0);
+            this.lbArmPen1.Name = "lbArmPen1";
+            this.lbArmPen1.Size = new System.Drawing.Size(88, 17);
+            this.lbArmPen1.TabIndex = 52;
+            this.lbArmPen1.Text = "Armor Pen";
+            this.lbArmPen1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label21
+            // lbArmRTG1
             // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(3, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(94, 17);
-            this.label21.TabIndex = 52;
-            this.label21.Text = "Armor RTG";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbArmRTG1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmRTG1.AutoSize = true;
+            this.lbArmRTG1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmRTG1.Location = new System.Drawing.Point(3, 0);
+            this.lbArmRTG1.Name = "lbArmRTG1";
+            this.lbArmRTG1.Size = new System.Drawing.Size(94, 17);
+            this.lbArmRTG1.TabIndex = 52;
+            this.lbArmRTG1.Text = "Armor RTG";
+            this.lbArmRTG1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label25
+            // lbMarDMG1
             // 
-            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(379, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(93, 17);
-            this.label25.TabIndex = 52;
-            this.label25.Text = "Marks DMG";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMarDMG1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMarDMG1.AutoSize = true;
+            this.lbMarDMG1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarDMG1.Location = new System.Drawing.Point(379, 0);
+            this.lbMarDMG1.Name = "lbMarDMG1";
+            this.lbMarDMG1.Size = new System.Drawing.Size(93, 17);
+            this.lbMarDMG1.TabIndex = 52;
+            this.lbMarDMG1.Text = "Marks DMG";
+            this.lbMarDMG1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label24
+            // lbFigDMG1
             // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(266, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(86, 17);
-            this.label24.TabIndex = 52;
-            this.label24.Text = "Fight DMG";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbFigDMG1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFigDMG1.AutoSize = true;
+            this.lbFigDMG1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFigDMG1.Location = new System.Drawing.Point(266, 0);
+            this.lbFigDMG1.Name = "lbFigDMG1";
+            this.lbFigDMG1.Size = new System.Drawing.Size(86, 17);
+            this.lbFigDMG1.TabIndex = 52;
+            this.lbFigDMG1.Text = "Fight DMG";
+            this.lbFigDMG1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel2, 6);
+            this.tplUnit1.SetColumnSpan(this.tableLayoutPanel2, 6);
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -1058,243 +874,263 @@
             // 
             // label20
             // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(308, 138);
+            this.label20.Location = new System.Drawing.Point(308, 156);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(92, 17);
+            this.label20.Size = new System.Drawing.Size(92, 29);
             this.label20.TabIndex = 51;
             this.label20.Text = "Movement:";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label19
             // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(329, 121);
+            this.label19.Location = new System.Drawing.Point(329, 127);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(71, 17);
+            this.label19.Size = new System.Drawing.Size(71, 29);
             this.label19.TabIndex = 51;
             this.label19.Text = "Defense:";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label18
             // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(293, 95);
+            this.label18.Location = new System.Drawing.Point(293, 98);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(107, 17);
+            this.label18.Size = new System.Drawing.Size(107, 29);
             this.label18.TabIndex = 51;
             this.label18.Text = "Disorganized:";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label17
             // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(338, 69);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(62, 17);
+            this.label17.Size = new System.Drawing.Size(62, 29);
             this.label17.TabIndex = 51;
             this.label17.Text = "Health:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label16
+            // lbWar1
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(191, 206);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(73, 17);
-            this.label16.TabIndex = 51;
-            this.label16.Text = "Warfare:";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbWar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWar1.AutoSize = true;
+            this.lbWar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWar1.Location = new System.Drawing.Point(191, 272);
+            this.lbWar1.Name = "lbWar1";
+            this.lbWar1.Size = new System.Drawing.Size(73, 29);
+            this.lbWar1.TabIndex = 51;
+            this.lbWar1.Text = "Warfare:";
+            this.lbWar1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label15
+            // lbThi1
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(184, 189);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(80, 17);
-            this.label15.TabIndex = 51;
-            this.label15.Text = "Thievery:";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbThi1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbThi1.AutoSize = true;
+            this.lbThi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThi1.Location = new System.Drawing.Point(184, 243);
+            this.lbThi1.Name = "lbThi1";
+            this.lbThi1.Size = new System.Drawing.Size(80, 29);
+            this.lbThi1.TabIndex = 51;
+            this.lbThi1.Text = "Thievery:";
+            this.lbThi1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label14
+            // lbSur1
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(189, 172);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 17);
-            this.label14.TabIndex = 51;
-            this.label14.Text = "Survival:";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSur1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSur1.AutoSize = true;
+            this.lbSur1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSur1.Location = new System.Drawing.Point(189, 214);
+            this.lbSur1.Name = "lbSur1";
+            this.lbSur1.Size = new System.Drawing.Size(75, 29);
+            this.lbSur1.TabIndex = 51;
+            this.lbSur1.Text = "Survival:";
+            this.lbSur1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label13
+            // lbSte1
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(199, 155);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 17);
-            this.label13.TabIndex = 51;
-            this.label13.Text = "Stealth:";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSte1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSte1.AutoSize = true;
+            this.lbSte1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSte1.Location = new System.Drawing.Point(199, 185);
+            this.lbSte1.Name = "lbSte1";
+            this.lbSte1.Size = new System.Drawing.Size(65, 29);
+            this.lbSte1.TabIndex = 51;
+            this.lbSte1.Text = "Stealth:";
+            this.lbSte1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label12
+            // lbSta1
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(205, 138);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(59, 17);
-            this.label12.TabIndex = 51;
-            this.label12.Text = "Status:";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSta1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSta1.AutoSize = true;
+            this.lbSta1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSta1.Location = new System.Drawing.Point(205, 156);
+            this.lbSta1.Name = "lbSta1";
+            this.lbSta1.Size = new System.Drawing.Size(59, 29);
+            this.lbSta1.TabIndex = 51;
+            this.lbSta1.Text = "Status:";
+            this.lbSta1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label11
+            // lbPer1
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(171, 121);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 17);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "Persuasion:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPer1.AutoSize = true;
+            this.lbPer1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPer1.Location = new System.Drawing.Point(171, 127);
+            this.lbPer1.Name = "lbPer1";
+            this.lbPer1.Size = new System.Drawing.Size(93, 29);
+            this.lbPer1.TabIndex = 51;
+            this.lbPer1.Text = "Persuasion:";
+            this.lbPer1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label10
+            // lbMar1
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(142, 95);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 17);
-            this.label10.TabIndex = 51;
-            this.label10.Text = "Marksmanship:";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMar1.AutoSize = true;
+            this.lbMar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMar1.Location = new System.Drawing.Point(142, 98);
+            this.lbMar1.Name = "lbMar1";
+            this.lbMar1.Size = new System.Drawing.Size(122, 29);
+            this.lbMar1.TabIndex = 51;
+            this.lbMar1.Text = "Marksmanship:";
+            this.lbMar1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbHea1
             // 
-            this.lbHea1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbHea1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHea1.AutoSize = true;
             this.lbHea1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHea1.Location = new System.Drawing.Point(44, 206);
+            this.lbHea1.Location = new System.Drawing.Point(44, 272);
             this.lbHea1.Name = "lbHea1";
-            this.lbHea1.Size = new System.Drawing.Size(69, 17);
+            this.lbHea1.Size = new System.Drawing.Size(69, 29);
             this.lbHea1.TabIndex = 51;
             this.lbHea1.Text = "Healing:";
             this.lbHea1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbFig1
             // 
-            this.lbFig1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFig1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFig1.AutoSize = true;
             this.lbFig1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFig1.Location = new System.Drawing.Point(39, 189);
+            this.lbFig1.Location = new System.Drawing.Point(39, 243);
             this.lbFig1.Name = "lbFig1";
-            this.lbFig1.Size = new System.Drawing.Size(74, 17);
+            this.lbFig1.Size = new System.Drawing.Size(74, 29);
             this.lbFig1.TabIndex = 51;
             this.lbFig1.Text = "Fighting:";
             this.lbFig1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbEnd1
             // 
-            this.lbEnd1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbEnd1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbEnd1.AutoSize = true;
             this.lbEnd1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEnd1.Location = new System.Drawing.Point(20, 172);
+            this.lbEnd1.Location = new System.Drawing.Point(20, 214);
             this.lbEnd1.Name = "lbEnd1";
-            this.lbEnd1.Size = new System.Drawing.Size(93, 17);
+            this.lbEnd1.Size = new System.Drawing.Size(93, 29);
             this.lbEnd1.TabIndex = 51;
             this.lbEnd1.Text = "Endurance:";
             this.lbEnd1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbCun1
             // 
-            this.lbCun1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCun1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCun1.AutoSize = true;
             this.lbCun1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCun1.Location = new System.Drawing.Point(37, 155);
+            this.lbCun1.Location = new System.Drawing.Point(37, 185);
             this.lbCun1.Name = "lbCun1";
-            this.lbCun1.Size = new System.Drawing.Size(76, 17);
+            this.lbCun1.Size = new System.Drawing.Size(76, 29);
             this.lbCun1.TabIndex = 51;
             this.lbCun1.Text = "Cunning:";
             this.lbCun1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAwa1
             // 
-            this.lbAwa1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAwa1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAwa1.AutoSize = true;
             this.lbAwa1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAwa1.Location = new System.Drawing.Point(22, 138);
+            this.lbAwa1.Location = new System.Drawing.Point(22, 156);
             this.lbAwa1.Name = "lbAwa1";
-            this.lbAwa1.Size = new System.Drawing.Size(91, 17);
+            this.lbAwa1.Size = new System.Drawing.Size(91, 29);
             this.lbAwa1.TabIndex = 51;
             this.lbAwa1.Text = "Awareness:";
             this.lbAwa1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAth1
             // 
-            this.lbAth1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAth1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAth1.AutoSize = true;
             this.lbAth1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAth1.Location = new System.Drawing.Point(34, 121);
+            this.lbAth1.Location = new System.Drawing.Point(34, 127);
             this.lbAth1.Name = "lbAth1";
-            this.lbAth1.Size = new System.Drawing.Size(79, 17);
+            this.lbAth1.Size = new System.Drawing.Size(79, 29);
             this.lbAth1.TabIndex = 51;
             this.lbAth1.Text = "Athletics:";
             this.lbAth1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAni1
             // 
-            this.lbAni1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAni1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAni1.AutoSize = true;
             this.lbAni1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAni1.Location = new System.Drawing.Point(3, 95);
+            this.lbAni1.Location = new System.Drawing.Point(3, 98);
             this.lbAni1.Name = "lbAni1";
-            this.lbAni1.Size = new System.Drawing.Size(110, 17);
+            this.lbAni1.Size = new System.Drawing.Size(110, 29);
             this.lbAni1.TabIndex = 51;
             this.lbAni1.Text = "Animal Hand:";
             this.lbAni1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAgi1
             // 
-            this.lbAgi1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAgi1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAgi1.AutoSize = true;
             this.lbAgi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAgi1.Location = new System.Drawing.Point(51, 69);
             this.lbAgi1.Name = "lbAgi1";
-            this.lbAgi1.Size = new System.Drawing.Size(62, 17);
+            this.lbAgi1.Size = new System.Drawing.Size(62, 29);
             this.lbAgi1.TabIndex = 51;
-            this.lbAgi1.Text = "Agility:\r";
+            this.lbAgi1.Text = "Agility:";
             this.lbAgi1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label9
+            // lbKno1
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(171, 69);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(93, 17);
-            this.label9.TabIndex = 51;
-            this.label9.Text = "Knowledge:";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbKno1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbKno1.AutoSize = true;
+            this.lbKno1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKno1.Location = new System.Drawing.Point(171, 69);
+            this.lbKno1.Name = "lbKno1";
+            this.lbKno1.Size = new System.Drawing.Size(93, 29);
+            this.lbKno1.TabIndex = 51;
+            this.lbKno1.Text = "Knowledge:";
+            this.lbKno1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // dgCal1
             // 
@@ -1305,323 +1141,757 @@
             this.dgCal1.TabIndex = 51;
             this.dgCal1.Visible = false;
             // 
+            // btNext
+            // 
+            this.btNext.Location = new System.Drawing.Point(579, 798);
+            this.btNext.Name = "btNext";
+            this.btNext.Size = new System.Drawing.Size(30, 30);
+            this.btNext.TabIndex = 55;
+            this.btNext.Text = ">";
+            this.btNext.UseVisualStyleBackColor = true;
+            // 
+            // btDelete1
+            // 
+            this.btDelete1.Location = new System.Drawing.Point(406, 304);
+            this.btDelete1.Name = "btDelete1";
+            this.btDelete1.Size = new System.Drawing.Size(75, 23);
+            this.btDelete1.TabIndex = 56;
+            this.btDelete1.Text = "Delete Unit";
+            this.btDelete1.UseVisualStyleBackColor = true;
+            // 
+            // tbAgi1
+            // 
+            this.tbAgi1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAgi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAgi1.Location = new System.Drawing.Point(119, 72);
+            this.tbAgi1.Name = "tbAgi1";
+            this.tbAgi1.Size = new System.Drawing.Size(17, 23);
+            this.tbAgi1.TabIndex = 56;
+            this.tbAgi1.Text = "0";
+            // 
+            // tbKno1
+            // 
+            this.tbKno1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbKno1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbKno1.Location = new System.Drawing.Point(270, 72);
+            this.tbKno1.Name = "tbKno1";
+            this.tbKno1.Size = new System.Drawing.Size(17, 23);
+            this.tbKno1.TabIndex = 57;
+            this.tbKno1.Text = "0";
+            // 
+            // tbAni1
+            // 
+            this.tbAni1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAni1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAni1.Location = new System.Drawing.Point(119, 101);
+            this.tbAni1.Name = "tbAni1";
+            this.tbAni1.Size = new System.Drawing.Size(17, 23);
+            this.tbAni1.TabIndex = 57;
+            this.tbAni1.Text = "0";
+            // 
+            // tbMar1
+            // 
+            this.tbMar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMar1.Location = new System.Drawing.Point(270, 101);
+            this.tbMar1.Name = "tbMar1";
+            this.tbMar1.Size = new System.Drawing.Size(17, 23);
+            this.tbMar1.TabIndex = 57;
+            this.tbMar1.Text = "0";
+            // 
+            // tbAth1
+            // 
+            this.tbAth1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAth1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAth1.Location = new System.Drawing.Point(119, 130);
+            this.tbAth1.Name = "tbAth1";
+            this.tbAth1.Size = new System.Drawing.Size(17, 23);
+            this.tbAth1.TabIndex = 57;
+            this.tbAth1.Text = "0";
+            // 
+            // tbPer1
+            // 
+            this.tbPer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPer1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPer1.Location = new System.Drawing.Point(270, 130);
+            this.tbPer1.Name = "tbPer1";
+            this.tbPer1.Size = new System.Drawing.Size(17, 23);
+            this.tbPer1.TabIndex = 57;
+            this.tbPer1.Text = "0";
+            // 
+            // tbAwa1
+            // 
+            this.tbAwa1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAwa1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAwa1.Location = new System.Drawing.Point(119, 159);
+            this.tbAwa1.Name = "tbAwa1";
+            this.tbAwa1.Size = new System.Drawing.Size(17, 23);
+            this.tbAwa1.TabIndex = 57;
+            this.tbAwa1.Text = "0";
+            // 
+            // tbSta1
+            // 
+            this.tbSta1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSta1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSta1.Location = new System.Drawing.Point(270, 159);
+            this.tbSta1.Name = "tbSta1";
+            this.tbSta1.Size = new System.Drawing.Size(17, 23);
+            this.tbSta1.TabIndex = 57;
+            this.tbSta1.Text = "0";
+            // 
+            // tbCun1
+            // 
+            this.tbCun1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCun1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCun1.Location = new System.Drawing.Point(119, 188);
+            this.tbCun1.Name = "tbCun1";
+            this.tbCun1.Size = new System.Drawing.Size(17, 23);
+            this.tbCun1.TabIndex = 57;
+            this.tbCun1.Text = "0";
+            // 
+            // tbSte1
+            // 
+            this.tbSte1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSte1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSte1.Location = new System.Drawing.Point(270, 188);
+            this.tbSte1.Name = "tbSte1";
+            this.tbSte1.Size = new System.Drawing.Size(17, 23);
+            this.tbSte1.TabIndex = 57;
+            this.tbSte1.Text = "0";
+            // 
+            // tbEnd1
+            // 
+            this.tbEnd1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEnd1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEnd1.Location = new System.Drawing.Point(119, 217);
+            this.tbEnd1.Name = "tbEnd1";
+            this.tbEnd1.Size = new System.Drawing.Size(17, 23);
+            this.tbEnd1.TabIndex = 57;
+            this.tbEnd1.Text = "0";
+            // 
+            // tbSur1
+            // 
+            this.tbSur1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSur1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSur1.Location = new System.Drawing.Point(270, 217);
+            this.tbSur1.Name = "tbSur1";
+            this.tbSur1.Size = new System.Drawing.Size(17, 23);
+            this.tbSur1.TabIndex = 57;
+            this.tbSur1.Text = "0";
+            // 
+            // tbFig1
+            // 
+            this.tbFig1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFig1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFig1.Location = new System.Drawing.Point(119, 246);
+            this.tbFig1.Name = "tbFig1";
+            this.tbFig1.Size = new System.Drawing.Size(17, 23);
+            this.tbFig1.TabIndex = 57;
+            this.tbFig1.Text = "0";
+            // 
+            // tbThi1
+            // 
+            this.tbThi1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbThi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbThi1.Location = new System.Drawing.Point(270, 246);
+            this.tbThi1.Name = "tbThi1";
+            this.tbThi1.Size = new System.Drawing.Size(17, 23);
+            this.tbThi1.TabIndex = 57;
+            this.tbThi1.Text = "0";
+            // 
+            // tbHea1
+            // 
+            this.tbHea1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbHea1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHea1.Location = new System.Drawing.Point(119, 275);
+            this.tbHea1.Name = "tbHea1";
+            this.tbHea1.Size = new System.Drawing.Size(17, 23);
+            this.tbHea1.TabIndex = 57;
+            this.tbHea1.Text = "0";
+            // 
+            // tbWar1
+            // 
+            this.tbWar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWar1.Location = new System.Drawing.Point(270, 275);
+            this.tbWar1.Name = "tbWar1";
+            this.tbWar1.Size = new System.Drawing.Size(17, 23);
+            this.tbWar1.TabIndex = 57;
+            this.tbWar1.Text = "0";
+            // 
+            // tbLan1
+            // 
+            this.tbLan1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbLan1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLan1.Location = new System.Drawing.Point(119, 304);
+            this.tbLan1.Name = "tbLan1";
+            this.tbLan1.Size = new System.Drawing.Size(17, 23);
+            this.tbLan1.TabIndex = 57;
+            this.tbLan1.Text = "0";
+            // 
+            // tbWil1
+            // 
+            this.tbWil1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWil1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWil1.Location = new System.Drawing.Point(270, 304);
+            this.tbWil1.Name = "tbWil1";
+            this.tbWil1.Size = new System.Drawing.Size(17, 23);
+            this.tbWil1.TabIndex = 57;
+            this.tbWil1.Text = "0";
+            // 
+            // tsbNewUnit
+            // 
+            this.tsbNewUnit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbNewUnit.Image = ((System.Drawing.Image)(resources.GetObject("tsbNewUnit.Image")));
+            this.tsbNewUnit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNewUnit.Name = "tsbNewUnit";
+            this.tsbNewUnit.Size = new System.Drawing.Size(60, 22);
+            this.tsbNewUnit.Text = "New Unit";
+            // 
+            // tlpUnit2
+            // 
+            this.tlpUnit2.ColumnCount = 6;
+            this.tlpUnit2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpUnit2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpUnit2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpUnit2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpUnit2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpUnit2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tlpUnit2.Controls.Add(this.tbWil2, 3, 9);
+            this.tlpUnit2.Controls.Add(this.tbLan2, 1, 9);
+            this.tlpUnit2.Controls.Add(this.tbWar2, 3, 8);
+            this.tlpUnit2.Controls.Add(this.tbHea2, 1, 8);
+            this.tlpUnit2.Controls.Add(this.tbThi2, 3, 7);
+            this.tlpUnit2.Controls.Add(this.tbFig2, 1, 7);
+            this.tlpUnit2.Controls.Add(this.tbSur2, 3, 6);
+            this.tlpUnit2.Controls.Add(this.tbEnd2, 1, 6);
+            this.tlpUnit2.Controls.Add(this.tbSte2, 3, 5);
+            this.tlpUnit2.Controls.Add(this.tbCun2, 1, 5);
+            this.tlpUnit2.Controls.Add(this.tbSta2, 3, 4);
+            this.tlpUnit2.Controls.Add(this.tbAwa2, 1, 4);
+            this.tlpUnit2.Controls.Add(this.tbPer2, 3, 3);
+            this.tlpUnit2.Controls.Add(this.tbAth2, 1, 3);
+            this.tlpUnit2.Controls.Add(this.tbMar2, 3, 2);
+            this.tlpUnit2.Controls.Add(this.tbAni2, 1, 2);
+            this.tlpUnit2.Controls.Add(this.tbKno2, 3, 1);
+            this.tlpUnit2.Controls.Add(this.tbAgi2, 1, 1);
+            this.tlpUnit2.Controls.Add(this.btDelete2, 5, 9);
+            this.tlpUnit2.Controls.Add(this.tableLayoutPanel4, 0, 10);
+            this.tlpUnit2.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tlpUnit2.Controls.Add(this.label6, 4, 4);
+            this.tlpUnit2.Controls.Add(this.label7, 4, 3);
+            this.tlpUnit2.Controls.Add(this.label8, 4, 2);
+            this.tlpUnit2.Controls.Add(this.label9, 4, 1);
+            this.tlpUnit2.Controls.Add(this.lbWar2, 2, 8);
+            this.tlpUnit2.Controls.Add(this.rtbNotes2, 4, 6);
+            this.tlpUnit2.Controls.Add(this.lbThi2, 2, 7);
+            this.tlpUnit2.Controls.Add(this.lbSur2, 2, 6);
+            this.tlpUnit2.Controls.Add(this.lbSte2, 2, 5);
+            this.tlpUnit2.Controls.Add(this.lbSta2, 2, 4);
+            this.tlpUnit2.Controls.Add(this.label10, 4, 5);
+            this.tlpUnit2.Controls.Add(this.lbPer2, 2, 3);
+            this.tlpUnit2.Controls.Add(this.lbMar2, 2, 2);
+            this.tlpUnit2.Controls.Add(this.lbHea2, 0, 8);
+            this.tlpUnit2.Controls.Add(this.lbFig2, 0, 7);
+            this.tlpUnit2.Controls.Add(this.lbEnd2, 0, 6);
+            this.tlpUnit2.Controls.Add(this.lbCun2, 0, 5);
+            this.tlpUnit2.Controls.Add(this.lbAwa2, 0, 4);
+            this.tlpUnit2.Controls.Add(this.lbAth2, 0, 3);
+            this.tlpUnit2.Controls.Add(this.lbAni2, 0, 2);
+            this.tlpUnit2.Controls.Add(this.lbWil2, 2, 9);
+            this.tlpUnit2.Controls.Add(this.lbAgi2, 0, 1);
+            this.tlpUnit2.Controls.Add(this.nudDis2, 5, 2);
+            this.tlpUnit2.Controls.Add(this.lbMov2, 5, 4);
+            this.tlpUnit2.Controls.Add(this.lbDef2, 5, 3);
+            this.tlpUnit2.Controls.Add(this.nudHea2, 5, 1);
+            this.tlpUnit2.Controls.Add(this.lbLan2, 0, 9);
+            this.tlpUnit2.Controls.Add(this.lbKno2, 2, 1);
+            this.tlpUnit2.Location = new System.Drawing.Point(525, 28);
+            this.tlpUnit2.Name = "tlpUnit2";
+            this.tlpUnit2.RowCount = 11;
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpUnit2.Size = new System.Drawing.Size(507, 379);
+            this.tlpUnit2.TabIndex = 56;
+            // 
+            // tbWil2
+            // 
+            this.tbWil2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWil2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWil2.Location = new System.Drawing.Point(270, 304);
+            this.tbWil2.Name = "tbWil2";
+            this.tbWil2.Size = new System.Drawing.Size(17, 23);
+            this.tbWil2.TabIndex = 57;
+            this.tbWil2.Text = "0";
+            // 
+            // tbLan2
+            // 
+            this.tbLan2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbLan2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLan2.Location = new System.Drawing.Point(119, 304);
+            this.tbLan2.Name = "tbLan2";
+            this.tbLan2.Size = new System.Drawing.Size(17, 23);
+            this.tbLan2.TabIndex = 57;
+            this.tbLan2.Text = "0";
+            // 
+            // tbWar2
+            // 
+            this.tbWar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWar2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWar2.Location = new System.Drawing.Point(270, 275);
+            this.tbWar2.Name = "tbWar2";
+            this.tbWar2.Size = new System.Drawing.Size(17, 23);
+            this.tbWar2.TabIndex = 57;
+            this.tbWar2.Text = "0";
+            // 
+            // tbHea2
+            // 
+            this.tbHea2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbHea2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHea2.Location = new System.Drawing.Point(119, 275);
+            this.tbHea2.Name = "tbHea2";
+            this.tbHea2.Size = new System.Drawing.Size(17, 23);
+            this.tbHea2.TabIndex = 57;
+            this.tbHea2.Text = "0";
+            // 
+            // tbThi2
+            // 
+            this.tbThi2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbThi2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbThi2.Location = new System.Drawing.Point(270, 246);
+            this.tbThi2.Name = "tbThi2";
+            this.tbThi2.Size = new System.Drawing.Size(17, 23);
+            this.tbThi2.TabIndex = 57;
+            this.tbThi2.Text = "0";
+            // 
+            // tbFig2
+            // 
+            this.tbFig2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFig2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFig2.Location = new System.Drawing.Point(119, 246);
+            this.tbFig2.Name = "tbFig2";
+            this.tbFig2.Size = new System.Drawing.Size(17, 23);
+            this.tbFig2.TabIndex = 57;
+            this.tbFig2.Text = "0";
+            // 
+            // tbSur2
+            // 
+            this.tbSur2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSur2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSur2.Location = new System.Drawing.Point(270, 217);
+            this.tbSur2.Name = "tbSur2";
+            this.tbSur2.Size = new System.Drawing.Size(17, 23);
+            this.tbSur2.TabIndex = 57;
+            this.tbSur2.Text = "0";
+            // 
+            // tbEnd2
+            // 
+            this.tbEnd2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEnd2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEnd2.Location = new System.Drawing.Point(119, 217);
+            this.tbEnd2.Name = "tbEnd2";
+            this.tbEnd2.Size = new System.Drawing.Size(17, 23);
+            this.tbEnd2.TabIndex = 57;
+            this.tbEnd2.Text = "0";
+            // 
+            // tbSte2
+            // 
+            this.tbSte2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSte2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSte2.Location = new System.Drawing.Point(270, 188);
+            this.tbSte2.Name = "tbSte2";
+            this.tbSte2.Size = new System.Drawing.Size(17, 23);
+            this.tbSte2.TabIndex = 57;
+            this.tbSte2.Text = "0";
+            // 
+            // tbCun2
+            // 
+            this.tbCun2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCun2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCun2.Location = new System.Drawing.Point(119, 188);
+            this.tbCun2.Name = "tbCun2";
+            this.tbCun2.Size = new System.Drawing.Size(17, 23);
+            this.tbCun2.TabIndex = 57;
+            this.tbCun2.Text = "0";
+            // 
+            // tbSta2
+            // 
+            this.tbSta2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSta2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSta2.Location = new System.Drawing.Point(270, 159);
+            this.tbSta2.Name = "tbSta2";
+            this.tbSta2.Size = new System.Drawing.Size(17, 23);
+            this.tbSta2.TabIndex = 57;
+            this.tbSta2.Text = "0";
+            // 
+            // tbAwa2
+            // 
+            this.tbAwa2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAwa2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAwa2.Location = new System.Drawing.Point(119, 159);
+            this.tbAwa2.Name = "tbAwa2";
+            this.tbAwa2.Size = new System.Drawing.Size(17, 23);
+            this.tbAwa2.TabIndex = 57;
+            this.tbAwa2.Text = "0";
+            // 
+            // tbPer2
+            // 
+            this.tbPer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPer2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPer2.Location = new System.Drawing.Point(270, 130);
+            this.tbPer2.Name = "tbPer2";
+            this.tbPer2.Size = new System.Drawing.Size(17, 23);
+            this.tbPer2.TabIndex = 57;
+            this.tbPer2.Text = "0";
+            // 
+            // tbAth2
+            // 
+            this.tbAth2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAth2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAth2.Location = new System.Drawing.Point(119, 130);
+            this.tbAth2.Name = "tbAth2";
+            this.tbAth2.Size = new System.Drawing.Size(17, 23);
+            this.tbAth2.TabIndex = 57;
+            this.tbAth2.Text = "0";
+            // 
+            // tbMar2
+            // 
+            this.tbMar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMar2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMar2.Location = new System.Drawing.Point(270, 101);
+            this.tbMar2.Name = "tbMar2";
+            this.tbMar2.Size = new System.Drawing.Size(17, 23);
+            this.tbMar2.TabIndex = 57;
+            this.tbMar2.Text = "0";
+            // 
+            // tbAni2
+            // 
+            this.tbAni2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAni2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAni2.Location = new System.Drawing.Point(119, 101);
+            this.tbAni2.Name = "tbAni2";
+            this.tbAni2.Size = new System.Drawing.Size(17, 23);
+            this.tbAni2.TabIndex = 57;
+            this.tbAni2.Text = "0";
+            // 
+            // tbKno2
+            // 
+            this.tbKno2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbKno2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbKno2.Location = new System.Drawing.Point(270, 72);
+            this.tbKno2.Name = "tbKno2";
+            this.tbKno2.Size = new System.Drawing.Size(17, 23);
+            this.tbKno2.TabIndex = 57;
+            this.tbKno2.Text = "0";
+            // 
+            // tbAgi2
+            // 
+            this.tbAgi2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAgi2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAgi2.Location = new System.Drawing.Point(119, 72);
+            this.tbAgi2.Name = "tbAgi2";
+            this.tbAgi2.Size = new System.Drawing.Size(17, 23);
+            this.tbAgi2.TabIndex = 56;
+            this.tbAgi2.Text = "0";
+            // 
+            // btDelete2
+            // 
+            this.btDelete2.Location = new System.Drawing.Point(406, 304);
+            this.btDelete2.Name = "btDelete2";
+            this.btDelete2.Size = new System.Drawing.Size(75, 23);
+            this.btDelete2.TabIndex = 56;
+            this.btDelete2.Text = "Delete Unit";
+            this.btDelete2.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 6;
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 8;
+            this.tlpUnit2.SetColumnSpan(this.tableLayoutPanel4, 6);
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 10);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label49, 4, 4);
-            this.tableLayoutPanel4.Controls.Add(this.label50, 4, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label51, 4, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label52, 4, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label53, 2, 8);
-            this.tableLayoutPanel4.Controls.Add(this.rtbNotes2, 4, 6);
-            this.tableLayoutPanel4.Controls.Add(this.label54, 2, 7);
-            this.tableLayoutPanel4.Controls.Add(this.label55, 2, 6);
-            this.tableLayoutPanel4.Controls.Add(this.label56, 2, 5);
-            this.tableLayoutPanel4.Controls.Add(this.label57, 2, 4);
-            this.tableLayoutPanel4.Controls.Add(this.label58, 4, 5);
-            this.tableLayoutPanel4.Controls.Add(this.label59, 2, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label60, 2, 2);
-            this.tableLayoutPanel4.Controls.Add(this.lbHea2, 0, 8);
-            this.tableLayoutPanel4.Controls.Add(this.lbFig2, 0, 7);
-            this.tableLayoutPanel4.Controls.Add(this.lbEnd2, 0, 6);
-            this.tableLayoutPanel4.Controls.Add(this.lbCun2, 0, 5);
-            this.tableLayoutPanel4.Controls.Add(this.lbAwa2, 0, 4);
-            this.tableLayoutPanel4.Controls.Add(this.lbAth2, 0, 3);
-            this.tableLayoutPanel4.Controls.Add(this.lbAni2, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label68, 2, 9);
-            this.tableLayoutPanel4.Controls.Add(this.lbAgi2, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.nudDis2, 5, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label70, 5, 4);
-            this.tableLayoutPanel4.Controls.Add(this.label71, 5, 3);
-            this.tableLayoutPanel4.Controls.Add(this.lbAgiNum2, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.nudHea2, 5, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label73, 0, 9);
-            this.tableLayoutPanel4.Controls.Add(this.lbAniNum2, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.lbAthNum2, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.lbAwaNum2, 1, 4);
-            this.tableLayoutPanel4.Controls.Add(this.lbCunNum2, 1, 5);
-            this.tableLayoutPanel4.Controls.Add(this.lbEndNum2, 1, 6);
-            this.tableLayoutPanel4.Controls.Add(this.lbFigNum2, 1, 7);
-            this.tableLayoutPanel4.Controls.Add(this.lbHeaNum2, 1, 8);
-            this.tableLayoutPanel4.Controls.Add(this.label81, 1, 9);
-            this.tableLayoutPanel4.Controls.Add(this.label82, 3, 9);
-            this.tableLayoutPanel4.Controls.Add(this.label83, 3, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label84, 3, 8);
-            this.tableLayoutPanel4.Controls.Add(this.label85, 3, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label86, 3, 7);
-            this.tableLayoutPanel4.Controls.Add(this.label87, 3, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label88, 3, 6);
-            this.tableLayoutPanel4.Controls.Add(this.label89, 3, 4);
-            this.tableLayoutPanel4.Controls.Add(this.label90, 3, 5);
-            this.tableLayoutPanel4.Controls.Add(this.label91, 2, 1);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(525, 30);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.Controls.Add(this.lbMarDMGNum2, 6, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lbFigDMGNum2, 4, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lbBulNum2, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lbArmPenNum2, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lbArmRTGNum2, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.chbArmor2, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.chbFightDMG2, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.chbMarkDMG2, 7, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lbBul2, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lbArmPen2, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lbArmRTG2, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lbMarDMG2, 6, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lbFigDMG2, 4, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 333);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 11;
+            this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(507, 296);
-            this.tableLayoutPanel4.TabIndex = 52;
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(501, 40);
+            this.tableLayoutPanel4.TabIndex = 51;
+            // 
+            // lbMarDMGNum2
+            // 
+            this.lbMarDMGNum2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMarDMGNum2.AutoSize = true;
+            this.tableLayoutPanel4.SetColumnSpan(this.lbMarDMGNum2, 2);
+            this.lbMarDMGNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarDMGNum2.Location = new System.Drawing.Point(379, 20);
+            this.lbMarDMGNum2.Name = "lbMarDMGNum2";
+            this.lbMarDMGNum2.Size = new System.Drawing.Size(119, 17);
+            this.lbMarDMGNum2.TabIndex = 51;
+            this.lbMarDMGNum2.Text = "0";
+            this.lbMarDMGNum2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbFigDMGNum2
+            // 
+            this.lbFigDMGNum2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFigDMGNum2.AutoSize = true;
+            this.tableLayoutPanel4.SetColumnSpan(this.lbFigDMGNum2, 2);
+            this.lbFigDMGNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFigDMGNum2.Location = new System.Drawing.Point(266, 20);
+            this.lbFigDMGNum2.Name = "lbFigDMGNum2";
+            this.lbFigDMGNum2.Size = new System.Drawing.Size(107, 17);
+            this.lbFigDMGNum2.TabIndex = 51;
+            this.lbFigDMGNum2.Text = "0";
+            this.lbFigDMGNum2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbBulNum2
+            // 
+            this.lbBulNum2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBulNum2.AutoSize = true;
+            this.tableLayoutPanel4.SetColumnSpan(this.lbBulNum2, 2);
+            this.lbBulNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBulNum2.Location = new System.Drawing.Point(197, 20);
+            this.lbBulNum2.Name = "lbBulNum2";
+            this.lbBulNum2.Size = new System.Drawing.Size(63, 17);
+            this.lbBulNum2.TabIndex = 51;
+            this.lbBulNum2.Text = "0";
+            this.lbBulNum2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbArmPenNum2
+            // 
+            this.lbArmPenNum2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmPenNum2.AutoSize = true;
+            this.lbArmPenNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmPenNum2.Location = new System.Drawing.Point(103, 20);
+            this.lbArmPenNum2.Name = "lbArmPenNum2";
+            this.lbArmPenNum2.Size = new System.Drawing.Size(88, 17);
+            this.lbArmPenNum2.TabIndex = 51;
+            this.lbArmPenNum2.Text = "0";
+            this.lbArmPenNum2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbArmRTGNum2
+            // 
+            this.lbArmRTGNum2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmRTGNum2.AutoSize = true;
+            this.lbArmRTGNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmRTGNum2.Location = new System.Drawing.Point(3, 20);
+            this.lbArmRTGNum2.Name = "lbArmRTGNum2";
+            this.lbArmRTGNum2.Size = new System.Drawing.Size(94, 17);
+            this.lbArmRTGNum2.TabIndex = 51;
+            this.lbArmRTGNum2.Text = "0";
+            this.lbArmRTGNum2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // chbArmor2
+            // 
+            this.chbArmor2.AutoSize = true;
+            this.chbArmor2.Location = new System.Drawing.Point(245, 3);
+            this.chbArmor2.Name = "chbArmor2";
+            this.chbArmor2.Size = new System.Drawing.Size(15, 14);
+            this.chbArmor2.TabIndex = 53;
+            this.chbArmor2.UseVisualStyleBackColor = true;
+            // 
+            // chbFightDMG2
+            // 
+            this.chbFightDMG2.AutoSize = true;
+            this.chbFightDMG2.Location = new System.Drawing.Point(358, 3);
+            this.chbFightDMG2.Name = "chbFightDMG2";
+            this.chbFightDMG2.Size = new System.Drawing.Size(15, 14);
+            this.chbFightDMG2.TabIndex = 53;
+            this.chbFightDMG2.UseVisualStyleBackColor = true;
+            // 
+            // chbMarkDMG2
+            // 
+            this.chbMarkDMG2.AutoSize = true;
+            this.chbMarkDMG2.Location = new System.Drawing.Point(478, 3);
+            this.chbMarkDMG2.Name = "chbMarkDMG2";
+            this.chbMarkDMG2.Size = new System.Drawing.Size(15, 14);
+            this.chbMarkDMG2.TabIndex = 52;
+            this.chbMarkDMG2.UseVisualStyleBackColor = true;
+            // 
+            // lbBul2
+            // 
+            this.lbBul2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBul2.AutoSize = true;
+            this.lbBul2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBul2.Location = new System.Drawing.Point(197, 0);
+            this.lbBul2.Name = "lbBul2";
+            this.lbBul2.Size = new System.Drawing.Size(42, 17);
+            this.lbBul2.TabIndex = 52;
+            this.lbBul2.Text = "Bulk";
+            this.lbBul2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbArmPen2
+            // 
+            this.lbArmPen2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmPen2.AutoSize = true;
+            this.lbArmPen2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmPen2.Location = new System.Drawing.Point(103, 0);
+            this.lbArmPen2.Name = "lbArmPen2";
+            this.lbArmPen2.Size = new System.Drawing.Size(88, 17);
+            this.lbArmPen2.TabIndex = 52;
+            this.lbArmPen2.Text = "Armor Pen";
+            this.lbArmPen2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbArmRTG2
+            // 
+            this.lbArmRTG2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmRTG2.AutoSize = true;
+            this.lbArmRTG2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmRTG2.Location = new System.Drawing.Point(3, 0);
+            this.lbArmRTG2.Name = "lbArmRTG2";
+            this.lbArmRTG2.Size = new System.Drawing.Size(94, 17);
+            this.lbArmRTG2.TabIndex = 52;
+            this.lbArmRTG2.Text = "Armor RTG";
+            this.lbArmRTG2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbMarDMG2
+            // 
+            this.lbMarDMG2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMarDMG2.AutoSize = true;
+            this.lbMarDMG2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarDMG2.Location = new System.Drawing.Point(379, 0);
+            this.lbMarDMG2.Name = "lbMarDMG2";
+            this.lbMarDMG2.Size = new System.Drawing.Size(93, 17);
+            this.lbMarDMG2.TabIndex = 52;
+            this.lbMarDMG2.Text = "Marks DMG";
+            this.lbMarDMG2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbFigDMG2
+            // 
+            this.lbFigDMG2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFigDMG2.AutoSize = true;
+            this.lbFigDMG2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFigDMG2.Location = new System.Drawing.Point(266, 0);
+            this.lbFigDMG2.Name = "lbFigDMG2";
+            this.lbFigDMG2.Size = new System.Drawing.Size(86, 17);
+            this.lbFigDMG2.TabIndex = 52;
+            this.lbFigDMG2.Text = "Fight DMG";
+            this.lbFigDMG2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel5.ColumnCount = 8;
-            this.tableLayoutPanel4.SetColumnSpan(this.tableLayoutPanel5, 6);
+            this.tableLayoutPanel5.ColumnCount = 6;
+            this.tlpUnit2.SetColumnSpan(this.tableLayoutPanel5, 6);
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel5.Controls.Add(this.label31, 6, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label32, 4, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label33, 2, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label34, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label35, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.checkBox4, 3, 0);
-            this.tableLayoutPanel5.Controls.Add(this.checkBox5, 5, 0);
-            this.tableLayoutPanel5.Controls.Add(this.checkBox6, 7, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label36, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label37, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label38, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label39, 6, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label40, 4, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 252);
+            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lbCostNumber2, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.cbTraining2, 3, 1);
+            this.tableLayoutPanel5.Controls.Add(this.lbDiscipText2, 5, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label3, 4, 0);
+            this.tableLayoutPanel5.Controls.Add(this.tbName2, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label4, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lbTypeText2, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label5, 2, 1);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(501, 40);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(501, 63);
             this.tableLayoutPanel5.TabIndex = 51;
             // 
-            // label31
+            // label1
             // 
-            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label31.AutoSize = true;
-            this.tableLayoutPanel5.SetColumnSpan(this.label31, 2);
-            this.label31.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(379, 20);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(119, 17);
-            this.label31.TabIndex = 51;
-            this.label31.Text = "0";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Name:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label32
+            // label2
             // 
-            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label32.AutoSize = true;
-            this.tableLayoutPanel5.SetColumnSpan(this.label32, 2);
-            this.label32.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(266, 20);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(107, 17);
-            this.label32.TabIndex = 51;
-            this.label32.Text = "0";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label33
-            // 
-            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label33.AutoSize = true;
-            this.tableLayoutPanel5.SetColumnSpan(this.label33, 2);
-            this.label33.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(197, 20);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(63, 17);
-            this.label33.TabIndex = 51;
-            this.label33.Text = "0";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label34
-            // 
-            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(103, 20);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(88, 17);
-            this.label34.TabIndex = 51;
-            this.label34.Text = "0";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label35
-            // 
-            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(3, 20);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(94, 17);
-            this.label35.TabIndex = 51;
-            this.label35.Text = "0";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(245, 3);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 53;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(358, 3);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 53;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(478, 3);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 52;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // label36
-            // 
-            this.label36.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(197, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(42, 17);
-            this.label36.TabIndex = 52;
-            this.label36.Text = "Bulk";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label37
-            // 
-            this.label37.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(103, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(88, 17);
-            this.label37.TabIndex = 52;
-            this.label37.Text = "Armor Pen";
-            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label38
-            // 
-            this.label38.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(3, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(94, 17);
-            this.label38.TabIndex = 52;
-            this.label38.Text = "Armor RTG";
-            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label39
-            // 
-            this.label39.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(379, 0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(93, 17);
-            this.label39.TabIndex = 52;
-            this.label39.Text = "Marks DMG";
-            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label40
-            // 
-            this.label40.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(266, 0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(86, 17);
-            this.label40.TabIndex = 52;
-            this.label40.Text = "Fight DMG";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.ColumnCount = 6;
-            this.tableLayoutPanel4.SetColumnSpan(this.tableLayoutPanel6, 6);
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.Controls.Add(this.label41, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label42, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.lbCostNumber2, 3, 0);
-            this.tableLayoutPanel6.Controls.Add(this.cbTraining2, 3, 1);
-            this.tableLayoutPanel6.Controls.Add(this.lbDiscipText2, 5, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label45, 4, 0);
-            this.tableLayoutPanel6.Controls.Add(this.tbName2, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.label46, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lbTypeText2, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.label48, 2, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(501, 63);
-            this.tableLayoutPanel6.TabIndex = 51;
-            // 
-            // label41
-            // 
-            this.label41.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(3, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(56, 17);
-            this.label41.TabIndex = 31;
-            this.label41.Text = "Name:";
-            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label42
-            // 
-            this.label42.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(9, 29);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(50, 17);
-            this.label42.TabIndex = 35;
-            this.label42.Text = "Type:";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Type:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbCostNumber2
             // 
@@ -1638,7 +1908,7 @@
             // 
             this.cbTraining2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel6.SetColumnSpan(this.cbTraining2, 3);
+            this.tableLayoutPanel5.SetColumnSpan(this.cbTraining2, 3);
             this.cbTraining2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTraining2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTraining2.FormattingEnabled = true;
@@ -1664,17 +1934,17 @@
             this.lbDiscipText2.Text = "0";
             this.lbDiscipText2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label45
+            // label3
             // 
-            this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(351, 0);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(86, 17);
-            this.label45.TabIndex = 48;
-            this.label45.Text = "Discipline:";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(351, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 17);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Discipline:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tbName2
             // 
@@ -1686,17 +1956,17 @@
             this.tbName2.Size = new System.Drawing.Size(165, 23);
             this.tbName2.TabIndex = 32;
             // 
-            // label46
+            // label4
             // 
-            this.label46.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(268, 0);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(45, 17);
-            this.label46.TabIndex = 33;
-            this.label46.Text = "Cost:";
-            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(268, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 17);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Cost:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbTypeText2
             // 
@@ -1709,323 +1979,335 @@
             this.lbTypeText2.Text = "XXXXXXXXXXXXX";
             this.lbTypeText2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label48
+            // label5
             // 
-            this.label48.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(236, 29);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(77, 17);
-            this.label48.TabIndex = 37;
-            this.label48.Text = "Training:";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(236, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 17);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "Training:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label49
+            // label6
             // 
-            this.label49.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(308, 138);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(92, 17);
-            this.label49.TabIndex = 51;
-            this.label49.Text = "Movement:";
-            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(308, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 29);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Movement:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label50
+            // label7
             // 
-            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(329, 121);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(71, 17);
-            this.label50.TabIndex = 51;
-            this.label50.Text = "Defense:";
-            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(329, 127);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 29);
+            this.label7.TabIndex = 51;
+            this.label7.Text = "Defense:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label51
+            // label8
             // 
-            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(293, 95);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(107, 17);
-            this.label51.TabIndex = 51;
-            this.label51.Text = "Disorganized:";
-            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(293, 98);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 29);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "Disorganized:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label52
+            // label9
             // 
-            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(338, 69);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(62, 17);
-            this.label52.TabIndex = 51;
-            this.label52.Text = "Health:";
-            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(338, 69);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 29);
+            this.label9.TabIndex = 51;
+            this.label9.Text = "Health:";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label53
+            // lbWar2
             // 
-            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(191, 206);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(73, 17);
-            this.label53.TabIndex = 51;
-            this.label53.Text = "Warfare:";
-            this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbWar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWar2.AutoSize = true;
+            this.lbWar2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWar2.Location = new System.Drawing.Point(191, 272);
+            this.lbWar2.Name = "lbWar2";
+            this.lbWar2.Size = new System.Drawing.Size(73, 29);
+            this.lbWar2.TabIndex = 51;
+            this.lbWar2.Text = "Warfare:";
+            this.lbWar2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rtbNotes2
             // 
             this.rtbNotes2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.SetColumnSpan(this.rtbNotes2, 2);
-            this.rtbNotes2.Location = new System.Drawing.Point(292, 174);
+            this.tlpUnit2.SetColumnSpan(this.rtbNotes2, 2);
+            this.rtbNotes2.Location = new System.Drawing.Point(292, 216);
             this.rtbNotes2.Margin = new System.Windows.Forms.Padding(2);
             this.rtbNotes2.Name = "rtbNotes2";
-            this.tableLayoutPanel4.SetRowSpan(this.rtbNotes2, 3);
-            this.rtbNotes2.Size = new System.Drawing.Size(213, 56);
+            this.tlpUnit2.SetRowSpan(this.rtbNotes2, 3);
+            this.rtbNotes2.Size = new System.Drawing.Size(213, 83);
             this.rtbNotes2.TabIndex = 45;
             this.rtbNotes2.Text = "";
             // 
-            // label54
+            // lbThi2
             // 
-            this.label54.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(184, 189);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(80, 17);
-            this.label54.TabIndex = 51;
-            this.label54.Text = "Thievery:";
-            this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbThi2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbThi2.AutoSize = true;
+            this.lbThi2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThi2.Location = new System.Drawing.Point(184, 243);
+            this.lbThi2.Name = "lbThi2";
+            this.lbThi2.Size = new System.Drawing.Size(80, 29);
+            this.lbThi2.TabIndex = 51;
+            this.lbThi2.Text = "Thievery:";
+            this.lbThi2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label55
+            // lbSur2
             // 
-            this.label55.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.Location = new System.Drawing.Point(189, 172);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(75, 17);
-            this.label55.TabIndex = 51;
-            this.label55.Text = "Survival:";
-            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSur2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSur2.AutoSize = true;
+            this.lbSur2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSur2.Location = new System.Drawing.Point(189, 214);
+            this.lbSur2.Name = "lbSur2";
+            this.lbSur2.Size = new System.Drawing.Size(75, 29);
+            this.lbSur2.TabIndex = 51;
+            this.lbSur2.Text = "Survival:";
+            this.lbSur2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label56
+            // lbSte2
             // 
-            this.label56.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(199, 155);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(65, 17);
-            this.label56.TabIndex = 51;
-            this.label56.Text = "Stealth:";
-            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSte2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSte2.AutoSize = true;
+            this.lbSte2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSte2.Location = new System.Drawing.Point(199, 185);
+            this.lbSte2.Name = "lbSte2";
+            this.lbSte2.Size = new System.Drawing.Size(65, 29);
+            this.lbSte2.TabIndex = 51;
+            this.lbSte2.Text = "Stealth:";
+            this.lbSte2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label57
+            // lbSta2
             // 
-            this.label57.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(205, 138);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(59, 17);
-            this.label57.TabIndex = 51;
-            this.label57.Text = "Status:";
-            this.label57.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSta2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSta2.AutoSize = true;
+            this.lbSta2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSta2.Location = new System.Drawing.Point(205, 156);
+            this.lbSta2.Name = "lbSta2";
+            this.lbSta2.Size = new System.Drawing.Size(59, 29);
+            this.lbSta2.TabIndex = 51;
+            this.lbSta2.Text = "Status:";
+            this.lbSta2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label58
+            // label10
             // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.Location = new System.Drawing.Point(293, 155);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(55, 17);
-            this.label58.TabIndex = 39;
-            this.label58.Text = "Notes:";
-            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(293, 185);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(107, 29);
+            this.label10.TabIndex = 39;
+            this.label10.Text = "Notes:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // label59
+            // lbPer2
             // 
-            this.label59.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(171, 121);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(93, 17);
-            this.label59.TabIndex = 51;
-            this.label59.Text = "Persuasion:";
-            this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPer2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPer2.AutoSize = true;
+            this.lbPer2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPer2.Location = new System.Drawing.Point(171, 127);
+            this.lbPer2.Name = "lbPer2";
+            this.lbPer2.Size = new System.Drawing.Size(93, 29);
+            this.lbPer2.TabIndex = 51;
+            this.lbPer2.Text = "Persuasion:";
+            this.lbPer2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label60
+            // lbMar2
             // 
-            this.label60.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(142, 95);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(122, 17);
-            this.label60.TabIndex = 51;
-            this.label60.Text = "Marksmanship:";
-            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMar2.AutoSize = true;
+            this.lbMar2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMar2.Location = new System.Drawing.Point(142, 98);
+            this.lbMar2.Name = "lbMar2";
+            this.lbMar2.Size = new System.Drawing.Size(122, 29);
+            this.lbMar2.TabIndex = 51;
+            this.lbMar2.Text = "Marksmanship:";
+            this.lbMar2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbHea2
             // 
-            this.lbHea2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbHea2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHea2.AutoSize = true;
             this.lbHea2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHea2.Location = new System.Drawing.Point(44, 206);
+            this.lbHea2.Location = new System.Drawing.Point(44, 272);
             this.lbHea2.Name = "lbHea2";
-            this.lbHea2.Size = new System.Drawing.Size(69, 17);
+            this.lbHea2.Size = new System.Drawing.Size(69, 29);
             this.lbHea2.TabIndex = 51;
             this.lbHea2.Text = "Healing:";
             this.lbHea2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbFig2
             // 
-            this.lbFig2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFig2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFig2.AutoSize = true;
             this.lbFig2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFig2.Location = new System.Drawing.Point(39, 189);
+            this.lbFig2.Location = new System.Drawing.Point(39, 243);
             this.lbFig2.Name = "lbFig2";
-            this.lbFig2.Size = new System.Drawing.Size(74, 17);
+            this.lbFig2.Size = new System.Drawing.Size(74, 29);
             this.lbFig2.TabIndex = 51;
             this.lbFig2.Text = "Fighting:";
             this.lbFig2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbEnd2
             // 
-            this.lbEnd2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbEnd2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbEnd2.AutoSize = true;
             this.lbEnd2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEnd2.Location = new System.Drawing.Point(20, 172);
+            this.lbEnd2.Location = new System.Drawing.Point(20, 214);
             this.lbEnd2.Name = "lbEnd2";
-            this.lbEnd2.Size = new System.Drawing.Size(93, 17);
+            this.lbEnd2.Size = new System.Drawing.Size(93, 29);
             this.lbEnd2.TabIndex = 51;
             this.lbEnd2.Text = "Endurance:";
             this.lbEnd2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbCun2
             // 
-            this.lbCun2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCun2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCun2.AutoSize = true;
             this.lbCun2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCun2.Location = new System.Drawing.Point(37, 155);
+            this.lbCun2.Location = new System.Drawing.Point(37, 185);
             this.lbCun2.Name = "lbCun2";
-            this.lbCun2.Size = new System.Drawing.Size(76, 17);
+            this.lbCun2.Size = new System.Drawing.Size(76, 29);
             this.lbCun2.TabIndex = 51;
             this.lbCun2.Text = "Cunning:";
             this.lbCun2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAwa2
             // 
-            this.lbAwa2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAwa2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAwa2.AutoSize = true;
             this.lbAwa2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAwa2.Location = new System.Drawing.Point(22, 138);
+            this.lbAwa2.Location = new System.Drawing.Point(22, 156);
             this.lbAwa2.Name = "lbAwa2";
-            this.lbAwa2.Size = new System.Drawing.Size(91, 17);
+            this.lbAwa2.Size = new System.Drawing.Size(91, 29);
             this.lbAwa2.TabIndex = 51;
             this.lbAwa2.Text = "Awareness:";
             this.lbAwa2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAth2
             // 
-            this.lbAth2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAth2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAth2.AutoSize = true;
             this.lbAth2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAth2.Location = new System.Drawing.Point(34, 121);
+            this.lbAth2.Location = new System.Drawing.Point(34, 127);
             this.lbAth2.Name = "lbAth2";
-            this.lbAth2.Size = new System.Drawing.Size(79, 17);
+            this.lbAth2.Size = new System.Drawing.Size(79, 29);
             this.lbAth2.TabIndex = 51;
             this.lbAth2.Text = "Athletics:";
             this.lbAth2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAni2
             // 
-            this.lbAni2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAni2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAni2.AutoSize = true;
             this.lbAni2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAni2.Location = new System.Drawing.Point(3, 95);
+            this.lbAni2.Location = new System.Drawing.Point(3, 98);
             this.lbAni2.Name = "lbAni2";
-            this.lbAni2.Size = new System.Drawing.Size(110, 17);
+            this.lbAni2.Size = new System.Drawing.Size(110, 29);
             this.lbAni2.TabIndex = 51;
             this.lbAni2.Text = "Animal Hand:";
             this.lbAni2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label68
+            // lbWil2
             // 
-            this.label68.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(220, 232);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(44, 17);
-            this.label68.TabIndex = 12;
-            this.label68.Text = "Will:";
-            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbWil2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWil2.AutoSize = true;
+            this.lbWil2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWil2.Location = new System.Drawing.Point(220, 301);
+            this.lbWil2.Name = "lbWil2";
+            this.lbWil2.Size = new System.Drawing.Size(44, 29);
+            this.lbWil2.TabIndex = 12;
+            this.lbWil2.Text = "Will:";
+            this.lbWil2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAgi2
             // 
-            this.lbAgi2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAgi2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAgi2.AutoSize = true;
             this.lbAgi2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAgi2.Location = new System.Drawing.Point(51, 69);
             this.lbAgi2.Name = "lbAgi2";
-            this.lbAgi2.Size = new System.Drawing.Size(62, 17);
+            this.lbAgi2.Size = new System.Drawing.Size(62, 29);
             this.lbAgi2.TabIndex = 51;
-            this.lbAgi2.Text = "Agility:\r";
+            this.lbAgi2.Text = "Agility:";
             this.lbAgi2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nudDis2
             // 
             this.nudDis2.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudDis2.Location = new System.Drawing.Point(406, 98);
+            this.nudDis2.Location = new System.Drawing.Point(406, 101);
             this.nudDis2.Name = "nudDis2";
             this.nudDis2.Size = new System.Drawing.Size(41, 20);
             this.nudDis2.TabIndex = 47;
             // 
-            // label70
+            // lbMov2
             // 
-            this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.Location = new System.Drawing.Point(406, 138);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(26, 17);
-            this.label70.TabIndex = 42;
-            this.label70.Text = "00";
-            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMov2.AutoSize = true;
+            this.lbMov2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMov2.Location = new System.Drawing.Point(406, 156);
+            this.lbMov2.Name = "lbMov2";
+            this.lbMov2.Size = new System.Drawing.Size(26, 17);
+            this.lbMov2.TabIndex = 42;
+            this.lbMov2.Text = "00";
+            this.lbMov2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label71
+            // lbDef2
             // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label71.Location = new System.Drawing.Point(406, 121);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(17, 17);
-            this.label71.TabIndex = 43;
-            this.label71.Text = "0";
-            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbAgiNum2
-            // 
-            this.lbAgiNum2.AutoSize = true;
-            this.lbAgiNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAgiNum2.Location = new System.Drawing.Point(119, 69);
-            this.lbAgiNum2.Name = "lbAgiNum2";
-            this.lbAgiNum2.Size = new System.Drawing.Size(17, 17);
-            this.lbAgiNum2.TabIndex = 17;
-            this.lbAgiNum2.Text = "0";
-            this.lbAgiNum2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbDef2.AutoSize = true;
+            this.lbDef2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDef2.Location = new System.Drawing.Point(406, 127);
+            this.lbDef2.Name = "lbDef2";
+            this.lbDef2.Size = new System.Drawing.Size(17, 17);
+            this.lbDef2.TabIndex = 43;
+            this.lbDef2.Text = "0";
+            this.lbDef2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nudHea2
             // 
@@ -2035,534 +2317,558 @@
             this.nudHea2.Size = new System.Drawing.Size(41, 20);
             this.nudHea2.TabIndex = 46;
             // 
-            // label73
+            // lbLan2
             // 
-            this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label73.Location = new System.Drawing.Point(30, 232);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(83, 17);
-            this.label73.TabIndex = 11;
-            this.label73.Text = "Language:";
-            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbLan2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbLan2.AutoSize = true;
+            this.lbLan2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLan2.Location = new System.Drawing.Point(30, 301);
+            this.lbLan2.Name = "lbLan2";
+            this.lbLan2.Size = new System.Drawing.Size(83, 29);
+            this.lbLan2.TabIndex = 11;
+            this.lbLan2.Text = "Language:";
+            this.lbLan2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbAniNum2
+            // lbKno2
             // 
-            this.lbAniNum2.AutoSize = true;
-            this.lbAniNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAniNum2.Location = new System.Drawing.Point(119, 95);
-            this.lbAniNum2.Name = "lbAniNum2";
-            this.lbAniNum2.Size = new System.Drawing.Size(17, 17);
-            this.lbAniNum2.TabIndex = 16;
-            this.lbAniNum2.Text = "0";
-            this.lbAniNum2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbKno2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbKno2.AutoSize = true;
+            this.lbKno2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKno2.Location = new System.Drawing.Point(171, 69);
+            this.lbKno2.Name = "lbKno2";
+            this.lbKno2.Size = new System.Drawing.Size(93, 29);
+            this.lbKno2.TabIndex = 51;
+            this.lbKno2.Text = "Knowledge:";
+            this.lbKno2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbAthNum2
+            // tableLayoutPanel1
             // 
-            this.lbAthNum2.AutoSize = true;
-            this.lbAthNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAthNum2.Location = new System.Drawing.Point(119, 121);
-            this.lbAthNum2.Name = "lbAthNum2";
-            this.lbAthNum2.Size = new System.Drawing.Size(17, 17);
-            this.lbAthNum2.TabIndex = 15;
-            this.lbAthNum2.Text = "0";
-            this.lbAthNum2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tableLayoutPanel1.ColumnCount = 6;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.tbWil3, 3, 9);
+            this.tableLayoutPanel1.Controls.Add(this.tbLan3, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.tbWar3, 3, 8);
+            this.tableLayoutPanel1.Controls.Add(this.tbHea3, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.tbThi3, 3, 7);
+            this.tableLayoutPanel1.Controls.Add(this.tbFig3, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.tbSur3, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tbEnd3, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tbSte3, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tbCun3, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tbSta3, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tbAwa3, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tbPer3, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tbAth3, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tbMar3, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tbAni3, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tbKno3, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbAgi3, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btDelete3, 5, 9);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 0, 10);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label16, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label21, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label22, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label23, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lbWar3, 2, 8);
+            this.tableLayoutPanel1.Controls.Add(this.rtbNotes3, 4, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lbThi3, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.lbSur3, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lbSte3, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lbSta3, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label24, 4, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lbPer3, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lbMar3, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lbHea3, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.lbFig3, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.lbEnd3, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lbCun3, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lbAwa3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lbAth3, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lbAni3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lbWil3, 2, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lbAgi3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.nudDis3, 5, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lbMov3, 5, 4);
+            this.tableLayoutPanel1.Controls.Add(this.lbDef3, 5, 3);
+            this.tableLayoutPanel1.Controls.Add(this.nudHea3, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lbLan3, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lbKno3, 2, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 413);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 11;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(507, 379);
+            this.tableLayoutPanel1.TabIndex = 57;
             // 
-            // lbAwaNum2
+            // tbWil3
             // 
-            this.lbAwaNum2.AutoSize = true;
-            this.lbAwaNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAwaNum2.Location = new System.Drawing.Point(119, 138);
-            this.lbAwaNum2.Name = "lbAwaNum2";
-            this.lbAwaNum2.Size = new System.Drawing.Size(17, 17);
-            this.lbAwaNum2.TabIndex = 14;
-            this.lbAwaNum2.Text = "0";
-            this.lbAwaNum2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbWil3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWil3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWil3.Location = new System.Drawing.Point(270, 304);
+            this.tbWil3.Name = "tbWil3";
+            this.tbWil3.Size = new System.Drawing.Size(17, 23);
+            this.tbWil3.TabIndex = 57;
+            this.tbWil3.Text = "0";
             // 
-            // lbCunNum2
+            // tbLan3
             // 
-            this.lbCunNum2.AutoSize = true;
-            this.lbCunNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCunNum2.Location = new System.Drawing.Point(119, 155);
-            this.lbCunNum2.Name = "lbCunNum2";
-            this.lbCunNum2.Size = new System.Drawing.Size(17, 17);
-            this.lbCunNum2.TabIndex = 13;
-            this.lbCunNum2.Text = "0";
-            this.lbCunNum2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbLan3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbLan3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLan3.Location = new System.Drawing.Point(119, 304);
+            this.tbLan3.Name = "tbLan3";
+            this.tbLan3.Size = new System.Drawing.Size(17, 23);
+            this.tbLan3.TabIndex = 57;
+            this.tbLan3.Text = "0";
             // 
-            // lbEndNum2
+            // tbWar3
             // 
-            this.lbEndNum2.AutoSize = true;
-            this.lbEndNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndNum2.Location = new System.Drawing.Point(119, 172);
-            this.lbEndNum2.Name = "lbEndNum2";
-            this.lbEndNum2.Size = new System.Drawing.Size(17, 17);
-            this.lbEndNum2.TabIndex = 18;
-            this.lbEndNum2.Text = "0";
-            this.lbEndNum2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbWar3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWar3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWar3.Location = new System.Drawing.Point(270, 275);
+            this.tbWar3.Name = "tbWar3";
+            this.tbWar3.Size = new System.Drawing.Size(17, 23);
+            this.tbWar3.TabIndex = 57;
+            this.tbWar3.Text = "0";
             // 
-            // lbFigNum2
+            // tbHea3
             // 
-            this.lbFigNum2.AutoSize = true;
-            this.lbFigNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFigNum2.Location = new System.Drawing.Point(119, 189);
-            this.lbFigNum2.Name = "lbFigNum2";
-            this.lbFigNum2.Size = new System.Drawing.Size(17, 17);
-            this.lbFigNum2.TabIndex = 19;
-            this.lbFigNum2.Text = "0";
-            this.lbFigNum2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbHea3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbHea3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHea3.Location = new System.Drawing.Point(119, 275);
+            this.tbHea3.Name = "tbHea3";
+            this.tbHea3.Size = new System.Drawing.Size(17, 23);
+            this.tbHea3.TabIndex = 57;
+            this.tbHea3.Text = "0";
             // 
-            // lbHeaNum2
+            // tbThi3
             // 
-            this.lbHeaNum2.AutoSize = true;
-            this.lbHeaNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeaNum2.Location = new System.Drawing.Point(119, 206);
-            this.lbHeaNum2.Name = "lbHeaNum2";
-            this.lbHeaNum2.Size = new System.Drawing.Size(17, 17);
-            this.lbHeaNum2.TabIndex = 20;
-            this.lbHeaNum2.Text = "0";
-            this.lbHeaNum2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbThi3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbThi3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbThi3.Location = new System.Drawing.Point(270, 246);
+            this.tbThi3.Name = "tbThi3";
+            this.tbThi3.Size = new System.Drawing.Size(17, 23);
+            this.tbThi3.TabIndex = 57;
+            this.tbThi3.Text = "0";
             // 
-            // label81
+            // tbFig3
             // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label81.Location = new System.Drawing.Point(119, 232);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(17, 17);
-            this.label81.TabIndex = 21;
-            this.label81.Text = "0";
-            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbFig3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFig3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFig3.Location = new System.Drawing.Point(119, 246);
+            this.tbFig3.Name = "tbFig3";
+            this.tbFig3.Size = new System.Drawing.Size(17, 23);
+            this.tbFig3.TabIndex = 57;
+            this.tbFig3.Text = "0";
             // 
-            // label82
+            // tbSur3
             // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label82.Location = new System.Drawing.Point(270, 232);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(17, 17);
-            this.label82.TabIndex = 30;
-            this.label82.Text = "0";
-            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbSur3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSur3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSur3.Location = new System.Drawing.Point(270, 217);
+            this.tbSur3.Name = "tbSur3";
+            this.tbSur3.Size = new System.Drawing.Size(17, 23);
+            this.tbSur3.TabIndex = 57;
+            this.tbSur3.Text = "0";
             // 
-            // label83
+            // tbEnd3
             // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(270, 69);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(17, 17);
-            this.label83.TabIndex = 26;
-            this.label83.Text = "0";
-            this.label83.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbEnd3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEnd3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEnd3.Location = new System.Drawing.Point(119, 217);
+            this.tbEnd3.Name = "tbEnd3";
+            this.tbEnd3.Size = new System.Drawing.Size(17, 23);
+            this.tbEnd3.TabIndex = 57;
+            this.tbEnd3.Text = "0";
             // 
-            // label84
+            // tbSte3
             // 
-            this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.Location = new System.Drawing.Point(270, 206);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(17, 17);
-            this.label84.TabIndex = 29;
-            this.label84.Text = "0";
-            this.label84.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbSte3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSte3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSte3.Location = new System.Drawing.Point(270, 188);
+            this.tbSte3.Name = "tbSte3";
+            this.tbSte3.Size = new System.Drawing.Size(17, 23);
+            this.tbSte3.TabIndex = 57;
+            this.tbSte3.Text = "0";
             // 
-            // label85
+            // tbCun3
             // 
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.Location = new System.Drawing.Point(270, 95);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(17, 17);
-            this.label85.TabIndex = 25;
-            this.label85.Text = "0";
-            this.label85.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbCun3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCun3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCun3.Location = new System.Drawing.Point(119, 188);
+            this.tbCun3.Name = "tbCun3";
+            this.tbCun3.Size = new System.Drawing.Size(17, 23);
+            this.tbCun3.TabIndex = 57;
+            this.tbCun3.Text = "0";
             // 
-            // label86
+            // tbSta3
             // 
-            this.label86.AutoSize = true;
-            this.label86.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label86.Location = new System.Drawing.Point(270, 189);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(17, 17);
-            this.label86.TabIndex = 28;
-            this.label86.Text = "0";
-            this.label86.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbSta3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSta3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSta3.Location = new System.Drawing.Point(270, 159);
+            this.tbSta3.Name = "tbSta3";
+            this.tbSta3.Size = new System.Drawing.Size(17, 23);
+            this.tbSta3.TabIndex = 57;
+            this.tbSta3.Text = "0";
             // 
-            // label87
+            // tbAwa3
             // 
-            this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(270, 121);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(17, 17);
-            this.label87.TabIndex = 24;
-            this.label87.Text = "0";
-            this.label87.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbAwa3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAwa3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAwa3.Location = new System.Drawing.Point(119, 159);
+            this.tbAwa3.Name = "tbAwa3";
+            this.tbAwa3.Size = new System.Drawing.Size(17, 23);
+            this.tbAwa3.TabIndex = 57;
+            this.tbAwa3.Text = "0";
             // 
-            // label88
+            // tbPer3
             // 
-            this.label88.AutoSize = true;
-            this.label88.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label88.Location = new System.Drawing.Point(270, 172);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(17, 17);
-            this.label88.TabIndex = 27;
-            this.label88.Text = "0";
-            this.label88.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbPer3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPer3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPer3.Location = new System.Drawing.Point(270, 130);
+            this.tbPer3.Name = "tbPer3";
+            this.tbPer3.Size = new System.Drawing.Size(17, 23);
+            this.tbPer3.TabIndex = 57;
+            this.tbPer3.Text = "0";
             // 
-            // label89
+            // tbAth3
             // 
-            this.label89.AutoSize = true;
-            this.label89.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label89.Location = new System.Drawing.Point(270, 138);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(17, 17);
-            this.label89.TabIndex = 23;
-            this.label89.Text = "0";
-            this.label89.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbAth3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAth3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAth3.Location = new System.Drawing.Point(119, 130);
+            this.tbAth3.Name = "tbAth3";
+            this.tbAth3.Size = new System.Drawing.Size(17, 23);
+            this.tbAth3.TabIndex = 57;
+            this.tbAth3.Text = "0";
             // 
-            // label90
+            // tbMar3
             // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.Location = new System.Drawing.Point(270, 155);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(17, 17);
-            this.label90.TabIndex = 22;
-            this.label90.Text = "0";
-            this.label90.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbMar3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMar3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMar3.Location = new System.Drawing.Point(270, 101);
+            this.tbMar3.Name = "tbMar3";
+            this.tbMar3.Size = new System.Drawing.Size(17, 23);
+            this.tbMar3.TabIndex = 57;
+            this.tbMar3.Text = "0";
             // 
-            // label91
+            // tbAni3
             // 
-            this.label91.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.Location = new System.Drawing.Point(171, 69);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(93, 17);
-            this.label91.TabIndex = 51;
-            this.label91.Text = "Knowledge:";
-            this.label91.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbAni3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAni3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAni3.Location = new System.Drawing.Point(119, 101);
+            this.tbAni3.Name = "tbAni3";
+            this.tbAni3.Size = new System.Drawing.Size(17, 23);
+            this.tbAni3.TabIndex = 57;
+            this.tbAni3.Text = "0";
+            // 
+            // tbKno3
+            // 
+            this.tbKno3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbKno3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbKno3.Location = new System.Drawing.Point(270, 72);
+            this.tbKno3.Name = "tbKno3";
+            this.tbKno3.Size = new System.Drawing.Size(17, 23);
+            this.tbKno3.TabIndex = 57;
+            this.tbKno3.Text = "0";
+            // 
+            // tbAgi3
+            // 
+            this.tbAgi3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAgi3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAgi3.Location = new System.Drawing.Point(119, 72);
+            this.tbAgi3.Name = "tbAgi3";
+            this.tbAgi3.Size = new System.Drawing.Size(17, 23);
+            this.tbAgi3.TabIndex = 56;
+            this.tbAgi3.Text = "0";
+            // 
+            // btDelete3
+            // 
+            this.btDelete3.Location = new System.Drawing.Point(406, 304);
+            this.btDelete3.Name = "btDelete3";
+            this.btDelete3.Size = new System.Drawing.Size(75, 23);
+            this.btDelete3.TabIndex = 56;
+            this.btDelete3.Text = "Delete Unit";
+            this.btDelete3.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel6.ColumnCount = 8;
+            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel6, 6);
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.Controls.Add(this.lbMarDMGNum3, 6, 1);
+            this.tableLayoutPanel6.Controls.Add(this.lbFigDMGNum3, 4, 1);
+            this.tableLayoutPanel6.Controls.Add(this.lbBulNum3, 2, 1);
+            this.tableLayoutPanel6.Controls.Add(this.lbArmPenNum3, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.lbArmRTGNum3, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.chbArmor3, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.chbFightDMG3, 5, 0);
+            this.tableLayoutPanel6.Controls.Add(this.chbMarkDMG3, 7, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lbBul3, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lbArmPen3, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lbArmRTG3, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lbMarDMG3, 6, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lbFigDMG3, 4, 0);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 333);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(501, 40);
+            this.tableLayoutPanel6.TabIndex = 51;
+            // 
+            // lbMarDMGNum3
+            // 
+            this.lbMarDMGNum3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMarDMGNum3.AutoSize = true;
+            this.tableLayoutPanel6.SetColumnSpan(this.lbMarDMGNum3, 2);
+            this.lbMarDMGNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarDMGNum3.Location = new System.Drawing.Point(379, 20);
+            this.lbMarDMGNum3.Name = "lbMarDMGNum3";
+            this.lbMarDMGNum3.Size = new System.Drawing.Size(119, 17);
+            this.lbMarDMGNum3.TabIndex = 51;
+            this.lbMarDMGNum3.Text = "0";
+            this.lbMarDMGNum3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbFigDMGNum3
+            // 
+            this.lbFigDMGNum3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFigDMGNum3.AutoSize = true;
+            this.tableLayoutPanel6.SetColumnSpan(this.lbFigDMGNum3, 2);
+            this.lbFigDMGNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFigDMGNum3.Location = new System.Drawing.Point(266, 20);
+            this.lbFigDMGNum3.Name = "lbFigDMGNum3";
+            this.lbFigDMGNum3.Size = new System.Drawing.Size(107, 17);
+            this.lbFigDMGNum3.TabIndex = 51;
+            this.lbFigDMGNum3.Text = "0";
+            this.lbFigDMGNum3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbBulNum3
+            // 
+            this.lbBulNum3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBulNum3.AutoSize = true;
+            this.tableLayoutPanel6.SetColumnSpan(this.lbBulNum3, 2);
+            this.lbBulNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBulNum3.Location = new System.Drawing.Point(197, 20);
+            this.lbBulNum3.Name = "lbBulNum3";
+            this.lbBulNum3.Size = new System.Drawing.Size(63, 17);
+            this.lbBulNum3.TabIndex = 51;
+            this.lbBulNum3.Text = "0";
+            this.lbBulNum3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbArmPenNum3
+            // 
+            this.lbArmPenNum3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmPenNum3.AutoSize = true;
+            this.lbArmPenNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmPenNum3.Location = new System.Drawing.Point(103, 20);
+            this.lbArmPenNum3.Name = "lbArmPenNum3";
+            this.lbArmPenNum3.Size = new System.Drawing.Size(88, 17);
+            this.lbArmPenNum3.TabIndex = 51;
+            this.lbArmPenNum3.Text = "0";
+            this.lbArmPenNum3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbArmRTGNum3
+            // 
+            this.lbArmRTGNum3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmRTGNum3.AutoSize = true;
+            this.lbArmRTGNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmRTGNum3.Location = new System.Drawing.Point(3, 20);
+            this.lbArmRTGNum3.Name = "lbArmRTGNum3";
+            this.lbArmRTGNum3.Size = new System.Drawing.Size(94, 17);
+            this.lbArmRTGNum3.TabIndex = 51;
+            this.lbArmRTGNum3.Text = "0";
+            this.lbArmRTGNum3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // chbArmor3
+            // 
+            this.chbArmor3.AutoSize = true;
+            this.chbArmor3.Location = new System.Drawing.Point(245, 3);
+            this.chbArmor3.Name = "chbArmor3";
+            this.chbArmor3.Size = new System.Drawing.Size(15, 14);
+            this.chbArmor3.TabIndex = 53;
+            this.chbArmor3.UseVisualStyleBackColor = true;
+            // 
+            // chbFightDMG3
+            // 
+            this.chbFightDMG3.AutoSize = true;
+            this.chbFightDMG3.Location = new System.Drawing.Point(358, 3);
+            this.chbFightDMG3.Name = "chbFightDMG3";
+            this.chbFightDMG3.Size = new System.Drawing.Size(15, 14);
+            this.chbFightDMG3.TabIndex = 53;
+            this.chbFightDMG3.UseVisualStyleBackColor = true;
+            // 
+            // chbMarkDMG3
+            // 
+            this.chbMarkDMG3.AutoSize = true;
+            this.chbMarkDMG3.Location = new System.Drawing.Point(478, 3);
+            this.chbMarkDMG3.Name = "chbMarkDMG3";
+            this.chbMarkDMG3.Size = new System.Drawing.Size(15, 14);
+            this.chbMarkDMG3.TabIndex = 52;
+            this.chbMarkDMG3.UseVisualStyleBackColor = true;
+            // 
+            // lbBul3
+            // 
+            this.lbBul3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBul3.AutoSize = true;
+            this.lbBul3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBul3.Location = new System.Drawing.Point(197, 0);
+            this.lbBul3.Name = "lbBul3";
+            this.lbBul3.Size = new System.Drawing.Size(42, 17);
+            this.lbBul3.TabIndex = 52;
+            this.lbBul3.Text = "Bulk";
+            this.lbBul3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbArmPen3
+            // 
+            this.lbArmPen3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmPen3.AutoSize = true;
+            this.lbArmPen3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmPen3.Location = new System.Drawing.Point(103, 0);
+            this.lbArmPen3.Name = "lbArmPen3";
+            this.lbArmPen3.Size = new System.Drawing.Size(88, 17);
+            this.lbArmPen3.TabIndex = 52;
+            this.lbArmPen3.Text = "Armor Pen";
+            this.lbArmPen3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbArmRTG3
+            // 
+            this.lbArmRTG3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmRTG3.AutoSize = true;
+            this.lbArmRTG3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmRTG3.Location = new System.Drawing.Point(3, 0);
+            this.lbArmRTG3.Name = "lbArmRTG3";
+            this.lbArmRTG3.Size = new System.Drawing.Size(94, 17);
+            this.lbArmRTG3.TabIndex = 52;
+            this.lbArmRTG3.Text = "Armor RTG";
+            this.lbArmRTG3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbMarDMG3
+            // 
+            this.lbMarDMG3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMarDMG3.AutoSize = true;
+            this.lbMarDMG3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarDMG3.Location = new System.Drawing.Point(379, 0);
+            this.lbMarDMG3.Name = "lbMarDMG3";
+            this.lbMarDMG3.Size = new System.Drawing.Size(93, 17);
+            this.lbMarDMG3.TabIndex = 52;
+            this.lbMarDMG3.Text = "Marks DMG";
+            this.lbMarDMG3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbFigDMG3
+            // 
+            this.lbFigDMG3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFigDMG3.AutoSize = true;
+            this.lbFigDMG3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFigDMG3.Location = new System.Drawing.Point(266, 0);
+            this.lbFigDMG3.Name = "lbFigDMG3";
+            this.lbFigDMG3.Size = new System.Drawing.Size(86, 17);
+            this.lbFigDMG3.TabIndex = 52;
+            this.lbFigDMG3.Text = "Fight DMG";
+            this.lbFigDMG3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel7
             // 
+            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel7.ColumnCount = 6;
+            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel7, 6);
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 10);
-            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.label110, 4, 4);
-            this.tableLayoutPanel7.Controls.Add(this.label111, 4, 3);
-            this.tableLayoutPanel7.Controls.Add(this.label112, 4, 2);
-            this.tableLayoutPanel7.Controls.Add(this.label113, 4, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label114, 2, 8);
-            this.tableLayoutPanel7.Controls.Add(this.rtbNotes3, 4, 6);
-            this.tableLayoutPanel7.Controls.Add(this.label115, 2, 7);
-            this.tableLayoutPanel7.Controls.Add(this.label116, 2, 6);
-            this.tableLayoutPanel7.Controls.Add(this.label117, 2, 5);
-            this.tableLayoutPanel7.Controls.Add(this.label118, 2, 4);
-            this.tableLayoutPanel7.Controls.Add(this.label119, 4, 5);
-            this.tableLayoutPanel7.Controls.Add(this.label120, 2, 3);
-            this.tableLayoutPanel7.Controls.Add(this.label121, 2, 2);
-            this.tableLayoutPanel7.Controls.Add(this.lbHea3, 0, 8);
-            this.tableLayoutPanel7.Controls.Add(this.lbFig3, 0, 7);
-            this.tableLayoutPanel7.Controls.Add(this.lbEnd3, 0, 6);
-            this.tableLayoutPanel7.Controls.Add(this.lbCun3, 0, 5);
-            this.tableLayoutPanel7.Controls.Add(this.lbAwa3, 0, 4);
-            this.tableLayoutPanel7.Controls.Add(this.lbAth3, 0, 3);
-            this.tableLayoutPanel7.Controls.Add(this.lbAni3, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.label129, 2, 9);
-            this.tableLayoutPanel7.Controls.Add(this.lbAgi3, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.nudDis3, 5, 2);
-            this.tableLayoutPanel7.Controls.Add(this.label131, 5, 4);
-            this.tableLayoutPanel7.Controls.Add(this.label132, 5, 3);
-            this.tableLayoutPanel7.Controls.Add(this.lbAgiNum3, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.nudHea3, 5, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label134, 0, 9);
-            this.tableLayoutPanel7.Controls.Add(this.lbAniNum3, 1, 2);
-            this.tableLayoutPanel7.Controls.Add(this.lbAthNum3, 1, 3);
-            this.tableLayoutPanel7.Controls.Add(this.lbAwaNum3, 1, 4);
-            this.tableLayoutPanel7.Controls.Add(this.lbCunNum3, 1, 5);
-            this.tableLayoutPanel7.Controls.Add(this.lbEndNum3, 1, 6);
-            this.tableLayoutPanel7.Controls.Add(this.lbFigNum3, 1, 7);
-            this.tableLayoutPanel7.Controls.Add(this.lbHeaNum3, 1, 8);
-            this.tableLayoutPanel7.Controls.Add(this.label142, 1, 9);
-            this.tableLayoutPanel7.Controls.Add(this.label143, 3, 9);
-            this.tableLayoutPanel7.Controls.Add(this.label144, 3, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label145, 3, 8);
-            this.tableLayoutPanel7.Controls.Add(this.label146, 3, 2);
-            this.tableLayoutPanel7.Controls.Add(this.label147, 3, 7);
-            this.tableLayoutPanel7.Controls.Add(this.label148, 3, 3);
-            this.tableLayoutPanel7.Controls.Add(this.label149, 3, 6);
-            this.tableLayoutPanel7.Controls.Add(this.label150, 3, 4);
-            this.tableLayoutPanel7.Controls.Add(this.label151, 3, 5);
-            this.tableLayoutPanel7.Controls.Add(this.label152, 2, 1);
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(12, 332);
+            this.tableLayoutPanel7.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label12, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.lbCostNumber3, 3, 0);
+            this.tableLayoutPanel7.Controls.Add(this.cbTraining3, 3, 1);
+            this.tableLayoutPanel7.Controls.Add(this.lbDiscipText3, 5, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label13, 4, 0);
+            this.tableLayoutPanel7.Controls.Add(this.tbName3, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label14, 2, 0);
+            this.tableLayoutPanel7.Controls.Add(this.lbTypeText3, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(this.label15, 2, 1);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 11;
+            this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(507, 296);
-            this.tableLayoutPanel7.TabIndex = 53;
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(501, 63);
+            this.tableLayoutPanel7.TabIndex = 51;
             // 
-            // tableLayoutPanel8
+            // label11
             // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.ColumnCount = 8;
-            this.tableLayoutPanel7.SetColumnSpan(this.tableLayoutPanel8, 6);
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel8.Controls.Add(this.label92, 6, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label93, 4, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label94, 2, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label95, 1, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label96, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.checkBox7, 3, 0);
-            this.tableLayoutPanel8.Controls.Add(this.checkBox8, 5, 0);
-            this.tableLayoutPanel8.Controls.Add(this.checkBox9, 7, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label97, 2, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label98, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label99, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label100, 6, 0);
-            this.tableLayoutPanel8.Controls.Add(this.label101, 4, 0);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 252);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(501, 40);
-            this.tableLayoutPanel8.TabIndex = 51;
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 17);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Name:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label92
+            // label12
             // 
-            this.label92.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label92.AutoSize = true;
-            this.tableLayoutPanel8.SetColumnSpan(this.label92, 2);
-            this.label92.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(379, 20);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(119, 17);
-            this.label92.TabIndex = 51;
-            this.label92.Text = "0";
-            this.label92.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label93
-            // 
-            this.label93.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label93.AutoSize = true;
-            this.tableLayoutPanel8.SetColumnSpan(this.label93, 2);
-            this.label93.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(266, 20);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(107, 17);
-            this.label93.TabIndex = 51;
-            this.label93.Text = "0";
-            this.label93.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label94
-            // 
-            this.label94.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label94.AutoSize = true;
-            this.tableLayoutPanel8.SetColumnSpan(this.label94, 2);
-            this.label94.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label94.Location = new System.Drawing.Point(197, 20);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(63, 17);
-            this.label94.TabIndex = 51;
-            this.label94.Text = "0";
-            this.label94.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label95
-            // 
-            this.label95.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label95.AutoSize = true;
-            this.label95.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label95.Location = new System.Drawing.Point(103, 20);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(88, 17);
-            this.label95.TabIndex = 51;
-            this.label95.Text = "0";
-            this.label95.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label96
-            // 
-            this.label96.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label96.AutoSize = true;
-            this.label96.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.Location = new System.Drawing.Point(3, 20);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(94, 17);
-            this.label96.TabIndex = 51;
-            this.label96.Text = "0";
-            this.label96.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(245, 3);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 53;
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(358, 3);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(15, 14);
-            this.checkBox8.TabIndex = 53;
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(478, 3);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(15, 14);
-            this.checkBox9.TabIndex = 52;
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // label97
-            // 
-            this.label97.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label97.AutoSize = true;
-            this.label97.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label97.Location = new System.Drawing.Point(197, 0);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(42, 17);
-            this.label97.TabIndex = 52;
-            this.label97.Text = "Bulk";
-            this.label97.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label98
-            // 
-            this.label98.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label98.AutoSize = true;
-            this.label98.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label98.Location = new System.Drawing.Point(103, 0);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(88, 17);
-            this.label98.TabIndex = 52;
-            this.label98.Text = "Armor Pen";
-            this.label98.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label99
-            // 
-            this.label99.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label99.AutoSize = true;
-            this.label99.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label99.Location = new System.Drawing.Point(3, 0);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(94, 17);
-            this.label99.TabIndex = 52;
-            this.label99.Text = "Armor RTG";
-            this.label99.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label100
-            // 
-            this.label100.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label100.AutoSize = true;
-            this.label100.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label100.Location = new System.Drawing.Point(379, 0);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(93, 17);
-            this.label100.TabIndex = 52;
-            this.label100.Text = "Marks DMG";
-            this.label100.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label101
-            // 
-            this.label101.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label101.AutoSize = true;
-            this.label101.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label101.Location = new System.Drawing.Point(266, 0);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(86, 17);
-            this.label101.TabIndex = 52;
-            this.label101.Text = "Fight DMG";
-            this.label101.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tableLayoutPanel9
-            // 
-            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel9.ColumnCount = 6;
-            this.tableLayoutPanel7.SetColumnSpan(this.tableLayoutPanel9, 6);
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel9.Controls.Add(this.label102, 0, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label103, 0, 1);
-            this.tableLayoutPanel9.Controls.Add(this.lbCostNumber3, 3, 0);
-            this.tableLayoutPanel9.Controls.Add(this.cbTraining3, 3, 1);
-            this.tableLayoutPanel9.Controls.Add(this.lbDiscipText3, 5, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label106, 4, 0);
-            this.tableLayoutPanel9.Controls.Add(this.tbName3, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.label107, 2, 0);
-            this.tableLayoutPanel9.Controls.Add(this.lbTypeText3, 1, 1);
-            this.tableLayoutPanel9.Controls.Add(this.label109, 2, 1);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
-            this.tableLayoutPanel9.RowCount = 2;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(501, 63);
-            this.tableLayoutPanel9.TabIndex = 51;
-            // 
-            // label102
-            // 
-            this.label102.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label102.AutoSize = true;
-            this.label102.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label102.Location = new System.Drawing.Point(3, 0);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(56, 17);
-            this.label102.TabIndex = 31;
-            this.label102.Text = "Name:";
-            this.label102.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label103
-            // 
-            this.label103.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label103.AutoSize = true;
-            this.label103.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label103.Location = new System.Drawing.Point(9, 29);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(50, 17);
-            this.label103.TabIndex = 35;
-            this.label103.Text = "Type:";
-            this.label103.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(9, 29);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 17);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Type:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbCostNumber3
             // 
@@ -2579,7 +2885,7 @@
             // 
             this.cbTraining3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel9.SetColumnSpan(this.cbTraining3, 3);
+            this.tableLayoutPanel7.SetColumnSpan(this.cbTraining3, 3);
             this.cbTraining3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTraining3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTraining3.FormattingEnabled = true;
@@ -2605,17 +2911,17 @@
             this.lbDiscipText3.Text = "0";
             this.lbDiscipText3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label106
+            // label13
             // 
-            this.label106.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label106.AutoSize = true;
-            this.label106.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label106.Location = new System.Drawing.Point(351, 0);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(86, 17);
-            this.label106.TabIndex = 48;
-            this.label106.Text = "Discipline:";
-            this.label106.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(351, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(86, 17);
+            this.label13.TabIndex = 48;
+            this.label13.Text = "Discipline:";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tbName3
             // 
@@ -2627,17 +2933,17 @@
             this.tbName3.Size = new System.Drawing.Size(165, 23);
             this.tbName3.TabIndex = 32;
             // 
-            // label107
+            // label14
             // 
-            this.label107.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label107.AutoSize = true;
-            this.label107.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label107.Location = new System.Drawing.Point(268, 0);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(45, 17);
-            this.label107.TabIndex = 33;
-            this.label107.Text = "Cost:";
-            this.label107.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(268, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(45, 17);
+            this.label14.TabIndex = 33;
+            this.label14.Text = "Cost:";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbTypeText3
             // 
@@ -2650,323 +2956,335 @@
             this.lbTypeText3.Text = "XXXXXXXXXXXXX";
             this.lbTypeText3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label109
+            // label15
             // 
-            this.label109.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label109.AutoSize = true;
-            this.label109.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label109.Location = new System.Drawing.Point(236, 29);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(77, 17);
-            this.label109.TabIndex = 37;
-            this.label109.Text = "Training:";
-            this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(236, 29);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(77, 17);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Training:";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label110
+            // label16
             // 
-            this.label110.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label110.AutoSize = true;
-            this.label110.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label110.Location = new System.Drawing.Point(308, 138);
-            this.label110.Name = "label110";
-            this.label110.Size = new System.Drawing.Size(92, 17);
-            this.label110.TabIndex = 51;
-            this.label110.Text = "Movement:";
-            this.label110.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(308, 156);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(92, 29);
+            this.label16.TabIndex = 51;
+            this.label16.Text = "Movement:";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label111
+            // label21
             // 
-            this.label111.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label111.AutoSize = true;
-            this.label111.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label111.Location = new System.Drawing.Point(329, 121);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(71, 17);
-            this.label111.TabIndex = 51;
-            this.label111.Text = "Defense:";
-            this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(329, 127);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(71, 29);
+            this.label21.TabIndex = 51;
+            this.label21.Text = "Defense:";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label112
+            // label22
             // 
-            this.label112.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label112.AutoSize = true;
-            this.label112.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label112.Location = new System.Drawing.Point(293, 95);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(107, 17);
-            this.label112.TabIndex = 51;
-            this.label112.Text = "Disorganized:";
-            this.label112.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(293, 98);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(107, 29);
+            this.label22.TabIndex = 51;
+            this.label22.Text = "Disorganized:";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label113
+            // label23
             // 
-            this.label113.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label113.AutoSize = true;
-            this.label113.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label113.Location = new System.Drawing.Point(338, 69);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(62, 17);
-            this.label113.TabIndex = 51;
-            this.label113.Text = "Health:";
-            this.label113.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(338, 69);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(62, 29);
+            this.label23.TabIndex = 51;
+            this.label23.Text = "Health:";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label114
+            // lbWar3
             // 
-            this.label114.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label114.AutoSize = true;
-            this.label114.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label114.Location = new System.Drawing.Point(191, 206);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(73, 17);
-            this.label114.TabIndex = 51;
-            this.label114.Text = "Warfare:";
-            this.label114.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbWar3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWar3.AutoSize = true;
+            this.lbWar3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWar3.Location = new System.Drawing.Point(191, 272);
+            this.lbWar3.Name = "lbWar3";
+            this.lbWar3.Size = new System.Drawing.Size(73, 29);
+            this.lbWar3.TabIndex = 51;
+            this.lbWar3.Text = "Warfare:";
+            this.lbWar3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rtbNotes3
             // 
             this.rtbNotes3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel7.SetColumnSpan(this.rtbNotes3, 2);
-            this.rtbNotes3.Location = new System.Drawing.Point(292, 174);
+            this.tableLayoutPanel1.SetColumnSpan(this.rtbNotes3, 2);
+            this.rtbNotes3.Location = new System.Drawing.Point(292, 216);
             this.rtbNotes3.Margin = new System.Windows.Forms.Padding(2);
             this.rtbNotes3.Name = "rtbNotes3";
-            this.tableLayoutPanel7.SetRowSpan(this.rtbNotes3, 3);
-            this.rtbNotes3.Size = new System.Drawing.Size(213, 56);
+            this.tableLayoutPanel1.SetRowSpan(this.rtbNotes3, 3);
+            this.rtbNotes3.Size = new System.Drawing.Size(213, 83);
             this.rtbNotes3.TabIndex = 45;
             this.rtbNotes3.Text = "";
             // 
-            // label115
+            // lbThi3
             // 
-            this.label115.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label115.AutoSize = true;
-            this.label115.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label115.Location = new System.Drawing.Point(184, 189);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(80, 17);
-            this.label115.TabIndex = 51;
-            this.label115.Text = "Thievery:";
-            this.label115.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbThi3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbThi3.AutoSize = true;
+            this.lbThi3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThi3.Location = new System.Drawing.Point(184, 243);
+            this.lbThi3.Name = "lbThi3";
+            this.lbThi3.Size = new System.Drawing.Size(80, 29);
+            this.lbThi3.TabIndex = 51;
+            this.lbThi3.Text = "Thievery:";
+            this.lbThi3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label116
+            // lbSur3
             // 
-            this.label116.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label116.AutoSize = true;
-            this.label116.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label116.Location = new System.Drawing.Point(189, 172);
-            this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(75, 17);
-            this.label116.TabIndex = 51;
-            this.label116.Text = "Survival:";
-            this.label116.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSur3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSur3.AutoSize = true;
+            this.lbSur3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSur3.Location = new System.Drawing.Point(189, 214);
+            this.lbSur3.Name = "lbSur3";
+            this.lbSur3.Size = new System.Drawing.Size(75, 29);
+            this.lbSur3.TabIndex = 51;
+            this.lbSur3.Text = "Survival:";
+            this.lbSur3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label117
+            // lbSte3
             // 
-            this.label117.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label117.AutoSize = true;
-            this.label117.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label117.Location = new System.Drawing.Point(199, 155);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(65, 17);
-            this.label117.TabIndex = 51;
-            this.label117.Text = "Stealth:";
-            this.label117.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSte3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSte3.AutoSize = true;
+            this.lbSte3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSte3.Location = new System.Drawing.Point(199, 185);
+            this.lbSte3.Name = "lbSte3";
+            this.lbSte3.Size = new System.Drawing.Size(65, 29);
+            this.lbSte3.TabIndex = 51;
+            this.lbSte3.Text = "Stealth:";
+            this.lbSte3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label118
+            // lbSta3
             // 
-            this.label118.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label118.AutoSize = true;
-            this.label118.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label118.Location = new System.Drawing.Point(205, 138);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(59, 17);
-            this.label118.TabIndex = 51;
-            this.label118.Text = "Status:";
-            this.label118.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSta3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSta3.AutoSize = true;
+            this.lbSta3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSta3.Location = new System.Drawing.Point(205, 156);
+            this.lbSta3.Name = "lbSta3";
+            this.lbSta3.Size = new System.Drawing.Size(59, 29);
+            this.lbSta3.TabIndex = 51;
+            this.lbSta3.Text = "Status:";
+            this.lbSta3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label119
+            // label24
             // 
-            this.label119.AutoSize = true;
-            this.label119.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label119.Location = new System.Drawing.Point(293, 155);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(55, 17);
-            this.label119.TabIndex = 39;
-            this.label119.Text = "Notes:";
-            this.label119.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(293, 185);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(107, 29);
+            this.label24.TabIndex = 39;
+            this.label24.Text = "Notes:";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // label120
+            // lbPer3
             // 
-            this.label120.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label120.AutoSize = true;
-            this.label120.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label120.Location = new System.Drawing.Point(171, 121);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(93, 17);
-            this.label120.TabIndex = 51;
-            this.label120.Text = "Persuasion:";
-            this.label120.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPer3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPer3.AutoSize = true;
+            this.lbPer3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPer3.Location = new System.Drawing.Point(171, 127);
+            this.lbPer3.Name = "lbPer3";
+            this.lbPer3.Size = new System.Drawing.Size(93, 29);
+            this.lbPer3.TabIndex = 51;
+            this.lbPer3.Text = "Persuasion:";
+            this.lbPer3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label121
+            // lbMar3
             // 
-            this.label121.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label121.AutoSize = true;
-            this.label121.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label121.Location = new System.Drawing.Point(142, 95);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(122, 17);
-            this.label121.TabIndex = 51;
-            this.label121.Text = "Marksmanship:";
-            this.label121.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMar3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMar3.AutoSize = true;
+            this.lbMar3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMar3.Location = new System.Drawing.Point(142, 98);
+            this.lbMar3.Name = "lbMar3";
+            this.lbMar3.Size = new System.Drawing.Size(122, 29);
+            this.lbMar3.TabIndex = 51;
+            this.lbMar3.Text = "Marksmanship:";
+            this.lbMar3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbHea3
             // 
-            this.lbHea3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbHea3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHea3.AutoSize = true;
             this.lbHea3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHea3.Location = new System.Drawing.Point(44, 206);
+            this.lbHea3.Location = new System.Drawing.Point(44, 272);
             this.lbHea3.Name = "lbHea3";
-            this.lbHea3.Size = new System.Drawing.Size(69, 17);
+            this.lbHea3.Size = new System.Drawing.Size(69, 29);
             this.lbHea3.TabIndex = 51;
             this.lbHea3.Text = "Healing:";
             this.lbHea3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbFig3
             // 
-            this.lbFig3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFig3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFig3.AutoSize = true;
             this.lbFig3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFig3.Location = new System.Drawing.Point(39, 189);
+            this.lbFig3.Location = new System.Drawing.Point(39, 243);
             this.lbFig3.Name = "lbFig3";
-            this.lbFig3.Size = new System.Drawing.Size(74, 17);
+            this.lbFig3.Size = new System.Drawing.Size(74, 29);
             this.lbFig3.TabIndex = 51;
             this.lbFig3.Text = "Fighting:";
             this.lbFig3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbEnd3
             // 
-            this.lbEnd3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbEnd3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbEnd3.AutoSize = true;
             this.lbEnd3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEnd3.Location = new System.Drawing.Point(20, 172);
+            this.lbEnd3.Location = new System.Drawing.Point(20, 214);
             this.lbEnd3.Name = "lbEnd3";
-            this.lbEnd3.Size = new System.Drawing.Size(93, 17);
+            this.lbEnd3.Size = new System.Drawing.Size(93, 29);
             this.lbEnd3.TabIndex = 51;
             this.lbEnd3.Text = "Endurance:";
             this.lbEnd3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbCun3
             // 
-            this.lbCun3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCun3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCun3.AutoSize = true;
             this.lbCun3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCun3.Location = new System.Drawing.Point(37, 155);
+            this.lbCun3.Location = new System.Drawing.Point(37, 185);
             this.lbCun3.Name = "lbCun3";
-            this.lbCun3.Size = new System.Drawing.Size(76, 17);
+            this.lbCun3.Size = new System.Drawing.Size(76, 29);
             this.lbCun3.TabIndex = 51;
             this.lbCun3.Text = "Cunning:";
             this.lbCun3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAwa3
             // 
-            this.lbAwa3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAwa3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAwa3.AutoSize = true;
             this.lbAwa3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAwa3.Location = new System.Drawing.Point(22, 138);
+            this.lbAwa3.Location = new System.Drawing.Point(22, 156);
             this.lbAwa3.Name = "lbAwa3";
-            this.lbAwa3.Size = new System.Drawing.Size(91, 17);
+            this.lbAwa3.Size = new System.Drawing.Size(91, 29);
             this.lbAwa3.TabIndex = 51;
             this.lbAwa3.Text = "Awareness:";
             this.lbAwa3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAth3
             // 
-            this.lbAth3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAth3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAth3.AutoSize = true;
             this.lbAth3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAth3.Location = new System.Drawing.Point(34, 121);
+            this.lbAth3.Location = new System.Drawing.Point(34, 127);
             this.lbAth3.Name = "lbAth3";
-            this.lbAth3.Size = new System.Drawing.Size(79, 17);
+            this.lbAth3.Size = new System.Drawing.Size(79, 29);
             this.lbAth3.TabIndex = 51;
             this.lbAth3.Text = "Athletics:";
             this.lbAth3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAni3
             // 
-            this.lbAni3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAni3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAni3.AutoSize = true;
             this.lbAni3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAni3.Location = new System.Drawing.Point(3, 95);
+            this.lbAni3.Location = new System.Drawing.Point(3, 98);
             this.lbAni3.Name = "lbAni3";
-            this.lbAni3.Size = new System.Drawing.Size(110, 17);
+            this.lbAni3.Size = new System.Drawing.Size(110, 29);
             this.lbAni3.TabIndex = 51;
             this.lbAni3.Text = "Animal Hand:";
             this.lbAni3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label129
+            // lbWil3
             // 
-            this.label129.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label129.AutoSize = true;
-            this.label129.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label129.Location = new System.Drawing.Point(220, 232);
-            this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(44, 17);
-            this.label129.TabIndex = 12;
-            this.label129.Text = "Will:";
-            this.label129.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbWil3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWil3.AutoSize = true;
+            this.lbWil3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWil3.Location = new System.Drawing.Point(220, 301);
+            this.lbWil3.Name = "lbWil3";
+            this.lbWil3.Size = new System.Drawing.Size(44, 29);
+            this.lbWil3.TabIndex = 12;
+            this.lbWil3.Text = "Will:";
+            this.lbWil3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAgi3
             // 
-            this.lbAgi3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAgi3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAgi3.AutoSize = true;
             this.lbAgi3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAgi3.Location = new System.Drawing.Point(51, 69);
             this.lbAgi3.Name = "lbAgi3";
-            this.lbAgi3.Size = new System.Drawing.Size(62, 17);
+            this.lbAgi3.Size = new System.Drawing.Size(62, 29);
             this.lbAgi3.TabIndex = 51;
-            this.lbAgi3.Text = "Agility:\r";
+            this.lbAgi3.Text = "Agility:";
             this.lbAgi3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nudDis3
             // 
             this.nudDis3.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudDis3.Location = new System.Drawing.Point(406, 98);
+            this.nudDis3.Location = new System.Drawing.Point(406, 101);
             this.nudDis3.Name = "nudDis3";
             this.nudDis3.Size = new System.Drawing.Size(41, 20);
             this.nudDis3.TabIndex = 47;
             // 
-            // label131
+            // lbMov3
             // 
-            this.label131.AutoSize = true;
-            this.label131.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label131.Location = new System.Drawing.Point(406, 138);
-            this.label131.Name = "label131";
-            this.label131.Size = new System.Drawing.Size(26, 17);
-            this.label131.TabIndex = 42;
-            this.label131.Text = "00";
-            this.label131.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMov3.AutoSize = true;
+            this.lbMov3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMov3.Location = new System.Drawing.Point(406, 156);
+            this.lbMov3.Name = "lbMov3";
+            this.lbMov3.Size = new System.Drawing.Size(26, 17);
+            this.lbMov3.TabIndex = 42;
+            this.lbMov3.Text = "00";
+            this.lbMov3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label132
+            // lbDef3
             // 
-            this.label132.AutoSize = true;
-            this.label132.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label132.Location = new System.Drawing.Point(406, 121);
-            this.label132.Name = "label132";
-            this.label132.Size = new System.Drawing.Size(17, 17);
-            this.label132.TabIndex = 43;
-            this.label132.Text = "0";
-            this.label132.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbAgiNum3
-            // 
-            this.lbAgiNum3.AutoSize = true;
-            this.lbAgiNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAgiNum3.Location = new System.Drawing.Point(119, 69);
-            this.lbAgiNum3.Name = "lbAgiNum3";
-            this.lbAgiNum3.Size = new System.Drawing.Size(17, 17);
-            this.lbAgiNum3.TabIndex = 17;
-            this.lbAgiNum3.Text = "0";
-            this.lbAgiNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbDef3.AutoSize = true;
+            this.lbDef3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDef3.Location = new System.Drawing.Point(406, 127);
+            this.lbDef3.Name = "lbDef3";
+            this.lbDef3.Size = new System.Drawing.Size(17, 17);
+            this.lbDef3.TabIndex = 43;
+            this.lbDef3.Text = "0";
+            this.lbDef3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nudHea3
             // 
@@ -2976,534 +3294,558 @@
             this.nudHea3.Size = new System.Drawing.Size(41, 20);
             this.nudHea3.TabIndex = 46;
             // 
-            // label134
+            // lbLan3
             // 
-            this.label134.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label134.AutoSize = true;
-            this.label134.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label134.Location = new System.Drawing.Point(30, 232);
-            this.label134.Name = "label134";
-            this.label134.Size = new System.Drawing.Size(83, 17);
-            this.label134.TabIndex = 11;
-            this.label134.Text = "Language:";
-            this.label134.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbLan3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbLan3.AutoSize = true;
+            this.lbLan3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLan3.Location = new System.Drawing.Point(30, 301);
+            this.lbLan3.Name = "lbLan3";
+            this.lbLan3.Size = new System.Drawing.Size(83, 29);
+            this.lbLan3.TabIndex = 11;
+            this.lbLan3.Text = "Language:";
+            this.lbLan3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbAniNum3
+            // lbKno3
             // 
-            this.lbAniNum3.AutoSize = true;
-            this.lbAniNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAniNum3.Location = new System.Drawing.Point(119, 95);
-            this.lbAniNum3.Name = "lbAniNum3";
-            this.lbAniNum3.Size = new System.Drawing.Size(17, 17);
-            this.lbAniNum3.TabIndex = 16;
-            this.lbAniNum3.Text = "0";
-            this.lbAniNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbKno3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbKno3.AutoSize = true;
+            this.lbKno3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKno3.Location = new System.Drawing.Point(171, 69);
+            this.lbKno3.Name = "lbKno3";
+            this.lbKno3.Size = new System.Drawing.Size(93, 29);
+            this.lbKno3.TabIndex = 51;
+            this.lbKno3.Text = "Knowledge:";
+            this.lbKno3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbAthNum3
+            // tableLayoutPanel8
             // 
-            this.lbAthNum3.AutoSize = true;
-            this.lbAthNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAthNum3.Location = new System.Drawing.Point(119, 121);
-            this.lbAthNum3.Name = "lbAthNum3";
-            this.lbAthNum3.Size = new System.Drawing.Size(17, 17);
-            this.lbAthNum3.TabIndex = 15;
-            this.lbAthNum3.Text = "0";
-            this.lbAthNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tableLayoutPanel8.ColumnCount = 6;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel8.Controls.Add(this.tbWil4, 3, 9);
+            this.tableLayoutPanel8.Controls.Add(this.tbLan4, 1, 9);
+            this.tableLayoutPanel8.Controls.Add(this.tbWar4, 3, 8);
+            this.tableLayoutPanel8.Controls.Add(this.tbHea4, 1, 8);
+            this.tableLayoutPanel8.Controls.Add(this.tbThi4, 3, 7);
+            this.tableLayoutPanel8.Controls.Add(this.tbFig4, 1, 7);
+            this.tableLayoutPanel8.Controls.Add(this.tbSur4, 3, 6);
+            this.tableLayoutPanel8.Controls.Add(this.tbEnd4, 1, 6);
+            this.tableLayoutPanel8.Controls.Add(this.tbSte4, 3, 5);
+            this.tableLayoutPanel8.Controls.Add(this.tbCun4, 1, 5);
+            this.tableLayoutPanel8.Controls.Add(this.tbSta4, 3, 4);
+            this.tableLayoutPanel8.Controls.Add(this.tbAwa4, 1, 4);
+            this.tableLayoutPanel8.Controls.Add(this.tbPer4, 3, 3);
+            this.tableLayoutPanel8.Controls.Add(this.tbAth4, 1, 3);
+            this.tableLayoutPanel8.Controls.Add(this.tbMar4, 3, 2);
+            this.tableLayoutPanel8.Controls.Add(this.tbAni4, 1, 2);
+            this.tableLayoutPanel8.Controls.Add(this.tbKno4, 3, 1);
+            this.tableLayoutPanel8.Controls.Add(this.tbAgi4, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.btDelete4, 5, 9);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 0, 10);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel10, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label30, 4, 4);
+            this.tableLayoutPanel8.Controls.Add(this.label31, 4, 3);
+            this.tableLayoutPanel8.Controls.Add(this.label32, 4, 2);
+            this.tableLayoutPanel8.Controls.Add(this.label33, 4, 1);
+            this.tableLayoutPanel8.Controls.Add(this.lbWar4, 2, 8);
+            this.tableLayoutPanel8.Controls.Add(this.rtbNotes4, 4, 6);
+            this.tableLayoutPanel8.Controls.Add(this.lbThi4, 2, 7);
+            this.tableLayoutPanel8.Controls.Add(this.lbSur4, 2, 6);
+            this.tableLayoutPanel8.Controls.Add(this.lbSte4, 2, 5);
+            this.tableLayoutPanel8.Controls.Add(this.lbSta4, 2, 4);
+            this.tableLayoutPanel8.Controls.Add(this.label34, 4, 5);
+            this.tableLayoutPanel8.Controls.Add(this.lbPer4, 2, 3);
+            this.tableLayoutPanel8.Controls.Add(this.lbMar4, 2, 2);
+            this.tableLayoutPanel8.Controls.Add(this.lbHea4, 0, 8);
+            this.tableLayoutPanel8.Controls.Add(this.lbFig4, 0, 7);
+            this.tableLayoutPanel8.Controls.Add(this.lbEnd4, 0, 6);
+            this.tableLayoutPanel8.Controls.Add(this.lbCun4, 0, 5);
+            this.tableLayoutPanel8.Controls.Add(this.lbAwa4, 0, 4);
+            this.tableLayoutPanel8.Controls.Add(this.lbAth4, 0, 3);
+            this.tableLayoutPanel8.Controls.Add(this.lbAni4, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.lbWil4, 2, 9);
+            this.tableLayoutPanel8.Controls.Add(this.lbAgi4, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.nudDis4, 5, 2);
+            this.tableLayoutPanel8.Controls.Add(this.lbMov4, 5, 4);
+            this.tableLayoutPanel8.Controls.Add(this.lbDef4, 5, 3);
+            this.tableLayoutPanel8.Controls.Add(this.nudHea4, 5, 1);
+            this.tableLayoutPanel8.Controls.Add(this.lbLan4, 0, 9);
+            this.tableLayoutPanel8.Controls.Add(this.lbKno4, 2, 1);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(525, 413);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 11;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(507, 379);
+            this.tableLayoutPanel8.TabIndex = 58;
             // 
-            // lbAwaNum3
+            // tbWil4
             // 
-            this.lbAwaNum3.AutoSize = true;
-            this.lbAwaNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAwaNum3.Location = new System.Drawing.Point(119, 138);
-            this.lbAwaNum3.Name = "lbAwaNum3";
-            this.lbAwaNum3.Size = new System.Drawing.Size(17, 17);
-            this.lbAwaNum3.TabIndex = 14;
-            this.lbAwaNum3.Text = "0";
-            this.lbAwaNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbWil4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWil4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWil4.Location = new System.Drawing.Point(270, 304);
+            this.tbWil4.Name = "tbWil4";
+            this.tbWil4.Size = new System.Drawing.Size(17, 23);
+            this.tbWil4.TabIndex = 57;
+            this.tbWil4.Text = "0";
             // 
-            // lbCunNum3
+            // tbLan4
             // 
-            this.lbCunNum3.AutoSize = true;
-            this.lbCunNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCunNum3.Location = new System.Drawing.Point(119, 155);
-            this.lbCunNum3.Name = "lbCunNum3";
-            this.lbCunNum3.Size = new System.Drawing.Size(17, 17);
-            this.lbCunNum3.TabIndex = 13;
-            this.lbCunNum3.Text = "0";
-            this.lbCunNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbLan4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbLan4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLan4.Location = new System.Drawing.Point(119, 304);
+            this.tbLan4.Name = "tbLan4";
+            this.tbLan4.Size = new System.Drawing.Size(17, 23);
+            this.tbLan4.TabIndex = 57;
+            this.tbLan4.Text = "0";
             // 
-            // lbEndNum3
+            // tbWar4
             // 
-            this.lbEndNum3.AutoSize = true;
-            this.lbEndNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndNum3.Location = new System.Drawing.Point(119, 172);
-            this.lbEndNum3.Name = "lbEndNum3";
-            this.lbEndNum3.Size = new System.Drawing.Size(17, 17);
-            this.lbEndNum3.TabIndex = 18;
-            this.lbEndNum3.Text = "0";
-            this.lbEndNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbWar4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWar4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWar4.Location = new System.Drawing.Point(270, 275);
+            this.tbWar4.Name = "tbWar4";
+            this.tbWar4.Size = new System.Drawing.Size(17, 23);
+            this.tbWar4.TabIndex = 57;
+            this.tbWar4.Text = "0";
             // 
-            // lbFigNum3
+            // tbHea4
             // 
-            this.lbFigNum3.AutoSize = true;
-            this.lbFigNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFigNum3.Location = new System.Drawing.Point(119, 189);
-            this.lbFigNum3.Name = "lbFigNum3";
-            this.lbFigNum3.Size = new System.Drawing.Size(17, 17);
-            this.lbFigNum3.TabIndex = 19;
-            this.lbFigNum3.Text = "0";
-            this.lbFigNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbHea4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbHea4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHea4.Location = new System.Drawing.Point(119, 275);
+            this.tbHea4.Name = "tbHea4";
+            this.tbHea4.Size = new System.Drawing.Size(17, 23);
+            this.tbHea4.TabIndex = 57;
+            this.tbHea4.Text = "0";
             // 
-            // lbHeaNum3
+            // tbThi4
             // 
-            this.lbHeaNum3.AutoSize = true;
-            this.lbHeaNum3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeaNum3.Location = new System.Drawing.Point(119, 206);
-            this.lbHeaNum3.Name = "lbHeaNum3";
-            this.lbHeaNum3.Size = new System.Drawing.Size(17, 17);
-            this.lbHeaNum3.TabIndex = 20;
-            this.lbHeaNum3.Text = "0";
-            this.lbHeaNum3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbThi4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbThi4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbThi4.Location = new System.Drawing.Point(270, 246);
+            this.tbThi4.Name = "tbThi4";
+            this.tbThi4.Size = new System.Drawing.Size(17, 23);
+            this.tbThi4.TabIndex = 57;
+            this.tbThi4.Text = "0";
             // 
-            // label142
+            // tbFig4
             // 
-            this.label142.AutoSize = true;
-            this.label142.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label142.Location = new System.Drawing.Point(119, 232);
-            this.label142.Name = "label142";
-            this.label142.Size = new System.Drawing.Size(17, 17);
-            this.label142.TabIndex = 21;
-            this.label142.Text = "0";
-            this.label142.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbFig4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFig4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFig4.Location = new System.Drawing.Point(119, 246);
+            this.tbFig4.Name = "tbFig4";
+            this.tbFig4.Size = new System.Drawing.Size(17, 23);
+            this.tbFig4.TabIndex = 57;
+            this.tbFig4.Text = "0";
             // 
-            // label143
+            // tbSur4
             // 
-            this.label143.AutoSize = true;
-            this.label143.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label143.Location = new System.Drawing.Point(270, 232);
-            this.label143.Name = "label143";
-            this.label143.Size = new System.Drawing.Size(17, 17);
-            this.label143.TabIndex = 30;
-            this.label143.Text = "0";
-            this.label143.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbSur4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSur4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSur4.Location = new System.Drawing.Point(270, 217);
+            this.tbSur4.Name = "tbSur4";
+            this.tbSur4.Size = new System.Drawing.Size(17, 23);
+            this.tbSur4.TabIndex = 57;
+            this.tbSur4.Text = "0";
             // 
-            // label144
+            // tbEnd4
             // 
-            this.label144.AutoSize = true;
-            this.label144.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label144.Location = new System.Drawing.Point(270, 69);
-            this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(17, 17);
-            this.label144.TabIndex = 26;
-            this.label144.Text = "0";
-            this.label144.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbEnd4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEnd4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEnd4.Location = new System.Drawing.Point(119, 217);
+            this.tbEnd4.Name = "tbEnd4";
+            this.tbEnd4.Size = new System.Drawing.Size(17, 23);
+            this.tbEnd4.TabIndex = 57;
+            this.tbEnd4.Text = "0";
             // 
-            // label145
+            // tbSte4
             // 
-            this.label145.AutoSize = true;
-            this.label145.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label145.Location = new System.Drawing.Point(270, 206);
-            this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(17, 17);
-            this.label145.TabIndex = 29;
-            this.label145.Text = "0";
-            this.label145.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbSte4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSte4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSte4.Location = new System.Drawing.Point(270, 188);
+            this.tbSte4.Name = "tbSte4";
+            this.tbSte4.Size = new System.Drawing.Size(17, 23);
+            this.tbSte4.TabIndex = 57;
+            this.tbSte4.Text = "0";
             // 
-            // label146
+            // tbCun4
             // 
-            this.label146.AutoSize = true;
-            this.label146.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label146.Location = new System.Drawing.Point(270, 95);
-            this.label146.Name = "label146";
-            this.label146.Size = new System.Drawing.Size(17, 17);
-            this.label146.TabIndex = 25;
-            this.label146.Text = "0";
-            this.label146.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbCun4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCun4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCun4.Location = new System.Drawing.Point(119, 188);
+            this.tbCun4.Name = "tbCun4";
+            this.tbCun4.Size = new System.Drawing.Size(17, 23);
+            this.tbCun4.TabIndex = 57;
+            this.tbCun4.Text = "0";
             // 
-            // label147
+            // tbSta4
             // 
-            this.label147.AutoSize = true;
-            this.label147.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label147.Location = new System.Drawing.Point(270, 189);
-            this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(17, 17);
-            this.label147.TabIndex = 28;
-            this.label147.Text = "0";
-            this.label147.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbSta4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSta4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSta4.Location = new System.Drawing.Point(270, 159);
+            this.tbSta4.Name = "tbSta4";
+            this.tbSta4.Size = new System.Drawing.Size(17, 23);
+            this.tbSta4.TabIndex = 57;
+            this.tbSta4.Text = "0";
             // 
-            // label148
+            // tbAwa4
             // 
-            this.label148.AutoSize = true;
-            this.label148.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label148.Location = new System.Drawing.Point(270, 121);
-            this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(17, 17);
-            this.label148.TabIndex = 24;
-            this.label148.Text = "0";
-            this.label148.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbAwa4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAwa4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAwa4.Location = new System.Drawing.Point(119, 159);
+            this.tbAwa4.Name = "tbAwa4";
+            this.tbAwa4.Size = new System.Drawing.Size(17, 23);
+            this.tbAwa4.TabIndex = 57;
+            this.tbAwa4.Text = "0";
             // 
-            // label149
+            // tbPer4
             // 
-            this.label149.AutoSize = true;
-            this.label149.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label149.Location = new System.Drawing.Point(270, 172);
-            this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(17, 17);
-            this.label149.TabIndex = 27;
-            this.label149.Text = "0";
-            this.label149.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbPer4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPer4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPer4.Location = new System.Drawing.Point(270, 130);
+            this.tbPer4.Name = "tbPer4";
+            this.tbPer4.Size = new System.Drawing.Size(17, 23);
+            this.tbPer4.TabIndex = 57;
+            this.tbPer4.Text = "0";
             // 
-            // label150
+            // tbAth4
             // 
-            this.label150.AutoSize = true;
-            this.label150.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label150.Location = new System.Drawing.Point(270, 138);
-            this.label150.Name = "label150";
-            this.label150.Size = new System.Drawing.Size(17, 17);
-            this.label150.TabIndex = 23;
-            this.label150.Text = "0";
-            this.label150.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbAth4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAth4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAth4.Location = new System.Drawing.Point(119, 130);
+            this.tbAth4.Name = "tbAth4";
+            this.tbAth4.Size = new System.Drawing.Size(17, 23);
+            this.tbAth4.TabIndex = 57;
+            this.tbAth4.Text = "0";
             // 
-            // label151
+            // tbMar4
             // 
-            this.label151.AutoSize = true;
-            this.label151.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label151.Location = new System.Drawing.Point(270, 155);
-            this.label151.Name = "label151";
-            this.label151.Size = new System.Drawing.Size(17, 17);
-            this.label151.TabIndex = 22;
-            this.label151.Text = "0";
-            this.label151.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbMar4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMar4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMar4.Location = new System.Drawing.Point(270, 101);
+            this.tbMar4.Name = "tbMar4";
+            this.tbMar4.Size = new System.Drawing.Size(17, 23);
+            this.tbMar4.TabIndex = 57;
+            this.tbMar4.Text = "0";
             // 
-            // label152
+            // tbAni4
             // 
-            this.label152.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label152.AutoSize = true;
-            this.label152.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label152.Location = new System.Drawing.Point(171, 69);
-            this.label152.Name = "label152";
-            this.label152.Size = new System.Drawing.Size(93, 17);
-            this.label152.TabIndex = 51;
-            this.label152.Text = "Knowledge:";
-            this.label152.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tbAni4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAni4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAni4.Location = new System.Drawing.Point(119, 101);
+            this.tbAni4.Name = "tbAni4";
+            this.tbAni4.Size = new System.Drawing.Size(17, 23);
+            this.tbAni4.TabIndex = 57;
+            this.tbAni4.Text = "0";
+            // 
+            // tbKno4
+            // 
+            this.tbKno4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbKno4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbKno4.Location = new System.Drawing.Point(270, 72);
+            this.tbKno4.Name = "tbKno4";
+            this.tbKno4.Size = new System.Drawing.Size(17, 23);
+            this.tbKno4.TabIndex = 57;
+            this.tbKno4.Text = "0";
+            // 
+            // tbAgi4
+            // 
+            this.tbAgi4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAgi4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAgi4.Location = new System.Drawing.Point(119, 72);
+            this.tbAgi4.Name = "tbAgi4";
+            this.tbAgi4.Size = new System.Drawing.Size(17, 23);
+            this.tbAgi4.TabIndex = 56;
+            this.tbAgi4.Text = "0";
+            // 
+            // btDelete4
+            // 
+            this.btDelete4.Location = new System.Drawing.Point(406, 304);
+            this.btDelete4.Name = "btDelete4";
+            this.btDelete4.Size = new System.Drawing.Size(75, 23);
+            this.btDelete4.TabIndex = 56;
+            this.btDelete4.Text = "Delete Unit";
+            this.btDelete4.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel9.ColumnCount = 8;
+            this.tableLayoutPanel8.SetColumnSpan(this.tableLayoutPanel9, 6);
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel9.Controls.Add(this.lbMarDMGNum4, 6, 1);
+            this.tableLayoutPanel9.Controls.Add(this.lbFigDMGNum4, 4, 1);
+            this.tableLayoutPanel9.Controls.Add(this.lbBulNum4, 2, 1);
+            this.tableLayoutPanel9.Controls.Add(this.lbArmPenNum4, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(this.lbArmRTGNum4, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.chbArmor4, 3, 0);
+            this.tableLayoutPanel9.Controls.Add(this.chbFightDMG4, 5, 0);
+            this.tableLayoutPanel9.Controls.Add(this.chbMarkDMG4, 7, 0);
+            this.tableLayoutPanel9.Controls.Add(this.lbBul4, 2, 0);
+            this.tableLayoutPanel9.Controls.Add(this.lbArmPen4, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.lbArmRTG4, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.lbMarDMG4, 6, 0);
+            this.tableLayoutPanel9.Controls.Add(this.lbFigDMG4, 4, 0);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 333);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 2;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(501, 40);
+            this.tableLayoutPanel9.TabIndex = 51;
+            // 
+            // lbMarDMGNum4
+            // 
+            this.lbMarDMGNum4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMarDMGNum4.AutoSize = true;
+            this.tableLayoutPanel9.SetColumnSpan(this.lbMarDMGNum4, 2);
+            this.lbMarDMGNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarDMGNum4.Location = new System.Drawing.Point(379, 20);
+            this.lbMarDMGNum4.Name = "lbMarDMGNum4";
+            this.lbMarDMGNum4.Size = new System.Drawing.Size(119, 17);
+            this.lbMarDMGNum4.TabIndex = 51;
+            this.lbMarDMGNum4.Text = "0";
+            this.lbMarDMGNum4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbFigDMGNum4
+            // 
+            this.lbFigDMGNum4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFigDMGNum4.AutoSize = true;
+            this.tableLayoutPanel9.SetColumnSpan(this.lbFigDMGNum4, 2);
+            this.lbFigDMGNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFigDMGNum4.Location = new System.Drawing.Point(266, 20);
+            this.lbFigDMGNum4.Name = "lbFigDMGNum4";
+            this.lbFigDMGNum4.Size = new System.Drawing.Size(107, 17);
+            this.lbFigDMGNum4.TabIndex = 51;
+            this.lbFigDMGNum4.Text = "0";
+            this.lbFigDMGNum4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbBulNum4
+            // 
+            this.lbBulNum4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBulNum4.AutoSize = true;
+            this.tableLayoutPanel9.SetColumnSpan(this.lbBulNum4, 2);
+            this.lbBulNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBulNum4.Location = new System.Drawing.Point(197, 20);
+            this.lbBulNum4.Name = "lbBulNum4";
+            this.lbBulNum4.Size = new System.Drawing.Size(63, 17);
+            this.lbBulNum4.TabIndex = 51;
+            this.lbBulNum4.Text = "0";
+            this.lbBulNum4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbArmPenNum4
+            // 
+            this.lbArmPenNum4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmPenNum4.AutoSize = true;
+            this.lbArmPenNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmPenNum4.Location = new System.Drawing.Point(103, 20);
+            this.lbArmPenNum4.Name = "lbArmPenNum4";
+            this.lbArmPenNum4.Size = new System.Drawing.Size(88, 17);
+            this.lbArmPenNum4.TabIndex = 51;
+            this.lbArmPenNum4.Text = "0";
+            this.lbArmPenNum4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lbArmRTGNum4
+            // 
+            this.lbArmRTGNum4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmRTGNum4.AutoSize = true;
+            this.lbArmRTGNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmRTGNum4.Location = new System.Drawing.Point(3, 20);
+            this.lbArmRTGNum4.Name = "lbArmRTGNum4";
+            this.lbArmRTGNum4.Size = new System.Drawing.Size(94, 17);
+            this.lbArmRTGNum4.TabIndex = 51;
+            this.lbArmRTGNum4.Text = "0";
+            this.lbArmRTGNum4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // chbArmor4
+            // 
+            this.chbArmor4.AutoSize = true;
+            this.chbArmor4.Location = new System.Drawing.Point(245, 3);
+            this.chbArmor4.Name = "chbArmor4";
+            this.chbArmor4.Size = new System.Drawing.Size(15, 14);
+            this.chbArmor4.TabIndex = 53;
+            this.chbArmor4.UseVisualStyleBackColor = true;
+            // 
+            // chbFightDMG4
+            // 
+            this.chbFightDMG4.AutoSize = true;
+            this.chbFightDMG4.Location = new System.Drawing.Point(358, 3);
+            this.chbFightDMG4.Name = "chbFightDMG4";
+            this.chbFightDMG4.Size = new System.Drawing.Size(15, 14);
+            this.chbFightDMG4.TabIndex = 53;
+            this.chbFightDMG4.UseVisualStyleBackColor = true;
+            // 
+            // chbMarkDMG4
+            // 
+            this.chbMarkDMG4.AutoSize = true;
+            this.chbMarkDMG4.Location = new System.Drawing.Point(478, 3);
+            this.chbMarkDMG4.Name = "chbMarkDMG4";
+            this.chbMarkDMG4.Size = new System.Drawing.Size(15, 14);
+            this.chbMarkDMG4.TabIndex = 52;
+            this.chbMarkDMG4.UseVisualStyleBackColor = true;
+            // 
+            // lbBul4
+            // 
+            this.lbBul4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBul4.AutoSize = true;
+            this.lbBul4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBul4.Location = new System.Drawing.Point(197, 0);
+            this.lbBul4.Name = "lbBul4";
+            this.lbBul4.Size = new System.Drawing.Size(42, 17);
+            this.lbBul4.TabIndex = 52;
+            this.lbBul4.Text = "Bulk";
+            this.lbBul4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbArmPen4
+            // 
+            this.lbArmPen4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmPen4.AutoSize = true;
+            this.lbArmPen4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmPen4.Location = new System.Drawing.Point(103, 0);
+            this.lbArmPen4.Name = "lbArmPen4";
+            this.lbArmPen4.Size = new System.Drawing.Size(88, 17);
+            this.lbArmPen4.TabIndex = 52;
+            this.lbArmPen4.Text = "Armor Pen";
+            this.lbArmPen4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbArmRTG4
+            // 
+            this.lbArmRTG4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbArmRTG4.AutoSize = true;
+            this.lbArmRTG4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmRTG4.Location = new System.Drawing.Point(3, 0);
+            this.lbArmRTG4.Name = "lbArmRTG4";
+            this.lbArmRTG4.Size = new System.Drawing.Size(94, 17);
+            this.lbArmRTG4.TabIndex = 52;
+            this.lbArmRTG4.Text = "Armor RTG";
+            this.lbArmRTG4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbMarDMG4
+            // 
+            this.lbMarDMG4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMarDMG4.AutoSize = true;
+            this.lbMarDMG4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMarDMG4.Location = new System.Drawing.Point(379, 0);
+            this.lbMarDMG4.Name = "lbMarDMG4";
+            this.lbMarDMG4.Size = new System.Drawing.Size(93, 17);
+            this.lbMarDMG4.TabIndex = 52;
+            this.lbMarDMG4.Text = "Marks DMG";
+            this.lbMarDMG4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbFigDMG4
+            // 
+            this.lbFigDMG4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFigDMG4.AutoSize = true;
+            this.lbFigDMG4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFigDMG4.Location = new System.Drawing.Point(266, 0);
+            this.lbFigDMG4.Name = "lbFigDMG4";
+            this.lbFigDMG4.Size = new System.Drawing.Size(86, 17);
+            this.lbFigDMG4.TabIndex = 52;
+            this.lbFigDMG4.Text = "Fight DMG";
+            this.lbFigDMG4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel10
             // 
+            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel10.ColumnCount = 6;
+            this.tableLayoutPanel8.SetColumnSpan(this.tableLayoutPanel10, 6);
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel11, 0, 10);
-            this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel12, 0, 0);
-            this.tableLayoutPanel10.Controls.Add(this.label171, 4, 4);
-            this.tableLayoutPanel10.Controls.Add(this.label172, 4, 3);
-            this.tableLayoutPanel10.Controls.Add(this.label173, 4, 2);
-            this.tableLayoutPanel10.Controls.Add(this.label174, 4, 1);
-            this.tableLayoutPanel10.Controls.Add(this.label175, 2, 8);
-            this.tableLayoutPanel10.Controls.Add(this.rtbNotes4, 4, 6);
-            this.tableLayoutPanel10.Controls.Add(this.label176, 2, 7);
-            this.tableLayoutPanel10.Controls.Add(this.label177, 2, 6);
-            this.tableLayoutPanel10.Controls.Add(this.label178, 2, 5);
-            this.tableLayoutPanel10.Controls.Add(this.label179, 2, 4);
-            this.tableLayoutPanel10.Controls.Add(this.label180, 4, 5);
-            this.tableLayoutPanel10.Controls.Add(this.label181, 2, 3);
-            this.tableLayoutPanel10.Controls.Add(this.label182, 2, 2);
-            this.tableLayoutPanel10.Controls.Add(this.lbHea4, 0, 8);
-            this.tableLayoutPanel10.Controls.Add(this.lbFig4, 0, 7);
-            this.tableLayoutPanel10.Controls.Add(this.lbEnd4, 0, 6);
-            this.tableLayoutPanel10.Controls.Add(this.lbCun4, 0, 5);
-            this.tableLayoutPanel10.Controls.Add(this.lbAwa4, 0, 4);
-            this.tableLayoutPanel10.Controls.Add(this.lbAth4, 0, 3);
-            this.tableLayoutPanel10.Controls.Add(this.lbAni4, 0, 2);
-            this.tableLayoutPanel10.Controls.Add(this.label190, 2, 9);
-            this.tableLayoutPanel10.Controls.Add(this.lbAgi4, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.nudDis4, 5, 2);
-            this.tableLayoutPanel10.Controls.Add(this.label192, 5, 4);
-            this.tableLayoutPanel10.Controls.Add(this.label193, 5, 3);
-            this.tableLayoutPanel10.Controls.Add(this.lbAgiNum4, 1, 1);
-            this.tableLayoutPanel10.Controls.Add(this.nudHea4, 5, 1);
-            this.tableLayoutPanel10.Controls.Add(this.label195, 0, 9);
-            this.tableLayoutPanel10.Controls.Add(this.lbAniNum4, 1, 2);
-            this.tableLayoutPanel10.Controls.Add(this.lbAthNum4, 1, 3);
-            this.tableLayoutPanel10.Controls.Add(this.lbAwaNum4, 1, 4);
-            this.tableLayoutPanel10.Controls.Add(this.lbCunNum4, 1, 5);
-            this.tableLayoutPanel10.Controls.Add(this.lbEndNum4, 1, 6);
-            this.tableLayoutPanel10.Controls.Add(this.lbFigNum4, 1, 7);
-            this.tableLayoutPanel10.Controls.Add(this.lbHeaNum4, 1, 8);
-            this.tableLayoutPanel10.Controls.Add(this.label203, 1, 9);
-            this.tableLayoutPanel10.Controls.Add(this.label204, 3, 9);
-            this.tableLayoutPanel10.Controls.Add(this.label205, 3, 1);
-            this.tableLayoutPanel10.Controls.Add(this.label206, 3, 8);
-            this.tableLayoutPanel10.Controls.Add(this.label207, 3, 2);
-            this.tableLayoutPanel10.Controls.Add(this.label208, 3, 7);
-            this.tableLayoutPanel10.Controls.Add(this.label209, 3, 3);
-            this.tableLayoutPanel10.Controls.Add(this.label210, 3, 6);
-            this.tableLayoutPanel10.Controls.Add(this.label211, 3, 4);
-            this.tableLayoutPanel10.Controls.Add(this.label212, 3, 5);
-            this.tableLayoutPanel10.Controls.Add(this.label213, 2, 1);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(525, 332);
+            this.tableLayoutPanel10.Controls.Add(this.label25, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label26, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.lbCostNumber4, 3, 0);
+            this.tableLayoutPanel10.Controls.Add(this.cbTraining4, 3, 1);
+            this.tableLayoutPanel10.Controls.Add(this.lbDiscipText4, 5, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label27, 4, 0);
+            this.tableLayoutPanel10.Controls.Add(this.tbName4, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label28, 2, 0);
+            this.tableLayoutPanel10.Controls.Add(this.lbTypeText4, 1, 1);
+            this.tableLayoutPanel10.Controls.Add(this.label29, 2, 1);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 11;
+            this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(507, 296);
-            this.tableLayoutPanel10.TabIndex = 54;
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(501, 63);
+            this.tableLayoutPanel10.TabIndex = 51;
             // 
-            // tableLayoutPanel11
+            // label25
             // 
-            this.tableLayoutPanel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel11.ColumnCount = 8;
-            this.tableLayoutPanel10.SetColumnSpan(this.tableLayoutPanel11, 6);
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel11.Controls.Add(this.label153, 6, 1);
-            this.tableLayoutPanel11.Controls.Add(this.label154, 4, 1);
-            this.tableLayoutPanel11.Controls.Add(this.label155, 2, 1);
-            this.tableLayoutPanel11.Controls.Add(this.label156, 1, 1);
-            this.tableLayoutPanel11.Controls.Add(this.label157, 0, 1);
-            this.tableLayoutPanel11.Controls.Add(this.checkBox10, 3, 0);
-            this.tableLayoutPanel11.Controls.Add(this.checkBox11, 5, 0);
-            this.tableLayoutPanel11.Controls.Add(this.checkBox12, 7, 0);
-            this.tableLayoutPanel11.Controls.Add(this.label158, 2, 0);
-            this.tableLayoutPanel11.Controls.Add(this.label159, 1, 0);
-            this.tableLayoutPanel11.Controls.Add(this.label160, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.label161, 6, 0);
-            this.tableLayoutPanel11.Controls.Add(this.label162, 4, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 252);
-            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
-            this.tableLayoutPanel11.RowCount = 2;
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(501, 40);
-            this.tableLayoutPanel11.TabIndex = 51;
+            this.label25.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(3, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(56, 17);
+            this.label25.TabIndex = 31;
+            this.label25.Text = "Name:";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label153
+            // label26
             // 
-            this.label153.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label153.AutoSize = true;
-            this.tableLayoutPanel11.SetColumnSpan(this.label153, 2);
-            this.label153.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label153.Location = new System.Drawing.Point(379, 20);
-            this.label153.Name = "label153";
-            this.label153.Size = new System.Drawing.Size(119, 17);
-            this.label153.TabIndex = 51;
-            this.label153.Text = "0";
-            this.label153.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label154
-            // 
-            this.label154.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label154.AutoSize = true;
-            this.tableLayoutPanel11.SetColumnSpan(this.label154, 2);
-            this.label154.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label154.Location = new System.Drawing.Point(266, 20);
-            this.label154.Name = "label154";
-            this.label154.Size = new System.Drawing.Size(107, 17);
-            this.label154.TabIndex = 51;
-            this.label154.Text = "0";
-            this.label154.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label155
-            // 
-            this.label155.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label155.AutoSize = true;
-            this.tableLayoutPanel11.SetColumnSpan(this.label155, 2);
-            this.label155.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label155.Location = new System.Drawing.Point(197, 20);
-            this.label155.Name = "label155";
-            this.label155.Size = new System.Drawing.Size(63, 17);
-            this.label155.TabIndex = 51;
-            this.label155.Text = "0";
-            this.label155.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label156
-            // 
-            this.label156.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label156.AutoSize = true;
-            this.label156.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label156.Location = new System.Drawing.Point(103, 20);
-            this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(88, 17);
-            this.label156.TabIndex = 51;
-            this.label156.Text = "0";
-            this.label156.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label157
-            // 
-            this.label157.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label157.AutoSize = true;
-            this.label157.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label157.Location = new System.Drawing.Point(3, 20);
-            this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(94, 17);
-            this.label157.TabIndex = 51;
-            this.label157.Text = "0";
-            this.label157.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(245, 3);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(15, 14);
-            this.checkBox10.TabIndex = 53;
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(358, 3);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(15, 14);
-            this.checkBox11.TabIndex = 53;
-            this.checkBox11.UseVisualStyleBackColor = true;
-            // 
-            // checkBox12
-            // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(478, 3);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(15, 14);
-            this.checkBox12.TabIndex = 52;
-            this.checkBox12.UseVisualStyleBackColor = true;
-            // 
-            // label158
-            // 
-            this.label158.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label158.AutoSize = true;
-            this.label158.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label158.Location = new System.Drawing.Point(197, 0);
-            this.label158.Name = "label158";
-            this.label158.Size = new System.Drawing.Size(42, 17);
-            this.label158.TabIndex = 52;
-            this.label158.Text = "Bulk";
-            this.label158.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label159
-            // 
-            this.label159.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label159.AutoSize = true;
-            this.label159.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label159.Location = new System.Drawing.Point(103, 0);
-            this.label159.Name = "label159";
-            this.label159.Size = new System.Drawing.Size(88, 17);
-            this.label159.TabIndex = 52;
-            this.label159.Text = "Armor Pen";
-            this.label159.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label160
-            // 
-            this.label160.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label160.AutoSize = true;
-            this.label160.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label160.Location = new System.Drawing.Point(3, 0);
-            this.label160.Name = "label160";
-            this.label160.Size = new System.Drawing.Size(94, 17);
-            this.label160.TabIndex = 52;
-            this.label160.Text = "Armor RTG";
-            this.label160.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label161
-            // 
-            this.label161.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label161.AutoSize = true;
-            this.label161.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label161.Location = new System.Drawing.Point(379, 0);
-            this.label161.Name = "label161";
-            this.label161.Size = new System.Drawing.Size(93, 17);
-            this.label161.TabIndex = 52;
-            this.label161.Text = "Marks DMG";
-            this.label161.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label162
-            // 
-            this.label162.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label162.AutoSize = true;
-            this.label162.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label162.Location = new System.Drawing.Point(266, 0);
-            this.label162.Name = "label162";
-            this.label162.Size = new System.Drawing.Size(86, 17);
-            this.label162.TabIndex = 52;
-            this.label162.Text = "Fight DMG";
-            this.label162.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel12.ColumnCount = 6;
-            this.tableLayoutPanel10.SetColumnSpan(this.tableLayoutPanel12, 6);
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel12.Controls.Add(this.label163, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.label164, 0, 1);
-            this.tableLayoutPanel12.Controls.Add(this.lbCostNumber4, 3, 0);
-            this.tableLayoutPanel12.Controls.Add(this.cbTraining4, 3, 1);
-            this.tableLayoutPanel12.Controls.Add(this.lbDiscipText4, 5, 0);
-            this.tableLayoutPanel12.Controls.Add(this.label167, 4, 0);
-            this.tableLayoutPanel12.Controls.Add(this.tbName4, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.label168, 2, 0);
-            this.tableLayoutPanel12.Controls.Add(this.lbTypeText4, 1, 1);
-            this.tableLayoutPanel12.Controls.Add(this.label170, 2, 1);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 2;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(501, 63);
-            this.tableLayoutPanel12.TabIndex = 51;
-            // 
-            // label163
-            // 
-            this.label163.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label163.AutoSize = true;
-            this.label163.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label163.Location = new System.Drawing.Point(3, 0);
-            this.label163.Name = "label163";
-            this.label163.Size = new System.Drawing.Size(56, 17);
-            this.label163.TabIndex = 31;
-            this.label163.Text = "Name:";
-            this.label163.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label164
-            // 
-            this.label164.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label164.AutoSize = true;
-            this.label164.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label164.Location = new System.Drawing.Point(9, 29);
-            this.label164.Name = "label164";
-            this.label164.Size = new System.Drawing.Size(50, 17);
-            this.label164.TabIndex = 35;
-            this.label164.Text = "Type:";
-            this.label164.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label26.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(9, 29);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(50, 17);
+            this.label26.TabIndex = 35;
+            this.label26.Text = "Type:";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbCostNumber4
             // 
@@ -3520,7 +3862,7 @@
             // 
             this.cbTraining4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel12.SetColumnSpan(this.cbTraining4, 3);
+            this.tableLayoutPanel10.SetColumnSpan(this.cbTraining4, 3);
             this.cbTraining4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTraining4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTraining4.FormattingEnabled = true;
@@ -3546,17 +3888,17 @@
             this.lbDiscipText4.Text = "0";
             this.lbDiscipText4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label167
+            // label27
             // 
-            this.label167.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label167.AutoSize = true;
-            this.label167.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label167.Location = new System.Drawing.Point(351, 0);
-            this.label167.Name = "label167";
-            this.label167.Size = new System.Drawing.Size(86, 17);
-            this.label167.TabIndex = 48;
-            this.label167.Text = "Discipline:";
-            this.label167.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(351, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(86, 17);
+            this.label27.TabIndex = 48;
+            this.label27.Text = "Discipline:";
+            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tbName4
             // 
@@ -3568,17 +3910,17 @@
             this.tbName4.Size = new System.Drawing.Size(165, 23);
             this.tbName4.TabIndex = 32;
             // 
-            // label168
+            // label28
             // 
-            this.label168.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label168.AutoSize = true;
-            this.label168.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label168.Location = new System.Drawing.Point(268, 0);
-            this.label168.Name = "label168";
-            this.label168.Size = new System.Drawing.Size(45, 17);
-            this.label168.TabIndex = 33;
-            this.label168.Text = "Cost:";
-            this.label168.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label28.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(268, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(45, 17);
+            this.label28.TabIndex = 33;
+            this.label28.Text = "Cost:";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbTypeText4
             // 
@@ -3591,323 +3933,335 @@
             this.lbTypeText4.Text = "XXXXXXXXXXXXX";
             this.lbTypeText4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label170
+            // label29
             // 
-            this.label170.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label170.AutoSize = true;
-            this.label170.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label170.Location = new System.Drawing.Point(236, 29);
-            this.label170.Name = "label170";
-            this.label170.Size = new System.Drawing.Size(77, 17);
-            this.label170.TabIndex = 37;
-            this.label170.Text = "Training:";
-            this.label170.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label29.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(236, 29);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(77, 17);
+            this.label29.TabIndex = 37;
+            this.label29.Text = "Training:";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label171
+            // label30
             // 
-            this.label171.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label171.AutoSize = true;
-            this.label171.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label171.Location = new System.Drawing.Point(308, 138);
-            this.label171.Name = "label171";
-            this.label171.Size = new System.Drawing.Size(92, 17);
-            this.label171.TabIndex = 51;
-            this.label171.Text = "Movement:";
-            this.label171.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label30.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(308, 156);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(92, 29);
+            this.label30.TabIndex = 51;
+            this.label30.Text = "Movement:";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label172
+            // label31
             // 
-            this.label172.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label172.AutoSize = true;
-            this.label172.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label172.Location = new System.Drawing.Point(329, 121);
-            this.label172.Name = "label172";
-            this.label172.Size = new System.Drawing.Size(71, 17);
-            this.label172.TabIndex = 51;
-            this.label172.Text = "Defense:";
-            this.label172.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label31.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(329, 127);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(71, 29);
+            this.label31.TabIndex = 51;
+            this.label31.Text = "Defense:";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label173
+            // label32
             // 
-            this.label173.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label173.AutoSize = true;
-            this.label173.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label173.Location = new System.Drawing.Point(293, 95);
-            this.label173.Name = "label173";
-            this.label173.Size = new System.Drawing.Size(107, 17);
-            this.label173.TabIndex = 51;
-            this.label173.Text = "Disorganized:";
-            this.label173.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label32.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(293, 98);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(107, 29);
+            this.label32.TabIndex = 51;
+            this.label32.Text = "Disorganized:";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label174
+            // label33
             // 
-            this.label174.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label174.AutoSize = true;
-            this.label174.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label174.Location = new System.Drawing.Point(338, 69);
-            this.label174.Name = "label174";
-            this.label174.Size = new System.Drawing.Size(62, 17);
-            this.label174.TabIndex = 51;
-            this.label174.Text = "Health:";
-            this.label174.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(338, 69);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(62, 29);
+            this.label33.TabIndex = 51;
+            this.label33.Text = "Health:";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label175
+            // lbWar4
             // 
-            this.label175.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label175.AutoSize = true;
-            this.label175.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label175.Location = new System.Drawing.Point(191, 206);
-            this.label175.Name = "label175";
-            this.label175.Size = new System.Drawing.Size(73, 17);
-            this.label175.TabIndex = 51;
-            this.label175.Text = "Warfare:";
-            this.label175.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbWar4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWar4.AutoSize = true;
+            this.lbWar4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWar4.Location = new System.Drawing.Point(191, 272);
+            this.lbWar4.Name = "lbWar4";
+            this.lbWar4.Size = new System.Drawing.Size(73, 29);
+            this.lbWar4.TabIndex = 51;
+            this.lbWar4.Text = "Warfare:";
+            this.lbWar4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rtbNotes4
             // 
             this.rtbNotes4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel10.SetColumnSpan(this.rtbNotes4, 2);
-            this.rtbNotes4.Location = new System.Drawing.Point(292, 174);
+            this.tableLayoutPanel8.SetColumnSpan(this.rtbNotes4, 2);
+            this.rtbNotes4.Location = new System.Drawing.Point(292, 216);
             this.rtbNotes4.Margin = new System.Windows.Forms.Padding(2);
             this.rtbNotes4.Name = "rtbNotes4";
-            this.tableLayoutPanel10.SetRowSpan(this.rtbNotes4, 3);
-            this.rtbNotes4.Size = new System.Drawing.Size(213, 56);
+            this.tableLayoutPanel8.SetRowSpan(this.rtbNotes4, 3);
+            this.rtbNotes4.Size = new System.Drawing.Size(213, 83);
             this.rtbNotes4.TabIndex = 45;
             this.rtbNotes4.Text = "";
             // 
-            // label176
+            // lbThi4
             // 
-            this.label176.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label176.AutoSize = true;
-            this.label176.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label176.Location = new System.Drawing.Point(184, 189);
-            this.label176.Name = "label176";
-            this.label176.Size = new System.Drawing.Size(80, 17);
-            this.label176.TabIndex = 51;
-            this.label176.Text = "Thievery:";
-            this.label176.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbThi4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbThi4.AutoSize = true;
+            this.lbThi4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbThi4.Location = new System.Drawing.Point(184, 243);
+            this.lbThi4.Name = "lbThi4";
+            this.lbThi4.Size = new System.Drawing.Size(80, 29);
+            this.lbThi4.TabIndex = 51;
+            this.lbThi4.Text = "Thievery:";
+            this.lbThi4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label177
+            // lbSur4
             // 
-            this.label177.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label177.AutoSize = true;
-            this.label177.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label177.Location = new System.Drawing.Point(189, 172);
-            this.label177.Name = "label177";
-            this.label177.Size = new System.Drawing.Size(75, 17);
-            this.label177.TabIndex = 51;
-            this.label177.Text = "Survival:";
-            this.label177.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSur4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSur4.AutoSize = true;
+            this.lbSur4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSur4.Location = new System.Drawing.Point(189, 214);
+            this.lbSur4.Name = "lbSur4";
+            this.lbSur4.Size = new System.Drawing.Size(75, 29);
+            this.lbSur4.TabIndex = 51;
+            this.lbSur4.Text = "Survival:";
+            this.lbSur4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label178
+            // lbSte4
             // 
-            this.label178.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label178.AutoSize = true;
-            this.label178.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label178.Location = new System.Drawing.Point(199, 155);
-            this.label178.Name = "label178";
-            this.label178.Size = new System.Drawing.Size(65, 17);
-            this.label178.TabIndex = 51;
-            this.label178.Text = "Stealth:";
-            this.label178.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSte4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSte4.AutoSize = true;
+            this.lbSte4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSte4.Location = new System.Drawing.Point(199, 185);
+            this.lbSte4.Name = "lbSte4";
+            this.lbSte4.Size = new System.Drawing.Size(65, 29);
+            this.lbSte4.TabIndex = 51;
+            this.lbSte4.Text = "Stealth:";
+            this.lbSte4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label179
+            // lbSta4
             // 
-            this.label179.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label179.AutoSize = true;
-            this.label179.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label179.Location = new System.Drawing.Point(205, 138);
-            this.label179.Name = "label179";
-            this.label179.Size = new System.Drawing.Size(59, 17);
-            this.label179.TabIndex = 51;
-            this.label179.Text = "Status:";
-            this.label179.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbSta4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSta4.AutoSize = true;
+            this.lbSta4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSta4.Location = new System.Drawing.Point(205, 156);
+            this.lbSta4.Name = "lbSta4";
+            this.lbSta4.Size = new System.Drawing.Size(59, 29);
+            this.lbSta4.TabIndex = 51;
+            this.lbSta4.Text = "Status:";
+            this.lbSta4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label180
+            // label34
             // 
-            this.label180.AutoSize = true;
-            this.label180.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label180.Location = new System.Drawing.Point(293, 155);
-            this.label180.Name = "label180";
-            this.label180.Size = new System.Drawing.Size(55, 17);
-            this.label180.TabIndex = 39;
-            this.label180.Text = "Notes:";
-            this.label180.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(293, 185);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(107, 29);
+            this.label34.TabIndex = 39;
+            this.label34.Text = "Notes:";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
-            // label181
+            // lbPer4
             // 
-            this.label181.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label181.AutoSize = true;
-            this.label181.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label181.Location = new System.Drawing.Point(171, 121);
-            this.label181.Name = "label181";
-            this.label181.Size = new System.Drawing.Size(93, 17);
-            this.label181.TabIndex = 51;
-            this.label181.Text = "Persuasion:";
-            this.label181.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbPer4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPer4.AutoSize = true;
+            this.lbPer4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPer4.Location = new System.Drawing.Point(171, 127);
+            this.lbPer4.Name = "lbPer4";
+            this.lbPer4.Size = new System.Drawing.Size(93, 29);
+            this.lbPer4.TabIndex = 51;
+            this.lbPer4.Text = "Persuasion:";
+            this.lbPer4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label182
+            // lbMar4
             // 
-            this.label182.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label182.AutoSize = true;
-            this.label182.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label182.Location = new System.Drawing.Point(142, 95);
-            this.label182.Name = "label182";
-            this.label182.Size = new System.Drawing.Size(122, 17);
-            this.label182.TabIndex = 51;
-            this.label182.Text = "Marksmanship:";
-            this.label182.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMar4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbMar4.AutoSize = true;
+            this.lbMar4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMar4.Location = new System.Drawing.Point(142, 98);
+            this.lbMar4.Name = "lbMar4";
+            this.lbMar4.Size = new System.Drawing.Size(122, 29);
+            this.lbMar4.TabIndex = 51;
+            this.lbMar4.Text = "Marksmanship:";
+            this.lbMar4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbHea4
             // 
-            this.lbHea4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbHea4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHea4.AutoSize = true;
             this.lbHea4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHea4.Location = new System.Drawing.Point(44, 206);
+            this.lbHea4.Location = new System.Drawing.Point(44, 272);
             this.lbHea4.Name = "lbHea4";
-            this.lbHea4.Size = new System.Drawing.Size(69, 17);
+            this.lbHea4.Size = new System.Drawing.Size(69, 29);
             this.lbHea4.TabIndex = 51;
             this.lbHea4.Text = "Healing:";
             this.lbHea4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbFig4
             // 
-            this.lbFig4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFig4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbFig4.AutoSize = true;
             this.lbFig4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFig4.Location = new System.Drawing.Point(39, 189);
+            this.lbFig4.Location = new System.Drawing.Point(39, 243);
             this.lbFig4.Name = "lbFig4";
-            this.lbFig4.Size = new System.Drawing.Size(74, 17);
+            this.lbFig4.Size = new System.Drawing.Size(74, 29);
             this.lbFig4.TabIndex = 51;
             this.lbFig4.Text = "Fighting:";
             this.lbFig4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbEnd4
             // 
-            this.lbEnd4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbEnd4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbEnd4.AutoSize = true;
             this.lbEnd4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEnd4.Location = new System.Drawing.Point(20, 172);
+            this.lbEnd4.Location = new System.Drawing.Point(20, 214);
             this.lbEnd4.Name = "lbEnd4";
-            this.lbEnd4.Size = new System.Drawing.Size(93, 17);
+            this.lbEnd4.Size = new System.Drawing.Size(93, 29);
             this.lbEnd4.TabIndex = 51;
             this.lbEnd4.Text = "Endurance:";
             this.lbEnd4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbCun4
             // 
-            this.lbCun4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbCun4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCun4.AutoSize = true;
             this.lbCun4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCun4.Location = new System.Drawing.Point(37, 155);
+            this.lbCun4.Location = new System.Drawing.Point(37, 185);
             this.lbCun4.Name = "lbCun4";
-            this.lbCun4.Size = new System.Drawing.Size(76, 17);
+            this.lbCun4.Size = new System.Drawing.Size(76, 29);
             this.lbCun4.TabIndex = 51;
             this.lbCun4.Text = "Cunning:";
             this.lbCun4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAwa4
             // 
-            this.lbAwa4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAwa4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAwa4.AutoSize = true;
             this.lbAwa4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAwa4.Location = new System.Drawing.Point(22, 138);
+            this.lbAwa4.Location = new System.Drawing.Point(22, 156);
             this.lbAwa4.Name = "lbAwa4";
-            this.lbAwa4.Size = new System.Drawing.Size(91, 17);
+            this.lbAwa4.Size = new System.Drawing.Size(91, 29);
             this.lbAwa4.TabIndex = 51;
             this.lbAwa4.Text = "Awareness:";
             this.lbAwa4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAth4
             // 
-            this.lbAth4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAth4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAth4.AutoSize = true;
             this.lbAth4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAth4.Location = new System.Drawing.Point(34, 121);
+            this.lbAth4.Location = new System.Drawing.Point(34, 127);
             this.lbAth4.Name = "lbAth4";
-            this.lbAth4.Size = new System.Drawing.Size(79, 17);
+            this.lbAth4.Size = new System.Drawing.Size(79, 29);
             this.lbAth4.TabIndex = 51;
             this.lbAth4.Text = "Athletics:";
             this.lbAth4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAni4
             // 
-            this.lbAni4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAni4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAni4.AutoSize = true;
             this.lbAni4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAni4.Location = new System.Drawing.Point(3, 95);
+            this.lbAni4.Location = new System.Drawing.Point(3, 98);
             this.lbAni4.Name = "lbAni4";
-            this.lbAni4.Size = new System.Drawing.Size(110, 17);
+            this.lbAni4.Size = new System.Drawing.Size(110, 29);
             this.lbAni4.TabIndex = 51;
             this.lbAni4.Text = "Animal Hand:";
             this.lbAni4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label190
+            // lbWil4
             // 
-            this.label190.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label190.AutoSize = true;
-            this.label190.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label190.Location = new System.Drawing.Point(220, 232);
-            this.label190.Name = "label190";
-            this.label190.Size = new System.Drawing.Size(44, 17);
-            this.label190.TabIndex = 12;
-            this.label190.Text = "Will:";
-            this.label190.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbWil4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbWil4.AutoSize = true;
+            this.lbWil4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWil4.Location = new System.Drawing.Point(220, 301);
+            this.lbWil4.Name = "lbWil4";
+            this.lbWil4.Size = new System.Drawing.Size(44, 29);
+            this.lbWil4.TabIndex = 12;
+            this.lbWil4.Text = "Will:";
+            this.lbWil4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbAgi4
             // 
-            this.lbAgi4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbAgi4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAgi4.AutoSize = true;
             this.lbAgi4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAgi4.Location = new System.Drawing.Point(51, 69);
             this.lbAgi4.Name = "lbAgi4";
-            this.lbAgi4.Size = new System.Drawing.Size(62, 17);
+            this.lbAgi4.Size = new System.Drawing.Size(62, 29);
             this.lbAgi4.TabIndex = 51;
-            this.lbAgi4.Text = "Agility:\r";
+            this.lbAgi4.Text = "Agility:";
             this.lbAgi4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nudDis4
             // 
             this.nudDis4.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudDis4.Location = new System.Drawing.Point(406, 98);
+            this.nudDis4.Location = new System.Drawing.Point(406, 101);
             this.nudDis4.Name = "nudDis4";
             this.nudDis4.Size = new System.Drawing.Size(41, 20);
             this.nudDis4.TabIndex = 47;
             // 
-            // label192
+            // lbMov4
             // 
-            this.label192.AutoSize = true;
-            this.label192.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label192.Location = new System.Drawing.Point(406, 138);
-            this.label192.Name = "label192";
-            this.label192.Size = new System.Drawing.Size(26, 17);
-            this.label192.TabIndex = 42;
-            this.label192.Text = "00";
-            this.label192.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbMov4.AutoSize = true;
+            this.lbMov4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMov4.Location = new System.Drawing.Point(406, 156);
+            this.lbMov4.Name = "lbMov4";
+            this.lbMov4.Size = new System.Drawing.Size(26, 17);
+            this.lbMov4.TabIndex = 42;
+            this.lbMov4.Text = "00";
+            this.lbMov4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label193
+            // lbDef4
             // 
-            this.label193.AutoSize = true;
-            this.label193.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label193.Location = new System.Drawing.Point(406, 121);
-            this.label193.Name = "label193";
-            this.label193.Size = new System.Drawing.Size(17, 17);
-            this.label193.TabIndex = 43;
-            this.label193.Text = "0";
-            this.label193.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbAgiNum4
-            // 
-            this.lbAgiNum4.AutoSize = true;
-            this.lbAgiNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAgiNum4.Location = new System.Drawing.Point(119, 69);
-            this.lbAgiNum4.Name = "lbAgiNum4";
-            this.lbAgiNum4.Size = new System.Drawing.Size(17, 17);
-            this.lbAgiNum4.TabIndex = 17;
-            this.lbAgiNum4.Text = "0";
-            this.lbAgiNum4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbDef4.AutoSize = true;
+            this.lbDef4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDef4.Location = new System.Drawing.Point(406, 127);
+            this.lbDef4.Name = "lbDef4";
+            this.lbDef4.Size = new System.Drawing.Size(17, 17);
+            this.lbDef4.TabIndex = 43;
+            this.lbDef4.Text = "0";
+            this.lbDef4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // nudHea4
             // 
@@ -3917,285 +4271,90 @@
             this.nudHea4.Size = new System.Drawing.Size(41, 20);
             this.nudHea4.TabIndex = 46;
             // 
-            // label195
+            // lbLan4
             // 
-            this.label195.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label195.AutoSize = true;
-            this.label195.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label195.Location = new System.Drawing.Point(30, 232);
-            this.label195.Name = "label195";
-            this.label195.Size = new System.Drawing.Size(83, 17);
-            this.label195.TabIndex = 11;
-            this.label195.Text = "Language:";
-            this.label195.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbLan4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbLan4.AutoSize = true;
+            this.lbLan4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLan4.Location = new System.Drawing.Point(30, 301);
+            this.lbLan4.Name = "lbLan4";
+            this.lbLan4.Size = new System.Drawing.Size(83, 29);
+            this.lbLan4.TabIndex = 11;
+            this.lbLan4.Text = "Language:";
+            this.lbLan4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbAniNum4
+            // lbKno4
             // 
-            this.lbAniNum4.AutoSize = true;
-            this.lbAniNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAniNum4.Location = new System.Drawing.Point(119, 95);
-            this.lbAniNum4.Name = "lbAniNum4";
-            this.lbAniNum4.Size = new System.Drawing.Size(17, 17);
-            this.lbAniNum4.TabIndex = 16;
-            this.lbAniNum4.Text = "0";
-            this.lbAniNum4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbKno4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbKno4.AutoSize = true;
+            this.lbKno4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKno4.Location = new System.Drawing.Point(171, 69);
+            this.lbKno4.Name = "lbKno4";
+            this.lbKno4.Size = new System.Drawing.Size(93, 29);
+            this.lbKno4.TabIndex = 51;
+            this.lbKno4.Text = "Knowledge:";
+            this.lbKno4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbAthNum4
+            // btPrevious
             // 
-            this.lbAthNum4.AutoSize = true;
-            this.lbAthNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAthNum4.Location = new System.Drawing.Point(119, 121);
-            this.lbAthNum4.Name = "lbAthNum4";
-            this.lbAthNum4.Size = new System.Drawing.Size(17, 17);
-            this.lbAthNum4.TabIndex = 15;
-            this.lbAthNum4.Text = "0";
-            this.lbAthNum4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbAwaNum4
-            // 
-            this.lbAwaNum4.AutoSize = true;
-            this.lbAwaNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAwaNum4.Location = new System.Drawing.Point(119, 138);
-            this.lbAwaNum4.Name = "lbAwaNum4";
-            this.lbAwaNum4.Size = new System.Drawing.Size(17, 17);
-            this.lbAwaNum4.TabIndex = 14;
-            this.lbAwaNum4.Text = "0";
-            this.lbAwaNum4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbCunNum4
-            // 
-            this.lbCunNum4.AutoSize = true;
-            this.lbCunNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCunNum4.Location = new System.Drawing.Point(119, 155);
-            this.lbCunNum4.Name = "lbCunNum4";
-            this.lbCunNum4.Size = new System.Drawing.Size(17, 17);
-            this.lbCunNum4.TabIndex = 13;
-            this.lbCunNum4.Text = "0";
-            this.lbCunNum4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbEndNum4
-            // 
-            this.lbEndNum4.AutoSize = true;
-            this.lbEndNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEndNum4.Location = new System.Drawing.Point(119, 172);
-            this.lbEndNum4.Name = "lbEndNum4";
-            this.lbEndNum4.Size = new System.Drawing.Size(17, 17);
-            this.lbEndNum4.TabIndex = 18;
-            this.lbEndNum4.Text = "0";
-            this.lbEndNum4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbFigNum4
-            // 
-            this.lbFigNum4.AutoSize = true;
-            this.lbFigNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFigNum4.Location = new System.Drawing.Point(119, 189);
-            this.lbFigNum4.Name = "lbFigNum4";
-            this.lbFigNum4.Size = new System.Drawing.Size(17, 17);
-            this.lbFigNum4.TabIndex = 19;
-            this.lbFigNum4.Text = "0";
-            this.lbFigNum4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lbHeaNum4
-            // 
-            this.lbHeaNum4.AutoSize = true;
-            this.lbHeaNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeaNum4.Location = new System.Drawing.Point(119, 206);
-            this.lbHeaNum4.Name = "lbHeaNum4";
-            this.lbHeaNum4.Size = new System.Drawing.Size(17, 17);
-            this.lbHeaNum4.TabIndex = 20;
-            this.lbHeaNum4.Text = "0";
-            this.lbHeaNum4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label203
-            // 
-            this.label203.AutoSize = true;
-            this.label203.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label203.Location = new System.Drawing.Point(119, 232);
-            this.label203.Name = "label203";
-            this.label203.Size = new System.Drawing.Size(17, 17);
-            this.label203.TabIndex = 21;
-            this.label203.Text = "0";
-            this.label203.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label204
-            // 
-            this.label204.AutoSize = true;
-            this.label204.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label204.Location = new System.Drawing.Point(270, 232);
-            this.label204.Name = "label204";
-            this.label204.Size = new System.Drawing.Size(17, 17);
-            this.label204.TabIndex = 30;
-            this.label204.Text = "0";
-            this.label204.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label205
-            // 
-            this.label205.AutoSize = true;
-            this.label205.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label205.Location = new System.Drawing.Point(270, 69);
-            this.label205.Name = "label205";
-            this.label205.Size = new System.Drawing.Size(17, 17);
-            this.label205.TabIndex = 26;
-            this.label205.Text = "0";
-            this.label205.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label206
-            // 
-            this.label206.AutoSize = true;
-            this.label206.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label206.Location = new System.Drawing.Point(270, 206);
-            this.label206.Name = "label206";
-            this.label206.Size = new System.Drawing.Size(17, 17);
-            this.label206.TabIndex = 29;
-            this.label206.Text = "0";
-            this.label206.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label207
-            // 
-            this.label207.AutoSize = true;
-            this.label207.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label207.Location = new System.Drawing.Point(270, 95);
-            this.label207.Name = "label207";
-            this.label207.Size = new System.Drawing.Size(17, 17);
-            this.label207.TabIndex = 25;
-            this.label207.Text = "0";
-            this.label207.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label208
-            // 
-            this.label208.AutoSize = true;
-            this.label208.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label208.Location = new System.Drawing.Point(270, 189);
-            this.label208.Name = "label208";
-            this.label208.Size = new System.Drawing.Size(17, 17);
-            this.label208.TabIndex = 28;
-            this.label208.Text = "0";
-            this.label208.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label209
-            // 
-            this.label209.AutoSize = true;
-            this.label209.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label209.Location = new System.Drawing.Point(270, 121);
-            this.label209.Name = "label209";
-            this.label209.Size = new System.Drawing.Size(17, 17);
-            this.label209.TabIndex = 24;
-            this.label209.Text = "0";
-            this.label209.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label210
-            // 
-            this.label210.AutoSize = true;
-            this.label210.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label210.Location = new System.Drawing.Point(270, 172);
-            this.label210.Name = "label210";
-            this.label210.Size = new System.Drawing.Size(17, 17);
-            this.label210.TabIndex = 27;
-            this.label210.Text = "0";
-            this.label210.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label211
-            // 
-            this.label211.AutoSize = true;
-            this.label211.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label211.Location = new System.Drawing.Point(270, 138);
-            this.label211.Name = "label211";
-            this.label211.Size = new System.Drawing.Size(17, 17);
-            this.label211.TabIndex = 23;
-            this.label211.Text = "0";
-            this.label211.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label212
-            // 
-            this.label212.AutoSize = true;
-            this.label212.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label212.Location = new System.Drawing.Point(270, 155);
-            this.label212.Name = "label212";
-            this.label212.Size = new System.Drawing.Size(17, 17);
-            this.label212.TabIndex = 22;
-            this.label212.Text = "0";
-            this.label212.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label213
-            // 
-            this.label213.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label213.AutoSize = true;
-            this.label213.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label213.Location = new System.Drawing.Point(171, 69);
-            this.label213.Name = "label213";
-            this.label213.Size = new System.Drawing.Size(93, 17);
-            this.label213.TabIndex = 51;
-            this.label213.Text = "Knowledge:";
-            this.label213.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btNext
-            // 
-            this.btNext.Location = new System.Drawing.Point(579, 634);
-            this.btNext.Name = "btNext";
-            this.btNext.Size = new System.Drawing.Size(30, 30);
-            this.btNext.TabIndex = 55;
-            this.btNext.UseVisualStyleBackColor = true;
-            // 
-            // lbAgiNum1
-            // 
-            this.lbAgiNum1.AutoSize = true;
-            this.lbAgiNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAgiNum1.Location = new System.Drawing.Point(119, 69);
-            this.lbAgiNum1.Name = "lbAgiNum1";
-            this.lbAgiNum1.Size = new System.Drawing.Size(17, 17);
-            this.lbAgiNum1.TabIndex = 17;
-            this.lbAgiNum1.Text = "0";
-            this.lbAgiNum1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btPrevious.Location = new System.Drawing.Point(418, 798);
+            this.btPrevious.Name = "btPrevious";
+            this.btPrevious.Size = new System.Drawing.Size(30, 30);
+            this.btPrevious.TabIndex = 59;
+            this.btPrevious.Text = "<";
+            this.btPrevious.UseVisualStyleBackColor = true;
             // 
             // PowerHolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 671);
-            this.Controls.Add(this.btNext);
-            this.Controls.Add(this.tableLayoutPanel10);
-            this.Controls.Add(this.tableLayoutPanel7);
-            this.Controls.Add(this.tableLayoutPanel4);
-            this.Controls.Add(this.dgCal1);
+            this.ClientSize = new System.Drawing.Size(1040, 830);
+            this.Controls.Add(this.btPrevious);
+            this.Controls.Add(this.tableLayoutPanel8);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tlpUnit2);
+            this.Controls.Add(this.btNext);
+            this.Controls.Add(this.dgCal1);
+            this.Controls.Add(this.tplUnit1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PowerHolForm";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.PowerHolForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudHea1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tplUnit1.ResumeLayout(false);
+            this.tplUnit1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).EndInit();
+            this.tlpUnit2.ResumeLayout(false);
+            this.tlpUnit2.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea2)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDis3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHea3)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel9.ResumeLayout(false);
             this.tableLayoutPanel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDis3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHea3)).EndInit();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
-            this.tableLayoutPanel11.ResumeLayout(false);
-            this.tableLayoutPanel11.PerformLayout();
-            this.tableLayoutPanel12.ResumeLayout(false);
-            this.tableLayoutPanel12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea4)).EndInit();
             this.ResumeLayout(false);
@@ -4205,25 +4364,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbPowStats11;
-        private System.Windows.Forms.Label lbPowStats21;
-        private System.Windows.Forms.Label lbCunNum1;
-        private System.Windows.Forms.Label lbAwaNum1;
-        private System.Windows.Forms.Label lbAthNum1;
-        private System.Windows.Forms.Label lbAniNum1;
-        private System.Windows.Forms.Label lbEndNum1;
-        private System.Windows.Forms.Label lbFigNum1;
-        private System.Windows.Forms.Label lbHeaNum1;
-        private System.Windows.Forms.Label lbPowLan1;
-        private System.Windows.Forms.Label lbPowWil1;
-        private System.Windows.Forms.Label lbPowWar1;
-        private System.Windows.Forms.Label lbPowThi1;
-        private System.Windows.Forms.Label lbPowSur1;
-        private System.Windows.Forms.Label lbPowKno1;
-        private System.Windows.Forms.Label lbPowMar1;
-        private System.Windows.Forms.Label lbPowPer1;
-        private System.Windows.Forms.Label lbPowSta1;
-        private System.Windows.Forms.Label lbPowSte1;
+        private System.Windows.Forms.Label lbLan1;
+        private System.Windows.Forms.Label lbWil1;
         private System.Windows.Forms.Label lbPowName1;
         private System.Windows.Forms.TextBox tbName1;
         private System.Windows.Forms.Label lbPowCost1;
@@ -4233,28 +4375,28 @@
         private System.Windows.Forms.Label lbPowTraining1;
         private System.Windows.Forms.ComboBox cbTraining1;
         private System.Windows.Forms.Label lbPowStats31;
-        private System.Windows.Forms.Label lbPowMov1;
-        private System.Windows.Forms.Label lbPowDef1;
+        private System.Windows.Forms.Label lbMov1;
+        private System.Windows.Forms.Label lbDef1;
         private System.Windows.Forms.Label lbDiscipText1;
         private System.Windows.Forms.RichTextBox rtbNotes1;
         private System.Windows.Forms.NumericUpDown nudHea1;
         private System.Windows.Forms.NumericUpDown nudDis1;
         private System.Windows.Forms.Label lbPowDiscip1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsbNewUnit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tplUnit1;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbWar1;
+        private System.Windows.Forms.Label lbThi1;
+        private System.Windows.Forms.Label lbSur1;
+        private System.Windows.Forms.Label lbSte1;
+        private System.Windows.Forms.Label lbSta1;
+        private System.Windows.Forms.Label lbPer1;
+        private System.Windows.Forms.Label lbMar1;
         private System.Windows.Forms.Label lbHea1;
         private System.Windows.Forms.Label lbFig1;
         private System.Windows.Forms.Label lbEnd1;
@@ -4263,61 +4405,100 @@
         private System.Windows.Forms.Label lbAth1;
         private System.Windows.Forms.Label lbAni1;
         private System.Windows.Forms.Label lbAgi1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbKno1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label lbFigDMG1;
+        private System.Windows.Forms.Label lbBul1;
+        private System.Windows.Forms.Label lbArmPen1;
+        private System.Windows.Forms.Label lbArmRTG1;
+        private System.Windows.Forms.Label lbMarDMG1;
+        private System.Windows.Forms.Label lbMarDMGNum1;
+        private System.Windows.Forms.Label lbFigDMGNum1;
+        private System.Windows.Forms.Label lbBulNum1;
+        private System.Windows.Forms.Label lbArmPenNum1;
+        private System.Windows.Forms.Label lbArmRTGNum1;
+        private System.Windows.Forms.CheckBox chbArmor1;
+        private System.Windows.Forms.CheckBox chbFightDMG1;
+        private System.Windows.Forms.CheckBox chbMarkDMG1;
         private System.Windows.Forms.DataGridView dgCal1;
+        private System.Windows.Forms.Button btNext;
+        private System.Windows.Forms.Button btDelete1;
+        private System.Windows.Forms.TextBox tbAgi1;
+        private System.Windows.Forms.TextBox tbWil1;
+        private System.Windows.Forms.TextBox tbLan1;
+        private System.Windows.Forms.TextBox tbWar1;
+        private System.Windows.Forms.TextBox tbHea1;
+        private System.Windows.Forms.TextBox tbThi1;
+        private System.Windows.Forms.TextBox tbFig1;
+        private System.Windows.Forms.TextBox tbSur1;
+        private System.Windows.Forms.TextBox tbEnd1;
+        private System.Windows.Forms.TextBox tbSte1;
+        private System.Windows.Forms.TextBox tbCun1;
+        private System.Windows.Forms.TextBox tbSta1;
+        private System.Windows.Forms.TextBox tbAwa1;
+        private System.Windows.Forms.TextBox tbPer1;
+        private System.Windows.Forms.TextBox tbAth1;
+        private System.Windows.Forms.TextBox tbMar1;
+        private System.Windows.Forms.TextBox tbAni1;
+        private System.Windows.Forms.TextBox tbKno1;
+        private System.Windows.Forms.TableLayoutPanel tlpUnit2;
+        private System.Windows.Forms.TextBox tbWil2;
+        private System.Windows.Forms.TextBox tbLan2;
+        private System.Windows.Forms.TextBox tbWar2;
+        private System.Windows.Forms.TextBox tbHea2;
+        private System.Windows.Forms.TextBox tbThi2;
+        private System.Windows.Forms.TextBox tbFig2;
+        private System.Windows.Forms.TextBox tbSur2;
+        private System.Windows.Forms.TextBox tbEnd2;
+        private System.Windows.Forms.TextBox tbSte2;
+        private System.Windows.Forms.TextBox tbCun2;
+        private System.Windows.Forms.TextBox tbSta2;
+        private System.Windows.Forms.TextBox tbAwa2;
+        private System.Windows.Forms.TextBox tbPer2;
+        private System.Windows.Forms.TextBox tbAth2;
+        private System.Windows.Forms.TextBox tbMar2;
+        private System.Windows.Forms.TextBox tbAni2;
+        private System.Windows.Forms.TextBox tbKno2;
+        private System.Windows.Forms.TextBox tbAgi2;
+        private System.Windows.Forms.Button btDelete2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label lbMarDMGNum2;
+        private System.Windows.Forms.Label lbFigDMGNum2;
+        private System.Windows.Forms.Label lbBulNum2;
+        private System.Windows.Forms.Label lbArmPenNum2;
+        private System.Windows.Forms.Label lbArmRTGNum2;
+        private System.Windows.Forms.CheckBox chbArmor2;
+        private System.Windows.Forms.CheckBox chbFightDMG2;
+        private System.Windows.Forms.CheckBox chbMarkDMG2;
+        private System.Windows.Forms.Label lbBul2;
+        private System.Windows.Forms.Label lbArmPen2;
+        private System.Windows.Forms.Label lbArmRTG2;
+        private System.Windows.Forms.Label lbMarDMG2;
+        private System.Windows.Forms.Label lbFigDMG2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbCostNumber2;
         private System.Windows.Forms.ComboBox cbTraining2;
         private System.Windows.Forms.Label lbDiscipText2;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbName2;
-        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbTypeText2;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbWar2;
         private System.Windows.Forms.RichTextBox rtbNotes2;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label lbThi2;
+        private System.Windows.Forms.Label lbSur2;
+        private System.Windows.Forms.Label lbSte2;
+        private System.Windows.Forms.Label lbSta2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbPer2;
+        private System.Windows.Forms.Label lbMar2;
         private System.Windows.Forms.Label lbHea2;
         private System.Windows.Forms.Label lbFig2;
         private System.Windows.Forms.Label lbEnd2;
@@ -4325,71 +4506,72 @@
         private System.Windows.Forms.Label lbAwa2;
         private System.Windows.Forms.Label lbAth2;
         private System.Windows.Forms.Label lbAni2;
-        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label lbWil2;
         private System.Windows.Forms.Label lbAgi2;
         private System.Windows.Forms.NumericUpDown nudDis2;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.Label lbAgiNum2;
+        private System.Windows.Forms.Label lbMov2;
+        private System.Windows.Forms.Label lbDef2;
         private System.Windows.Forms.NumericUpDown nudHea2;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label lbAniNum2;
-        private System.Windows.Forms.Label lbAthNum2;
-        private System.Windows.Forms.Label lbAwaNum2;
-        private System.Windows.Forms.Label lbCunNum2;
-        private System.Windows.Forms.Label lbEndNum2;
-        private System.Windows.Forms.Label lbFigNum2;
-        private System.Windows.Forms.Label lbHeaNum2;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label lbLan2;
+        private System.Windows.Forms.Label lbKno2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TextBox tbWil3;
+        private System.Windows.Forms.TextBox tbLan3;
+        private System.Windows.Forms.TextBox tbWar3;
+        private System.Windows.Forms.TextBox tbHea3;
+        private System.Windows.Forms.TextBox tbThi3;
+        private System.Windows.Forms.TextBox tbFig3;
+        private System.Windows.Forms.TextBox tbSur3;
+        private System.Windows.Forms.TextBox tbEnd3;
+        private System.Windows.Forms.TextBox tbSte3;
+        private System.Windows.Forms.TextBox tbCun3;
+        private System.Windows.Forms.TextBox tbSta3;
+        private System.Windows.Forms.TextBox tbAwa3;
+        private System.Windows.Forms.TextBox tbPer3;
+        private System.Windows.Forms.TextBox tbAth3;
+        private System.Windows.Forms.TextBox tbMar3;
+        private System.Windows.Forms.TextBox tbAni3;
+        private System.Windows.Forms.TextBox tbKno3;
+        private System.Windows.Forms.TextBox tbAgi3;
+        private System.Windows.Forms.Button btDelete3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.Label lbMarDMGNum3;
+        private System.Windows.Forms.Label lbFigDMGNum3;
+        private System.Windows.Forms.Label lbBulNum3;
+        private System.Windows.Forms.Label lbArmPenNum3;
+        private System.Windows.Forms.Label lbArmRTGNum3;
+        private System.Windows.Forms.CheckBox chbArmor3;
+        private System.Windows.Forms.CheckBox chbFightDMG3;
+        private System.Windows.Forms.CheckBox chbMarkDMG3;
+        private System.Windows.Forms.Label lbBul3;
+        private System.Windows.Forms.Label lbArmPen3;
+        private System.Windows.Forms.Label lbArmRTG3;
+        private System.Windows.Forms.Label lbMarDMG3;
+        private System.Windows.Forms.Label lbFigDMG3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.Label label97;
-        private System.Windows.Forms.Label label98;
-        private System.Windows.Forms.Label label99;
-        private System.Windows.Forms.Label label100;
-        private System.Windows.Forms.Label label101;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
-        private System.Windows.Forms.Label label102;
-        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbCostNumber3;
         private System.Windows.Forms.ComboBox cbTraining3;
         private System.Windows.Forms.Label lbDiscipText3;
-        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tbName3;
-        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lbTypeText3;
-        private System.Windows.Forms.Label label109;
-        private System.Windows.Forms.Label label110;
-        private System.Windows.Forms.Label label111;
-        private System.Windows.Forms.Label label112;
-        private System.Windows.Forms.Label label113;
-        private System.Windows.Forms.Label label114;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lbWar3;
         private System.Windows.Forms.RichTextBox rtbNotes3;
-        private System.Windows.Forms.Label label115;
-        private System.Windows.Forms.Label label116;
-        private System.Windows.Forms.Label label117;
-        private System.Windows.Forms.Label label118;
-        private System.Windows.Forms.Label label119;
-        private System.Windows.Forms.Label label120;
-        private System.Windows.Forms.Label label121;
+        private System.Windows.Forms.Label lbThi3;
+        private System.Windows.Forms.Label lbSur3;
+        private System.Windows.Forms.Label lbSte3;
+        private System.Windows.Forms.Label lbSta3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lbPer3;
+        private System.Windows.Forms.Label lbMar3;
         private System.Windows.Forms.Label lbHea3;
         private System.Windows.Forms.Label lbFig3;
         private System.Windows.Forms.Label lbEnd3;
@@ -4397,71 +4579,72 @@
         private System.Windows.Forms.Label lbAwa3;
         private System.Windows.Forms.Label lbAth3;
         private System.Windows.Forms.Label lbAni3;
-        private System.Windows.Forms.Label label129;
+        private System.Windows.Forms.Label lbWil3;
         private System.Windows.Forms.Label lbAgi3;
         private System.Windows.Forms.NumericUpDown nudDis3;
-        private System.Windows.Forms.Label label131;
-        private System.Windows.Forms.Label label132;
-        private System.Windows.Forms.Label lbAgiNum3;
+        private System.Windows.Forms.Label lbMov3;
+        private System.Windows.Forms.Label lbDef3;
         private System.Windows.Forms.NumericUpDown nudHea3;
-        private System.Windows.Forms.Label label134;
-        private System.Windows.Forms.Label lbAniNum3;
-        private System.Windows.Forms.Label lbAthNum3;
-        private System.Windows.Forms.Label lbAwaNum3;
-        private System.Windows.Forms.Label lbCunNum3;
-        private System.Windows.Forms.Label lbEndNum3;
-        private System.Windows.Forms.Label lbFigNum3;
-        private System.Windows.Forms.Label lbHeaNum3;
-        private System.Windows.Forms.Label label142;
-        private System.Windows.Forms.Label label143;
-        private System.Windows.Forms.Label label144;
-        private System.Windows.Forms.Label label145;
-        private System.Windows.Forms.Label label146;
-        private System.Windows.Forms.Label label147;
-        private System.Windows.Forms.Label label148;
-        private System.Windows.Forms.Label label149;
-        private System.Windows.Forms.Label label150;
-        private System.Windows.Forms.Label label151;
-        private System.Windows.Forms.Label label152;
+        private System.Windows.Forms.Label lbLan3;
+        private System.Windows.Forms.Label lbKno3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TextBox tbWil4;
+        private System.Windows.Forms.TextBox tbLan4;
+        private System.Windows.Forms.TextBox tbWar4;
+        private System.Windows.Forms.TextBox tbHea4;
+        private System.Windows.Forms.TextBox tbThi4;
+        private System.Windows.Forms.TextBox tbFig4;
+        private System.Windows.Forms.TextBox tbSur4;
+        private System.Windows.Forms.TextBox tbEnd4;
+        private System.Windows.Forms.TextBox tbSte4;
+        private System.Windows.Forms.TextBox tbCun4;
+        private System.Windows.Forms.TextBox tbSta4;
+        private System.Windows.Forms.TextBox tbAwa4;
+        private System.Windows.Forms.TextBox tbPer4;
+        private System.Windows.Forms.TextBox tbAth4;
+        private System.Windows.Forms.TextBox tbMar4;
+        private System.Windows.Forms.TextBox tbAni4;
+        private System.Windows.Forms.TextBox tbKno4;
+        private System.Windows.Forms.TextBox tbAgi4;
+        private System.Windows.Forms.Button btDelete4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.Label lbMarDMGNum4;
+        private System.Windows.Forms.Label lbFigDMGNum4;
+        private System.Windows.Forms.Label lbBulNum4;
+        private System.Windows.Forms.Label lbArmPenNum4;
+        private System.Windows.Forms.Label lbArmRTGNum4;
+        private System.Windows.Forms.CheckBox chbArmor4;
+        private System.Windows.Forms.CheckBox chbFightDMG4;
+        private System.Windows.Forms.CheckBox chbMarkDMG4;
+        private System.Windows.Forms.Label lbBul4;
+        private System.Windows.Forms.Label lbArmPen4;
+        private System.Windows.Forms.Label lbArmRTG4;
+        private System.Windows.Forms.Label lbMarDMG4;
+        private System.Windows.Forms.Label lbFigDMG4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
-        private System.Windows.Forms.Label label153;
-        private System.Windows.Forms.Label label154;
-        private System.Windows.Forms.Label label155;
-        private System.Windows.Forms.Label label156;
-        private System.Windows.Forms.Label label157;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.CheckBox checkBox12;
-        private System.Windows.Forms.Label label158;
-        private System.Windows.Forms.Label label159;
-        private System.Windows.Forms.Label label160;
-        private System.Windows.Forms.Label label161;
-        private System.Windows.Forms.Label label162;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.Label label163;
-        private System.Windows.Forms.Label label164;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lbCostNumber4;
         private System.Windows.Forms.ComboBox cbTraining4;
         private System.Windows.Forms.Label lbDiscipText4;
-        private System.Windows.Forms.Label label167;
+        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox tbName4;
-        private System.Windows.Forms.Label label168;
+        private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label lbTypeText4;
-        private System.Windows.Forms.Label label170;
-        private System.Windows.Forms.Label label171;
-        private System.Windows.Forms.Label label172;
-        private System.Windows.Forms.Label label173;
-        private System.Windows.Forms.Label label174;
-        private System.Windows.Forms.Label label175;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lbWar4;
         private System.Windows.Forms.RichTextBox rtbNotes4;
-        private System.Windows.Forms.Label label176;
-        private System.Windows.Forms.Label label177;
-        private System.Windows.Forms.Label label178;
-        private System.Windows.Forms.Label label179;
-        private System.Windows.Forms.Label label180;
-        private System.Windows.Forms.Label label181;
-        private System.Windows.Forms.Label label182;
+        private System.Windows.Forms.Label lbThi4;
+        private System.Windows.Forms.Label lbSur4;
+        private System.Windows.Forms.Label lbSte4;
+        private System.Windows.Forms.Label lbSta4;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lbPer4;
+        private System.Windows.Forms.Label lbMar4;
         private System.Windows.Forms.Label lbHea4;
         private System.Windows.Forms.Label lbFig4;
         private System.Windows.Forms.Label lbEnd4;
@@ -4469,33 +4652,14 @@
         private System.Windows.Forms.Label lbAwa4;
         private System.Windows.Forms.Label lbAth4;
         private System.Windows.Forms.Label lbAni4;
-        private System.Windows.Forms.Label label190;
+        private System.Windows.Forms.Label lbWil4;
         private System.Windows.Forms.Label lbAgi4;
         private System.Windows.Forms.NumericUpDown nudDis4;
-        private System.Windows.Forms.Label label192;
-        private System.Windows.Forms.Label label193;
-        private System.Windows.Forms.Label lbAgiNum4;
+        private System.Windows.Forms.Label lbMov4;
+        private System.Windows.Forms.Label lbDef4;
         private System.Windows.Forms.NumericUpDown nudHea4;
-        private System.Windows.Forms.Label label195;
-        private System.Windows.Forms.Label lbAniNum4;
-        private System.Windows.Forms.Label lbAthNum4;
-        private System.Windows.Forms.Label lbAwaNum4;
-        private System.Windows.Forms.Label lbCunNum4;
-        private System.Windows.Forms.Label lbEndNum4;
-        private System.Windows.Forms.Label lbFigNum4;
-        private System.Windows.Forms.Label lbHeaNum4;
-        private System.Windows.Forms.Label label203;
-        private System.Windows.Forms.Label label204;
-        private System.Windows.Forms.Label label205;
-        private System.Windows.Forms.Label label206;
-        private System.Windows.Forms.Label label207;
-        private System.Windows.Forms.Label label208;
-        private System.Windows.Forms.Label label209;
-        private System.Windows.Forms.Label label210;
-        private System.Windows.Forms.Label label211;
-        private System.Windows.Forms.Label label212;
-        private System.Windows.Forms.Label label213;
-        private System.Windows.Forms.Button btNext;
-        private System.Windows.Forms.Label lbAgiNum1;
+        private System.Windows.Forms.Label lbLan4;
+        private System.Windows.Forms.Label lbKno4;
+        private System.Windows.Forms.Button btPrevious;
     }
 }

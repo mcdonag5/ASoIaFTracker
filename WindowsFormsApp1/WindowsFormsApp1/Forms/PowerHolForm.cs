@@ -17,18 +17,30 @@ namespace WindowsFormsApp1
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
         House House;
+
         public int houseID;
 
-
+        ///// METHODS START ////////////////////////////////////////////////////////
+        public void UpdateUnits(int startingNum)
+        {
+            for()
+        }
+        
+        ///// METHODS END //////////////////////////////////////////////////////////
         public PowerHolForm(int ID)
         {
-            InitializeComponent();
             House = new House(ID);
-        }
 
-        private void PowerHolForm_Load(object sender, EventArgs e)
-        {
+            InitializeComponent();
+            //arry
+            object[] unitName = { tbName1, tbName2, tbName3, tbName4 };
+            object[] unitType = { lbTypeText1, lbTypeText2, lbTypeText3, lbTypeText4 };
+
             dgCal1.DataSource = House.HouseQry("PowerHolding");
         }
+        ///// EVENTS START //////////////////////////////////////////////////////////
+
+
+        ///// EVENTS END ////////////////////////////////////////////////////////////
     }
 }
