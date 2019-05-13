@@ -33,11 +33,11 @@ namespace WindowsFormsApp1.Forms
 
         private void btColumnNumbers_Click(object sender, EventArgs e)
         {
-            File.WriteAllText("ColumnNumbers.txt", String.Empty);
-            
+            using (StreamWriter columnNumbers = new StreamWriter("ColumnNumbers.txt", append: true))
+            { columnNumbers.WriteLine(richTextBox1.Text); }
             for (int i = 0; i< dataGridView1.ColumnCount;i++)
             {
-                using (StreamWriter columnNumbers = new StreamWriter("DevLog.txt", append: true))
+                using (StreamWriter columnNumbers = new StreamWriter("ColumnNumbers.txt", append: true))
                 { columnNumbers.WriteLine(i+": "+dataGridView1.Columns[i].Name); }
             }
         }
