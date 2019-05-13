@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using WindowsFormsApp1.Classes;
+using WindowsFormsApp1.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -117,6 +118,12 @@ namespace WindowsFormsApp1
             {
                 //do something else
             }
+        }
+
+        private void getQryNumberToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            qryHelper qryHelper = new qryHelper();
+            qryHelper.Show();
         }
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

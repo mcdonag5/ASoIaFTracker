@@ -17,13 +17,25 @@ namespace WindowsFormsApp1
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
         House House;
+        //arrays
+        TextBox[] unitName;
+        Label[] unitType;
+        Label[] unitCost;
+        Label[] unitDiscipline;
+        ComboBox[] unitTraining;
 
         public int houseID;
 
         ///// METHODS START ////////////////////////////////////////////////////////
         public void UpdateUnits(int startingNum)
         {
-            for()
+            int endNum;
+            if(dgCal1.RowCount > startingNum+4) { endNum = 3; } else { endNum = dgCal1.RowCount - startingNum; }
+            for(int i = 0; i< endNum;i++)
+            {
+                unitName[i].Text = dgCal1.Rows[i+startingNum].Cells[3].Value.ToString();
+
+            }
         }
         
         ///// METHODS END //////////////////////////////////////////////////////////
@@ -32,11 +44,15 @@ namespace WindowsFormsApp1
             House = new House(ID);
 
             InitializeComponent();
-            //arry
-            object[] unitName = { tbName1, tbName2, tbName3, tbName4 };
-            object[] unitType = { lbTypeText1, lbTypeText2, lbTypeText3, lbTypeText4 };
+            //array
+            unitName = new TextBox[] { tbName1, tbName2, tbName3, tbName4 };
+            unitType =  new Label[] { lbTypeText1, lbTypeText2, lbTypeText3, lbTypeText4 };
+            unitCost = new Label[] { lbCostNumber1, lbCostNumber2, lbCostNumber3, lbCostNumber4 };
+            unitDiscipline = new Label[] { lbDiscipText1, lbDiscipText2, lbDiscipText3, lbDiscipText4 };
+            unitTraining = new ComboBox[] { cbTraining1, cbTraining2, cbTraining3, cbTraining4 };
 
             dgCal1.DataSource = House.HouseQry("PowerHolding");
+            UpdateUnits(0);
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
 

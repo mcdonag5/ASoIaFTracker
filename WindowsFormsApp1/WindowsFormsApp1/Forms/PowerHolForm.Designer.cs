@@ -48,7 +48,27 @@
             this.nudDis1 = new System.Windows.Forms.NumericUpDown();
             this.lbPowDiscip1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbNewUnit = new System.Windows.Forms.ToolStripButton();
             this.tplUnit1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbWil1 = new System.Windows.Forms.TextBox();
+            this.tbLan1 = new System.Windows.Forms.TextBox();
+            this.tbWar1 = new System.Windows.Forms.TextBox();
+            this.tbHea1 = new System.Windows.Forms.TextBox();
+            this.tbThi1 = new System.Windows.Forms.TextBox();
+            this.tbFig1 = new System.Windows.Forms.TextBox();
+            this.tbSur1 = new System.Windows.Forms.TextBox();
+            this.tbEnd1 = new System.Windows.Forms.TextBox();
+            this.tbSte1 = new System.Windows.Forms.TextBox();
+            this.tbCun1 = new System.Windows.Forms.TextBox();
+            this.tbSta1 = new System.Windows.Forms.TextBox();
+            this.tbAwa1 = new System.Windows.Forms.TextBox();
+            this.tbPer1 = new System.Windows.Forms.TextBox();
+            this.tbAth1 = new System.Windows.Forms.TextBox();
+            this.tbMar1 = new System.Windows.Forms.TextBox();
+            this.tbAni1 = new System.Windows.Forms.TextBox();
+            this.tbKno1 = new System.Windows.Forms.TextBox();
+            this.tbAgi1 = new System.Windows.Forms.TextBox();
+            this.btDelete1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lbMarDMGNum1 = new System.Windows.Forms.Label();
             this.lbFigDMGNum1 = new System.Windows.Forms.Label();
@@ -86,26 +106,6 @@
             this.lbKno1 = new System.Windows.Forms.Label();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
             this.btNext = new System.Windows.Forms.Button();
-            this.btDelete1 = new System.Windows.Forms.Button();
-            this.tbAgi1 = new System.Windows.Forms.TextBox();
-            this.tbKno1 = new System.Windows.Forms.TextBox();
-            this.tbAni1 = new System.Windows.Forms.TextBox();
-            this.tbMar1 = new System.Windows.Forms.TextBox();
-            this.tbAth1 = new System.Windows.Forms.TextBox();
-            this.tbPer1 = new System.Windows.Forms.TextBox();
-            this.tbAwa1 = new System.Windows.Forms.TextBox();
-            this.tbSta1 = new System.Windows.Forms.TextBox();
-            this.tbCun1 = new System.Windows.Forms.TextBox();
-            this.tbSte1 = new System.Windows.Forms.TextBox();
-            this.tbEnd1 = new System.Windows.Forms.TextBox();
-            this.tbSur1 = new System.Windows.Forms.TextBox();
-            this.tbFig1 = new System.Windows.Forms.TextBox();
-            this.tbThi1 = new System.Windows.Forms.TextBox();
-            this.tbHea1 = new System.Windows.Forms.TextBox();
-            this.tbWar1 = new System.Windows.Forms.TextBox();
-            this.tbLan1 = new System.Windows.Forms.TextBox();
-            this.tbWil1 = new System.Windows.Forms.TextBox();
-            this.tsbNewUnit = new System.Windows.Forms.ToolStripButton();
             this.tlpUnit2 = new System.Windows.Forms.TableLayoutPanel();
             this.tbWil2 = new System.Windows.Forms.TextBox();
             this.tbLan2 = new System.Windows.Forms.TextBox();
@@ -326,6 +326,7 @@
             this.lbLan4 = new System.Windows.Forms.Label();
             this.lbKno4 = new System.Windows.Forms.Label();
             this.btPrevious = new System.Windows.Forms.Button();
+            this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -348,6 +349,7 @@
             this.tableLayoutPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea4)).BeginInit();
+            this.tableLayoutPanel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbLan1
@@ -356,7 +358,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLan1.AutoSize = true;
             this.lbLan1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLan1.Location = new System.Drawing.Point(30, 301);
+            this.lbLan1.Location = new System.Drawing.Point(30, 313);
             this.lbLan1.Name = "lbLan1";
             this.lbLan1.Size = new System.Drawing.Size(83, 29);
             this.lbLan1.TabIndex = 11;
@@ -369,7 +371,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbWil1.AutoSize = true;
             this.lbWil1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWil1.Location = new System.Drawing.Point(220, 301);
+            this.lbWil1.Location = new System.Drawing.Point(220, 313);
             this.lbWil1.Name = "lbWil1";
             this.lbWil1.Size = new System.Drawing.Size(44, 29);
             this.lbWil1.TabIndex = 12;
@@ -458,8 +460,6 @@
             // 
             // cbTraining1
             // 
-            this.cbTraining1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.SetColumnSpan(this.cbTraining1, 3);
             this.cbTraining1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTraining1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -472,7 +472,7 @@
             "Elite"});
             this.cbTraining1.Location = new System.Drawing.Point(319, 32);
             this.cbTraining1.Name = "cbTraining1";
-            this.cbTraining1.Size = new System.Drawing.Size(179, 25);
+            this.cbTraining1.Size = new System.Drawing.Size(182, 25);
             this.cbTraining1.TabIndex = 38;
             // 
             // lbPowStats31
@@ -524,15 +524,14 @@
             // 
             // rtbNotes1
             // 
-            this.rtbNotes1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbNotes1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tplUnit1.SetColumnSpan(this.rtbNotes1, 2);
             this.rtbNotes1.Location = new System.Drawing.Point(292, 216);
-            this.rtbNotes1.Margin = new System.Windows.Forms.Padding(2);
+            this.rtbNotes1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbNotes1.Name = "rtbNotes1";
             this.tplUnit1.SetRowSpan(this.rtbNotes1, 3);
-            this.rtbNotes1.Size = new System.Drawing.Size(213, 83);
+            this.rtbNotes1.Size = new System.Drawing.Size(215, 95);
             this.rtbNotes1.TabIndex = 45;
             this.rtbNotes1.Text = "";
             // 
@@ -571,12 +570,22 @@
             this.tsbNewUnit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1040, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1042, 25);
             this.toolStrip1.TabIndex = 49;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // tsbNewUnit
+            // 
+            this.tsbNewUnit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbNewUnit.Image = ((System.Drawing.Image)(resources.GetObject("tsbNewUnit.Image")));
+            this.tsbNewUnit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNewUnit.Name = "tsbNewUnit";
+            this.tsbNewUnit.Size = new System.Drawing.Size(60, 22);
+            this.tsbNewUnit.Text = "New Unit";
+            // 
             // tplUnit1
             // 
+            this.tplUnit1.BackColor = System.Drawing.SystemColors.Control;
             this.tplUnit1.ColumnCount = 6;
             this.tplUnit1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tplUnit1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -633,7 +642,7 @@
             this.tplUnit1.Controls.Add(this.nudHea1, 5, 1);
             this.tplUnit1.Controls.Add(this.lbLan1, 0, 9);
             this.tplUnit1.Controls.Add(this.lbKno1, 2, 1);
-            this.tplUnit1.Location = new System.Drawing.Point(12, 28);
+            this.tplUnit1.Location = new System.Drawing.Point(6, 6);
             this.tplUnit1.Name = "tplUnit1";
             this.tplUnit1.RowCount = 11;
             this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -648,8 +657,215 @@
             this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tplUnit1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tplUnit1.Size = new System.Drawing.Size(507, 379);
+            this.tplUnit1.Size = new System.Drawing.Size(504, 379);
             this.tplUnit1.TabIndex = 50;
+            // 
+            // tbWil1
+            // 
+            this.tbWil1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWil1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWil1.Location = new System.Drawing.Point(270, 316);
+            this.tbWil1.Name = "tbWil1";
+            this.tbWil1.Size = new System.Drawing.Size(17, 23);
+            this.tbWil1.TabIndex = 57;
+            this.tbWil1.Text = "0";
+            // 
+            // tbLan1
+            // 
+            this.tbLan1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbLan1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLan1.Location = new System.Drawing.Point(119, 316);
+            this.tbLan1.Name = "tbLan1";
+            this.tbLan1.Size = new System.Drawing.Size(17, 23);
+            this.tbLan1.TabIndex = 57;
+            this.tbLan1.Text = "0";
+            // 
+            // tbWar1
+            // 
+            this.tbWar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbWar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbWar1.Location = new System.Drawing.Point(270, 275);
+            this.tbWar1.Name = "tbWar1";
+            this.tbWar1.Size = new System.Drawing.Size(17, 23);
+            this.tbWar1.TabIndex = 57;
+            this.tbWar1.Text = "0";
+            // 
+            // tbHea1
+            // 
+            this.tbHea1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbHea1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbHea1.Location = new System.Drawing.Point(119, 275);
+            this.tbHea1.Name = "tbHea1";
+            this.tbHea1.Size = new System.Drawing.Size(17, 23);
+            this.tbHea1.TabIndex = 57;
+            this.tbHea1.Text = "0";
+            // 
+            // tbThi1
+            // 
+            this.tbThi1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbThi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbThi1.Location = new System.Drawing.Point(270, 246);
+            this.tbThi1.Name = "tbThi1";
+            this.tbThi1.Size = new System.Drawing.Size(17, 23);
+            this.tbThi1.TabIndex = 57;
+            this.tbThi1.Text = "0";
+            // 
+            // tbFig1
+            // 
+            this.tbFig1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFig1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFig1.Location = new System.Drawing.Point(119, 246);
+            this.tbFig1.Name = "tbFig1";
+            this.tbFig1.Size = new System.Drawing.Size(17, 23);
+            this.tbFig1.TabIndex = 57;
+            this.tbFig1.Text = "0";
+            // 
+            // tbSur1
+            // 
+            this.tbSur1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSur1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSur1.Location = new System.Drawing.Point(270, 217);
+            this.tbSur1.Name = "tbSur1";
+            this.tbSur1.Size = new System.Drawing.Size(17, 23);
+            this.tbSur1.TabIndex = 57;
+            this.tbSur1.Text = "0";
+            // 
+            // tbEnd1
+            // 
+            this.tbEnd1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbEnd1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEnd1.Location = new System.Drawing.Point(119, 217);
+            this.tbEnd1.Name = "tbEnd1";
+            this.tbEnd1.Size = new System.Drawing.Size(17, 23);
+            this.tbEnd1.TabIndex = 57;
+            this.tbEnd1.Text = "0";
+            // 
+            // tbSte1
+            // 
+            this.tbSte1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSte1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSte1.Location = new System.Drawing.Point(270, 188);
+            this.tbSte1.Name = "tbSte1";
+            this.tbSte1.Size = new System.Drawing.Size(17, 23);
+            this.tbSte1.TabIndex = 57;
+            this.tbSte1.Text = "0";
+            // 
+            // tbCun1
+            // 
+            this.tbCun1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbCun1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCun1.Location = new System.Drawing.Point(119, 188);
+            this.tbCun1.Name = "tbCun1";
+            this.tbCun1.Size = new System.Drawing.Size(17, 23);
+            this.tbCun1.TabIndex = 57;
+            this.tbCun1.Text = "0";
+            // 
+            // tbSta1
+            // 
+            this.tbSta1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSta1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSta1.Location = new System.Drawing.Point(270, 159);
+            this.tbSta1.Name = "tbSta1";
+            this.tbSta1.Size = new System.Drawing.Size(17, 23);
+            this.tbSta1.TabIndex = 57;
+            this.tbSta1.Text = "0";
+            // 
+            // tbAwa1
+            // 
+            this.tbAwa1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAwa1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAwa1.Location = new System.Drawing.Point(119, 159);
+            this.tbAwa1.Name = "tbAwa1";
+            this.tbAwa1.Size = new System.Drawing.Size(17, 23);
+            this.tbAwa1.TabIndex = 57;
+            this.tbAwa1.Text = "0";
+            // 
+            // tbPer1
+            // 
+            this.tbPer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPer1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPer1.Location = new System.Drawing.Point(270, 130);
+            this.tbPer1.Name = "tbPer1";
+            this.tbPer1.Size = new System.Drawing.Size(17, 23);
+            this.tbPer1.TabIndex = 57;
+            this.tbPer1.Text = "0";
+            // 
+            // tbAth1
+            // 
+            this.tbAth1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAth1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAth1.Location = new System.Drawing.Point(119, 130);
+            this.tbAth1.Name = "tbAth1";
+            this.tbAth1.Size = new System.Drawing.Size(17, 23);
+            this.tbAth1.TabIndex = 57;
+            this.tbAth1.Text = "0";
+            // 
+            // tbMar1
+            // 
+            this.tbMar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbMar1.Location = new System.Drawing.Point(270, 101);
+            this.tbMar1.Name = "tbMar1";
+            this.tbMar1.Size = new System.Drawing.Size(17, 23);
+            this.tbMar1.TabIndex = 57;
+            this.tbMar1.Text = "0";
+            // 
+            // tbAni1
+            // 
+            this.tbAni1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAni1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAni1.Location = new System.Drawing.Point(119, 101);
+            this.tbAni1.Name = "tbAni1";
+            this.tbAni1.Size = new System.Drawing.Size(17, 23);
+            this.tbAni1.TabIndex = 57;
+            this.tbAni1.Text = "0";
+            // 
+            // tbKno1
+            // 
+            this.tbKno1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbKno1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbKno1.Location = new System.Drawing.Point(270, 72);
+            this.tbKno1.Name = "tbKno1";
+            this.tbKno1.Size = new System.Drawing.Size(17, 23);
+            this.tbKno1.TabIndex = 57;
+            this.tbKno1.Text = "0";
+            // 
+            // tbAgi1
+            // 
+            this.tbAgi1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbAgi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAgi1.Location = new System.Drawing.Point(119, 72);
+            this.tbAgi1.Name = "tbAgi1";
+            this.tbAgi1.Size = new System.Drawing.Size(17, 23);
+            this.tbAgi1.TabIndex = 56;
+            this.tbAgi1.Text = "0";
+            // 
+            // btDelete1
+            // 
+            this.btDelete1.Location = new System.Drawing.Point(406, 316);
+            this.btDelete1.Name = "btDelete1";
+            this.btDelete1.Size = new System.Drawing.Size(75, 23);
+            this.btDelete1.TabIndex = 56;
+            this.btDelete1.Text = "Delete Unit";
+            this.btDelete1.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -678,13 +894,13 @@
             this.tableLayoutPanel3.Controls.Add(this.lbArmRTG1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.lbMarDMG1, 6, 0);
             this.tableLayoutPanel3.Controls.Add(this.lbFigDMG1, 4, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 333);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 345);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(501, 40);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(504, 40);
             this.tableLayoutPanel3.TabIndex = 51;
             // 
             // lbMarDMGNum1
@@ -696,7 +912,7 @@
             this.lbMarDMGNum1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMarDMGNum1.Location = new System.Drawing.Point(379, 20);
             this.lbMarDMGNum1.Name = "lbMarDMGNum1";
-            this.lbMarDMGNum1.Size = new System.Drawing.Size(119, 17);
+            this.lbMarDMGNum1.Size = new System.Drawing.Size(122, 17);
             this.lbMarDMGNum1.TabIndex = 51;
             this.lbMarDMGNum1.Text = "0";
             this.lbMarDMGNum1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -869,7 +1085,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(501, 63);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(504, 63);
             this.tableLayoutPanel2.TabIndex = 51;
             // 
             // label20
@@ -932,7 +1148,7 @@
             this.lbWar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWar1.Location = new System.Drawing.Point(191, 272);
             this.lbWar1.Name = "lbWar1";
-            this.lbWar1.Size = new System.Drawing.Size(73, 29);
+            this.lbWar1.Size = new System.Drawing.Size(73, 41);
             this.lbWar1.TabIndex = 51;
             this.lbWar1.Text = "Warfare:";
             this.lbWar1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1023,7 +1239,7 @@
             this.lbHea1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHea1.Location = new System.Drawing.Point(44, 272);
             this.lbHea1.Name = "lbHea1";
-            this.lbHea1.Size = new System.Drawing.Size(69, 29);
+            this.lbHea1.Size = new System.Drawing.Size(69, 41);
             this.lbHea1.TabIndex = 51;
             this.lbHea1.Text = "Healing:";
             this.lbHea1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1134,8 +1350,9 @@
             // 
             // dgCal1
             // 
+            this.dgCal1.AllowUserToAddRows = false;
             this.dgCal1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgCal1.Location = new System.Drawing.Point(1015, 634);
+            this.dgCal1.Location = new System.Drawing.Point(961, 804);
             this.dgCal1.Name = "dgCal1";
             this.dgCal1.Size = new System.Drawing.Size(48, 42);
             this.dgCal1.TabIndex = 51;
@@ -1143,228 +1360,12 @@
             // 
             // btNext
             // 
-            this.btNext.Location = new System.Drawing.Point(579, 798);
+            this.btNext.Location = new System.Drawing.Point(579, 816);
             this.btNext.Name = "btNext";
             this.btNext.Size = new System.Drawing.Size(30, 30);
             this.btNext.TabIndex = 55;
             this.btNext.Text = ">";
             this.btNext.UseVisualStyleBackColor = true;
-            // 
-            // btDelete1
-            // 
-            this.btDelete1.Location = new System.Drawing.Point(406, 304);
-            this.btDelete1.Name = "btDelete1";
-            this.btDelete1.Size = new System.Drawing.Size(75, 23);
-            this.btDelete1.TabIndex = 56;
-            this.btDelete1.Text = "Delete Unit";
-            this.btDelete1.UseVisualStyleBackColor = true;
-            // 
-            // tbAgi1
-            // 
-            this.tbAgi1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAgi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAgi1.Location = new System.Drawing.Point(119, 72);
-            this.tbAgi1.Name = "tbAgi1";
-            this.tbAgi1.Size = new System.Drawing.Size(17, 23);
-            this.tbAgi1.TabIndex = 56;
-            this.tbAgi1.Text = "0";
-            // 
-            // tbKno1
-            // 
-            this.tbKno1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbKno1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbKno1.Location = new System.Drawing.Point(270, 72);
-            this.tbKno1.Name = "tbKno1";
-            this.tbKno1.Size = new System.Drawing.Size(17, 23);
-            this.tbKno1.TabIndex = 57;
-            this.tbKno1.Text = "0";
-            // 
-            // tbAni1
-            // 
-            this.tbAni1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAni1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAni1.Location = new System.Drawing.Point(119, 101);
-            this.tbAni1.Name = "tbAni1";
-            this.tbAni1.Size = new System.Drawing.Size(17, 23);
-            this.tbAni1.TabIndex = 57;
-            this.tbAni1.Text = "0";
-            // 
-            // tbMar1
-            // 
-            this.tbMar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbMar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMar1.Location = new System.Drawing.Point(270, 101);
-            this.tbMar1.Name = "tbMar1";
-            this.tbMar1.Size = new System.Drawing.Size(17, 23);
-            this.tbMar1.TabIndex = 57;
-            this.tbMar1.Text = "0";
-            // 
-            // tbAth1
-            // 
-            this.tbAth1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAth1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAth1.Location = new System.Drawing.Point(119, 130);
-            this.tbAth1.Name = "tbAth1";
-            this.tbAth1.Size = new System.Drawing.Size(17, 23);
-            this.tbAth1.TabIndex = 57;
-            this.tbAth1.Text = "0";
-            // 
-            // tbPer1
-            // 
-            this.tbPer1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPer1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPer1.Location = new System.Drawing.Point(270, 130);
-            this.tbPer1.Name = "tbPer1";
-            this.tbPer1.Size = new System.Drawing.Size(17, 23);
-            this.tbPer1.TabIndex = 57;
-            this.tbPer1.Text = "0";
-            // 
-            // tbAwa1
-            // 
-            this.tbAwa1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAwa1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAwa1.Location = new System.Drawing.Point(119, 159);
-            this.tbAwa1.Name = "tbAwa1";
-            this.tbAwa1.Size = new System.Drawing.Size(17, 23);
-            this.tbAwa1.TabIndex = 57;
-            this.tbAwa1.Text = "0";
-            // 
-            // tbSta1
-            // 
-            this.tbSta1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSta1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSta1.Location = new System.Drawing.Point(270, 159);
-            this.tbSta1.Name = "tbSta1";
-            this.tbSta1.Size = new System.Drawing.Size(17, 23);
-            this.tbSta1.TabIndex = 57;
-            this.tbSta1.Text = "0";
-            // 
-            // tbCun1
-            // 
-            this.tbCun1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCun1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCun1.Location = new System.Drawing.Point(119, 188);
-            this.tbCun1.Name = "tbCun1";
-            this.tbCun1.Size = new System.Drawing.Size(17, 23);
-            this.tbCun1.TabIndex = 57;
-            this.tbCun1.Text = "0";
-            // 
-            // tbSte1
-            // 
-            this.tbSte1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSte1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSte1.Location = new System.Drawing.Point(270, 188);
-            this.tbSte1.Name = "tbSte1";
-            this.tbSte1.Size = new System.Drawing.Size(17, 23);
-            this.tbSte1.TabIndex = 57;
-            this.tbSte1.Text = "0";
-            // 
-            // tbEnd1
-            // 
-            this.tbEnd1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbEnd1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEnd1.Location = new System.Drawing.Point(119, 217);
-            this.tbEnd1.Name = "tbEnd1";
-            this.tbEnd1.Size = new System.Drawing.Size(17, 23);
-            this.tbEnd1.TabIndex = 57;
-            this.tbEnd1.Text = "0";
-            // 
-            // tbSur1
-            // 
-            this.tbSur1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSur1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSur1.Location = new System.Drawing.Point(270, 217);
-            this.tbSur1.Name = "tbSur1";
-            this.tbSur1.Size = new System.Drawing.Size(17, 23);
-            this.tbSur1.TabIndex = 57;
-            this.tbSur1.Text = "0";
-            // 
-            // tbFig1
-            // 
-            this.tbFig1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFig1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFig1.Location = new System.Drawing.Point(119, 246);
-            this.tbFig1.Name = "tbFig1";
-            this.tbFig1.Size = new System.Drawing.Size(17, 23);
-            this.tbFig1.TabIndex = 57;
-            this.tbFig1.Text = "0";
-            // 
-            // tbThi1
-            // 
-            this.tbThi1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbThi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbThi1.Location = new System.Drawing.Point(270, 246);
-            this.tbThi1.Name = "tbThi1";
-            this.tbThi1.Size = new System.Drawing.Size(17, 23);
-            this.tbThi1.TabIndex = 57;
-            this.tbThi1.Text = "0";
-            // 
-            // tbHea1
-            // 
-            this.tbHea1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbHea1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHea1.Location = new System.Drawing.Point(119, 275);
-            this.tbHea1.Name = "tbHea1";
-            this.tbHea1.Size = new System.Drawing.Size(17, 23);
-            this.tbHea1.TabIndex = 57;
-            this.tbHea1.Text = "0";
-            // 
-            // tbWar1
-            // 
-            this.tbWar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbWar1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbWar1.Location = new System.Drawing.Point(270, 275);
-            this.tbWar1.Name = "tbWar1";
-            this.tbWar1.Size = new System.Drawing.Size(17, 23);
-            this.tbWar1.TabIndex = 57;
-            this.tbWar1.Text = "0";
-            // 
-            // tbLan1
-            // 
-            this.tbLan1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbLan1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLan1.Location = new System.Drawing.Point(119, 304);
-            this.tbLan1.Name = "tbLan1";
-            this.tbLan1.Size = new System.Drawing.Size(17, 23);
-            this.tbLan1.TabIndex = 57;
-            this.tbLan1.Text = "0";
-            // 
-            // tbWil1
-            // 
-            this.tbWil1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbWil1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbWil1.Location = new System.Drawing.Point(270, 304);
-            this.tbWil1.Name = "tbWil1";
-            this.tbWil1.Size = new System.Drawing.Size(17, 23);
-            this.tbWil1.TabIndex = 57;
-            this.tbWil1.Text = "0";
-            // 
-            // tsbNewUnit
-            // 
-            this.tsbNewUnit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbNewUnit.Image = ((System.Drawing.Image)(resources.GetObject("tsbNewUnit.Image")));
-            this.tsbNewUnit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNewUnit.Name = "tsbNewUnit";
-            this.tsbNewUnit.Size = new System.Drawing.Size(60, 22);
-            this.tsbNewUnit.Text = "New Unit";
             // 
             // tlpUnit2
             // 
@@ -1424,7 +1425,7 @@
             this.tlpUnit2.Controls.Add(this.nudHea2, 5, 1);
             this.tlpUnit2.Controls.Add(this.lbLan2, 0, 9);
             this.tlpUnit2.Controls.Add(this.lbKno2, 2, 1);
-            this.tlpUnit2.Location = new System.Drawing.Point(525, 28);
+            this.tlpUnit2.Location = new System.Drawing.Point(519, 6);
             this.tlpUnit2.Name = "tlpUnit2";
             this.tlpUnit2.RowCount = 11;
             this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1439,7 +1440,7 @@
             this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tlpUnit2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpUnit2.Size = new System.Drawing.Size(507, 379);
+            this.tlpUnit2.Size = new System.Drawing.Size(504, 379);
             this.tlpUnit2.TabIndex = 56;
             // 
             // tbWil2
@@ -1447,7 +1448,7 @@
             this.tbWil2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbWil2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbWil2.Location = new System.Drawing.Point(270, 304);
+            this.tbWil2.Location = new System.Drawing.Point(270, 316);
             this.tbWil2.Name = "tbWil2";
             this.tbWil2.Size = new System.Drawing.Size(17, 23);
             this.tbWil2.TabIndex = 57;
@@ -1458,7 +1459,7 @@
             this.tbLan2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbLan2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLan2.Location = new System.Drawing.Point(119, 304);
+            this.tbLan2.Location = new System.Drawing.Point(119, 316);
             this.tbLan2.Name = "tbLan2";
             this.tbLan2.Size = new System.Drawing.Size(17, 23);
             this.tbLan2.TabIndex = 57;
@@ -1642,7 +1643,7 @@
             // 
             // btDelete2
             // 
-            this.btDelete2.Location = new System.Drawing.Point(406, 304);
+            this.btDelete2.Location = new System.Drawing.Point(406, 316);
             this.btDelete2.Name = "btDelete2";
             this.btDelete2.Size = new System.Drawing.Size(75, 23);
             this.btDelete2.TabIndex = 56;
@@ -1676,12 +1677,12 @@
             this.tableLayoutPanel4.Controls.Add(this.lbArmRTG2, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.lbMarDMG2, 6, 0);
             this.tableLayoutPanel4.Controls.Add(this.lbFigDMG2, 4, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 333);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 345);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(501, 40);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(503, 40);
             this.tableLayoutPanel4.TabIndex = 51;
             // 
             // lbMarDMGNum2
@@ -1693,7 +1694,7 @@
             this.lbMarDMGNum2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMarDMGNum2.Location = new System.Drawing.Point(379, 20);
             this.lbMarDMGNum2.Name = "lbMarDMGNum2";
-            this.lbMarDMGNum2.Size = new System.Drawing.Size(119, 17);
+            this.lbMarDMGNum2.Size = new System.Drawing.Size(121, 17);
             this.lbMarDMGNum2.TabIndex = 51;
             this.lbMarDMGNum2.Text = "0";
             this.lbMarDMGNum2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -1866,7 +1867,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(501, 63);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(503, 63);
             this.tableLayoutPanel5.TabIndex = 51;
             // 
             // label1
@@ -1906,8 +1907,6 @@
             // 
             // cbTraining2
             // 
-            this.cbTraining2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel5.SetColumnSpan(this.cbTraining2, 3);
             this.cbTraining2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTraining2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1920,7 +1919,7 @@
             "Elite"});
             this.cbTraining2.Location = new System.Drawing.Point(319, 32);
             this.cbTraining2.Name = "cbTraining2";
-            this.cbTraining2.Size = new System.Drawing.Size(179, 25);
+            this.cbTraining2.Size = new System.Drawing.Size(180, 25);
             this.cbTraining2.TabIndex = 38;
             // 
             // lbDiscipText2
@@ -2051,22 +2050,21 @@
             this.lbWar2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWar2.Location = new System.Drawing.Point(191, 272);
             this.lbWar2.Name = "lbWar2";
-            this.lbWar2.Size = new System.Drawing.Size(73, 29);
+            this.lbWar2.Size = new System.Drawing.Size(73, 41);
             this.lbWar2.TabIndex = 51;
             this.lbWar2.Text = "Warfare:";
             this.lbWar2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rtbNotes2
             // 
-            this.rtbNotes2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbNotes2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tlpUnit2.SetColumnSpan(this.rtbNotes2, 2);
             this.rtbNotes2.Location = new System.Drawing.Point(292, 216);
-            this.rtbNotes2.Margin = new System.Windows.Forms.Padding(2);
+            this.rtbNotes2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbNotes2.Name = "rtbNotes2";
             this.tlpUnit2.SetRowSpan(this.rtbNotes2, 3);
-            this.rtbNotes2.Size = new System.Drawing.Size(213, 83);
+            this.rtbNotes2.Size = new System.Drawing.Size(215, 95);
             this.rtbNotes2.TabIndex = 45;
             this.rtbNotes2.Text = "";
             // 
@@ -2170,7 +2168,7 @@
             this.lbHea2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHea2.Location = new System.Drawing.Point(44, 272);
             this.lbHea2.Name = "lbHea2";
-            this.lbHea2.Size = new System.Drawing.Size(69, 29);
+            this.lbHea2.Size = new System.Drawing.Size(69, 41);
             this.lbHea2.TabIndex = 51;
             this.lbHea2.Text = "Healing:";
             this.lbHea2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -2259,7 +2257,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbWil2.AutoSize = true;
             this.lbWil2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWil2.Location = new System.Drawing.Point(220, 301);
+            this.lbWil2.Location = new System.Drawing.Point(220, 313);
             this.lbWil2.Name = "lbWil2";
             this.lbWil2.Size = new System.Drawing.Size(44, 29);
             this.lbWil2.TabIndex = 12;
@@ -2323,7 +2321,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLan2.AutoSize = true;
             this.lbLan2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLan2.Location = new System.Drawing.Point(30, 301);
+            this.lbLan2.Location = new System.Drawing.Point(30, 313);
             this.lbLan2.Name = "lbLan2";
             this.lbLan2.Size = new System.Drawing.Size(83, 29);
             this.lbLan2.TabIndex = 11;
@@ -2401,7 +2399,7 @@
             this.tableLayoutPanel1.Controls.Add(this.nudHea3, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbLan3, 0, 9);
             this.tableLayoutPanel1.Controls.Add(this.lbKno3, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 413);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 395);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -2416,7 +2414,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(507, 379);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(504, 379);
             this.tableLayoutPanel1.TabIndex = 57;
             // 
             // tbWil3
@@ -2424,7 +2422,7 @@
             this.tbWil3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbWil3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbWil3.Location = new System.Drawing.Point(270, 304);
+            this.tbWil3.Location = new System.Drawing.Point(270, 316);
             this.tbWil3.Name = "tbWil3";
             this.tbWil3.Size = new System.Drawing.Size(17, 23);
             this.tbWil3.TabIndex = 57;
@@ -2435,7 +2433,7 @@
             this.tbLan3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbLan3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLan3.Location = new System.Drawing.Point(119, 304);
+            this.tbLan3.Location = new System.Drawing.Point(119, 316);
             this.tbLan3.Name = "tbLan3";
             this.tbLan3.Size = new System.Drawing.Size(17, 23);
             this.tbLan3.TabIndex = 57;
@@ -2619,7 +2617,7 @@
             // 
             // btDelete3
             // 
-            this.btDelete3.Location = new System.Drawing.Point(406, 304);
+            this.btDelete3.Location = new System.Drawing.Point(406, 316);
             this.btDelete3.Name = "btDelete3";
             this.btDelete3.Size = new System.Drawing.Size(75, 23);
             this.btDelete3.TabIndex = 56;
@@ -2628,8 +2626,6 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel6.ColumnCount = 8;
             this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel6, 6);
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -2653,7 +2649,7 @@
             this.tableLayoutPanel6.Controls.Add(this.lbArmRTG3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.lbMarDMG3, 6, 0);
             this.tableLayoutPanel6.Controls.Add(this.lbFigDMG3, 4, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 333);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 345);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -2818,8 +2814,6 @@
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel7.ColumnCount = 6;
             this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel7, 6);
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -2883,8 +2877,6 @@
             // 
             // cbTraining3
             // 
-            this.cbTraining3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel7.SetColumnSpan(this.cbTraining3, 3);
             this.cbTraining3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTraining3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2897,7 +2889,7 @@
             "Elite"});
             this.cbTraining3.Location = new System.Drawing.Point(319, 32);
             this.cbTraining3.Name = "cbTraining3";
-            this.cbTraining3.Size = new System.Drawing.Size(179, 25);
+            this.cbTraining3.Size = new System.Drawing.Size(182, 25);
             this.cbTraining3.TabIndex = 38;
             // 
             // lbDiscipText3
@@ -3028,22 +3020,21 @@
             this.lbWar3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWar3.Location = new System.Drawing.Point(191, 272);
             this.lbWar3.Name = "lbWar3";
-            this.lbWar3.Size = new System.Drawing.Size(73, 29);
+            this.lbWar3.Size = new System.Drawing.Size(73, 41);
             this.lbWar3.TabIndex = 51;
             this.lbWar3.Text = "Warfare:";
             this.lbWar3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rtbNotes3
             // 
-            this.rtbNotes3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbNotes3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.SetColumnSpan(this.rtbNotes3, 2);
             this.rtbNotes3.Location = new System.Drawing.Point(292, 216);
-            this.rtbNotes3.Margin = new System.Windows.Forms.Padding(2);
+            this.rtbNotes3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbNotes3.Name = "rtbNotes3";
             this.tableLayoutPanel1.SetRowSpan(this.rtbNotes3, 3);
-            this.rtbNotes3.Size = new System.Drawing.Size(213, 83);
+            this.rtbNotes3.Size = new System.Drawing.Size(212, 95);
             this.rtbNotes3.TabIndex = 45;
             this.rtbNotes3.Text = "";
             // 
@@ -3147,7 +3138,7 @@
             this.lbHea3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHea3.Location = new System.Drawing.Point(44, 272);
             this.lbHea3.Name = "lbHea3";
-            this.lbHea3.Size = new System.Drawing.Size(69, 29);
+            this.lbHea3.Size = new System.Drawing.Size(69, 41);
             this.lbHea3.TabIndex = 51;
             this.lbHea3.Text = "Healing:";
             this.lbHea3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -3236,7 +3227,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbWil3.AutoSize = true;
             this.lbWil3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWil3.Location = new System.Drawing.Point(220, 301);
+            this.lbWil3.Location = new System.Drawing.Point(220, 313);
             this.lbWil3.Name = "lbWil3";
             this.lbWil3.Size = new System.Drawing.Size(44, 29);
             this.lbWil3.TabIndex = 12;
@@ -3300,7 +3291,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLan3.AutoSize = true;
             this.lbLan3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLan3.Location = new System.Drawing.Point(30, 301);
+            this.lbLan3.Location = new System.Drawing.Point(30, 313);
             this.lbLan3.Name = "lbLan3";
             this.lbLan3.Size = new System.Drawing.Size(83, 29);
             this.lbLan3.TabIndex = 11;
@@ -3378,7 +3369,7 @@
             this.tableLayoutPanel8.Controls.Add(this.nudHea4, 5, 1);
             this.tableLayoutPanel8.Controls.Add(this.lbLan4, 0, 9);
             this.tableLayoutPanel8.Controls.Add(this.lbKno4, 2, 1);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(525, 413);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(519, 395);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 11;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -3393,7 +3384,7 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(507, 379);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(504, 379);
             this.tableLayoutPanel8.TabIndex = 58;
             // 
             // tbWil4
@@ -3401,7 +3392,7 @@
             this.tbWil4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbWil4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbWil4.Location = new System.Drawing.Point(270, 304);
+            this.tbWil4.Location = new System.Drawing.Point(270, 316);
             this.tbWil4.Name = "tbWil4";
             this.tbWil4.Size = new System.Drawing.Size(17, 23);
             this.tbWil4.TabIndex = 57;
@@ -3412,7 +3403,7 @@
             this.tbLan4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbLan4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLan4.Location = new System.Drawing.Point(119, 304);
+            this.tbLan4.Location = new System.Drawing.Point(119, 316);
             this.tbLan4.Name = "tbLan4";
             this.tbLan4.Size = new System.Drawing.Size(17, 23);
             this.tbLan4.TabIndex = 57;
@@ -3596,7 +3587,7 @@
             // 
             // btDelete4
             // 
-            this.btDelete4.Location = new System.Drawing.Point(406, 304);
+            this.btDelete4.Location = new System.Drawing.Point(406, 316);
             this.btDelete4.Name = "btDelete4";
             this.btDelete4.Size = new System.Drawing.Size(75, 23);
             this.btDelete4.TabIndex = 56;
@@ -3605,8 +3596,6 @@
             // 
             // tableLayoutPanel9
             // 
-            this.tableLayoutPanel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel9.ColumnCount = 8;
             this.tableLayoutPanel8.SetColumnSpan(this.tableLayoutPanel9, 6);
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -3630,12 +3619,12 @@
             this.tableLayoutPanel9.Controls.Add(this.lbArmRTG4, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.lbMarDMG4, 6, 0);
             this.tableLayoutPanel9.Controls.Add(this.lbFigDMG4, 4, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 333);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 345);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(501, 40);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(500, 40);
             this.tableLayoutPanel9.TabIndex = 51;
             // 
             // lbMarDMGNum4
@@ -3647,7 +3636,7 @@
             this.lbMarDMGNum4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMarDMGNum4.Location = new System.Drawing.Point(379, 20);
             this.lbMarDMGNum4.Name = "lbMarDMGNum4";
-            this.lbMarDMGNum4.Size = new System.Drawing.Size(119, 17);
+            this.lbMarDMGNum4.Size = new System.Drawing.Size(118, 17);
             this.lbMarDMGNum4.TabIndex = 51;
             this.lbMarDMGNum4.Text = "0";
             this.lbMarDMGNum4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -3795,8 +3784,6 @@
             // 
             // tableLayoutPanel10
             // 
-            this.tableLayoutPanel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel10.ColumnCount = 6;
             this.tableLayoutPanel8.SetColumnSpan(this.tableLayoutPanel10, 6);
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -3820,7 +3807,7 @@
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(501, 63);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(500, 63);
             this.tableLayoutPanel10.TabIndex = 51;
             // 
             // label25
@@ -3874,7 +3861,7 @@
             "Elite"});
             this.cbTraining4.Location = new System.Drawing.Point(319, 32);
             this.cbTraining4.Name = "cbTraining4";
-            this.cbTraining4.Size = new System.Drawing.Size(179, 25);
+            this.cbTraining4.Size = new System.Drawing.Size(181, 25);
             this.cbTraining4.TabIndex = 38;
             // 
             // lbDiscipText4
@@ -4005,22 +3992,21 @@
             this.lbWar4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWar4.Location = new System.Drawing.Point(191, 272);
             this.lbWar4.Name = "lbWar4";
-            this.lbWar4.Size = new System.Drawing.Size(73, 29);
+            this.lbWar4.Size = new System.Drawing.Size(73, 41);
             this.lbWar4.TabIndex = 51;
             this.lbWar4.Text = "Warfare:";
             this.lbWar4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rtbNotes4
             // 
-            this.rtbNotes4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rtbNotes4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel8.SetColumnSpan(this.rtbNotes4, 2);
             this.rtbNotes4.Location = new System.Drawing.Point(292, 216);
-            this.rtbNotes4.Margin = new System.Windows.Forms.Padding(2);
+            this.rtbNotes4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rtbNotes4.Name = "rtbNotes4";
             this.tableLayoutPanel8.SetRowSpan(this.rtbNotes4, 3);
-            this.rtbNotes4.Size = new System.Drawing.Size(213, 83);
+            this.rtbNotes4.Size = new System.Drawing.Size(208, 95);
             this.rtbNotes4.TabIndex = 45;
             this.rtbNotes4.Text = "";
             // 
@@ -4124,7 +4110,7 @@
             this.lbHea4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHea4.Location = new System.Drawing.Point(44, 272);
             this.lbHea4.Name = "lbHea4";
-            this.lbHea4.Size = new System.Drawing.Size(69, 29);
+            this.lbHea4.Size = new System.Drawing.Size(69, 41);
             this.lbHea4.TabIndex = 51;
             this.lbHea4.Text = "Healing:";
             this.lbHea4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4213,7 +4199,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbWil4.AutoSize = true;
             this.lbWil4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWil4.Location = new System.Drawing.Point(220, 301);
+            this.lbWil4.Location = new System.Drawing.Point(220, 313);
             this.lbWil4.Name = "lbWil4";
             this.lbWil4.Size = new System.Drawing.Size(44, 29);
             this.lbWil4.TabIndex = 12;
@@ -4277,7 +4263,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbLan4.AutoSize = true;
             this.lbLan4.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLan4.Location = new System.Drawing.Point(30, 301);
+            this.lbLan4.Location = new System.Drawing.Point(30, 313);
             this.lbLan4.Name = "lbLan4";
             this.lbLan4.Size = new System.Drawing.Size(83, 29);
             this.lbLan4.TabIndex = 11;
@@ -4299,27 +4285,43 @@
             // 
             // btPrevious
             // 
-            this.btPrevious.Location = new System.Drawing.Point(418, 798);
+            this.btPrevious.Location = new System.Drawing.Point(418, 816);
             this.btPrevious.Name = "btPrevious";
             this.btPrevious.Size = new System.Drawing.Size(30, 30);
             this.btPrevious.TabIndex = 59;
             this.btPrevious.Text = "<";
             this.btPrevious.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel11
+            // 
+            this.tableLayoutPanel11.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
+            this.tableLayoutPanel11.ColumnCount = 2;
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 510F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 510F));
+            this.tableLayoutPanel11.Controls.Add(this.tplUnit1, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.tlpUnit2, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel8, 1, 1);
+            this.tableLayoutPanel11.Controls.Add(this.tableLayoutPanel1, 0, 1);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(6, 28);
+            this.tableLayoutPanel11.Name = "tableLayoutPanel11";
+            this.tableLayoutPanel11.RowCount = 2;
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 386F));
+            this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 374F));
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(1029, 782);
+            this.tableLayoutPanel11.TabIndex = 60;
+            // 
             // PowerHolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1040, 830);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1059, 687);
+            this.Controls.Add(this.tableLayoutPanel11);
             this.Controls.Add(this.btPrevious);
-            this.Controls.Add(this.tableLayoutPanel8);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.tlpUnit2);
             this.Controls.Add(this.btNext);
             this.Controls.Add(this.dgCal1);
-            this.Controls.Add(this.tplUnit1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PowerHolForm";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.nudHea1)).EndInit();
@@ -4357,6 +4359,7 @@
             this.tableLayoutPanel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea4)).EndInit();
+            this.tableLayoutPanel11.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4661,5 +4664,6 @@
         private System.Windows.Forms.Label lbLan4;
         private System.Windows.Forms.Label lbKno4;
         private System.Windows.Forms.Button btPrevious;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
     }
 }
