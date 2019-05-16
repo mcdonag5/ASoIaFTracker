@@ -23,13 +23,13 @@ namespace WindowsFormsApp1.Forms
         ///// METHODS START ////////////////////////////////////////////////////////
 
         ///// METHODS END //////////////////////////////////////////////////////////
-        public NewDefenseForm(int ID, int holdingID, string landName)
+        public NewDefenseForm(int houseID, string houseName, int holdingID, string landName)
         {
-            House = new House(ID);
+            House = new House(houseID, houseName);
             landID = holdingID.ToString();
             InitializeComponent();
 
-            lbName.Text = landName;
+            lbName.Text = landName + " New Defense";
 
             dgDefense.DataSource = House.HouseQry("Defense");
             object[] defense = new object[dgDefense.RowCount];

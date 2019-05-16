@@ -12,6 +12,8 @@ namespace WindowsFormsApp1.Classes
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
         public readonly int ID;
+        public string name;
+        public int bannerNumber;
 
         public House()
         {
@@ -25,6 +27,13 @@ namespace WindowsFormsApp1.Classes
             mysqlConn.Connect();
         }
 
+        public House(int houseID, string houseName)
+        {
+            ID = houseID;
+            name = houseName;
+            mysqlConn.DbConfig(); //sets database settings
+            mysqlConn.Connect();
+        }
         ///// SELECT ////////////////////////////////////////////////////////////////
         public object HouseQry(string information)
         {//makes a query to the database
@@ -41,6 +50,9 @@ namespace WindowsFormsApp1.Classes
                         break;
                     case "ThisHouse":
                         qry = "SELECT * FROM `tbl_House` WHERE `Hou_ID` = '"+ID+"';";
+                        break;
+                    case "OtherHouse":
+                        qry = "SELECT * FROM `tbl_House` WHERE `Hou_ID` != '" + ID + "';";
                         break;
                     //tbl_LandHolding
                     case "LandHolding":
@@ -69,6 +81,11 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT `tbl_Banner`.`HouLie_ID`, `tbl_House`.*"+
                             "FROM `tbl_Banner`, `tbl_House` "+
                             "WHERE `tbl_Banner`.`HouLie_ID` = '" + ID + "' AND `tbl_House`.`Hou_ID` = `tbl_Banner`.`HouBan_ID`;";
+                        break;
+                    case "ViewBanner":
+                        qry = "SELECT `tbl_Banner`.`HouBan_ID` AS `ID`, `tbl_House`.`Hou_Name` AS `Name`, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Hou_SeatOfPower` AS `Seat Of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Wealth` AS `Wealth`, `tbl_House`.`Hou_Power` AS `Power`, `tbl_House`.`Hou_Population` AS `Population`, `tbl_House`.`Hou_Law` AS `Law`, `tbl_House`.`Hou_Lands` AS `Lands`, `tbl_House`.`Hou_Influence` AS `Influence`, `tbl_House`.`Hou_Defense` AS `Defense`"+
+                            "FROM `tbl_Banner`, `tbl_House`"+
+                            "WHERE `tbl_Banner`.`HouLie_ID` = '"+ID+"' AND `tbl_House`.`Hou_ID` = `tbl_Banner`.`HouBan_ID`; ";
                         break;
                     //tbl_HouseChanges
                     case "HouseChanges":
@@ -284,6 +301,17 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        public void InsertBanners(int bannerHouse)
+        {
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_Banner` (`HouLie_ID`, `HouBan_ID`) "+
+                    "VALUES ('"+ID+"', '"+ bannerHouse+"');";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         public void InsertHouseChanges (int year, int month,int roll, string fortune,int wealthHF,int wealthOther,int powerHF, int powerOther,int populationHF,int populationOther, int lawHF,int lawOther, int landsHF,int landsOther,int influenceHF,int influenceOther,int defenseHF,int defenseOther)
         {
             if (mysqlConn.ConnOpen() == true)
@@ -295,6 +323,7 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+
         ///// UPDATE ////////////////////////////////////////////////////////////////
         //tbl_House
         public void UpdateHouseDetails(string name, string player, string realm, string seatOfPower, string liegeLord,string liege)
@@ -380,9 +409,7 @@ namespace WindowsFormsApp1.Classes
         //tbl_WealthHolding
         public void UpdateWealthDetails(string WeaHolID, string name, string notes, string built)
         {
-            DevLog.LogItem("Before"+built);
             built = built == "True" ? "1" : "0";
-            DevLog.LogItem("After" + built);
             if (mysqlConn.ConnOpen() == true)
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
@@ -393,5 +420,27 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        ///// DELETE ////////////////////////////////////////////////////////////////
+        //tbl_Banner
+        public void DeleteBanner(int bannerHouse)
+        {
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_Banner`" +
+                    "WHERE `HouLie_ID` = '"+ID+"' AND `HouBan_ID` = '"+ bannerHouse+"';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        ///// VARIABLES START //////////////////////////////////////////////////////
+        
+        ///// VARIABLES END ////////////////////////////////////////////////////////
+
+        ///// METHODS START ////////////////////////////////////////////////////////
+        
+        ///// EVENTS START //////////////////////////////////////////////////////////
+        
+        ///// EVENTS END ////////////////////////////////////////////////////////////
     }
 }

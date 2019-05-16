@@ -62,7 +62,7 @@
             this.btSendQry.TabIndex = 2;
             this.btSendQry.Text = "Send Qry";
             this.btSendQry.UseVisualStyleBackColor = true;
-            this.btSendQry.Click += new System.EventHandler(this.btSendQry_Click);
+            this.btSendQry.Click += new System.EventHandler(this.BtSendQry_Click);
             // 
             // btColumnNumbers
             // 
@@ -72,7 +72,7 @@
             this.btColumnNumbers.TabIndex = 3;
             this.btColumnNumbers.Text = "Column numbers";
             this.btColumnNumbers.UseVisualStyleBackColor = true;
-            this.btColumnNumbers.Click += new System.EventHandler(this.btColumnNumbers_Click);
+            this.btColumnNumbers.Click += new System.EventHandler(this.BtColumnNumbers_Click);
             // 
             // qryHelper
             // 

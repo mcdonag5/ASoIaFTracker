@@ -143,7 +143,7 @@
             this.tsmQryHelper.Name = "tsmQryHelper";
             this.tsmQryHelper.Size = new System.Drawing.Size(180, 22);
             this.tsmQryHelper.Text = "Qry Helper";
-            this.tsmQryHelper.Click += new System.EventHandler(this.getQryNumberToolStripMenuItem_Click);
+            this.tsmQryHelper.Click += new System.EventHandler(this.GetQryNumberToolStripMenuItem_Click);
             // 
             // tsbAllHouses
             // 

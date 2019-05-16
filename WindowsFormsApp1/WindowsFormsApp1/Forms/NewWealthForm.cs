@@ -41,14 +41,15 @@ namespace WindowsFormsApp1.Forms
             cbWealth.SelectedIndex = 0;
         }
         ///// METHODS END //////////////////////////////////////////////////////////
-        public NewWealthForm(int HouseID, string type, string ID, string holdingName)
+        public NewWealthForm(int houseID, string houseName, string type, string ID, string holdingName)
         {
-            House = new House(HouseID);
+            House = new House(houseID,houseName);
             holdingType = type;
             holdingID = ID;
 
             InitializeComponent();
 
+            Text = House.name + " New Wealth";
             lbName.Text = holdingName;
             cbType.SelectedIndex = 0;
 

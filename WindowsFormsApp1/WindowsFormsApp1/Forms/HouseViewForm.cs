@@ -24,6 +24,7 @@ namespace WindowsFormsApp1
         LandsHolForm landsHolForm;
         PowerHolForm powerHolForm;
         ChangeResourcesForm changeResourcesForm;
+        BannersHoldings BannersHoldings;
 
         public int houseID;
         public int houWea;
@@ -66,9 +67,19 @@ namespace WindowsFormsApp1
         {
             DevLog.LogItem("Updating resources start");
             dgHouse.DataSource = House.HouseQry("ThisHouse");
+            string prefix;
+            switch (dgHouse.Rows[0].Cells[3].Value.ToString())
+            {
+                case "The Wall":
+                    prefix = "";
+                    break;
+                default:
+                    prefix = "House ";
+                    break;
+            }
             tbName.Text = dgHouse.Rows[0].Cells[1].Value.ToString();
+            House.name = Text = prefix + dgHouse.Rows[0].Cells[1].Value.ToString();
             tbPlayer.Text = dgHouse.Rows[0].Cells[2].Value.ToString();
-            Text = "House "+ dgHouse.Rows[0].Cells[1].Value.ToString();
             tbSeatOfPower.Text = dgHouse.Rows[0].Cells[4].Value.ToString();
             cbRealm.Text = dgHouse.Rows[0].Cells[3].Value.ToString();
             tbLiege.Text = dgHouse.Rows[0].Cells[6].Value.ToString();
@@ -151,8 +162,8 @@ namespace WindowsFormsApp1
             {
                 //Banners List
                 if (i == 0) { houPow -= 20; }
-                else if (i == 1) { houPow += 10; }
-                else { houPow += 5; }
+                else if (i == 1) { houPow -= 10; }
+                else { houPow -= 5; }
                 bannerHoldings += "House " + dgHouseDetails.Rows[i].Cells[2].Value.ToString() + Environment.NewLine;
             }
 
@@ -408,7 +419,7 @@ namespace WindowsFormsApp1
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void TbHouLanView_Click(object sender, EventArgs e)
         {
-            landsHolForm = new LandsHolForm(houseID);
+            landsHolForm = new LandsHolForm(House.ID,House.name);
             landsHolForm.VisibleChanged += new EventHandler(this.HouseViewForm_Load);
             landsHolForm.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
             landsHolForm.Show();
@@ -416,15 +427,22 @@ namespace WindowsFormsApp1
 
         private void BtPowerHolForm_Click(object sender, EventArgs e)
         {
-            powerHolForm = new PowerHolForm(houseID);
+            powerHolForm = new PowerHolForm(House.ID, House.name);
             powerHolForm.Show();
         }
 
         private void ToolStripButton1_Click(object sender, EventArgs e)
         {
-            changeResourcesForm = new ChangeResourcesForm(houseID);
+            changeResourcesForm = new ChangeResourcesForm(House.ID,House.name);
             changeResourcesForm.FormClosing += new FormClosingEventHandler(this.HouseViewForm_Load);
             changeResourcesForm.Show();
+        }
+
+        private void BtBanners_Click(object sender, EventArgs e)
+        {
+            BannersHoldings = new BannersHoldings(House.ID, House.name);
+            BannersHoldings.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
+            BannersHoldings.Show();
         }
 
         private void HouseViewForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -437,6 +455,7 @@ namespace WindowsFormsApp1
             }
             if (landsHolForm != null) { landsHolForm.Close(); }
             if (powerHolForm != null) { powerHolForm.Close(); }
+            if (BannersHoldings != null) { BannersHoldings.Close(); }
             if (changeResourcesForm != null) { changeResourcesForm.Close(); }
         }
 

@@ -22,16 +22,15 @@ namespace WindowsFormsApp1.Forms
             DbConn.Connect();
         }
 
-        private void btSendQry_Click(object sender, EventArgs e)
+        private void BtSendQry_Click(object sender, EventArgs e)
         {
             if (DbConn.ConnOpen() == true)
             {
                 dataGridView1.DataSource = DbConn.Qry(richTextBox1.Text).Tables[0];
-
             }
         }
 
-        private void btColumnNumbers_Click(object sender, EventArgs e)
+        private void BtColumnNumbers_Click(object sender, EventArgs e)
         {
             using (StreamWriter columnNumbers = new StreamWriter("ColumnNumbers.txt", append: true))
             { columnNumbers.WriteLine(richTextBox1.Text); }

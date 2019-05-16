@@ -93,11 +93,12 @@ namespace WindowsFormsApp1.Forms
 
         ///// METHODS END //////////////////////////////////////////////////////////
         
-        public ChangeResourcesForm(int ID)
+        public ChangeResourcesForm(int houseID, string houseName)
         {
             DevLog.LogItem("Opening Change Resource Form");
-            House = new House(ID);
+            House = new House(houseID,houseName);
             InitializeComponent();
+            Text = House.name + " Change Resources";
             dgCal1.DataSource = House.HouseQry("HouseChanges");
             
             if (dgCal1.RowCount > 0)

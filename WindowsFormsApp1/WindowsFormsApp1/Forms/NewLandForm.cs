@@ -18,14 +18,13 @@ namespace WindowsFormsApp1.Forms
         DevLog DevLog = new DevLog();
         Validation Validation = new Validation();
         House House;
-        public int houseID;
 
 
-        public NewLandForm(int ID)
+        public NewLandForm(int houseID, string houseName)
         {
-            DevLog.LogItem("ID: " + ID);
-            House = new House(ID);
+            House = new House(houseID,houseName);
             InitializeComponent();
+            Text = House.name + "New Land";
         }
 
         private void NewLandForm_Load(object sender, EventArgs e)

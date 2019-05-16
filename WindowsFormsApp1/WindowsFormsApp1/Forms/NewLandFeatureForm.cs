@@ -24,12 +24,13 @@ namespace WindowsFormsApp1.Forms
         ///// METHODS START ////////////////////////////////////////////////////////
 
         ///// METHODS END //////////////////////////////////////////////////////////
-        public NewLandFeatureForm(int ID, int holdingID, string landName)
+        public NewLandFeatureForm(int houseID, string houseName, int holdingID, string landName)
         {
-            House = new House(ID);
+            House = new House(houseID,houseName);
             landID = holdingID.ToString();
             InitializeComponent();
 
+            Text = House.name +" New Land Feature";
             lbName.Text = landName;
 
             dgLandFeature.DataSource = House.HouseQry("LandFeature");

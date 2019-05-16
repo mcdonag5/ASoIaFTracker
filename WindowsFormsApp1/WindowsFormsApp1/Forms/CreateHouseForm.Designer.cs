@@ -1529,7 +1529,7 @@
             this.Controls.Add(this.tlpMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CreateHouseForm";
-            this.Text = "Form1";
+            this.Text = "Create New House";
             this.Load += new System.EventHandler(this.CreateHouseForm_Load);
             this.tlpMain.ResumeLayout(false);
             this.tlpHeader.ResumeLayout(false);

@@ -264,11 +264,11 @@ namespace WindowsFormsApp1
             cbWealthHolding.Items.AddRange(weaHoldings);
         }
         ///// METHODS END //////////////////////////////////////////////////////////
-        public LandsHolForm(int ID)
+        public LandsHolForm(int houseID, string houseName)
         {
-            House = new House(ID);
-            houseID = ID;
+            House = new House(houseID, houseName);
             InitializeComponent();
+            Text = House.name + " Land Holdings";
         }
 
         private void LandsHolForm_Load(object sender, EventArgs e)
@@ -303,7 +303,7 @@ namespace WindowsFormsApp1
         private void LandHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeHolding("");
-            newLandForm = new NewLandForm(houseID);
+            newLandForm = new NewLandForm(House.ID,House.name);
             newLandForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             this.Visible = false;
             newLandForm.ShowDialog();
@@ -312,7 +312,7 @@ namespace WindowsFormsApp1
         private void LandFeatureToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeHolding("");
-            newLandFeatureForm = new NewLandFeatureForm(House.ID, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
+            newLandFeatureForm = new NewLandFeatureForm(House.ID, House.name, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
             newLandFeatureForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             newLandFeatureForm.ShowDialog();
@@ -321,7 +321,7 @@ namespace WindowsFormsApp1
         private void DefenseHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeHolding("");
-            newDefenseForm = new NewDefenseForm(House.ID, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
+            newDefenseForm = new NewDefenseForm(House.ID,House.name, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
             newDefenseForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             newDefenseForm.ShowDialog();
@@ -354,7 +354,7 @@ namespace WindowsFormsApp1
                     break;
             }
             ChangeHolding("");
-            NewWealthForm = new NewWealthForm(House.ID, place, ID, placeName);
+            NewWealthForm = new NewWealthForm(House.ID, House.name, place, ID, placeName);
             NewWealthForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             NewWealthForm.ShowDialog();
@@ -364,7 +364,7 @@ namespace WindowsFormsApp1
         {
             string name = dgWea.Rows[currentIndex].Cells[12].Value.ToString();
             if(dgWea.Rows[currentIndex].Cells[6].Value.ToString() != "") { name += "-"+dgWea.Rows[currentIndex].Cells[6].Value.ToString(); }
-            NewWealthImprovement = new NewWealthImprovement(House.ID, dgWea.Rows[currentIndex].Cells[1].Value.ToString(), dgWea.Rows[currentIndex].Cells[2].Value.ToString(),name);
+            NewWealthImprovement = new NewWealthImprovement(House.ID, House.name, dgWea.Rows[currentIndex].Cells[1].Value.ToString(), dgWea.Rows[currentIndex].Cells[2].Value.ToString(),name);
             NewWealthImprovement.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             NewWealthImprovement.ShowDialog();

@@ -33,22 +33,13 @@ namespace WindowsFormsApp1
             DevLog.LogItem("datagrid double clicked");
             HouseViewForm houseForm = new HouseViewForm(GetSelectedHouseID());
             houseForm.FormClosing += new FormClosingEventHandler(this.Form1_Load);
-            houseForm.ShowDialog();
+            houseForm.Show();
         }
 
         public int GetSelectedHouseID()
         {
-            int x;
             int row = Convert.ToInt32(dgHouseDetails.SelectedCells[0].RowIndex);
-            if (dgHouseDetails.Columns[0].Name == "ID")
-            {
-                x = (Convert.ToInt32(dgHouseDetails.Rows[row].Cells[0].Value));
-            }
-            else
-            {
-                x = (Convert.ToInt32(dgHouseDetails.Rows[row].Cells[1].Value));
-            }
-            return x;
+            return (Convert.ToInt32(dgHouseDetails.Rows[row].Cells[0].Value));
         }
         ///// METHODS END //////////////////////////////////////////////////////////
 
@@ -120,7 +111,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void getQryNumberToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GetQryNumberToolStripMenuItem_Click(object sender, EventArgs e)
         {
             qryHelper qryHelper = new qryHelper();
             qryHelper.Show();

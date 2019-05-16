@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseViewForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseViewForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHouseHeadings = new System.Windows.Forms.TableLayoutPanel();
             this.tbPlayer = new System.Windows.Forms.TextBox();
@@ -133,7 +132,7 @@
             this.lbHouLanHol = new System.Windows.Forms.Label();
             this.tbHouLanView = new System.Windows.Forms.Button();
             this.lbHouBan = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btBanners = new System.Windows.Forms.Button();
             this.lbLanHolList = new System.Windows.Forms.Label();
             this.lbBanList = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -151,6 +150,7 @@
             this.dgCal2 = new System.Windows.Forms.DataGridView();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
             this.dgHouse = new System.Windows.Forms.DataGridView();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tlpHouseHeadings.SuspendLayout();
@@ -174,16 +174,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(1371, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
-            this.toolStripButton1.Text = "Change Resources";
-            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // tlpMain
             // 
@@ -1620,7 +1610,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lbHouLanHol, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tbHouLanView, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbHouBan, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btBanners, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbLanHolList, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbBanList, 6, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
@@ -1670,16 +1660,17 @@
             this.lbHouBan.Text = "Banners";
             this.lbHouBan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button3
+            // btBanners
             // 
-            this.button3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(1006, 2);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 24);
-            this.button3.TabIndex = 53;
-            this.button3.Text = "View";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btBanners.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btBanners.Location = new System.Drawing.Point(1006, 2);
+            this.btBanners.Margin = new System.Windows.Forms.Padding(2);
+            this.btBanners.Name = "btBanners";
+            this.btBanners.Size = new System.Drawing.Size(56, 24);
+            this.btBanners.TabIndex = 53;
+            this.btBanners.Text = "View";
+            this.btBanners.UseVisualStyleBackColor = true;
+            this.btBanners.Click += new System.EventHandler(this.BtBanners_Click);
             // 
             // lbLanHolList
             // 
@@ -1956,6 +1947,16 @@
             this.dgHouse.TabIndex = 33;
             this.dgHouse.Visible = false;
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
+            this.toolStripButton1.Text = "Change Resources";
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
+            // 
             // HouseViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2098,7 +2099,7 @@
         private System.Windows.Forms.Button tbHouLanView;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btPowerHolForm;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btBanners;
         private System.Windows.Forms.Label lbBanList;
         private System.Windows.Forms.Label lbModifiers;
         private System.Windows.Forms.Label lbModifierLawText;

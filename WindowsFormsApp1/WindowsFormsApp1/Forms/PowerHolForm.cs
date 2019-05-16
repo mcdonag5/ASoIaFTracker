@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         Label[] unitDiscipline;
         ComboBox[] unitTraining;
         NumericUpDown[] unitHealth;
-        int[] unitMaxHealth = new int[4];
+        Label[] unitMaxHealthText;
         NumericUpDown[] unitDisorganized;
         RichTextBox[] unitNotes;
 
@@ -32,10 +32,14 @@ namespace WindowsFormsApp1
         TextBox[,] unitAbilitiesTextBox;
 
         Label[] unitDefense;
+        Label[] unitMovement;
+        CheckBox[,] unitUpgrades;
         Label[,] unitArmorNum;
+        
+        int startingNum = 0;
 
         ///// METHODS START ////////////////////////////////////////////////////////
-        public void UpdateUnits(int startingNum)
+        public void UpdateUnits()
         {
             int endNum;
             if(dgCal1.RowCount > startingNum+4) { endNum = 3; } else { endNum = dgCal1.RowCount - startingNum; }
@@ -85,32 +89,77 @@ namespace WindowsFormsApp1
                 }
 
                 //armor + weapons
-                DevLog.LogItem(dgCal1.Rows[i + startingNum].Cells[24].Value.ToString());
-                int armorStart;
-                if(dgCal1.Rows[i + startingNum].Cells[24].Value.ToString() == "True")
-                {//Armor
-                    chbArmor1.Checked = true;
-                    armorStart = 39;
-                } else {
-                    chbArmor1.Checked = false;
-                    armorStart = 40;
-                }
-                for(int x = 0;x<3;x++)
+                if (unitUpgrades[i, 0].Checked.ToString() == dgCal1.Rows[i + startingNum].Cells[24].Value.ToString())
                 {
-                    unitArmorNum[i, x].Text = dgCal1.Rows[i + startingNum].Cells[armorStart+(x*2)].Value.ToString();
+                    UnitArmor(i);
+                }
+                else
+                {
+                    unitUpgrades[i, 0].Checked = Convert.ToBoolean(dgCal1.Rows[i + startingNum].Cells[24].Value);
                 }
                 //calculated stats
-                unitMaxHealth[i] = Convert.ToInt32(unitAbilitiesTextBox[i, 5].Text)*3;
-                unitHealth[i].Text = Convert.ToString(unitMaxHealth[i]- Convert.ToInt32(dgCal1.Rows[i + startingNum].Cells[27].Value));
+                unitHealth[i].Text = Convert.ToString(unitHealth[i].Maximum - Convert.ToInt32(dgCal1.Rows[i + startingNum].Cells[27].Value));
+                //Unit Defense = Agility + Athletics + Awareness - Armor Penalty
+                unitDefense[i].Text = Convert.ToString(Convert.ToInt32(unitAbilitiesTextBox[i, 0].Text)+ Convert.ToInt32(unitAbilitiesTextBox[i, 2].Text)+ Convert.ToInt32(unitAbilitiesTextBox[i, 3].Text)+ Convert.ToInt32(unitArmorNum[i, 1].Text));
             }
+        }
+
+        public void UnitHealth(int unit)
+        {
+            if (unitAbilitiesTextBox[unit, 5].Text != "")
+            {
+                unitHealth[unit].Maximum = Convert.ToInt32(unitAbilitiesTextBox[unit, 5].Text) * 3;
+                unitMaxHealthText[unit].Text = "/" + unitHealth[unit].Maximum.ToString();
+            }
+        }
+
+        public void UnitArmor(int unit)
+        {
+            int armorStart;
+            if (unitUpgrades[unit, 0].Checked == true)
+            {//Armor
+                DevLog.LogItem("Upgraded");
+                unitUpgrades[unit, 0].Checked = true;
+                armorStart = 40;
+            }
+            else
+            {
+                DevLog.LogItem("Not Upgraded");
+                unitUpgrades[unit, 0].Checked = false;
+                armorStart = 39;
+            }
+            for (int x = 0; x < 3; x++)
+            {
+                unitArmorNum[unit, x].Text = dgCal1.Rows[unit + startingNum].Cells[armorStart + (x * 2)].Value.ToString();
+            }
+        }
+
+        public void UnitMovement (int unit)
+        {
+            int movement;
+            if(unitType[unit].Text == "Cavalry" || unitType[unit].Text == "Scouts")
+            {
+                movement = 80;
+            } 
+            else if(unitType[unit].Text == "Warships")
+            {
+                movement = 60;
+            }
+            else
+            {
+                movement = 40;
+            }
+            movement -= Convert.ToInt32(unitArmorNum[unit, 2].Text) * 10;
+            unitMovement[unit].Text = movement+ " yards";
         }
         
         ///// METHODS END //////////////////////////////////////////////////////////
-        public PowerHolForm(int ID)
+        public PowerHolForm(int houseID, string houseName)
         {
-            House = new House(ID);
+            House = new House(houseID,houseName);
 
             InitializeComponent();
+            Text = House.name + " Power Holdings";
             //array
             unitName = new TextBox[] { tbName1, tbName2, tbName3, tbName4 };
             unitType =  new Label[] { lbTypeText1, lbTypeText2, lbTypeText3, lbTypeText4 };
@@ -118,6 +167,7 @@ namespace WindowsFormsApp1
             unitDiscipline = new Label[] { lbDiscipText1, lbDiscipText2, lbDiscipText3, lbDiscipText4 };
             unitTraining = new ComboBox[] { cbTraining1, cbTraining2, cbTraining3, cbTraining4 };
             unitHealth = new NumericUpDown[] { nudHea1, nudHea2, nudHea3, nudHea4 };
+            unitMaxHealthText = new Label[] { lbMaxHealth1, lbMaxHealth2, lbMaxHealth3, lbMaxHealth4 };
             unitDisorganized = new NumericUpDown[] { nudDis1, nudDis2, nudDis3, nudDis4 };
             unitNotes = new RichTextBox[] { rtbNotes1, rtbNotes2, rtbNotes3, rtbNotes4 };
 
@@ -125,12 +175,74 @@ namespace WindowsFormsApp1
             unitAbilitiesTextBox = new TextBox[,] { { tbAgi1, tbAni1, tbAth1, tbAwa1, tbCun1, tbEnd1, tbFig1, tbHea1, tbLan1, tbKno1, tbMar1, tbPer1, tbSta1, tbSte1, tbSur1, tbThi1, tbWar1, tbWil1 }, { tbAgi2, tbAni2, tbAth2, tbAwa2, tbCun2, tbEnd2, tbFig2, tbHea2, tbLan2, tbKno2, tbMar2, tbPer2, tbSta2, tbSte2, tbSur2, tbThi2, tbWar2, tbWil2 }, { tbAgi3, tbAni3, tbAth3, tbAwa3, tbCun3, tbEnd3, tbFig3, tbHea3, tbLan3, tbKno3, tbMar3, tbPer3, tbSta3, tbSte3, tbSur3, tbThi3, tbWar3, tbWil3 }, { tbAgi4, tbAni4, tbAth4, tbAwa4, tbCun4, tbEnd4, tbFig4, tbHea4, tbLan4, tbKno4, tbMar4, tbPer4, tbSta4, tbSte4, tbSur4, tbThi4, tbWar4, tbWil4 } }; ;
 
             unitDefense = new Label[] { lbDef1, lbDef2, lbDef3, lbDef4 };
+            unitMovement = new Label[] { lbMov1, lbMov2, lbMov3, lbMov4 };
+            unitUpgrades = new CheckBox[,] { { chbArmor1,chbFightDMG1,chbMarkDMG1},{ chbArmor2, chbFightDMG2, chbMarkDMG2 },{ chbArmor3, chbFightDMG3, chbMarkDMG3 },{ chbArmor4, chbFightDMG4, chbMarkDMG4 } };
             unitArmorNum = new Label[,] { { lbArmRTGNum1, lbArmPenNum1, lbBulNum1 }, { lbArmRTGNum2, lbArmPenNum2, lbBulNum2 }, { lbArmRTGNum3, lbArmPenNum3, lbBulNum3 }, { lbArmRTGNum4, lbArmPenNum4, lbBulNum4 } };
 
             dgCal1.DataSource = House.HouseQry("PowerHolding");
-            UpdateUnits(0);
+            UpdateUnits();
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
+        private void chbArmor1_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitArmor(0);
+        }
+
+        private void chbArmor2_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitArmor(1);
+        }
+
+        private void chbArmor3_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitArmor(2);
+        }
+
+        private void chbArmor4_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitArmor(3);
+        }
+
+        private void tbEnd1_TextChanged(object sender, EventArgs e)
+        {
+            UnitHealth(0);
+        }
+
+        private void tbEnd2_TextChanged(object sender, EventArgs e)
+        {
+            UnitHealth(1);
+        }
+
+        private void tbEnd3_TextChanged(object sender, EventArgs e)
+        {
+            UnitHealth(2);
+        }
+
+        private void tbEnd4_TextChanged(object sender, EventArgs e)
+        {
+            UnitHealth(3);
+        }
+
+        private void lbBulNum1_TextChanged(object sender, EventArgs e)
+        {
+            UnitMovement(0);
+        }
+
+        private void lbBulNum2_TextChanged(object sender, EventArgs e)
+        {
+            UnitMovement(1);
+        }
+
+        private void lbBulNum3_TextChanged(object sender, EventArgs e)
+        {
+            UnitMovement(2);
+        }
+
+        private void lbBulNum4_TextChanged(object sender, EventArgs e)
+        {
+            UnitMovement(3);
+        }
+
 
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

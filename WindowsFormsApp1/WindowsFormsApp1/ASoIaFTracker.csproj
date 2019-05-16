@@ -63,6 +63,12 @@
     <Compile Include="Classes\House.cs" />
     <Compile Include="Classes\DevLog.cs" />
     <Compile Include="Classes\dbConn.cs" />
+    <Compile Include="Forms\BannersHoldings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BannersHoldings.Designer.cs">
+      <DependentUpon>BannersHoldings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateHouseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,12 @@
     </Compile>
     <Compile Include="Forms\ChangeResourcesForm.Designer.cs">
       <DependentUpon>ChangeResourcesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewBannerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewBannerForm.Designer.cs">
+      <DependentUpon>NewBannerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NewDefenseForm.cs">
       <SubType>Form</SubType>
@@ -143,11 +155,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BannersHoldings.resx">
+      <DependentUpon>BannersHoldings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChangeResourcesForm.resx">
       <DependentUpon>ChangeResourcesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateHouseForm.resx">
       <DependentUpon>CreateHouseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewBannerForm.resx">
+      <DependentUpon>NewBannerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewDefenseForm.resx">
       <DependentUpon>NewDefenseForm.cs</DependentUpon>

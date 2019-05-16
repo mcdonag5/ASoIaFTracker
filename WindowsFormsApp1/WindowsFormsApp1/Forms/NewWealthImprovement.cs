@@ -22,15 +22,15 @@ namespace WindowsFormsApp1.Forms
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
-        public NewWealthImprovement(int HouseID, string wealthHoldingID,string weaID, string wealthName)
+        public NewWealthImprovement(int houseID, string houseName, string wealthHoldingID,string weaID, string wealthName)
         {
-            House = new House(HouseID);
+            House = new House(houseID , House.name);
             holdingID = wealthHoldingID;
             wealthID = weaID;
 
             InitializeComponent();
 
-            lbName.Text = wealthName;
+            lbName.Text = wealthName + " New Wealth Improvement";
             dgImprovement.DataSource = House.HouseQry("WealthImprovement", wealthID);
             object[] improvement = new object[dgImprovement.RowCount];
             string item;
