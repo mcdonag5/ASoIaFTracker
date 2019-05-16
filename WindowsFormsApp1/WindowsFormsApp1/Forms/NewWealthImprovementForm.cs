@@ -11,7 +11,7 @@ using WindowsFormsApp1.Classes;
 
 namespace WindowsFormsApp1.Forms
 {
-    public partial class NewWealthImprovement : Form
+    public partial class NewWealthImprovementForm : Form
     {
         ///// VARIABLES START //////////////////////////////////////////////////////
         DevLog DevLog = new DevLog();
@@ -22,7 +22,7 @@ namespace WindowsFormsApp1.Forms
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
-        public NewWealthImprovement(int houseID, string houseName, string wealthHoldingID,string weaID, string wealthName)
+        public NewWealthImprovementForm(int houseID, string houseName, string wealthHoldingID,string weaID, string wealthName)
         {
             House = new House(houseID , House.name);
             holdingID = wealthHoldingID;

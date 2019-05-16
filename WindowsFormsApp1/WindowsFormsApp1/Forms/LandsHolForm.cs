@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         NewLandFeatureForm newLandFeatureForm;
         NewDefenseForm newDefenseForm;
         NewWealthForm NewWealthForm;
-        NewWealthImprovement NewWealthImprovement;
+        NewWealthImprovementForm NewWealthImprovement;
 
         public int houseID;
         public string currentView = "";
@@ -364,7 +364,7 @@ namespace WindowsFormsApp1
         {
             string name = dgWea.Rows[currentIndex].Cells[12].Value.ToString();
             if(dgWea.Rows[currentIndex].Cells[6].Value.ToString() != "") { name += "-"+dgWea.Rows[currentIndex].Cells[6].Value.ToString(); }
-            NewWealthImprovement = new NewWealthImprovement(House.ID, House.name, dgWea.Rows[currentIndex].Cells[1].Value.ToString(), dgWea.Rows[currentIndex].Cells[2].Value.ToString(),name);
+            NewWealthImprovement = new NewWealthImprovementForm(House.ID, House.name, dgWea.Rows[currentIndex].Cells[1].Value.ToString(), dgWea.Rows[currentIndex].Cells[2].Value.ToString(),name);
             NewWealthImprovement.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             NewWealthImprovement.ShowDialog();

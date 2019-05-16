@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Forms
 {
-    public partial class qryHelper : Form
+    public partial class QryHelperForm : Form
     {
         DbConn DbConn = new DbConn();
 
-        public qryHelper()
+        public QryHelperForm()
         {
             InitializeComponent();
             DbConn.DbConfig();

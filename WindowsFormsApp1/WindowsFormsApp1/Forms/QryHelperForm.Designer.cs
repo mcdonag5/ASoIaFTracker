@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Forms
 {
-    partial class qryHelper
+    partial class QryHelperForm
     {
         /// <summary>
         /// Required designer variable.

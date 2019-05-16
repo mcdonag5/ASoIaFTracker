@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Forms
 {
-    partial class NewWealthImprovement
+    partial class NewWealthImprovementForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewWealthImprovement));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewWealthImprovementForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbBenefits = new System.Windows.Forms.Label();
             this.lbDescription = new System.Windows.Forms.Label();
