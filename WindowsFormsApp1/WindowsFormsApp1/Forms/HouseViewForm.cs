@@ -22,9 +22,10 @@ namespace WindowsFormsApp1
         House House;
         //forms
         LandsHolForm landsHolForm;
+        HeirForm HeirForm;
         PowerHolForm powerHolForm;
-        ChangeResourcesForm changeResourcesForm;
         BannersHoldingsForm BannersHoldings;
+        ChangeResourcesForm changeResourcesForm;
 
         public int houseID;
         public int houWea;
@@ -201,13 +202,29 @@ namespace WindowsFormsApp1
                 if (dgHouseDetails.Rows[i].Cells[3].Value.ToString()=="M"||cbRealm.Text=="Dorne")
                 {
                     male++;
-                    if(male==1) { houInf -= 20; }
-                    else if (male == 2) { houInf -= 10; }
-                    else { houInf -= 5; }
+                    switch (male)
+                    {
+                        case 1:
+                            houInf -= 20;
+                            break;
+                        case 2:
+                            houInf -= 10;
+                            break;
+                        default:
+                            houInf -= 5;
+                            break;
+                    }
                 } else {
                     female++;
-                    if(female==1) { houInf -= 10; }
-                    else { houInf -= 5; }
+                    switch (female)
+                    {
+                        case 1:
+                            houInf -= 10;
+                            break;
+                        default:
+                            houInf -= 5;
+                            break;
+                    }
                 }
                 heirHoldings += dgHouseDetails.Rows[i].Cells[2].Value.ToString() + Environment.NewLine;
             }
@@ -417,12 +434,24 @@ namespace WindowsFormsApp1
             UpdateHouse();
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
-        private void TbHouLanView_Click(object sender, EventArgs e)
+        private void BtLand_Click(object sender, EventArgs e)
         {
             landsHolForm = new LandsHolForm(House.ID,House.name);
             landsHolForm.VisibleChanged += new EventHandler(this.HouseViewForm_Load);
             landsHolForm.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
             landsHolForm.Show();
+        }
+
+        private void BtHeir_Click(object sender, EventArgs e)
+        {
+            HeirForm = new HeirForm(House.ID, House.name, cbRealm.Text);
+            HeirForm.FormClosing +=  new FormClosingEventHandler(HouseViewForm_Load);
+            HeirForm.Show();
+        }
+
+        private void HeirForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void BtPowerHolForm_Click(object sender, EventArgs e)
@@ -431,18 +460,18 @@ namespace WindowsFormsApp1
             powerHolForm.Show();
         }
 
-        private void ToolStripButton1_Click(object sender, EventArgs e)
-        {
-            changeResourcesForm = new ChangeResourcesForm(House.ID,House.name);
-            changeResourcesForm.FormClosing += new FormClosingEventHandler(this.HouseViewForm_Load);
-            changeResourcesForm.Show();
-        }
-
         private void BtBanners_Click(object sender, EventArgs e)
         {
             BannersHoldings = new BannersHoldingsForm(House.ID, House.name);
             BannersHoldings.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
             BannersHoldings.Show();
+        }
+
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+            changeResourcesForm = new ChangeResourcesForm(House.ID,House.name);
+            changeResourcesForm.FormClosing += new FormClosingEventHandler(this.HouseViewForm_Load);
+            changeResourcesForm.Show();
         }
 
         private void HouseViewForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -458,6 +487,8 @@ namespace WindowsFormsApp1
             if (BannersHoldings != null) { BannersHoldings.Close(); }
             if (changeResourcesForm != null) { changeResourcesForm.Close(); }
         }
+
+
 
         ///// EVENTS END ////////////////////////////////////////////////////////////
     }

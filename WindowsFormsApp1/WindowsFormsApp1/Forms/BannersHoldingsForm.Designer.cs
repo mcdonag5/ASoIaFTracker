@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BannersHoldingsForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BannersHoldingsForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.dgBanners = new System.Windows.Forms.DataGridView();
             this.tsbNewBanner = new System.Windows.Forms.ToolStripButton();
             this.tsbViewBanner = new System.Windows.Forms.ToolStripButton();
             this.tsbDeleteBanner = new System.Windows.Forms.ToolStripButton();
+            this.dgBanners = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgBanners)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +52,39 @@
             this.toolStrip1.Size = new System.Drawing.Size(1371, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbNewBanner
+            // 
+            this.tsbNewBanner.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbNewBanner.Image = ((System.Drawing.Image)(resources.GetObject("tsbNewBanner.Image")));
+            this.tsbNewBanner.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNewBanner.Name = "tsbNewBanner";
+            this.tsbNewBanner.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbNewBanner.Size = new System.Drawing.Size(177, 22);
+            this.tsbNewBanner.Text = "Add Existing House as Banner";
+            this.tsbNewBanner.Click += new System.EventHandler(this.tsbNewBanner_Click);
+            // 
+            // tsbViewBanner
+            // 
+            this.tsbViewBanner.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbViewBanner.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewBanner.Image")));
+            this.tsbViewBanner.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbViewBanner.Name = "tsbViewBanner";
+            this.tsbViewBanner.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbViewBanner.Size = new System.Drawing.Size(86, 22);
+            this.tsbViewBanner.Text = "View Banner";
+            this.tsbViewBanner.Click += new System.EventHandler(this.tsbViewBanner_Click);
+            // 
+            // tsbDeleteBanner
+            // 
+            this.tsbDeleteBanner.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbDeleteBanner.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteBanner.Image")));
+            this.tsbDeleteBanner.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDeleteBanner.Name = "tsbDeleteBanner";
+            this.tsbDeleteBanner.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbDeleteBanner.Size = new System.Drawing.Size(104, 22);
+            this.tsbDeleteBanner.Text = "Remove Banner";
+            this.tsbDeleteBanner.Click += new System.EventHandler(this.tsbDeleteBanner_Click);
             // 
             // dgBanners
             // 
@@ -95,47 +128,14 @@
             this.dgBanners.TabIndex = 14;
             this.dgBanners.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgBanners_CellMouseDoubleClick);
             // 
-            // tsbNewBanner
-            // 
-            this.tsbNewBanner.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbNewBanner.Image = ((System.Drawing.Image)(resources.GetObject("tsbNewBanner.Image")));
-            this.tsbNewBanner.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNewBanner.Name = "tsbNewBanner";
-            this.tsbNewBanner.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsbNewBanner.Size = new System.Drawing.Size(85, 22);
-            this.tsbNewBanner.Text = "New Banner";
-            this.tsbNewBanner.Click += new System.EventHandler(this.tsbNewBanner_Click);
-            // 
-            // tsbViewBanner
-            // 
-            this.tsbViewBanner.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbViewBanner.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewBanner.Image")));
-            this.tsbViewBanner.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbViewBanner.Name = "tsbViewBanner";
-            this.tsbViewBanner.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsbViewBanner.Size = new System.Drawing.Size(86, 22);
-            this.tsbViewBanner.Text = "View Banner";
-            this.tsbViewBanner.Click += new System.EventHandler(this.tsbViewBanner_Click);
-            // 
-            // tsbDeleteBanner
-            // 
-            this.tsbDeleteBanner.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbDeleteBanner.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteBanner.Image")));
-            this.tsbDeleteBanner.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDeleteBanner.Name = "tsbDeleteBanner";
-            this.tsbDeleteBanner.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsbDeleteBanner.Size = new System.Drawing.Size(104, 22);
-            this.tsbDeleteBanner.Text = "Remove Banner";
-            this.tsbDeleteBanner.Click += new System.EventHandler(this.tsbDeleteBanner_Click);
-            // 
-            // BannersHoldings
+            // BannersHoldingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1371, 632);
             this.Controls.Add(this.dgBanners);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "BannersHoldings";
+            this.Name = "BannersHoldingsForm";
             this.Text = "BannersHoldings";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BannersHoldings_FormClosing);
             this.Load += new System.EventHandler(this.BannersHoldings_Load);

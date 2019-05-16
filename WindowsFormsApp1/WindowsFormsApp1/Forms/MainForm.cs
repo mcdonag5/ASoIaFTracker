@@ -113,7 +113,7 @@ namespace WindowsFormsApp1
 
         private void GetQryNumberToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            qryHelper qryHelper = new qryHelper();
+            QryHelperForm qryHelper = new QryHelperForm();
             qryHelper.Show();
         }
 

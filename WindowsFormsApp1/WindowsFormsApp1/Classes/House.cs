@@ -419,6 +419,19 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_Heir
+        public void UpdateHeir(string heirID, string name, string notes)
+        {
+            if (mysqlConn.ConnOpen() == true)
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_Heir` " +
+                    "SET `Hei_Name` = '" + name + "', `Hei_Note` = '" + notes + "' " +
+                    "WHERE `Hei_ID` = '" + heirID + "'";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         ///// DELETE ////////////////////////////////////////////////////////////////
         //tbl_Banner
         public void DeleteBanner(int bannerHouse)
@@ -433,13 +446,15 @@ namespace WindowsFormsApp1.Classes
             }
         }
         ///// VARIABLES START //////////////////////////////////////////////////////
-        
+
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
+
+        ///// METHODS END //////////////////////////////////////////////////////////
         
         ///// EVENTS START //////////////////////////////////////////////////////////
-        
+
         ///// EVENTS END ////////////////////////////////////////////////////////////
     }
 }

@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseViewForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HouseViewForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
             this.tlpHouseHeadings = new System.Windows.Forms.TableLayoutPanel();
             this.tbPlayer = new System.Windows.Forms.TextBox();
@@ -130,7 +131,7 @@
             this.lbBannerDiceText = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbHouLanHol = new System.Windows.Forms.Label();
-            this.tbHouLanView = new System.Windows.Forms.Button();
+            this.btLand = new System.Windows.Forms.Button();
             this.lbHouBan = new System.Windows.Forms.Label();
             this.btBanners = new System.Windows.Forms.Button();
             this.lbLanHolList = new System.Windows.Forms.Label();
@@ -140,7 +141,7 @@
             this.lbInfHolList = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.lbHeir = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btHeir = new System.Windows.Forms.Button();
             this.lbHeirList = new System.Windows.Forms.Label();
             this.lbPowHolList = new System.Windows.Forms.Label();
             this.lBHouPowHol = new System.Windows.Forms.Label();
@@ -150,7 +151,6 @@
             this.dgCal2 = new System.Windows.Forms.DataGridView();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
             this.dgHouse = new System.Windows.Forms.DataGridView();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tlpHouseHeadings.SuspendLayout();
@@ -174,6 +174,16 @@
             this.toolStrip1.Size = new System.Drawing.Size(1371, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
+            this.toolStripButton1.Text = "Change Resources";
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // tlpMain
             // 
@@ -1608,7 +1618,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.lbHouLanHol, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tbHouLanView, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btLand, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbHouBan, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.btBanners, 7, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbLanHolList, 0, 1);
@@ -1637,17 +1647,17 @@
             this.lbHouLanHol.Text = "Land Holdings";
             this.lbHouLanHol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tbHouLanView
+            // btLand
             // 
-            this.tbHouLanView.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbHouLanView.Location = new System.Drawing.Point(163, 2);
-            this.tbHouLanView.Margin = new System.Windows.Forms.Padding(2);
-            this.tbHouLanView.Name = "tbHouLanView";
-            this.tbHouLanView.Size = new System.Drawing.Size(56, 24);
-            this.tbHouLanView.TabIndex = 50;
-            this.tbHouLanView.Text = "View";
-            this.tbHouLanView.UseVisualStyleBackColor = true;
-            this.tbHouLanView.Click += new System.EventHandler(this.TbHouLanView_Click);
+            this.btLand.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLand.Location = new System.Drawing.Point(163, 2);
+            this.btLand.Margin = new System.Windows.Forms.Padding(2);
+            this.btLand.Name = "btLand";
+            this.btLand.Size = new System.Drawing.Size(56, 24);
+            this.btLand.TabIndex = 50;
+            this.btLand.Text = "View";
+            this.btLand.UseVisualStyleBackColor = true;
+            this.btLand.Click += new System.EventHandler(this.BtLand_Click);
             // 
             // lbHouBan
             // 
@@ -1713,7 +1723,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lbInfHolList, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.button1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lbHeir, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btHeir, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.lbHeirList, 0, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(368, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -1776,16 +1786,17 @@
             this.lbHeir.Text = "Heirs";
             this.lbHeir.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // button2
+            // btHeir
             // 
-            this.button2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(206, 66);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 24);
-            this.button2.TabIndex = 53;
-            this.button2.Text = "View";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btHeir.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHeir.Location = new System.Drawing.Point(206, 66);
+            this.btHeir.Margin = new System.Windows.Forms.Padding(2);
+            this.btHeir.Name = "btHeir";
+            this.btHeir.Size = new System.Drawing.Size(56, 24);
+            this.btHeir.TabIndex = 53;
+            this.btHeir.Text = "View";
+            this.btHeir.UseVisualStyleBackColor = true;
+            this.btHeir.Click += new System.EventHandler(this.BtHeir_Click);
             // 
             // lbHeirList
             // 
@@ -1947,16 +1958,6 @@
             this.dgHouse.TabIndex = 33;
             this.dgHouse.Visible = false;
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(108, 22);
-            this.toolStripButton1.Text = "Change Resources";
-            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
-            // 
             // HouseViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2096,7 +2097,7 @@
         private System.Windows.Forms.Label lbLanHolList;
         private System.Windows.Forms.Label lbInfHolList;
         private System.Windows.Forms.Label lbPowHolList;
-        private System.Windows.Forms.Button tbHouLanView;
+        private System.Windows.Forms.Button btLand;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btPowerHolForm;
         private System.Windows.Forms.Button btBanners;
@@ -2111,7 +2112,7 @@
         private System.Windows.Forms.Label lbBannerDiceText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lbHeir;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btHeir;
         private System.Windows.Forms.Label lbHeirList;
         private System.Windows.Forms.DataGridView dgHouse;
         private System.Windows.Forms.TextBox tbPlayer;

@@ -81,6 +81,12 @@
     <Compile Include="Forms\ChangeResourcesForm.Designer.cs">
       <DependentUpon>ChangeResourcesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeirForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeirForm.Designer.cs">
+      <DependentUpon>HeirForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewBannerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +141,11 @@
     <Compile Include="Forms\NewWealthForm.Designer.cs">
       <DependentUpon>NewWealthForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewWealthImprovement.cs">
+    <Compile Include="Forms\NewWealthImprovementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewWealthImprovement.Designer.cs">
-      <DependentUpon>NewWealthImprovement.cs</DependentUpon>
+    <Compile Include="Forms\NewWealthImprovementForm.Designer.cs">
+      <DependentUpon>NewWealthImprovementForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PowerHolForm.cs">
       <SubType>Form</SubType>
@@ -147,11 +153,11 @@
     <Compile Include="Forms\PowerHolForm.Designer.cs">
       <DependentUpon>PowerHolForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\qryHelper.cs">
+    <Compile Include="Forms\QryHelperForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\qryHelper.Designer.cs">
-      <DependentUpon>qryHelper.cs</DependentUpon>
+    <Compile Include="Forms\QryHelperForm.Designer.cs">
+      <DependentUpon>QryHelperForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateHouseForm.resx">
       <DependentUpon>CreateHouseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeirForm.resx">
+      <DependentUpon>HeirForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewBannerForm.resx">
       <DependentUpon>NewBannerForm.cs</DependentUpon>
@@ -191,14 +200,14 @@
     <EmbeddedResource Include="Forms\NewWealthForm.resx">
       <DependentUpon>NewWealthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewWealthImprovement.resx">
-      <DependentUpon>NewWealthImprovement.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\NewWealthImprovementForm.resx">
+      <DependentUpon>NewWealthImprovementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PowerHolForm.resx">
       <DependentUpon>PowerHolForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\qryHelper.resx">
-      <DependentUpon>qryHelper.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\QryHelperForm.resx">
+      <DependentUpon>QryHelperForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
