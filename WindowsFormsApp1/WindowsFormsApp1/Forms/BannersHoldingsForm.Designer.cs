@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1.Forms
 {
-    partial class BannersHoldings
+    partial class BannersHoldingsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BannersHoldings));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BannersHoldingsForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.dgBanners = new System.Windows.Forms.DataGridView();
             this.tsbNewBanner = new System.Windows.Forms.ToolStripButton();

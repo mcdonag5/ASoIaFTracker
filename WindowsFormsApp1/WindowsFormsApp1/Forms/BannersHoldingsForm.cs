@@ -11,7 +11,7 @@ using WindowsFormsApp1.Classes;
 
 namespace WindowsFormsApp1.Forms
 {
-    public partial class BannersHoldings : Form
+    public partial class BannersHoldingsForm : Form
     {
         ///// VARIABLES START //////////////////////////////////////////////////////
         DevLog DevLog = new DevLog();
@@ -29,7 +29,7 @@ namespace WindowsFormsApp1.Forms
             houseForm.Show();
         }
         ///// METHODS END //////////////////////////////////////////////////////////
-        public BannersHoldings(int houseID, string houseName)
+        public BannersHoldingsForm(int houseID, string houseName)
         {
             House = new House(houseID,houseName);
             InitializeComponent();

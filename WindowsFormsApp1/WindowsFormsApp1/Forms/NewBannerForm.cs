@@ -58,6 +58,7 @@ namespace WindowsFormsApp1.Forms
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void tbHouLanView_Click(object sender, EventArgs e)
         {
+            dgBanners.DataSource = House.HouseQry("Banner");
             int x = Convert.ToInt32(dgHouse.Rows[cbHouse.SelectedIndex].Cells[0].Value);
             bool noDuplicate = true;
             for (int i = 0; i<dgBanners.RowCount && noDuplicate;i++)

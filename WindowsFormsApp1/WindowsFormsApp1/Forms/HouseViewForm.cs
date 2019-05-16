@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         LandsHolForm landsHolForm;
         PowerHolForm powerHolForm;
         ChangeResourcesForm changeResourcesForm;
-        BannersHoldings BannersHoldings;
+        BannersHoldingsForm BannersHoldings;
 
         public int houseID;
         public int houWea;
@@ -440,7 +440,7 @@ namespace WindowsFormsApp1
 
         private void BtBanners_Click(object sender, EventArgs e)
         {
-            BannersHoldings = new BannersHoldings(House.ID, House.name);
+            BannersHoldings = new BannersHoldingsForm(House.ID, House.name);
             BannersHoldings.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
             BannersHoldings.Show();
         }

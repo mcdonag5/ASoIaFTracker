@@ -13,7 +13,6 @@ namespace WindowsFormsApp1.Classes
         DevLog DevLog = new DevLog();
         public readonly int ID;
         public string name;
-        public int bannerNumber;
 
         public House()
         {
