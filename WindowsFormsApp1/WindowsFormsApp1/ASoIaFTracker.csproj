@@ -87,6 +87,12 @@
     <Compile Include="Forms\HeirForm.Designer.cs">
       <DependentUpon>HeirForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InfluenceHoldingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InfluenceHoldingForm.Designer.cs">
+      <DependentUpon>InfluenceHoldingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewBannerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeirForm.resx">
       <DependentUpon>HeirForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InfluenceHoldingForm.resx">
+      <DependentUpon>InfluenceHoldingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewBannerForm.resx">
       <DependentUpon>NewBannerForm.cs</DependentUpon>

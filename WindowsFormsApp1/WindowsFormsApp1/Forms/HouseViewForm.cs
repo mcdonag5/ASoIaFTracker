@@ -16,17 +16,6 @@ namespace WindowsFormsApp1
     public partial class HouseViewForm : Form
     {
         ///// VARIABLES START ////////////////////////////////////////////////////// 
-        //classes
-        DevLog DevLog = new DevLog();
-        Validation Validation = new Validation();
-        House House;
-        //forms
-        LandsHolForm landsHolForm;
-        HeirForm HeirForm;
-        PowerHolForm powerHolForm;
-        BannersHoldingsForm BannersHoldings;
-        ChangeResourcesForm changeResourcesForm;
-
         public int houseID;
         public int houWea;
         public int houPow;
@@ -59,11 +48,32 @@ namespace WindowsFormsApp1
         string heirHoldings;
         int[,] LawModifierArry = { { 0, 0, -20 }, { 1, 10, -10 }, { 11, 20, -5 }, { 21, 30, -2 }, { 31, 40, -1 }, { 41, 50, 0 }, { 51, 60, 1 }, { 61, 70, 2 }, { 71, 999, 5 } };
         int[,] PopModifierArry = { { 0, 0, -10 }, { 1, 10, -5 }, { 11, 20, 0 }, { 21, 30, 1 }, { 31, 40, 3 }, { 14, 50, 1 }, { 51, 60, 0 }, { 61, 70, -5 }, { 71, 999, -10 } };
+        //classes
+        DevLog DevLog = new DevLog();
+        Validation Validation = new Validation();
+        House House;
+        //forms
+        LandsHolForm landsHolForm;
+        InfluenceHoldingForm InfluenceHoldingForm;
+        HeirForm HeirForm;
+        PowerHolForm powerHolForm;
+        BannersHoldingsForm BannersHoldings;
+        ChangeResourcesForm changeResourcesForm;
         ///// VARIABLES END ////////////////////////////////////////////////////////
-        
+        public HouseViewForm(int ID)
+        {
+            House = new House(ID);
+            houseID = ID;
+            DevLog.LogItem("Opened House View From with ID: " + ID);
+            InitializeComponent();
+        }
 
+        private void HouseViewForm_Load(object sender, EventArgs e)
+        {
+            UpdateHouse();
+        }
         ///// METHODS START ////////////////////////////////////////////////////////
-        
+
         public void UpdateHouse()
         {
             DevLog.LogItem("Updating resources start");
@@ -436,18 +446,7 @@ namespace WindowsFormsApp1
             }
         }
         ///// METHODS END //////////////////////////////////////////////////////////
-        public HouseViewForm(int ID)
-        {
-            House = new House(ID);
-            houseID = ID;
-            DevLog.LogItem("Opened House View From with ID: " + ID);
-            InitializeComponent();
-        }
 
-        private void HouseViewForm_Load(object sender, EventArgs e)
-        {
-            UpdateHouse();
-        }
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void BtLand_Click(object sender, EventArgs e)
         {
@@ -457,17 +456,17 @@ namespace WindowsFormsApp1
             landsHolForm.Show();
         }
 
+        private void btInfluence_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtHeir_Click(object sender, EventArgs e)
         {
             HeirForm = new HeirForm(House.ID, House.name, cbRealm.Text);
             HeirForm.FormClosing +=  new FormClosingEventHandler(HouseViewForm_Load);
             HeirForm.VisibleChanged += new EventHandler(HeirVisible);
             HeirForm.Show();
-        }
-
-        private void HeirForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         private void BtPowerHolForm_Click(object sender, EventArgs e)
@@ -504,6 +503,7 @@ namespace WindowsFormsApp1
             if (BannersHoldings != null) { BannersHoldings.Close(); }
             if (changeResourcesForm != null) { changeResourcesForm.Close(); }
         }
+
 
 
 
