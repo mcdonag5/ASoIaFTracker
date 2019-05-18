@@ -39,7 +39,7 @@ namespace WindowsFormsApp1.Classes
             DevLog.LogItem(information + " sql run");
             string qry = "";
             
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 switch (information)
                 {
@@ -137,7 +137,7 @@ namespace WindowsFormsApp1.Classes
         {//makes a query to the database
             DevLog.LogItem(information + " sql run");
             string qry = "";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 switch (information)
                 {
@@ -188,7 +188,7 @@ namespace WindowsFormsApp1.Classes
         {
             DevLog.LogItem("Wealth Holding sql run");
             string qry = "";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 qry = "SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` " +
                     "FROM `tbl_House`"+
@@ -202,7 +202,7 @@ namespace WindowsFormsApp1.Classes
         {
             DevLog.LogItem("Wealth Holding sql run");
             string qry = "";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 qry = "SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` " +
                     "FROM `tbl_House`" +
@@ -216,7 +216,7 @@ namespace WindowsFormsApp1.Classes
         {
             DevLog.LogItem("Wealth Holding sql run");
             string qry = "";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 qry = "SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* " +
                     "FROM `tbl_WealthHolding`, `tbl_Wealth` " +
@@ -230,7 +230,7 @@ namespace WindowsFormsApp1.Classes
         {
             DevLog.LogItem("Wealth Holding sql run");
             string qry = "";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 qry = "SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* " +
                     "FROM `tbl_WealthHolding`, `tbl_Wealth` " +
@@ -244,7 +244,7 @@ namespace WindowsFormsApp1.Classes
         ///// INSERT ////////////////////////////////////////////////////////////////
         public void InsertLandHolding(string landID, string name, string note, string discount)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_LandHolding` (`Hou_ID`, `Lan_ID`, `LanHol_Name`, `LanHol_Note`, `LanHol_Discount`) "+
@@ -255,7 +255,7 @@ namespace WindowsFormsApp1.Classes
         }
         public void InsertLandFeatureHolding (string landFeaID,string landHolID, string name, string notes)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_LandHoldingFeature` (`LanFea_ID`, `LanHol_ID`, `LanHolFea_Name`, `LanHolFea_Note`) "+
@@ -267,7 +267,7 @@ namespace WindowsFormsApp1.Classes
         public void InsertDefenseHolding(string defID, string landHolID, string name, string built, string notes, string discount)
         {
             built = built == "True" ? "1" : "0";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_DefenseHolding` (`Def_ID`, `LanHol_ID`, `DefHol_Name`, `DefHol_Built`, `DefHol_Notes`, `DefHol_Discount`) "+
@@ -279,7 +279,7 @@ namespace WindowsFormsApp1.Classes
         public void InsertWealthHolding(string WeaID, string place, string placeID, string name, string built, string notes, string discount)
         {
             built = built == "True" ? "1" : "0";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_WealthHolding` (`Wea_ID`, `"+place+"`, `WeaHol_Name`, `WeaHol_Built`, `WeaHol_Note`, `WeaHol_Discount`) "+
@@ -291,7 +291,7 @@ namespace WindowsFormsApp1.Classes
         public void InsertWealthImprovementHolding(string WeaHolID, string weaImpID, string built)
         {
             built = built == "True" ? "1" : "0";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_WealthHoldingImprovement` (`WeaHol_ID`, `WeaImp_ID`, `WeaHolImp_Built`) "+
@@ -300,9 +300,20 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        public void InsertHeir(string name, string gender, string note)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_Heir` (`Hou_ID`, `Hei_Name`, `Hei_Gender`, `Hei_Note`) " +
+                    "VALUES ('"+ID+"','" + name + "', '" + gender + "', '" + note + "');";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         public void InsertBanners(int bannerHouse)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_Banner` (`HouLie_ID`, `HouBan_ID`) "+
@@ -313,7 +324,7 @@ namespace WindowsFormsApp1.Classes
         }
         public void InsertHouseChanges (int year, int month,int roll, string fortune,int wealthHF,int wealthOther,int powerHF, int powerOther,int populationHF,int populationOther, int lawHF,int lawOther, int landsHF,int landsOther,int influenceHF,int influenceOther,int defenseHF,int defenseOther)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_HouseChanges` (`Hou_ID`,`HouCha_Year`,`HouCha_Month`,`HouCha_Roll`,`HouCha_Fortune`,`HouCha_WealthHF`,`HouCha_WealthOther`,`HouCha_PowerHF`,`HouCha_PowerOther`,`HouCha_PopulationHF`,`HouCha_PopulationOther`,`HouCha_LawHF`,`HouCha_LawOther`,`HouCha_LandsHF`,`HouCha_LandsOther`,`HouCha_InfluenceHF`,`HouCha_InfluenceOther`,`HouCha_DefenseHF`,`HouCha_DefenseOther`) "+
@@ -327,7 +338,7 @@ namespace WindowsFormsApp1.Classes
         //tbl_House
         public void UpdateHouseDetails(string name, string player, string realm, string seatOfPower, string liegeLord,string liege)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_House` " +
@@ -340,7 +351,7 @@ namespace WindowsFormsApp1.Classes
 
         public void UpdateHouseResources (int wealth, int power,int population, int law, int lands, int influence, int defense)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_House` " +
@@ -354,7 +365,7 @@ namespace WindowsFormsApp1.Classes
         //tbl_HouseChanges
         public void UpdateHouseChanges(int HouChaID,int roll, string fortune, int wealthHF, int wealthOther, int powerHF, int powerOther, int populationHF, int populationOther, int lawHF, int lawOther, int landsHF, int landsOther, int influenceHF, int influenceOther, int defenseHF, int defenseOther)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_HouseChanges` " +
@@ -368,7 +379,7 @@ namespace WindowsFormsApp1.Classes
         //tbl_LandHolding
         public void UpdateLandDetails(int LanHolID, string name, string notes)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_LandHolding` " +
@@ -382,7 +393,7 @@ namespace WindowsFormsApp1.Classes
         public void UpdateDefenseDetails(string DefHolID, string name, string notes, string built)
         {
             built = built == "True" ? "1" : "0";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_DefenseHolding` " +
@@ -395,7 +406,7 @@ namespace WindowsFormsApp1.Classes
         //tbl_LandHoldingFeature
         public void UpdateLandFeatureDetails(string LanHolFeaID, string name, string notes)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
@@ -409,7 +420,7 @@ namespace WindowsFormsApp1.Classes
         public void UpdateWealthDetails(string WeaHolID, string name, string notes, string built)
         {
             built = built == "True" ? "1" : "0";
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_WealthHolding` " +
@@ -422,7 +433,7 @@ namespace WindowsFormsApp1.Classes
         //tbl_Heir
         public void UpdateHeir(string heirID, string name, string notes)
         {
-            if (mysqlConn.ConnOpen() == true)
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_Heir` " +
@@ -433,10 +444,24 @@ namespace WindowsFormsApp1.Classes
             }
         }
         ///// DELETE ////////////////////////////////////////////////////////////////
+        //tbl_Heir
+        public void DeleteHeir(int heir)
+        {
+            DevLog.LogItem("Deleting from tbl_Heir ID: " + heir);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_Heir`" +
+                    "WHERE `Hei_ID` = '" + heir + "';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_Banner
         public void DeleteBanner(int bannerHouse)
         {
-            if (mysqlConn.ConnOpen() == true)
+            DevLog.LogItem("Deleting from tbl_Banner ID: " + bannerHouse);
+            if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_Banner`" +

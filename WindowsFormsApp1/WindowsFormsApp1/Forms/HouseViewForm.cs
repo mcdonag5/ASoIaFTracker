@@ -420,6 +420,21 @@ namespace WindowsFormsApp1
             else { return false; }
         }
 
+        private void LandHoldingsVisible(object sender, EventArgs e)
+        {
+            if (landsHolForm.Visible == true)
+            {
+                UpdateHouse();
+            }
+        }
+
+        private void HeirVisible(object sender, EventArgs e)
+        {
+            if (HeirForm.Visible == true)
+            {
+                UpdateHouse();
+            }
+        }
         ///// METHODS END //////////////////////////////////////////////////////////
         public HouseViewForm(int ID)
         {
@@ -438,7 +453,7 @@ namespace WindowsFormsApp1
         {
             landsHolForm = new LandsHolForm(House.ID,House.name);
             landsHolForm.VisibleChanged += new EventHandler(this.HouseViewForm_Load);
-            landsHolForm.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
+            landsHolForm.FormClosing += new FormClosingEventHandler(LandHoldingsVisible);
             landsHolForm.Show();
         }
 
@@ -446,6 +461,7 @@ namespace WindowsFormsApp1
         {
             HeirForm = new HeirForm(House.ID, House.name, cbRealm.Text);
             HeirForm.FormClosing +=  new FormClosingEventHandler(HouseViewForm_Load);
+            HeirForm.VisibleChanged += new EventHandler(HeirVisible);
             HeirForm.Show();
         }
 
@@ -483,6 +499,7 @@ namespace WindowsFormsApp1
                 House.UpdateHouseDetails(tbName.Text, tbPlayer.Text, cbRealm.Text, tbSeatOfPower.Text, tbLiegeLord.Text, tbLiege.Text);
             }
             if (landsHolForm != null) { landsHolForm.Close(); }
+            if (HeirForm != null) { HeirForm.Close(); }
             if (powerHolForm != null) { powerHolForm.Close(); }
             if (BannersHoldings != null) { BannersHoldings.Close(); }
             if (changeResourcesForm != null) { changeResourcesForm.Close(); }
