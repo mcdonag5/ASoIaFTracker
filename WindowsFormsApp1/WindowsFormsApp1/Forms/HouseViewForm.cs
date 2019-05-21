@@ -54,8 +54,8 @@ namespace WindowsFormsApp1
         House House;
         //forms
         LandsHolForm landsHolForm;
-        InfluenceHoldingForm InfluenceHoldingForm;
         HeirForm HeirForm;
+        InfluenceHoldingForm InfluenceHoldingForm;
         PowerHolForm powerHolForm;
         BannersHoldingsForm BannersHoldings;
         ChangeResourcesForm changeResourcesForm;
@@ -432,7 +432,7 @@ namespace WindowsFormsApp1
 
         private void LandHoldingsVisible(object sender, EventArgs e)
         {
-            if (landsHolForm.Visible == true)
+            if (landsHolForm.Visible)
             {
                 UpdateHouse();
             }
@@ -440,7 +440,15 @@ namespace WindowsFormsApp1
 
         private void HeirVisible(object sender, EventArgs e)
         {
-            if (HeirForm.Visible == true)
+            if (HeirForm.Visible)
+            {
+                UpdateHouse();
+            }
+        }
+
+        private void InfluenceHoldingFormVisible(object sender, EventArgs e)
+        {
+            if(InfluenceHoldingForm.Visible)
             {
                 UpdateHouse();
             }
@@ -458,7 +466,10 @@ namespace WindowsFormsApp1
 
         private void btInfluence_Click(object sender, EventArgs e)
         {
-
+            InfluenceHoldingForm = new InfluenceHoldingForm(House.ID, House.name);
+            InfluenceHoldingForm.VisibleChanged += new EventHandler(InfluenceHoldingFormVisible);
+            InfluenceHoldingForm.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
+            InfluenceHoldingForm.Show();
         }
 
         private void BtHeir_Click(object sender, EventArgs e)
@@ -498,6 +509,7 @@ namespace WindowsFormsApp1
                 House.UpdateHouseDetails(tbName.Text, tbPlayer.Text, cbRealm.Text, tbSeatOfPower.Text, tbLiegeLord.Text, tbLiege.Text);
             }
             if (landsHolForm != null) { landsHolForm.Close(); }
+            if (InfluenceHoldingForm != null) { InfluenceHoldingForm.Close(); }
             if (HeirForm != null) { HeirForm.Close(); }
             if (powerHolForm != null) { powerHolForm.Close(); }
             if (BannersHoldings != null) { BannersHoldings.Close(); }

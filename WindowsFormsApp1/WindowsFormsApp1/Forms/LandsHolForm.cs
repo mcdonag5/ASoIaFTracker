@@ -16,6 +16,10 @@ namespace WindowsFormsApp1
     public partial class LandsHolForm : Form
     {
         ///// VARIABLES START //////////////////////////////////////////////////////
+        public string currentView = "";
+        public int currentIndex;
+        public string lastWealthPlace = "";
+        public string lastHoldingID = "";
         //Classes
         DevLog DevLog = new DevLog();
         House House;
@@ -25,12 +29,6 @@ namespace WindowsFormsApp1
         NewDefenseForm newDefenseForm;
         NewWealthForm NewWealthForm;
         NewWealthImprovementForm NewWealthImprovement;
-
-        public int houseID;
-        public string currentView = "";
-        public int currentIndex;
-        public string lastWealthPlace = "";
-        public string lastHoldingID = "";
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////

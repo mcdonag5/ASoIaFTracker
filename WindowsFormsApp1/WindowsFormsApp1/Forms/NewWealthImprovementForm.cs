@@ -24,7 +24,7 @@ namespace WindowsFormsApp1.Forms
         ///// METHODS START ////////////////////////////////////////////////////////
         public NewWealthImprovementForm(int houseID, string houseName, string wealthHoldingID,string weaID, string wealthName)
         {
-            House = new House(houseID , House.name);
+            House = new House(houseID , houseName);
             holdingID = wealthHoldingID;
             wealthID = weaID;
 
