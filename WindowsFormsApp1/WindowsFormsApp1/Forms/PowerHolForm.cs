@@ -39,6 +39,7 @@ namespace WindowsFormsApp1
         Label[] unitDefense;
         Label[] unitMovement;
         CheckBox[,] unitUpgrades;
+        Label[,] unitUpgradeLabel;
         Label[,] unitArmorNum;
         Label[] unitFightDMG;
         Label[] unitMarksDMG;
@@ -68,6 +69,7 @@ namespace WindowsFormsApp1
                 unitTraining[i].SelectedIndex = -1;
                 for (int j = 0; j < unitAbilitiesTextBox.GetLength(1); j++) { unitAbilitiesTextBox[i, j].Text = ""; }
                 for (int j = 0; j < unitAbilitiesLabel.GetLength(1); j++) { unitAbilitiesLabel[i, j].ForeColor = Color.Black; }
+                for (int j = 0; j < unitUpgradeLabel.GetLength(1); j++) { unitUpgradeLabel[i, j].ForeColor = Color.Black; }
                 for (int j = 0; j < unitUpgrades.GetLength(1); j++) { unitUpgrades[i, j].Checked = false; }
 
                 if (i < endNum)
@@ -228,7 +230,17 @@ namespace WindowsFormsApp1
         {
             if (unit <= unitPageNum)
             {
-                int armorStart = unitUpgrades[unit, 0].Checked ? 40 : 39;
+                int armorStart;
+                if (unitUpgrades[unit, 0].Checked)
+                {
+                    armorStart = 40;
+                    for(int i = 0; i < 3 ; i++) { unitUpgradeLabel[unit, i].ForeColor = Color.DarkGoldenrod; }
+                }
+                else
+                {
+                    armorStart = 39;
+                    for (int i = 0; i < 3; i++) { unitUpgradeLabel[unit, i].ForeColor = Color.Black; }
+                }
                 for (int x = 0; x < 3; x++)
                 {
                     if (dgCal1.Rows[unit + startingNum].Cells[armorStart + (x * 2)].Value.ToString() != "")
@@ -264,7 +276,17 @@ namespace WindowsFormsApp1
         {
             if (unit <= unitPageNum)
             {
-                int fightingStart = unitUpgrades[unit, 1].Checked ? 46 : 45;
+                int fightingStart;
+                if (unitUpgrades[unit, 1].Checked)
+                {
+                    fightingStart = 46;
+                    unitUpgradeLabel[unit, 3].ForeColor = Color.DarkGoldenrod;
+                }
+                else
+                {
+                    fightingStart = 45;
+                    unitUpgradeLabel[unit, 3].ForeColor = Color.Black;
+                }
                 int dmg = Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[fightingStart].Value);
                 if (unitAbilitiesTextBox[unit, 2].Text != "") { dmg += Convert.ToInt32(unitAbilitiesTextBox[unit, 2].Text); }
                 unitFightDMG[unit].Text = dmg.ToString();
@@ -277,10 +299,20 @@ namespace WindowsFormsApp1
             if (unit <= unitPageNum && dgCal1.Rows[unit + startingNum].Cells[47].Value.ToString() != "")
             {
                 unitUpgrades[unit, 2].Enabled = true;
-                int marksStart = unitUpgrades[unit, 2].Checked ? 48 : 47;
+                int marksStart;
+                if (unitUpgrades[unit, 2].Checked)
+                {
+                    marksStart = 48;
+                    unitUpgradeLabel[unit,4].ForeColor = Color.DarkGoldenrod;
+                }
+                else
+                {
+                    marksStart = 47;
+                    unitUpgradeLabel[unit, 4].ForeColor = Color.Black;
+                }
                 int dmg = Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[marksStart].Value);
                 if (unitAbilitiesTextBox[unit, 0].Text != "") { dmg += Convert.ToInt32(unitAbilitiesTextBox[unit, 0].Text); }
-                unitMarksDMG[unit].Text = dmg + "" + dgCal1.Rows[unit + startingNum].Cells[49].Value.ToString();
+                unitMarksDMG[unit].Text = dmg + " " + dgCal1.Rows[unit + startingNum].Cells[49].Value.ToString();
             }
             else
             {
@@ -326,6 +358,7 @@ namespace WindowsFormsApp1
             unitDefense = new Label[] { lbDef1, lbDef2, lbDef3, lbDef4 };
             unitMovement = new Label[] { lbMov1, lbMov2, lbMov3, lbMov4 };
             unitUpgrades = new CheckBox[,] { { chbArmor1,chbFightDMG1,chbMarkDMG1},{ chbArmor2, chbFightDMG2, chbMarkDMG2 },{ chbArmor3, chbFightDMG3, chbMarkDMG3 },{ chbArmor4, chbFightDMG4, chbMarkDMG4 } };
+            unitUpgradeLabel = new Label[,] { { lbArmRTG1, lbArmPen1, lbBul1, lbFigDMG1, lbMarDMG1 }, { lbArmRTG2, lbArmPen2, lbBul2, lbFigDMG2, lbMarDMG2 }, { lbArmRTG3, lbArmPen3, lbBul3, lbFigDMG3, lbMarDMG3 }, { lbArmRTG4, lbArmPen4, lbBul4, lbFigDMG4, lbMarDMG4 } };
             unitArmorNum = new Label[,] { { lbArmRTGNum1, lbArmPenNum1, lbBulNum1 }, { lbArmRTGNum2, lbArmPenNum2, lbBulNum2 }, { lbArmRTGNum3, lbArmPenNum3, lbBulNum3 }, { lbArmRTGNum4, lbArmPenNum4, lbBulNum4 } };
             unitFightDMG = new Label[] { lbFigDMGNum1, lbFigDMGNum2, lbFigDMGNum3, lbFigDMGNum4 };
             unitMarksDMG = new Label[] { lbMarDMGNum1, lbMarDMGNum2, lbMarDMGNum3, lbMarDMGNum4 };

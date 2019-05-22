@@ -1355,6 +1355,7 @@
             this.lbArmRTG1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbArmRTG1.AutoSize = true;
             this.lbArmRTG1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArmRTG1.ForeColor = System.Drawing.Color.DarkGoldenrod;
             this.lbArmRTG1.Location = new System.Drawing.Point(3, 0);
             this.lbArmRTG1.Name = "lbArmRTG1";
             this.lbArmRTG1.Size = new System.Drawing.Size(94, 17);
