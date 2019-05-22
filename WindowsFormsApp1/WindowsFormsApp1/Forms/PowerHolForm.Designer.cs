@@ -331,6 +331,7 @@
             this.lbKno4 = new System.Windows.Forms.Label();
             this.btPrevious = new System.Windows.Forms.Button();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbPageNumber = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudHea1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDis1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -480,6 +481,7 @@
             this.cbTraining1.Name = "cbTraining1";
             this.cbTraining1.Size = new System.Drawing.Size(184, 25);
             this.cbTraining1.TabIndex = 38;
+            this.cbTraining1.SelectedIndexChanged += new System.EventHandler(this.cbTraining1_SelectedIndexChanged);
             // 
             // lbPowStats31
             // 
@@ -830,6 +832,7 @@
             this.tbAwa1.Size = new System.Drawing.Size(17, 23);
             this.tbAwa1.TabIndex = 57;
             this.tbAwa1.Text = "0";
+            this.tbAwa1.TextChanged += new System.EventHandler(this.tbAwa1_TextChanged);
             // 
             // tbPer1
             // 
@@ -852,6 +855,7 @@
             this.tbAth1.Size = new System.Drawing.Size(17, 23);
             this.tbAth1.TabIndex = 57;
             this.tbAth1.Text = "0";
+            this.tbAth1.TextChanged += new System.EventHandler(this.tbAth1_TextChanged);
             // 
             // tbMar1
             // 
@@ -896,6 +900,7 @@
             this.tbAgi1.Size = new System.Drawing.Size(17, 23);
             this.tbAgi1.TabIndex = 56;
             this.tbAgi1.Text = "0";
+            this.tbAgi1.TextChanged += new System.EventHandler(this.tbAgi1_TextChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -1167,6 +1172,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbAgi1.AutoSize = true;
             this.lbAgi1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAgi1.ForeColor = System.Drawing.Color.Black;
             this.lbAgi1.Location = new System.Drawing.Point(51, 69);
             this.lbAgi1.Name = "lbAgi1";
             this.lbAgi1.Size = new System.Drawing.Size(62, 29);
@@ -1233,7 +1239,7 @@
             this.lbMarDMGNum1.Name = "lbMarDMGNum1";
             this.lbMarDMGNum1.Size = new System.Drawing.Size(124, 17);
             this.lbMarDMGNum1.TabIndex = 51;
-            this.lbMarDMGNum1.Text = "9";
+            this.lbMarDMGNum1.Text = "0";
             this.lbMarDMGNum1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbFigDMGNum1
@@ -1263,7 +1269,6 @@
             this.lbBulNum1.TabIndex = 51;
             this.lbBulNum1.Text = "0";
             this.lbBulNum1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbBulNum1.TextChanged += new System.EventHandler(this.lbBulNum1_TextChanged);
             // 
             // lbArmPenNum1
             // 
@@ -1309,6 +1314,7 @@
             this.chbFightDMG1.Size = new System.Drawing.Size(15, 14);
             this.chbFightDMG1.TabIndex = 53;
             this.chbFightDMG1.UseVisualStyleBackColor = true;
+            this.chbFightDMG1.CheckedChanged += new System.EventHandler(this.chbFightDMG1_CheckedChanged);
             // 
             // chbMarkDMG1
             // 
@@ -1318,6 +1324,7 @@
             this.chbMarkDMG1.Size = new System.Drawing.Size(15, 14);
             this.chbMarkDMG1.TabIndex = 52;
             this.chbMarkDMG1.UseVisualStyleBackColor = true;
+            this.chbMarkDMG1.CheckedChanged += new System.EventHandler(this.chbMarkDMG1_CheckedChanged);
             // 
             // lbBul1
             // 
@@ -1391,12 +1398,15 @@
             // 
             // btNext
             // 
-            this.btNext.Location = new System.Drawing.Point(579, 819);
+            this.btNext.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btNext.Location = new System.Drawing.Point(583, 816);
             this.btNext.Name = "btNext";
             this.btNext.Size = new System.Drawing.Size(30, 30);
             this.btNext.TabIndex = 55;
             this.btNext.Text = ">";
             this.btNext.UseVisualStyleBackColor = true;
+            this.btNext.Click += new System.EventHandler(this.btNext_Click);
             // 
             // tlpUnit2
             // 
@@ -1623,6 +1633,7 @@
             this.tbAwa2.Size = new System.Drawing.Size(17, 23);
             this.tbAwa2.TabIndex = 57;
             this.tbAwa2.Text = "0";
+            this.tbAwa2.TextChanged += new System.EventHandler(this.tbAwa2_TextChanged);
             // 
             // tbPer2
             // 
@@ -1645,6 +1656,7 @@
             this.tbAth2.Size = new System.Drawing.Size(17, 23);
             this.tbAth2.TabIndex = 57;
             this.tbAth2.Text = "0";
+            this.tbAth2.TextChanged += new System.EventHandler(this.tbAth2_TextChanged);
             // 
             // tbMar2
             // 
@@ -1689,6 +1701,7 @@
             this.tbAgi2.Size = new System.Drawing.Size(17, 23);
             this.tbAgi2.TabIndex = 56;
             this.tbAgi2.Text = "0";
+            this.tbAgi2.TextChanged += new System.EventHandler(this.tbAgi2_TextChanged);
             // 
             // tableLayoutPanel4
             // 
@@ -1766,7 +1779,6 @@
             this.lbBulNum2.TabIndex = 51;
             this.lbBulNum2.Text = "0";
             this.lbBulNum2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbBulNum2.TextChanged += new System.EventHandler(this.lbBulNum2_TextChanged);
             // 
             // lbArmPenNum2
             // 
@@ -1812,6 +1824,7 @@
             this.chbFightDMG2.Size = new System.Drawing.Size(15, 14);
             this.chbFightDMG2.TabIndex = 53;
             this.chbFightDMG2.UseVisualStyleBackColor = true;
+            this.chbFightDMG2.CheckedChanged += new System.EventHandler(this.chbFightDMG2_CheckedChanged);
             // 
             // chbMarkDMG2
             // 
@@ -1821,6 +1834,7 @@
             this.chbMarkDMG2.Size = new System.Drawing.Size(15, 14);
             this.chbMarkDMG2.TabIndex = 52;
             this.chbMarkDMG2.UseVisualStyleBackColor = true;
+            this.chbMarkDMG2.CheckedChanged += new System.EventHandler(this.chbMarkDMG2_CheckedChanged);
             // 
             // lbBul2
             // 
@@ -1965,6 +1979,7 @@
             this.cbTraining2.Name = "cbTraining2";
             this.cbTraining2.Size = new System.Drawing.Size(185, 25);
             this.cbTraining2.TabIndex = 38;
+            this.cbTraining2.SelectedIndexChanged += new System.EventHandler(this.cbTraining2_SelectedIndexChanged);
             // 
             // lbDiscipText2
             // 
@@ -2621,6 +2636,7 @@
             this.tbAwa3.Size = new System.Drawing.Size(17, 23);
             this.tbAwa3.TabIndex = 57;
             this.tbAwa3.Text = "0";
+            this.tbAwa3.TextChanged += new System.EventHandler(this.tbAwa3_TextChanged);
             // 
             // tbPer3
             // 
@@ -2643,6 +2659,7 @@
             this.tbAth3.Size = new System.Drawing.Size(17, 23);
             this.tbAth3.TabIndex = 57;
             this.tbAth3.Text = "0";
+            this.tbAth3.TextChanged += new System.EventHandler(this.tbAth3_TextChanged);
             // 
             // tbMar3
             // 
@@ -2687,6 +2704,7 @@
             this.tbAgi3.Size = new System.Drawing.Size(17, 23);
             this.tbAgi3.TabIndex = 56;
             this.tbAgi3.Text = "0";
+            this.tbAgi3.TextChanged += new System.EventHandler(this.tbAgi3_TextChanged);
             // 
             // btDelete3
             // 
@@ -2774,7 +2792,6 @@
             this.lbBulNum3.TabIndex = 51;
             this.lbBulNum3.Text = "0";
             this.lbBulNum3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbBulNum3.TextChanged += new System.EventHandler(this.lbBulNum3_TextChanged);
             // 
             // lbArmPenNum3
             // 
@@ -2820,6 +2837,7 @@
             this.chbFightDMG3.Size = new System.Drawing.Size(15, 14);
             this.chbFightDMG3.TabIndex = 53;
             this.chbFightDMG3.UseVisualStyleBackColor = true;
+            this.chbFightDMG3.CheckedChanged += new System.EventHandler(this.chbFightDMG3_CheckedChanged);
             // 
             // chbMarkDMG3
             // 
@@ -2829,6 +2847,7 @@
             this.chbMarkDMG3.Size = new System.Drawing.Size(15, 14);
             this.chbMarkDMG3.TabIndex = 52;
             this.chbMarkDMG3.UseVisualStyleBackColor = true;
+            this.chbMarkDMG3.CheckedChanged += new System.EventHandler(this.chbMarkDMG3_CheckedChanged);
             // 
             // lbBul3
             // 
@@ -2974,6 +2993,7 @@
             this.cbTraining3.Name = "cbTraining3";
             this.cbTraining3.Size = new System.Drawing.Size(182, 25);
             this.cbTraining3.TabIndex = 38;
+            this.cbTraining3.SelectedIndexChanged += new System.EventHandler(this.cbTraining3_SelectedIndexChanged);
             // 
             // lbDiscipText3
             // 
@@ -3620,6 +3640,7 @@
             this.tbAwa4.Size = new System.Drawing.Size(17, 23);
             this.tbAwa4.TabIndex = 57;
             this.tbAwa4.Text = "0";
+            this.tbAwa4.TextChanged += new System.EventHandler(this.tbAwa4_TextChanged);
             // 
             // tbPer4
             // 
@@ -3642,6 +3663,7 @@
             this.tbAth4.Size = new System.Drawing.Size(17, 23);
             this.tbAth4.TabIndex = 57;
             this.tbAth4.Text = "0";
+            this.tbAth4.TextChanged += new System.EventHandler(this.tbAth4_TextChanged);
             // 
             // tbMar4
             // 
@@ -3686,6 +3708,7 @@
             this.tbAgi4.Size = new System.Drawing.Size(17, 23);
             this.tbAgi4.TabIndex = 56;
             this.tbAgi4.Text = "0";
+            this.tbAgi4.TextChanged += new System.EventHandler(this.tbAgi4_TextChanged);
             // 
             // btDelete4
             // 
@@ -3771,7 +3794,6 @@
             this.lbBulNum4.TabIndex = 51;
             this.lbBulNum4.Text = "0";
             this.lbBulNum4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbBulNum4.TextChanged += new System.EventHandler(this.lbBulNum4_TextChanged);
             // 
             // lbArmPenNum4
             // 
@@ -3817,6 +3839,7 @@
             this.chbFightDMG4.Size = new System.Drawing.Size(15, 14);
             this.chbFightDMG4.TabIndex = 53;
             this.chbFightDMG4.UseVisualStyleBackColor = true;
+            this.chbFightDMG4.CheckedChanged += new System.EventHandler(this.chbFightDMG4_CheckedChanged);
             // 
             // chbMarkDMG4
             // 
@@ -3826,6 +3849,7 @@
             this.chbMarkDMG4.Size = new System.Drawing.Size(15, 14);
             this.chbMarkDMG4.TabIndex = 52;
             this.chbMarkDMG4.UseVisualStyleBackColor = true;
+            this.chbMarkDMG4.CheckedChanged += new System.EventHandler(this.chbMarkDMG4_CheckedChanged);
             // 
             // lbBul4
             // 
@@ -3968,6 +3992,7 @@
             this.cbTraining4.Name = "cbTraining4";
             this.cbTraining4.Size = new System.Drawing.Size(181, 25);
             this.cbTraining4.TabIndex = 38;
+            this.cbTraining4.SelectedIndexChanged += new System.EventHandler(this.cbTraining4_SelectedIndexChanged);
             // 
             // lbDiscipText4
             // 
@@ -4391,12 +4416,15 @@
             // 
             // btPrevious
             // 
-            this.btPrevious.Location = new System.Drawing.Point(418, 819);
+            this.btPrevious.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btPrevious.Location = new System.Drawing.Point(429, 816);
             this.btPrevious.Name = "btPrevious";
             this.btPrevious.Size = new System.Drawing.Size(30, 30);
             this.btPrevious.TabIndex = 59;
             this.btPrevious.Text = "<";
             this.btPrevious.UseVisualStyleBackColor = true;
+            this.btPrevious.Click += new System.EventHandler(this.btPrevious_Click);
             // 
             // tableLayoutPanel11
             // 
@@ -4419,12 +4447,26 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(1041, 785);
             this.tableLayoutPanel11.TabIndex = 60;
             // 
+            // lbPageNumber
+            // 
+            this.lbPageNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPageNumber.AutoSize = true;
+            this.lbPageNumber.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPageNumber.Location = new System.Drawing.Point(480, 821);
+            this.lbPageNumber.Name = "lbPageNumber";
+            this.lbPageNumber.Size = new System.Drawing.Size(80, 18);
+            this.lbPageNumber.TabIndex = 61;
+            this.lbPageNumber.Text = "Page 1 of 2";
+            this.lbPageNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // PowerHolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1059, 852);
+            this.Controls.Add(this.lbPageNumber);
             this.Controls.Add(this.tableLayoutPanel11);
             this.Controls.Add(this.btPrevious);
             this.Controls.Add(this.btNext);
@@ -4778,5 +4820,6 @@
         private System.Windows.Forms.Label lbMaxHealth2;
         private System.Windows.Forms.Label lbMaxHealth3;
         private System.Windows.Forms.Label lbMaxHealth4;
+        private System.Windows.Forms.Label lbPageNumber;
     }
 }

@@ -198,8 +198,8 @@ namespace WindowsFormsApp1
                 dgCal1.DataSource = House.HouseQry("InfluenceHolding", dgHouseDetails.Rows[i].Cells[1].Value.ToString());
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {//Imp Table
-                    houInf -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
-                    influenceHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + Environment.NewLine;
+                    houInf -= Convert.ToInt32(dgCal1.Rows[n].Cells[8].Value)- Convert.ToInt32(dgCal1.Rows[n].Cells[4].Value);
+                    influenceHoldings += "       " + dgCal1.Rows[n].Cells[7].Value.ToString() + Environment.NewLine;
                 }
             }
             //Heir table
@@ -453,6 +453,14 @@ namespace WindowsFormsApp1
                 UpdateHouse();
             }
         }
+
+        private void PowerFormVisible(object sender, EventArgs e)
+        {
+            if (powerHolForm.Visible)
+            {
+                UpdateHouse();
+            }
+        }
         ///// METHODS END //////////////////////////////////////////////////////////
 
         ///// EVENTS START //////////////////////////////////////////////////////////
@@ -483,6 +491,8 @@ namespace WindowsFormsApp1
         private void BtPowerHolForm_Click(object sender, EventArgs e)
         {
             powerHolForm = new PowerHolForm(House.ID, House.name);
+            powerHolForm.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
+            powerHolForm.VisibleChanged += new EventHandler(PowerFormVisible);
             powerHolForm.Show();
         }
 

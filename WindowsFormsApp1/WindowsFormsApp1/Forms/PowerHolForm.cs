@@ -14,6 +14,11 @@ namespace WindowsFormsApp1
     public partial class PowerHolForm : Form
     {
         ///// VARIABLES START ////////////////////////////////////////////////////// 
+        int startingNum = 0;
+        int currentPage = 1;
+        int pageNum;
+        int unitPageNum;
+        //Classes
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
         House House;
@@ -35,27 +40,145 @@ namespace WindowsFormsApp1
         Label[] unitMovement;
         CheckBox[,] unitUpgrades;
         Label[,] unitArmorNum;
-        
-        int startingNum = 0;
+        Label[] unitFightDMG;
+        Label[] unitMarksDMG;
 
+        Button[] unitDelete;
         ///// METHODS START ////////////////////////////////////////////////////////
-        public void UpdateUnits()
+        public void UpdateUnits(int pageChange)
         {
-            int endNum;
-            if(dgCal1.RowCount > startingNum+4) { endNum = 3; } else { endNum = dgCal1.RowCount - startingNum; }
-            for(int i = 0; i< endNum;i++)
-            {
-                //basic details
-                unitName[i].Text = dgCal1.Rows[i+startingNum].Cells[3].Value.ToString();
-                unitType[i].Text = dgCal1.Rows[i + startingNum].Cells[32].Value.ToString();
-                unitTraining[i].Text = dgCal1.Rows[i + startingNum].Cells[4].Value.ToString();
-                unitDisorganized[i].Text = dgCal1.Rows[i + startingNum].Cells[28].Value.ToString();
-                unitNotes[i].Text = dgCal1.Rows[i + startingNum].Cells[29].Value.ToString();
+            DevLog.LogItem("Updating units");
+            currentPage += pageChange;
+            startingNum = (currentPage - 1) * 4;
+            lbPageNumber.Text = "Page " + currentPage + " of " + pageNum;
+            btPrevious.Enabled = currentPage > 1 ? true : false;
+            btNext.Enabled = currentPage < pageNum ? true : false;
+            unitPageNum = -1;
+            
 
-                //cost + discipline
+            int endNum;
+            if(dgCal1.RowCount > startingNum+4) { endNum = 4; } else { endNum = dgCal1.RowCount - startingNum; }
+            for(int i = 0; i< 4;i++)
+            {
+                DevLog.LogItem("Updating unit: " + i);
+                //clear
+                unitName[i].Text = unitNotes[i].Text = unitCost[i].Text = unitDiscipline[i].Text = unitType[i].Text = unitDefense[i].Text = unitMovement[i].Text = unitFightDMG[i].Text = unitMarksDMG[i].Text ="";
+                for(int j = 0; j<unitArmorNum.GetLength(1);j++) { unitArmorNum[i, j].Text = ""; }
+                unitHealth[i].Value = unitDisorganized[i].Value = 0;
+                unitTraining[i].SelectedIndex = -1;
+                for (int j = 0; j < unitAbilitiesTextBox.GetLength(1); j++) { unitAbilitiesTextBox[i, j].Text = ""; }
+                for (int j = 0; j < unitAbilitiesLabel.GetLength(1); j++) { unitAbilitiesLabel[i, j].ForeColor = Color.Black; }
+                for (int j = 0; j < unitUpgrades.GetLength(1); j++) { unitUpgrades[i, j].Checked = false; }
+
+                if (i < endNum)
+                {
+                    unitPageNum++;
+                    unitName[i].Enabled = unitTraining[i].Enabled = unitHealth[i].Enabled = unitDisorganized[i].Enabled = unitNotes[i].Enabled = unitDelete[i].Enabled = true;
+                    for (int j = 0; j < unitAbilitiesTextBox.GetLength(1); j++) { unitAbilitiesTextBox[i, j].Enabled = true; }
+                    for (int j = 0; j < unitUpgrades.GetLength(1); j++) { unitUpgrades[i, j].Enabled = true; }
+                    //basic details
+                    unitName[i].Text = dgCal1.Rows[i + startingNum].Cells[3].Value.ToString();
+                    unitType[i].Text = dgCal1.Rows[i + startingNum].Cells[32].Value.ToString();
+                    unitTraining[i].Text = dgCal1.Rows[i + startingNum].Cells[4].Value.ToString();
+                    unitDisorganized[i].Text = dgCal1.Rows[i + startingNum].Cells[28].Value.ToString();
+                    unitNotes[i].Text = dgCal1.Rows[i + startingNum].Cells[29].Value.ToString();
+                    
+                    //abilities
+
+                    for (int j = 0; j < 3; j++)
+                    {
+                        switch (dgCal1.Rows[i + startingNum].Cells[35 + j].Value.ToString())
+                        {
+                            case "Agility":
+                                unitAbilitiesLabel[i, 0].ForeColor = Color.Blue;
+                                break;
+                            case "Animal Handing":
+                                unitAbilitiesLabel[i, 1].ForeColor = Color.Blue;
+                                break;
+                            case "Athletics":
+                                unitAbilitiesLabel[i, 2].ForeColor = Color.Blue;
+                                break;
+                            case "Awareness":
+                                unitAbilitiesLabel[i, 3].ForeColor = Color.Blue;
+                                break;
+                            case "Cunning":
+                                unitAbilitiesLabel[i, 4].ForeColor = Color.Blue;
+                                break;
+                            case "Endurance":
+                                unitAbilitiesLabel[i, 5].ForeColor = Color.Blue;
+                                break;
+                            case "Fighting":
+                                unitAbilitiesLabel[i, 6].ForeColor = Color.Blue;
+                                break;
+                            case "Healing":
+                                unitAbilitiesLabel[i, 7].ForeColor = Color.Blue;
+                                break;
+                            case "Language":
+                                unitAbilitiesLabel[i, 8].ForeColor = Color.Blue;
+                                break;
+                            case "Knowledge":
+                                unitAbilitiesLabel[i, 9].ForeColor = Color.Blue;
+                                break;
+                            case "Marksmanship":
+                                unitAbilitiesLabel[i, 10].ForeColor = Color.Blue;
+                                break;
+                            case "Persuasion":
+                                unitAbilitiesLabel[i, 11].ForeColor = Color.Blue;
+                                break;
+                            case "Status":
+                                unitAbilitiesLabel[i, 12].ForeColor = Color.Blue;
+                                break;
+                            case "Stealth":
+                                unitAbilitiesLabel[i, 13].ForeColor = Color.Blue;
+                                break;
+                            case "Survival":
+                                unitAbilitiesLabel[i, 14].ForeColor = Color.Blue;
+                                break;
+                            case "Thievery":
+                                unitAbilitiesLabel[i, 15].ForeColor = Color.Blue;
+                                break;
+                            case "Warfare":
+                                unitAbilitiesLabel[i, 16].ForeColor = Color.Blue;
+                                break;
+                            case "Will":
+                                unitAbilitiesLabel[i, 17].ForeColor = Color.Blue;
+                                break;
+                        }
+                    }
+
+                    for (int j = 0; j < 18; j++)
+                    {
+                        unitAbilitiesTextBox[i, j].Text = dgCal1.Rows[i + startingNum].Cells[6 + j].Value.ToString();
+                    }
+
+                    //armor + weapons
+                    if (unitUpgrades[i, 0].Checked.ToString() == dgCal1.Rows[i + startingNum].Cells[24].Value.ToString())
+                    {
+                        UnitArmor(i);
+                    }
+                    else
+                    {
+                        unitUpgrades[i, 0].Checked = Convert.ToBoolean(dgCal1.Rows[i + startingNum].Cells[24].Value);
+                    }
+                    //calculated stats
+                    unitHealth[i].Text = Convert.ToString(unitHealth[i].Maximum - Convert.ToInt32(dgCal1.Rows[i + startingNum].Cells[27].Value));
+                }
+                else
+                {
+                    unitName[i].Enabled = unitTraining[i].Enabled = unitHealth[i].Enabled = unitDisorganized[i].Enabled = unitNotes[i].Enabled = unitDelete[i].Enabled = false;
+                    for(int j = 0; j<unitAbilitiesTextBox.GetLength(1); j++) { unitAbilitiesTextBox[i, j].Enabled = false; }
+                    for (int j = 0; j < unitUpgrades.GetLength(1); j++) { unitUpgrades[i, j].Enabled = false; }
+                }
+            }
+        }
+
+        public void UnitTraning (int unit)
+        {
+            if (unit <= unitPageNum)
+            {
                 int cost = 0;
                 int discipline = 0;
-                switch (dgCal1.Rows[i + startingNum].Cells[4].Value.ToString())
+                switch (unitTraining[unit].Text)
                 {
                     case "Green":
                         cost = 1;
@@ -74,85 +197,111 @@ namespace WindowsFormsApp1
                         discipline = 0;
                         break;
                     default:
-                        DevLog.LogItem("Traning cost error: " + unitDiscipline[i].Text);
+                        DevLog.LogItem("Traning cost error: " + unitDiscipline[unit].Text);
                         break;
                 }
-                cost += Convert.ToInt32(dgCal1.Rows[i + startingNum].Cells[33].Value) - Convert.ToInt32(dgCal1.Rows[i + startingNum].Cells[5].Value);
-                discipline += Convert.ToInt32(dgCal1.Rows[i + startingNum].Cells[34].Value);
-                unitCost[i].Text = cost.ToString();
-                unitDiscipline[i].Text = discipline.ToString();
-                //abilities
-
-                for (int x = 0; x < 18; x++)
-                {
-                    unitAbilitiesTextBox[i, x].Text = dgCal1.Rows[i + startingNum].Cells[6 + x].Value.ToString();
-                }
-
-                //armor + weapons
-                if (unitUpgrades[i, 0].Checked.ToString() == dgCal1.Rows[i + startingNum].Cells[24].Value.ToString())
-                {
-                    UnitArmor(i);
-                }
-                else
-                {
-                    unitUpgrades[i, 0].Checked = Convert.ToBoolean(dgCal1.Rows[i + startingNum].Cells[24].Value);
-                }
-                //calculated stats
-                unitHealth[i].Text = Convert.ToString(unitHealth[i].Maximum - Convert.ToInt32(dgCal1.Rows[i + startingNum].Cells[27].Value));
-                //Unit Defense = Agility + Athletics + Awareness - Armor Penalty
-                unitDefense[i].Text = Convert.ToString(Convert.ToInt32(unitAbilitiesTextBox[i, 0].Text)+ Convert.ToInt32(unitAbilitiesTextBox[i, 2].Text)+ Convert.ToInt32(unitAbilitiesTextBox[i, 3].Text)+ Convert.ToInt32(unitArmorNum[i, 1].Text));
+                cost += Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[33].Value) - Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[5].Value);
+                discipline += Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[34].Value);
+                unitCost[unit].Text = cost.ToString();
+                unitDiscipline[unit].Text = discipline.ToString();
             }
         }
 
         public void UnitHealth(int unit)
         {
-            if (unitAbilitiesTextBox[unit, 5].Text != "")
+            if (unit <= unitPageNum)
             {
-                unitHealth[unit].Maximum = Convert.ToInt32(unitAbilitiesTextBox[unit, 5].Text) * 3;
+                if (unitAbilitiesTextBox[unit, 5].Text != "")
+                {
+                    unitHealth[unit].Maximum = Convert.ToInt32(unitAbilitiesTextBox[unit, 5].Text) * 3;
+                    unitHealth[unit].Value = unitHealth[unit].Maximum;
+                }
+                else
+                {
+                    unitHealth[unit].Maximum = 0;
+                }
                 unitMaxHealthText[unit].Text = "/" + unitHealth[unit].Maximum.ToString();
             }
         }
 
         public void UnitArmor(int unit)
         {
-            int armorStart;
-            if (unitUpgrades[unit, 0].Checked == true)
-            {//Armor
-                DevLog.LogItem("Upgraded");
-                unitUpgrades[unit, 0].Checked = true;
-                armorStart = 40;
-            }
-            else
+            if (unit <= unitPageNum)
             {
-                DevLog.LogItem("Not Upgraded");
-                unitUpgrades[unit, 0].Checked = false;
-                armorStart = 39;
+                int armorStart = unitUpgrades[unit, 0].Checked ? 40 : 39;
+                for (int x = 0; x < 3; x++)
+                {
+                    if (dgCal1.Rows[unit + startingNum].Cells[armorStart + (x * 2)].Value.ToString() != "")
+                    {
+                        unitArmorNum[unit, x].Text = dgCal1.Rows[unit + startingNum].Cells[armorStart + (x * 2)].Value.ToString();
+                    }
+                    else
+                    {
+                        unitArmorNum[unit, x].Text = "";
+                    }
+                }
+                //movement
+                int movement;
+                if (unitType[unit].Text == "Cavalry" || unitType[unit].Text == "Scouts")
+                {
+                    movement = 80;
+                }
+                else if (unitType[unit].Text == "Warships")
+                {
+                    movement = 60;
+                }
+                else
+                {
+                    movement = 40;
+                }
+                if (unitArmorNum[unit, 2].Text != "") { movement -= Convert.ToInt32(unitArmorNum[unit, 2].Text) * 10; }
+                unitMovement[unit].Text = movement + " yards";
+                UnitDefense(unit);
             }
-            for (int x = 0; x < 3; x++)
+        }
+        
+        public void UnitFightDMG (int unit)
+        {
+            if (unit <= unitPageNum)
             {
-                unitArmorNum[unit, x].Text = dgCal1.Rows[unit + startingNum].Cells[armorStart + (x * 2)].Value.ToString();
+                int fightingStart = unitUpgrades[unit, 1].Checked ? 46 : 45;
+                int dmg = Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[fightingStart].Value);
+                if (unitAbilitiesTextBox[unit, 2].Text != "") { dmg += Convert.ToInt32(unitAbilitiesTextBox[unit, 2].Text); }
+                unitFightDMG[unit].Text = dmg.ToString();
             }
         }
 
-        public void UnitMovement (int unit)
+        public void UnitMarksDMG(int unit)
         {
-            int movement;
-            if(unitType[unit].Text == "Cavalry" || unitType[unit].Text == "Scouts")
+
+            if (unit <= unitPageNum && dgCal1.Rows[unit + startingNum].Cells[47].Value.ToString() != "")
             {
-                movement = 80;
-            } 
-            else if(unitType[unit].Text == "Warships")
-            {
-                movement = 60;
+                unitUpgrades[unit, 2].Enabled = true;
+                int marksStart = unitUpgrades[unit, 2].Checked ? 48 : 47;
+                int dmg = Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[marksStart].Value);
+                if (unitAbilitiesTextBox[unit, 0].Text != "") { dmg += Convert.ToInt32(unitAbilitiesTextBox[unit, 0].Text); }
+                unitMarksDMG[unit].Text = dmg + "" + dgCal1.Rows[unit + startingNum].Cells[49].Value.ToString();
             }
             else
             {
-                movement = 40;
+                unitUpgrades[unit, 2].Enabled = false;
+                unitMarksDMG[unit].Text = "";
             }
-            movement -= Convert.ToInt32(unitArmorNum[unit, 2].Text) * 10;
-            unitMovement[unit].Text = movement+ " yards";
         }
-        
+
+        public void UnitDefense (int unit)
+        {
+            if (unit <= unitPageNum)
+            {
+                //Unit Defense = Agility + Athletics + Awareness - Armor Penalty
+                int defense = 0;
+                if (unitAbilitiesTextBox[unit, 0].Text != "") { defense += Convert.ToInt32(unitAbilitiesTextBox[unit, 0].Text); }
+                if (unitAbilitiesTextBox[unit, 2].Text != "") { defense += Convert.ToInt32(unitAbilitiesTextBox[unit, 2].Text); }
+                if (unitAbilitiesTextBox[unit, 3].Text != "") { defense += Convert.ToInt32(unitAbilitiesTextBox[unit, 3].Text); }
+                if (unitArmorNum[unit, 1].Text != "") { defense += Convert.ToInt32(unitArmorNum[unit, 1].Text); }
+                unitDefense[unit].Text = defense.ToString();
+            }
+        }
         ///// METHODS END //////////////////////////////////////////////////////////
         public PowerHolForm(int houseID, string houseName)
         {
@@ -178,9 +327,17 @@ namespace WindowsFormsApp1
             unitMovement = new Label[] { lbMov1, lbMov2, lbMov3, lbMov4 };
             unitUpgrades = new CheckBox[,] { { chbArmor1,chbFightDMG1,chbMarkDMG1},{ chbArmor2, chbFightDMG2, chbMarkDMG2 },{ chbArmor3, chbFightDMG3, chbMarkDMG3 },{ chbArmor4, chbFightDMG4, chbMarkDMG4 } };
             unitArmorNum = new Label[,] { { lbArmRTGNum1, lbArmPenNum1, lbBulNum1 }, { lbArmRTGNum2, lbArmPenNum2, lbBulNum2 }, { lbArmRTGNum3, lbArmPenNum3, lbBulNum3 }, { lbArmRTGNum4, lbArmPenNum4, lbBulNum4 } };
+            unitFightDMG = new Label[] { lbFigDMGNum1, lbFigDMGNum2, lbFigDMGNum3, lbFigDMGNum4 };
+            unitMarksDMG = new Label[] { lbMarDMGNum1, lbMarDMGNum2, lbMarDMGNum3, lbMarDMGNum4 };
+
+            unitDelete = new Button[] { btDelete1, btDelete2, btDelete3, btDelete4 };
 
             dgCal1.DataSource = House.HouseQry("PowerHolding");
-            UpdateUnits();
+
+            pageNum = dgCal1.RowCount / 4;
+            if (dgCal1.RowCount % 4 > 0) { pageNum++; }
+
+            UpdateUnits(0);
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void chbArmor1_CheckedChanged(object sender, EventArgs e)
@@ -223,24 +380,142 @@ namespace WindowsFormsApp1
             UnitHealth(3);
         }
 
-        private void lbBulNum1_TextChanged(object sender, EventArgs e)
+        private void tbAgi1_TextChanged(object sender, EventArgs e)
         {
-            UnitMovement(0);
+            UnitDefense(0);
+            UnitMarksDMG(0);
         }
 
-        private void lbBulNum2_TextChanged(object sender, EventArgs e)
+        private void tbAth1_TextChanged(object sender, EventArgs e)
         {
-            UnitMovement(1);
+            UnitDefense(0);
+            UnitFightDMG(0);
         }
 
-        private void lbBulNum3_TextChanged(object sender, EventArgs e)
+        private void tbAwa1_TextChanged(object sender, EventArgs e)
         {
-            UnitMovement(2);
+            UnitDefense(0);
         }
 
-        private void lbBulNum4_TextChanged(object sender, EventArgs e)
+        private void tbAgi2_TextChanged(object sender, EventArgs e)
         {
-            UnitMovement(3);
+            UnitDefense(1);
+            UnitMarksDMG(1);
+        }
+
+        private void tbAth2_TextChanged(object sender, EventArgs e)
+        {
+            UnitDefense(1);
+            UnitFightDMG(1);
+        }
+
+        private void tbAwa2_TextChanged(object sender, EventArgs e)
+        {
+            UnitDefense(1);
+        }
+
+        private void tbAgi3_TextChanged(object sender, EventArgs e)
+        {
+            UnitDefense(2);
+            UnitMarksDMG(2);
+        }
+
+        private void tbAth3_TextChanged(object sender, EventArgs e)
+        {
+            UnitDefense(2);
+            UnitFightDMG(2);
+        }
+
+        private void tbAwa3_TextChanged(object sender, EventArgs e)
+        {
+            UnitDefense(2);
+        }
+
+        private void tbAgi4_TextChanged(object sender, EventArgs e)
+        {
+            UnitDefense(3);
+            UnitMarksDMG(3);
+        }
+
+        private void tbAth4_TextChanged(object sender, EventArgs e)
+        {
+            UnitDefense(3);
+            UnitFightDMG(3);
+        }
+
+        private void tbAwa4_TextChanged(object sender, EventArgs e)
+        {
+            UnitDefense(3);
+        }
+
+        private void chbFightDMG1_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitFightDMG(0);
+        }
+
+        private void chbFightDMG2_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitFightDMG(1);
+        }
+
+        private void chbFightDMG3_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitFightDMG(2);
+        }
+
+        private void chbFightDMG4_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitFightDMG(3);
+        }
+
+        private void chbMarkDMG1_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitMarksDMG(0);
+        }
+
+        private void chbMarkDMG2_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitMarksDMG(1);
+        }
+
+        private void chbMarkDMG3_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitMarksDMG(2);
+        }
+
+        private void chbMarkDMG4_CheckedChanged(object sender, EventArgs e)
+        {
+            UnitMarksDMG(3);
+        }
+
+        private void cbTraining1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UnitTraning(0);
+        }
+
+        private void cbTraining2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UnitTraning(1);
+        }
+
+        private void cbTraining3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UnitTraning(2);
+        }
+
+        private void cbTraining4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UnitTraning(3);
+        }
+
+        private void btNext_Click(object sender, EventArgs e)
+        {
+            UpdateUnits(1);
+        }
+
+        private void btPrevious_Click(object sender, EventArgs e)
+        {
+            UpdateUnits(-1);
         }
 
 
