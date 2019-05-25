@@ -334,6 +334,35 @@ namespace WindowsFormsApp1
                 unitDefense[unit].Text = defense.ToString();
             }
         }
+
+        public bool CheckIfUnitChange(int unit)
+        {
+            bool change = false;
+            if (unitName[unit].Text != dgCal1.Rows[unit + startingNum].Cells[3].Value.ToString() || unitTraining[unit].Text != dgCal1.Rows[unit + startingNum].Cells[4].Value.ToString() || unitDisorganized[unit].Text != dgCal1.Rows[unit + startingNum].Cells[28].Value.ToString() || unitNotes[unit].Text != dgCal1.Rows[unit + startingNum].Cells[29].Value.ToString() || Convert.ToString(unitHealth[unit].Maximum - Convert.ToInt32(unitHealth[unit].Value.ToString())) != dgCal1.Rows[unit + startingNum].Cells[27].Value.ToString() || dgCal1.Rows[unit + startingNum].Cells[24].Value.ToString() != unitUpgrades[unit,0].Checked.ToString() || dgCal1.Rows[unit + startingNum].Cells[25].Value.ToString() != unitUpgrades[unit, 1].Checked.ToString() || dgCal1.Rows[unit + startingNum].Cells[26].Value.ToString() != unitUpgrades[unit, 2].Checked.ToString())
+            {
+                change = true;
+            }
+            for(int i =0; i < unitPageNum && !change; i++)
+            {
+                if(unitAbilitiesTextBox[unit,i].Text != dgCal1.Rows[i + startingNum].Cells[6 + i].Value.ToString()) { change = true; }
+            }
+            DevLog.LogItem("Unit Change: " + change);
+            return change;
+        }
+
+        public void CheckAllUnitChange ()
+        {
+            DevLog.LogItem("Checking All units");
+            for(int i = 0; i<=unitPageNum; i++)
+            {
+                DevLog.LogItem("Checking unit: " + i);
+                if(CheckIfUnitChange(i))
+                {
+                    House.UpdatePowerHolding(dgCal1.Rows[i + startingNum].Cells[0].Value.ToString(), unitName[i].Text, unitTraining[i].Text, Convert.ToString(unitHealth[i].Maximum - Convert.ToInt32(unitHealth[i].Value.ToString())),unitDisorganized[i].Value.ToString(),unitNotes[i].Text,unitUpgrades[i,0].Checked.ToString(), unitUpgrades[i, 1].Checked.ToString(), unitUpgrades[i, 2].Checked.ToString(),
+                        unitAbilitiesTextBox[i,0].Text, unitAbilitiesTextBox[i, 1].Text, unitAbilitiesTextBox[i, 2].Text, unitAbilitiesTextBox[i, 3].Text, unitAbilitiesTextBox[i, 4].Text, unitAbilitiesTextBox[i, 5].Text, unitAbilitiesTextBox[i, 6].Text, unitAbilitiesTextBox[i, 7].Text, unitAbilitiesTextBox[i, 8].Text, unitAbilitiesTextBox[i, 9].Text, unitAbilitiesTextBox[i, 10].Text, unitAbilitiesTextBox[i, 11].Text, unitAbilitiesTextBox[i, 12].Text, unitAbilitiesTextBox[i, 13].Text, unitAbilitiesTextBox[i, 14].Text, unitAbilitiesTextBox[i, 15].Text, unitAbilitiesTextBox[i, 16].Text, unitAbilitiesTextBox[i, 17].Text);
+                }
+            }
+        }
         ///// METHODS END //////////////////////////////////////////////////////////
         public PowerHolForm(int houseID, string houseName)
         {
@@ -543,12 +572,19 @@ namespace WindowsFormsApp1
 
         private void btNext_Click(object sender, EventArgs e)
         {
+            CheckAllUnitChange();
             UpdateUnits(1);
         }
 
         private void btPrevious_Click(object sender, EventArgs e)
         {
+            CheckAllUnitChange();
             UpdateUnits(-1);
+        }
+
+        private void PowerHolForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CheckAllUnitChange();
         }
 
 

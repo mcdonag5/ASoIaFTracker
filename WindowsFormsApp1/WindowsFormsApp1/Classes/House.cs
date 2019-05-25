@@ -443,6 +443,24 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_PowerHolding
+        public void UpdatePowerHolding(string PowHolID, string name, string training, string damage, string disorganized, string notes, string armorUpg, string fightUpg, string marksUpg, string agility, string animal, string athletics, string awareness, string cunning, string endurance, string fighting, string healing, string language, string knowledge, string marksmanship, string persuasion, string status, string stealth, string survival, string thievery, string warfare, string will)
+        {
+            armorUpg = armorUpg == "True" ? "1" : "0";
+            fightUpg = fightUpg == "True" ? "1" : "0";
+            marksUpg = marksUpg == "True" ? "1" : "0";
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_PowerHolding` " +
+                    "SET `PowHol_Name` = '" + name + "', `PowHol_Training` = '" + training + "', `PowHol_Damage` = '" + damage + "', `PowHol_Disorganized` = '" + disorganized + "', `PowHol_Notes` = '" + notes + "', `PowHol_ArmorUp` = '" + armorUpg + "', `PowHol_FightingUp` = '" + fightUpg + "', `PowHol_MarksmashipUp` = '" + marksUpg + "', " +
+                    "`PowHol_Agility` = '" + agility + "', `PowHol_AnimalHand` = '" + animal + "', `PowHol_Athletics` = '" + athletics + "', `PowHol_Awareness` = '" + awareness + "', `PowHol_Cunning` = '" + cunning + "', `PowHol_Endurance` = '" + endurance + "', `PowHol_Fighting` = '" + fighting + "', `PowHol_Healing` = '" + healing + "', `PowHol_Language` = '" + language + "', `PowHol_Knowledge` = '" + knowledge + "', `PowHol_Marksmanship` = '" + marksmanship + "', `PowHol_Persuasion` = '" + persuasion + "', `PowHol_Status` = '" + status + "', `PowHol_Stealth` = '" + stealth + "', `PowHol_Survival` = '" + survival + "', `PowHol_Thievery` = '" + thievery + "', `PowHol_Warfare` = '" + warfare + "', `PowHol_Will` = '" + will + "' " +
+                    "WHERE `PowHol_ID` = '" + PowHolID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         ///// DELETE ////////////////////////////////////////////////////////////////
         //tbl_Heir
         public void DeleteHeir(int heir)
