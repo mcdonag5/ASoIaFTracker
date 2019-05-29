@@ -219,7 +219,7 @@ namespace WindowsFormsApp1.Forms
                 }
                 else
                 {
-                    House.InsertHouseChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text), Convert.ToInt32(tbRoll.Text), cbFortune.Text, Convert.ToInt32(tbWealthHF.Text), Convert.ToInt32(tbWealthOther.Text), Convert.ToInt32(tbPowerHF.Text), Convert.ToInt32(tbPowerOther.Text), Convert.ToInt32(tbPopulationHF.Text), Convert.ToInt32(tbPopulationOther.Text), Convert.ToInt32(tbLawHF.Text), Convert.ToInt32(tbLawOther.Text), Convert.ToInt32(tbLandHF.Text), Convert.ToInt32(tbLandOther.Text), Convert.ToInt32(tbInfluenceHF.Text), Convert.ToInt32(tbInfluenceOther.Text), Convert.ToInt32(tbDefenseHF.Text), Convert.ToInt32(tbDefenseOther.Text));
+                    House.InsertHouseChanges(Convert.ToInt32(tbYear.Text), Convert.ToInt32(tbMonth.Text), tbRoll.Text, cbFortune.Text, Convert.ToInt32(tbWealthHF.Text), Convert.ToInt32(tbWealthOther.Text), Convert.ToInt32(tbPowerHF.Text), Convert.ToInt32(tbPowerOther.Text), Convert.ToInt32(tbPopulationHF.Text), Convert.ToInt32(tbPopulationOther.Text), Convert.ToInt32(tbLawHF.Text), Convert.ToInt32(tbLawOther.Text), Convert.ToInt32(tbLandHF.Text), Convert.ToInt32(tbLandOther.Text), Convert.ToInt32(tbInfluenceHF.Text), Convert.ToInt32(tbInfluenceOther.Text), Convert.ToInt32(tbDefenseHF.Text), Convert.ToInt32(tbDefenseOther.Text));
                     wealthChange = Convert.ToInt32(tbWealthHF.Text) + Convert.ToInt32(tbWealthOther.Text);
                     powerChange = Convert.ToInt32(tbPowerHF.Text) + Convert.ToInt32(tbPowerOther.Text);
                     populationChange = Convert.ToInt32(tbPopulationHF.Text) + Convert.ToInt32(tbPopulationOther.Text);
