@@ -52,7 +52,7 @@ namespace WindowsFormsApp1.Forms
 
         private void BtBuy_Click(object sender, EventArgs e)
         {
-            Validation.SetNullToZero(tbDiscount);
+            Validation.SetNullTo(tbDiscount,"0");
             House.InsertLandHolding(dgLand.Rows[cbLand.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, rtbNote.Text, tbDiscount.Text);
             Close();
         }

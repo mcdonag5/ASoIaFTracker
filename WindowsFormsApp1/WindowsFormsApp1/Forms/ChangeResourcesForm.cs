@@ -87,7 +87,7 @@ namespace WindowsFormsApp1.Forms
             Object[] resourceTextboxArry = { tbWealthHF, tbWealthOther, tbPowerHF, tbPowerOther, tbPopulationHF, tbPopulationOther, tbLawHF, tbLawOther, tbLandHF, tbLandOther, tbInfluenceHF, tbInfluenceOther, tbDefenseHF, tbDefenseOther };
             foreach(Object x in resourceTextboxArry)
             {
-                Validation.SetNullToZero(x);
+                Validation.SetNullTo(x,"0");
             }
         }
 

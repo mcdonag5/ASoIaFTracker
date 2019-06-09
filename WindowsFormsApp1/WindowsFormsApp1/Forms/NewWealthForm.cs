@@ -84,7 +84,7 @@ namespace WindowsFormsApp1.Forms
 
         private void BtBuy_Click(object sender, EventArgs e)
         {
-            Validation.SetNullToZero(tbDiscount);
+            Validation.SetNullTo(tbDiscount,"0");
             House.InsertWealthHolding(dgWealth.Rows[cbWealth.SelectedIndex].Cells[0].Value.ToString(), holdingType, holdingID, tbName.Text, chbBuilt.Checked.ToString(), rtbNote.Text, tbDiscount.Text);
             Close();
         }

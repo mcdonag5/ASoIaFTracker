@@ -62,7 +62,7 @@ namespace WindowsFormsApp1.Forms
 
         private void BtBuy_Click(object sender, EventArgs e)
         {
-            Validation.SetNullToZero(tbDiscount);
+            Validation.SetNullTo(tbDiscount,"0");
             House.InsertDefenseHolding(dgDefense.Rows[cbDefense.SelectedIndex].Cells[0].Value.ToString(), landID, tbName.Text, chbBuilt.Checked.ToString(), rtbNote.Text, tbDiscount.Text);
             Close();
         }

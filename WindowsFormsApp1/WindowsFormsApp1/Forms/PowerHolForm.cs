@@ -8,20 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Classes;
+using WindowsFormsApp1.Forms;
 
 namespace WindowsFormsApp1
 {
     public partial class PowerHolForm : Form
     {
         ///// VARIABLES START ////////////////////////////////////////////////////// 
-        int startingNum = 0;
-        int currentPage = 1;
+        int startingNum;
+        int currentPage;
         int pageNum;
         int unitPageNum;
         //Classes
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
+        Validation Validation = new Validation();
         House House;
+        //Forms
+        NewPowerForm NewPowerForm;
         //arrays
         TextBox[] unitName;
         Label[] unitType;
@@ -148,7 +152,7 @@ namespace WindowsFormsApp1
                         }
                     }
 
-                    for (int j = 0; j < 18; j++)
+                    for (int j = 0; j < unitAbilitiesTextBox.GetLength(1); j++)
                     {
                         unitAbilitiesTextBox[i, j].Text = dgCal1.Rows[i + startingNum].Cells[6 + j].Value.ToString();
                     }
@@ -345,8 +349,8 @@ namespace WindowsFormsApp1
             DevLog.LogItem("Length: " + unitAbilitiesTextBox.GetLength(1));
             for(int i =0; i < unitAbilitiesTextBox.GetLength(1) && !change; i++)
             {
-                DevLog.LogItem("i: " + i + " Text: " + unitAbilitiesTextBox[unit, i].Text + " Object: " + unitAbilitiesTextBox[unit, i]);
-                if(unitAbilitiesTextBox[unit,i].Text != dgCal1.Rows[i + startingNum].Cells[6 + i].Value.ToString()) { change = true; }
+                DevLog.LogItem("i: " + i + " Object: " + unitAbilitiesTextBox[unit, i] + " = " + dgCal1.Rows[unit + startingNum].Cells[6 + i].Value.ToString());
+                if(unitAbilitiesTextBox[unit,i].Text != dgCal1.Rows[unit + startingNum].Cells[6 + i].Value.ToString()) { change = true; }
             }
             DevLog.LogItem("Unit Change: " + change);
             return change;
@@ -362,8 +366,15 @@ namespace WindowsFormsApp1
                 {
                     House.UpdatePowerHolding(dgCal1.Rows[i + startingNum].Cells[0].Value.ToString(), unitName[i].Text, unitTraining[i].Text, Convert.ToString(unitHealth[i].Maximum - Convert.ToInt32(unitHealth[i].Value.ToString())),unitDisorganized[i].Value.ToString(),unitNotes[i].Text,unitUpgrades[i,0].Checked.ToString(), unitUpgrades[i, 1].Checked.ToString(), unitUpgrades[i, 2].Checked.ToString(),
                         unitAbilitiesTextBox[i,0].Text, unitAbilitiesTextBox[i, 1].Text, unitAbilitiesTextBox[i, 2].Text, unitAbilitiesTextBox[i, 3].Text, unitAbilitiesTextBox[i, 4].Text, unitAbilitiesTextBox[i, 5].Text, unitAbilitiesTextBox[i, 6].Text, unitAbilitiesTextBox[i, 7].Text, unitAbilitiesTextBox[i, 8].Text, unitAbilitiesTextBox[i, 9].Text, unitAbilitiesTextBox[i, 10].Text, unitAbilitiesTextBox[i, 11].Text, unitAbilitiesTextBox[i, 12].Text, unitAbilitiesTextBox[i, 13].Text, unitAbilitiesTextBox[i, 14].Text, unitAbilitiesTextBox[i, 15].Text, unitAbilitiesTextBox[i, 16].Text, unitAbilitiesTextBox[i, 17].Text);
+                    dgCal1.DataSource = House.HouseQry("PowerHolding");
                 }
             }
+        }
+
+        public void DeleteUnit (int unit, object sender, EventArgs e)
+        {
+            House.DeletePower(dgCal1.Rows[startingNum + unit].Cells[0].Value.ToString());
+            PowerHolForm_Load(sender, e);
         }
         ///// METHODS END //////////////////////////////////////////////////////////
         public PowerHolForm(int houseID, string houseName)
@@ -395,13 +406,19 @@ namespace WindowsFormsApp1
             unitMarksDMG = new Label[] { lbMarDMGNum1, lbMarDMGNum2, lbMarDMGNum3, lbMarDMGNum4 };
 
             unitDelete = new Button[] { btDelete1, btDelete2, btDelete3, btDelete4 };
+        }
 
+        private void PowerHolForm_Load(object sender, EventArgs e)
+        {
+            startingNum = 0;
+            currentPage = 1;
             dgCal1.DataSource = House.HouseQry("PowerHolding");
 
             pageNum = dgCal1.RowCount / 4;
             if (dgCal1.RowCount % 4 > 0) { pageNum++; }
 
             UpdateUnits(0);
+            Visible = true;
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void chbArmor1_CheckedChanged(object sender, EventArgs e)
@@ -551,7 +568,7 @@ namespace WindowsFormsApp1
         {
             UnitMarksDMG(3);
         }
-
+        //Training cb changing
         private void cbTraining1_SelectedIndexChanged(object sender, EventArgs e)
         {
             UnitTraning(0);
@@ -571,7 +588,7 @@ namespace WindowsFormsApp1
         {
             UnitTraning(3);
         }
-
+        //Page buttons
         private void btNext_Click(object sender, EventArgs e)
         {
             CheckAllUnitChange();
@@ -583,12 +600,46 @@ namespace WindowsFormsApp1
             CheckAllUnitChange();
             UpdateUnits(-1);
         }
+        
+        //Delete
+        private void btDelete1_Click(object sender, EventArgs e)
+        {
+            DeleteUnit(0, sender, e);
+        }
 
+        private void btDelete2_Click(object sender, EventArgs e)
+        {
+            DeleteUnit(1, sender, e);
+        }
+
+        private void btDelete3_Click(object sender, EventArgs e)
+        {
+            DeleteUnit(2, sender, e);
+        }
+
+        private void btDelete4_Click(object sender, EventArgs e)
+        {
+            DeleteUnit(3, sender, e);
+        }
+        //tool strip buttons
+        private void tsbNewUnit_Click(object sender, EventArgs e)
+        {
+            NewPowerForm = new NewPowerForm(House.ID,House.name);
+            NewPowerForm.FormClosing += new FormClosingEventHandler(PowerHolForm_Load);
+            Visible = false;
+            NewPowerForm.ShowDialog();
+        }
+        //Closing
         private void PowerHolForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             CheckAllUnitChange();
+            if (NewPowerForm != null) { NewPowerForm.Close(); }
         }
-
+        //Validation
+        private void OnlyDigit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validation.OnlyDigit(e);
+        }
 
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

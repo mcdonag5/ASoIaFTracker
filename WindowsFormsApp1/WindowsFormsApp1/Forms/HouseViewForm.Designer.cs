@@ -196,7 +196,7 @@
             this.tlpMain.Controls.Add(this.tlpHouseDetails, 0, 1);
             this.tlpMain.Controls.Add(this.tableLayoutPanel1, 0, 2);
             this.tlpMain.Location = new System.Drawing.Point(0, 23);
-            this.tlpMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpMain.Margin = new System.Windows.Forms.Padding(2);
             this.tlpMain.Name = "tlpMain";
             this.tlpMain.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
             this.tlpMain.RowCount = 4;
@@ -232,7 +232,7 @@
             this.tlpHouseHeadings.Controls.Add(this.lbSeatOfPower, 2, 0);
             this.tlpHouseHeadings.Controls.Add(this.tbSeatOfPower, 3, 0);
             this.tlpHouseHeadings.Location = new System.Drawing.Point(2, 10);
-            this.tlpHouseHeadings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpHouseHeadings.Margin = new System.Windows.Forms.Padding(2);
             this.tlpHouseHeadings.Name = "tlpHouseHeadings";
             this.tlpHouseHeadings.RowCount = 2;
             this.tlpHouseHeadings.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -505,7 +505,7 @@
             this.tlpHouseDetails.Controls.Add(this.lbTotalDefText, 1, 7);
             this.tlpHouseDetails.Controls.Add(this.lbBannerDiceText, 6, 7);
             this.tlpHouseDetails.Location = new System.Drawing.Point(2, 95);
-            this.tlpHouseDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tlpHouseDetails.Margin = new System.Windows.Forms.Padding(2);
             this.tlpHouseDetails.Name = "tlpHouseDetails";
             this.tlpHouseDetails.Padding = new System.Windows.Forms.Padding(20, 4, 20, 4);
             this.tlpHouseDetails.RowCount = 8;
@@ -1628,7 +1628,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lBHouPowHol, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btPowerHolForm, 4, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 298);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1651,7 +1651,7 @@
             // 
             this.btLand.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btLand.Location = new System.Drawing.Point(163, 2);
-            this.btLand.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btLand.Margin = new System.Windows.Forms.Padding(2);
             this.btLand.Name = "btLand";
             this.btLand.Size = new System.Drawing.Size(56, 24);
             this.btLand.TabIndex = 50;
@@ -1663,7 +1663,7 @@
             // 
             this.lbHouBan.AutoSize = true;
             this.lbHouBan.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHouBan.Location = new System.Drawing.Point(909, 0);
+            this.lbHouBan.Location = new System.Drawing.Point(958, 0);
             this.lbHouBan.Name = "lbHouBan";
             this.lbHouBan.Size = new System.Drawing.Size(92, 23);
             this.lbHouBan.TabIndex = 42;
@@ -1673,8 +1673,8 @@
             // btBanners
             // 
             this.btBanners.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBanners.Location = new System.Drawing.Point(1006, 2);
-            this.btBanners.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btBanners.Location = new System.Drawing.Point(1055, 2);
+            this.btBanners.Margin = new System.Windows.Forms.Padding(2);
             this.btBanners.Name = "btBanners";
             this.btBanners.Size = new System.Drawing.Size(56, 24);
             this.btBanners.TabIndex = 53;
@@ -1705,10 +1705,9 @@
             this.lbBanList.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lbBanList, 2);
             this.lbBanList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBanList.Location = new System.Drawing.Point(909, 28);
-            this.lbBanList.MaximumSize = new System.Drawing.Size(200, 0);
+            this.lbBanList.Location = new System.Drawing.Point(958, 28);
             this.lbBanList.Name = "lbBanList";
-            this.lbBanList.Size = new System.Drawing.Size(200, 203);
+            this.lbBanList.Size = new System.Drawing.Size(406, 203);
             this.lbBanList.TabIndex = 54;
             this.lbBanList.Text = "Influence Holdings0000000";
             // 
@@ -1756,9 +1755,8 @@
             this.tableLayoutPanel2.SetColumnSpan(this.lbInfHolList, 2);
             this.lbInfHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfHolList.Location = new System.Drawing.Point(3, 28);
-            this.lbInfHolList.MaximumSize = new System.Drawing.Size(236, 0);
             this.lbInfHolList.Name = "lbInfHolList";
-            this.lbInfHolList.Size = new System.Drawing.Size(236, 36);
+            this.lbInfHolList.Size = new System.Drawing.Size(294, 18);
             this.lbInfHolList.TabIndex = 44;
             this.lbInfHolList.Text = "Influence Holdings00000000000";
             // 
@@ -1766,7 +1764,7 @@
             // 
             this.btInfluence.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInfluence.Location = new System.Drawing.Point(206, 2);
-            this.btInfluence.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btInfluence.Margin = new System.Windows.Forms.Padding(2);
             this.btInfluence.Name = "btInfluence";
             this.btInfluence.Size = new System.Drawing.Size(56, 24);
             this.btInfluence.TabIndex = 51;
@@ -1780,7 +1778,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbHeir.AutoSize = true;
             this.lbHeir.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeir.Location = new System.Drawing.Point(3, 64);
+            this.lbHeir.Location = new System.Drawing.Point(3, 46);
             this.lbHeir.Name = "lbHeir";
             this.lbHeir.Size = new System.Drawing.Size(53, 28);
             this.lbHeir.TabIndex = 52;
@@ -1790,8 +1788,8 @@
             // btHeir
             // 
             this.btHeir.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btHeir.Location = new System.Drawing.Point(206, 66);
-            this.btHeir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btHeir.Location = new System.Drawing.Point(206, 48);
+            this.btHeir.Margin = new System.Windows.Forms.Padding(2);
             this.btHeir.Name = "btHeir";
             this.btHeir.Size = new System.Drawing.Size(56, 24);
             this.btHeir.TabIndex = 53;
@@ -1807,10 +1805,9 @@
             this.lbHeirList.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lbHeirList, 2);
             this.lbHeirList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeirList.Location = new System.Drawing.Point(3, 92);
-            this.lbHeirList.MaximumSize = new System.Drawing.Size(236, 0);
+            this.lbHeirList.Location = new System.Drawing.Point(3, 74);
             this.lbHeirList.Name = "lbHeirList";
-            this.lbHeirList.Size = new System.Drawing.Size(236, 133);
+            this.lbHeirList.Size = new System.Drawing.Size(294, 151);
             this.lbHeirList.TabIndex = 54;
             this.lbHeirList.Text = "Influence Holdings00000000000";
             // 
@@ -1823,9 +1820,8 @@
             this.tableLayoutPanel1.SetColumnSpan(this.lbPowHolList, 2);
             this.lbPowHolList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPowHolList.Location = new System.Drawing.Point(674, 28);
-            this.lbPowHolList.MaximumSize = new System.Drawing.Size(258, 0);
             this.lbPowHolList.Name = "lbPowHolList";
-            this.lbPowHolList.Size = new System.Drawing.Size(229, 203);
+            this.lbPowHolList.Size = new System.Drawing.Size(278, 203);
             this.lbPowHolList.TabIndex = 45;
             this.lbPowHolList.Text = "Power Holdings0000000000000000\r\n";
             // 
@@ -1844,7 +1840,7 @@
             // 
             this.btPowerHolForm.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPowerHolForm.Location = new System.Drawing.Point(846, 2);
-            this.btPowerHolForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btPowerHolForm.Margin = new System.Windows.Forms.Padding(2);
             this.btPowerHolForm.Name = "btPowerHolForm";
             this.btPowerHolForm.Size = new System.Drawing.Size(56, 24);
             this.btPowerHolForm.TabIndex = 52;
@@ -1972,7 +1968,7 @@
             this.Controls.Add(this.dgHouseDetails);
             this.Controls.Add(this.tlpMain);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "HouseViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

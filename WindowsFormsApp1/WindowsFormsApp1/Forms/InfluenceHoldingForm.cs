@@ -68,7 +68,7 @@ namespace WindowsFormsApp1.Forms
             int cost = Convert.ToInt32(dgInfluence.Rows[currentIndex].Cells[11].Value) - Convert.ToInt32(dgInfluence.Rows[currentIndex].Cells[7].Value);
             tbName.Text = dgInfluence.Rows[currentIndex].Cells[4].Value.ToString();
             lbDesc.Text = dgInfluence.Rows[currentIndex].Cells[12].Value.ToString();
-            lbBenfits.Text = Environment.NewLine + dgInfluence.Rows[currentIndex].Cells[13].Value.ToString();
+            lbBenfits.Text = Environment.NewLine + "Benfit: " + dgInfluence.Rows[currentIndex].Cells[13].Value.ToString();
             dgInfluenceImprovemnt.DataSource = House.HouseQry("InfluenceHolding", dgInfluence.Rows[currentIndex].Cells[1].Value.ToString());
 
             for (int i = 0; i < improvmentName.Length; i++)
@@ -77,7 +77,7 @@ namespace WindowsFormsApp1.Forms
                 {
                     improvmentName[i].Visible = improvmentDesc[i].Visible = true;
                     improvmentName[i].Text = dgInfluenceImprovemnt.Rows[i].Cells[7].Value.ToString();
-                    improvmentDesc[i].Text = dgInfluenceImprovemnt.Rows[i].Cells[9].Value.ToString() + Environment.NewLine + dgInfluenceImprovemnt.Rows[i].Cells[10].Value.ToString();
+                    improvmentDesc[i].Text = dgInfluenceImprovemnt.Rows[i].Cells[9].Value.ToString() + Environment.NewLine + "Benfit: " + dgInfluenceImprovemnt.Rows[i].Cells[10].Value.ToString();
                     cost += Convert.ToInt32(dgInfluenceImprovemnt.Rows[i].Cells[8].Value) - Convert.ToInt32(dgInfluenceImprovemnt.Rows[i].Cells[4].Value);
                 }
                 else

@@ -117,4 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lbDescription.Text" xml:space="preserve">
+    <value>A garrison is a unit of soldiers assembled to protect a community or fortification. Many garrisons perform double-duty as watchmen and enforce the lord’s peace. While often competent soldiers, garrisons are better at protecting their homes than fighting on a battlefield, a fact reflected in their poor morale when drawn into a more protracted war. When fighting on their lands, their Discipline Difficulty drops by –3. When away from their lands, their Discipline Difficulty increases by +3.
+Veteran units are trained units that have seen extensive action. Battle-scarred and competent, they are reliable and a valued component of any fighting force. These troops may include established mercenary companies, experienced rangers, anointed knights, and so on. The Burned Men, Drogo’s riders, Benjen Stark’s rangers, and most surviving units after the War of the Five Kings are all representative of veteran units.</value>
+  </data>
+  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

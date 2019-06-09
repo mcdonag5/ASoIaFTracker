@@ -20,6 +20,12 @@ namespace WindowsFormsApp1
         public int currentIndex;
         public string lastWealthPlace = "";
         public string lastHoldingID = "";
+        //Arrays
+        Label[] addType;
+        TextBox[] addName;
+        CheckBox[] addBulit;
+        Button[] addDelete;
+        Label[] addDesc;
         //Classes
         DevLog DevLog = new DevLog();
         House House;
@@ -80,12 +86,11 @@ namespace WindowsFormsApp1
             lbCost.Text = "";
             lbDesc.Text = "";
             lbBenfits.Text = "";
-            lbAddions.Text = "";
-            lbImprovemnt.Text = "";
             rtbNotes.Text = "";
             tbName.Text = "";
             chbBuilt.Visible = false;
-
+            for (int i = 0; i < addType.Length; i++) { addType[i].Visible = addName[i].Visible = addDelete[i].Visible = addBulit[i].Visible = addDesc[i].Visible = false; }
+            
             int costDef = 0;
             int costLan = 0;
             int costPop = 0;
@@ -106,20 +111,26 @@ namespace WindowsFormsApp1
                     tbName.Text = dgLand.Rows[currentIndex].Cells[4].Value.ToString();
                     costLan = Convert.ToInt32(dgLand.Rows[currentIndex].Cells[10].Value) - Convert.ToInt32(dgLand.Rows[currentIndex].Cells[6].Value);
                     rtbNotes.Text = dgLand.Rows[currentIndex].Cells[5].Value.ToString();
+
+
+                    //Land Fea Towns
+                    //dgImp.DataSource = House.HouseQry("LandHoldingCommunity", dgLand.Rows[currentIndex].Cells[1].Value.ToString());
+                    //for (int n = 0; n < dgImp.RowCount; n++)
+                    //{
+                    //    costLan += Convert.ToInt32(dgImp.Rows[n].Cells[7].Value);
+                    //    lbAddions.Text += dgImp.Rows[n].Cells[6].Value.ToString() + " - " + dgImp.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                    //}
                     //Land Fea
                     dgImp.DataSource = House.HouseQry("LandHoldingFeature", dgLand.Rows[currentIndex].Cells[1].Value.ToString());
-                    for (int n = 0; n < dgImp.RowCount; n++)
+                    for(int i = 0; i < addType.Length && i < dgImp.RowCount; i++)
                     {
-                        costLan += Convert.ToInt32(dgImp.Rows[n].Cells[7].Value);
-                        lbAddions.Text += dgImp.Rows[n].Cells[6].Value.ToString() + " - " + dgImp.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                        addType[i].Visible = addName[i].Visible = addDelete[i].Visible = true;
+
+                        costLan += Convert.ToInt32(dgImp.Rows[i].Cells[7].Value);
+                        addType[i].Text = dgImp.Rows[i].Cells[6].Value.ToString();
+                        addName[i].Text = dgImp.Rows[i].Cells[3].Value.ToString();
                     }
-                    //Land Fea Towns
-                    dgImp.DataSource = House.HouseQry("LandHoldingCommunity", dgLand.Rows[currentIndex].Cells[1].Value.ToString());
-                    for (int n = 0; n < dgImp.RowCount; n++)
-                    {
-                        costLan += Convert.ToInt32(dgImp.Rows[n].Cells[7].Value);
-                        lbAddions.Text += dgImp.Rows[n].Cells[6].Value.ToString() + " - " + dgImp.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
-                    }
+                    
                     lbType.Text = "Land Holding";
 
                     UpdateWeaComboBox("LanHol_ID", dgLand.Rows[cbLandHolding.SelectedIndex].Cells[1].Value.ToString());
@@ -177,7 +188,7 @@ namespace WindowsFormsApp1
                     DevLog.LogItem(dgWea.Rows[currentIndex].Cells[7].Visible.ToString());
                     chbBuilt.Visible = true; chbBuilt.Checked = dgWea.Rows[currentIndex].Cells[7].Value.ToString() == "True" ? true : false;
                     lbDesc.Text = dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[21].Value.ToString();
-                    lbBenfits.Text = "Benfits: " + dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[22].Value.ToString();
+                    lbBenfits.Text = "Benfits: " + dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[22].Value.ToString() + Environment.NewLine;
                     rtbNotes.Text = dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[8].Value.ToString();
 
                     costWea += Convert.ToInt32(dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[15].Value);
@@ -186,15 +197,19 @@ namespace WindowsFormsApp1
                     costPow += Convert.ToInt32(dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[18].Value);
 
                     dgImp.DataSource = House.HouseQry("WealthHoldingImprovement", dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[1].Value.ToString());
-                    for (int t = 0; t < dgImp.RowCount; t++)
+                    for (int i = 0; i < addType.Length && i < dgImp.RowCount; i++)
                     {
-                        costWea += Convert.ToInt32(dgImp.Rows[t].Cells[10].Value);
-                        costDef += Convert.ToInt32(dgImp.Rows[t].Cells[11].Value);
-                        costLan += Convert.ToInt32(dgImp.Rows[t].Cells[12].Value);
-                        costLan += Convert.ToInt32(dgImp.Rows[t].Cells[13].Value);
-                        costInf += Convert.ToInt32(dgImp.Rows[t].Cells[14].Value);
-                        lbImprovemnt.Text += dgImp.Rows[t].Cells[8].Value.ToString() + Environment.NewLine + dgImp.Rows[t].Cells[17].Value.ToString() + Environment.NewLine + "Benefit: " + dgImp.Rows[t].Cells[18].Value.ToString() + Environment.NewLine;
+                        costWea += Convert.ToInt32(dgImp.Rows[i].Cells[10].Value);
+                        costDef += Convert.ToInt32(dgImp.Rows[i].Cells[11].Value);
+                        costLan += Convert.ToInt32(dgImp.Rows[i].Cells[12].Value);
+                        costLan += Convert.ToInt32(dgImp.Rows[i].Cells[13].Value);
+                        costInf += Convert.ToInt32(dgImp.Rows[i].Cells[14].Value);
 
+                        addType[i].Visible = addBulit[i].Visible = addDelete[i].Visible = addDesc[i].Visible = true;
+
+                        addBulit[i].Checked = dgImp.Rows[i].Cells[4].Value.ToString() == "True" ? true : false;
+                        addType[i].Text = dgImp.Rows[i].Cells[8].Value.ToString();
+                        addDesc[i].Text = dgImp.Rows[i].Cells[17].Value.ToString() + Environment.NewLine + "Benefit: " + dgImp.Rows[i].Cells[18].Value.ToString() + Environment.NewLine;
                     }
                     break;
                 default:
@@ -202,7 +217,6 @@ namespace WindowsFormsApp1
                     defenseHoldingToolStripMenuItem.Enabled = false;
                     wealthHoldingToolStripMenuItem.Enabled = false;
                     wealthImprovementToolStripMenuItem.Enabled = false;
-
                     break;
             }
             //Display Cost
@@ -267,6 +281,12 @@ namespace WindowsFormsApp1
             House = new House(houseID, houseName);
             InitializeComponent();
             Text = House.name + " Land Holdings";
+
+            addType = new Label[] { lbAddType1,lbAddType2,lbAddType3, lbAddType4, lbAddType5 };
+            addName = new TextBox[] { tbAddName1,tbAddName2,tbAddName3,tbAddName4,tbAddName5};
+            addBulit = new CheckBox[] { chbAddBuilt1,chbAddBuilt2,chbAddBuilt3,chbAddBuilt4,chbAddBuilt5};
+            addDelete = new Button[] { btAddDelete1, btAddDelete2, btAddDelete3, btAddDelete4, btAddDelete5 };
+            addDesc = new Label[] { lbAddDesc1, lbAddDesc2, lbAddDesc3, lbAddDesc4, lbAddDesc5 };
         }
 
         private void LandsHolForm_Load(object sender, EventArgs e)
@@ -377,10 +397,6 @@ namespace WindowsFormsApp1
             if (NewWealthForm != null) { NewWealthForm.Close(); }
             if (NewWealthImprovement != null) { NewWealthImprovement.Close(); }
         }
-
-
-
-
 
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

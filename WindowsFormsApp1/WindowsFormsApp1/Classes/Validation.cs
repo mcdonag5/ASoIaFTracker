@@ -33,11 +33,11 @@ namespace WindowsFormsApp1.Classes
                 e.Handled = true;
             }
         }
-        public void SetNullToZero(object sender)
+        public void SetNullTo(object sender, string setTo)
         {
             if ((sender as TextBox).Text == "")
             {
-                (sender as TextBox).Text = "0";
+                (sender as TextBox).Text = setTo;
             }
         }
         public void CheckIfSame(object label, string newText)

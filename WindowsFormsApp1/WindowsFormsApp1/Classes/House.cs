@@ -45,13 +45,15 @@ namespace WindowsFormsApp1.Classes
                 {
                     //tbl_House
                     case "House":
-                        qry = "SELECT * FROM `tbl_House`";
+                        qry = "SELECT * FROM `tbl_House` " +
+                            "ORDER BY `tbl_House`.`Hou_Name` ASC";
                         break;
                     case "ThisHouse":
-                        qry = "SELECT * FROM `tbl_House` WHERE `Hou_ID` = '"+ID+"';";
+                        qry = "SELECT * FROM `tbl_House` WHERE `Hou_ID` = '"+ID+"'";
                         break;
                     case "OtherHouse":
-                        qry = "SELECT * FROM `tbl_House` WHERE `Hou_ID` != '" + ID + "';";
+                        qry = "SELECT * FROM `tbl_House` WHERE `Hou_ID` != '" + ID + "' " +
+                            "ORDER BY `tbl_House`.`Hou_Name` ASC";
                         break;
                     //tbl_LandHolding
                     case "LandHolding":
@@ -126,6 +128,14 @@ namespace WindowsFormsApp1.Classes
                             "WHERE `Wea_Type` = 'Settlement' " +
                             "ORDER BY `tbl_Wealth`.`Wea_Name` ASC";
                         break;
+                    case "UnitType":
+                        qry = "SELECT * FROM `tbl_UnitType` " +
+                            "ORDER BY `tbl_UnitType`.`Uni_Name` ASC";
+                        break;
+                    case "UnitTraining":
+                        qry = "SELECT * FROM `tbl_UnitTraning` " +
+                            "ORDER BY `tbl_UnitTraning`.`Tra_TrainingCost` ASC";
+                        break;
                 }
 
                 return mysqlConn.Qry(qry).Tables[0];
@@ -192,7 +202,8 @@ namespace WindowsFormsApp1.Classes
             {
                 qry = "SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` " +
                     "FROM `tbl_House`"+
-                    "WHERE `Hou_Player` != 'Test'";
+                    "WHERE `Hou_Player` != 'Test' " +
+                    "ORDER BY `tbl_House`.`Hou_Name` ASC";
                 return mysqlConn.Qry(qry).Tables[0];
             }
             return mysqlConn.Qry(qry).Tables[0];
@@ -206,7 +217,8 @@ namespace WindowsFormsApp1.Classes
             {
                 qry = "SELECT `tbl_House`.`Hou_ID` AS ID, `tbl_House`.`Hou_Name` AS Name, `tbl_House`.`Hou_Player` AS `Player`, `tbl_House`.`Rea_Name` AS `Realm`, `tbl_House`.`Hou_SeatOfPower` AS `Seat of Power`, `tbl_House`.`Hou_LiegeLord` AS `Liege Lord`, `tbl_House`.`Hou_Liege` AS `Liege` " +
                     "FROM `tbl_House`" +
-                    "WHERE `" + column + "` = '" + condition + "';";
+                    "WHERE `" + column + "` = '" + condition + "' " +
+                    "ORDER BY `tbl_House`.`Hou_Name` ASC";
 
                 return mysqlConn.Qry(qry).Tables[0];
             }
@@ -311,6 +323,21 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        public void InsertPower(string unitID, string name, string discount, string training, string notes, string armorUpg, string fightUpg, string marksUpg, string agility, string animal, string athletics, string awareness, string cunning, string endurance, string fighting, string healing, string language, string knowledge, string marksmanship, string persuasion, string status, string stealth, string survival, string thievery, string warfare, string will)
+        {
+            armorUpg = armorUpg == "True" ? "1" : "0";
+            fightUpg = fightUpg == "True" ? "1" : "0";
+            marksUpg = marksUpg == "True" ? "1" : "0";
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_PowerHolding` (`Uni_ID`,`Hou_ID`,`PowHol_Name`,`PowHol_Discount`, `PowHol_Training`, `PowHol_Notes`, `PowHol_ArmorUp`, `PowHol_FightingUp`, `PowHol_MarksmashipUp`,`PowHol_Agility`, `PowHol_AnimalHand`, `PowHol_Athletics`, `PowHol_Awareness`, `PowHol_Cunning`, `PowHol_Endurance`, `PowHol_Fighting`, `PowHol_Healing`, `PowHol_Language`, `PowHol_Knowledge`, `PowHol_Marksmanship`, `PowHol_Persuasion`, `PowHol_Status`, `PowHol_Stealth`, `PowHol_Survival`, `PowHol_Thievery`, `PowHol_Warfare`, `PowHol_Will`)" +
+                    "VALUES('"+unitID+ "','" + ID + "','" + name + "','" + discount + "','" + training + "','" + notes + "','" + armorUpg + "','" + fightUpg + "','" + marksUpg + "','" + agility + "','" + animal + "','" + athletics + "','" + awareness + "','" + cunning + "','" + endurance + "','" + fighting + "','" + healing + "','" + language + "','" + knowledge + "','" + marksmanship + "','" + persuasion + "','" + status + "','" + stealth + "','" + survival + "','" + thievery + "','" + warfare + "','" + will + "')";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         public void InsertBanners(int bannerHouse)
         {
             if (mysqlConn.ConnOpen())
@@ -363,7 +390,6 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
-
         //tbl_HouseChanges
         public void UpdateHouseChanges(int HouChaID,int roll, string fortune, int wealthHF, int wealthOther, int powerHF, int powerOther, int populationHF, int populationOther, int lawHF, int lawOther, int landsHF, int landsOther, int influenceHF, int influenceOther, int defenseHF, int defenseOther)
         {
@@ -377,7 +403,6 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
-
         //tbl_LandHolding
         public void UpdateLandDetails(int LanHolID, string name, string notes)
         {
@@ -490,13 +515,26 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
-        ///// VARIABLES START //////////////////////////////////////////////////////
+        //tbl_PowerHolding
+        public void DeletePower(string power)
+        {
+            DevLog.LogItem("Deleting from tbl_PowerHolding ID: " + power);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_PowerHolding`" +
+                    "WHERE `PowHol_ID` = '" + power + "';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        ///// VARIABLES START ///////////////////////////////////////////////////////
 
-        ///// VARIABLES END ////////////////////////////////////////////////////////
+        ///// VARIABLES END /////////////////////////////////////////////////////////
 
-        ///// METHODS START ////////////////////////////////////////////////////////
+        ///// METHODS START /////////////////////////////////////////////////////////
 
-        ///// METHODS END //////////////////////////////////////////////////////////
+        ///// METHODS END ///////////////////////////////////////////////////////////
         
         ///// EVENTS START //////////////////////////////////////////////////////////
 
