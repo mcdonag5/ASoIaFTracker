@@ -89,8 +89,12 @@ namespace WindowsFormsApp1
             rtbNotes.Text = "";
             tbName.Text = "";
             chbBuilt.Visible = false;
-            for (int i = 0; i < addType.Length; i++) { addType[i].Visible = addName[i].Visible = addDelete[i].Visible = addBulit[i].Visible = addDesc[i].Visible = false; }
-            
+            for (int i = 0; i < addType.Length; i++)
+            {
+                addType[i].Visible = addName[i].Visible = addDelete[i].Visible = addBulit[i].Visible = addDesc[i].Visible = false;
+            }
+
+
             int costDef = 0;
             int costLan = 0;
             int costPop = 0;
