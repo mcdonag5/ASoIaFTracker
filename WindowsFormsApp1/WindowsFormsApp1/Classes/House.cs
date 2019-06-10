@@ -416,6 +416,19 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_LandHoldingFeature
+        public void UpdateLandFeatureDetails(string LanHolFeaID, string name)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
+                    "SET `LanHolFea_Name` = '" + name + "' " +
+                    "WHERE `LanHolFea_ID` = '" + LanHolFeaID + "'";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_DefenseHolding
         public void UpdateDefenseDetails(string DefHolID, string name, string notes, string built)
         {
@@ -453,6 +466,21 @@ namespace WindowsFormsApp1.Classes
                 comm.CommandText = "UPDATE `tbl_WealthHolding` " +
                     "SET `WeaHol_Name` = '" + name + "', `WeaHol_Note` = '" + notes + "', `WeaHol_Built` = '" + built + "' " +
                     "WHERE `WeaHol_ID` = '" + WeaHolID + "'";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_WealthHoldingImprovement
+        public void UpdateWealthImprovementDetails(string WeaHolImpID, string built)
+        {
+            built = built == "True" ? "1" : "0";
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_WealthHoldingImprovement` " +
+                    "SET `WeaHolImp_Built` = '" + built + "' " +
+                    "WHERE `WeaHolImp_ID` = '" + WeaHolImpID + "'";
+                DevLog.LogItem(comm.CommandText.ToString());
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }

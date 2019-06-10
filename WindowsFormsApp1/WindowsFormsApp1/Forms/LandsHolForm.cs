@@ -46,16 +46,24 @@ namespace WindowsFormsApp1
                 case "Land":
                     if (tbName.Text != dgLand.Rows[currentIndex].Cells[4].Value.ToString()|| rtbNotes.Text != dgLand.Rows[currentIndex].Cells[5].Value.ToString())
                     {
-                        DevLog.LogItem("Found changes and updating");
+                        DevLog.LogItem("Found changes and updating Land");
                         House.UpdateLandDetails(Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), tbName.Text, rtbNotes.Text);
                         dgLand.DataSource = House.HouseQry("LandHolding");
                         cbLandHolding.Items[currentIndex] = dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString();
+                    }
+                    for (int i = 0; i < addType.Length && i < dgImp.RowCount; i++)
+                    {
+                        if (addName[i].Text != dgImp.Rows[i].Cells[3].Value.ToString())
+                        {
+                            DevLog.LogItem("Found changes and updating Land Feature: " + i);
+                            House.UpdateLandFeatureDetails(dgImp.Rows[i].Cells[0].Value.ToString(), addName[i].Text);
+                        }
                     }
                     break;
                 case "Defense":
                     if(tbName.Text != dgDef.Rows[currentIndex].Cells[3].Value.ToString() || rtbNotes.Text != dgLand.Rows[currentIndex].Cells[5].Value.ToString() || dgDef.Rows[currentIndex].Cells[4].Value.ToString() != chbBuilt.Checked.ToString())
                     {
-                        DevLog.LogItem("Found changes and updating");
+                        DevLog.LogItem("Found changes and updating Defense");
                         House.UpdateDefenseDetails(dgDef.Rows[currentIndex].Cells[0].Value.ToString(), tbName.Text, rtbNotes.Text, chbBuilt.Checked.ToString());
                         dgDef.DataSource = House.HouseQry("DefenseHolding", dgLand.Rows[cbLandHolding.SelectedIndex].Cells[1].Value.ToString());
                         cbDefLanFea.Items[currentIndex] = dgDef.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgDef.Rows[currentIndex].Cells[3].Value.ToString();
@@ -64,7 +72,7 @@ namespace WindowsFormsApp1
                 case "Feature":
                     if (tbName.Text != dgLandFea.Rows[currentIndex].Cells[3].Value.ToString() || rtbNotes.Text != dgLandFea.Rows[currentIndex].Cells[4].Value.ToString())
                     {
-                        DevLog.LogItem("Found changes and updating");
+                        DevLog.LogItem("Found changes and updating Feature");
                         House.UpdateLandFeatureDetails(dgLandFea.Rows[currentIndex].Cells[0].Value.ToString(),tbName.Text,rtbNotes.Text);
                         dgLandFea.DataSource = House.HouseQry("LandHoldingCommunity", dgLand.Rows[cbLandHolding.SelectedIndex].Cells[1].Value.ToString());
                         cbDefLanFea.Items[currentIndex+dgDef.RowCount] = dgLandFea.Rows[currentIndex].Cells[6].Value.ToString() + "-" + dgLandFea.Rows[currentIndex].Cells[3].Value.ToString();
@@ -74,10 +82,18 @@ namespace WindowsFormsApp1
                     DevLog.LogItem(dgWea.Rows[currentIndex].Cells[7].Value.ToString() + " = " + chbBuilt.Checked.ToString());
                     if (tbName.Text != dgWea.Rows[currentIndex].Cells[6].Value.ToString()|| rtbNotes.Text != dgWea.Rows[currentIndex].Cells[8].Value.ToString()||dgWea.Rows[currentIndex].Cells[7].Value.ToString() != chbBuilt.Checked.ToString())
                     {
-                        DevLog.LogItem("Found changes and updating");
+                        DevLog.LogItem("Found changes and updating Wealth Holding");
                         House.UpdateWealthDetails(dgWea.Rows[currentIndex].Cells[1].Value.ToString(),tbName.Text,rtbNotes.Text, chbBuilt.Checked.ToString());
                         dgWea.DataSource = House.WealthHolding(lastWealthPlace, lastHoldingID);
                         cbWealthHolding.Items[currentIndex] = dgWea.Rows[currentIndex].Cells[12].Value.ToString() + "-" + dgWea.Rows[currentIndex].Cells[6].Value.ToString();
+                    }
+                    for (int i = 0; i < addType.Length && i < dgImp.RowCount; i++)
+                    {
+                        if(addBulit[i].Checked.ToString() != dgImp.Rows[i].Cells[4].Value.ToString())
+                        {
+                            DevLog.LogItem("Found changes and updating Wealth Holding Imp: " + i);
+                            House.UpdateWealthImprovementDetails(dgImp.Rows[i].Cells[1].Value.ToString(), addBulit[i].Checked.ToString());
+                        }
                     }
                     break;
             }
@@ -192,7 +208,7 @@ namespace WindowsFormsApp1
                     DevLog.LogItem(dgWea.Rows[currentIndex].Cells[7].Visible.ToString());
                     chbBuilt.Visible = true; chbBuilt.Checked = dgWea.Rows[currentIndex].Cells[7].Value.ToString() == "True" ? true : false;
                     lbDesc.Text = dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[21].Value.ToString();
-                    lbBenfits.Text = "Benfits: " + dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[22].Value.ToString() + Environment.NewLine;
+                    lbBenfits.Text = Environment.NewLine + dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[22].Value.ToString() + Environment.NewLine;
                     rtbNotes.Text = dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[8].Value.ToString();
 
                     costWea += Convert.ToInt32(dgWea.Rows[cbWealthHolding.SelectedIndex].Cells[15].Value);
@@ -213,7 +229,7 @@ namespace WindowsFormsApp1
 
                         addBulit[i].Checked = dgImp.Rows[i].Cells[4].Value.ToString() == "True" ? true : false;
                         addType[i].Text = dgImp.Rows[i].Cells[8].Value.ToString();
-                        addDesc[i].Text = dgImp.Rows[i].Cells[17].Value.ToString() + Environment.NewLine + "Benefit: " + dgImp.Rows[i].Cells[18].Value.ToString() + Environment.NewLine;
+                        addDesc[i].Text = dgImp.Rows[i].Cells[17].Value.ToString() + Environment.NewLine + Environment.NewLine + dgImp.Rows[i].Cells[18].Value.ToString() + Environment.NewLine;
                     }
                     break;
                 default:
