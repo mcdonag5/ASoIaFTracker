@@ -128,13 +128,20 @@ namespace WindowsFormsApp1.Classes
                             "WHERE `Wea_Type` = 'Settlement' " +
                             "ORDER BY `tbl_Wealth`.`Wea_Name` ASC";
                         break;
+                    //tbl_UnitType
                     case "UnitType":
                         qry = "SELECT * FROM `tbl_UnitType` " +
                             "ORDER BY `tbl_UnitType`.`Uni_Name` ASC";
                         break;
+                    //tbl_UnitTraning
                     case "UnitTraining":
                         qry = "SELECT * FROM `tbl_UnitTraning` " +
                             "ORDER BY `tbl_UnitTraning`.`Tra_TrainingCost` ASC";
+                        break;
+                    //tbl_Influence
+                    case "Influence":
+                        qry = "SELECT * FROM `tbl_Influence` " +
+                            "ORDER BY `tbl_Influence`.`Inf_Name` ASC";
                         break;
                 }
 
@@ -308,6 +315,18 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_WealthHoldingImprovement` (`WeaHol_ID`, `WeaImp_ID`, `WeaHolImp_Built`) "+
                     "VALUES ('"+WeaHolID+"', '"+weaImpID+"', '"+built+"');";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_InfluenceHoldings
+        public void InsertInfluence(string infID, string name, string note, string discount)
+        {
+            if (mysqlConn.ConnOpen()) 
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_InfluenceHoldings` (`Hou_ID`, `Inf_ID`, `InfHol_Name`, `InfHol_Note`, `InfHol_Discount`) " +
+                    "VALUES ('" + ID + "','" + infID + "', '" + name + "', '" + note + "', '" + discount + "');";
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }

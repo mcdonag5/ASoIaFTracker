@@ -99,6 +99,12 @@
     <Compile Include="Forms\NewHeirForm.Designer.cs">
       <DependentUpon>NewHeirForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewInfluenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewInfluenceForm.Designer.cs">
+      <DependentUpon>NewInfluenceForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewLandFeatureForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewHeirForm.resx">
       <DependentUpon>NewHeirForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewInfluenceForm.resx">
+      <DependentUpon>NewInfluenceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewLandFeatureForm.resx">
       <DependentUpon>NewLandFeatureForm.cs</DependentUpon>

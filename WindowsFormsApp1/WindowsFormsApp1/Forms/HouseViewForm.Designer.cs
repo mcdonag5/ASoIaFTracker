@@ -1768,7 +1768,7 @@
             this.btInfluence.TabIndex = 51;
             this.btInfluence.Text = "View";
             this.btInfluence.UseVisualStyleBackColor = true;
-            this.btInfluence.Click += new System.EventHandler(this.btInfluence_Click);
+            this.btInfluence.Click += new System.EventHandler(this.BtInfluence_Click);
             // 
             // lbHeir
             // 

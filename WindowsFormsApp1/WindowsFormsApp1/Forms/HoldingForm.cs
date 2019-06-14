@@ -44,6 +44,7 @@ namespace WindowsFormsApp1
         NewWealthForm NewWealthForm;
         NewWealthImprovementForm NewWealthImprovement;
         NewHeirForm NewHeirForm;
+        NewInfluenceForm NewInfluenceForm;
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
@@ -658,17 +659,21 @@ namespace WindowsFormsApp1
             NewWealthImprovement.ShowDialog();
         }
 
-        private void influenceHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void InfluenceHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            ChangeHolding(holdingType, "");
+            NewInfluenceForm = new NewInfluenceForm(House.ID, House.name);
+            NewInfluenceForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
+            Visible = false;
+            NewInfluenceForm.ShowDialog();
         }
 
-        private void infImpprovmentToolStripMenuItem_Click(object sender, EventArgs e)
+        private void InfImpprovmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void heirHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HeirHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeHolding(holdingType, "");
             NewHeirForm = new NewHeirForm(House.ID, House.name, nextMaleCost, nextFemaleCost);
@@ -688,32 +693,32 @@ namespace WindowsFormsApp1
             if (NewHeirForm != null) { NewHeirForm.Close(); }
         }
         //Deleting
-        private void btAddDelete1_Click(object sender, EventArgs e)
+        private void BtAddDelete1_Click(object sender, EventArgs e)
         {
             DeleteFeature(0);
         }
 
-        private void btAddDelete2_Click(object sender, EventArgs e)
+        private void BtAddDelete2_Click(object sender, EventArgs e)
         {
             DeleteFeature(1);
         }
 
-        private void btAddDelete3_Click(object sender, EventArgs e)
+        private void BtAddDelete3_Click(object sender, EventArgs e)
         {
             DeleteFeature(2);
         }
 
-        private void btAddDelete4_Click(object sender, EventArgs e)
+        private void BtAddDelete4_Click(object sender, EventArgs e)
         {
             DeleteFeature(3);
         }
 
-        private void btAddDelete5_Click(object sender, EventArgs e)
+        private void BtAddDelete5_Click(object sender, EventArgs e)
         {
             DeleteFeature(4);
         }
 
-        private void tsbDeleteCurrent_Click(object sender, EventArgs e)
+        private void TsbDeleteCurrent_Click(object sender, EventArgs e)
         {
             switch(currentView)
             {
@@ -753,12 +758,12 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void toolStripMenuIViewLand_Click(object sender, EventArgs e)
+        private void ToolStripMenuIViewLand_Click(object sender, EventArgs e)
         {
             ChangeHolding("Land", "");
         }
 
-        private void toolStripMenuViewInf_Click(object sender, EventArgs e)
+        private void ToolStripMenuViewInf_Click(object sender, EventArgs e)
         {
             ChangeHolding("Influence", "");
         }

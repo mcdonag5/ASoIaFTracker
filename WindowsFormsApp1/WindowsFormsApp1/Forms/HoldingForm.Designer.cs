@@ -254,7 +254,7 @@
             this.btAddDelete2.TabIndex = 58;
             this.btAddDelete2.Text = "Delete";
             this.btAddDelete2.UseVisualStyleBackColor = true;
-            this.btAddDelete2.Click += new System.EventHandler(this.btAddDelete2_Click);
+            this.btAddDelete2.Click += new System.EventHandler(this.BtAddDelete2_Click);
             // 
             // btAddDelete3
             // 
@@ -266,7 +266,7 @@
             this.btAddDelete3.TabIndex = 58;
             this.btAddDelete3.Text = "Delete";
             this.btAddDelete3.UseVisualStyleBackColor = true;
-            this.btAddDelete3.Click += new System.EventHandler(this.btAddDelete3_Click);
+            this.btAddDelete3.Click += new System.EventHandler(this.BtAddDelete3_Click);
             // 
             // btAddDelete4
             // 
@@ -278,7 +278,7 @@
             this.btAddDelete4.TabIndex = 58;
             this.btAddDelete4.Text = "Delete";
             this.btAddDelete4.UseVisualStyleBackColor = true;
-            this.btAddDelete4.Click += new System.EventHandler(this.btAddDelete4_Click);
+            this.btAddDelete4.Click += new System.EventHandler(this.BtAddDelete4_Click);
             // 
             // btAddDelete5
             // 
@@ -290,7 +290,7 @@
             this.btAddDelete5.TabIndex = 58;
             this.btAddDelete5.Text = "Delete";
             this.btAddDelete5.UseVisualStyleBackColor = true;
-            this.btAddDelete5.Click += new System.EventHandler(this.btAddDelete5_Click);
+            this.btAddDelete5.Click += new System.EventHandler(this.BtAddDelete5_Click);
             // 
             // lbAddDesc5
             // 
@@ -509,7 +509,7 @@
             this.btAddDelete1.TabIndex = 57;
             this.btAddDelete1.Text = "Delete";
             this.btAddDelete1.UseVisualStyleBackColor = true;
-            this.btAddDelete1.Click += new System.EventHandler(this.btAddDelete1_Click);
+            this.btAddDelete1.Click += new System.EventHandler(this.BtAddDelete1_Click);
             // 
             // tbAddName4
             // 
@@ -698,14 +698,14 @@
             this.toolStripMenuIViewLand.Name = "toolStripMenuIViewLand";
             this.toolStripMenuIViewLand.Size = new System.Drawing.Size(174, 22);
             this.toolStripMenuIViewLand.Text = "Land Holdings";
-            this.toolStripMenuIViewLand.Click += new System.EventHandler(this.toolStripMenuIViewLand_Click);
+            this.toolStripMenuIViewLand.Click += new System.EventHandler(this.ToolStripMenuIViewLand_Click);
             // 
             // toolStripMenuViewInf
             // 
             this.toolStripMenuViewInf.Name = "toolStripMenuViewInf";
             this.toolStripMenuViewInf.Size = new System.Drawing.Size(174, 22);
             this.toolStripMenuViewInf.Text = "Influence Holdings";
-            this.toolStripMenuViewInf.Click += new System.EventHandler(this.toolStripMenuViewInf_Click);
+            this.toolStripMenuViewInf.Click += new System.EventHandler(this.ToolStripMenuViewInf_Click);
             // 
             // tsddbNewLand
             // 
@@ -781,21 +781,21 @@
             this.influenceHoldingToolStripMenuItem.Name = "influenceHoldingToolStripMenuItem";
             this.influenceHoldingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.influenceHoldingToolStripMenuItem.Text = "Influence Holding";
-            this.influenceHoldingToolStripMenuItem.Click += new System.EventHandler(this.influenceHoldingToolStripMenuItem_Click);
+            this.influenceHoldingToolStripMenuItem.Click += new System.EventHandler(this.InfluenceHoldingToolStripMenuItem_Click);
             // 
             // infImpprovmentToolStripMenuItem
             // 
             this.infImpprovmentToolStripMenuItem.Name = "infImpprovmentToolStripMenuItem";
             this.infImpprovmentToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.infImpprovmentToolStripMenuItem.Text = "Influence Improvement";
-            this.infImpprovmentToolStripMenuItem.Click += new System.EventHandler(this.infImpprovmentToolStripMenuItem_Click);
+            this.infImpprovmentToolStripMenuItem.Click += new System.EventHandler(this.InfImpprovmentToolStripMenuItem_Click);
             // 
             // heirHoldingToolStripMenuItem
             // 
             this.heirHoldingToolStripMenuItem.Name = "heirHoldingToolStripMenuItem";
             this.heirHoldingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.heirHoldingToolStripMenuItem.Text = "Heir Holding";
-            this.heirHoldingToolStripMenuItem.Click += new System.EventHandler(this.heirHoldingToolStripMenuItem_Click);
+            this.heirHoldingToolStripMenuItem.Click += new System.EventHandler(this.HeirHoldingToolStripMenuItem_Click);
             // 
             // tsbDeleteCurrent
             // 
@@ -806,7 +806,7 @@
             this.tsbDeleteCurrent.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.tsbDeleteCurrent.Size = new System.Drawing.Size(97, 22);
             this.tsbDeleteCurrent.Text = "Delete Current";
-            this.tsbDeleteCurrent.Click += new System.EventHandler(this.tsbDeleteCurrent_Click);
+            this.tsbDeleteCurrent.Click += new System.EventHandler(this.TsbDeleteCurrent_Click);
             // 
             // dgDef
             // 

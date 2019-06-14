@@ -461,7 +461,7 @@ namespace WindowsFormsApp1
             landsHolForm.Show();
         }
 
-        private void btInfluence_Click(object sender, EventArgs e)
+        private void BtInfluence_Click(object sender, EventArgs e)
         {
             landsHolForm = new LandsHolForm(House.ID, House.name, "Influence", cbRealm.Text);
             landsHolForm.VisibleChanged += new EventHandler(this.HouseViewForm_Load);
