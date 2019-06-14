@@ -555,6 +555,19 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_InfluenceHoldingImprovement
+        public void DeleteInfluenceImprovement(string infImpID)
+        {
+            DevLog.LogItem("Deleting from tbl_Heir ID: " + infImpID);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_InfluenceHoldingImprovement`" +
+                    "WHERE `InfHolImp_ID` = '" + infImpID + "';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_Heir
         public void DeleteHeir(int heirID)
         {

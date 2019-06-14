@@ -43,6 +43,7 @@ namespace WindowsFormsApp1
         NewDefenseForm newDefenseForm;
         NewWealthForm NewWealthForm;
         NewWealthImprovementForm NewWealthImprovement;
+        NewHeirForm NewHeirForm;
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
@@ -458,6 +459,9 @@ namespace WindowsFormsApp1
                 case "Wealth":
                     House.DeleteWealthImprovement(dgImp.Rows[feaNum].Cells[1].Value.ToString());
                     break;
+                case "Influence":
+                    House.DeleteInfluenceImprovement(dgInflImp.Rows[feaNum].Cells[0].Value.ToString());
+                    break;
             }
             ChangeHolding(holdingType,currentView);
         }
@@ -653,6 +657,25 @@ namespace WindowsFormsApp1
             Visible = false;
             NewWealthImprovement.ShowDialog();
         }
+
+        private void influenceHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void infImpprovmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void heirHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeHolding(holdingType, "");
+            NewHeirForm = new NewHeirForm(House.ID, House.name, nextMaleCost, nextFemaleCost);
+            NewHeirForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
+            Visible = false;
+            NewHeirForm.ShowDialog();
+        }
         //Closing
         private void LandsHolForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -662,8 +685,9 @@ namespace WindowsFormsApp1
             if (newDefenseForm != null) { newDefenseForm.Close(); }
             if (NewWealthForm != null) { NewWealthForm.Close(); }
             if (NewWealthImprovement != null) { NewWealthImprovement.Close(); }
+            if (NewHeirForm != null) { NewHeirForm.Close(); }
         }
-
+        //Deleting
         private void btAddDelete1_Click(object sender, EventArgs e)
         {
             DeleteFeature(0);
@@ -706,7 +730,7 @@ namespace WindowsFormsApp1
 
                     break;
                 case "Influence":
-
+                    
                     break;
                 case "Heir":
                     int x = Convert.ToInt32(dgHeir.Rows[currentIndex].Cells[0].Value);
@@ -738,6 +762,11 @@ namespace WindowsFormsApp1
         {
             ChangeHolding("Influence", "");
         }
+
+
+
+
+
 
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

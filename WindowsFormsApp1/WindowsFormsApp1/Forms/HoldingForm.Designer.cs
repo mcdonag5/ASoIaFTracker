@@ -81,13 +81,13 @@
             this.tsddbNewInf = new System.Windows.Forms.ToolStripDropDownButton();
             this.influenceHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infImpprovmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.heirHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbDeleteCurrent = new System.Windows.Forms.ToolStripButton();
             this.dgDef = new System.Windows.Forms.DataGridView();
             this.dgLandFea = new System.Windows.Forms.DataGridView();
             this.dgLand = new System.Windows.Forms.DataGridView();
             this.dgWea = new System.Windows.Forms.DataGridView();
             this.dgImp = new System.Windows.Forms.DataGridView();
-            this.heirHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgHeir = new System.Windows.Forms.DataGridView();
             this.dgInfluence = new System.Windows.Forms.DataGridView();
             this.dgInflImp = new System.Windows.Forms.DataGridView();
@@ -696,14 +696,14 @@
             // toolStripMenuIViewLand
             // 
             this.toolStripMenuIViewLand.Name = "toolStripMenuIViewLand";
-            this.toolStripMenuIViewLand.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuIViewLand.Size = new System.Drawing.Size(174, 22);
             this.toolStripMenuIViewLand.Text = "Land Holdings";
             this.toolStripMenuIViewLand.Click += new System.EventHandler(this.toolStripMenuIViewLand_Click);
             // 
             // toolStripMenuViewInf
             // 
             this.toolStripMenuViewInf.Name = "toolStripMenuViewInf";
-            this.toolStripMenuViewInf.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuViewInf.Size = new System.Drawing.Size(174, 22);
             this.toolStripMenuViewInf.Text = "Influence Holdings";
             this.toolStripMenuViewInf.Click += new System.EventHandler(this.toolStripMenuViewInf_Click);
             // 
@@ -781,12 +781,21 @@
             this.influenceHoldingToolStripMenuItem.Name = "influenceHoldingToolStripMenuItem";
             this.influenceHoldingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.influenceHoldingToolStripMenuItem.Text = "Influence Holding";
+            this.influenceHoldingToolStripMenuItem.Click += new System.EventHandler(this.influenceHoldingToolStripMenuItem_Click);
             // 
             // infImpprovmentToolStripMenuItem
             // 
             this.infImpprovmentToolStripMenuItem.Name = "infImpprovmentToolStripMenuItem";
             this.infImpprovmentToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.infImpprovmentToolStripMenuItem.Text = "Influence Improvement";
+            this.infImpprovmentToolStripMenuItem.Click += new System.EventHandler(this.infImpprovmentToolStripMenuItem_Click);
+            // 
+            // heirHoldingToolStripMenuItem
+            // 
+            this.heirHoldingToolStripMenuItem.Name = "heirHoldingToolStripMenuItem";
+            this.heirHoldingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.heirHoldingToolStripMenuItem.Text = "Heir Holding";
+            this.heirHoldingToolStripMenuItem.Click += new System.EventHandler(this.heirHoldingToolStripMenuItem_Click);
             // 
             // tsbDeleteCurrent
             // 
@@ -848,12 +857,6 @@
             this.dgImp.Size = new System.Drawing.Size(38, 32);
             this.dgImp.TabIndex = 37;
             this.dgImp.Visible = false;
-            // 
-            // heirHoldingToolStripMenuItem
-            // 
-            this.heirHoldingToolStripMenuItem.Name = "heirHoldingToolStripMenuItem";
-            this.heirHoldingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.heirHoldingToolStripMenuItem.Text = "Heir Holding";
             // 
             // dgHeir
             // 

@@ -81,18 +81,6 @@
     <Compile Include="Forms\ChangeResourcesForm.Designer.cs">
       <DependentUpon>ChangeResourcesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HeirForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HeirForm.Designer.cs">
-      <DependentUpon>HeirForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\InfluenceHoldingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\InfluenceHoldingForm.Designer.cs">
-      <DependentUpon>InfluenceHoldingForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\NewBannerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +117,11 @@
     <Compile Include="Forms\HouseViewForm.Designer.cs">
       <DependentUpon>HouseViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\LandsHolForm.cs">
+    <Compile Include="Forms\HoldingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\LandsHolForm.Designer.cs">
-      <DependentUpon>LandsHolForm.cs</DependentUpon>
+    <Compile Include="Forms\HoldingForm.Designer.cs">
+      <DependentUpon>HoldingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -182,12 +170,6 @@
     <EmbeddedResource Include="Forms\CreateHouseForm.resx">
       <DependentUpon>CreateHouseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeirForm.resx">
-      <DependentUpon>HeirForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InfluenceHoldingForm.resx">
-      <DependentUpon>InfluenceHoldingForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewBannerForm.resx">
       <DependentUpon>NewBannerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,8 +188,8 @@
     <EmbeddedResource Include="Forms\HouseViewForm.resx">
       <DependentUpon>HouseViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LandsHolForm.resx">
-      <DependentUpon>LandsHolForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\HoldingForm.resx">
+      <DependentUpon>HoldingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

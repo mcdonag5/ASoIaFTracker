@@ -54,8 +54,6 @@ namespace WindowsFormsApp1
         House House;
         //forms
         LandsHolForm landsHolForm;
-        HeirForm HeirForm;
-        InfluenceHoldingForm InfluenceHoldingForm;
         PowerHolForm powerHolForm;
         BannersHoldingsForm BannersHoldings;
         ChangeResourcesForm changeResourcesForm;
@@ -434,22 +432,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void HeirVisible(object sender, EventArgs e)
-        {
-            if (HeirForm.Visible)
-            {
-                UpdateHouse();
-            }
-        }
-
-        private void InfluenceHoldingFormVisible(object sender, EventArgs e)
-        {
-            if(InfluenceHoldingForm.Visible)
-            {
-                UpdateHouse();
-            }
-        }
-
         private void PowerFormVisible(object sender, EventArgs e)
         {
             if (powerHolForm.Visible)
@@ -481,18 +463,10 @@ namespace WindowsFormsApp1
 
         private void btInfluence_Click(object sender, EventArgs e)
         {
-            InfluenceHoldingForm = new InfluenceHoldingForm(House.ID, House.name);
-            InfluenceHoldingForm.VisibleChanged += new EventHandler(InfluenceHoldingFormVisible);
-            InfluenceHoldingForm.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
-            InfluenceHoldingForm.Show();
-        }
-
-        private void BtHeir_Click(object sender, EventArgs e)
-        {
-            HeirForm = new HeirForm(House.ID, House.name, cbRealm.Text);
-            HeirForm.FormClosing +=  new FormClosingEventHandler(HouseViewForm_Load);
-            HeirForm.VisibleChanged += new EventHandler(HeirVisible);
-            HeirForm.Show();
+            landsHolForm = new LandsHolForm(House.ID, House.name, "Influence", cbRealm.Text);
+            landsHolForm.VisibleChanged += new EventHandler(this.HouseViewForm_Load);
+            landsHolForm.FormClosing += new FormClosingEventHandler(LandHoldingsVisible);
+            landsHolForm.Show();
         }
 
         private void BtPowerHolForm_Click(object sender, EventArgs e)
@@ -526,8 +500,6 @@ namespace WindowsFormsApp1
                 House.UpdateHouseDetails(tbName.Text, tbPlayer.Text, cbRealm.Text, tbSeatOfPower.Text, tbLiegeLord.Text, tbLiege.Text);
             }
             if (landsHolForm != null) { landsHolForm.Close(); }
-            if (InfluenceHoldingForm != null) { InfluenceHoldingForm.Close(); }
-            if (HeirForm != null) { HeirForm.Close(); }
             if (powerHolForm != null) { powerHolForm.Close(); }
             if (BannersHoldings != null) { BannersHoldings.Close(); }
             if (changeResourcesForm != null) { changeResourcesForm.Close(); }

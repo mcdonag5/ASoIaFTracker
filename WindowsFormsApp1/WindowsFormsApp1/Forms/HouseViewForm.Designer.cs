@@ -141,7 +141,6 @@
             this.lbInfHolList = new System.Windows.Forms.Label();
             this.btInfluence = new System.Windows.Forms.Button();
             this.lbHeir = new System.Windows.Forms.Label();
-            this.btHeir = new System.Windows.Forms.Button();
             this.lbHeirList = new System.Windows.Forms.Label();
             this.lbPowHolList = new System.Windows.Forms.Label();
             this.lBHouPowHol = new System.Windows.Forms.Label();
@@ -1722,7 +1721,6 @@
             this.tableLayoutPanel2.Controls.Add(this.lbInfHolList, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.btInfluence, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.lbHeir, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.btHeir, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.lbHeirList, 0, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(368, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -1780,22 +1778,10 @@
             this.lbHeir.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHeir.Location = new System.Drawing.Point(3, 46);
             this.lbHeir.Name = "lbHeir";
-            this.lbHeir.Size = new System.Drawing.Size(53, 28);
+            this.lbHeir.Size = new System.Drawing.Size(53, 18);
             this.lbHeir.TabIndex = 52;
             this.lbHeir.Text = "Heirs";
             this.lbHeir.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // btHeir
-            // 
-            this.btHeir.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btHeir.Location = new System.Drawing.Point(206, 48);
-            this.btHeir.Margin = new System.Windows.Forms.Padding(2);
-            this.btHeir.Name = "btHeir";
-            this.btHeir.Size = new System.Drawing.Size(56, 24);
-            this.btHeir.TabIndex = 53;
-            this.btHeir.Text = "View";
-            this.btHeir.UseVisualStyleBackColor = true;
-            this.btHeir.Click += new System.EventHandler(this.BtHeir_Click);
             // 
             // lbHeirList
             // 
@@ -1805,9 +1791,9 @@
             this.lbHeirList.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lbHeirList, 2);
             this.lbHeirList.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeirList.Location = new System.Drawing.Point(3, 74);
+            this.lbHeirList.Location = new System.Drawing.Point(3, 64);
             this.lbHeirList.Name = "lbHeirList";
-            this.lbHeirList.Size = new System.Drawing.Size(294, 151);
+            this.lbHeirList.Size = new System.Drawing.Size(294, 161);
             this.lbHeirList.TabIndex = 54;
             this.lbHeirList.Text = "Influence Holdings00000000000";
             // 
@@ -2109,7 +2095,6 @@
         private System.Windows.Forms.Label lbBannerDiceText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label lbHeir;
-        private System.Windows.Forms.Button btHeir;
         private System.Windows.Forms.Label lbHeirList;
         private System.Windows.Forms.DataGridView dgHouse;
         private System.Windows.Forms.TextBox tbPlayer;
