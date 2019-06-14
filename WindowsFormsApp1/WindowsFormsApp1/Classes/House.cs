@@ -194,6 +194,11 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT * FROM `tbl_WealthImprovement` "+
                             "WHERE `Wea_ID` = '"+ holdingID+"'";
                         break;
+                    //tbl_InfluenceImprovemnt
+                    case "ImprovementImprovement":
+                        qry = "SELECT * FROM `tbl_InfluenceImprovemnt` " +
+                            "WHERE `Inf_ID` = '" + holdingID + "'";
+                        break;
                 }
 
                 return mysqlConn.Qry(qry).Tables[0];

@@ -105,6 +105,12 @@
     <Compile Include="Forms\NewInfluenceForm.Designer.cs">
       <DependentUpon>NewInfluenceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewInfluenceImprovementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewInfluenceImprovementForm.Designer.cs">
+      <DependentUpon>NewInfluenceImprovementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NewLandFeatureForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewInfluenceForm.resx">
       <DependentUpon>NewInfluenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewInfluenceImprovementForm.resx">
+      <DependentUpon>NewInfluenceImprovementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewLandFeatureForm.resx">
       <DependentUpon>NewLandFeatureForm.cs</DependentUpon>
