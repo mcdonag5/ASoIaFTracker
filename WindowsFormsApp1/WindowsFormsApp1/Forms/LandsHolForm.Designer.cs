@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LandsHolForm));
             this.lbTypeName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbWealthHolding = new System.Windows.Forms.ComboBox();
-            this.cbLandHolding = new System.Windows.Forms.ComboBox();
-            this.cbDefLanFea = new System.Windows.Forms.ComboBox();
+            this.cb3 = new System.Windows.Forms.ComboBox();
+            this.cb1 = new System.Windows.Forms.ComboBox();
+            this.cb2 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btAddDelete2 = new System.Windows.Forms.Button();
             this.btAddDelete3 = new System.Windows.Forms.Button();
@@ -69,18 +69,28 @@
             this.tbAddName2 = new System.Windows.Forms.TextBox();
             this.tbAddName3 = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsddbNew = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsddbView = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuIViewLand = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuViewInf = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsddbNewLand = new System.Windows.Forms.ToolStripDropDownButton();
             this.landHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.landFeatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defenseHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wealthHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wealthImprovementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsddbNewInf = new System.Windows.Forms.ToolStripDropDownButton();
+            this.influenceHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.infImpprovmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbDeleteCurrent = new System.Windows.Forms.ToolStripButton();
             this.dgDef = new System.Windows.Forms.DataGridView();
             this.dgLandFea = new System.Windows.Forms.DataGridView();
             this.dgLand = new System.Windows.Forms.DataGridView();
             this.dgWea = new System.Windows.Forms.DataGridView();
             this.dgImp = new System.Windows.Forms.DataGridView();
+            this.heirHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgHeir = new System.Windows.Forms.DataGridView();
+            this.dgInfluence = new System.Windows.Forms.DataGridView();
+            this.dgInflImp = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -90,6 +100,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgLand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgWea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgImp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHeir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInfluence)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInflImp)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTypeName
@@ -117,9 +130,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel1.Controls.Add(this.cbWealthHolding, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cbLandHolding, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cbDefLanFea, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cb3, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cb1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cb2, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
@@ -127,47 +140,47 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(726, 29);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // cbWealthHolding
+            // cb3
             // 
-            this.cbWealthHolding.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cb3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbWealthHolding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbWealthHolding.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbWealthHolding.FormattingEnabled = true;
-            this.cbWealthHolding.Location = new System.Drawing.Point(486, 3);
-            this.cbWealthHolding.Name = "cbWealthHolding";
-            this.cbWealthHolding.Size = new System.Drawing.Size(237, 24);
-            this.cbWealthHolding.TabIndex = 2;
-            this.cbWealthHolding.SelectedIndexChanged += new System.EventHandler(this.CbWealthHolding_SelectedIndexChanged);
+            this.cb3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb3.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb3.FormattingEnabled = true;
+            this.cb3.Location = new System.Drawing.Point(486, 3);
+            this.cb3.Name = "cb3";
+            this.cb3.Size = new System.Drawing.Size(237, 24);
+            this.cb3.TabIndex = 2;
+            this.cb3.SelectedIndexChanged += new System.EventHandler(this.CbWealthHolding_SelectedIndexChanged);
             // 
-            // cbLandHolding
+            // cb1
             // 
-            this.cbLandHolding.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cb1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbLandHolding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbLandHolding.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLandHolding.FormattingEnabled = true;
-            this.cbLandHolding.Location = new System.Drawing.Point(3, 3);
-            this.cbLandHolding.Name = "cbLandHolding";
-            this.cbLandHolding.Size = new System.Drawing.Size(235, 24);
-            this.cbLandHolding.TabIndex = 1;
-            this.cbLandHolding.SelectedIndexChanged += new System.EventHandler(this.CbLandHolding_SelectedIndexChanged);
+            this.cb1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb1.FormattingEnabled = true;
+            this.cb1.Location = new System.Drawing.Point(3, 3);
+            this.cb1.Name = "cb1";
+            this.cb1.Size = new System.Drawing.Size(235, 24);
+            this.cb1.TabIndex = 1;
+            this.cb1.SelectedIndexChanged += new System.EventHandler(this.CbLandHolding_SelectedIndexChanged);
             // 
-            // cbDefLanFea
+            // cb2
             // 
-            this.cbDefLanFea.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cb2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbDefLanFea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDefLanFea.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDefLanFea.FormattingEnabled = true;
-            this.cbDefLanFea.Location = new System.Drawing.Point(244, 3);
-            this.cbDefLanFea.Name = "cbDefLanFea";
-            this.cbDefLanFea.Size = new System.Drawing.Size(236, 24);
-            this.cbDefLanFea.TabIndex = 0;
-            this.cbDefLanFea.SelectedIndexChanged += new System.EventHandler(this.CbDefLanFea_SelectedIndexChanged);
+            this.cb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb2.FormattingEnabled = true;
+            this.cb2.Location = new System.Drawing.Point(244, 3);
+            this.cb2.Name = "cb2";
+            this.cb2.Size = new System.Drawing.Size(236, 24);
+            this.cb2.TabIndex = 0;
+            this.cb2.SelectedIndexChanged += new System.EventHandler(this.CbDefLanFea_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -241,6 +254,7 @@
             this.btAddDelete2.TabIndex = 58;
             this.btAddDelete2.Text = "Delete";
             this.btAddDelete2.UseVisualStyleBackColor = true;
+            this.btAddDelete2.Click += new System.EventHandler(this.btAddDelete2_Click);
             // 
             // btAddDelete3
             // 
@@ -252,6 +266,7 @@
             this.btAddDelete3.TabIndex = 58;
             this.btAddDelete3.Text = "Delete";
             this.btAddDelete3.UseVisualStyleBackColor = true;
+            this.btAddDelete3.Click += new System.EventHandler(this.btAddDelete3_Click);
             // 
             // btAddDelete4
             // 
@@ -263,6 +278,7 @@
             this.btAddDelete4.TabIndex = 58;
             this.btAddDelete4.Text = "Delete";
             this.btAddDelete4.UseVisualStyleBackColor = true;
+            this.btAddDelete4.Click += new System.EventHandler(this.btAddDelete4_Click);
             // 
             // btAddDelete5
             // 
@@ -274,6 +290,7 @@
             this.btAddDelete5.TabIndex = 58;
             this.btAddDelete5.Text = "Delete";
             this.btAddDelete5.UseVisualStyleBackColor = true;
+            this.btAddDelete5.Click += new System.EventHandler(this.btAddDelete5_Click);
             // 
             // lbAddDesc5
             // 
@@ -310,8 +327,6 @@
             this.tableLayoutPanel2.SetColumnSpan(this.tableLayoutPanel3, 4);
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.tbName, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.lbCost, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.lbType, 1, 2);
@@ -494,6 +509,7 @@
             this.btAddDelete1.TabIndex = 57;
             this.btAddDelete1.Text = "Delete";
             this.btAddDelete1.UseVisualStyleBackColor = true;
+            this.btAddDelete1.Click += new System.EventHandler(this.btAddDelete1_Click);
             // 
             // tbAddName4
             // 
@@ -654,7 +670,9 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsddbNew,
+            this.tsddbView,
+            this.tsddbNewLand,
+            this.tsddbNewInf,
             this.tsbDeleteCurrent});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -662,21 +680,48 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tsddbNew
+            // tsddbView
             // 
-            this.tsddbNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsddbNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsddbView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbView.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuIViewLand,
+            this.toolStripMenuViewInf});
+            this.tsddbView.Image = ((System.Drawing.Image)(resources.GetObject("tsddbView.Image")));
+            this.tsddbView.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbView.Name = "tsddbView";
+            this.tsddbView.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsddbView.Size = new System.Drawing.Size(55, 22);
+            this.tsddbView.Text = "View";
+            // 
+            // toolStripMenuIViewLand
+            // 
+            this.toolStripMenuIViewLand.Name = "toolStripMenuIViewLand";
+            this.toolStripMenuIViewLand.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuIViewLand.Text = "Land Holdings";
+            this.toolStripMenuIViewLand.Click += new System.EventHandler(this.toolStripMenuIViewLand_Click);
+            // 
+            // toolStripMenuViewInf
+            // 
+            this.toolStripMenuViewInf.Name = "toolStripMenuViewInf";
+            this.toolStripMenuViewInf.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuViewInf.Text = "Influence Holdings";
+            this.toolStripMenuViewInf.Click += new System.EventHandler(this.toolStripMenuViewInf_Click);
+            // 
+            // tsddbNewLand
+            // 
+            this.tsddbNewLand.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbNewLand.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.landHoldingToolStripMenuItem,
             this.landFeatureToolStripMenuItem,
             this.defenseHoldingToolStripMenuItem,
             this.wealthHoldingToolStripMenuItem,
             this.wealthImprovementToolStripMenuItem});
-            this.tsddbNew.Image = ((System.Drawing.Image)(resources.GetObject("tsddbNew.Image")));
-            this.tsddbNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsddbNew.Name = "tsddbNew";
-            this.tsddbNew.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsddbNew.Size = new System.Drawing.Size(54, 22);
-            this.tsddbNew.Text = "New";
+            this.tsddbNewLand.Image = ((System.Drawing.Image)(resources.GetObject("tsddbNewLand.Image")));
+            this.tsddbNewLand.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbNewLand.Name = "tsddbNewLand";
+            this.tsddbNewLand.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsddbNewLand.Size = new System.Drawing.Size(54, 22);
+            this.tsddbNewLand.Text = "New";
             // 
             // landHoldingToolStripMenuItem
             // 
@@ -717,6 +762,32 @@
             this.wealthImprovementToolStripMenuItem.Text = "Wealth Improvement";
             this.wealthImprovementToolStripMenuItem.Click += new System.EventHandler(this.WealthImprovementToolStripMenuItem_Click);
             // 
+            // tsddbNewInf
+            // 
+            this.tsddbNewInf.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsddbNewInf.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.influenceHoldingToolStripMenuItem,
+            this.infImpprovmentToolStripMenuItem,
+            this.heirHoldingToolStripMenuItem});
+            this.tsddbNewInf.Image = ((System.Drawing.Image)(resources.GetObject("tsddbNewInf.Image")));
+            this.tsddbNewInf.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsddbNewInf.Name = "tsddbNewInf";
+            this.tsddbNewInf.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsddbNewInf.Size = new System.Drawing.Size(54, 22);
+            this.tsddbNewInf.Text = "New";
+            // 
+            // influenceHoldingToolStripMenuItem
+            // 
+            this.influenceHoldingToolStripMenuItem.Name = "influenceHoldingToolStripMenuItem";
+            this.influenceHoldingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.influenceHoldingToolStripMenuItem.Text = "Influence Holding";
+            // 
+            // infImpprovmentToolStripMenuItem
+            // 
+            this.infImpprovmentToolStripMenuItem.Name = "infImpprovmentToolStripMenuItem";
+            this.infImpprovmentToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.infImpprovmentToolStripMenuItem.Text = "Influence Improvement";
+            // 
             // tsbDeleteCurrent
             // 
             this.tsbDeleteCurrent.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -726,6 +797,7 @@
             this.tsbDeleteCurrent.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.tsbDeleteCurrent.Size = new System.Drawing.Size(97, 22);
             this.tsbDeleteCurrent.Text = "Delete Current";
+            this.tsbDeleteCurrent.Click += new System.EventHandler(this.tsbDeleteCurrent_Click);
             // 
             // dgDef
             // 
@@ -777,12 +849,51 @@
             this.dgImp.TabIndex = 37;
             this.dgImp.Visible = false;
             // 
+            // heirHoldingToolStripMenuItem
+            // 
+            this.heirHoldingToolStripMenuItem.Name = "heirHoldingToolStripMenuItem";
+            this.heirHoldingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.heirHoldingToolStripMenuItem.Text = "Heir Holding";
+            // 
+            // dgHeir
+            // 
+            this.dgHeir.AllowUserToAddRows = false;
+            this.dgHeir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgHeir.Location = new System.Drawing.Point(347, 290);
+            this.dgHeir.Name = "dgHeir";
+            this.dgHeir.Size = new System.Drawing.Size(38, 32);
+            this.dgHeir.TabIndex = 38;
+            this.dgHeir.Visible = false;
+            // 
+            // dgInfluence
+            // 
+            this.dgInfluence.AllowUserToAddRows = false;
+            this.dgInfluence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInfluence.Location = new System.Drawing.Point(355, 298);
+            this.dgInfluence.Name = "dgInfluence";
+            this.dgInfluence.Size = new System.Drawing.Size(38, 32);
+            this.dgInfluence.TabIndex = 39;
+            this.dgInfluence.Visible = false;
+            // 
+            // dgInflImp
+            // 
+            this.dgInflImp.AllowUserToAddRows = false;
+            this.dgInflImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgInflImp.Location = new System.Drawing.Point(363, 306);
+            this.dgInflImp.Name = "dgInflImp";
+            this.dgInflImp.Size = new System.Drawing.Size(38, 32);
+            this.dgInflImp.TabIndex = 40;
+            this.dgInflImp.Visible = false;
+            // 
             // LandsHolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(732, 613);
+            this.Controls.Add(this.dgInflImp);
+            this.Controls.Add(this.dgInfluence);
+            this.Controls.Add(this.dgHeir);
             this.Controls.Add(this.dgImp);
             this.Controls.Add(this.dgWea);
             this.Controls.Add(this.dgDef);
@@ -806,6 +917,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgLand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgWea)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgImp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHeir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInfluence)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgInflImp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -817,9 +931,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ComboBox cbWealthHolding;
-        private System.Windows.Forms.ComboBox cbLandHolding;
-        private System.Windows.Forms.ComboBox cbDefLanFea;
+        private System.Windows.Forms.ComboBox cb3;
+        private System.Windows.Forms.ComboBox cb1;
+        private System.Windows.Forms.ComboBox cb2;
         private System.Windows.Forms.Label lbBenfits;
         private System.Windows.Forms.Label lbDesc;
         private System.Windows.Forms.RichTextBox rtbNotes;
@@ -831,7 +945,7 @@
         private System.Windows.Forms.DataGridView dgLand;
         private System.Windows.Forms.DataGridView dgWea;
         private System.Windows.Forms.DataGridView dgImp;
-        private System.Windows.Forms.ToolStripDropDownButton tsddbNew;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbNewLand;
         private System.Windows.Forms.ToolStripMenuItem landHoldingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem landFeatureToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem defenseHoldingToolStripMenuItem;
@@ -865,5 +979,15 @@
         private System.Windows.Forms.Label lbAddType3;
         private System.Windows.Forms.Label lbAddType2;
         private System.Windows.Forms.TextBox tbAddName2;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbNewInf;
+        private System.Windows.Forms.ToolStripMenuItem influenceHoldingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem infImpprovmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton tsddbView;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuIViewLand;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuViewInf;
+        private System.Windows.Forms.ToolStripMenuItem heirHoldingToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgHeir;
+        private System.Windows.Forms.DataGridView dgInfluence;
+        private System.Windows.Forms.DataGridView dgInflImp;
     }
 }

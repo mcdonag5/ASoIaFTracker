@@ -166,6 +166,24 @@ namespace WindowsFormsApp1
                     {
                         unitUpgrades[i, 0].Checked = Convert.ToBoolean(dgCal1.Rows[i + startingNum].Cells[24].Value);
                     }
+
+                    if (unitUpgrades[i, 1].Checked.ToString() == dgCal1.Rows[i + startingNum].Cells[25].Value.ToString())
+                    {
+                        UnitFightDMG(i);
+                    }
+                    else
+                    {
+                        unitUpgrades[i, 1].Checked = Convert.ToBoolean(dgCal1.Rows[i + startingNum].Cells[25].Value);
+                    }
+
+                    if (unitUpgrades[i, 2].Checked.ToString() == dgCal1.Rows[i + startingNum].Cells[26].Value.ToString())
+                    {
+                        UnitMarksDMG(i);
+                    }
+                    else
+                    {
+                        unitUpgrades[i, 2].Checked = Convert.ToBoolean(dgCal1.Rows[i + startingNum].Cells[26].Value);
+                    }
                     //calculated stats
                     unitHealth[i].Text = Convert.ToString(unitHealth[i].Maximum - Convert.ToInt32(dgCal1.Rows[i + startingNum].Cells[27].Value));
                 }
@@ -342,15 +360,17 @@ namespace WindowsFormsApp1
         public bool CheckIfUnitChange(int unit)
         {
             bool change = false;
-            if (unitName[unit].Text != dgCal1.Rows[unit + startingNum].Cells[3].Value.ToString() || unitTraining[unit].Text != dgCal1.Rows[unit + startingNum].Cells[4].Value.ToString() || unitDisorganized[unit].Text != dgCal1.Rows[unit + startingNum].Cells[28].Value.ToString() || unitNotes[unit].Text != dgCal1.Rows[unit + startingNum].Cells[29].Value.ToString() || Convert.ToString(unitHealth[unit].Maximum - unitHealth[unit].Value) != dgCal1.Rows[unit + startingNum].Cells[27].Value.ToString() || unitUpgrades[unit, 0].Checked.ToString() != dgCal1.Rows[unit + startingNum].Cells[24].Value.ToString() || unitUpgrades[unit, 1].Checked.ToString() != dgCal1.Rows[unit + startingNum].Cells[25].Value.ToString() || unitUpgrades[unit, 1].Checked.ToString() != dgCal1.Rows[unit + startingNum].Cells[26].Value.ToString())
+            if (unitName[unit].Text != dgCal1.Rows[unit + startingNum].Cells[3].Value.ToString() || unitTraining[unit].Text != dgCal1.Rows[unit + startingNum].Cells[4].Value.ToString() || unitDisorganized[unit].Text != dgCal1.Rows[unit + startingNum].Cells[28].Value.ToString() || unitNotes[unit].Text != dgCal1.Rows[unit + startingNum].Cells[29].Value.ToString() || Convert.ToString(unitHealth[unit].Maximum - unitHealth[unit].Value) != dgCal1.Rows[unit + startingNum].Cells[27].Value.ToString() || unitUpgrades[unit, 0].Checked.ToString() != dgCal1.Rows[unit + startingNum].Cells[24].Value.ToString() || unitUpgrades[unit, 1].Checked.ToString() != dgCal1.Rows[unit + startingNum].Cells[25].Value.ToString() || unitUpgrades[unit, 2].Checked.ToString() != dgCal1.Rows[unit + startingNum].Cells[26].Value.ToString())
             {
                 change = true;
             }
-            DevLog.LogItem("Length: " + unitAbilitiesTextBox.GetLength(1));
             for(int i =0; i < unitAbilitiesTextBox.GetLength(1) && !change; i++)
             {
-                DevLog.LogItem("i: " + i + " Object: " + unitAbilitiesTextBox[unit, i] + " = " + dgCal1.Rows[unit + startingNum].Cells[6 + i].Value.ToString());
                 if(unitAbilitiesTextBox[unit,i].Text != dgCal1.Rows[unit + startingNum].Cells[6 + i].Value.ToString()) { change = true; }
+            }
+            for (int i = 0; i < unitUpgrades.GetLength(1) && !change; i++)
+            {
+                if (unitUpgrades[unit, i].Checked.ToString() != dgCal1.Rows[unit + startingNum].Cells[24+i].Value.ToString()) { change = true; }
             }
             DevLog.LogItem("Unit Change: " + change);
             return change;

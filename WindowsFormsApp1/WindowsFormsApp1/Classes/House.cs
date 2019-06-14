@@ -485,6 +485,19 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_InfluenceHoldings
+        public void UpdateInfluenceHoldings(string infHolID, string name, string notes)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_InfluenceHoldings` " +
+                    "SET `InfHol_Name` = '" + name + "', `InfHol_Note` = '" + notes + "' " +
+                    "WHERE `InfHol_ID` = '" + infHolID + "'";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_Heir
         public void UpdateHeir(string heirID, string name, string notes)
         {
@@ -511,21 +524,46 @@ namespace WindowsFormsApp1.Classes
                     "SET `PowHol_Name` = '" + name + "', `PowHol_Training` = '" + training + "', `PowHol_Damage` = '" + damage + "', `PowHol_Disorganized` = '" + disorganized + "', `PowHol_Notes` = '" + notes + "', `PowHol_ArmorUp` = '" + armorUpg + "', `PowHol_FightingUp` = '" + fightUpg + "', `PowHol_MarksmashipUp` = '" + marksUpg + "', " +
                     "`PowHol_Agility` = '" + agility + "', `PowHol_AnimalHand` = '" + animal + "', `PowHol_Athletics` = '" + athletics + "', `PowHol_Awareness` = '" + awareness + "', `PowHol_Cunning` = '" + cunning + "', `PowHol_Endurance` = '" + endurance + "', `PowHol_Fighting` = '" + fighting + "', `PowHol_Healing` = '" + healing + "', `PowHol_Language` = '" + language + "', `PowHol_Knowledge` = '" + knowledge + "', `PowHol_Marksmanship` = '" + marksmanship + "', `PowHol_Persuasion` = '" + persuasion + "', `PowHol_Status` = '" + status + "', `PowHol_Stealth` = '" + stealth + "', `PowHol_Survival` = '" + survival + "', `PowHol_Thievery` = '" + thievery + "', `PowHol_Warfare` = '" + warfare + "', `PowHol_Will` = '" + will + "' " +
                     "WHERE `PowHol_ID` = '" + PowHolID + "'";
-                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
         ///// DELETE ////////////////////////////////////////////////////////////////
-        //tbl_Heir
-        public void DeleteHeir(int heir)
+        //tbl_LandHoldingFeature
+        public void DeleteLandFeature(string landFeaID)
         {
-            DevLog.LogItem("Deleting from tbl_Heir ID: " + heir);
+            DevLog.LogItem("Deleting from tbl_LandHoldingFeature ID: " + landFeaID);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_LandHoldingFeature`" +
+                    "WHERE `LanHolFea_ID` = '" + landFeaID + "';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_WealthHoldingImprovement
+        public void DeleteWealthImprovement(string WeaImpID)
+        {
+            DevLog.LogItem("Deleting from tbl_LandHoldingFeature ID: " + WeaImpID);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_WealthHoldingImprovement`" +
+                    "WHERE `WeaHolImp_ID` = '" + WeaImpID + "';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_Heir
+        public void DeleteHeir(int heirID)
+        {
+            DevLog.LogItem("Deleting from tbl_Heir ID: " + heirID);
             if (mysqlConn.ConnOpen())
             {
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_Heir`" +
-                    "WHERE `Hei_ID` = '" + heir + "';";
+                    "WHERE `Hei_ID` = '" + heirID + "';";
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }

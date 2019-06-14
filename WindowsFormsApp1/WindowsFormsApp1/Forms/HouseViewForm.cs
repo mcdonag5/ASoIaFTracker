@@ -60,18 +60,7 @@ namespace WindowsFormsApp1
         BannersHoldingsForm BannersHoldings;
         ChangeResourcesForm changeResourcesForm;
         ///// VARIABLES END ////////////////////////////////////////////////////////
-        public HouseViewForm(int ID)
-        {
-            House = new House(ID);
-            houseID = ID;
-            DevLog.LogItem("Opened House View From with ID: " + ID);
-            InitializeComponent();
-        }
 
-        private void HouseViewForm_Load(object sender, EventArgs e)
-        {
-            UpdateHouse();
-        }
         ///// METHODS START ////////////////////////////////////////////////////////
 
         public void UpdateHouse()
@@ -250,7 +239,8 @@ namespace WindowsFormsApp1
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {
                     houLan -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
-                    landHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                    landHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString();
+                    if (dgCal1.Rows[n].Cells[3].Value.ToString() != "") { landHoldings += " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine; }
                 }
                 //Wealth Holdings on Land (Estate)
                 CheckWealthHolding("LanHol_ID", Convert.ToInt32(dgHouseDetails.Rows[i].Cells[1].Value.ToString()), 1, "          ");
@@ -264,7 +254,9 @@ namespace WindowsFormsApp1
                 {
                     houLan -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
                     houPop -= Convert.ToInt32(dgCal1.Rows[n].Cells[8].Value);
-                    landHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                    landHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString();
+                    if (dgCal1.Rows[n].Cells[3].Value.ToString() != "") { landHoldings += " - " + dgCal1.Rows[n].Cells[3].Value.ToString(); }
+                    landHoldings += Environment.NewLine;
 
 
                     //Wealth holding in LandHolFea
@@ -277,7 +269,9 @@ namespace WindowsFormsApp1
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {
                     houDef -= Convert.ToInt32(dgCal1.Rows[n].Cells[10].Value) - Convert.ToInt32(dgCal1.Rows[n].Cells[6].Value);
-                    landHoldings += "    " + dgCal1.Rows[n].Cells[9].Value.ToString() + " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine;
+                    landHoldings += "    " + dgCal1.Rows[n].Cells[9].Value.ToString();
+                    if(dgCal1.Rows[n].Cells[3].Value.ToString() != "") { landHoldings += " - " + dgCal1.Rows[n].Cells[3].Value.ToString(); }
+                    landHoldings += Environment.NewLine;
 
 
                     //Wealth holding in LandHolFea
@@ -357,7 +351,9 @@ namespace WindowsFormsApp1
                 }
                 else { landHoldings += "B: "; }
 
-                landHoldings += dgCal2.Rows[n].Cells[12].Value.ToString() + " - " + dgCal2.Rows[n].Cells[6].Value.ToString() + Environment.NewLine;
+                landHoldings += dgCal2.Rows[n].Cells[12].Value.ToString();
+                if (dgCal2.Rows[n].Cells[6].Value.ToString() != "") { landHoldings += " - " + dgCal2.Rows[n].Cells[6].Value.ToString(); }
+                landHoldings += Environment.NewLine;
 
                 dgCal3.DataSource = House.HouseQry("WealthHoldingImprovement", dgCal2.Rows[n].Cells[1].Value.ToString());
                 for (int t = 0; t < dgCal3.RowCount - 1; t++)
@@ -462,11 +458,22 @@ namespace WindowsFormsApp1
             }
         }
         ///// METHODS END //////////////////////////////////////////////////////////
+        public HouseViewForm(int ID)
+        {
+            House = new House(ID);
+            houseID = ID;
+            DevLog.LogItem("Opened House View From with ID: " + ID);
+            InitializeComponent();
+        }
 
+        private void HouseViewForm_Load(object sender, EventArgs e)
+        {
+            UpdateHouse();
+        }
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void BtLand_Click(object sender, EventArgs e)
         {
-            landsHolForm = new LandsHolForm(House.ID,House.name);
+            landsHolForm = new LandsHolForm(House.ID,House.name,"Land", cbRealm.Text);
             landsHolForm.VisibleChanged += new EventHandler(this.HouseViewForm_Load);
             landsHolForm.FormClosing += new FormClosingEventHandler(LandHoldingsVisible);
             landsHolForm.Show();
