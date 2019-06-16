@@ -78,7 +78,7 @@
             "The Wall"});
             this.cbLand.Location = new System.Drawing.Point(3, 28);
             this.cbLand.Name = "cbLand";
-            this.cbLand.Size = new System.Drawing.Size(397, 31);
+            this.cbLand.Size = new System.Drawing.Size(402, 31);
             this.cbLand.TabIndex = 4;
             this.cbLand.SelectedIndexChanged += new System.EventHandler(this.CbLand_SelectedIndexChanged);
             // 
@@ -92,13 +92,16 @@
             this.lbName.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbName.Location = new System.Drawing.Point(3, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(397, 25);
+            this.lbName.Size = new System.Drawing.Size(402, 25);
             this.lbName.TabIndex = 8;
             this.lbName.Text = "New Land Holding";
             this.lbName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -126,7 +129,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(403, 269);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(408, 282);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // label4
@@ -165,7 +168,7 @@
             this.tbDiscount.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbDiscount.Location = new System.Drawing.Point(111, 100);
             this.tbDiscount.Name = "tbDiscount";
-            this.tbDiscount.Size = new System.Drawing.Size(82, 29);
+            this.tbDiscount.Size = new System.Drawing.Size(85, 29);
             this.tbDiscount.TabIndex = 12;
             this.tbDiscount.Text = "0";
             this.tbDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -179,7 +182,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(199, 97);
+            this.label3.Location = new System.Drawing.Point(202, 97);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 35);
             this.label3.TabIndex = 10;
@@ -193,9 +196,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCost.AutoSize = true;
             this.lbCost.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCost.Location = new System.Drawing.Point(317, 97);
+            this.lbCost.Location = new System.Drawing.Point(320, 97);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(83, 35);
+            this.lbCost.Size = new System.Drawing.Size(85, 35);
             this.lbCost.TabIndex = 11;
             this.lbCost.Text = "0";
             this.lbCost.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -223,7 +226,7 @@
             this.tbName.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.Location = new System.Drawing.Point(111, 65);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(289, 29);
+            this.tbName.Size = new System.Drawing.Size(294, 29);
             this.tbName.TabIndex = 11;
             // 
             // btBuy
@@ -232,11 +235,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btBuy.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btBuy.Location = new System.Drawing.Point(316, 239);
+            this.btBuy.Location = new System.Drawing.Point(319, 239);
             this.btBuy.Margin = new System.Windows.Forms.Padding(2);
             this.btBuy.MinimumSize = new System.Drawing.Size(0, 40);
             this.btBuy.Name = "btBuy";
-            this.btBuy.Size = new System.Drawing.Size(85, 40);
+            this.btBuy.Size = new System.Drawing.Size(87, 41);
             this.btBuy.TabIndex = 51;
             this.btBuy.Text = "Buy";
             this.btBuy.UseVisualStyleBackColor = true;
@@ -251,7 +254,7 @@
             this.rtbNote.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbNote.Location = new System.Drawing.Point(3, 160);
             this.rtbNote.Name = "rtbNote";
-            this.rtbNote.Size = new System.Drawing.Size(397, 74);
+            this.rtbNote.Size = new System.Drawing.Size(402, 74);
             this.rtbNote.TabIndex = 52;
             this.rtbNote.Text = "";
             // 
@@ -259,7 +262,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 293);
+            this.ClientSize = new System.Drawing.Size(432, 306);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.dgLand);
             this.Name = "NewLandForm";

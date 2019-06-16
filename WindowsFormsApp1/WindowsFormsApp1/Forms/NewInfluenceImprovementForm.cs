@@ -25,14 +25,16 @@ namespace WindowsFormsApp1.Forms
         ///// METHODS START /////////////////////////////////////////////////////////
 
         ///// METHODS END ///////////////////////////////////////////////////////////
-        public NewInfluenceImprovementForm(int houseID, string houseName, string weinfHoldingID, string infID, string holdinghName)
+        public NewInfluenceImprovementForm(int houseID, string houseName, string infHoldingID, string infID, string holdinghName)
         {
             House = new House(houseID, houseName);
+            holdingID = infHoldingID;
             influenceID = infID;
 
             InitializeComponent();
 
             Text = House.name + " New Influence Improvement";
+            lbName.Text = holdinghName;
 
             dgImprovement.DataSource = House.HouseQry("ImprovementImprovement", influenceID);
             if(dgImprovement.RowCount>0)
@@ -54,26 +56,28 @@ namespace WindowsFormsApp1.Forms
             }
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
-        private void cbInfluence_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbInfluence_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbDescription.Text = dgImprovement.Rows[cbInfluence.SelectedIndex].Cells[4].Value.ToString() + Environment.NewLine;
             lbBenefits.Text = "Benfits: " + dgImprovement.Rows[cbInfluence.SelectedIndex].Cells[5].Value.ToString();
-            tbDiscount_TextChanged(sender, e);
+            TbDiscount_TextChanged(sender, e);
         }
 
-        private void tbDiscount_TextChanged(object sender, EventArgs e)
+        private void TbDiscount_TextChanged(object sender, EventArgs e)
         {
             int cost = Convert.ToInt32(dgImprovement.Rows[cbInfluence.SelectedIndex].Cells[3].Value.ToString());
             if (tbDiscount.Text != "") { cost -= Convert.ToInt32(tbDiscount.Text); }
             lbCost.Text = cost.ToString();
         }
 
-        private void btBuy_Click(object sender, EventArgs e)
+        private void BtBuy_Click(object sender, EventArgs e)
         {
-
+            Validation.SetNullTo(tbDiscount, "0");
+            House.InsertInfluenceImprovement(dgImprovement.Rows[cbInfluence.SelectedIndex].Cells[0].Value.ToString(),holdingID,tbDiscount.Text);
+            Close();
         }
         //Validation
-        private void tbDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        private void TbDiscount_KeyPress(object sender, KeyPressEventArgs e)
         {
             Validation.OnlyDigit(e);
         }

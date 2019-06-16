@@ -228,6 +228,7 @@ namespace WindowsFormsApp1
                 discipline += Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[34].Value);
                 unitCost[unit].Text = cost.ToString();
                 unitDiscipline[unit].Text = discipline.ToString();
+                if (unitType[unit].Text == "Garrison") { unitDiscipline[unit].Text += "/" + (discipline + 6); }
             }
         }
 

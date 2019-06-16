@@ -22,7 +22,7 @@ namespace WindowsFormsApp1.Forms
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
-        public NewWealthImprovementForm(int houseID, string houseName, string wealthHoldingID,string weaID, string wealthName)
+        public NewWealthImprovementForm(int houseID, string houseName, string wealthHoldingID,string weaID, string wealthName, bool limit)
         {
             House = new House(houseID , houseName);
             holdingID = wealthHoldingID;
@@ -31,12 +31,21 @@ namespace WindowsFormsApp1.Forms
             InitializeComponent();
 
             lbName.Text = wealthName + " New Wealth Improvement";
-            dgImprovement.DataSource = House.HouseQry("WealthImprovement", wealthID);
+            if(limit)
+            {
+                dgImprovement.DataSource = House.HouseQry("WealthImprovementLimit", wealthID);
+            }
+            else
+            {
+                dgImprovement.DataSource = House.HouseQry("WealthImprovement", wealthID);
+            }
+            
             object[] improvement = new object[dgImprovement.RowCount];
             string item;
             for (int i = 0; i < dgImprovement.RowCount; i++)
             {
                 item = dgImprovement.Rows[i].Cells[2].Value.ToString();
+                if (dgImprovement.Rows[i].Cells[3].Value.ToString() == "False") { item += "*"; }
                 if (Convert.ToInt32(dgImprovement.Rows[i].Cells[4].Value) > 0) { item += " Wea: " + dgImprovement.Rows[i].Cells[4].Value.ToString(); }
                 if (Convert.ToInt32(dgImprovement.Rows[i].Cells[5].Value) > 0) { item += " Def: " + dgImprovement.Rows[i].Cells[5].Value.ToString(); }
                 if (Convert.ToInt32(dgImprovement.Rows[i].Cells[6].Value) > 0) { item += " Lan: " + dgImprovement.Rows[i].Cells[6].Value.ToString(); }

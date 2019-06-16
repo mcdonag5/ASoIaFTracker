@@ -21,8 +21,7 @@ namespace WindowsFormsApp1
         }
         public void OpenLog()
         {
-            Form devForm = new Form();
-            devForm.Text = "DevLogs";
+            Form devForm = new Form { Text = "DevLogs" };
             RichTextBox rtbDevLogs = new RichTextBox();
             Timer timerRefreshDevLogs = new Timer
             {

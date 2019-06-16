@@ -98,6 +98,7 @@ namespace WindowsFormsApp1.Forms
             CostUpdate();
             int discipline = Convert.ToInt32(dgTraining.Rows[cbTraining.SelectedIndex].Cells[2].Value) + Convert.ToInt32(dgType.Rows[cbType.SelectedIndex].Cells[3].Value);
             lbDiscipText1.Text = discipline.ToString();
+            if (cbType.Text == "Garrison - Pow: 2") { lbDiscipText1.Text += "/" + (discipline + 6); }
             UpdateExperience();
 
             Armor();

@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         public int currentIndex;
         public string lastWealthPlace = "";
         public string lastHoldingID = "";
+        public bool wealthImprovementLimit = false;
 
         int[] costs;
         public bool dorne;
@@ -33,9 +34,10 @@ namespace WindowsFormsApp1
         Button[] addDelete;
         Label[] addDesc;
 
-        String[] influenceComboBox1 = new string[] { "Influence", "Heir" };
+        string[] influenceComboBox1 = new string[] { "Influence", "Heir" };
         //Classes
         DevLog DevLog = new DevLog();
+        Functions Functions = new Functions();
         House House;
         //Forms
         NewLandForm newLandForm;
@@ -45,6 +47,7 @@ namespace WindowsFormsApp1
         NewWealthImprovementForm NewWealthImprovement;
         NewHeirForm NewHeirForm;
         NewInfluenceForm NewInfluenceForm;
+        NewInfluenceImprovementForm NewInfluenceImprovementForm;
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
@@ -64,7 +67,7 @@ namespace WindowsFormsApp1
                                 DevLog.LogItem("Found changes and updating Land");
                                 House.UpdateLandDetails(Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), tbName.Text, rtbNotes.Text);
                                 dgLand.DataSource = House.HouseQry("LandHolding");
-                                cb1.Items[currentIndex] = dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString();
+                                cb1.Items[currentIndex] = Functions.HoldingName(dgLand.Rows[currentIndex].Cells[9].Value.ToString(), dgLand.Rows[currentIndex].Cells[4].Value.ToString());
                             }
                             for (int i = 0; i < addType.Length && i < dgImp.RowCount; i++)
                             {
@@ -81,7 +84,7 @@ namespace WindowsFormsApp1
                                 DevLog.LogItem("Found changes and updating Defense");
                                 House.UpdateDefenseDetails(dgDef.Rows[currentIndex].Cells[0].Value.ToString(), tbName.Text, rtbNotes.Text, chbBuilt.Checked.ToString());
                                 dgDef.DataSource = House.HouseQry("DefenseHolding", dgLand.Rows[cb1.SelectedIndex].Cells[1].Value.ToString());
-                                cb2.Items[currentIndex] = dgDef.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgDef.Rows[currentIndex].Cells[3].Value.ToString();
+                                cb2.Items[currentIndex] = Functions.HoldingName(dgDef.Rows[currentIndex].Cells[9].Value.ToString(),dgDef.Rows[currentIndex].Cells[3].Value.ToString());
                             }
                             break;
                         case "Feature":
@@ -90,7 +93,7 @@ namespace WindowsFormsApp1
                                 DevLog.LogItem("Found changes and updating Feature");
                                 House.UpdateLandFeatureDetails(dgLandFea.Rows[currentIndex].Cells[0].Value.ToString(), tbName.Text, rtbNotes.Text);
                                 dgLandFea.DataSource = House.HouseQry("LandHoldingCommunity", dgLand.Rows[cb1.SelectedIndex].Cells[1].Value.ToString());
-                                cb2.Items[currentIndex + dgDef.RowCount] = dgLandFea.Rows[currentIndex].Cells[6].Value.ToString() + "-" + dgLandFea.Rows[currentIndex].Cells[3].Value.ToString();
+                                cb2.Items[currentIndex + dgDef.RowCount] = Functions.HoldingName(dgLandFea.Rows[currentIndex].Cells[6].Value.ToString(), dgLandFea.Rows[currentIndex].Cells[3].Value.ToString());
                             }
                             break;
                         case "Wealth":
@@ -100,7 +103,7 @@ namespace WindowsFormsApp1
                                 DevLog.LogItem("Found changes and updating Wealth Holding");
                                 House.UpdateWealthDetails(dgWea.Rows[currentIndex].Cells[1].Value.ToString(), tbName.Text, rtbNotes.Text, chbBuilt.Checked.ToString());
                                 dgWea.DataSource = House.WealthHolding(lastWealthPlace, lastHoldingID);
-                                cb3.Items[currentIndex] = dgWea.Rows[currentIndex].Cells[12].Value.ToString() + "-" + dgWea.Rows[currentIndex].Cells[6].Value.ToString();
+                                cb3.Items[currentIndex] = Functions.HoldingName(dgWea.Rows[currentIndex].Cells[12].Value.ToString(), dgWea.Rows[currentIndex].Cells[6].Value.ToString());
                             }
                             for (int i = 0; i < addType.Length && i < dgImp.RowCount; i++)
                             {
@@ -123,7 +126,7 @@ namespace WindowsFormsApp1
                                 DevLog.LogItem("Found change: updating");
                                 House.UpdateInfluenceHoldings(dgInfluence.Rows[currentIndex].Cells[1].Value.ToString(), tbName.Text, rtbNotes.Text);
                                 dgInfluence.DataSource = House.HouseQry("InfluenceHoldings");
-                                cb2.Items[currentIndex] = dgHeir.Rows[currentIndex].Cells[2].Value.ToString();
+                                cb2.Items[currentIndex] = Functions.HoldingName(dgInfluence.Rows[currentIndex].Cells[10].Value.ToString(), dgInfluence.Rows[currentIndex].Cells[4].Value.ToString());
                             }
                             break;
                         case "Heir":
@@ -149,8 +152,6 @@ namespace WindowsFormsApp1
                         tsddbNewInf.Visible = false;
 
                         cb3.Visible = true;
-                        
-                        UpdateLandComboBox();
                         break;
                     case "Influence":
                         tsddbNewLand.Visible = false;
@@ -290,6 +291,7 @@ namespace WindowsFormsApp1
                             costPow += Convert.ToInt32(dgWea.Rows[cb3.SelectedIndex].Cells[18].Value);
 
                             dgImp.DataSource = House.HouseQry("WealthHoldingImprovement", dgWea.Rows[cb3.SelectedIndex].Cells[1].Value.ToString());
+                            bool limit = false;
                             for (int i = 0; i < addType.Length && i < dgImp.RowCount; i++)
                             {
                                 costWea += Convert.ToInt32(dgImp.Rows[i].Cells[10].Value);
@@ -302,8 +304,10 @@ namespace WindowsFormsApp1
 
                                 addBulit[i].Checked = dgImp.Rows[i].Cells[4].Value.ToString() == "True" ? true : false;
                                 addType[i].Text = dgImp.Rows[i].Cells[8].Value.ToString();
+                                if (dgImp.Rows[i].Cells[9].Value.ToString() == "True") { limit = true; } else { addType[i].Text += "*"; }
                                 addDesc[i].Text = dgImp.Rows[i].Cells[17].Value.ToString() + Environment.NewLine + Environment.NewLine + dgImp.Rows[i].Cells[18].Value.ToString() + Environment.NewLine;
                             }
+                            wealthImprovementLimit = limit;
                             break;
                         default:
                             landFeatureToolStripMenuItem.Enabled = false;
@@ -312,6 +316,10 @@ namespace WindowsFormsApp1
                             wealthImprovementToolStripMenuItem.Enabled = false;
 
                             tsbDeleteCurrent.Enabled = false;
+                            cb1.Items.Clear();
+                            cb2.Items.Clear();
+                            cb3.Items.Clear();
+                            UpdateLandComboBox();
                             break;
                     }
                     break;
@@ -330,7 +338,7 @@ namespace WindowsFormsApp1
                             costInf = Convert.ToInt32(dgInfluence.Rows[currentIndex].Cells[11].Value) - Convert.ToInt32(dgInfluence.Rows[currentIndex].Cells[7].Value);
                             tbName.Text = dgInfluence.Rows[currentIndex].Cells[4].Value.ToString();
                             lbDesc.Text = dgInfluence.Rows[currentIndex].Cells[12].Value.ToString();
-                            lbBenfits.Text = Environment.NewLine + Environment.NewLine + "Benfit: " + dgInfluence.Rows[currentIndex].Cells[13].Value.ToString();
+                            lbBenfits.Text = Environment.NewLine + "Benfit: " + dgInfluence.Rows[currentIndex].Cells[13].Value.ToString();
                             rtbNotes.Text = dgInfluence.Rows[currentIndex].Cells[6].Value.ToString();
                             dgInflImp.DataSource = House.HouseQry("InfluenceHolding", dgInfluence.Rows[currentIndex].Cells[1].Value.ToString());
                             for (int i = 0; i < addType.Length && i < dgInflImp.RowCount; i++)
@@ -358,6 +366,8 @@ namespace WindowsFormsApp1
                         default:
                             tsbDeleteCurrent.Enabled = false;
                             infImpprovmentToolStripMenuItem.Enabled = false;
+                            cb1.SelectedIndex = -1;
+                            cb1.SelectedIndex = 0;
                             break;
                     }
                     break;
@@ -381,7 +391,7 @@ namespace WindowsFormsApp1
 
             for (int i = 0; i < dgLand.RowCount; i++)
             {
-                landHoldings[i] = dgLand.Rows[i].Cells[9].Value.ToString() + "-" + dgLand.Rows[i].Cells[4].Value.ToString();
+                landHoldings[i] = Functions.HoldingName(dgLand.Rows[i].Cells[9].Value.ToString(), dgLand.Rows[i].Cells[4].Value.ToString());
             }
             cb1.Items.Clear();
             cb1.Items.AddRange(landHoldings);
@@ -396,12 +406,11 @@ namespace WindowsFormsApp1
             object[] landFeaDefHoldings = new object[dgLandFea.RowCount + dgDef.RowCount];
             for (int i = 0; i < dgDef.RowCount; i++)
             {
-                landFeaDefHoldings[i] = dgDef.Rows[i].Cells[9].Value.ToString() + "-" + dgDef.Rows[i].Cells[3].Value.ToString();
+                landFeaDefHoldings[i] = Functions.HoldingName(dgDef.Rows[i].Cells[9].Value.ToString(), dgDef.Rows[i].Cells[3].Value.ToString());
             }
             for (int i = 0; i < dgLandFea.RowCount; i++)
             {
-                DevLog.LogItem(dgLandFea.Rows[i].Cells[7].Value.ToString() + "-" + dgLandFea.Rows[i].Cells[3].Value.ToString());
-                landFeaDefHoldings[i + dgDef.RowCount] = dgLandFea.Rows[i].Cells[6].Value.ToString() + "-" + dgLandFea.Rows[i].Cells[3].Value.ToString();
+                landFeaDefHoldings[i + dgDef.RowCount] = Functions.HoldingName(dgLandFea.Rows[i].Cells[6].Value.ToString(), dgLandFea.Rows[i].Cells[3].Value.ToString());
             }
             cb2.Items.Clear();
             cb2.Items.AddRange(landFeaDefHoldings);
@@ -415,7 +424,7 @@ namespace WindowsFormsApp1
             object[] weaHoldings = new object[dgWea.RowCount];
             for (int i = 0; i < dgWea.RowCount; i++)
             {
-                weaHoldings[i] = dgWea.Rows[i].Cells[12].Value.ToString() + "-" + dgWea.Rows[i].Cells[6].Value.ToString();
+                weaHoldings[i] = Functions.HoldingName(dgWea.Rows[i].Cells[12].Value.ToString(), dgWea.Rows[i].Cells[6].Value.ToString());
             }
             cb3.Items.Clear();
             cb3.Items.AddRange(weaHoldings);
@@ -429,7 +438,7 @@ namespace WindowsFormsApp1
                 object[] influence = new object[dgInfluence.RowCount];
                 for (int i = 0; i < dgInfluence.RowCount; i++)
                 {
-                    influence[i] = dgInfluence.Rows[i].Cells[10].Value.ToString() + "-" + dgInfluence.Rows[i].Cells[4].Value.ToString();
+                    influence[i] = Functions.HoldingName(dgInfluence.Rows[i].Cells[10].Value.ToString(), dgInfluence.Rows[i].Cells[4].Value.ToString());
                 }
                 cb2.Items.Clear();
                 cb2.Items.AddRange(influence);
@@ -526,7 +535,7 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-                ChangeHolding(holdingType, "");
+                ChangeHolding(holdingType, currentView);
             if (Visible == false) { Visible = true; }
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
@@ -541,7 +550,6 @@ namespace WindowsFormsApp1
                         ChangeHolding(holdingType, "Land");
                         break;
                     case "Influence":
-                        ChangeHolding(holdingType, "");
                         switch (cb1.Text)
                         {
                             case "Influence":
@@ -589,9 +597,19 @@ namespace WindowsFormsApp1
             }
         }
         //Stripmenu
-        private void LandHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        //View
+        private void ToolStripMenuIViewLand_Click(object sender, EventArgs e)
         {
             ChangeHolding("Land", "");
+        }
+
+        private void ToolStripMenuViewInf_Click(object sender, EventArgs e)
+        {
+            ChangeHolding("Influence", "");
+        }
+        //New Land
+        private void LandHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             newLandForm = new NewLandForm(House.ID,House.name);
             newLandForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             this.Visible = false;
@@ -600,7 +618,6 @@ namespace WindowsFormsApp1
 
         private void LandFeatureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangeHolding("Land", "");
             newLandFeatureForm = new NewLandFeatureForm(House.ID, House.name, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
             newLandFeatureForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
@@ -609,7 +626,6 @@ namespace WindowsFormsApp1
 
         private void DefenseHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangeHolding("Land", "");
             newDefenseForm = new NewDefenseForm(House.ID,House.name, Convert.ToInt32(dgLand.Rows[currentIndex].Cells[1].Value), dgLand.Rows[currentIndex].Cells[9].Value.ToString() + "-" + dgLand.Rows[currentIndex].Cells[4].Value.ToString());
             newDefenseForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
@@ -637,12 +653,11 @@ namespace WindowsFormsApp1
                     break;
                 case "Feature":
                     place = "LanHolFea_ID";
-                    ID = dgLand.Rows[cb1.SelectedIndex].Cells[1].Value.ToString();
-                    placeName = dgLand.Rows[cb1.SelectedIndex].Cells[9].Value.ToString();
-                    if (dgLand.Rows[currentIndex].Cells[4].Value.ToString() != "") { placeName += " - " + dgLand.Rows[currentIndex].Cells[4].Value.ToString(); }
+                    ID = dgLandFea.Rows[currentIndex].Cells[0].Value.ToString();
+                    placeName = dgLandFea.Rows[currentIndex].Cells[6].Value.ToString();
+                    if (dgLandFea.Rows[currentIndex].Cells[3].Value.ToString() != "") { placeName += " - " + dgLandFea.Rows[currentIndex].Cells[3].Value.ToString(); }
                     break;
             }
-            ChangeHolding("Land", "");
             NewWealthForm = new NewWealthForm(House.ID, House.name, place, ID, placeName);
             NewWealthForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
@@ -653,12 +668,12 @@ namespace WindowsFormsApp1
         {
             string name = dgWea.Rows[currentIndex].Cells[12].Value.ToString();
             if(dgWea.Rows[currentIndex].Cells[6].Value.ToString() != "") { name += "-"+dgWea.Rows[currentIndex].Cells[6].Value.ToString(); }
-            NewWealthImprovement = new NewWealthImprovementForm(House.ID, House.name, dgWea.Rows[currentIndex].Cells[1].Value.ToString(), dgWea.Rows[currentIndex].Cells[2].Value.ToString(),name);
+            NewWealthImprovement = new NewWealthImprovementForm(House.ID, House.name, dgWea.Rows[currentIndex].Cells[1].Value.ToString(), dgWea.Rows[currentIndex].Cells[2].Value.ToString(),name,wealthImprovementLimit);
             NewWealthImprovement.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             NewWealthImprovement.ShowDialog();
         }
-
+        //New Inf
         private void InfluenceHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ChangeHolding(holdingType, "");
@@ -670,7 +685,12 @@ namespace WindowsFormsApp1
 
         private void InfImpprovmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            string name = dgInfluence.Rows[currentIndex].Cells[10].Value.ToString();
+            if (dgInfluence.Rows[currentIndex].Cells[4].Value.ToString() != "") { name += "-" + dgInfluence.Rows[currentIndex].Cells[4].Value.ToString(); }
+            NewInfluenceImprovementForm = new NewInfluenceImprovementForm(House.ID, House.name, dgInfluence.Rows[currentIndex].Cells[1].Value.ToString(), dgInfluence.Rows[currentIndex].Cells[2].Value.ToString(), name);
+            NewInfluenceImprovementForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
+            Visible = false;
+            NewInfluenceImprovementForm.ShowDialog();
         }
 
         private void HeirHoldingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -680,17 +700,6 @@ namespace WindowsFormsApp1
             NewHeirForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
             NewHeirForm.ShowDialog();
-        }
-        //Closing
-        private void LandsHolForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            ChangeHolding("","");
-            if (newLandForm != null) { newLandForm.Close(); }
-            if (newLandFeatureForm != null) { newLandFeatureForm.Close(); }
-            if (newDefenseForm != null) { newDefenseForm.Close(); }
-            if (NewWealthForm != null) { NewWealthForm.Close(); }
-            if (NewWealthImprovement != null) { NewWealthImprovement.Close(); }
-            if (NewHeirForm != null) { NewHeirForm.Close(); }
         }
         //Deleting
         private void BtAddDelete1_Click(object sender, EventArgs e)
@@ -720,34 +729,149 @@ namespace WindowsFormsApp1
 
         private void TsbDeleteCurrent_Click(object sender, EventArgs e)
         {
-            switch(currentView)
+            string x;
+            string name;
+            DialogResult dialogResult;
+            switch (currentView)
             {
                 case "Land":
-
+                    if (dgWea.RowCount > 0 || dgDef.RowCount > 0 || dgLandFea.RowCount > 0)
+                    {
+                        MessageBox.Show("You need to delete all holdings on this holding before deleting.");
+                    }
+                    else
+                    {
+                        x = dgLand.Rows[currentIndex].Cells[1].Value.ToString();
+                        name = dgLand.Rows[currentIndex].Cells[9].Value.ToString();
+                        if (dgLand.Rows[currentIndex].Cells[4].Value.ToString() != "") { name += " - " + dgLand.Rows[currentIndex].Cells[4].Value.ToString(); }
+                        DevLog.LogItem("Show yes no messagebox");
+                        dialogResult = MessageBox.Show("Are you sure you want to delete " + name + " and all features? ID: " + x + ".", "Delete Wealth Holding", MessageBoxButtons.YesNo);
+                        switch (dialogResult)
+                        {
+                            case DialogResult.Yes:
+                                DevLog.LogItem("Clicked yes on messagebox");
+                                for (int i = 0; i < dgImp.RowCount; i++)
+                                {
+                                    House.DeleteLandFeature(dgImp.Rows[i].Cells[0].Value.ToString());
+                                }
+                                House.DeleteLand(x);
+                                ChangeHolding("Land", "");
+                                Visible = true;
+                                break;
+                            case DialogResult.No:
+                                DevLog.LogItem("Clicked no on messagebox");
+                                break;
+                        }
+                    }
                     break;
                 case "Defense":
-
+                    if (dgWea.RowCount > 0)
+                    {
+                        MessageBox.Show("You need to delete all holdings on this holding before deleting.");
+                    }
+                    else
+                    {
+                        x = dgDef.Rows[currentIndex].Cells[0].Value.ToString(); ;
+                        name = dgDef.Rows[currentIndex].Cells[9].Value.ToString();
+                        if (dgDef.Rows[currentIndex].Cells[3].Value.ToString() != "") { name += " - " + dgDef.Rows[currentIndex].Cells[3].Value.ToString(); }
+                        DevLog.LogItem("Show yes no messagebox");
+                        dialogResult = MessageBox.Show("Are you sure you want to delete " + name + "? ID: " + x + ".", "Delete Wealth Holding", MessageBoxButtons.YesNo);
+                        switch (dialogResult)
+                        {
+                            case DialogResult.Yes:
+                                DevLog.LogItem("Clicked yes on messagebox");
+                                House.DeleteDefense(x);
+                                ChangeHolding("Land", "");
+                                Visible = true;
+                                break;
+                            case DialogResult.No:
+                                DevLog.LogItem("Clicked no on messagebox");
+                                break;
+                        }
+                    }
                     break;
                 case "Feature":
-
+                    if (dgWea.RowCount > 0)
+                    {
+                        MessageBox.Show("You need to delete all holdings on this holding before deleting.");
+                    }
+                    else
+                    {
+                        x = dgLandFea.Rows[currentIndex].Cells[0].Value.ToString();
+                        name = dgLandFea.Rows[currentIndex].Cells[6].Value.ToString();
+                        if (dgLandFea.Rows[currentIndex].Cells[3].Value.ToString() != "") { name += " - " + dgLandFea.Rows[currentIndex].Cells[3].Value.ToString(); }
+                        DevLog.LogItem("Show yes no messagebox");
+                        dialogResult = MessageBox.Show("Are you sure you want to delete " + name + "? ID: " + x + ".", "Delete Wealth Holding", MessageBoxButtons.YesNo);
+                        switch (dialogResult)
+                        {
+                            case DialogResult.Yes:
+                                DevLog.LogItem("Clicked yes on messagebox");
+                                House.DeleteLandFeature(x);
+                                ChangeHolding("Land", "");
+                                Visible = true;
+                                break;
+                            case DialogResult.No:
+                                DevLog.LogItem("Clicked no on messagebox");
+                                break;
+                        }
+                    }
                     break;
                 case "Wealth":
-
+                    x = dgWea.Rows[currentIndex].Cells[1].Value.ToString();
+                    name = dgWea.Rows[currentIndex].Cells[12].Value.ToString();
+                    if (dgWea.Rows[currentIndex].Cells[6].Value.ToString() != "") { name += " - " + dgWea.Rows[currentIndex].Cells[6].Value.ToString(); }
+                    DevLog.LogItem("Show yes no messagebox");
+                    dialogResult = MessageBox.Show("Are you sure you want to delete " + name + " and all improvements? ID: " + x + ".", "Delete Wealth Holding", MessageBoxButtons.YesNo);
+                    switch (dialogResult)
+                    {
+                        case DialogResult.Yes:
+                            DevLog.LogItem("Clicked yes on messagebox");
+                            for (int i = 0; i < dgImp.RowCount; i++)
+                            {
+                                House.DeleteWealthImprovement(dgImp.Rows[i].Cells[1].Value.ToString());
+                            }
+                            House.DeleteWealth(x);
+                            ChangeHolding("Land", "");
+                            Visible = true;
+                            break;
+                        case DialogResult.No:
+                            DevLog.LogItem("Clicked no on messagebox");
+                            break;
+                    }
                     break;
                 case "Influence":
-                    
+                    x = dgInfluence.Rows[currentIndex].Cells[1].Value.ToString();
+                    name = dgInfluence.Rows[currentIndex].Cells[10].Value.ToString();
+                    if (dgInfluence.Rows[currentIndex].Cells[4].Value.ToString()!= "") { name += " - " + dgInfluence.Rows[currentIndex].Cells[4].Value.ToString(); }
+                    DevLog.LogItem("Show yes no messagebox");
+                    dialogResult = MessageBox.Show("Are you sure you want to delete " + name + " and all improvements? ID: " + x + ".", "Delete Influence Holding", MessageBoxButtons.YesNo);
+                    switch (dialogResult)
+                    {
+                        case DialogResult.Yes:
+                            DevLog.LogItem("Clicked yes on messagebox");
+                            for(int i = 0;i< dgInflImp.RowCount;i++)
+                            {
+                                House.DeleteInfluenceImprovement(dgInflImp.Rows[i].Cells[0].Value.ToString());
+                            }
+                            House.DeleteInfluence(x);
+                            ChangeHolding("Influence", "");
+                            Visible = true;
+                            break;
+                        case DialogResult.No:
+                            DevLog.LogItem("Clicked no on messagebox");
+                            break;
+                    }
                     break;
                 case "Heir":
-                    int x = Convert.ToInt32(dgHeir.Rows[currentIndex].Cells[0].Value);
+                    x = dgHeir.Rows[currentIndex].Cells[0].Value.ToString();
                     DevLog.LogItem("Show yes no messagebox");
-                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to remove " + dgHeir.Rows[currentIndex].Cells[2].Value.ToString() + ". ID: " + x + ".", "Delete Heir", MessageBoxButtons.YesNo);
+                    dialogResult = MessageBox.Show("Are you sure you want to delete " + dgHeir.Rows[currentIndex].Cells[2].Value.ToString() + "? ID: " + x + ".", "Delete Heir", MessageBoxButtons.YesNo);
                     switch (dialogResult)
                     {
                         case DialogResult.Yes:
                             DevLog.LogItem("Clicked yes on messagebox");
                             House.DeleteHeir(x);
-                            cb1.SelectedIndex = -1;
-                            cb1.SelectedIndex = 1;
+                            ChangeHolding("Influence", "");
                             Visible = true;
                             break;
                         case DialogResult.No:
@@ -757,16 +881,20 @@ namespace WindowsFormsApp1
                     break;
             }
         }
-
-        private void ToolStripMenuIViewLand_Click(object sender, EventArgs e)
+        //Closing
+        private void LandsHolForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ChangeHolding("Land", "");
+            ChangeHolding("", "");
+            if (newLandForm != null) { newLandForm.Close(); }
+            if (newLandFeatureForm != null) { newLandFeatureForm.Close(); }
+            if (newDefenseForm != null) { newDefenseForm.Close(); }
+            if (NewWealthForm != null) { NewWealthForm.Close(); }
+            if (NewWealthImprovement != null) { NewWealthImprovement.Close(); }
+            if (NewHeirForm != null) { NewHeirForm.Close(); }
+            if (NewInfluenceForm != null) { NewInfluenceForm.Close(); }
+            if (NewInfluenceImprovementForm != null) { NewInfluenceImprovementForm.Close(); }
         }
 
-        private void ToolStripMenuViewInf_Click(object sender, EventArgs e)
-        {
-            ChangeHolding("Influence", "");
-        }
 
 
 

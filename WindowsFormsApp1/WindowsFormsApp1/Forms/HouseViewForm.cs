@@ -52,6 +52,7 @@ namespace WindowsFormsApp1
         DevLog DevLog = new DevLog();
         Validation Validation = new Validation();
         House House;
+        Functions Functions = new Functions();
         //forms
         LandsHolForm landsHolForm;
         PowerHolForm powerHolForm;
@@ -148,7 +149,7 @@ namespace WindowsFormsApp1
                 }
                 houPow -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[33].Value) + traningCost - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[5].Value);
 
-                powerHoldings += dgHouseDetails.Rows[i].Cells[4].Value.ToString() + " " + dgHouseDetails.Rows[i].Cells[32].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[3].Value.ToString() + Environment.NewLine;
+                powerHoldings += Functions.HoldingName(dgHouseDetails.Rows[i].Cells[4].Value.ToString() + " " + dgHouseDetails.Rows[i].Cells[32].Value.ToString(), dgHouseDetails.Rows[i].Cells[3].Value.ToString()) + Environment.NewLine;
             }
             DevLog.LogItem("Getting Banners");
 
@@ -181,12 +182,12 @@ namespace WindowsFormsApp1
                 houLawMit += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[21].Value);
                 houPopMit += Convert.ToInt32(dgHouseDetails.Rows[i].Cells[22].Value);
 
-                influenceHoldings += dgHouseDetails.Rows[i].Cells[10].Value.ToString() + " - " + dgHouseDetails.Rows[i].Cells[4].Value.ToString() + Environment.NewLine;
+                influenceHoldings += Functions.HoldingName(dgHouseDetails.Rows[i].Cells[10].Value.ToString(), dgHouseDetails.Rows[i].Cells[4].Value.ToString()) + Environment.NewLine;
                 dgCal1.DataSource = House.HouseQry("InfluenceHolding", dgHouseDetails.Rows[i].Cells[1].Value.ToString());
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {//Imp Table
                     houInf -= Convert.ToInt32(dgCal1.Rows[n].Cells[8].Value)- Convert.ToInt32(dgCal1.Rows[n].Cells[4].Value);
-                    influenceHoldings += "       " + dgCal1.Rows[n].Cells[7].Value.ToString() + Environment.NewLine;
+                    influenceHoldings += "    " + dgCal1.Rows[n].Cells[7].Value.ToString() + Environment.NewLine;
                 }
             }
             //Heir table
@@ -231,14 +232,13 @@ namespace WindowsFormsApp1
             for (int i = 0; i < dgHouseDetails.RowCount; i++)
             {
                 houLan -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[10].Value) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[6].Value);
-                landHoldings += dgHouseDetails.Rows[i].Cells[9].Value.ToString() + "-" + dgHouseDetails.Rows[i].Cells[4].Value.ToString() + Environment.NewLine;
+                landHoldings += Functions.HoldingName(dgHouseDetails.Rows[i].Cells[9].Value.ToString(), dgHouseDetails.Rows[i].Cells[4].Value.ToString()) + Environment.NewLine;
                 //Land Features
                 dgCal1.DataSource = House.HouseQry("LandHoldingFeature", dgHouseDetails.Rows[i].Cells[1].Value.ToString());
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {
                     houLan -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
-                    landHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString();
-                    if (dgCal1.Rows[n].Cells[3].Value.ToString() != "") { landHoldings += " - " + dgCal1.Rows[n].Cells[3].Value.ToString() + Environment.NewLine; }
+                    landHoldings += "      " + Functions.HoldingName(dgCal1.Rows[n].Cells[6].Value.ToString(), dgCal1.Rows[n].Cells[3].Value.ToString()) + Environment.NewLine;
                 }
                 //Wealth Holdings on Land (Estate)
                 CheckWealthHolding("LanHol_ID", Convert.ToInt32(dgHouseDetails.Rows[i].Cells[1].Value.ToString()), 1, "          ");
@@ -252,14 +252,11 @@ namespace WindowsFormsApp1
                 {
                     houLan -= Convert.ToInt32(dgCal1.Rows[n].Cells[7].Value);
                     houPop -= Convert.ToInt32(dgCal1.Rows[n].Cells[8].Value);
-                    landHoldings += "       " + dgCal1.Rows[n].Cells[6].Value.ToString();
-                    if (dgCal1.Rows[n].Cells[3].Value.ToString() != "") { landHoldings += " - " + dgCal1.Rows[n].Cells[3].Value.ToString(); }
-                    landHoldings += Environment.NewLine;
-
+                    landHoldings += "    " + Functions.HoldingName(dgCal1.Rows[n].Cells[6].Value.ToString(), dgCal1.Rows[n].Cells[3].Value.ToString()) + Environment.NewLine;
 
                     //Wealth holding in LandHolFea
-                    CheckWealthHolding("LanHolFea_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 1, "           ");
-                    CheckWealthHolding("LanHolFea_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 0, "           ");
+                    CheckWealthHolding("LanHolFea_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 1, "        ");
+                    CheckWealthHolding("LanHolFea_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 0, "        ");
 
                 }
                 //Wealth holdings in Def
@@ -267,14 +264,12 @@ namespace WindowsFormsApp1
                 for (int n = 0; n < dgCal1.RowCount - 1; n++)
                 {
                     houDef -= Convert.ToInt32(dgCal1.Rows[n].Cells[10].Value) - Convert.ToInt32(dgCal1.Rows[n].Cells[6].Value);
-                    landHoldings += "    " + dgCal1.Rows[n].Cells[9].Value.ToString();
-                    if(dgCal1.Rows[n].Cells[3].Value.ToString() != "") { landHoldings += " - " + dgCal1.Rows[n].Cells[3].Value.ToString(); }
-                    landHoldings += Environment.NewLine;
+                    landHoldings += "    " + Functions.HoldingName(dgCal1.Rows[n].Cells[9].Value.ToString(), dgCal1.Rows[n].Cells[3].Value.ToString()) + Environment.NewLine;
 
 
                     //Wealth holding in LandHolFea
-                    CheckWealthHolding("DefHol_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 1, "         ");
-                    CheckWealthHolding("DefHol_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 0, "         ");
+                    CheckWealthHolding("DefHol_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 1, "        ");
+                    CheckWealthHolding("DefHol_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 0, "        ");
 
                 }
 
@@ -349,9 +344,7 @@ namespace WindowsFormsApp1
                 }
                 else { landHoldings += "B: "; }
 
-                landHoldings += dgCal2.Rows[n].Cells[12].Value.ToString();
-                if (dgCal2.Rows[n].Cells[6].Value.ToString() != "") { landHoldings += " - " + dgCal2.Rows[n].Cells[6].Value.ToString(); }
-                landHoldings += Environment.NewLine;
+                landHoldings += Functions.HoldingName(dgCal2.Rows[n].Cells[12].Value.ToString(), dgCal2.Rows[n].Cells[6].Value.ToString()) + Environment.NewLine;
 
                 dgCal3.DataSource = House.HouseQry("WealthHoldingImprovement", dgCal2.Rows[n].Cells[1].Value.ToString());
                 for (int t = 0; t < dgCal3.RowCount - 1; t++)
@@ -361,7 +354,7 @@ namespace WindowsFormsApp1
                     houLan -= Convert.ToInt32(dgCal3.Rows[t].Cells[12].Value);
                     houPow -= Convert.ToInt32(dgCal3.Rows[t].Cells[13].Value);
                     houInf -= Convert.ToInt32(dgCal3.Rows[t].Cells[14].Value);
-                    landHoldings += indent + "   ";
+                    landHoldings += indent + "    ";
                     if (Convert.ToInt32(dgCal3.Rows[t].Cells[4].Value) == 1)
                     {
                         houHF += Convert.ToInt32(dgCal3.Rows[t].Cells[19].Value);
@@ -385,8 +378,9 @@ namespace WindowsFormsApp1
                     else { landHoldings += "B: "; }
 
 
-                    landHoldings += dgCal3.Rows[t].Cells[8].Value.ToString() + Environment.NewLine;
-
+                    landHoldings += dgCal3.Rows[t].Cells[8].Value.ToString();
+                    if(dgCal3.Rows[t].Cells[9].Value.ToString() == "False") { landHoldings += "*"; }
+                    landHoldings += Environment.NewLine;
                 }
 
             }

@@ -194,6 +194,10 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT * FROM `tbl_WealthImprovement` "+
                             "WHERE `Wea_ID` = '"+ holdingID+"'";
                         break;
+                    case "WealthImprovementLimit":
+                        qry = "SELECT * FROM `tbl_WealthImprovement` " +
+                            "WHERE `Wea_ID` = '" + holdingID + "' AND `WeaImp_Limit` = 0";
+                        break;
                     //tbl_InfluenceImprovemnt
                     case "ImprovementImprovement":
                         qry = "SELECT * FROM `tbl_InfluenceImprovemnt` " +
@@ -332,6 +336,17 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_InfluenceHoldings` (`Hou_ID`, `Inf_ID`, `InfHol_Name`, `InfHol_Note`, `InfHol_Discount`) " +
                     "VALUES ('" + ID + "','" + infID + "', '" + name + "', '" + note + "', '" + discount + "');";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        public void InsertInfluenceImprovement(string infImpID, string infHolID, string discount)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_InfluenceHoldingImprovement` (`InfImp_ID`, `InfHol_ID`, `InfHolImp_Discount`) " +
+                    "VALUES ('" + infImpID + "','" + infHolID + "', '" + discount + "');";
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -553,6 +568,19 @@ namespace WindowsFormsApp1.Classes
             }
         }
         ///// DELETE ////////////////////////////////////////////////////////////////
+        //tbl_LandHolding
+        public void DeleteLand(string lanID)
+        {
+            DevLog.LogItem("Deleting from tbl_LandHolding ID: " + lanID);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_LandHolding`" +
+                    "WHERE `LanHol_ID` = '" + lanID + "';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_LandHoldingFeature
         public void DeleteLandFeature(string landFeaID)
         {
@@ -566,6 +594,19 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_WealthHolding
+        public void DeleteWealth(string WeaHolID)
+        {
+            DevLog.LogItem("Deleting from tbl_WealthHolding ID: " + WeaHolID);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_WealthHolding`" +
+                    "WHERE `WeaHol_ID` = '" + WeaHolID + "';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_WealthHoldingImprovement
         public void DeleteWealthImprovement(string WeaImpID)
         {
@@ -575,6 +616,32 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_WealthHoldingImprovement`" +
                     "WHERE `WeaHolImp_ID` = '" + WeaImpID + "';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_DefenseHolding
+        public void DeleteDefense(string defHolID)
+        {
+            DevLog.LogItem("Deleting from tbl_DefenseHolding ID: " + defHolID);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_DefenseHolding`" +
+                    "WHERE `DefHol_ID` = '" + defHolID + "';";
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_InfluenceHoldings
+        public void DeleteInfluence(string infHolID)
+        {
+            DevLog.LogItem("Deleting from tbl_InfluenceHoldings ID: " + infHolID);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_InfluenceHoldings`" +
+                    "WHERE `InfHol_ID` = '" + infHolID + "';";
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -593,7 +660,7 @@ namespace WindowsFormsApp1.Classes
             }
         }
         //tbl_Heir
-        public void DeleteHeir(int heirID)
+        public void DeleteHeir(string heirID)
         {
             DevLog.LogItem("Deleting from tbl_Heir ID: " + heirID);
             if (mysqlConn.ConnOpen())
