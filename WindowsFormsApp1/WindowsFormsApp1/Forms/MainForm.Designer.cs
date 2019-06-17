@@ -127,21 +127,21 @@
             // devLogToolStripMenuItem
             // 
             this.devLogToolStripMenuItem.Name = "devLogToolStripMenuItem";
-            this.devLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.devLogToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.devLogToolStripMenuItem.Text = "DevLog";
             this.devLogToolStripMenuItem.Click += new System.EventHandler(this.TsbMenuDevLog_Click);
             // 
             // tsbseeTestHouses
             // 
             this.tsbseeTestHouses.Name = "tsbseeTestHouses";
-            this.tsbseeTestHouses.Size = new System.Drawing.Size(180, 22);
+            this.tsbseeTestHouses.Size = new System.Drawing.Size(158, 22);
             this.tsbseeTestHouses.Text = "See Test Houses";
             this.tsbseeTestHouses.Click += new System.EventHandler(this.TsbseeTestHouses_Click);
             // 
             // tsmQryHelper
             // 
             this.tsmQryHelper.Name = "tsmQryHelper";
-            this.tsmQryHelper.Size = new System.Drawing.Size(180, 22);
+            this.tsmQryHelper.Size = new System.Drawing.Size(158, 22);
             this.tsmQryHelper.Text = "Qry Helper";
             this.tsmQryHelper.Click += new System.EventHandler(this.GetQryNumberToolStripMenuItem_Click);
             // 

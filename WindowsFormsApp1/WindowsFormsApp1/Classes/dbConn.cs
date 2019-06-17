@@ -12,8 +12,6 @@ namespace WindowsFormsApp1
 {
     class DbConn
     {
-        //Notes//
-
         //DB config//
         private string VarConfigServer { get; set; }
         private string VarConfigDatabase { get; set; }
@@ -26,11 +24,10 @@ namespace WindowsFormsApp1
 
         public bool LogIn(string username, string password)
         {
-            bool correct = false;
-            VarConfigUser = "mcdonag5_" + username;
+            VarConfigUser = "mcdonag_" + username;
             VarConfigPass = password;
             Connect();
-            correct = ConnOpen();
+            bool correct = ConnOpen();
             ConnClose();
             return correct;
         }

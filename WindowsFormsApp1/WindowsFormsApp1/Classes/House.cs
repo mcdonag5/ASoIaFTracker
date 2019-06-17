@@ -9,11 +9,14 @@ namespace WindowsFormsApp1.Classes
 {
     class House
     {
+        ///// VARIABLES START ///////////////////////////////////////////////////////
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
         public readonly int ID;
         public string name;
+        ///// VARIABLES END /////////////////////////////////////////////////////////
 
+        ///// INITIALIZER ///////////////////////////////////////////////////////////
         public House()
         {
             mysqlConn.DbConfig(); //sets database settings
@@ -144,7 +147,7 @@ namespace WindowsFormsApp1.Classes
                             "ORDER BY `tbl_Influence`.`Inf_Name` ASC";
                         break;
                 }
-
+                DevLog.LogItem(qry);
                 return mysqlConn.Qry(qry).Tables[0];
             }
             return mysqlConn.Qry(qry).Tables[0];
@@ -204,12 +207,12 @@ namespace WindowsFormsApp1.Classes
                             "WHERE `Inf_ID` = '" + holdingID + "'";
                         break;
                 }
-
+                DevLog.LogItem(qry);
                 return mysqlConn.Qry(qry).Tables[0];
             }
             return mysqlConn.Qry(qry).Tables[0];
         }
-
+        //tbl_House
         public object HouseTableQry()
         {
             DevLog.LogItem("Wealth Holding sql run");
@@ -220,6 +223,7 @@ namespace WindowsFormsApp1.Classes
                     "FROM `tbl_House`"+
                     "WHERE `Hou_Player` != 'Test' " +
                     "ORDER BY `tbl_House`.`Hou_Name` ASC";
+                DevLog.LogItem(qry);
                 return mysqlConn.Qry(qry).Tables[0];
             }
             return mysqlConn.Qry(qry).Tables[0];
@@ -235,11 +239,12 @@ namespace WindowsFormsApp1.Classes
                     "FROM `tbl_House`" +
                     "WHERE `" + column + "` = '" + condition + "' " +
                     "ORDER BY `tbl_House`.`Hou_Name` ASC";
-
+                DevLog.LogItem(qry);
                 return mysqlConn.Qry(qry).Tables[0];
             }
             return mysqlConn.Qry(qry).Tables[0];
         }
+        //tbl_WealthHolding
         public object WealthHolding(string place, string ID)
         {
             DevLog.LogItem("Wealth Holding sql run");
@@ -249,11 +254,12 @@ namespace WindowsFormsApp1.Classes
                 qry = "SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* " +
                     "FROM `tbl_WealthHolding`, `tbl_Wealth` " +
                     "WHERE `tbl_WealthHolding`.`" + place + "` = '" + ID + "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID`;";
-
+                DevLog.LogItem(qry);
                 return mysqlConn.Qry(qry).Tables[0];
             }
             return mysqlConn.Qry(qry).Tables[0];
         }
+
         public object WealthHolding(string place, string ID, int space)
         {
             DevLog.LogItem("Wealth Holding sql run");
@@ -263,67 +269,82 @@ namespace WindowsFormsApp1.Classes
                 qry = "SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* " +
                     "FROM `tbl_WealthHolding`, `tbl_Wealth` " +
                     "WHERE `tbl_WealthHolding`.`" + place + "` = '" + ID + "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID` AND `tbl_Wealth`.`Wea_TakesSpace` = '" + space + "';";
-
+                DevLog.LogItem(qry);
                 return mysqlConn.Qry(qry).Tables[0];
             }
             return mysqlConn.Qry(qry).Tables[0];
         }
 
         ///// INSERT ////////////////////////////////////////////////////////////////
+        //tbl_LandHolding
         public void InsertLandHolding(string landID, string name, string note, string discount)
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert Land Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_LandHolding` (`Hou_ID`, `Lan_ID`, `LanHol_Name`, `LanHol_Note`, `LanHol_Discount`) "+
                     "VALUES ('"+ID+"', '"+ landID+"', '"+name+"', '"+note+"', '"+discount+"');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_LandHoldingFeature
         public void InsertLandFeatureHolding (string landFeaID,string landHolID, string name, string notes)
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert Land Feature Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_LandHoldingFeature` (`LanFea_ID`, `LanHol_ID`, `LanHolFea_Name`, `LanHolFea_Note`) "+
                     "VALUES ('"+landFeaID+"', '"+landHolID+"', '"+name+"', '"+notes+"');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_DefenseHolding
         public void InsertDefenseHolding(string defID, string landHolID, string name, string built, string notes, string discount)
         {
             built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert Defense Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_DefenseHolding` (`Def_ID`, `LanHol_ID`, `DefHol_Name`, `DefHol_Built`, `DefHol_Notes`, `DefHol_Discount`) "+
                     "VALUES ('"+defID+"', '"+landHolID+"', '"+name+"', '"+ built+"', '"+notes+"', '"+discount+"');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_WealthHolding
         public void InsertWealthHolding(string WeaID, string place, string placeID, string name, string built, string notes, string discount)
         {
             built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert Wealth Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_WealthHolding` (`Wea_ID`, `"+place+"`, `WeaHol_Name`, `WeaHol_Built`, `WeaHol_Note`, `WeaHol_Discount`) "+
                     "VALUES ('"+WeaID+"', '"+placeID+"', '"+name+"', '"+built+"', '"+notes+"', '"+ discount+"');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_WealthHoldingImprovement
         public void InsertWealthImprovementHolding(string WeaHolID, string weaImpID, string built)
         {
             built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert Wealth Improvement Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_WealthHoldingImprovement` (`WeaHol_ID`, `WeaImp_ID`, `WeaHolImp_Built`) "+
                     "VALUES ('"+WeaHolID+"', '"+weaImpID+"', '"+built+"');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -333,35 +354,44 @@ namespace WindowsFormsApp1.Classes
         {
             if (mysqlConn.ConnOpen()) 
             {
+                DevLog.LogItem("Insert Influence Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_InfluenceHoldings` (`Hou_ID`, `Inf_ID`, `InfHol_Name`, `InfHol_Note`, `InfHol_Discount`) " +
                     "VALUES ('" + ID + "','" + infID + "', '" + name + "', '" + note + "', '" + discount + "');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_InfluenceHoldingImprovement
         public void InsertInfluenceImprovement(string infImpID, string infHolID, string discount)
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert Influence Improvement Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_InfluenceHoldingImprovement` (`InfImp_ID`, `InfHol_ID`, `InfHolImp_Discount`) " +
                     "VALUES ('" + infImpID + "','" + infHolID + "', '" + discount + "');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_Heir
         public void InsertHeir(string name, string gender, string note)
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert Heir Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_Heir` (`Hou_ID`, `Hei_Name`, `Hei_Gender`, `Hei_Note`) " +
                     "VALUES ('"+ID+"','" + name + "', '" + gender + "', '" + note + "');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_PowerHolding
         public void InsertPower(string unitID, string name, string discount, string training, string notes, string armorUpg, string fightUpg, string marksUpg, string agility, string animal, string athletics, string awareness, string cunning, string endurance, string fighting, string healing, string language, string knowledge, string marksmanship, string persuasion, string status, string stealth, string survival, string thievery, string warfare, string will)
         {
             armorUpg = armorUpg == "True" ? "1" : "0";
@@ -369,6 +399,7 @@ namespace WindowsFormsApp1.Classes
             marksUpg = marksUpg == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert Power Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_PowerHolding` (`Uni_ID`,`Hou_ID`,`PowHol_Name`,`PowHol_Discount`, `PowHol_Training`, `PowHol_Notes`, `PowHol_ArmorUp`, `PowHol_FightingUp`, `PowHol_MarksmashipUp`,`PowHol_Agility`, `PowHol_AnimalHand`, `PowHol_Athletics`, `PowHol_Awareness`, `PowHol_Cunning`, `PowHol_Endurance`, `PowHol_Fighting`, `PowHol_Healing`, `PowHol_Language`, `PowHol_Knowledge`, `PowHol_Marksmanship`, `PowHol_Persuasion`, `PowHol_Status`, `PowHol_Stealth`, `PowHol_Survival`, `PowHol_Thievery`, `PowHol_Warfare`, `PowHol_Will`)" +
                     "VALUES('"+unitID+ "','" + ID + "','" + name + "','" + discount + "','" + training + "','" + notes + "','" + armorUpg + "','" + fightUpg + "','" + marksUpg + "','" + agility + "','" + animal + "','" + athletics + "','" + awareness + "','" + cunning + "','" + endurance + "','" + fighting + "','" + healing + "','" + language + "','" + knowledge + "','" + marksmanship + "','" + persuasion + "','" + status + "','" + stealth + "','" + survival + "','" + thievery + "','" + warfare + "','" + will + "')";
@@ -377,26 +408,32 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_Banner
         public void InsertBanners(int bannerHouse)
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert Banner Holding");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_Banner` (`HouLie_ID`, `HouBan_ID`) "+
                     "VALUES ('"+ID+"', '"+ bannerHouse+"');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_HouseChanges
         public void InsertHouseChanges (int year, int month,string roll, string fortune,int wealthHF,int wealthOther,int powerHF, int powerOther,int populationHF,int populationOther, int lawHF,int lawOther, int landsHF,int landsOther,int influenceHF,int influenceOther,int defenseHF,int defenseOther)
         {
 
             if (roll == "") { roll = "null"; } else { roll = "'" + roll + "'"; }
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Insert House Change");
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_HouseChanges` (`Hou_ID`,`HouCha_Year`,`HouCha_Month`,`HouCha_Roll`,`HouCha_Fortune`,`HouCha_WealthHF`,`HouCha_WealthOther`,`HouCha_PowerHF`,`HouCha_PowerOther`,`HouCha_PopulationHF`,`HouCha_PopulationOther`,`HouCha_LawHF`,`HouCha_LawOther`,`HouCha_LandsHF`,`HouCha_LandsOther`,`HouCha_InfluenceHF`,`HouCha_InfluenceOther`,`HouCha_DefenseHF`,`HouCha_DefenseOther`) "+
                     "VALUES ('"+ID+ "','"+year+"', '"+month+"', "+roll+", '"+fortune+"', '"+wealthHF+"', '"+wealthOther+"', '"+powerHF+"', '"+powerOther+"', '"+populationHF+"', '"+populationOther+"', '"+lawHF+"', '"+lawOther+"', '"+landsHF+"', '"+landsOther+"', '"+influenceHF+"', '"+influenceOther+"', '"+defenseHF+"', '"+defenseOther+"');";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -408,10 +445,12 @@ namespace WindowsFormsApp1.Classes
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update House Details ID: "+ID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_House` " +
                     "SET `Hou_Name` = '" + name + "', `Hou_Player` = '" + player + "', `Rea_Name` = '" + realm + "', `Hou_SeatOfPower` = '" + seatOfPower + "', `Hou_LiegeLord` = '" + liegeLord + "', `Hou_Liege` = '" + liege + "' " +
                     "WHERE `Hou_ID` = '" + ID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -421,90 +460,104 @@ namespace WindowsFormsApp1.Classes
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update House Resources ID: "+ID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_House` " +
                     "SET `Hou_Wealth` = '"+wealth+"', `Hou_Power` = '"+power+"', `Hou_Population` = '"+population+"', `Hou_Law` = '"+law+"', `Hou_Lands` = '"+lands+"', `Hou_Influence` = '"+influence+"', `Hou_Defense` = '"+defense+"' "+
                     "WHERE `Hou_ID` = '"+ID+"'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
         //tbl_HouseChanges
-        public void UpdateHouseChanges(int HouChaID,int roll, string fortune, int wealthHF, int wealthOther, int powerHF, int powerOther, int populationHF, int populationOther, int lawHF, int lawOther, int landsHF, int landsOther, int influenceHF, int influenceOther, int defenseHF, int defenseOther)
+        public void UpdateHouseChanges(int houChaID,int roll, string fortune, int wealthHF, int wealthOther, int powerHF, int powerOther, int populationHF, int populationOther, int lawHF, int lawOther, int landsHF, int landsOther, int influenceHF, int influenceOther, int defenseHF, int defenseOther)
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update House Change ID: "+ houChaID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_HouseChanges` " +
                     "SET `HouCha_Roll` = '" + roll + "', `HouCha_Fortune` = '" + fortune + "', `HouCha_WealthHF` = '" + wealthHF + "', `HouCha_WealthOther` = '" + wealthOther + "', `HouCha_PowerHF` = '" + powerHF + "', `HouCha_PowerOther` = '" + powerOther + "', `HouCha_PopulationHF` = '" + populationHF + "', `HouCha_PopulationOther` = '" + populationOther + "', `HouCha_LawHF` = '" + lawHF + "', `HouCha_LawOther` = '" + lawOther + "', `HouCha_LandsHF` = '" + landsHF + "', `HouCha_LandsOther` = '" + landsOther + "', `HouCha_InfluenceHF` = '" + influenceHF + "', `HouCha_InfluenceOther` = '" + influenceOther + "', `HouCha_DefenseHF` = '" + defenseHF + "', `HouCha_DefenseOther` = '" + defenseOther + "' " +
-                    "WHERE `HouCha_ID` = '" + HouChaID + "'";
+                    "WHERE `HouCha_ID` = '" + houChaID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
         //tbl_LandHolding
-        public void UpdateLandDetails(int LanHolID, string name, string notes)
+        public void UpdateLandDetails(int lanHolID, string name, string notes)
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update land Holding ID: "+ lanHolID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_LandHolding` " +
                     "SET `LanHol_Name` = '" + name + "', `LanHol_Note` = '" + notes + "' " +
-                    "WHERE `LanHol_ID` = '" + LanHolID + "'";
+                    "WHERE `LanHol_ID` = '" + lanHolID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
         //tbl_LandHoldingFeature
-        public void UpdateLandFeatureDetails(string LanHolFeaID, string name)
+        public void UpdateLandFeatureDetails(string lanHolFeaID, string name)
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update land Feature Holding with notes ID: " + lanHolFeaID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
                     "SET `LanHolFea_Name` = '" + name + "' " +
-                    "WHERE `LanHolFea_ID` = '" + LanHolFeaID + "'";
+                    "WHERE `LanHolFea_ID` = '" + lanHolFeaID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
         //tbl_DefenseHolding
-        public void UpdateDefenseDetails(string DefHolID, string name, string notes, string built)
+        public void UpdateDefenseDetails(string defHolID, string name, string notes, string built)
         {
             built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update Defense Holding ID: "+ defHolID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_DefenseHolding` " +
                     "SET `DefHol_Name` = '" + name + "', `DefHol_Notes` = '" + notes + "', `DefHol_Built` = '" + built + "' " +
-                    "WHERE `DefHol_ID` = '" + DefHolID + "'";
+                    "WHERE `DefHol_ID` = '" + defHolID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
         //tbl_LandHoldingFeature
-        public void UpdateLandFeatureDetails(string LanHolFeaID, string name, string notes)
+        public void UpdateLandFeatureDetails(string lanHolFeaID, string name, string notes)
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update land Holding with out notes ID: " + lanHolFeaID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
                     "SET `LanHolFea_Name` = '" + name + "', `LanHolFea_Note` = '" + notes + "' " +
-                    "WHERE `LanHolFea_ID` = '" + LanHolFeaID + "'";
+                    "WHERE `LanHolFea_ID` = '" + lanHolFeaID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
         //tbl_WealthHolding
-        public void UpdateWealthDetails(string WeaHolID, string name, string notes, string built)
+        public void UpdateWealthDetails(string weaHolID, string name, string notes, string built)
         {
             built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update Wealth Holding ID: "+ weaHolID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_WealthHolding` " +
                     "SET `WeaHol_Name` = '" + name + "', `WeaHol_Note` = '" + notes + "', `WeaHol_Built` = '" + built + "' " +
-                    "WHERE `WeaHol_ID` = '" + WeaHolID + "'";
+                    "WHERE `WeaHol_ID` = '" + weaHolID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -515,11 +568,12 @@ namespace WindowsFormsApp1.Classes
             built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update Wealth Improvement Holding ID: "+ WeaHolImpID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_WealthHoldingImprovement` " +
                     "SET `WeaHolImp_Built` = '" + built + "' " +
                     "WHERE `WeaHolImp_ID` = '" + WeaHolImpID + "'";
-                DevLog.LogItem(comm.CommandText.ToString());
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -529,10 +583,12 @@ namespace WindowsFormsApp1.Classes
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update Influence Holding ID: "+infHolID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_InfluenceHoldings` " +
                     "SET `InfHol_Name` = '" + name + "', `InfHol_Note` = '" + notes + "' " +
                     "WHERE `InfHol_ID` = '" + infHolID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -542,27 +598,31 @@ namespace WindowsFormsApp1.Classes
         {
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update Heir Holding ID: "+heirID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_Heir` " +
                     "SET `Hei_Name` = '" + name + "', `Hei_Note` = '" + notes + "' " +
                     "WHERE `Hei_ID` = '" + heirID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
         }
         //tbl_PowerHolding
-        public void UpdatePowerHolding(string PowHolID, string name, string training, string damage, string disorganized, string notes, string armorUpg, string fightUpg, string marksUpg, string agility, string animal, string athletics, string awareness, string cunning, string endurance, string fighting, string healing, string language, string knowledge, string marksmanship, string persuasion, string status, string stealth, string survival, string thievery, string warfare, string will)
+        public void UpdatePowerHolding(string powHolID, string name, string training, string damage, string disorganized, string notes, string armorUpg, string fightUpg, string marksUpg, string agility, string animal, string athletics, string awareness, string cunning, string endurance, string fighting, string healing, string language, string knowledge, string marksmanship, string persuasion, string status, string stealth, string survival, string thievery, string warfare, string will)
         {
             armorUpg = armorUpg == "True" ? "1" : "0";
             fightUpg = fightUpg == "True" ? "1" : "0";
             marksUpg = marksUpg == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
+                DevLog.LogItem("Update Power Holding ID: " + powHolID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_PowerHolding` " +
                     "SET `PowHol_Name` = '" + name + "', `PowHol_Training` = '" + training + "', `PowHol_Damage` = '" + damage + "', `PowHol_Disorganized` = '" + disorganized + "', `PowHol_Notes` = '" + notes + "', `PowHol_ArmorUp` = '" + armorUpg + "', `PowHol_FightingUp` = '" + fightUpg + "', `PowHol_MarksmashipUp` = '" + marksUpg + "', " +
                     "`PowHol_Agility` = '" + agility + "', `PowHol_AnimalHand` = '" + animal + "', `PowHol_Athletics` = '" + athletics + "', `PowHol_Awareness` = '" + awareness + "', `PowHol_Cunning` = '" + cunning + "', `PowHol_Endurance` = '" + endurance + "', `PowHol_Fighting` = '" + fighting + "', `PowHol_Healing` = '" + healing + "', `PowHol_Language` = '" + language + "', `PowHol_Knowledge` = '" + knowledge + "', `PowHol_Marksmanship` = '" + marksmanship + "', `PowHol_Persuasion` = '" + persuasion + "', `PowHol_Status` = '" + status + "', `PowHol_Stealth` = '" + stealth + "', `PowHol_Survival` = '" + survival + "', `PowHol_Thievery` = '" + thievery + "', `PowHol_Warfare` = '" + warfare + "', `PowHol_Will` = '" + will + "' " +
-                    "WHERE `PowHol_ID` = '" + PowHolID + "'";
+                    "WHERE `PowHol_ID` = '" + powHolID + "'";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -577,6 +637,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_LandHolding`" +
                     "WHERE `LanHol_ID` = '" + lanID + "';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -590,6 +651,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_LandHoldingFeature`" +
                     "WHERE `LanHolFea_ID` = '" + landFeaID + "';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -603,6 +665,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_WealthHolding`" +
                     "WHERE `WeaHol_ID` = '" + WeaHolID + "';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -616,6 +679,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_WealthHoldingImprovement`" +
                     "WHERE `WeaHolImp_ID` = '" + WeaImpID + "';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -629,6 +693,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_DefenseHolding`" +
                     "WHERE `DefHol_ID` = '" + defHolID + "';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -642,6 +707,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_InfluenceHoldings`" +
                     "WHERE `InfHol_ID` = '" + infHolID + "';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -655,6 +721,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_InfluenceHoldingImprovement`" +
                     "WHERE `InfHolImp_ID` = '" + infImpID + "';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -668,6 +735,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_Heir`" +
                     "WHERE `Hei_ID` = '" + heirID + "';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -681,6 +749,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_Banner`" +
                     "WHERE `HouLie_ID` = '"+ID+"' AND `HouBan_ID` = '"+ bannerHouse+"';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }
@@ -694,6 +763,7 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_PowerHolding`" +
                     "WHERE `PowHol_ID` = '" + power + "';";
+                DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
             }

@@ -15,13 +15,6 @@ namespace WindowsFormsApp1
 {
     public partial class FormMain : Form
     {
-
-        /// <sumary>
-        /// NOTES
-        /// 
-        /// </summary>
-
-
         ///// VARIABLES START //////////////////////////////////////////////////////
         DevLog DevLog = new DevLog();
         House House = new House();
@@ -30,7 +23,7 @@ namespace WindowsFormsApp1
         ///// METHODS START ////////////////////////////////////////////////////////
         public void ViewHouse()
         {
-            DevLog.LogItem("datagrid double clicked");
+            DevLog.LogItem("Opening House View Form for: " + GetSelectedHouseID());
             HouseViewForm houseForm = new HouseViewForm(GetSelectedHouseID());
             houseForm.FormClosing += new FormClosingEventHandler(this.Form1_Load);
             houseForm.Show();
@@ -47,24 +40,25 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             File.WriteAllText("DevLog.txt", String.Empty);//Clear contents of DevLog
+            DevLog.LogItem("Program started");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DevLog.LogItem("Program started");
             dgHouseDetails.DataSource = House.HouseTableQry();
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
-
+        //Datagrid
         private void DgHouseDetails_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            DevLog.LogItem("Double clicked on the datagrid");
             ViewHouse();
         }
-
-        private void PlayersToolStripMenuItem_Click(object sender, EventArgs e)
+        //Tool strip
+        private void TsbAllHouses_Click(object sender, EventArgs e)
         {
-            DevLog.LogItem("Player tool strip item clicked");
-            dgHouseDetails.DataSource = House.HouseTableQry("Hou_Player", (sender as ToolStripMenuItem).Text);
+            DevLog.LogItem("All houses button clicked");
+            dgHouseDetails.DataSource = House.HouseTableQry();
         }
 
         private void TsbCreateHouse_Click(object sender, EventArgs e)
@@ -74,33 +68,17 @@ namespace WindowsFormsApp1
             createHouseForm.ShowDialog();
         }
 
-        private void TsbAllHouses_Click(object sender, EventArgs e)
-        {
-            DevLog.LogItem("All houses button clicked");
-            dgHouseDetails.DataSource = House.HouseTableQry();
-        }
-
-        private void TsbseeTestHouses_Click(object sender, EventArgs e)
-        {
-            DevLog.LogItem("See test house button pressed");
-            dgHouseDetails.DataSource = House.HouseTableQry("Hou_Player", "Test");
-        }
-
-        private void TsbMenuDevLog_Click(object sender, EventArgs e)
-        {
-            DevLog.LogItem("Devlog tool strip item clicked");
-            DevLog.OpenLog();
-        }
-
         private void TsbViewHouse_Click(object sender, EventArgs e)
         {
+            DevLog.LogItem("View house tool strip clicked");
             ViewHouse();
         }
 
         private void TsbDeleteHouse_Click(object sender, EventArgs e)
-        {
+        {//Not currently used
+            DevLog.LogItem("Delete House tool strip clicked");
             int x = GetSelectedHouseID();
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete House "+ dgHouseDetails.Rows[Convert.ToInt32(dgHouseDetails.SelectedCells[0].RowIndex)].Cells[1].Value + ". ID: "+x+".", "Delete House", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete House " + dgHouseDetails.Rows[Convert.ToInt32(dgHouseDetails.SelectedCells[0].RowIndex)].Cells[1].Value + ". ID: " + x + ".", "Delete House", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 //do something
@@ -110,9 +88,28 @@ namespace WindowsFormsApp1
                 //do something else
             }
         }
+        //Player drop down
+        private void PlayersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DevLog.LogItem("Player tool strip item clicked for " + (sender as ToolStripMenuItem).Text);
+            dgHouseDetails.DataSource = House.HouseTableQry("Hou_Player", (sender as ToolStripMenuItem).Text);
+        }
+        //Menu drop down
+        private void TsbMenuDevLog_Click(object sender, EventArgs e)
+        {
+            DevLog.LogItem("Devlog tool strip item clicked");
+            DevLog.OpenLog();
+        }
 
+        private void TsbseeTestHouses_Click(object sender, EventArgs e)
+        {
+            DevLog.LogItem("See test house button pressed");
+            dgHouseDetails.DataSource = House.HouseTableQry("Hou_Player", "Test");
+        }
+        
         private void GetQryNumberToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DevLog.LogItem("Qry Helper tool strip clicked");
             QryHelperForm qryHelper = new QryHelperForm();
             qryHelper.Show();
         }
