@@ -1,12 +1,10 @@
-/*Structure for all tables*/
-
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 16, 2019 at 08:42 AM
--- Server version: 5.7.25
+-- Generation Time: Jun 17, 2019 at 11:39 AM
+-- Server version: 5.7.26
 -- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -21,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `mcdonag5_ASoIaF`
+-- Database: `mcdonag_ASoIaF`
 --
 
 -- --------------------------------------------------------
@@ -34,6 +32,56 @@ CREATE TABLE `tbl_Banner` (
   `Ban_ID` int(11) NOT NULL,
   `HouLie_ID` int(11) NOT NULL,
   `HouBan_ID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_Character`
+--
+
+CREATE TABLE `tbl_Character` (
+  `Cha_ID` int(11) NOT NULL,
+  `Cha_FirstName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Cha_LastName` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Cha_Age` int(2) NOT NULL,
+  `Cha_Gender` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Hou_ID` int(11) DEFAULT NULL,
+  `Cha_Agility` int(1) NOT NULL DEFAULT '2',
+  `Cha_AnimalHandling` int(1) NOT NULL DEFAULT '2',
+  `Cha_Athletics` int(1) NOT NULL DEFAULT '2',
+  `Cha_Awareness` int(1) NOT NULL DEFAULT '2',
+  `Cha_Cunning` int(1) NOT NULL DEFAULT '2',
+  `Cha_Deception` int(1) NOT NULL DEFAULT '2',
+  `Cha_Endurance` int(1) NOT NULL DEFAULT '2',
+  `Cha_Fighting` int(1) NOT NULL DEFAULT '2',
+  `Cha_Healing` int(1) NOT NULL DEFAULT '2',
+  `Cha_Language` int(1) NOT NULL DEFAULT '2',
+  `Cha_Knowledge` int(1) NOT NULL DEFAULT '2',
+  `Cha_Marksmanship` int(1) NOT NULL DEFAULT '2',
+  `Cha_Persuasion` int(1) NOT NULL DEFAULT '2',
+  `Cha_Status` int(1) NOT NULL DEFAULT '2',
+  `Cha_Stealth` int(1) NOT NULL DEFAULT '2',
+  `Cha_Survival` int(1) NOT NULL DEFAULT '2',
+  `Cha_Thievery` int(1) NOT NULL DEFAULT '2',
+  `Cha_Warfare` int(1) NOT NULL DEFAULT '2',
+  `Cha_Will` int(1) NOT NULL DEFAULT '2',
+  `Cha_IntrigueDefenseModifier` int(2) NOT NULL DEFAULT '0',
+  `Cha_ComposureModifier` int(2) NOT NULL DEFAULT '0',
+  `Cha_ComposureDamage` int(2) NOT NULL DEFAULT '0',
+  `Cha_CombatDefenseModifier` int(2) NOT NULL DEFAULT '0',
+  `Cha_HealthModifier` int(2) NOT NULL DEFAULT '0',
+  `Cha_Damage` int(2) NOT NULL DEFAULT '0',
+  `Cha_Injuries` int(2) NOT NULL DEFAULT '0',
+  `Cha_Wounds` int(2) NOT NULL DEFAULT '0',
+  `Cha_Goal` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Cha_Motivation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Cha_Virtue` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Cha_Vice` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Cha_XP` int(3) DEFAULT '0',
+  `Cha_Glory` int(2) DEFAULT '0',
+  `Cha_Coin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Cha_DescriptionHistory` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -63,6 +111,7 @@ CREATE TABLE `tbl_DefenseHolding` (
   `Def_ID` int(11) NOT NULL,
   `LanHol_ID` int(11) NOT NULL,
   `DefHol_Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `DefHol_Built` tinyint(1) NOT NULL,
   `DefHol_Notes` text COLLATE utf8mb4_unicode_ci,
   `DefHol_Discount` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -77,7 +126,8 @@ CREATE TABLE `tbl_Heir` (
   `Hei_ID` int(11) NOT NULL,
   `Hou_ID` int(11) NOT NULL,
   `Hei_Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Hei_Gender` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL
+  `Hei_Gender` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Hei_Note` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -188,7 +238,8 @@ CREATE TABLE `tbl_InfluenceHoldingImprovement` (
   `InfHolImp_ID` int(11) NOT NULL,
   `InfImp_ID` int(11) NOT NULL,
   `InfHol_ID` int(11) NOT NULL,
-  `InfHolImp_Built` tinyint(1) DEFAULT NULL
+  `InfHolImp_Built` tinyint(1) DEFAULT '1',
+  `InfHolImp_Discount` int(2) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -202,7 +253,7 @@ CREATE TABLE `tbl_InfluenceHoldings` (
   `Inf_ID` int(11) NOT NULL,
   `Hou_ID` int(11) NOT NULL,
   `InfHol_Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `InfHol_Built` tinyint(1) DEFAULT NULL,
+  `InfHol_Built` tinyint(1) DEFAULT '1',
   `InfHol_Note` text COLLATE utf8mb4_unicode_ci,
   `InfHol_Discount` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -289,7 +340,7 @@ CREATE TABLE `tbl_PowerHolding` (
   `Hou_ID` int(11) NOT NULL,
   `PowHol_Name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `PowHol_Training` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `PowHol_Discount` int(2) NOT NULL,
+  `PowHol_Discount` int(2) NOT NULL DEFAULT '0',
   `PowHol_Agility` int(1) NOT NULL DEFAULT '2',
   `PowHol_AnimalHand` int(1) NOT NULL DEFAULT '2',
   `PowHol_Athletics` int(1) NOT NULL DEFAULT '2',
@@ -308,9 +359,9 @@ CREATE TABLE `tbl_PowerHolding` (
   `PowHol_Thievery` int(1) NOT NULL DEFAULT '2',
   `PowHol_Warfare` int(1) NOT NULL DEFAULT '2',
   `PowHol_Will` int(1) NOT NULL DEFAULT '2',
-  `PowHol_ArmorUp` tinyint(1) DEFAULT NULL,
-  `PowHol_FightingUp` tinyint(1) DEFAULT NULL,
-  `PowHol_MarksmashipUp` tinyint(1) DEFAULT NULL,
+  `PowHol_ArmorUp` tinyint(1) NOT NULL,
+  `PowHol_FightingUp` tinyint(1) NOT NULL,
+  `PowHol_MarksmashipUp` tinyint(1) NOT NULL,
   `PowHol_Damage` int(2) NOT NULL DEFAULT '0',
   `PowHol_Disorganized` int(2) NOT NULL DEFAULT '0',
   `PowHol_Notes` text COLLATE utf8mb4_unicode_ci NOT NULL
@@ -385,10 +436,10 @@ CREATE TABLE `tbl_UnitType` (
   `Uni_UpArmorPenalty` int(2) DEFAULT NULL,
   `Uni_Bulk` int(2) DEFAULT NULL,
   `Uni_UpBulk` int(2) DEFAULT NULL,
-  `Uni_FightingDamage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Uni_UpFightingDamage` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Uni_MarksmanshipDamage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `Uni_UpMarksmanshipDamage` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Uni_FightingDamage` int(255) NOT NULL,
+  `Uni_UpFightingDamage` int(255) NOT NULL,
+  `Uni_MarksmanshipDamage` int(255) DEFAULT NULL,
+  `Uni_UpMarksmanshipDamage` int(255) DEFAULT NULL,
   `Uni_MarksmanshipRange` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -514,6 +565,14 @@ ALTER TABLE `tbl_Banner`
   ADD UNIQUE KEY `Ban_ID` (`Ban_ID`),
   ADD KEY `HouLie_ID` (`HouLie_ID`),
   ADD KEY `HouBan_ID` (`HouBan_ID`);
+
+--
+-- Indexes for table `tbl_Character`
+--
+ALTER TABLE `tbl_Character`
+  ADD PRIMARY KEY (`Cha_ID`),
+  ADD UNIQUE KEY `Cha_ID` (`Cha_ID`),
+  ADD KEY `Hou_ID` (`Hou_ID`);
 
 --
 -- Indexes for table `tbl_Defense`
@@ -838,6 +897,12 @@ ALTER TABLE `tbl_WealthImprovement`
 ALTER TABLE `tbl_Banner`
   ADD CONSTRAINT `tbl_Banner_ibfk_1` FOREIGN KEY (`HouLie_ID`) REFERENCES `tbl_House` (`Hou_ID`),
   ADD CONSTRAINT `tbl_Banner_ibfk_2` FOREIGN KEY (`HouBan_ID`) REFERENCES `tbl_House` (`Hou_ID`);
+
+--
+-- Constraints for table `tbl_Character`
+--
+ALTER TABLE `tbl_Character`
+  ADD CONSTRAINT `tbl_Character_ibfk_1` FOREIGN KEY (`Hou_ID`) REFERENCES `tbl_House` (`Hou_ID`);
 
 --
 -- Constraints for table `tbl_DefenseHolding`
