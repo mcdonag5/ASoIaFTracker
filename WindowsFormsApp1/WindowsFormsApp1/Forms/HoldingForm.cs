@@ -79,7 +79,8 @@ namespace WindowsFormsApp1
                             }
                             break;
                         case "Defense":
-                            if (tbName.Text != dgDef.Rows[currentIndex].Cells[3].Value.ToString() || rtbNotes.Text != dgLand.Rows[currentIndex].Cells[5].Value.ToString() || dgDef.Rows[currentIndex].Cells[4].Value.ToString() != chbBuilt.Checked.ToString())
+                            DevLog.LogItem(dgDef.Rows[currentIndex].Cells[4].Value.ToString() + " != " + chbBuilt.Checked.ToString());
+                            if (tbName.Text != dgDef.Rows[currentIndex].Cells[3].Value.ToString() || rtbNotes.Text != dgDef.Rows[currentIndex].Cells[5].Value.ToString() || dgDef.Rows[currentIndex].Cells[4].Value.ToString() != chbBuilt.Checked.ToString())
                             {
                                 DevLog.LogItem("Found changes and updating Defense");
                                 House.UpdateDefenseDetails(dgDef.Rows[currentIndex].Cells[0].Value.ToString(), tbName.Text, rtbNotes.Text, chbBuilt.Checked.ToString());
