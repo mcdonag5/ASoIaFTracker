@@ -38,6 +38,7 @@ namespace WindowsFormsApp1
         //Classes
         DevLog DevLog = new DevLog();
         Functions Functions = new Functions();
+        Validation Validation = new Validation();
         House House;
         //Forms
         NewLandForm newLandForm;
@@ -170,8 +171,11 @@ namespace WindowsFormsApp1
             }
 
             currentView = holding;
-           
+
             //clear form
+            lbHoldingType1.Text = "";
+            lbHoldingType2.Text = "";
+            lbHoldingType3.Text = "";
             lbTypeName.Text = "";
             lbCost.Text = "";
             chbBuilt.Visible = false;
@@ -323,9 +327,14 @@ namespace WindowsFormsApp1
                             UpdateLandComboBox();
                             break;
                     }
+                    //set cb labels
+                    if(cb1.Items.Count > 0) { lbHoldingType1.Text = "Land Holdings"; }
+                    if(cb2.Items.Count > 0) { lbHoldingType2.Text = "Community and Defense Holdings"; }
+                    if(cb3.Items.Count > 0) { lbHoldingType3.Text = "Wealth Holdings"; }
                     break;
                 //Influence Holdings
                 case "Influence":
+                    lbHoldingType1.Text = "Holding Type";
                     switch (currentView)
                     {
                         case "Influence":
@@ -335,6 +344,7 @@ namespace WindowsFormsApp1
 
                             currentIndex = cb2.SelectedIndex;
 
+                            lbHoldingType2.Text = "Influence Holdings";
                             lbTypeName.Text = dgInfluence.Rows[currentIndex].Cells[10].Value.ToString();
                             costInf = Convert.ToInt32(dgInfluence.Rows[currentIndex].Cells[11].Value) - Convert.ToInt32(dgInfluence.Rows[currentIndex].Cells[7].Value);
                             tbName.Text = dgInfluence.Rows[currentIndex].Cells[4].Value.ToString();
@@ -358,6 +368,7 @@ namespace WindowsFormsApp1
                             infImpprovmentToolStripMenuItem.Enabled = false;
                             currentIndex = cb2.SelectedIndex;
 
+                            lbHoldingType2.Text = "Heir Holdings";
                             string gender = dgHeir.Rows[currentIndex].Cells[3].Value.ToString() == "M" ? "Male" : "Female";
                             lbTypeName.Text = gender + " Heir";
                             costInf += costs[currentIndex];
@@ -371,7 +382,9 @@ namespace WindowsFormsApp1
                             cb1.SelectedIndex = 0;
                             break;
                     }
+                    lbHoldingType2.Text = cb1.Text + " Holdings";
                     break;
+                    
             }
             
             //Display Cost
@@ -551,6 +564,7 @@ namespace WindowsFormsApp1
                         ChangeHolding(holdingType, "Land");
                         break;
                     case "Influence":
+                        lbHoldingType2.Text = cb1.Text + " Holdings";
                         switch (cb1.Text)
                         {
                             case "Influence":
