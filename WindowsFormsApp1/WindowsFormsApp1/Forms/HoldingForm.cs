@@ -550,7 +550,10 @@ namespace WindowsFormsApp1
                 }
             }
                 ChangeHolding(holdingType, currentView);
-            if (Visible == false) { Visible = true; }
+            if (Visible == false)
+            {
+                Visible = true;
+            }
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
         //Combo boxes

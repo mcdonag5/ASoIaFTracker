@@ -56,6 +56,8 @@ namespace WindowsFormsApp1
         //Bowyer/Fletcher or Weaponsmith Rules
         public bool hasFletcher = false;
         public bool hasWeaponsmith = false;
+        //Criminal Syndicate rules
+        public bool hasCriminalSyndicate = false;
         //classes //
         DevLog DevLog = new DevLog();
         Validation Validation = new Validation();
@@ -319,7 +321,14 @@ namespace WindowsFormsApp1
             Validation.CheckIfSame(lbDefLossText, houDefLoss.ToString()); Validation.CheckIfSame(lbDefLossDice, BounusDiceCal(houDefLoss));
 
             Validation.CheckIfSame(lbModifierPopText, HouseModifier(Convert.ToInt32(lbTotalPopText.Text), PopModifierArry));
-            Validation.CheckIfSame(lbModifierLawText, HouseModifier(Convert.ToInt32(lbTotalLawText.Text), LawModifierArry));
+            if(!hasCriminalSyndicate)
+            {
+                Validation.CheckIfSame(lbModifierLawText, HouseModifier(Convert.ToInt32(lbTotalLawText.Text), LawModifierArry));
+            } else
+            {
+                Validation.CheckIfSame(lbModifierLawText, HouseModifier(Convert.ToInt32(lbTotalLawText.Text) + 10, LawModifierArry));
+            }
+            
             DevLog.LogItem("Updating end");
         }
 
@@ -336,10 +345,21 @@ namespace WindowsFormsApp1
                 landHoldings += indent;
                 if (Convert.ToInt32(dgCal2.Rows[n].Cells[7].Value) == 1)
                 {
-                    //check if marketplace
-                    if(dgCal2.Rows[n].Cells[12].Value.ToString()== "Marketplace") { hasMarketplace = true; }
+                    //check if wealth has extra rules 
+                    switch(dgCal2.Rows[n].Cells[12].Value.ToString())
+                    {
+                        case "Marketplace":
+                            hasMarketplace = true;
+                            break;
+                        case "Artisan Craftsman":
+                            marketplaceAdd++;
+                            break;
+                        case "Criminal Syndicate":
+                            hasCriminalSyndicate = true;
+                            break;
+                    }
                     //check if add to marketplace
-                    if (dgCal2.Rows[n].Cells[12].Value.ToString() == "Artisan Craftsman" || dgCal2.Rows[n].Cells[13].Value.ToString() == "Estate") { marketplaceAdd++; }
+                    if (dgCal2.Rows[n].Cells[13].Value.ToString() == "Estate") { marketplaceAdd++; }
 
                     houHF += Convert.ToInt32(dgCal2.Rows[n].Cells[23].Value);
                     houWeaGain += Convert.ToInt32(dgCal2.Rows[n].Cells[24].Value);
