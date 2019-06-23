@@ -306,14 +306,14 @@
             this.dgImprovement.TabIndex = 14;
             this.dgImprovement.Visible = false;
             // 
-            // NewWealthImprovement
+            // NewWealthImprovementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(712, 579);
             this.Controls.Add(this.dgImprovement);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "NewWealthImprovement";
+            this.Name = "NewWealthImprovementForm";
             this.Text = "NewWealthImprovement";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

@@ -41,19 +41,24 @@ namespace WindowsFormsApp1
         public int houDefLoss;
         public int houPopMit;
         public int houLawMit;
+
         string landHoldings;
         string powerHoldings;
         string bannerHoldings;
         string influenceHoldings;
         string heirHoldings;
+
         int[,] LawModifierArry = { { 0, 0, -20 }, { 1, 10, -10 }, { 11, 20, -5 }, { 21, 30, -2 }, { 31, 40, -1 }, { 41, 50, 0 }, { 51, 60, 1 }, { 61, 70, 2 }, { 71, 999, 5 } };
         int[,] PopModifierArry = { { 0, 0, -10 }, { 1, 10, -5 }, { 11, 20, 0 }, { 21, 30, 1 }, { 31, 40, 3 }, { 14, 50, 1 }, { 51, 60, 0 }, { 61, 70, -5 }, { 71, 999, -10 } };
-        //classes
+        //Marketplace Rules
+        public int marketplaceAdd;
+        public bool hasMarketplace;
+        //classes //
         DevLog DevLog = new DevLog();
         Validation Validation = new Validation();
         House House;
         Functions Functions = new Functions();
-        //forms
+        //forms //
         LandsHolForm landsHolForm;
         PowerHolForm powerHolForm;
         BannersHoldingsForm BannersHoldings;
@@ -231,6 +236,8 @@ namespace WindowsFormsApp1
             dgHouseDetails.DataSource = House.HouseQry("LandHolding");
             for (int i = 0; i < dgHouseDetails.RowCount; i++)
             {
+                marketplaceAdd = 0;
+                hasMarketplace = false;
                 houLan -= Convert.ToInt32(dgHouseDetails.Rows[i].Cells[10].Value) - Convert.ToInt32(dgHouseDetails.Rows[i].Cells[6].Value);
                 landHoldings += Functions.HoldingName(dgHouseDetails.Rows[i].Cells[9].Value.ToString(), dgHouseDetails.Rows[i].Cells[4].Value.ToString()) + Environment.NewLine;
                 //Land Features
@@ -272,6 +279,8 @@ namespace WindowsFormsApp1
                     CheckWealthHolding("DefHol_ID", Convert.ToInt32(dgCal1.Rows[n].Cells[0].Value.ToString()), 0, "        ");
 
                 }
+                //if the land has a marketplace add to Wea gain for every Estate and Artisan
+                if (hasMarketplace) { houWeaGain += marketplaceAdd; }
 
             }
             //set list labels
@@ -324,6 +333,11 @@ namespace WindowsFormsApp1
                 landHoldings += indent;
                 if (Convert.ToInt32(dgCal2.Rows[n].Cells[7].Value) == 1)
                 {
+                    //check if marketplace
+                    if(dgCal2.Rows[n].Cells[12].Value.ToString()== "Marketplace") { hasMarketplace = true; }
+                    //check if add to marketplace
+                    if (dgCal2.Rows[n].Cells[12].Value.ToString() == "Artisan Craftsman" || dgCal2.Rows[n].Cells[13].Value.ToString() == "Estate") { marketplaceAdd++; }
+
                     houHF += Convert.ToInt32(dgCal2.Rows[n].Cells[23].Value);
                     houWeaGain += Convert.ToInt32(dgCal2.Rows[n].Cells[24].Value);
                     houPowGain += Convert.ToInt32(dgCal2.Rows[n].Cells[25].Value);

@@ -138,7 +138,7 @@
             this.cbLandFeature.Name = "cbLandFeature";
             this.cbLandFeature.Size = new System.Drawing.Size(397, 31);
             this.cbLandFeature.TabIndex = 4;
-            this.cbLandFeature.SelectedIndexChanged += new System.EventHandler(this.cbLandFeature_SelectedIndexChanged);
+            this.cbLandFeature.SelectedIndexChanged += new System.EventHandler(this.CbLandFeature_SelectedIndexChanged);
             // 
             // lbName
             // 
@@ -169,7 +169,7 @@
             this.btBuy.TabIndex = 51;
             this.btBuy.Text = "Buy";
             this.btBuy.UseVisualStyleBackColor = true;
-            this.btBuy.Click += new System.EventHandler(this.btBuy_Click);
+            this.btBuy.Click += new System.EventHandler(this.BtBuy_Click);
             // 
             // rtbNote
             // 

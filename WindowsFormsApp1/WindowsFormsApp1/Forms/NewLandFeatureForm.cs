@@ -48,12 +48,12 @@ namespace WindowsFormsApp1.Forms
 
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
-        private void cbLandFeature_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbLandFeature_SelectedIndexChanged(object sender, EventArgs e)
         {
             rtbNote.Enabled = Convert.ToInt32(dgLandFeature.Rows[cbLandFeature.SelectedIndex].Cells[4].Value) > 0 ? true : false;
         }
 
-        private void btBuy_Click(object sender, EventArgs e)
+        private void BtBuy_Click(object sender, EventArgs e)
         {
             string notes = "";
             if(Convert.ToInt32(dgLandFeature.Rows[cbLandFeature.SelectedIndex].Cells[4].Value) > 0) { notes = rtbNote.Text; }
