@@ -53,6 +53,9 @@ namespace WindowsFormsApp1
         //Marketplace Rules
         public int marketplaceAdd;
         public bool hasMarketplace;
+        //Bowyer/Fletcher or Weaponsmith Rules
+        public bool hasFletcher = false;
+        public bool hasWeaponsmith = false;
         //classes //
         DevLog DevLog = new DevLog();
         Validation Validation = new Validation();
@@ -371,6 +374,17 @@ namespace WindowsFormsApp1
                     landHoldings += indent + "    ";
                     if (Convert.ToInt32(dgCal3.Rows[t].Cells[4].Value) == 1)
                     {
+                        //check for weapon smiths
+                        switch(dgCal3.Rows[t].Cells[8].Value.ToString())
+                        {
+                            case "Bowyer & Fletcher":
+                                hasFletcher = true;
+                                break;
+                            case "Weaponsmith":
+                                hasWeaponsmith = true;
+                                break;
+                        }
+
                         houHF += Convert.ToInt32(dgCal3.Rows[t].Cells[19].Value);
                         houWeaGain += Convert.ToInt32(dgCal3.Rows[t].Cells[20].Value);
                         houPowGain += Convert.ToInt32(dgCal3.Rows[t].Cells[21].Value);
@@ -479,7 +493,7 @@ namespace WindowsFormsApp1
 
         private void BtPowerHolForm_Click(object sender, EventArgs e)
         {
-            powerHolForm = new PowerHolForm(House.ID, House.name);
+            powerHolForm = new PowerHolForm(House.ID, House.name, hasWeaponsmith, hasFletcher);
             powerHolForm.FormClosing += new FormClosingEventHandler(HouseViewForm_Load);
             powerHolForm.VisibleChanged += new EventHandler(PowerFormVisible);
             powerHolForm.Show();

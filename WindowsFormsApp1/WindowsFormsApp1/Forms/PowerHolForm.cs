@@ -19,6 +19,9 @@ namespace WindowsFormsApp1
         int currentPage;
         int pageNum;
         int unitPageNum;
+
+        bool addFigDAM;
+        bool addMarkDAM;
         //Classes
         DbConn mysqlConn = new DbConn();
         DevLog DevLog = new DevLog();
@@ -312,6 +315,7 @@ namespace WindowsFormsApp1
                 }
                 int dmg = Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[fightingStart].Value);
                 if (unitAbilitiesTextBox[unit, 2].Text != "") { dmg += Convert.ToInt32(unitAbilitiesTextBox[unit, 2].Text); }
+                if(addFigDAM) { dmg++; }
                 unitFightDMG[unit].Text = dmg.ToString();
             }
         }
@@ -335,6 +339,7 @@ namespace WindowsFormsApp1
                 }
                 int dmg = Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[marksStart].Value);
                 if (unitAbilitiesTextBox[unit, 0].Text != "") { dmg += Convert.ToInt32(unitAbilitiesTextBox[unit, 0].Text); }
+                if(addMarkDAM) { dmg++; }
                 unitMarksDMG[unit].Text = dmg + " " + dgCal1.Rows[unit + startingNum].Cells[49].Value.ToString();
             }
             else
@@ -398,9 +403,11 @@ namespace WindowsFormsApp1
             PowerHolForm_Load(sender, e);
         }
         ///// METHODS END //////////////////////////////////////////////////////////
-        public PowerHolForm(int houseID, string houseName)
+        public PowerHolForm(int houseID, string houseName, bool hasWeaponsmith, bool hasFletcher)
         {
             House = new House(houseID,houseName);
+            addFigDAM = hasWeaponsmith;
+            addMarkDAM = hasFletcher;
 
             InitializeComponent();
             Text = House.name + " Power Holdings";
@@ -442,208 +449,208 @@ namespace WindowsFormsApp1
             Visible = true;
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
-        private void chbArmor1_CheckedChanged(object sender, EventArgs e)
+        private void ChbArmor1_CheckedChanged(object sender, EventArgs e)
         {
             UnitArmor(0);
         }
 
-        private void chbArmor2_CheckedChanged(object sender, EventArgs e)
+        private void ChbArmor2_CheckedChanged(object sender, EventArgs e)
         {
             UnitArmor(1);
         }
 
-        private void chbArmor3_CheckedChanged(object sender, EventArgs e)
+        private void ChbArmor3_CheckedChanged(object sender, EventArgs e)
         {
             UnitArmor(2);
         }
 
-        private void chbArmor4_CheckedChanged(object sender, EventArgs e)
+        private void ChbArmor4_CheckedChanged(object sender, EventArgs e)
         {
             UnitArmor(3);
         }
 
-        private void tbEnd1_TextChanged(object sender, EventArgs e)
+        private void TbEnd1_TextChanged(object sender, EventArgs e)
         {
             UnitHealth(0);
         }
 
-        private void tbEnd2_TextChanged(object sender, EventArgs e)
+        private void TbEnd2_TextChanged(object sender, EventArgs e)
         {
             UnitHealth(1);
         }
 
-        private void tbEnd3_TextChanged(object sender, EventArgs e)
+        private void TbEnd3_TextChanged(object sender, EventArgs e)
         {
             UnitHealth(2);
         }
 
-        private void tbEnd4_TextChanged(object sender, EventArgs e)
+        private void TbEnd4_TextChanged(object sender, EventArgs e)
         {
             UnitHealth(3);
         }
 
-        private void tbAgi1_TextChanged(object sender, EventArgs e)
+        private void TbAgi1_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(0);
             UnitMarksDMG(0);
         }
 
-        private void tbAth1_TextChanged(object sender, EventArgs e)
+        private void TbAth1_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(0);
             UnitFightDMG(0);
         }
 
-        private void tbAwa1_TextChanged(object sender, EventArgs e)
+        private void TbAwa1_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(0);
         }
 
-        private void tbAgi2_TextChanged(object sender, EventArgs e)
+        private void TbAgi2_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(1);
             UnitMarksDMG(1);
         }
 
-        private void tbAth2_TextChanged(object sender, EventArgs e)
+        private void TbAth2_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(1);
             UnitFightDMG(1);
         }
 
-        private void tbAwa2_TextChanged(object sender, EventArgs e)
+        private void TbAwa2_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(1);
         }
 
-        private void tbAgi3_TextChanged(object sender, EventArgs e)
+        private void TbAgi3_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(2);
             UnitMarksDMG(2);
         }
 
-        private void tbAth3_TextChanged(object sender, EventArgs e)
+        private void TbAth3_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(2);
             UnitFightDMG(2);
         }
 
-        private void tbAwa3_TextChanged(object sender, EventArgs e)
+        private void TbAwa3_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(2);
         }
 
-        private void tbAgi4_TextChanged(object sender, EventArgs e)
+        private void TbAgi4_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(3);
             UnitMarksDMG(3);
         }
 
-        private void tbAth4_TextChanged(object sender, EventArgs e)
+        private void TbAth4_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(3);
             UnitFightDMG(3);
         }
 
-        private void tbAwa4_TextChanged(object sender, EventArgs e)
+        private void TbAwa4_TextChanged(object sender, EventArgs e)
         {
             UnitDefense(3);
         }
 
-        private void chbFightDMG1_CheckedChanged(object sender, EventArgs e)
+        private void ChbFightDMG1_CheckedChanged(object sender, EventArgs e)
         {
             UnitFightDMG(0);
         }
 
-        private void chbFightDMG2_CheckedChanged(object sender, EventArgs e)
+        private void ChbFightDMG2_CheckedChanged(object sender, EventArgs e)
         {
             UnitFightDMG(1);
         }
 
-        private void chbFightDMG3_CheckedChanged(object sender, EventArgs e)
+        private void ChbFightDMG3_CheckedChanged(object sender, EventArgs e)
         {
             UnitFightDMG(2);
         }
 
-        private void chbFightDMG4_CheckedChanged(object sender, EventArgs e)
+        private void ChbFightDMG4_CheckedChanged(object sender, EventArgs e)
         {
             UnitFightDMG(3);
         }
 
-        private void chbMarkDMG1_CheckedChanged(object sender, EventArgs e)
+        private void ChbMarkDMG1_CheckedChanged(object sender, EventArgs e)
         {
             UnitMarksDMG(0);
         }
 
-        private void chbMarkDMG2_CheckedChanged(object sender, EventArgs e)
+        private void ChbMarkDMG2_CheckedChanged(object sender, EventArgs e)
         {
             UnitMarksDMG(1);
         }
 
-        private void chbMarkDMG3_CheckedChanged(object sender, EventArgs e)
+        private void ChbMarkDMG3_CheckedChanged(object sender, EventArgs e)
         {
             UnitMarksDMG(2);
         }
 
-        private void chbMarkDMG4_CheckedChanged(object sender, EventArgs e)
+        private void ChbMarkDMG4_CheckedChanged(object sender, EventArgs e)
         {
             UnitMarksDMG(3);
         }
         //Training cb changing
-        private void cbTraining1_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbTraining1_SelectedIndexChanged(object sender, EventArgs e)
         {
             UnitTraning(0);
         }
 
-        private void cbTraining2_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbTraining2_SelectedIndexChanged(object sender, EventArgs e)
         {
             UnitTraning(1);
         }
 
-        private void cbTraining3_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbTraining3_SelectedIndexChanged(object sender, EventArgs e)
         {
             UnitTraning(2);
         }
 
-        private void cbTraining4_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbTraining4_SelectedIndexChanged(object sender, EventArgs e)
         {
             UnitTraning(3);
         }
         //Page buttons
-        private void btNext_Click(object sender, EventArgs e)
+        private void BtNext_Click(object sender, EventArgs e)
         {
             CheckAllUnitChange();
             UpdateUnits(1);
         }
 
-        private void btPrevious_Click(object sender, EventArgs e)
+        private void BtPrevious_Click(object sender, EventArgs e)
         {
             CheckAllUnitChange();
             UpdateUnits(-1);
         }
         
         //Delete
-        private void btDelete1_Click(object sender, EventArgs e)
+        private void BtDelete1_Click(object sender, EventArgs e)
         {
             DeleteUnit(0, sender, e);
         }
 
-        private void btDelete2_Click(object sender, EventArgs e)
+        private void BtDelete2_Click(object sender, EventArgs e)
         {
             DeleteUnit(1, sender, e);
         }
 
-        private void btDelete3_Click(object sender, EventArgs e)
+        private void BtDelete3_Click(object sender, EventArgs e)
         {
             DeleteUnit(2, sender, e);
         }
 
-        private void btDelete4_Click(object sender, EventArgs e)
+        private void BtDelete4_Click(object sender, EventArgs e)
         {
             DeleteUnit(3, sender, e);
         }
         //tool strip buttons
-        private void tsbNewUnit_Click(object sender, EventArgs e)
+        private void TsbNewUnit_Click(object sender, EventArgs e)
         {
             NewPowerForm = new NewPowerForm(House.ID,House.name);
             NewPowerForm.FormClosing += new FormClosingEventHandler(PowerHolForm_Load);

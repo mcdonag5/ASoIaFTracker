@@ -479,7 +479,7 @@
             this.cbTraining1.Name = "cbTraining1";
             this.cbTraining1.Size = new System.Drawing.Size(182, 25);
             this.cbTraining1.TabIndex = 38;
-            this.cbTraining1.SelectedIndexChanged += new System.EventHandler(this.cbTraining1_SelectedIndexChanged);
+            this.cbTraining1.SelectedIndexChanged += new System.EventHandler(this.CbTraining1_SelectedIndexChanged);
             // 
             // lbPowStats31
             // 
@@ -590,7 +590,7 @@
             this.tsbNewUnit.Name = "tsbNewUnit";
             this.tsbNewUnit.Size = new System.Drawing.Size(60, 22);
             this.tsbNewUnit.Text = "New Unit";
-            this.tsbNewUnit.Click += new System.EventHandler(this.tsbNewUnit_Click);
+            this.tsbNewUnit.Click += new System.EventHandler(this.TsbNewUnit_Click);
             // 
             // tplUnit1
             // 
@@ -751,7 +751,7 @@
             this.btDelete1.TabIndex = 56;
             this.btDelete1.Text = "Delete Unit";
             this.btDelete1.UseVisualStyleBackColor = true;
-            this.btDelete1.Click += new System.EventHandler(this.btDelete1_Click);
+            this.btDelete1.Click += new System.EventHandler(this.BtDelete1_Click);
             // 
             // tbThi1
             // 
@@ -803,7 +803,7 @@
             this.tbEnd1.Size = new System.Drawing.Size(17, 23);
             this.tbEnd1.TabIndex = 57;
             this.tbEnd1.Text = "0";
-            this.tbEnd1.TextChanged += new System.EventHandler(this.tbEnd1_TextChanged);
+            this.tbEnd1.TextChanged += new System.EventHandler(this.TbEnd1_TextChanged);
             this.tbEnd1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbSte1
@@ -856,7 +856,7 @@
             this.tbAwa1.Size = new System.Drawing.Size(17, 23);
             this.tbAwa1.TabIndex = 57;
             this.tbAwa1.Text = "0";
-            this.tbAwa1.TextChanged += new System.EventHandler(this.tbAwa1_TextChanged);
+            this.tbAwa1.TextChanged += new System.EventHandler(this.TbAwa1_TextChanged);
             this.tbAwa1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbPer1
@@ -883,7 +883,7 @@
             this.tbAth1.Size = new System.Drawing.Size(17, 23);
             this.tbAth1.TabIndex = 57;
             this.tbAth1.Text = "0";
-            this.tbAth1.TextChanged += new System.EventHandler(this.tbAth1_TextChanged);
+            this.tbAth1.TextChanged += new System.EventHandler(this.TbAth1_TextChanged);
             this.tbAth1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbMar1
@@ -936,7 +936,7 @@
             this.tbAgi1.Size = new System.Drawing.Size(17, 23);
             this.tbAgi1.TabIndex = 56;
             this.tbAgi1.Text = "0";
-            this.tbAgi1.TextChanged += new System.EventHandler(this.tbAgi1_TextChanged);
+            this.tbAgi1.TextChanged += new System.EventHandler(this.TbAgi1_TextChanged);
             this.tbAgi1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tableLayoutPanel2
@@ -1339,7 +1339,7 @@
             this.chbArmor1.Size = new System.Drawing.Size(15, 14);
             this.chbArmor1.TabIndex = 53;
             this.chbArmor1.UseVisualStyleBackColor = true;
-            this.chbArmor1.CheckedChanged += new System.EventHandler(this.chbArmor1_CheckedChanged);
+            this.chbArmor1.CheckedChanged += new System.EventHandler(this.ChbArmor1_CheckedChanged);
             // 
             // chbFightDMG1
             // 
@@ -1349,7 +1349,7 @@
             this.chbFightDMG1.Size = new System.Drawing.Size(15, 14);
             this.chbFightDMG1.TabIndex = 53;
             this.chbFightDMG1.UseVisualStyleBackColor = true;
-            this.chbFightDMG1.CheckedChanged += new System.EventHandler(this.chbFightDMG1_CheckedChanged);
+            this.chbFightDMG1.CheckedChanged += new System.EventHandler(this.ChbFightDMG1_CheckedChanged);
             // 
             // chbMarkDMG1
             // 
@@ -1359,7 +1359,7 @@
             this.chbMarkDMG1.Size = new System.Drawing.Size(15, 14);
             this.chbMarkDMG1.TabIndex = 52;
             this.chbMarkDMG1.UseVisualStyleBackColor = true;
-            this.chbMarkDMG1.CheckedChanged += new System.EventHandler(this.chbMarkDMG1_CheckedChanged);
+            this.chbMarkDMG1.CheckedChanged += new System.EventHandler(this.ChbMarkDMG1_CheckedChanged);
             // 
             // lbBul1
             // 
@@ -1441,7 +1441,7 @@
             this.btNext.TabIndex = 55;
             this.btNext.Text = ">";
             this.btNext.UseVisualStyleBackColor = true;
-            this.btNext.Click += new System.EventHandler(this.btNext_Click);
+            this.btNext.Click += new System.EventHandler(this.BtNext_Click);
             // 
             // tlpUnit2
             // 
@@ -1638,7 +1638,7 @@
             this.tbEnd2.Size = new System.Drawing.Size(17, 23);
             this.tbEnd2.TabIndex = 57;
             this.tbEnd2.Text = "0";
-            this.tbEnd2.TextChanged += new System.EventHandler(this.tbEnd2_TextChanged);
+            this.tbEnd2.TextChanged += new System.EventHandler(this.TbEnd2_TextChanged);
             this.tbEnd2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbSte2
@@ -1691,7 +1691,7 @@
             this.tbAwa2.Size = new System.Drawing.Size(17, 23);
             this.tbAwa2.TabIndex = 57;
             this.tbAwa2.Text = "0";
-            this.tbAwa2.TextChanged += new System.EventHandler(this.tbAwa2_TextChanged);
+            this.tbAwa2.TextChanged += new System.EventHandler(this.TbAwa2_TextChanged);
             this.tbAwa2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbPer2
@@ -1718,7 +1718,7 @@
             this.tbAth2.Size = new System.Drawing.Size(17, 23);
             this.tbAth2.TabIndex = 57;
             this.tbAth2.Text = "0";
-            this.tbAth2.TextChanged += new System.EventHandler(this.tbAth2_TextChanged);
+            this.tbAth2.TextChanged += new System.EventHandler(this.TbAth2_TextChanged);
             this.tbAth2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbMar2
@@ -1771,7 +1771,7 @@
             this.tbAgi2.Size = new System.Drawing.Size(17, 23);
             this.tbAgi2.TabIndex = 56;
             this.tbAgi2.Text = "0";
-            this.tbAgi2.TextChanged += new System.EventHandler(this.tbAgi2_TextChanged);
+            this.tbAgi2.TextChanged += new System.EventHandler(this.TbAgi2_TextChanged);
             this.tbAgi2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tableLayoutPanel4
@@ -1883,7 +1883,7 @@
             this.chbArmor2.Size = new System.Drawing.Size(15, 14);
             this.chbArmor2.TabIndex = 53;
             this.chbArmor2.UseVisualStyleBackColor = true;
-            this.chbArmor2.CheckedChanged += new System.EventHandler(this.chbArmor2_CheckedChanged);
+            this.chbArmor2.CheckedChanged += new System.EventHandler(this.ChbArmor2_CheckedChanged);
             // 
             // chbFightDMG2
             // 
@@ -1893,7 +1893,7 @@
             this.chbFightDMG2.Size = new System.Drawing.Size(15, 14);
             this.chbFightDMG2.TabIndex = 53;
             this.chbFightDMG2.UseVisualStyleBackColor = true;
-            this.chbFightDMG2.CheckedChanged += new System.EventHandler(this.chbFightDMG2_CheckedChanged);
+            this.chbFightDMG2.CheckedChanged += new System.EventHandler(this.ChbFightDMG2_CheckedChanged);
             // 
             // chbMarkDMG2
             // 
@@ -1903,7 +1903,7 @@
             this.chbMarkDMG2.Size = new System.Drawing.Size(15, 14);
             this.chbMarkDMG2.TabIndex = 52;
             this.chbMarkDMG2.UseVisualStyleBackColor = true;
-            this.chbMarkDMG2.CheckedChanged += new System.EventHandler(this.chbMarkDMG2_CheckedChanged);
+            this.chbMarkDMG2.CheckedChanged += new System.EventHandler(this.ChbMarkDMG2_CheckedChanged);
             // 
             // lbBul2
             // 
@@ -2046,7 +2046,7 @@
             this.cbTraining2.Name = "cbTraining2";
             this.cbTraining2.Size = new System.Drawing.Size(187, 25);
             this.cbTraining2.TabIndex = 38;
-            this.cbTraining2.SelectedIndexChanged += new System.EventHandler(this.cbTraining2_SelectedIndexChanged);
+            this.cbTraining2.SelectedIndexChanged += new System.EventHandler(this.CbTraining2_SelectedIndexChanged);
             // 
             // lbDiscipText2
             // 
@@ -2479,7 +2479,7 @@
             this.btDelete2.TabIndex = 56;
             this.btDelete2.Text = "Delete Unit";
             this.btDelete2.UseVisualStyleBackColor = true;
-            this.btDelete2.Click += new System.EventHandler(this.btDelete2_Click);
+            this.btDelete2.Click += new System.EventHandler(this.BtDelete2_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -2676,7 +2676,7 @@
             this.tbEnd3.Size = new System.Drawing.Size(17, 23);
             this.tbEnd3.TabIndex = 57;
             this.tbEnd3.Text = "0";
-            this.tbEnd3.TextChanged += new System.EventHandler(this.tbEnd3_TextChanged);
+            this.tbEnd3.TextChanged += new System.EventHandler(this.TbEnd3_TextChanged);
             this.tbEnd3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbSte3
@@ -2729,7 +2729,7 @@
             this.tbAwa3.Size = new System.Drawing.Size(17, 23);
             this.tbAwa3.TabIndex = 57;
             this.tbAwa3.Text = "0";
-            this.tbAwa3.TextChanged += new System.EventHandler(this.tbAwa3_TextChanged);
+            this.tbAwa3.TextChanged += new System.EventHandler(this.TbAwa3_TextChanged);
             this.tbAwa3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbPer3
@@ -2756,7 +2756,7 @@
             this.tbAth3.Size = new System.Drawing.Size(17, 23);
             this.tbAth3.TabIndex = 57;
             this.tbAth3.Text = "0";
-            this.tbAth3.TextChanged += new System.EventHandler(this.tbAth3_TextChanged);
+            this.tbAth3.TextChanged += new System.EventHandler(this.TbAth3_TextChanged);
             this.tbAth3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbMar3
@@ -2809,7 +2809,7 @@
             this.tbAgi3.Size = new System.Drawing.Size(17, 23);
             this.tbAgi3.TabIndex = 56;
             this.tbAgi3.Text = "0";
-            this.tbAgi3.TextChanged += new System.EventHandler(this.tbAgi3_TextChanged);
+            this.tbAgi3.TextChanged += new System.EventHandler(this.TbAgi3_TextChanged);
             this.tbAgi3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // btDelete3
@@ -2822,7 +2822,7 @@
             this.btDelete3.TabIndex = 56;
             this.btDelete3.Text = "Delete Unit";
             this.btDelete3.UseVisualStyleBackColor = true;
-            this.btDelete3.Click += new System.EventHandler(this.btDelete3_Click);
+            this.btDelete3.Click += new System.EventHandler(this.BtDelete3_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -2933,7 +2933,7 @@
             this.chbArmor3.Size = new System.Drawing.Size(15, 14);
             this.chbArmor3.TabIndex = 53;
             this.chbArmor3.UseVisualStyleBackColor = true;
-            this.chbArmor3.CheckedChanged += new System.EventHandler(this.chbArmor3_CheckedChanged);
+            this.chbArmor3.CheckedChanged += new System.EventHandler(this.ChbArmor3_CheckedChanged);
             // 
             // chbFightDMG3
             // 
@@ -2943,7 +2943,7 @@
             this.chbFightDMG3.Size = new System.Drawing.Size(15, 14);
             this.chbFightDMG3.TabIndex = 53;
             this.chbFightDMG3.UseVisualStyleBackColor = true;
-            this.chbFightDMG3.CheckedChanged += new System.EventHandler(this.chbFightDMG3_CheckedChanged);
+            this.chbFightDMG3.CheckedChanged += new System.EventHandler(this.ChbFightDMG3_CheckedChanged);
             // 
             // chbMarkDMG3
             // 
@@ -2953,7 +2953,7 @@
             this.chbMarkDMG3.Size = new System.Drawing.Size(15, 14);
             this.chbMarkDMG3.TabIndex = 52;
             this.chbMarkDMG3.UseVisualStyleBackColor = true;
-            this.chbMarkDMG3.CheckedChanged += new System.EventHandler(this.chbMarkDMG3_CheckedChanged);
+            this.chbMarkDMG3.CheckedChanged += new System.EventHandler(this.ChbMarkDMG3_CheckedChanged);
             // 
             // lbBul3
             // 
@@ -3097,7 +3097,7 @@
             this.cbTraining3.Name = "cbTraining3";
             this.cbTraining3.Size = new System.Drawing.Size(182, 25);
             this.cbTraining3.TabIndex = 38;
-            this.cbTraining3.SelectedIndexChanged += new System.EventHandler(this.cbTraining3_SelectedIndexChanged);
+            this.cbTraining3.SelectedIndexChanged += new System.EventHandler(this.CbTraining3_SelectedIndexChanged);
             // 
             // lbDiscipText3
             // 
@@ -3715,7 +3715,7 @@
             this.tbEnd4.Size = new System.Drawing.Size(17, 23);
             this.tbEnd4.TabIndex = 57;
             this.tbEnd4.Text = "0";
-            this.tbEnd4.TextChanged += new System.EventHandler(this.tbEnd4_TextChanged);
+            this.tbEnd4.TextChanged += new System.EventHandler(this.TbEnd4_TextChanged);
             this.tbEnd4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbSte4
@@ -3768,7 +3768,7 @@
             this.tbAwa4.Size = new System.Drawing.Size(17, 23);
             this.tbAwa4.TabIndex = 57;
             this.tbAwa4.Text = "0";
-            this.tbAwa4.TextChanged += new System.EventHandler(this.tbAwa4_TextChanged);
+            this.tbAwa4.TextChanged += new System.EventHandler(this.TbAwa4_TextChanged);
             this.tbAwa4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbPer4
@@ -3795,7 +3795,7 @@
             this.tbAth4.Size = new System.Drawing.Size(17, 23);
             this.tbAth4.TabIndex = 57;
             this.tbAth4.Text = "0";
-            this.tbAth4.TextChanged += new System.EventHandler(this.tbAth4_TextChanged);
+            this.tbAth4.TextChanged += new System.EventHandler(this.TbAth4_TextChanged);
             this.tbAth4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbMar4
@@ -3848,7 +3848,7 @@
             this.tbAgi4.Size = new System.Drawing.Size(17, 23);
             this.tbAgi4.TabIndex = 56;
             this.tbAgi4.Text = "0";
-            this.tbAgi4.TextChanged += new System.EventHandler(this.tbAgi4_TextChanged);
+            this.tbAgi4.TextChanged += new System.EventHandler(this.TbAgi4_TextChanged);
             this.tbAgi4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // btDelete4
@@ -3861,7 +3861,7 @@
             this.btDelete4.TabIndex = 56;
             this.btDelete4.Text = "Delete Unit";
             this.btDelete4.UseVisualStyleBackColor = true;
-            this.btDelete4.Click += new System.EventHandler(this.btDelete4_Click);
+            this.btDelete4.Click += new System.EventHandler(this.BtDelete4_Click);
             // 
             // tableLayoutPanel9
             // 
@@ -3972,7 +3972,7 @@
             this.chbArmor4.Size = new System.Drawing.Size(15, 14);
             this.chbArmor4.TabIndex = 53;
             this.chbArmor4.UseVisualStyleBackColor = true;
-            this.chbArmor4.CheckedChanged += new System.EventHandler(this.chbArmor4_CheckedChanged);
+            this.chbArmor4.CheckedChanged += new System.EventHandler(this.ChbArmor4_CheckedChanged);
             // 
             // chbFightDMG4
             // 
@@ -3982,7 +3982,7 @@
             this.chbFightDMG4.Size = new System.Drawing.Size(15, 14);
             this.chbFightDMG4.TabIndex = 53;
             this.chbFightDMG4.UseVisualStyleBackColor = true;
-            this.chbFightDMG4.CheckedChanged += new System.EventHandler(this.chbFightDMG4_CheckedChanged);
+            this.chbFightDMG4.CheckedChanged += new System.EventHandler(this.ChbFightDMG4_CheckedChanged);
             // 
             // chbMarkDMG4
             // 
@@ -3992,7 +3992,7 @@
             this.chbMarkDMG4.Size = new System.Drawing.Size(15, 14);
             this.chbMarkDMG4.TabIndex = 52;
             this.chbMarkDMG4.UseVisualStyleBackColor = true;
-            this.chbMarkDMG4.CheckedChanged += new System.EventHandler(this.chbMarkDMG4_CheckedChanged);
+            this.chbMarkDMG4.CheckedChanged += new System.EventHandler(this.ChbMarkDMG4_CheckedChanged);
             // 
             // lbBul4
             // 
@@ -4133,7 +4133,7 @@
             this.cbTraining4.Name = "cbTraining4";
             this.cbTraining4.Size = new System.Drawing.Size(178, 25);
             this.cbTraining4.TabIndex = 38;
-            this.cbTraining4.SelectedIndexChanged += new System.EventHandler(this.cbTraining4_SelectedIndexChanged);
+            this.cbTraining4.SelectedIndexChanged += new System.EventHandler(this.CbTraining4_SelectedIndexChanged);
             // 
             // lbDiscipText4
             // 
@@ -4565,7 +4565,7 @@
             this.btPrevious.TabIndex = 59;
             this.btPrevious.Text = "<";
             this.btPrevious.UseVisualStyleBackColor = true;
-            this.btPrevious.Click += new System.EventHandler(this.btPrevious_Click);
+            this.btPrevious.Click += new System.EventHandler(this.BtPrevious_Click);
             // 
             // tableLayoutPanel11
             // 
