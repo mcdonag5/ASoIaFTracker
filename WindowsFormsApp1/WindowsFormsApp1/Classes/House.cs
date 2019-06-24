@@ -191,6 +191,12 @@ namespace WindowsFormsApp1.Classes
                             "FROM `tbl_DefenseHolding`, `tbl_Defense` "+
                             "WHERE `tbl_DefenseHolding`.`LanHol_ID` = '" + holdingID + "' AND `tbl_Defense`.`Def_ID` = `tbl_DefenseHolding`.`Def_ID`; ";
                         break;
+                    //tbl_Trade
+                    case "Trade":
+                        qry = "SELECT `tbl_Trade`.*, `tbl_LandHolding`.`LanHol_ID`, `tbl_LandHolding`.`Hou_ID`, `tbl_House`.`Hou_ID`, `tbl_House`.`Hou_Name`, `tbl_LandHolding`.`LanHol_Name` " +
+                            "FROM `tbl_Trade`  LEFT JOIN `tbl_LandHolding` ON `tbl_Trade`.`LanHol_ID` = `tbl_LandHolding`.`LanHol_ID` LEFT JOIN `tbl_House` ON `tbl_LandHolding`.`Hou_ID` = `tbl_House`.`Hou_ID` " +
+                            "WHERE `tbl_Trade`.`WeaHol_ID` = '"+ holdingID+ "'  AND `tbl_LandHolding`.`LanHol_ID` = `tbl_Trade`.`LanHol_ID` AND `tbl_House`.`Hou_ID` = `tbl_LandHolding`.`Hou_ID`; ";
+                        break;
                     //Lookup Table
                     //tbl_WealthImprovement
                     case "WealthImprovement":
@@ -254,6 +260,21 @@ namespace WindowsFormsApp1.Classes
                 qry = "SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* " +
                     "FROM `tbl_WealthHolding`, `tbl_Wealth` " +
                     "WHERE `tbl_WealthHolding`.`" + place + "` = '" + ID + "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID`;";
+                DevLog.LogItem(qry);
+                return mysqlConn.Qry(qry).Tables[0];
+            }
+            return mysqlConn.Qry(qry).Tables[0];
+        }
+
+        public object WealthHolding(string place, string ID, string nameOfHolding)
+        {
+            DevLog.LogItem("Wealth Holding sql run");
+            string qry = "";
+            if (mysqlConn.ConnOpen())
+            {
+                qry = "SELECT `tbl_WealthHolding`.`LanHol_ID`, `tbl_WealthHolding`.*, `tbl_Wealth`.`Wea_ID`, `tbl_Wealth`.* " +
+                    "FROM `tbl_WealthHolding`, `tbl_Wealth` " +
+                    "WHERE `tbl_WealthHolding`.`" + place + "` = '" + ID + "' AND `tbl_Wealth`.`Wea_ID` = `tbl_WealthHolding`.`Wea_ID` AND `tbl_Wealth`.`Wea_Name` = '"+ nameOfHolding + "';";
                 DevLog.LogItem(qry);
                 return mysqlConn.Qry(qry).Tables[0];
             }

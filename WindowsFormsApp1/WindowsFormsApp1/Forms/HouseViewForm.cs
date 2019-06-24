@@ -383,53 +383,111 @@ namespace WindowsFormsApp1
 
                 landHoldings += Functions.HoldingName(dgCal2.Rows[n].Cells[12].Value.ToString(), dgCal2.Rows[n].Cells[6].Value.ToString()) + Environment.NewLine;
 
-                dgCal3.DataSource = House.HouseQry("WealthHoldingImprovement", dgCal2.Rows[n].Cells[1].Value.ToString());
-                for (int t = 0; t < dgCal3.RowCount - 1; t++)
+                switch (dgCal2.Rows[n].Cells[12].Value.ToString())
                 {
-                    houWea -= Convert.ToInt32(dgCal3.Rows[t].Cells[10].Value);
-                    houDef -= Convert.ToInt32(dgCal3.Rows[t].Cells[11].Value);
-                    houLan -= Convert.ToInt32(dgCal3.Rows[t].Cells[12].Value);
-                    houPow -= Convert.ToInt32(dgCal3.Rows[t].Cells[13].Value);
-                    houInf -= Convert.ToInt32(dgCal3.Rows[t].Cells[14].Value);
-                    landHoldings += indent + "    ";
-                    if (Convert.ToInt32(dgCal3.Rows[t].Cells[4].Value) == 1)
-                    {
-                        //check for weapon smiths
-                        switch(dgCal3.Rows[t].Cells[8].Value.ToString())
+                    case "Marketplace":
+                        dgTrade1.DataSource = House.HouseQry("Trade", dgCal2.Rows[n].Cells[1].Value.ToString());
+                        
+                        
+                        //Land table
+                        for (int i = 0; i < dgTrade1.RowCount; i++)
                         {
-                            case "Bowyer & Fletcher":
-                                hasFletcher = true;
-                                break;
-                            case "Weaponsmith":
-                                hasWeaponsmith = true;
-                                break;
+                            int tradeValue = 0;
+                            houWea -= 5;
+                            if (Convert.ToBoolean(dgTrade1.Rows[i].Cells[3].Value))
+                            {
+                                landHoldings += indent + "    Trade Connection: " + dgTrade1.Rows[i].Cells[8].Value.ToString() + Environment.NewLine;
+                            }
+                            else
+                            {
+                                landHoldings += indent + "    Trade Route: House " + dgTrade1.Rows[i].Cells[7].Value.ToString() + " - " + dgTrade1.Rows[i].Cells[8].Value.ToString() + Environment.NewLine;
+                                houInf -= 2;
+                            }
+                            
+                            //Wealth Holdings on Land (Estate)
+                            dgTrade2.DataSource = dgCal2.DataSource = House.WealthHolding("LanHol_ID", dgTrade1.Rows[i].Cells[2].Value.ToString(), 1);
+                            if(dgTrade2.RowCount>0 && Convert.ToBoolean(dgCal2.Rows[n].Cells[7].Value))
+                            {
+                                tradeValue++;
+                            }
+
+                            //Land Features Towns
+                            dgTrade2.DataSource = House.HouseQry("LandHoldingCommunity", dgTrade1.Rows[i].Cells[2].Value.ToString());
+                            for (int t = 0; t < dgTrade2.RowCount; t++)
+                            {
+                                dgTrade3.DataSource = House.WealthHolding("LanHolFea_ID", dgTrade2.Rows[t].Cells[0].Value.ToString(), "Artisan Craftsman");
+                                for(int x = 0;  x < dgTrade3.RowCount; x++)
+                                {
+                                    if (Convert.ToBoolean(dgCal2.Rows[n].Cells[7].Value)) { tradeValue++; }
+                                }
+                            }
+                            //Wealth holdings in Def
+                            dgTrade2.DataSource = House.HouseQry("DefenseHolding", dgTrade1.Rows[i].Cells[2].Value.ToString());
+                            for (int t = 0; t < dgTrade2.RowCount; t++)
+                            {
+                                dgTrade3.DataSource = House.WealthHolding("DefHol_ID", dgTrade2.Rows[t].Cells[0].Value.ToString(), "Artisan Craftsman");
+                                for (int x = 0; x < dgTrade3.RowCount; x++)
+                                {
+                                    if (Convert.ToBoolean(dgCal2.Rows[n].Cells[7].Value)) { tradeValue++; }
+                                }
+                            }
+
+                            landHoldings += indent + "          Trade Value: " + tradeValue + Environment.NewLine;
+                            houWeaGain += tradeValue;
                         }
 
-                        houHF += Convert.ToInt32(dgCal3.Rows[t].Cells[19].Value);
-                        houWeaGain += Convert.ToInt32(dgCal3.Rows[t].Cells[20].Value);
-                        houPowGain += Convert.ToInt32(dgCal3.Rows[t].Cells[21].Value);
-                        houPopGain += Convert.ToInt32(dgCal3.Rows[t].Cells[22].Value);
-                        houLawGain += Convert.ToInt32(dgCal3.Rows[t].Cells[23].Value);
-                        houLanGain += Convert.ToInt32(dgCal3.Rows[t].Cells[24].Value);
-                        houInfGain += Convert.ToInt32(dgCal3.Rows[t].Cells[25].Value);
-                        houDefGain += Convert.ToInt32(dgCal3.Rows[t].Cells[26].Value);
-                        houWeaLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[27].Value);
-                        houPowLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[28].Value);
-                        houPopLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[29].Value);
-                        houLawLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[30].Value);
-                        houLanLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[31].Value);
-                        houInfLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[32].Value);
-                        houDefLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[33].Value);
-                        houLawMit += Convert.ToInt32(dgCal3.Rows[t].Cells[34].Value);
-                        houPopMit += Convert.ToInt32(dgCal3.Rows[t].Cells[35].Value);
-                    }
-                    else { landHoldings += "B: "; }
+                        break;
+                    default:
+                        dgCal3.DataSource = House.HouseQry("WealthHoldingImprovement", dgCal2.Rows[n].Cells[1].Value.ToString());
+                        for (int t = 0; t < dgCal3.RowCount - 1; t++)
+                        {
+                            houWea -= Convert.ToInt32(dgCal3.Rows[t].Cells[10].Value);
+                            houDef -= Convert.ToInt32(dgCal3.Rows[t].Cells[11].Value);
+                            houLan -= Convert.ToInt32(dgCal3.Rows[t].Cells[12].Value);
+                            houPow -= Convert.ToInt32(dgCal3.Rows[t].Cells[13].Value);
+                            houInf -= Convert.ToInt32(dgCal3.Rows[t].Cells[14].Value);
+                            landHoldings += indent + "    ";
+                            if (Convert.ToInt32(dgCal3.Rows[t].Cells[4].Value) == 1)
+                            {
+                                //check for weapon smiths
+                                switch (dgCal3.Rows[t].Cells[8].Value.ToString())
+                                {
+                                    case "Bowyer & Fletcher":
+                                        hasFletcher = true;
+                                        break;
+                                    case "Weaponsmith":
+                                        hasWeaponsmith = true;
+                                        break;
+                                }
+
+                                houHF += Convert.ToInt32(dgCal3.Rows[t].Cells[19].Value);
+                                houWeaGain += Convert.ToInt32(dgCal3.Rows[t].Cells[20].Value);
+                                houPowGain += Convert.ToInt32(dgCal3.Rows[t].Cells[21].Value);
+                                houPopGain += Convert.ToInt32(dgCal3.Rows[t].Cells[22].Value);
+                                houLawGain += Convert.ToInt32(dgCal3.Rows[t].Cells[23].Value);
+                                houLanGain += Convert.ToInt32(dgCal3.Rows[t].Cells[24].Value);
+                                houInfGain += Convert.ToInt32(dgCal3.Rows[t].Cells[25].Value);
+                                houDefGain += Convert.ToInt32(dgCal3.Rows[t].Cells[26].Value);
+                                houWeaLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[27].Value);
+                                houPowLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[28].Value);
+                                houPopLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[29].Value);
+                                houLawLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[30].Value);
+                                houLanLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[31].Value);
+                                houInfLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[32].Value);
+                                houDefLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[33].Value);
+                                houLawMit += Convert.ToInt32(dgCal3.Rows[t].Cells[34].Value);
+                                houPopMit += Convert.ToInt32(dgCal3.Rows[t].Cells[35].Value);
+                            }
+                            else { landHoldings += "B: "; }
 
 
-                    landHoldings += dgCal3.Rows[t].Cells[8].Value.ToString();
-                    if(dgCal3.Rows[t].Cells[9].Value.ToString() == "False") { landHoldings += "*"; }
-                    landHoldings += Environment.NewLine;
+                            landHoldings += dgCal3.Rows[t].Cells[8].Value.ToString();
+                            if (dgCal3.Rows[t].Cells[9].Value.ToString() == "False") { landHoldings += "*"; }
+                            landHoldings += Environment.NewLine;
+                        }
+                        break;
                 }
+                
 
             }
         }

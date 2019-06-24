@@ -35,6 +35,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tlpMain = new System.Windows.Forms.TableLayoutPanel();
@@ -150,6 +159,9 @@
             this.dgCal2 = new System.Windows.Forms.DataGridView();
             this.dgCal1 = new System.Windows.Forms.DataGridView();
             this.dgHouse = new System.Windows.Forms.DataGridView();
+            this.dgTrade1 = new System.Windows.Forms.DataGridView();
+            this.dgTrade2 = new System.Windows.Forms.DataGridView();
+            this.dgTrade3 = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             this.tlpMain.SuspendLayout();
             this.tlpHouseHeadings.SuspendLayout();
@@ -161,6 +173,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTrade1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTrade2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTrade3)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -1941,12 +1956,135 @@
             this.dgHouse.TabIndex = 33;
             this.dgHouse.Visible = false;
             // 
+            // dgTrade1
+            // 
+            this.dgTrade1.AllowUserToAddRows = false;
+            this.dgTrade1.AllowUserToDeleteRows = false;
+            this.dgTrade1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgTrade1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTrade1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgTrade1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgTrade1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgTrade1.Location = new System.Drawing.Point(674, 308);
+            this.dgTrade1.Name = "dgTrade1";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTrade1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgTrade1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgTrade1.Size = new System.Drawing.Size(38, 32);
+            this.dgTrade1.TabIndex = 34;
+            this.dgTrade1.Visible = false;
+            // 
+            // dgTrade2
+            // 
+            this.dgTrade2.AllowUserToAddRows = false;
+            this.dgTrade2.AllowUserToDeleteRows = false;
+            this.dgTrade2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgTrade2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTrade2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgTrade2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgTrade2.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dgTrade2.Location = new System.Drawing.Point(682, 316);
+            this.dgTrade2.Name = "dgTrade2";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTrade2.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgTrade2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgTrade2.Size = new System.Drawing.Size(38, 32);
+            this.dgTrade2.TabIndex = 35;
+            this.dgTrade2.Visible = false;
+            // 
+            // dgTrade3
+            // 
+            this.dgTrade3.AllowUserToAddRows = false;
+            this.dgTrade3.AllowUserToDeleteRows = false;
+            this.dgTrade3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgTrade3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTrade3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgTrade3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgTrade3.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgTrade3.Location = new System.Drawing.Point(690, 324);
+            this.dgTrade3.Name = "dgTrade3";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTrade3.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgTrade3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgTrade3.Size = new System.Drawing.Size(38, 32);
+            this.dgTrade3.TabIndex = 36;
+            this.dgTrade3.Visible = false;
+            // 
             // HouseViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1371, 632);
+            this.Controls.Add(this.dgTrade3);
+            this.Controls.Add(this.dgTrade2);
+            this.Controls.Add(this.dgTrade1);
             this.Controls.Add(this.dgHouse);
             this.Controls.Add(this.dgCal3);
             this.Controls.Add(this.dgCal2);
@@ -1977,6 +2115,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgCal2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgCal1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTrade1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTrade2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTrade3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2099,5 +2240,8 @@
         private System.Windows.Forms.DataGridView dgHouse;
         private System.Windows.Forms.TextBox tbPlayer;
         private System.Windows.Forms.Label lbPlayer;
+        private System.Windows.Forms.DataGridView dgTrade1;
+        private System.Windows.Forms.DataGridView dgTrade2;
+        private System.Windows.Forms.DataGridView dgTrade3;
     }
 }
