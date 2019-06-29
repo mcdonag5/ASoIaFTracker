@@ -117,11 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lbBenefits.Text" xml:space="preserve">
-    <value>
-New Rules: Any Assassins, Spies, Saboteurs, or other enemy agents operating in your house’s territory have the difficulty of any Cunning tests increased by +6. Members of your House are considered to have Connections everywhere in the House’s domains. Any penalty to House Fortune rolls due to low or high Population is reduced by 1. </value>
-  </data>
-  <data name="lbDescription.Text" xml:space="preserve">
-    <value>Publicly visible guards can help prevent crime through simply being present, sometimes fear of what cannot be seen is more effective. In such circumstances a House may deploy secret police, moving unseen through the populace and reporting on criminals, dissidents, unwelcome foreigners and the like. Secret police do help keep order in lawless situations but do little to make the rule of law stronger. Instead they are most effective at ferreting out agents of enemy houses and other subversive elements. </value>
-  </data>
 </root>

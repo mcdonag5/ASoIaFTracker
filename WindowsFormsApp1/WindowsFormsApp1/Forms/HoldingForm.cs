@@ -107,14 +107,27 @@ namespace WindowsFormsApp1
                                 dgWea.DataSource = House.WealthHolding(lastWealthPlace, lastHoldingID);
                                 cb3.Items[currentIndex] = Functions.HoldingName(dgWea.Rows[currentIndex].Cells[12].Value.ToString(), dgWea.Rows[currentIndex].Cells[6].Value.ToString());
                             }
-                            for (int i = 0; i < addType.Length && i < dgImp.RowCount; i++)
+                            for (int i = 0; i < addType.Length && i < (dgImp.RowCount+dgTrade.RowCount); i++)
                             {
-                                if (addBulit[i].Checked.ToString() != dgImp.Rows[i].Cells[4].Value.ToString())
+                                if(dgImp.RowCount>i)
                                 {
-                                    DevLog.LogItem("Found changes and updating Wealth Holding Imp: " + i);
-                                    House.UpdateWealthImprovementDetails(dgImp.Rows[i].Cells[1].Value.ToString(), addBulit[i].Checked.ToString());
+                                    if (addBulit[i].Checked.ToString() != dgImp.Rows[i].Cells[4].Value.ToString())
+                                    {
+                                        DevLog.LogItem("Found changes and updating Wealth Holding Imp: " + i);
+                                        House.UpdateWealthImprovementDetails(dgImp.Rows[i].Cells[1].Value.ToString(), addBulit[i].Checked.ToString());
+                                    }
                                 }
+                                else
+                                {
+                                    if (addBulit[i].Checked.ToString() != dgTrade.Rows[i-dgImp.RowCount].Cells[4].Value.ToString())
+                                    {
+                                        DevLog.LogItem("Found changes and updating Wealth Trade Holding: " + i);
+                                        House.UpdateTrade(dgTrade.Rows[i-dgImp.RowCount].Cells[0].Value.ToString(), addBulit[i].Checked.ToString());
+                                    }
+                                }
+                                
                             }
+
                             break;
                     }
                     break;
@@ -281,36 +294,72 @@ namespace WindowsFormsApp1
                             wealthHoldingToolStripMenuItem.Enabled = false;
                             wealthImprovementToolStripMenuItem.Enabled = true;
 
-                            lbTypeName.Text = dgWea.Rows[cb3.SelectedIndex].Cells[12].Value.ToString();
-                            tbName.Text = dgWea.Rows[cb3.SelectedIndex].Cells[6].Value.ToString();
-                            lbType.Text = dgWea.Rows[cb3.SelectedIndex].Cells[13].Value.ToString() + " Wealth Holdings";
+                            lbTypeName.Text = dgWea.Rows[currentIndex].Cells[12].Value.ToString();
+                            tbName.Text = dgWea.Rows[currentIndex].Cells[6].Value.ToString();
+                            lbType.Text = dgWea.Rows[currentIndex].Cells[13].Value.ToString() + " Wealth Holdings";
                             DevLog.LogItem(dgWea.Rows[currentIndex].Cells[7].Visible.ToString());
                             chbBuilt.Visible = true; chbBuilt.Checked = dgWea.Rows[currentIndex].Cells[7].Value.ToString() == "True" ? true : false;
-                            lbDesc.Text = dgWea.Rows[cb3.SelectedIndex].Cells[21].Value.ToString();
-                            lbBenfits.Text = Environment.NewLine + dgWea.Rows[cb3.SelectedIndex].Cells[22].Value.ToString() + Environment.NewLine;
-                            rtbNotes.Text = dgWea.Rows[cb3.SelectedIndex].Cells[8].Value.ToString();
+                            lbDesc.Text = dgWea.Rows[currentIndex].Cells[21].Value.ToString();
+                            lbBenfits.Text = Environment.NewLine + dgWea.Rows[currentIndex].Cells[22].Value.ToString() + Environment.NewLine;
+                            rtbNotes.Text = dgWea.Rows[currentIndex].Cells[8].Value.ToString();
 
-                            costWea += Convert.ToInt32(dgWea.Rows[cb3.SelectedIndex].Cells[15].Value);
-                            costDef += Convert.ToInt32(dgWea.Rows[cb3.SelectedIndex].Cells[16].Value);
-                            costLan += Convert.ToInt32(dgWea.Rows[cb3.SelectedIndex].Cells[17].Value);
-                            costPow += Convert.ToInt32(dgWea.Rows[cb3.SelectedIndex].Cells[18].Value);
+                            costWea += Convert.ToInt32(dgWea.Rows[currentIndex].Cells[15].Value);
+                            costDef += Convert.ToInt32(dgWea.Rows[currentIndex].Cells[16].Value);
+                            costLan += Convert.ToInt32(dgWea.Rows[currentIndex].Cells[17].Value);
+                            costPow += Convert.ToInt32(dgWea.Rows[currentIndex].Cells[18].Value);
 
-                            dgImp.DataSource = House.HouseQry("WealthHoldingImprovement", dgWea.Rows[cb3.SelectedIndex].Cells[1].Value.ToString());
-                            bool limit = false;
-                            for (int i = 0; i < addType.Length && i < dgImp.RowCount; i++)
+                            dgImp.DataSource = House.HouseQry("WealthHoldingImprovement", dgWea.Rows[currentIndex].Cells[1].Value.ToString());
+                            if(dgWea.Rows[currentIndex].Cells[12].Value.ToString() == "Marketplace")
                             {
-                                costWea += Convert.ToInt32(dgImp.Rows[i].Cells[10].Value);
-                                costDef += Convert.ToInt32(dgImp.Rows[i].Cells[11].Value);
-                                costLan += Convert.ToInt32(dgImp.Rows[i].Cells[12].Value);
-                                costLan += Convert.ToInt32(dgImp.Rows[i].Cells[13].Value);
-                                costInf += Convert.ToInt32(dgImp.Rows[i].Cells[14].Value);
-
+                                dgTrade.DataSource = House.HouseQry("Trade", dgWea.Rows[currentIndex].Cells[1].Value.ToString());
+                                dgTradeImp.DataSource = House.HouseQry("WealthImprovement", "63");
+                            }
+                            else { dgTrade.DataSource = null; }
+                            bool limit = false;
+                            int impCount = dgImp.RowCount;
+                            for (int i = 0; i < addType.Length && i < (dgImp.RowCount + dgTrade.RowCount); i++)
+                            {
                                 addType[i].Visible = addBulit[i].Visible = addDelete[i].Visible = addDesc[i].Visible = true;
+                                if (i < dgImp.RowCount)
+                                {
+                                    costWea += Convert.ToInt32(dgImp.Rows[i].Cells[10].Value);
+                                    costDef += Convert.ToInt32(dgImp.Rows[i].Cells[11].Value);
+                                    costLan += Convert.ToInt32(dgImp.Rows[i].Cells[12].Value);
+                                    costLan += Convert.ToInt32(dgImp.Rows[i].Cells[13].Value);
+                                    costInf += Convert.ToInt32(dgImp.Rows[i].Cells[14].Value);
 
-                                addBulit[i].Checked = dgImp.Rows[i].Cells[4].Value.ToString() == "True" ? true : false;
-                                addType[i].Text = dgImp.Rows[i].Cells[8].Value.ToString();
-                                if (dgImp.Rows[i].Cells[9].Value.ToString() == "True") { limit = true; } else { addType[i].Text += "*"; }
-                                addDesc[i].Text = dgImp.Rows[i].Cells[17].Value.ToString() + Environment.NewLine + Environment.NewLine + dgImp.Rows[i].Cells[18].Value.ToString() + Environment.NewLine;
+                                    addBulit[i].Checked = dgImp.Rows[i].Cells[4].Value.ToString() == "True" ? true : false;
+                                    addType[i].Text = dgImp.Rows[i].Cells[8].Value.ToString();
+                                    if (dgImp.Rows[i].Cells[9].Value.ToString() == "True") { limit = true; } else { addType[i].Text += "*"; }
+                                    addDesc[i].Text = dgImp.Rows[i].Cells[17].Value.ToString() + Environment.NewLine + Environment.NewLine + dgImp.Rows[i].Cells[18].Value.ToString() + Environment.NewLine;
+                                }
+                                else if (dgTrade.RowCount > 0)
+                                {
+                                    int x;
+                                    if (Convert.ToBoolean(dgTrade.Rows[i-dgImp.RowCount].Cells[3].Value))
+                                    {
+                                        x = 1;
+                                        addType[i].Text = dgTradeImp.Rows[x].Cells[2].Value.ToString();
+                                        if (dgTradeImp.Rows[x].Cells[3].Value.ToString() == "True") { limit = true; } else { addType[i].Text += "*"; }
+                                        addType[i].Text += ": " + Environment.NewLine + dgTrade.Rows[i - dgImp.RowCount].Cells[9].Value.ToString();
+                                    }
+                                    else
+                                    {
+                                        x = 2;
+                                        addType[i].Text = dgTradeImp.Rows[x].Cells[2].Value.ToString();
+                                        if (dgTradeImp.Rows[x].Cells[3].Value.ToString() == "True") { limit = true; } else { addType[i].Text += "*"; }
+                                        addType[i].Text += ": " + Environment.NewLine + dgTrade.Rows[i - dgImp.RowCount].Cells[8].Value.ToString() + " - " + dgTrade.Rows[i - dgImp.RowCount].Cells[9].Value.ToString();
+                                    }
+                                    costWea += Convert.ToInt32(dgTradeImp.Rows[x].Cells[4].Value);
+                                    costDef += Convert.ToInt32(dgTradeImp.Rows[x].Cells[5].Value);
+                                    costLan += Convert.ToInt32(dgTradeImp.Rows[x].Cells[6].Value);
+                                    costLan += Convert.ToInt32(dgTradeImp.Rows[x].Cells[7].Value);
+                                    costInf += Convert.ToInt32(dgTradeImp.Rows[x].Cells[8].Value);
+                                
+                                    addBulit[i].Checked = dgTrade.Rows[i - dgImp.RowCount].Cells[4].Value.ToString() == "True" ? true : false;
+                                    addDesc[i].Text = dgTradeImp.Rows[x].Cells[11].Value.ToString() + Environment.NewLine + Environment.NewLine + dgTradeImp.Rows[x].Cells[12].Value.ToString() + Environment.NewLine;
+                                }
+                                
                             }
                             wealthImprovementLimit = limit;
                             break;
@@ -481,7 +530,15 @@ namespace WindowsFormsApp1
                     House.DeleteLandFeature(dgImp.Rows[feaNum].Cells[0].Value.ToString());
                     break;
                 case "Wealth":
-                    House.DeleteWealthImprovement(dgImp.Rows[feaNum].Cells[1].Value.ToString());
+                    if(feaNum<dgImp.RowCount)
+                    {
+                        House.DeleteWealthImprovement(dgImp.Rows[feaNum].Cells[1].Value.ToString());
+                    }
+                    else if (dgTrade.RowCount>0)
+                    {
+                        House.DeleteTrade(dgTrade.Rows[feaNum-dgTrade.RowCount].Cells[0].Value.ToString());
+                    }
+
                     break;
                 case "Influence":
                     House.DeleteInfluenceImprovement(dgInflImp.Rows[feaNum].Cells[0].Value.ToString());
@@ -771,6 +828,11 @@ namespace WindowsFormsApp1
                                 for (int i = 0; i < dgImp.RowCount; i++)
                                 {
                                     House.DeleteLandFeature(dgImp.Rows[i].Cells[0].Value.ToString());
+                                }
+                                dgTrade.DataSource = House.HouseQry("TradeBackwards", dgLand.Rows[currentIndex].Cells[1].Value.ToString());
+                                for(int i = 0; i < dgTrade.RowCount;i++)
+                                {
+                                    House.DeleteTrade(dgTrade.Rows[i].Cells[0].Value.ToString());
                                 }
                                 House.DeleteLand(x);
                                 ChangeHolding("Land", "");

@@ -94,6 +94,8 @@
             this.dgHeir = new System.Windows.Forms.DataGridView();
             this.dgInfluence = new System.Windows.Forms.DataGridView();
             this.dgInflImp = new System.Windows.Forms.DataGridView();
+            this.dgTrade = new System.Windows.Forms.DataGridView();
+            this.dgTradeImp = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -106,6 +108,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgHeir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgInfluence)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgInflImp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTrade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTradeImp)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTypeName
@@ -118,7 +122,7 @@
             this.lbTypeName.Location = new System.Drawing.Point(3, 0);
             this.lbTypeName.Name = "lbTypeName";
             this.tableLayoutPanel3.SetRowSpan(this.lbTypeName, 2);
-            this.lbTypeName.Size = new System.Drawing.Size(404, 66);
+            this.lbTypeName.Size = new System.Drawing.Size(414, 66);
             this.lbTypeName.TabIndex = 0;
             this.lbTypeName.Text = "Maester - Maester Dasher";
             this.lbTypeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -144,7 +148,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(684, 68);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(701, 68);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lbHoldingType3
@@ -154,9 +158,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHoldingType3.AutoSize = true;
             this.lbHoldingType3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoldingType3.Location = new System.Drawing.Point(458, 0);
+            this.lbHoldingType3.Location = new System.Drawing.Point(469, 0);
             this.lbHoldingType3.Name = "lbHoldingType3";
-            this.lbHoldingType3.Size = new System.Drawing.Size(223, 38);
+            this.lbHoldingType3.Size = new System.Drawing.Size(229, 38);
             this.lbHoldingType3.TabIndex = 41;
             this.lbHoldingType3.Text = "Wealth Holding";
             this.lbHoldingType3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,9 +172,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHoldingType2.AutoSize = true;
             this.lbHoldingType2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoldingType2.Location = new System.Drawing.Point(230, 0);
+            this.lbHoldingType2.Location = new System.Drawing.Point(236, 0);
             this.lbHoldingType2.Name = "lbHoldingType2";
-            this.lbHoldingType2.Size = new System.Drawing.Size(222, 38);
+            this.lbHoldingType2.Size = new System.Drawing.Size(227, 38);
             this.lbHoldingType2.TabIndex = 41;
             this.lbHoldingType2.Text = "Community and Defense Holdings";
             this.lbHoldingType2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -184,7 +188,7 @@
             this.lbHoldingType1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHoldingType1.Location = new System.Drawing.Point(3, 0);
             this.lbHoldingType1.Name = "lbHoldingType1";
-            this.lbHoldingType1.Size = new System.Drawing.Size(221, 38);
+            this.lbHoldingType1.Size = new System.Drawing.Size(227, 38);
             this.lbHoldingType1.TabIndex = 41;
             this.lbHoldingType1.Text = "Land Holdings";
             this.lbHoldingType1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -197,9 +201,9 @@
             this.cb3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb3.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb3.FormattingEnabled = true;
-            this.cb3.Location = new System.Drawing.Point(458, 41);
+            this.cb3.Location = new System.Drawing.Point(469, 41);
             this.cb3.Name = "cb3";
-            this.cb3.Size = new System.Drawing.Size(223, 24);
+            this.cb3.Size = new System.Drawing.Size(229, 24);
             this.cb3.TabIndex = 2;
             this.cb3.SelectedIndexChanged += new System.EventHandler(this.CbWealthHolding_SelectedIndexChanged);
             // 
@@ -213,7 +217,7 @@
             this.cb1.FormattingEnabled = true;
             this.cb1.Location = new System.Drawing.Point(3, 41);
             this.cb1.Name = "cb1";
-            this.cb1.Size = new System.Drawing.Size(221, 24);
+            this.cb1.Size = new System.Drawing.Size(227, 24);
             this.cb1.TabIndex = 1;
             this.cb1.SelectedIndexChanged += new System.EventHandler(this.CbLandHolding_SelectedIndexChanged);
             // 
@@ -225,9 +229,9 @@
             this.cb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb2.FormattingEnabled = true;
-            this.cb2.Location = new System.Drawing.Point(230, 41);
+            this.cb2.Location = new System.Drawing.Point(236, 41);
             this.cb2.Name = "cb2";
-            this.cb2.Size = new System.Drawing.Size(222, 24);
+            this.cb2.Size = new System.Drawing.Size(227, 24);
             this.cb2.TabIndex = 0;
             this.cb2.SelectedIndexChanged += new System.EventHandler(this.CbDefLanFea_SelectedIndexChanged);
             // 
@@ -237,11 +241,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.AutoScroll = true;
             this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.btAddDelete2, 3, 6);
             this.tableLayoutPanel2.Controls.Add(this.btAddDelete3, 3, 8);
             this.tableLayoutPanel2.Controls.Add(this.btAddDelete4, 3, 10);
@@ -290,13 +296,13 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(690, 666);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(707, 583);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // btAddDelete2
             // 
             this.btAddDelete2.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete2.Location = new System.Drawing.Point(389, 291);
+            this.btAddDelete2.Location = new System.Drawing.Point(379, 291);
             this.btAddDelete2.Name = "btAddDelete2";
             this.btAddDelete2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btAddDelete2.Size = new System.Drawing.Size(51, 23);
@@ -308,7 +314,7 @@
             // btAddDelete3
             // 
             this.btAddDelete3.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete3.Location = new System.Drawing.Point(389, 341);
+            this.btAddDelete3.Location = new System.Drawing.Point(379, 341);
             this.btAddDelete3.Name = "btAddDelete3";
             this.btAddDelete3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btAddDelete3.Size = new System.Drawing.Size(51, 23);
@@ -320,7 +326,7 @@
             // btAddDelete4
             // 
             this.btAddDelete4.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete4.Location = new System.Drawing.Point(389, 391);
+            this.btAddDelete4.Location = new System.Drawing.Point(379, 391);
             this.btAddDelete4.Name = "btAddDelete4";
             this.btAddDelete4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btAddDelete4.Size = new System.Drawing.Size(51, 23);
@@ -332,7 +338,7 @@
             // btAddDelete5
             // 
             this.btAddDelete5.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete5.Location = new System.Drawing.Point(389, 441);
+            this.btAddDelete5.Location = new System.Drawing.Point(379, 441);
             this.btAddDelete5.Name = "btAddDelete5";
             this.btAddDelete5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btAddDelete5.Size = new System.Drawing.Size(51, 23);
@@ -350,7 +356,7 @@
             this.lbAddDesc5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAddDesc5.Location = new System.Drawing.Point(3, 470);
             this.lbAddDesc5.Name = "lbAddDesc5";
-            this.lbAddDesc5.Size = new System.Drawing.Size(684, 18);
+            this.lbAddDesc5.Size = new System.Drawing.Size(701, 18);
             this.lbAddDesc5.TabIndex = 40;
             this.lbAddDesc5.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -363,7 +369,7 @@
             this.lbAddDesc4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAddDesc4.Location = new System.Drawing.Point(3, 420);
             this.lbAddDesc4.Name = "lbAddDesc4";
-            this.lbAddDesc4.Size = new System.Drawing.Size(684, 18);
+            this.lbAddDesc4.Size = new System.Drawing.Size(701, 18);
             this.lbAddDesc4.TabIndex = 40;
             this.lbAddDesc4.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -387,7 +393,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(684, 104);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(701, 104);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
             // tbName
@@ -398,7 +404,7 @@
             this.tbName.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbName.Location = new System.Drawing.Point(3, 69);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(404, 31);
+            this.tbName.Size = new System.Drawing.Size(414, 31);
             this.tbName.TabIndex = 3;
             // 
             // lbCost
@@ -408,9 +414,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCost.AutoSize = true;
             this.lbCost.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCost.Location = new System.Drawing.Point(413, 0);
+            this.lbCost.Location = new System.Drawing.Point(423, 0);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(268, 38);
+            this.lbCost.Size = new System.Drawing.Size(275, 38);
             this.lbCost.TabIndex = 1;
             this.lbCost.Text = "Cost: 10 Wealth, 5 Defense";
             this.lbCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -422,9 +428,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbType.AutoSize = true;
             this.lbType.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbType.Location = new System.Drawing.Point(413, 66);
+            this.lbType.Location = new System.Drawing.Point(423, 66);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(268, 38);
+            this.lbType.Size = new System.Drawing.Size(275, 38);
             this.lbType.TabIndex = 2;
             this.lbType.Text = "Personage";
             this.lbType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -435,10 +441,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chbBuilt.AutoSize = true;
             this.chbBuilt.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbBuilt.Location = new System.Drawing.Point(413, 41);
+            this.chbBuilt.Location = new System.Drawing.Point(423, 41);
             this.chbBuilt.Name = "chbBuilt";
             this.chbBuilt.Padding = new System.Windows.Forms.Padding(60, 0, 60, 0);
-            this.chbBuilt.Size = new System.Drawing.Size(268, 22);
+            this.chbBuilt.Size = new System.Drawing.Size(275, 22);
             this.chbBuilt.TabIndex = 4;
             this.chbBuilt.Text = "Built";
             this.chbBuilt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -448,7 +454,7 @@
             // 
             this.chbAddBuilt5.AutoSize = true;
             this.chbAddBuilt5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt5.Location = new System.Drawing.Point(319, 441);
+            this.chbAddBuilt5.Location = new System.Drawing.Point(309, 441);
             this.chbAddBuilt5.MaximumSize = new System.Drawing.Size(60, 0);
             this.chbAddBuilt5.Name = "chbAddBuilt5";
             this.chbAddBuilt5.Size = new System.Drawing.Size(60, 22);
@@ -466,7 +472,7 @@
             this.lbAddDesc3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAddDesc3.Location = new System.Drawing.Point(3, 370);
             this.lbAddDesc3.Name = "lbAddDesc3";
-            this.lbAddDesc3.Size = new System.Drawing.Size(684, 18);
+            this.lbAddDesc3.Size = new System.Drawing.Size(701, 18);
             this.lbAddDesc3.TabIndex = 40;
             this.lbAddDesc3.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -474,7 +480,7 @@
             // 
             this.chbAddBuilt4.AutoSize = true;
             this.chbAddBuilt4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt4.Location = new System.Drawing.Point(319, 391);
+            this.chbAddBuilt4.Location = new System.Drawing.Point(309, 391);
             this.chbAddBuilt4.MaximumSize = new System.Drawing.Size(60, 0);
             this.chbAddBuilt4.Name = "chbAddBuilt4";
             this.chbAddBuilt4.Size = new System.Drawing.Size(60, 22);
@@ -492,7 +498,7 @@
             this.lbDesc.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDesc.Location = new System.Drawing.Point(3, 184);
             this.lbDesc.Name = "lbDesc";
-            this.lbDesc.Size = new System.Drawing.Size(684, 18);
+            this.lbDesc.Size = new System.Drawing.Size(701, 18);
             this.lbDesc.TabIndex = 2;
             this.lbDesc.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -500,7 +506,7 @@
             // 
             this.chbAddBuilt3.AutoSize = true;
             this.chbAddBuilt3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt3.Location = new System.Drawing.Point(319, 341);
+            this.chbAddBuilt3.Location = new System.Drawing.Point(309, 341);
             this.chbAddBuilt3.MaximumSize = new System.Drawing.Size(60, 0);
             this.chbAddBuilt3.Name = "chbAddBuilt3";
             this.chbAddBuilt3.Size = new System.Drawing.Size(60, 22);
@@ -518,7 +524,7 @@
             this.lbAddDesc2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAddDesc2.Location = new System.Drawing.Point(3, 320);
             this.lbAddDesc2.Name = "lbAddDesc2";
-            this.lbAddDesc2.Size = new System.Drawing.Size(684, 18);
+            this.lbAddDesc2.Size = new System.Drawing.Size(701, 18);
             this.lbAddDesc2.TabIndex = 40;
             this.lbAddDesc2.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -526,7 +532,7 @@
             // 
             this.chbAddBuilt2.AutoSize = true;
             this.chbAddBuilt2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt2.Location = new System.Drawing.Point(319, 291);
+            this.chbAddBuilt2.Location = new System.Drawing.Point(309, 291);
             this.chbAddBuilt2.MaximumSize = new System.Drawing.Size(60, 0);
             this.chbAddBuilt2.Name = "chbAddBuilt2";
             this.chbAddBuilt2.Size = new System.Drawing.Size(60, 22);
@@ -544,14 +550,14 @@
             this.lbBenfits.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBenfits.Location = new System.Drawing.Point(3, 202);
             this.lbBenfits.Name = "lbBenfits";
-            this.lbBenfits.Size = new System.Drawing.Size(684, 18);
+            this.lbBenfits.Size = new System.Drawing.Size(701, 18);
             this.lbBenfits.TabIndex = 3;
             this.lbBenfits.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
             // btAddDelete1
             // 
             this.btAddDelete1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete1.Location = new System.Drawing.Point(389, 223);
+            this.btAddDelete1.Location = new System.Drawing.Point(379, 223);
             this.btAddDelete1.Name = "btAddDelete1";
             this.btAddDelete1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btAddDelete1.Size = new System.Drawing.Size(51, 23);
@@ -567,14 +573,14 @@
             this.tbAddName4.MaximumSize = new System.Drawing.Size(200, 4);
             this.tbAddName4.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName4.Name = "tbAddName4";
-            this.tbAddName4.Size = new System.Drawing.Size(200, 26);
+            this.tbAddName4.Size = new System.Drawing.Size(194, 26);
             this.tbAddName4.TabIndex = 40;
             // 
             // chbAddBuilt1
             // 
             this.chbAddBuilt1.AutoSize = true;
             this.chbAddBuilt1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt1.Location = new System.Drawing.Point(319, 223);
+            this.chbAddBuilt1.Location = new System.Drawing.Point(309, 223);
             this.chbAddBuilt1.MaximumSize = new System.Drawing.Size(60, 0);
             this.chbAddBuilt1.Name = "chbAddBuilt1";
             this.chbAddBuilt1.Size = new System.Drawing.Size(60, 22);
@@ -590,7 +596,7 @@
             this.tbAddName5.MaximumSize = new System.Drawing.Size(200, 4);
             this.tbAddName5.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName5.Name = "tbAddName5";
-            this.tbAddName5.Size = new System.Drawing.Size(200, 26);
+            this.tbAddName5.Size = new System.Drawing.Size(194, 26);
             this.tbAddName5.TabIndex = 40;
             // 
             // rtbNotes
@@ -603,7 +609,7 @@
             this.rtbNotes.Location = new System.Drawing.Point(3, 491);
             this.rtbNotes.Name = "rtbNotes";
             this.rtbNotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbNotes.Size = new System.Drawing.Size(684, 111);
+            this.rtbNotes.Size = new System.Drawing.Size(701, 89);
             this.rtbNotes.TabIndex = 5;
             this.rtbNotes.Text = "";
             // 
@@ -629,7 +635,7 @@
             this.lbAddDesc1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAddDesc1.Location = new System.Drawing.Point(3, 252);
             this.lbAddDesc1.Name = "lbAddDesc1";
-            this.lbAddDesc1.Size = new System.Drawing.Size(684, 36);
+            this.lbAddDesc1.Size = new System.Drawing.Size(701, 36);
             this.lbAddDesc1.TabIndex = 39;
             this.lbAddDesc1.Text = "rtgwgretwadvfdfvavadsvasdvasvfgtredfvavvfgwgrtgwgrtggrtgwgtrwgretgwrtggbfgxnfgnfg" +
     "hsnsfnfgnsfgnsfgns";
@@ -641,7 +647,7 @@
             this.tbAddName1.MaximumSize = new System.Drawing.Size(200, 4);
             this.tbAddName1.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName1.Name = "tbAddName1";
-            this.tbAddName1.Size = new System.Drawing.Size(200, 26);
+            this.tbAddName1.Size = new System.Drawing.Size(194, 26);
             this.tbAddName1.TabIndex = 38;
             // 
             // lbAddType2
@@ -703,7 +709,7 @@
             this.tbAddName2.MaximumSize = new System.Drawing.Size(200, 4);
             this.tbAddName2.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName2.Name = "tbAddName2";
-            this.tbAddName2.Size = new System.Drawing.Size(200, 26);
+            this.tbAddName2.Size = new System.Drawing.Size(194, 26);
             this.tbAddName2.TabIndex = 39;
             // 
             // tbAddName3
@@ -713,7 +719,7 @@
             this.tbAddName3.MaximumSize = new System.Drawing.Size(200, 4);
             this.tbAddName3.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName3.Name = "tbAddName3";
-            this.tbAddName3.Size = new System.Drawing.Size(200, 26);
+            this.tbAddName3.Size = new System.Drawing.Size(194, 26);
             this.tbAddName3.TabIndex = 40;
             // 
             // toolStrip1
@@ -725,7 +731,7 @@
             this.tsbDeleteCurrent});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(690, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(707, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -937,12 +943,34 @@
             this.dgInflImp.TabIndex = 40;
             this.dgInflImp.Visible = false;
             // 
+            // dgTrade
+            // 
+            this.dgTrade.AllowUserToAddRows = false;
+            this.dgTrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTrade.Location = new System.Drawing.Point(326, 290);
+            this.dgTrade.Name = "dgTrade";
+            this.dgTrade.Size = new System.Drawing.Size(38, 32);
+            this.dgTrade.TabIndex = 41;
+            this.dgTrade.Visible = false;
+            // 
+            // dgTradeImp
+            // 
+            this.dgTradeImp.AllowUserToAddRows = false;
+            this.dgTradeImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTradeImp.Location = new System.Drawing.Point(334, 298);
+            this.dgTradeImp.Name = "dgTradeImp";
+            this.dgTradeImp.Size = new System.Drawing.Size(38, 32);
+            this.dgTradeImp.TabIndex = 42;
+            this.dgTradeImp.Visible = false;
+            // 
             // LandsHolForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(707, 613);
+            this.Controls.Add(this.dgTradeImp);
+            this.Controls.Add(this.dgTrade);
             this.Controls.Add(this.dgInflImp);
             this.Controls.Add(this.dgInfluence);
             this.Controls.Add(this.dgHeir);
@@ -973,6 +1001,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgHeir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgInfluence)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgInflImp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTrade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTradeImp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1045,5 +1075,7 @@
         private System.Windows.Forms.Label lbHoldingType3;
         private System.Windows.Forms.Label lbHoldingType2;
         private System.Windows.Forms.Label lbHoldingType1;
+        private System.Windows.Forms.DataGridView dgTrade;
+        private System.Windows.Forms.DataGridView dgTradeImp;
     }
 }

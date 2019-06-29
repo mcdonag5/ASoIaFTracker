@@ -161,6 +161,12 @@ namespace WindowsFormsApp1.Classes
             {
                 switch (information)
                 {
+                    //tbl_LandHolding
+                    case "LandHolding":
+                        qry = "SELECT `tbl_LandHolding`.`Hou_ID`, `tbl_LandHolding`.*, `tbl_Land`.`Lan_ID`, `tbl_Land`.* " +
+                            "FROM `tbl_LandHolding`, `tbl_Land` " +
+                            "WHERE `tbl_LandHolding`.`Hou_ID` = '" + holdingID + "' AND `tbl_Land`.`Lan_ID` = `tbl_LandHolding`.`Lan_ID`; ";
+                        break;
                     //tbl_InfluenceHoldings
                     case "InfluenceHolding":
                         qry = "SELECT `tbl_InfluenceHoldingImprovement`.*, `tbl_InfluenceImprovemnt`.* "+
@@ -196,6 +202,11 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT `tbl_Trade`.*, `tbl_LandHolding`.`LanHol_ID`, `tbl_LandHolding`.`Hou_ID`, `tbl_House`.`Hou_ID`, `tbl_House`.`Hou_Name`, `tbl_LandHolding`.`LanHol_Name` " +
                             "FROM `tbl_Trade`  LEFT JOIN `tbl_LandHolding` ON `tbl_Trade`.`LanHol_ID` = `tbl_LandHolding`.`LanHol_ID` LEFT JOIN `tbl_House` ON `tbl_LandHolding`.`Hou_ID` = `tbl_House`.`Hou_ID` " +
                             "WHERE `tbl_Trade`.`WeaHol_ID` = '"+ holdingID+ "'  AND `tbl_LandHolding`.`LanHol_ID` = `tbl_Trade`.`LanHol_ID` AND `tbl_House`.`Hou_ID` = `tbl_LandHolding`.`Hou_ID`; ";
+                        break;
+                    case "TradeBackwards":
+                        qry = "SELECT `tbl_Trade`.*, `tbl_WealthHolding`.`WeaHol_ID`, `tbl_WealthHolding`.`LanHolFea_ID`, `tbl_LandHoldingFeature`.`LanHolFea_ID`, `tbl_LandHoldingFeature`.`LanHol_ID`, `tbl_LandHolding`.`LanHol_ID`, `tbl_LandHolding`.`Hou_ID`, `tbl_House`.`Hou_ID`, `tbl_House`.`Hou_Name` " +
+                            "FROM `tbl_Trade` LEFT JOIN `tbl_WealthHolding` ON `tbl_Trade`.`WeaHol_ID` = `tbl_WealthHolding`.`WeaHol_ID` LEFT JOIN `tbl_LandHoldingFeature` ON `tbl_WealthHolding`.`LanHolFea_ID` = `tbl_LandHoldingFeature`.`LanHolFea_ID` LEFT JOIN `tbl_LandHolding` ON `tbl_LandHoldingFeature`.`LanHol_ID` = `tbl_LandHolding`.`LanHol_ID` LEFT JOIN `tbl_House` ON `tbl_LandHolding`.`Hou_ID` = `tbl_House`.`Hou_ID` " +
+                            "WHERE `tbl_Trade`.`LanHol_ID` = '" + holdingID + "' AND `tbl_WealthHolding`.`WeaHol_ID` = `tbl_Trade`.`WeaHol_ID` AND `tbl_LandHoldingFeature`.`LanHolFea_ID` = `tbl_WealthHolding`.`LanHolFea_ID` AND `tbl_LandHolding`.`LanHol_ID` = `tbl_LandHoldingFeature`.`LanHol_ID` AND `tbl_House`.`Hou_ID` = `tbl_LandHolding`.`Hou_ID`";
                         break;
                     //Lookup Table
                     //tbl_WealthImprovement
@@ -459,7 +470,21 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
-
+        //tbl_Trade
+        public void InsertTrade(string weaHolID, string lanHolID,string ownLand, string built)
+        {
+            built = built == "True" ? "1" : "0";
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert Trade");
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_Trade` (`WeaHol_ID`, `LanHol_ID`, `Tra_OwnLand`,`Tra_Built`) " +
+                    "VALUES ('" + weaHolID + "', '" + lanHolID + "', '" + ownLand + "','"+built+"');";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         ///// UPDATE ////////////////////////////////////////////////////////////////
         //tbl_House
         public void UpdateHouseDetails(string name, string player, string realm, string seatOfPower, string liegeLord,string liege)
@@ -599,6 +624,22 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_Trade
+        public void UpdateTrade(string TraID, string built)
+        {
+            built = built == "True" ? "1" : "0";
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Update Wealth Trade Improvement Holding ID: " + TraID);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_Trade` " +
+                    "SET `Tra_Built` = '" + built + "' " +
+                    "WHERE `Tra_ID` = '" + TraID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_InfluenceHoldings
         public void UpdateInfluenceHoldings(string infHolID, string name, string notes)
         {
@@ -700,6 +741,20 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "DELETE FROM `tbl_WealthHoldingImprovement`" +
                     "WHERE `WeaHolImp_ID` = '" + WeaImpID + "';";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_Trade
+        public void DeleteTrade(string TraID)
+        {
+            DevLog.LogItem("Deleting from tbl_Trade ID: " + TraID);
+            if (mysqlConn.ConnOpen())
+            {
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "DELETE FROM `tbl_Trade`" +
+                    "WHERE `Tra_ID` = '" + TraID + "';";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
