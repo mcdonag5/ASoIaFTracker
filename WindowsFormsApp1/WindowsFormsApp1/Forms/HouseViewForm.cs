@@ -345,6 +345,7 @@ namespace WindowsFormsApp1
             dgCal2.DataSource = House.WealthHolding(place, ID.ToString(), space);
             for (int n = 0; n < dgCal2.RowCount - 1; n++)
             {
+                bool working = true;
                 houWea -= Convert.ToInt32(dgCal2.Rows[n].Cells[15].Value);
                 houDef -= Convert.ToInt32(dgCal2.Rows[n].Cells[16].Value);
                 houLan -= Convert.ToInt32(dgCal2.Rows[n].Cells[17].Value);
@@ -362,29 +363,42 @@ namespace WindowsFormsApp1
                             marketplaceAdd++;
                             break;
                         case "Criminal Syndicate":
-                            hasCriminalSyndicate = true;
+                            if(Convert.ToInt32(lbTotalLawText.Text) >31)
+                            {
+                                working = false;
+                            } else
+                            {
+                                hasCriminalSyndicate = true;
+                            }
                             break;
                     }
-                    //check if add to marketplace
-                    if (dgCal2.Rows[n].Cells[13].Value.ToString() == "Estate") { marketplaceAdd++; }
+                    if (working)
+                    {
+                        //check if add to marketplace
+                        if (dgCal2.Rows[n].Cells[13].Value.ToString() == "Estate") { marketplaceAdd++; }
 
-                    houHF += Convert.ToInt32(dgCal2.Rows[n].Cells[23].Value);
-                    houWeaGain += Convert.ToInt32(dgCal2.Rows[n].Cells[24].Value);
-                    houPowGain += Convert.ToInt32(dgCal2.Rows[n].Cells[25].Value);
-                    houPopGain += Convert.ToInt32(dgCal2.Rows[n].Cells[26].Value);
-                    houLawGain += Convert.ToInt32(dgCal2.Rows[n].Cells[27].Value);
-                    houLanGain += Convert.ToInt32(dgCal2.Rows[n].Cells[28].Value);
-                    houInfGain += Convert.ToInt32(dgCal2.Rows[n].Cells[29].Value);
-                    houDefGain += Convert.ToInt32(dgCal2.Rows[n].Cells[30].Value);
-                    houWeaLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[31].Value);
-                    houPowLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[32].Value);
-                    houPopLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[33].Value);
-                    houLawLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[34].Value);
-                    houLanLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[35].Value);
-                    houInfLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[36].Value);
-                    houDefLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[37].Value);
-                    houLawMit += Convert.ToInt32(dgCal2.Rows[n].Cells[38].Value);
-                    houPopMit += Convert.ToInt32(dgCal2.Rows[n].Cells[39].Value);
+                        houHF += Convert.ToInt32(dgCal2.Rows[n].Cells[23].Value);
+                        houWeaGain += Convert.ToInt32(dgCal2.Rows[n].Cells[24].Value);
+                        houPowGain += Convert.ToInt32(dgCal2.Rows[n].Cells[25].Value);
+                        houPopGain += Convert.ToInt32(dgCal2.Rows[n].Cells[26].Value);
+                        houLawGain += Convert.ToInt32(dgCal2.Rows[n].Cells[27].Value);
+                        houLanGain += Convert.ToInt32(dgCal2.Rows[n].Cells[28].Value);
+                        houInfGain += Convert.ToInt32(dgCal2.Rows[n].Cells[29].Value);
+                        houDefGain += Convert.ToInt32(dgCal2.Rows[n].Cells[30].Value);
+                        houWeaLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[31].Value);
+                        houPowLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[32].Value);
+                        houPopLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[33].Value);
+                        houLawLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[34].Value);
+                        houLanLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[35].Value);
+                        houInfLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[36].Value);
+                        houDefLoss += Convert.ToInt32(dgCal2.Rows[n].Cells[37].Value);
+                        houLawMit += Convert.ToInt32(dgCal2.Rows[n].Cells[38].Value);
+                        houPopMit += Convert.ToInt32(dgCal2.Rows[n].Cells[39].Value);
+                    }
+                    else
+                    {
+                        landHoldings += "NW: ";
+                    }
                 }
                 else { landHoldings += "B: "; }
 
@@ -393,6 +407,7 @@ namespace WindowsFormsApp1
                 dgCal3.DataSource = House.HouseQry("WealthHoldingImprovement", dgCal2.Rows[n].Cells[1].Value.ToString());
                 for (int t = 0; t < dgCal3.RowCount - 1; t++)
                 {
+                    working = true;
                     houWea -= Convert.ToInt32(dgCal3.Rows[t].Cells[10].Value);
                     houDef -= Convert.ToInt32(dgCal3.Rows[t].Cells[11].Value);
                     houLan -= Convert.ToInt32(dgCal3.Rows[t].Cells[12].Value);
@@ -410,25 +425,34 @@ namespace WindowsFormsApp1
                             case "Weaponsmith":
                                 hasWeaponsmith = true;
                                 break;
+                            case "Wreckers":
+                                if (Convert.ToInt32(lbTotalLawText.Text) > 31) { working = false; }
+                                break;
                         }
-
-                        houHF += Convert.ToInt32(dgCal3.Rows[t].Cells[19].Value);
-                        houWeaGain += Convert.ToInt32(dgCal3.Rows[t].Cells[20].Value);
-                        houPowGain += Convert.ToInt32(dgCal3.Rows[t].Cells[21].Value);
-                        houPopGain += Convert.ToInt32(dgCal3.Rows[t].Cells[22].Value);
-                        houLawGain += Convert.ToInt32(dgCal3.Rows[t].Cells[23].Value);
-                        houLanGain += Convert.ToInt32(dgCal3.Rows[t].Cells[24].Value);
-                        houInfGain += Convert.ToInt32(dgCal3.Rows[t].Cells[25].Value);
-                        houDefGain += Convert.ToInt32(dgCal3.Rows[t].Cells[26].Value);
-                        houWeaLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[27].Value);
-                        houPowLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[28].Value);
-                        houPopLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[29].Value);
-                        houLawLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[30].Value);
-                        houLanLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[31].Value);
-                        houInfLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[32].Value);
-                        houDefLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[33].Value);
-                        houLawMit += Convert.ToInt32(dgCal3.Rows[t].Cells[34].Value);
-                        houPopMit += Convert.ToInt32(dgCal3.Rows[t].Cells[35].Value);
+                        if (working)
+                        {
+                            houHF += Convert.ToInt32(dgCal3.Rows[t].Cells[19].Value);
+                            houWeaGain += Convert.ToInt32(dgCal3.Rows[t].Cells[20].Value);
+                            houPowGain += Convert.ToInt32(dgCal3.Rows[t].Cells[21].Value);
+                            houPopGain += Convert.ToInt32(dgCal3.Rows[t].Cells[22].Value);
+                            houLawGain += Convert.ToInt32(dgCal3.Rows[t].Cells[23].Value);
+                            houLanGain += Convert.ToInt32(dgCal3.Rows[t].Cells[24].Value);
+                            houInfGain += Convert.ToInt32(dgCal3.Rows[t].Cells[25].Value);
+                            houDefGain += Convert.ToInt32(dgCal3.Rows[t].Cells[26].Value);
+                            houWeaLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[27].Value);
+                            houPowLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[28].Value);
+                            houPopLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[29].Value);
+                            houLawLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[30].Value);
+                            houLanLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[31].Value);
+                            houInfLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[32].Value);
+                            houDefLoss += Convert.ToInt32(dgCal3.Rows[t].Cells[33].Value);
+                            houLawMit += Convert.ToInt32(dgCal3.Rows[t].Cells[34].Value);
+                            houPopMit += Convert.ToInt32(dgCal3.Rows[t].Cells[35].Value);
+                        }
+                        else
+                        {
+                            landHoldings += "NW: ";
+                        }
                     }
                     else { landHoldings += "B: "; }
 
