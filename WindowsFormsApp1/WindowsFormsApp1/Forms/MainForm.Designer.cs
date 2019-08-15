@@ -46,6 +46,12 @@
             this.tsbCreateHouse = new System.Windows.Forms.ToolStripButton();
             this.tsbViewHouse = new System.Windows.Forms.ToolStripButton();
             this.tsbDeleteHouse = new System.Windows.Forms.ToolStripButton();
+            this.tsbCreateNewHolding = new System.Windows.Forms.ToolStripDropDownButton();
+            this.wealthHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wealthImprovemntToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.influnceHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.influnceImprovemntToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unitTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -103,7 +109,8 @@
             this.tsddViewHouse,
             this.tsbCreateHouse,
             this.tsbViewHouse,
-            this.tsbDeleteHouse});
+            this.tsbDeleteHouse,
+            this.tsbCreateNewHolding});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1371, 25);
@@ -208,8 +215,8 @@
             this.tsbViewHouse.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewHouse.Image")));
             this.tsbViewHouse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbViewHouse.Name = "tsbViewHouse";
-            this.tsbViewHouse.Padding = new System.Windows.Forms.Padding(10, 0, 5, 0);
-            this.tsbViewHouse.Size = new System.Drawing.Size(88, 22);
+            this.tsbViewHouse.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbViewHouse.Size = new System.Drawing.Size(83, 22);
             this.tsbViewHouse.Text = "View House";
             this.tsbViewHouse.Click += new System.EventHandler(this.TsbViewHouse_Click);
             // 
@@ -220,9 +227,56 @@
             this.tsbDeleteHouse.Image = ((System.Drawing.Image)(resources.GetObject("tsbDeleteHouse.Image")));
             this.tsbDeleteHouse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDeleteHouse.Name = "tsbDeleteHouse";
-            this.tsbDeleteHouse.Size = new System.Drawing.Size(81, 22);
+            this.tsbDeleteHouse.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbDeleteHouse.Size = new System.Drawing.Size(91, 22);
             this.tsbDeleteHouse.Text = "Delete House";
             this.tsbDeleteHouse.Click += new System.EventHandler(this.TsbDeleteHouse_Click);
+            // 
+            // tsbCreateNewHolding
+            // 
+            this.tsbCreateNewHolding.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbCreateNewHolding.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wealthHoldingToolStripMenuItem,
+            this.wealthImprovemntToolStripMenuItem,
+            this.influnceHoldingToolStripMenuItem,
+            this.influnceImprovemntToolStripMenuItem,
+            this.unitTypeToolStripMenuItem});
+            this.tsbCreateNewHolding.Image = ((System.Drawing.Image)(resources.GetObject("tsbCreateNewHolding.Image")));
+            this.tsbCreateNewHolding.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbCreateNewHolding.Name = "tsbCreateNewHolding";
+            this.tsbCreateNewHolding.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbCreateNewHolding.Size = new System.Drawing.Size(142, 22);
+            this.tsbCreateNewHolding.Text = "Create New Holdings";
+            // 
+            // wealthHoldingToolStripMenuItem
+            // 
+            this.wealthHoldingToolStripMenuItem.Name = "wealthHoldingToolStripMenuItem";
+            this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wealthHoldingToolStripMenuItem.Text = "Wealth Holding";
+            // 
+            // wealthImprovemntToolStripMenuItem
+            // 
+            this.wealthImprovemntToolStripMenuItem.Name = "wealthImprovemntToolStripMenuItem";
+            this.wealthImprovemntToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wealthImprovemntToolStripMenuItem.Text = "Wealth Improvemnt";
+            // 
+            // influnceHoldingToolStripMenuItem
+            // 
+            this.influnceHoldingToolStripMenuItem.Name = "influnceHoldingToolStripMenuItem";
+            this.influnceHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.influnceHoldingToolStripMenuItem.Text = "Influnce Holding";
+            // 
+            // influnceImprovemntToolStripMenuItem
+            // 
+            this.influnceImprovemntToolStripMenuItem.Name = "influnceImprovemntToolStripMenuItem";
+            this.influnceImprovemntToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.influnceImprovemntToolStripMenuItem.Text = "Influnce Improvemnt";
+            // 
+            // unitTypeToolStripMenuItem
+            // 
+            this.unitTypeToolStripMenuItem.Name = "unitTypeToolStripMenuItem";
+            this.unitTypeToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.unitTypeToolStripMenuItem.Text = "Unit Type";
             // 
             // FormMain
             // 
@@ -260,6 +314,12 @@
         private System.Windows.Forms.ToolStripButton tsbViewHouse;
         private System.Windows.Forms.ToolStripButton tsbDeleteHouse;
         private System.Windows.Forms.ToolStripMenuItem tsmQryHelper;
+        private System.Windows.Forms.ToolStripDropDownButton tsbCreateNewHolding;
+        private System.Windows.Forms.ToolStripMenuItem wealthHoldingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wealthImprovemntToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem influnceHoldingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem influnceImprovemntToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem unitTypeToolStripMenuItem;
     }
 }
 

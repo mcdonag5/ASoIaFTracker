@@ -64,10 +64,10 @@
     <Compile Include="Classes\House.cs" />
     <Compile Include="Classes\DevLog.cs" />
     <Compile Include="Classes\dbConn.cs" />
-    <Compile Include="Forms\BannersHoldingsForm.cs">
+    <Compile Include="Forms\HouseView\BannersHoldingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BannersHoldingsForm.Designer.cs">
+    <Compile Include="Forms\HouseView\BannersHoldingsForm.Designer.cs">
       <DependentUpon>BannersHoldingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CreateHouseForm.cs">
@@ -76,64 +76,64 @@
     <Compile Include="Forms\CreateHouseForm.Designer.cs">
       <DependentUpon>CreateHouseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ChangeResourcesForm.cs">
+    <Compile Include="Forms\HouseView\ChangeResourcesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ChangeResourcesForm.Designer.cs">
+    <Compile Include="Forms\HouseView\ChangeResourcesForm.Designer.cs">
       <DependentUpon>ChangeResourcesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewBannerForm.cs">
+    <Compile Include="Forms\CreateHolding\NewBannerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewBannerForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewBannerForm.Designer.cs">
       <DependentUpon>NewBannerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewDefenseForm.cs">
+    <Compile Include="Forms\CreateHolding\NewDefenseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewDefenseForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewDefenseForm.Designer.cs">
       <DependentUpon>NewDefenseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewHeirForm.cs">
+    <Compile Include="Forms\CreateHolding\NewHeirForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewHeirForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewHeirForm.Designer.cs">
       <DependentUpon>NewHeirForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewInfluenceForm.cs">
+    <Compile Include="Forms\CreateHolding\NewInfluenceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewInfluenceForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewInfluenceForm.Designer.cs">
       <DependentUpon>NewInfluenceForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewInfluenceImprovementForm.cs">
+    <Compile Include="Forms\CreateHolding\NewInfluenceImprovementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewInfluenceImprovementForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewInfluenceImprovementForm.Designer.cs">
       <DependentUpon>NewInfluenceImprovementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewLandFeatureForm.cs">
+    <Compile Include="Forms\CreateHolding\NewLandFeatureForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewLandFeatureForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewLandFeatureForm.Designer.cs">
       <DependentUpon>NewLandFeatureForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewLandForm.cs">
+    <Compile Include="Forms\CreateHolding\NewLandForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewLandForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewLandForm.Designer.cs">
       <DependentUpon>NewLandForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HouseViewForm.cs">
+    <Compile Include="Forms\HouseView\HouseViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HouseViewForm.Designer.cs">
+    <Compile Include="Forms\HouseView\HouseViewForm.Designer.cs">
       <DependentUpon>HouseViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HoldingForm.cs">
+    <Compile Include="Forms\HouseView\HoldingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\HoldingForm.Designer.cs">
+    <Compile Include="Forms\HouseView\HoldingForm.Designer.cs">
       <DependentUpon>HoldingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
@@ -142,28 +142,28 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewPowerForm.cs">
+    <Compile Include="Forms\CreateHolding\NewPowerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewPowerForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewPowerForm.Designer.cs">
       <DependentUpon>NewPowerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewWealthForm.cs">
+    <Compile Include="Forms\CreateHolding\NewWealthForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewWealthForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewWealthForm.Designer.cs">
       <DependentUpon>NewWealthForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewWealthImprovementForm.cs">
+    <Compile Include="Forms\CreateHolding\NewWealthImprovementForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\NewWealthImprovementForm.Designer.cs">
+    <Compile Include="Forms\CreateHolding\NewWealthImprovementForm.Designer.cs">
       <DependentUpon>NewWealthImprovementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PowerHolForm.cs">
+    <Compile Include="Forms\HouseView\PowerHolForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PowerHolForm.Designer.cs">
+    <Compile Include="Forms\HouseView\PowerHolForm.Designer.cs">
       <DependentUpon>PowerHolForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\QryHelperForm.cs">
@@ -174,55 +174,55 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\BannersHoldingsForm.resx">
+    <EmbeddedResource Include="Forms\HouseView\BannersHoldingsForm.resx">
       <DependentUpon>BannersHoldingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ChangeResourcesForm.resx">
+    <EmbeddedResource Include="Forms\HouseView\ChangeResourcesForm.resx">
       <DependentUpon>ChangeResourcesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateHouseForm.resx">
       <DependentUpon>CreateHouseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewBannerForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewBannerForm.resx">
       <DependentUpon>NewBannerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewDefenseForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewDefenseForm.resx">
       <DependentUpon>NewDefenseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewHeirForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewHeirForm.resx">
       <DependentUpon>NewHeirForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewInfluenceForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewInfluenceForm.resx">
       <DependentUpon>NewInfluenceForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewInfluenceImprovementForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewInfluenceImprovementForm.resx">
       <DependentUpon>NewInfluenceImprovementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewLandFeatureForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewLandFeatureForm.resx">
       <DependentUpon>NewLandFeatureForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewLandForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewLandForm.resx">
       <DependentUpon>NewLandForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HouseViewForm.resx">
+    <EmbeddedResource Include="Forms\HouseView\HouseViewForm.resx">
       <DependentUpon>HouseViewForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HoldingForm.resx">
+    <EmbeddedResource Include="Forms\HouseView\HoldingForm.resx">
       <DependentUpon>HoldingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewPowerForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewPowerForm.resx">
       <DependentUpon>NewPowerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewWealthForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewWealthForm.resx">
       <DependentUpon>NewWealthForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\NewWealthImprovementForm.resx">
+    <EmbeddedResource Include="Forms\CreateHolding\NewWealthImprovementForm.resx">
       <DependentUpon>NewWealthImprovementForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PowerHolForm.resx">
+    <EmbeddedResource Include="Forms\HouseView\PowerHolForm.resx">
       <DependentUpon>PowerHolForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\QryHelperForm.resx">
@@ -281,6 +281,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="HouseShield\NightsWatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\CreateNewHolding\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

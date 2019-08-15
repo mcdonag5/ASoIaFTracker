@@ -416,7 +416,7 @@ namespace WindowsFormsApp1
                     landHoldings += indent + "    ";
                     if (Convert.ToInt32(dgCal3.Rows[t].Cells[4].Value) == 1)
                     {
-                        //check for weapon smiths
+                        //check for special holdings
                         switch (dgCal3.Rows[t].Cells[8].Value.ToString())
                         {
                             case "Bowyer & Fletcher":
