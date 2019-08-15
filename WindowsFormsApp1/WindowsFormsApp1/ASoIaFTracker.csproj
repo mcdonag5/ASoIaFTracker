@@ -64,6 +64,12 @@
     <Compile Include="Classes\House.cs" />
     <Compile Include="Classes\DevLog.cs" />
     <Compile Include="Classes\dbConn.cs" />
+    <Compile Include="Forms\CreateNewWealthHolding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateNewWealthHolding.Designer.cs">
+      <DependentUpon>CreateNewWealthHolding.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HouseView\BannersHoldingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\CreateNewWealthHolding.resx">
+      <DependentUpon>CreateNewWealthHolding.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HouseView\BannersHoldingsForm.resx">
       <DependentUpon>BannersHoldingsForm.cs</DependentUpon>
     </EmbeddedResource>

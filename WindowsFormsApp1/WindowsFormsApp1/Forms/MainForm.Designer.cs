@@ -253,6 +253,7 @@
             this.wealthHoldingToolStripMenuItem.Name = "wealthHoldingToolStripMenuItem";
             this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.wealthHoldingToolStripMenuItem.Text = "Wealth Holding";
+            this.wealthHoldingToolStripMenuItem.Click += new System.EventHandler(this.wealthHoldingToolStripMenuItem_Click);
             // 
             // wealthImprovemntToolStripMenuItem
             // 
