@@ -14,6 +14,7 @@ namespace WindowsFormsApp1.Classes
         DevLog DevLog = new DevLog();
         public readonly int ID;
         public string name;
+        readonly char apostrophe = Convert.ToChar("'");
         ///// VARIABLES END /////////////////////////////////////////////////////////
 
         ///// INITIALIZER ///////////////////////////////////////////////////////////
@@ -36,6 +37,23 @@ namespace WindowsFormsApp1.Classes
             mysqlConn.DbConfig(); //sets database settings
             mysqlConn.Connect();
         }
+
+        public string SanitizingInput(string text)
+        {
+            if (text.IndexOf("'") !=-1|| text.IndexOf('"') !=-1)
+            {
+                for (int i = 0; i < text.Length; i++)
+                {
+                    if (text[i] == apostrophe || text[i] == '"')
+                    {
+                        text = text.Insert(i, @"\");
+                        i++;
+                    }
+                }
+            }
+            return text;
+        }
+
         ///// SELECT ////////////////////////////////////////////////////////////////
         public object HouseQry(string information)
         {//makes a query to the database
@@ -314,6 +332,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Insert Land Holding");
+                name = SanitizingInput(name); note = SanitizingInput(note);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_LandHolding` (`Hou_ID`, `Lan_ID`, `LanHol_Name`, `LanHol_Note`, `LanHol_Discount`) "+
                     "VALUES ('"+ID+"', '"+ landID+"', '"+name+"', '"+note+"', '"+discount+"');";
@@ -328,6 +347,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Insert Land Feature Holding");
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_LandHoldingFeature` (`LanFea_ID`, `LanHol_ID`, `LanHolFea_Name`, `LanHolFea_Note`) "+
                     "VALUES ('"+landFeaID+"', '"+landHolID+"', '"+name+"', '"+notes+"');";
@@ -339,10 +359,11 @@ namespace WindowsFormsApp1.Classes
         //tbl_DefenseHolding
         public void InsertDefenseHolding(string defID, string landHolID, string name, string built, string notes, string discount)
         {
-            built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Insert Defense Holding");
+                built = built == "True" ? "1" : "0";
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_DefenseHolding` (`Def_ID`, `LanHol_ID`, `DefHol_Name`, `DefHol_Built`, `DefHol_Notes`, `DefHol_Discount`) "+
                     "VALUES ('"+defID+"', '"+landHolID+"', '"+name+"', '"+ built+"', '"+notes+"', '"+discount+"');";
@@ -354,10 +375,11 @@ namespace WindowsFormsApp1.Classes
         //tbl_WealthHolding
         public void InsertWealthHolding(string WeaID, string place, string placeID, string name, string built, string notes, string discount)
         {
-            built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Insert Wealth Holding");
+                built = built == "True" ? "1" : "0";
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_WealthHolding` (`Wea_ID`, `"+place+"`, `WeaHol_Name`, `WeaHol_Built`, `WeaHol_Note`, `WeaHol_Discount`) "+
                     "VALUES ('"+WeaID+"', '"+placeID+"', '"+name+"', '"+built+"', '"+notes+"', '"+ discount+"');";
@@ -369,10 +391,10 @@ namespace WindowsFormsApp1.Classes
         //tbl_WealthHoldingImprovement
         public void InsertWealthImprovementHolding(string WeaHolID, string weaImpID, string built)
         {
-            built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Insert Wealth Improvement Holding");
+                built = built == "True" ? "1" : "0";
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_WealthHoldingImprovement` (`WeaHol_ID`, `WeaImp_ID`, `WeaHolImp_Built`) "+
                     "VALUES ('"+WeaHolID+"', '"+weaImpID+"', '"+built+"');";
@@ -387,6 +409,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen()) 
             {
                 DevLog.LogItem("Insert Influence Holding");
+                name = SanitizingInput(name); note = SanitizingInput(note);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_InfluenceHoldings` (`Hou_ID`, `Inf_ID`, `InfHol_Name`, `InfHol_Note`, `InfHol_Discount`) " +
                     "VALUES ('" + ID + "','" + infID + "', '" + name + "', '" + note + "', '" + discount + "');";
@@ -415,6 +438,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Insert Heir Holding");
+                name = SanitizingInput(name); note = SanitizingInput(note);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_Heir` (`Hou_ID`, `Hei_Name`, `Hei_Gender`, `Hei_Note`) " +
                     "VALUES ('"+ID+"','" + name + "', '" + gender + "', '" + note + "');";
@@ -426,12 +450,13 @@ namespace WindowsFormsApp1.Classes
         //tbl_PowerHolding
         public void InsertPower(string unitID, string name, string discount, string training, string notes, string armorUpg, string fightUpg, string marksUpg, string agility, string animal, string athletics, string awareness, string cunning, string endurance, string fighting, string healing, string language, string knowledge, string marksmanship, string persuasion, string status, string stealth, string survival, string thievery, string warfare, string will)
         {
-            armorUpg = armorUpg == "True" ? "1" : "0";
-            fightUpg = fightUpg == "True" ? "1" : "0";
-            marksUpg = marksUpg == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Insert Power Holding");
+                armorUpg = armorUpg == "True" ? "1" : "0";
+                fightUpg = fightUpg == "True" ? "1" : "0";
+                marksUpg = marksUpg == "True" ? "1" : "0";
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_PowerHolding` (`Uni_ID`,`Hou_ID`,`PowHol_Name`,`PowHol_Discount`, `PowHol_Training`, `PowHol_Notes`, `PowHol_ArmorUp`, `PowHol_FightingUp`, `PowHol_MarksmashipUp`,`PowHol_Agility`, `PowHol_AnimalHand`, `PowHol_Athletics`, `PowHol_Awareness`, `PowHol_Cunning`, `PowHol_Endurance`, `PowHol_Fighting`, `PowHol_Healing`, `PowHol_Language`, `PowHol_Knowledge`, `PowHol_Marksmanship`, `PowHol_Persuasion`, `PowHol_Status`, `PowHol_Stealth`, `PowHol_Survival`, `PowHol_Thievery`, `PowHol_Warfare`, `PowHol_Will`)" +
                     "VALUES('"+unitID+ "','" + ID + "','" + name + "','" + discount + "','" + training + "','" + notes + "','" + armorUpg + "','" + fightUpg + "','" + marksUpg + "','" + agility + "','" + animal + "','" + athletics + "','" + awareness + "','" + cunning + "','" + endurance + "','" + fighting + "','" + healing + "','" + language + "','" + knowledge + "','" + marksmanship + "','" + persuasion + "','" + status + "','" + stealth + "','" + survival + "','" + thievery + "','" + warfare + "','" + will + "')";
@@ -473,10 +498,10 @@ namespace WindowsFormsApp1.Classes
         //tbl_Trade
         public void InsertTrade(string weaHolID, string lanHolID,string ownLand, string built)
         {
-            built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Insert Trade");
+                built = built == "True" ? "1" : "0";
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_Trade` (`WeaHol_ID`, `LanHol_ID`, `Tra_OwnLand`,`Tra_Built`) " +
                     "VALUES ('" + weaHolID + "', '" + lanHolID + "', '" + ownLand + "','"+built+"');";
@@ -492,6 +517,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Update House Details ID: "+ID);
+                name = SanitizingInput(name); player = SanitizingInput(player); seatOfPower = SanitizingInput(seatOfPower); liegeLord = SanitizingInput(liegeLord); liege = SanitizingInput(liege);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_House` " +
                     "SET `Hou_Name` = '" + name + "', `Hou_Player` = '" + player + "', `Rea_Name` = '" + realm + "', `Hou_SeatOfPower` = '" + seatOfPower + "', `Hou_LiegeLord` = '" + liegeLord + "', `Hou_Liege` = '" + liege + "' " +
@@ -537,6 +563,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Update land Holding ID: "+ lanHolID);
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_LandHolding` " +
                     "SET `LanHol_Name` = '" + name + "', `LanHol_Note` = '" + notes + "' " +
@@ -553,6 +580,7 @@ namespace WindowsFormsApp1.Classes
             {
                 DevLog.LogItem("Update land Feature Holding with notes ID: " + lanHolFeaID);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                name = SanitizingInput(name);
                 comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
                     "SET `LanHolFea_Name` = '" + name + "' " +
                     "WHERE `LanHolFea_ID` = '" + lanHolFeaID + "'";
@@ -564,10 +592,11 @@ namespace WindowsFormsApp1.Classes
         //tbl_DefenseHolding
         public void UpdateDefenseDetails(string defHolID, string name, string notes, string built)
         {
-            built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Update Defense Holding ID: "+ defHolID);
+                built = built == "True" ? "1" : "0";
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_DefenseHolding` " +
                     "SET `DefHol_Name` = '" + name + "', `DefHol_Notes` = '" + notes + "', `DefHol_Built` = '" + built + "' " +
@@ -583,6 +612,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Update land Holding with out notes ID: " + lanHolFeaID);
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
                     "SET `LanHolFea_Name` = '" + name + "', `LanHolFea_Note` = '" + notes + "' " +
@@ -595,10 +625,11 @@ namespace WindowsFormsApp1.Classes
         //tbl_WealthHolding
         public void UpdateWealthDetails(string weaHolID, string name, string notes, string built)
         {
-            built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Update Wealth Holding ID: "+ weaHolID);
+                built = built == "True" ? "1" : "0";
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_WealthHolding` " +
                     "SET `WeaHol_Name` = '" + name + "', `WeaHol_Note` = '" + notes + "', `WeaHol_Built` = '" + built + "' " +
@@ -611,10 +642,10 @@ namespace WindowsFormsApp1.Classes
         //tbl_WealthHoldingImprovement
         public void UpdateWealthImprovementDetails(string WeaHolImpID, string built)
         {
-            built = built == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Update Wealth Improvement Holding ID: "+ WeaHolImpID);
+                built = built == "True" ? "1" : "0";
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_WealthHoldingImprovement` " +
                     "SET `WeaHolImp_Built` = '" + built + "' " +
@@ -646,6 +677,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Update Influence Holding ID: "+infHolID);
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_InfluenceHoldings` " +
                     "SET `InfHol_Name` = '" + name + "', `InfHol_Note` = '" + notes + "' " +
@@ -661,6 +693,7 @@ namespace WindowsFormsApp1.Classes
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Update Heir Holding ID: "+heirID);
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_Heir` " +
                     "SET `Hei_Name` = '" + name + "', `Hei_Note` = '" + notes + "' " +
@@ -673,12 +706,13 @@ namespace WindowsFormsApp1.Classes
         //tbl_PowerHolding
         public void UpdatePowerHolding(string powHolID, string name, string training, string damage, string disorganized, string notes, string armorUpg, string fightUpg, string marksUpg, string agility, string animal, string athletics, string awareness, string cunning, string endurance, string fighting, string healing, string language, string knowledge, string marksmanship, string persuasion, string status, string stealth, string survival, string thievery, string warfare, string will)
         {
-            armorUpg = armorUpg == "True" ? "1" : "0";
-            fightUpg = fightUpg == "True" ? "1" : "0";
-            marksUpg = marksUpg == "True" ? "1" : "0";
             if (mysqlConn.ConnOpen())
             {
                 DevLog.LogItem("Update Power Holding ID: " + powHolID);
+                armorUpg = armorUpg == "True" ? "1" : "0";
+                fightUpg = fightUpg == "True" ? "1" : "0";
+                marksUpg = marksUpg == "True" ? "1" : "0";
+                name = SanitizingInput(name); notes = SanitizingInput(notes);
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_PowerHolding` " +
                     "SET `PowHol_Name` = '" + name + "', `PowHol_Training` = '" + training + "', `PowHol_Damage` = '" + damage + "', `PowHol_Disorganized` = '" + disorganized + "', `PowHol_Notes` = '" + notes + "', `PowHol_ArmorUp` = '" + armorUpg + "', `PowHol_FightingUp` = '" + fightUpg + "', `PowHol_MarksmashipUp` = '" + marksUpg + "', " +
