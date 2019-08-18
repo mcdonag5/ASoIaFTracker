@@ -115,10 +115,10 @@ namespace WindowsFormsApp1
             }
         }
         //Create New Holding start
-        private void wealthHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void WealthHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DevLog.LogItem("Create new wealth holding tool strip clicked");
-            CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding();
+            CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Wealth");
             createNewWealthHolding.ShowDialog();
         }
         //Create New Holding end

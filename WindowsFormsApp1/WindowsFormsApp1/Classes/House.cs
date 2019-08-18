@@ -510,6 +510,23 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //Lookuptables
+        //tbl_Wealth
+        public void InsertWealth(string name, string type, string takeSpace, string wealthCost, string defenseCost, string landCost, string powerCost, string time, string requirement, string description, string benfit, string houseFortune, string wealthGain, string powerGain, string populationGain, string lawGain, string landGain, string influenceGain, string defenseGain, string wealthLoss, string powerLoss, string populationLoss, string lawLoss, string landLoss, string influenceLoss, string defenseLoss, string lawPenaltyReduction, string populationPenaltyReduction, string houseAction)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert Trade");
+                takeSpace = takeSpace == "True" ? "1" : "0";
+                name = SanitizingInput(name); time = SanitizingInput(time); requirement = SanitizingInput(requirement); description = SanitizingInput(description); benfit = SanitizingInput(benfit); houseAction = SanitizingInput(houseAction); 
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_Wealth` (`Wea_Name`, `Wea_Type`, `Wea_TakesSpace`,`Wea_WealthCost`,`Wea_DefenseCost`,`Wea_LandCost`,`Wea_PowerCost`,`Wea_Time`,`Wea_Requirement`,`Wea_Description`,`Wea_Benefits`,`Wea_HouseFortune`,`Wea_WealthGain`,`Wea_PowerGain`,`Wea_PopulationGain`,`Wea_LawGain`,`Wea_LandsGain`,`Wea_InfluenceGain`,`Wea_DefenseGain`,`Wea_WealthLoss`,`Wea_PowerLoss`,`Wea_PopulationLoss`,`Wea_LawLoss`,`Wea_LandsLoss`,`Wea_InfluenceLoss`,`Wea_DefenseLoss`,`Wea_LawPenaltyReduction`,`Wea_PopulationPenaltyReduction`,`Wea_HouseAction`) " +
+                    "VALUES ('" + name + "', '" + type + "', '" + takeSpace + "','" + wealthCost + "','" + defenseCost + "','" + landCost + "','" + powerCost + "','" + time + "','" + requirement + "','" + description + "','" + benfit + "','" + houseFortune + "','" + wealthGain + "','" + powerGain + "','" + populationGain + "','" + lawGain + "','" + landGain + "','" + influenceGain + "','" + defenseGain + "','" + wealthLoss + "','" + powerLoss + "','" + populationLoss + "','" + lawLoss + "','" + landLoss + "','" + influenceLoss + "','" + defenseLoss + "','" + lawPenaltyReduction + "','" + populationPenaltyReduction + "','" + houseAction + "');";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         ///// UPDATE ////////////////////////////////////////////////////////////////
         //tbl_House
         public void UpdateHouseDetails(string name, string player, string realm, string seatOfPower, string liegeLord,string liege)

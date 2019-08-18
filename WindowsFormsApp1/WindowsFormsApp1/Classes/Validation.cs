@@ -35,6 +35,14 @@ namespace WindowsFormsApp1.Classes
             }
         }
         //If the textbox text is null will set to a value
+        public void SetNullTo(object sender)
+        {
+            if ((sender as TextBox).Text == "")
+            {
+                (sender as TextBox).Text = "0";
+            }
+        }
+
         public void SetNullTo(object sender, string setTo)
         {
             if ((sender as TextBox).Text == "")
