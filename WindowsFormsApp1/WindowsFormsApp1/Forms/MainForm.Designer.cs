@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.dgHouseDetails = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -52,6 +52,7 @@
             this.influnceHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.influnceImprovemntToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unitTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.defenseHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,36 +66,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgHouseDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgHouseDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgHouseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgHouseDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgHouseDetails.Location = new System.Drawing.Point(0, 25);
             this.dgHouseDetails.Name = "dgHouseDetails";
             this.dgHouseDetails.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgHouseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgHouseDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgHouseDetails.Size = new System.Drawing.Size(1371, 604);
             this.dgHouseDetails.TabIndex = 13;
@@ -240,6 +241,7 @@
             this.wealthImprovemntToolStripMenuItem,
             this.influnceHoldingToolStripMenuItem,
             this.influnceImprovemntToolStripMenuItem,
+            this.defenseHoldingToolStripMenuItem,
             this.unitTypeToolStripMenuItem});
             this.tsbCreateNewHolding.Image = ((System.Drawing.Image)(resources.GetObject("tsbCreateNewHolding.Image")));
             this.tsbCreateNewHolding.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -251,7 +253,7 @@
             // wealthHoldingToolStripMenuItem
             // 
             this.wealthHoldingToolStripMenuItem.Name = "wealthHoldingToolStripMenuItem";
-            this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.wealthHoldingToolStripMenuItem.Text = "Wealth Holding";
             this.wealthHoldingToolStripMenuItem.Click += new System.EventHandler(this.WealthHoldingToolStripMenuItem_Click);
             // 
@@ -267,19 +269,27 @@
             this.influnceHoldingToolStripMenuItem.Name = "influnceHoldingToolStripMenuItem";
             this.influnceHoldingToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.influnceHoldingToolStripMenuItem.Text = "Influence Holding";
-            this.influnceHoldingToolStripMenuItem.Click += new System.EventHandler(this.influnceHoldingToolStripMenuItem_Click);
+            this.influnceHoldingToolStripMenuItem.Click += new System.EventHandler(this.InflunceHoldingToolStripMenuItem_Click);
             // 
             // influnceImprovemntToolStripMenuItem
             // 
             this.influnceImprovemntToolStripMenuItem.Name = "influnceImprovemntToolStripMenuItem";
             this.influnceImprovemntToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.influnceImprovemntToolStripMenuItem.Text = "Influence Improvment";
+            this.influnceImprovemntToolStripMenuItem.Click += new System.EventHandler(this.InflunceImprovemntToolStripMenuItem_Click);
             // 
             // unitTypeToolStripMenuItem
             // 
             this.unitTypeToolStripMenuItem.Name = "unitTypeToolStripMenuItem";
-            this.unitTypeToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.unitTypeToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.unitTypeToolStripMenuItem.Text = "Unit Type";
+            // 
+            // defenseHoldingToolStripMenuItem
+            // 
+            this.defenseHoldingToolStripMenuItem.Name = "defenseHoldingToolStripMenuItem";
+            this.defenseHoldingToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.defenseHoldingToolStripMenuItem.Text = "Defense Holding";
+            this.defenseHoldingToolStripMenuItem.Click += new System.EventHandler(this.defenseHoldingToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -323,6 +333,7 @@
         private System.Windows.Forms.ToolStripMenuItem influnceHoldingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem influnceImprovemntToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem unitTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem defenseHoldingToolStripMenuItem;
     }
 }
 

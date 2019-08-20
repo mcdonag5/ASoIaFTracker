@@ -46,17 +46,37 @@ namespace WindowsFormsApp1.Forms
                 case "Wealth":
                     cbWealthHoldingType.SelectedIndex = 0;
                     lbInfluence.Visible = tbInfluence.Visible = lbWealthHolding.Visible = cbImprovementType.Visible = cbImprovementHolding.Visible = lbRepeatable.Visible = chbRepeatable.Visible = false;
+                    lbInfluenceHoldings.Visible = cbInfluenceHoldings.Visible = false;
                     break;
                 case "Wealth Improvement":
                     cbImprovementType.SelectedIndex = 0;
                     chbLimit.Checked = true;
                     lbWealthHoldingType.Visible = cbWealthHoldingType.Visible = false;
+                    lbInfluenceHoldings.Visible = cbInfluenceHoldings.Visible = false;
                     break;
                 case "Influence":
                     lbWealthHoldingType.Visible = cbWealthHoldingType.Visible = lbWealthHolding.Visible = cbImprovementType.Visible = cbImprovementHolding.Visible = lbTypeDescription.Visible = lbTime.Visible = tbTime.Visible = lbRequirement.Visible = tbRequirement.Visible = false;
                     lbWealth.Visible = tbWealth.Visible = lbDefense.Visible = tbDefense.Visible = lbLand.Visible = tbLand.Visible = lbPower.Visible = tbPower.Visible = false;
                     lbHouseFortune.Visible = tbHouseFortune.Visible = lbHouseAction.Visible = tbHouseAction.Visible = lbResourceLossMitigation.Visible = lbWeaLoss.Visible = tbWeaLoss.Visible = lbPowLoss.Visible = tbPowLoss.Visible = lbPopLoss.Visible = tbPopLoss.Visible = lbLawLoss.Visible = tbLawLoss.Visible = lbLanLoss.Visible = tbLanLoss.Visible = lbInfLoss.Visible = tbInfLoss.Visible = lbDefLoss.Visible = tbDefLoss.Visible = false;
                     lbLimit.Visible = chbLimit.Visible = lbRepeatable.Visible = chbRepeatable.Visible = false;
+                    lbInfluenceHoldings.Visible = cbInfluenceHoldings.Visible = false;
+                    break;
+                case "Influence Improvement":
+                    lbWealthHoldingType.Visible = cbWealthHoldingType.Visible = lbWealthHolding.Visible = cbImprovementType.Visible = cbImprovementHolding.Visible = lbTypeDescription.Visible = lbTime.Visible = tbTime.Visible = lbRequirement.Visible = tbRequirement.Visible = false;
+                    lbWealth.Visible = tbWealth.Visible = lbDefense.Visible = tbDefense.Visible = lbLand.Visible = tbLand.Visible = lbPower.Visible = tbPower.Visible = false;
+                    lbHouseFortune.Visible = tbHouseFortune.Visible = lbHouseAction.Visible = tbHouseAction.Visible = lbResourceLossMitigation.Visible = lbWeaLoss.Visible = tbWeaLoss.Visible = lbPowLoss.Visible = tbPowLoss.Visible = lbPopLoss.Visible = tbPopLoss.Visible = lbLawLoss.Visible = tbLawLoss.Visible = lbLanLoss.Visible = tbLanLoss.Visible = lbInfLoss.Visible = tbInfLoss.Visible = lbDefLoss.Visible = tbDefLoss.Visible = false;
+                    
+                    lbLimit.Visible = chbLimit.Visible = lbRepeatable.Visible = chbRepeatable.Visible = false;
+
+                    dgHoldings.DataSource = House.HouseQry("Influence");
+                    object[] influence = new object[dgHoldings.RowCount];
+                    for (int i = 0; i < dgHoldings.RowCount; i++)
+                    {
+                        influence[i] = dgHoldings.Rows[i].Cells[1].Value.ToString() + " - Inf: " + dgHoldings.Rows[i].Cells[2].Value.ToString();
+                    }
+                    cbInfluenceHoldings.Items.Clear();
+                    cbInfluenceHoldings.Items.AddRange(influence);
+                    cbInfluenceHoldings.SelectedIndex = 0;
                     break;
             }
             Text = "Create new " + holdingType + " Holding";
@@ -85,18 +105,18 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
-        private void cbImprovementType_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbImprovementType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgWealth.DataSource = House.HouseQry(cbImprovementType.Text);
-            object[] defense = new object[dgWealth.RowCount];
+            dgHoldings.DataSource = House.HouseQry(cbImprovementType.Text);
+            object[] defense = new object[dgHoldings.RowCount];
             string item;
-            for (int i = 0; i < dgWealth.RowCount; i++)
+            for (int i = 0; i < dgHoldings.RowCount; i++)
             {
-                item = dgWealth.Rows[i].Cells[1].Value.ToString();
-                if (Convert.ToInt32(dgWealth.Rows[i].Cells[4].Value) > 0) { item += " Wea: " + dgWealth.Rows[i].Cells[4].Value.ToString(); }
-                if (Convert.ToInt32(dgWealth.Rows[i].Cells[5].Value) > 0) { item += " Def: " + dgWealth.Rows[i].Cells[5].Value.ToString(); }
-                if (Convert.ToInt32(dgWealth.Rows[i].Cells[6].Value) > 0) { item += " Lan: " + dgWealth.Rows[i].Cells[6].Value.ToString(); }
-                if (Convert.ToInt32(dgWealth.Rows[i].Cells[7].Value) > 0) { item += " Pow: " + dgWealth.Rows[i].Cells[7].Value.ToString(); }
+                item = dgHoldings.Rows[i].Cells[1].Value.ToString();
+                if (Convert.ToInt32(dgHoldings.Rows[i].Cells[4].Value) > 0) { item += " Wea: " + dgHoldings.Rows[i].Cells[4].Value.ToString(); }
+                if (Convert.ToInt32(dgHoldings.Rows[i].Cells[5].Value) > 0) { item += " Def: " + dgHoldings.Rows[i].Cells[5].Value.ToString(); }
+                if (Convert.ToInt32(dgHoldings.Rows[i].Cells[6].Value) > 0) { item += " Lan: " + dgHoldings.Rows[i].Cells[6].Value.ToString(); }
+                if (Convert.ToInt32(dgHoldings.Rows[i].Cells[7].Value) > 0) { item += " Pow: " + dgHoldings.Rows[i].Cells[7].Value.ToString(); }
                 defense[i] = item;
             }
             cbImprovementHolding.Items.Clear();
@@ -109,7 +129,7 @@ namespace WindowsFormsApp1.Forms
             if (tbName.Text != "")
             {
                 switch (holdingType)
-            {
+                {
                     case "Wealth":
 
                         Validation.SetNullTo(tbWealth); Validation.SetNullTo(tbDefense); Validation.SetNullTo(tbLand); Validation.SetNullTo(tbPower);
@@ -128,7 +148,7 @@ namespace WindowsFormsApp1.Forms
                         Validation.SetNullTo(tbWeaLoss); Validation.SetNullTo(tbPopLoss); Validation.SetNullTo(tbPopLoss); Validation.SetNullTo(tbLawLoss); Validation.SetNullTo(tbLawLoss); Validation.SetNullTo(tbInfLoss); Validation.SetNullTo(tbDefLoss);
                         Validation.SetNullTo(tbHouseFortune); Validation.SetNullTo(tbLawPenaltyReduction); Validation.SetNullTo(tbPopulationPenaltyReduction);
 
-                        House.InsertWealthImprovement(dgWealth.Rows[cbImprovementHolding.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, chbLimit.Checked.ToString(), tbWealth.Text, tbDefense.Text, tbLand.Text, tbPower.Text, tbInfluence.Text, tbTime.Text, tbRequirement.Text, rtbDescription.Text, rtbBenfits.Text, tbHouseFortune.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbWeaLoss.Text, tbPowLoss.Text, tbPopLoss.Text, tbLawLoss.Text, tbLanLoss.Text, tbInfLoss.Text, tbDefLoss.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text, tbHouseAction.Text, chbRepeatable.Checked.ToString());
+                        House.InsertWealthImprovement(dgHoldings.Rows[cbImprovementHolding.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, chbLimit.Checked.ToString(), tbWealth.Text, tbDefense.Text, tbLand.Text, tbPower.Text, tbInfluence.Text, tbTime.Text, tbRequirement.Text, rtbDescription.Text, rtbBenfits.Text, tbHouseFortune.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbWeaLoss.Text, tbPowLoss.Text, tbPopLoss.Text, tbLawLoss.Text, tbLanLoss.Text, tbInfLoss.Text, tbDefLoss.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text, tbHouseAction.Text, chbRepeatable.Checked.ToString());
                         Close();
                         break;
                     case "Influence":
@@ -137,6 +157,14 @@ namespace WindowsFormsApp1.Forms
                         Validation.SetNullTo(tbLawPenaltyReduction); Validation.SetNullTo(tbPopulationPenaltyReduction);
 
                         House.InsertInfluence(tbName.Text, tbInfluence.Text, rtbDescription.Text, rtbBenfits.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text);
+                        Close();
+                        break;
+                    case "Influence Improvement":
+                        Validation.SetNullTo(tbInfluence);
+                        Validation.SetNullTo(tbWeaGain); Validation.SetNullTo(tbPowGain); Validation.SetNullTo(tbPopGain); Validation.SetNullTo(tbLawGain); Validation.SetNullTo(tbLanGain); Validation.SetNullTo(tbInfGain); Validation.SetNullTo(tbDefGain);
+                        Validation.SetNullTo(tbLawPenaltyReduction); Validation.SetNullTo(tbPopulationPenaltyReduction);
+
+                        House.InsertInfluenceImprovment(dgHoldings.Rows[cbInfluenceHoldings.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, tbInfluence.Text, rtbDescription.Text, rtbBenfits.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text);
                         Close();
                         break;
                 }

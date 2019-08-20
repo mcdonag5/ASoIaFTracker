@@ -117,23 +117,35 @@ namespace WindowsFormsApp1
         //Create New Holding start
         private void WealthHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DevLog.LogItem("Create new wealth holding tool strip clicked");
+            DevLog.LogItem("Create new Wealth holding tool strip clicked");
             CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Wealth");
             createNewWealthHolding.ShowDialog();
         }
 
         private void WealthImprovemntToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DevLog.LogItem("Create new wealth Improvment holding tool strip clicked");
+            DevLog.LogItem("Create new Wealth Improvement holding tool strip clicked");
             CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Wealth Improvement");
             createNewWealthHolding.ShowDialog();
         }
 
-        private void influnceHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void InflunceHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DevLog.LogItem("Create new influnce holding tool strip clicked");
+            DevLog.LogItem("Create new Influence holding tool strip clicked");
             CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Influence");
             createNewWealthHolding.ShowDialog();
+        }
+
+        private void InflunceImprovemntToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DevLog.LogItem("Create new influnce Improvement holding tool strip clicked");
+            CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Influence Improvement");
+            createNewWealthHolding.ShowDialog();
+        }
+
+        private void defenseHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
         //Create New Holding end
 

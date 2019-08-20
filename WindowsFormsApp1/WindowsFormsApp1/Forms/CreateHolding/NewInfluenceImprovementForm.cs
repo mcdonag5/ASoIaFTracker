@@ -73,7 +73,7 @@ namespace WindowsFormsApp1.Forms
         private void BtBuy_Click(object sender, EventArgs e)
         {
             Validation.SetNullTo(tbDiscount, "0");
-            House.InsertInfluenceImprovement(dgImprovement.Rows[cbInfluence.SelectedIndex].Cells[0].Value.ToString(),holdingID,tbDiscount.Text);
+            House.InsertInfluenceImprovementHolding(dgImprovement.Rows[cbInfluence.SelectedIndex].Cells[0].Value.ToString(),holdingID,tbDiscount.Text);
             Close();
         }
         //Validation

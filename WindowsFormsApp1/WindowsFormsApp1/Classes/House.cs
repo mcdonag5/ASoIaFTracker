@@ -419,7 +419,7 @@ namespace WindowsFormsApp1.Classes
             }
         }
         //tbl_InfluenceHoldingImprovement
-        public void InsertInfluenceImprovement(string infImpID, string infHolID, string discount)
+        public void InsertInfluenceImprovementHolding(string infImpID, string infHolID, string discount)
         {
             if (mysqlConn.ConnOpen())
             {
@@ -516,7 +516,7 @@ namespace WindowsFormsApp1.Classes
         {
             if (mysqlConn.ConnOpen())
             {
-                DevLog.LogItem("Insert Trade");
+                DevLog.LogItem("Insert Wealth");
                 takeSpace = takeSpace == "True" ? "1" : "0";
                 name = SanitizingInput(name); time = SanitizingInput(time); requirement = SanitizingInput(requirement); description = SanitizingInput(description); benfit = SanitizingInput(benfit); houseAction = SanitizingInput(houseAction); 
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
@@ -532,7 +532,7 @@ namespace WindowsFormsApp1.Classes
         {
             if (mysqlConn.ConnOpen())
             {
-                DevLog.LogItem("Insert Trade");
+                DevLog.LogItem("Insert WealthImprovement");
                 limit = limit == "True" ? "1" : "0";
                 repeatable = repeatable == "True" ? "1" : "0";
                 name = SanitizingInput(name); time = SanitizingInput(time); requirement = SanitizingInput(requirement); description = SanitizingInput(description); benfit = SanitizingInput(benfit); houseAction = SanitizingInput(houseAction);
@@ -549,11 +549,26 @@ namespace WindowsFormsApp1.Classes
         {
             if (mysqlConn.ConnOpen())
             {
-                DevLog.LogItem("Insert Trade");
+                DevLog.LogItem("Insert Influence");
                 name = SanitizingInput(name); description = SanitizingInput(description); benfit = SanitizingInput(benfit); 
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_Influence` (`Inf_Name`, `Inf_InfluenceCost`, `Inf_Description`, `Inf_Benefit`, `Inf_DefenseGain`, `Inf_InfluenceGain`, `Inf_LandGain`, `Inf_LawGain`, `Inf_PopulationGain`, `Inf_PowerGain`, `Inf_WealthGain`, `Inf_LawPenaltyReduction`, `Inf_PopulationPenaltyReduction`) " +
                     "VALUES ('" + name + "', '" + influenceCost + "','" + description + "','" + benfit + "','" + defenseGain + "','" + influenceGain + "','" + landGain + "','" + lawGain + "','" + populationGain + "','" + powerGain + "','" + wealthGain + "','" + lawPenaltyReduction + "','" + populationPenaltyReduction + "');";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+
+        public void InsertInfluenceImprovment(string infID, string name, string influenceCost, string description, string benfit, string wealthGain, string powerGain, string populationGain, string lawGain, string landGain, string influenceGain, string defenseGain, string lawPenaltyReduction, string populationPenaltyReduction)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert InfluenceImprovment");
+                name = SanitizingInput(name); description = SanitizingInput(description); benfit = SanitizingInput(benfit);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_InfluenceImprovemnt` (`Inf_ID`, `InfImp_Name`, `InfImp_InfluenceCost`, `InfImp_Description`, `InfImp_Benefit`, `InfImp_WealthGain`, `InfImp_PowerGain`, `InfImp_PopulationGain`, `InfImp_LawGain`, `InfImp_LandsGain`, `InfImp_InfluenceGain`, `InfImp_DefenseGain`, `InfImp_LawPenaltyReduction`, `InfImp_PopulationPenaltyReduction`) " +
+                    "VALUES ('" + infID + "', '" + name + "','" + influenceCost + "','" + description + "','" + benfit + "','" + wealthGain + "','" + powerGain + "','" + populationGain + "','" + lawGain + "','" + landGain + "','" + influenceGain + "','" + defenseGain + "','" + lawPenaltyReduction + "','" + populationPenaltyReduction + "');";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();

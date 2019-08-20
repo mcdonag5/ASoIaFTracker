@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateNewWealthHolding));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbInfluenceHoldings = new System.Windows.Forms.ComboBox();
             this.chbRepeatable = new System.Windows.Forms.CheckBox();
             this.lbName = new System.Windows.Forms.Label();
             this.lbWealthHoldingType = new System.Windows.Forms.Label();
@@ -99,11 +100,10 @@
             this.chbLimit = new System.Windows.Forms.CheckBox();
             this.lbRequirement = new System.Windows.Forms.Label();
             this.btCreate = new System.Windows.Forms.Button();
-            this.dgWealth = new System.Windows.Forms.DataGridView();
             this.lbInfluenceHoldings = new System.Windows.Forms.Label();
-            this.cbInfluenceHoldings = new System.Windows.Forms.ComboBox();
+            this.dgHoldings = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgWealth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHoldings)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -122,7 +122,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 7F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
             this.tableLayoutPanel1.Controls.Add(this.cbInfluenceHoldings, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.chbRepeatable, 6, 21);
             this.tableLayoutPanel1.Controls.Add(this.lbName, 0, 0);
@@ -222,6 +222,26 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(746, 883);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // cbInfluenceHoldings
+            // 
+            this.cbInfluenceHoldings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.SetColumnSpan(this.cbInfluenceHoldings, 7);
+            this.cbInfluenceHoldings.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbInfluenceHoldings.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbInfluenceHoldings.FormattingEnabled = true;
+            this.cbInfluenceHoldings.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.cbInfluenceHoldings.Items.AddRange(new object[] {
+            "Estate",
+            "Lifestyle",
+            "Personage",
+            "Settlement"});
+            this.cbInfluenceHoldings.Location = new System.Drawing.Point(249, 112);
+            this.cbInfluenceHoldings.Name = "cbInfluenceHoldings";
+            this.cbInfluenceHoldings.Size = new System.Drawing.Size(486, 31);
+            this.cbInfluenceHoldings.TabIndex = 83;
             // 
             // chbRepeatable
             // 
@@ -1125,7 +1145,7 @@
             this.cbImprovementType.Name = "cbImprovementType";
             this.cbImprovementType.Size = new System.Drawing.Size(123, 31);
             this.cbImprovementType.TabIndex = 81;
-            this.cbImprovementType.SelectedIndexChanged += new System.EventHandler(this.cbImprovementType_SelectedIndexChanged);
+            this.cbImprovementType.SelectedIndexChanged += new System.EventHandler(this.CbImprovementType_SelectedIndexChanged);
             // 
             // cbImprovementHolding
             // 
@@ -1203,16 +1223,6 @@
             this.btCreate.UseVisualStyleBackColor = true;
             this.btCreate.Click += new System.EventHandler(this.BtCreate_Click);
             // 
-            // dgWealth
-            // 
-            this.dgWealth.AllowUserToAddRows = false;
-            this.dgWealth.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgWealth.Location = new System.Drawing.Point(355, 406);
-            this.dgWealth.Name = "dgWealth";
-            this.dgWealth.Size = new System.Drawing.Size(40, 40);
-            this.dgWealth.TabIndex = 14;
-            this.dgWealth.Visible = false;
-            // 
             // lbInfluenceHoldings
             // 
             this.lbInfluenceHoldings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1228,40 +1238,30 @@
             this.lbInfluenceHoldings.Text = "Influence Holding:";
             this.lbInfluenceHoldings.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // cbInfluenceHoldings
+            // dgHoldings
             // 
-            this.cbInfluenceHoldings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.cbInfluenceHoldings, 7);
-            this.cbInfluenceHoldings.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbInfluenceHoldings.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbInfluenceHoldings.FormattingEnabled = true;
-            this.cbInfluenceHoldings.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.cbInfluenceHoldings.Items.AddRange(new object[] {
-            "Estate",
-            "Lifestyle",
-            "Personage",
-            "Settlement"});
-            this.cbInfluenceHoldings.Location = new System.Drawing.Point(249, 112);
-            this.cbInfluenceHoldings.Name = "cbInfluenceHoldings";
-            this.cbInfluenceHoldings.Size = new System.Drawing.Size(486, 31);
-            this.cbInfluenceHoldings.TabIndex = 83;
+            this.dgHoldings.AllowUserToAddRows = false;
+            this.dgHoldings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgHoldings.Location = new System.Drawing.Point(355, 406);
+            this.dgHoldings.Name = "dgHoldings";
+            this.dgHoldings.Size = new System.Drawing.Size(40, 40);
+            this.dgHoldings.TabIndex = 14;
+            this.dgHoldings.Visible = false;
             // 
             // CreateNewWealthHolding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(768, 853);
-            this.Controls.Add(this.dgWealth);
+            this.ClientSize = new System.Drawing.Size(785, 853);
+            this.Controls.Add(this.dgHoldings);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CreateNewWealthHolding";
             this.Text = "Create New Wealth Holding";
             this.Load += new System.EventHandler(this.CreateNewWealthHolding_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgWealth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHoldings)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1339,7 +1339,7 @@
         private System.Windows.Forms.ComboBox cbImprovementHolding;
         private System.Windows.Forms.Label lbRepeatable;
         private System.Windows.Forms.CheckBox chbRepeatable;
-        private System.Windows.Forms.DataGridView dgWealth;
+        private System.Windows.Forms.DataGridView dgHoldings;
         private System.Windows.Forms.ComboBox cbInfluenceHoldings;
         private System.Windows.Forms.Label lbInfluenceHoldings;
     }
