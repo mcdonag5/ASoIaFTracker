@@ -49,10 +49,17 @@ namespace WindowsFormsApp1.Forms
                     break;
                 case "Wealth Improvement":
                     cbImprovementType.SelectedIndex = 0;
+                    chbLimit.Checked = true;
                     lbWealthHoldingType.Visible = cbWealthHoldingType.Visible = false;
                     break;
+                case "Influence":
+                    lbWealthHoldingType.Visible = cbWealthHoldingType.Visible = lbWealthHolding.Visible = cbImprovementType.Visible = cbImprovementHolding.Visible = lbTypeDescription.Visible = lbTime.Visible = tbTime.Visible = lbRequirement.Visible = tbRequirement.Visible = false;
+                    lbWealth.Visible = tbWealth.Visible = lbDefense.Visible = tbDefense.Visible = lbLand.Visible = tbLand.Visible = lbPower.Visible = tbPower.Visible = false;
+                    lbHouseFortune.Visible = tbHouseFortune.Visible = lbHouseAction.Visible = tbHouseAction.Visible = lbResourceLossMitigation.Visible = lbWeaLoss.Visible = tbWeaLoss.Visible = lbPowLoss.Visible = tbPowLoss.Visible = lbPopLoss.Visible = tbPopLoss.Visible = lbLawLoss.Visible = tbLawLoss.Visible = lbLanLoss.Visible = tbLanLoss.Visible = lbInfLoss.Visible = tbInfLoss.Visible = lbDefLoss.Visible = tbDefLoss.Visible = false;
+                    lbLimit.Visible = chbLimit.Visible = lbRepeatable.Visible = chbRepeatable.Visible = false;
+                    break;
             }
-            Text = "Create new " + holdingType + "Holding";
+            Text = "Create new " + holdingType + " Holding";
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void CbType_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,41 +106,44 @@ namespace WindowsFormsApp1.Forms
 
         private void BtCreate_Click(object sender, EventArgs e)
         {
-            switch(holdingType)
+            if (tbName.Text != "")
             {
-                case "Wealth":
-                    if (tbName.Text != "")
-                    {
-                        Validation.SetNullTo(tbWealth); Validation.SetNullTo(tbDefense); Validation.SetNullTo(tbLand); Validation.SetNullTo(tbPower); 
+                switch (holdingType)
+            {
+                    case "Wealth":
+
+                        Validation.SetNullTo(tbWealth); Validation.SetNullTo(tbDefense); Validation.SetNullTo(tbLand); Validation.SetNullTo(tbPower);
                         Validation.SetNullTo(tbWeaGain); Validation.SetNullTo(tbPowGain); Validation.SetNullTo(tbPopGain); Validation.SetNullTo(tbLawGain); Validation.SetNullTo(tbLanGain); Validation.SetNullTo(tbInfGain); Validation.SetNullTo(tbDefGain);
                         Validation.SetNullTo(tbWeaLoss); Validation.SetNullTo(tbPopLoss); Validation.SetNullTo(tbPopLoss); Validation.SetNullTo(tbLawLoss); Validation.SetNullTo(tbLawLoss); Validation.SetNullTo(tbInfLoss); Validation.SetNullTo(tbDefLoss);
                         Validation.SetNullTo(tbHouseFortune); Validation.SetNullTo(tbLawPenaltyReduction); Validation.SetNullTo(tbPopulationPenaltyReduction);
-                        Validation.SetNullTo(tbRequirement,"None");
+                        Validation.SetNullTo(tbRequirement, "None");
 
                         House.InsertWealth(tbName.Text, cbWealthHoldingType.Text, chbLimit.Checked.ToString(), tbWealth.Text, tbDefense.Text, tbLand.Text, tbPower.Text, tbTime.Text, tbRequirement.Text, rtbDescription.Text, rtbBenfits.Text, tbHouseFortune.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbWeaLoss.Text, tbPowLoss.Text, tbPopLoss.Text, tbLawLoss.Text, tbLanLoss.Text, tbInfLoss.Text, tbDefLoss.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text, tbHouseAction.Text);
                         Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("The holding needs a name.");
-                    }
-                    break;
-                case "Wealth Improvement":
-                    if (tbName.Text != "")
-                    {
+
+                        break;
+                    case "Wealth Improvement":
                         Validation.SetNullTo(tbWealth); Validation.SetNullTo(tbDefense); Validation.SetNullTo(tbLand); Validation.SetNullTo(tbPower); Validation.SetNullTo(tbInfluence);
                         Validation.SetNullTo(tbWeaGain); Validation.SetNullTo(tbPowGain); Validation.SetNullTo(tbPopGain); Validation.SetNullTo(tbLawGain); Validation.SetNullTo(tbLanGain); Validation.SetNullTo(tbInfGain); Validation.SetNullTo(tbDefGain);
                         Validation.SetNullTo(tbWeaLoss); Validation.SetNullTo(tbPopLoss); Validation.SetNullTo(tbPopLoss); Validation.SetNullTo(tbLawLoss); Validation.SetNullTo(tbLawLoss); Validation.SetNullTo(tbInfLoss); Validation.SetNullTo(tbDefLoss);
                         Validation.SetNullTo(tbHouseFortune); Validation.SetNullTo(tbLawPenaltyReduction); Validation.SetNullTo(tbPopulationPenaltyReduction);
 
-                        House.InsertWealthImprovement(dgWealth.Rows[cbImprovementHolding.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, chbLimit.Checked.ToString(), tbWealth.Text, tbDefense.Text, tbLand.Text, tbPower.Text, tbInfluence.Text, tbTime.Text, tbRequirement.Text, rtbDescription.Text, rtbBenfits.Text, tbHouseFortune.Text, tbWeaGain.Text, tbPopGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbWeaLoss.Text, tbPowLoss.Text, tbPopLoss.Text, tbLawLoss.Text, tbLanLoss.Text, tbInfLoss.Text, tbDefLoss.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text, tbHouseAction.Text, chbRepeatable.Checked.ToString());
+                        House.InsertWealthImprovement(dgWealth.Rows[cbImprovementHolding.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, chbLimit.Checked.ToString(), tbWealth.Text, tbDefense.Text, tbLand.Text, tbPower.Text, tbInfluence.Text, tbTime.Text, tbRequirement.Text, rtbDescription.Text, rtbBenfits.Text, tbHouseFortune.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbWeaLoss.Text, tbPowLoss.Text, tbPopLoss.Text, tbLawLoss.Text, tbLanLoss.Text, tbInfLoss.Text, tbDefLoss.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text, tbHouseAction.Text, chbRepeatable.Checked.ToString());
                         Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("The holding needs a name.");
-                    }
-                    break;
+                        break;
+                    case "Influence":
+                        Validation.SetNullTo(tbInfluence);
+                        Validation.SetNullTo(tbWeaGain); Validation.SetNullTo(tbPowGain); Validation.SetNullTo(tbPopGain); Validation.SetNullTo(tbLawGain); Validation.SetNullTo(tbLanGain); Validation.SetNullTo(tbInfGain); Validation.SetNullTo(tbDefGain);
+                        Validation.SetNullTo(tbLawPenaltyReduction); Validation.SetNullTo(tbPopulationPenaltyReduction);
+
+                        House.InsertInfluence(tbName.Text, tbInfluence.Text, rtbDescription.Text, rtbBenfits.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text);
+                        Close();
+                        break;
+                }
+            }
+            else
+            {
+                MessageBox.Show("The holding needs a name.");
             }
         }
 

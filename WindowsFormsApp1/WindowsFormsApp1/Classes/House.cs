@@ -404,7 +404,7 @@ namespace WindowsFormsApp1.Classes
             }
         }
         //tbl_InfluenceHoldings
-        public void InsertInfluence(string infID, string name, string note, string discount)
+        public void InsertInfluenceHolding(string infID, string name, string note, string discount)
         {
             if (mysqlConn.ConnOpen()) 
             {
@@ -539,6 +539,21 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_WealthImprovement` (`Wea_ID`, `WeaImp_Name`, `WeaImp_Limit`, `WeaImp_WealthCost`, `WeaImp_DefenseCost`, `WeaImp_LandCost`, `WeaImp_PowerCost`, `WeaImp_InfluenceCost`, `WeaImp_Time`, `WeaImp_Requirement`, `WeaImp_Description`, `WeaImp_Benefits`, `WeaImp_HouseFortune`, `WeaImp_WealthGain`, `WeaImp_PowerGain`, `WeaImp_PopulationGain`, `WeaImp_LawGain`, `WeaImp_LandsGain`, `WeaImp_InfluenceGain`, `WeaImp_DefenseGain`, `WeaImp_WealthLoss`, `WeaImp_PowerLoss`, `WeaImp_PopulationLoss`, `WeaImp_LawLoss`, `WeaImp_LandsLoss`, `WeaImp_InfluenceLoss`, `WeaImp_DefenseLoss`, `WeaImp_LawPenaltyReduction`, `WeaImp_PopulationPenaltyReduction`, `WeaImp_HouseAction`, `WeaImp_Repeatable`) " +
                     "VALUES ('" + weaID + "', '" + name + "', '" + limit + "','" + wealthCost + "','" + defenseCost + "','" + landCost + "','" + powerCost + "','" + influenceCost + "','" + time + "','" + requirement + "','" + description + "','" + benfit + "','" + houseFortune + "','" + wealthGain + "','" + powerGain + "','" + populationGain + "','" + lawGain + "','" + landGain + "','" + influenceGain + "','" + defenseGain + "','" + wealthLoss + "','" + powerLoss + "','" + populationLoss + "','" + lawLoss + "','" + landLoss + "','" + influenceLoss + "','" + defenseLoss + "','" + lawPenaltyReduction + "','" + populationPenaltyReduction + "','" + houseAction + "','" + repeatable + "');";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+
+        public void InsertInfluence(string name, string influenceCost, string description, string benfit, string wealthGain, string powerGain, string populationGain, string lawGain, string landGain, string influenceGain, string defenseGain, string lawPenaltyReduction, string populationPenaltyReduction)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert Trade");
+                name = SanitizingInput(name); description = SanitizingInput(description); benfit = SanitizingInput(benfit); 
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_Influence` (`Inf_Name`, `Inf_InfluenceCost`, `Inf_Description`, `Inf_Benefit`, `Inf_DefenseGain`, `Inf_InfluenceGain`, `Inf_LandGain`, `Inf_LawGain`, `Inf_PopulationGain`, `Inf_PowerGain`, `Inf_WealthGain`, `Inf_LawPenaltyReduction`, `Inf_PopulationPenaltyReduction`) " +
+                    "VALUES ('" + name + "', '" + influenceCost + "','" + description + "','" + benfit + "','" + defenseGain + "','" + influenceGain + "','" + landGain + "','" + lawGain + "','" + populationGain + "','" + powerGain + "','" + wealthGain + "','" + lawPenaltyReduction + "','" + populationPenaltyReduction + "');";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();

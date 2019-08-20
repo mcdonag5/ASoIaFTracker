@@ -61,7 +61,7 @@ namespace WindowsFormsApp1.Forms
         private void BtBuy_Click(object sender, EventArgs e)
         {
             Validation.SetNullTo(tbDiscount, "0");
-            House.InsertInfluence(dgInfluence.Rows[cbInfluence.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, rtbNote.Text, tbDiscount.Text);
+            House.InsertInfluenceHolding(dgInfluence.Rows[cbInfluence.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, rtbNote.Text, tbDiscount.Text);
             Close();
         }
         //Validation
