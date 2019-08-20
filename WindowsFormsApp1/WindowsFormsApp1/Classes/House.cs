@@ -126,7 +126,8 @@ namespace WindowsFormsApp1.Classes
                         break;
                     //tbl_Defense
                     case "Defense":
-                        qry = "SELECT * FROM `tbl_Defense`";
+                        qry = "SELECT * FROM `tbl_Defense`" +
+                            "ORDER BY `tbl_Defense`.`Def_DefenseCost` ASC";
                         break;
                     //tblWealth
                     case "Estate":
@@ -569,6 +570,21 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "INSERT INTO `tbl_InfluenceImprovemnt` (`Inf_ID`, `InfImp_Name`, `InfImp_InfluenceCost`, `InfImp_Description`, `InfImp_Benefit`, `InfImp_WealthGain`, `InfImp_PowerGain`, `InfImp_PopulationGain`, `InfImp_LawGain`, `InfImp_LandsGain`, `InfImp_InfluenceGain`, `InfImp_DefenseGain`, `InfImp_LawPenaltyReduction`, `InfImp_PopulationPenaltyReduction`) " +
                     "VALUES ('" + infID + "', '" + name + "','" + influenceCost + "','" + description + "','" + benfit + "','" + wealthGain + "','" + powerGain + "','" + populationGain + "','" + lawGain + "','" + landGain + "','" + influenceGain + "','" + defenseGain + "','" + lawPenaltyReduction + "','" + populationPenaltyReduction + "');";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+
+        public void InsertDefense(string name, string defenseCost, string time, string description, string benfit, string spaces)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert InfluenceImprovment");
+                name = SanitizingInput(name); description = SanitizingInput(description); benfit = SanitizingInput(benfit);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_Defense` (`Def_Name`, `Def_DefenseCost`, `Def_BuildTime`, `Def_Description`, `Def_Benefit`, `Def_Spaces`) " +
+                    "VALUES ('" + name + "', '" + defenseCost + "','" + time + "','" + description + "','" + benfit + "','" + spaces + "');";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();

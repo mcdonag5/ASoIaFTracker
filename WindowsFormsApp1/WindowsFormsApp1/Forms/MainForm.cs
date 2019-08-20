@@ -145,7 +145,9 @@ namespace WindowsFormsApp1
 
         private void defenseHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            DevLog.LogItem("Create new influnce Improvement holding tool strip clicked");
+            CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Defense");
+            createNewWealthHolding.ShowDialog();
         }
         //Create New Holding end
 
