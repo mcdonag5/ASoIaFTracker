@@ -527,6 +527,23 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+
+        public void InsertWealthImprovement(string weaID, string name, string limit, string wealthCost, string defenseCost, string landCost, string powerCost, string influenceCost, string time, string requirement, string description, string benfit, string houseFortune, string wealthGain, string powerGain, string populationGain, string lawGain, string landGain, string influenceGain, string defenseGain, string wealthLoss, string powerLoss, string populationLoss, string lawLoss, string landLoss, string influenceLoss, string defenseLoss, string lawPenaltyReduction, string populationPenaltyReduction, string houseAction, string repeatable)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert Trade");
+                limit = limit == "True" ? "1" : "0";
+                repeatable = repeatable == "True" ? "1" : "0";
+                name = SanitizingInput(name); time = SanitizingInput(time); requirement = SanitizingInput(requirement); description = SanitizingInput(description); benfit = SanitizingInput(benfit); houseAction = SanitizingInput(houseAction);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_WealthImprovement` (`Wea_ID`, `WeaImp_Name`, `WeaImp_Limit`, `WeaImp_WealthCost`, `WeaImp_DefenseCost`, `WeaImp_LandCost`, `WeaImp_PowerCost`, `WeaImp_InfluenceCost`, `WeaImp_Time`, `WeaImp_Requirement`, `WeaImp_Description`, `WeaImp_Benefits`, `WeaImp_HouseFortune`, `WeaImp_WealthGain`, `WeaImp_PowerGain`, `WeaImp_PopulationGain`, `WeaImp_LawGain`, `WeaImp_LandsGain`, `WeaImp_InfluenceGain`, `WeaImp_DefenseGain`, `WeaImp_WealthLoss`, `WeaImp_PowerLoss`, `WeaImp_PopulationLoss`, `WeaImp_LawLoss`, `WeaImp_LandsLoss`, `WeaImp_InfluenceLoss`, `WeaImp_DefenseLoss`, `WeaImp_LawPenaltyReduction`, `WeaImp_PopulationPenaltyReduction`, `WeaImp_HouseAction`, `WeaImp_Repeatable`) " +
+                    "VALUES ('" + weaID + "', '" + name + "', '" + limit + "','" + wealthCost + "','" + defenseCost + "','" + landCost + "','" + powerCost + "','" + influenceCost + "','" + time + "','" + requirement + "','" + description + "','" + benfit + "','" + houseFortune + "','" + wealthGain + "','" + powerGain + "','" + populationGain + "','" + lawGain + "','" + landGain + "','" + influenceGain + "','" + defenseGain + "','" + wealthLoss + "','" + powerLoss + "','" + populationLoss + "','" + lawLoss + "','" + landLoss + "','" + influenceLoss + "','" + defenseLoss + "','" + lawPenaltyReduction + "','" + populationPenaltyReduction + "','" + houseAction + "','" + repeatable + "');";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         ///// UPDATE ////////////////////////////////////////////////////////////////
         //tbl_House
         public void UpdateHouseDetails(string name, string player, string realm, string seatOfPower, string liegeLord,string liege)

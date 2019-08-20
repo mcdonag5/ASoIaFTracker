@@ -260,6 +260,7 @@
             this.wealthImprovemntToolStripMenuItem.Name = "wealthImprovemntToolStripMenuItem";
             this.wealthImprovemntToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.wealthImprovemntToolStripMenuItem.Text = "Wealth Improvemnt";
+            this.wealthImprovemntToolStripMenuItem.Click += new System.EventHandler(this.WealthImprovemntToolStripMenuItem_Click);
             // 
             // influnceHoldingToolStripMenuItem
             // 
