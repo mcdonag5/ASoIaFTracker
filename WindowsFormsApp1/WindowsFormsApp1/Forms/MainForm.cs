@@ -149,6 +149,13 @@ namespace WindowsFormsApp1
             CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Defense");
             createNewWealthHolding.ShowDialog();
         }
+
+        private void unitTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DevLog.LogItem("Create new influnce Improvement holding tool strip clicked");
+            CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Unit Type");
+            createNewWealthHolding.ShowDialog();
+        }
         //Create New Holding end
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

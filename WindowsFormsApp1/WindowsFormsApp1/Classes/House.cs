@@ -590,6 +590,28 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+
+        public void InsertUnitType(string name, string powerCost, string disciplineModifier, string keyAbilitie1, string keyAbilitie2, string keyAbilitie3, string description, string armorRating, string armorRatingUpg, string armorPenalty, string armorPenaltyUpg, string bulk, string bulkUpg, string fightingDamage, string fightingDamageUpg, string marksmanshipDamage, string marksmanshipDamageUpg, string marksmanshipRange, string movement)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert InfluenceImprovment");
+                name = SanitizingInput(name); description = SanitizingInput(description);
+                if (armorPenalty == "") { armorPenalty = "null"; } else { armorPenalty = "'" + armorPenalty + "'"; }
+                if (armorPenaltyUpg == "") { armorPenaltyUpg = "null"; } else { armorPenaltyUpg = "'" + armorPenaltyUpg + "'"; }
+                if (bulk == "") { bulk = "null"; } else { bulk = "'" + bulk + "'"; }
+                if (bulkUpg == "") { bulkUpg = "null"; } else { bulkUpg = "'" + bulkUpg + "'"; }
+                if (marksmanshipDamage == "") { marksmanshipDamage = "null"; } else { marksmanshipDamage = "'" + marksmanshipDamage + "'"; }
+                if (marksmanshipDamageUpg == "") { marksmanshipDamageUpg = "null"; } else { marksmanshipDamageUpg = "'" + marksmanshipDamageUpg + "'"; }
+                if (marksmanshipRange == " ") { marksmanshipRange = "null"; } else { marksmanshipRange = "'" + marksmanshipRange + "'"; }
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "INSERT INTO `tbl_UnitType` (`Uni_Name`, `Uni_PowerCost`, `Uni_DisciplineModifier`, `Uni_KeyAbilities`, `Uni_KeyAbilitie2`, `Uni_KeyAbilitie3`, `Uni_Description`, `Uni_ArmorRating`, `Uni_UpArmorRating`, `Uni_ArmorPenalty`, `Uni_UpArmorPenalty`, `Uni_Bulk`, `Uni_UpBulk`, `Uni_FightingDamage`, `Uni_UpFightingDamage`, `Uni_MarksmanshipDamage`, `Uni_UpMarksmanshipDamage`, `Uni_MarksmanshipRange`, `Uni_Movement`) " +
+                    "VALUES ('" + name + "', '" + powerCost + "','" + disciplineModifier + "','" + keyAbilitie1 + "','" + keyAbilitie2 + "','" + keyAbilitie3 + "','" + description + "','" + armorRating + "','" + armorRatingUpg + "'," + armorPenalty + "," + armorPenaltyUpg + "," + bulk + "," + bulkUpg + ",'" + fightingDamage + "','" + fightingDamageUpg + "'," + marksmanshipDamage + "," + marksmanshipDamageUpg + "," + marksmanshipRange + ",'" + movement + "');";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         ///// UPDATE ////////////////////////////////////////////////////////////////
         //tbl_House
         public void UpdateHouseDetails(string name, string player, string realm, string seatOfPower, string liegeLord,string liege)

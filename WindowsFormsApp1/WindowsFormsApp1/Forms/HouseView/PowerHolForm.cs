@@ -279,19 +279,7 @@ namespace WindowsFormsApp1
                     }
                 }
                 //movement
-                int movement;
-                if (unitType[unit].Text == "Cavalry" || unitType[unit].Text == "Scouts")
-                {
-                    movement = 80;
-                }
-                else if (unitType[unit].Text == "Warships")
-                {
-                    movement = 60;
-                }
-                else
-                {
-                    movement = 40;
-                }
+                int movement = Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[50].Value);
                 if (unitArmorNum[unit, 2].Text != "") { movement -= Convert.ToInt32(unitArmorNum[unit, 2].Text) * 10; }
                 unitMovement[unit].Text = movement + " yards";
                 UnitDefense(unit);

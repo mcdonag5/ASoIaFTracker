@@ -291,8 +291,6 @@
   <ItemGroup>
     <None Include="HouseShield\NightsWatch.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\CreateNewHolding\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
