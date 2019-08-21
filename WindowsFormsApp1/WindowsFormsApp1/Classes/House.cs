@@ -121,7 +121,7 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT * FROM `tbl_Land`";
                         break;
                     //tbl_LandFeature
-                    case "LandFeature":
+                    case "Land Feature":
                         qry = "SELECT * FROM `tbl_LandFeature`";
                         break;
                     //tbl_Defense
@@ -151,7 +151,7 @@ namespace WindowsFormsApp1.Classes
                             "ORDER BY `tbl_Wealth`.`Wea_Name` ASC";
                         break;
                     //tbl_UnitType
-                    case "UnitType":
+                    case "Unit Type":
                         qry = "SELECT * FROM `tbl_UnitType` " +
                             "ORDER BY `tbl_UnitType`.`Uni_Name` ASC";
                         break;

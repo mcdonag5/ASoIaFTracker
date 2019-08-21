@@ -33,7 +33,7 @@ namespace WindowsFormsApp1.Forms
             Text = House.name +" New Land Feature";
             lbName.Text = landName;
 
-            dgLandFeature.DataSource = House.HouseQry("LandFeature");
+            dgLandFeature.DataSource = House.HouseQry("Land Feature");
             object[] landFeature = new object[dgLandFeature.RowCount];
             string item;
             for (int i = 0; i < dgLandFeature.RowCount; i++)

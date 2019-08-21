@@ -101,7 +101,7 @@ namespace WindowsFormsApp1
                             case "Agility":
                                 unitAbilitiesLabel[i, 0].ForeColor = Color.Blue;
                                 break;
-                            case "Animal Handing":
+                            case "Animal Handling":
                                 unitAbilitiesLabel[i, 1].ForeColor = Color.Blue;
                                 break;
                             case "Athletics":
@@ -302,7 +302,15 @@ namespace WindowsFormsApp1
                     unitUpgradeLabel[unit, 3].ForeColor = Color.Black;
                 }
                 int dmg = Convert.ToInt32(dgCal1.Rows[unit + startingNum].Cells[fightingStart].Value);
-                if (unitAbilitiesTextBox[unit, 2].Text != "") { dmg += Convert.ToInt32(unitAbilitiesTextBox[unit, 2].Text); }
+                if(unitType[unit].Text == "Cavalry")
+                {
+                    if (unitAbilitiesTextBox[unit, 1].Text != "") { dmg += Convert.ToInt32(unitAbilitiesTextBox[unit, 1].Text); }
+                }
+                else
+                {
+                    if (unitAbilitiesTextBox[unit, 2].Text != "") { dmg += Convert.ToInt32(unitAbilitiesTextBox[unit, 2].Text); }
+                }
+                
                 if(addFigDAM) { dmg++; }
                 unitFightDMG[unit].Text = dmg.ToString();
             }

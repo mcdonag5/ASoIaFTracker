@@ -155,19 +155,7 @@ namespace WindowsFormsApp1.Forms
                 }
             }
             //movement
-            int movement;
-            if (cbType.Text == "Cavalry" || cbType.Text == "Scouts")
-            {
-                movement = 80;
-            }
-            else if (cbType.Text == "Warships")
-            {
-                movement = 60;
-            }
-            else
-            {
-                movement = 40;
-            }
+            int movement = Convert.ToInt32(dgType.Rows[cbType.SelectedIndex].Cells[19].Value);
             if (armorNumber[2].Text != "") { movement -= Convert.ToInt32(armorNumber[2].Text) * 10; }
             lbMov1.Text = movement + " yards";
             UnitDefense();
@@ -186,7 +174,14 @@ namespace WindowsFormsApp1.Forms
                 dmg = Convert.ToInt32(dgType.Rows[cbType.SelectedIndex].Cells[14].Value);
                 lbFigDMG1.ForeColor = Color.Black;
             }
-            if (abilitiesTextBox[2].Text != "") { dmg += Convert.ToInt32(abilitiesTextBox[2].Text); }
+            if (cbType.Text == dgType.Rows[cbType.SelectedIndex].Cells[1].Value.ToString())
+            {
+                if (abilitiesTextBox[1].Text != "") { dmg += Convert.ToInt32(abilitiesTextBox[1].Text); }
+            }
+            else
+            {
+                if (abilitiesTextBox[2].Text != "") { dmg += Convert.ToInt32(abilitiesTextBox[2].Text); }
+            }
             lbFigDMGNum1.Text = dmg.ToString();
         }
 
@@ -245,7 +240,7 @@ namespace WindowsFormsApp1.Forms
         private void NewPowerForm_Load(object sender, EventArgs e)
         {
             //Unit Types cb
-            dgType.DataSource = House.HouseQry("UnitType");
+            dgType.DataSource = House.HouseQry("Unit Type");
             object[] unitType = new object[dgType.RowCount];
             for (int i = 0; i < dgType.RowCount; i++)
             {
@@ -312,6 +307,7 @@ namespace WindowsFormsApp1.Forms
         private void tbAni1_TextChanged(object sender, EventArgs e)
         {
             UpdateExperience();
+            FightDMG();
         }
 
         private void tbAth1_TextChanged(object sender, EventArgs e)

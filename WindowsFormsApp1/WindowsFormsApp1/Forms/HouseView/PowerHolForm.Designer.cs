@@ -910,6 +910,7 @@
             this.tbAni1.Size = new System.Drawing.Size(17, 23);
             this.tbAni1.TabIndex = 57;
             this.tbAni1.Text = "0";
+            this.tbAni1.TextChanged += new System.EventHandler(this.TbAth1_TextChanged);
             this.tbAni1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbKno1
@@ -1745,6 +1746,7 @@
             this.tbAni2.Size = new System.Drawing.Size(17, 23);
             this.tbAni2.TabIndex = 57;
             this.tbAni2.Text = "0";
+            this.tbAni2.TextChanged += new System.EventHandler(this.TbAth2_TextChanged);
             this.tbAni2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbKno2
@@ -2783,6 +2785,7 @@
             this.tbAni3.Size = new System.Drawing.Size(17, 23);
             this.tbAni3.TabIndex = 57;
             this.tbAni3.Text = "0";
+            this.tbAni3.TextChanged += new System.EventHandler(this.TbAth3_TextChanged);
             this.tbAni3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbKno3
@@ -3822,6 +3825,7 @@
             this.tbAni4.Size = new System.Drawing.Size(17, 23);
             this.tbAni4.TabIndex = 57;
             this.tbAni4.Text = "0";
+            this.tbAni4.TextChanged += new System.EventHandler(this.TbAth4_TextChanged);
             this.tbAni4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
             // 
             // tbKno4
