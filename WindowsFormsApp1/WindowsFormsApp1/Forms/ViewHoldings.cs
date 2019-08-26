@@ -16,6 +16,7 @@ namespace WindowsFormsApp1.Forms
     {
         ///// VARIABLES START ///////////////////////////////////////////////////////
 
+        string[] costNames = new string[] { "Wealth", "Defense", "Land", "Power","Influence" };
         //Classes
         DevLog DevLog = new DevLog();
         House House = new House();
@@ -41,8 +42,10 @@ namespace WindowsFormsApp1.Forms
             lbBuildTime.Visible = lbBuildTimeDetails.Visible = new[] { "Defense", "Wealth" }.Contains(cbHoldingType.Text) ? true : false;
             lbDisciplineModifier.Visible = lbDisciplineModifierDetail.Visible = lbKeyAbilities.Visible = lbKeyAbilitiesDetails.Visible = lbBaseMovement.Visible = lbBaseMovementDetails.Visible = cbHoldingType.Text == "Unit Type" ? true:false;
             lbRequirement.Visible = lbRequirementDetails.Visible = cbHoldingType.Text == "Wealth" ? true : false;
+            cbImprovementName.Visible = lbImprovementCost.Visible = lbImprovementCostDetails.Visible =  lbImprovementDescription.Visible = new[] { "Influence", "Wealth" }.Contains(cbHoldingType.Text) ? true : false;
+            lbImprovementTime.Visible = lbImprovementTimeDetails.Visible = lbImprovementRequirement.Visible = lbImprovementRequirementDetails.Visible = cbHoldingType.Text == "Wealth" ? true : false;
 
-            if(cbHoldingType.Text != "Wealth")
+            if (cbHoldingType.Text != "Wealth")
             {
                 dgHoldings.DataSource = House.HouseQry(cbHoldingType.Text);
                 object[] holding = new object[dgHoldings.RowCount];
@@ -69,7 +72,7 @@ namespace WindowsFormsApp1.Forms
                 case "Land":
                     lbCostDetails.Text = dgHoldings.Rows[index].Cells[2].Value.ToString() + " Land";
 
-                    lbDescription.Text = dgHoldings.Rows[index].Cells[3].Value.ToString();
+                    description = dgHoldings.Rows[index].Cells[3].Value.ToString();
                     break;
                 case "Land Features":
                     lbCostDetails.Text = dgHoldings.Rows[index].Cells[2].Value.ToString() + " Land";
@@ -94,12 +97,36 @@ namespace WindowsFormsApp1.Forms
 
                     description += dgHoldings.Rows[index].Cells[7].Value.ToString();
                     break;
+                case "Influence":
+                    lbCostDetails.Text = dgHoldings.Rows[index].Cells[2].Value.ToString() + " Influence";
+
+                    description = dgHoldings.Rows[index].Cells[3].Value.ToString() + Environment.NewLine + Environment.NewLine + dgHoldings.Rows[index].Cells[4].Value.ToString();
+
+                    dgImprovement.DataSource = House.HouseQry("ImprovementImprovement", dgHoldings.Rows[index].Cells[0].Value.ToString());
+                    if(dgImprovement.RowCount>0)
+                    {
+                        object[] improvements = new object[dgImprovement.RowCount];
+                        for (int i = 0; i < dgImprovement.RowCount; i++)
+                        {
+                            improvements[i] = dgImprovement.Rows[i].Cells[2].Value.ToString();
+                        }
+                        cbImprovementName.Items.Clear();
+                        cbImprovementName.Items.AddRange(improvements);
+                        cbImprovementName.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        cbImprovementName.SelectedIndex = -1;
+                        cbImprovementName.Items.Clear();
+                    }
+                    break;
             }
             lbDescription.Text = description;
         }
 
         private void cbDoubleHoldingType_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             dgHoldings.DataSource = House.HouseQry(cbDoubleHoldingType.Text);
             object[] holding = new object[dgHoldings.RowCount];
             for (int i = 0; i < dgHoldings.RowCount; i++)
@@ -109,13 +136,14 @@ namespace WindowsFormsApp1.Forms
             cbDoubleHoldingName.Items.Clear();
             cbDoubleHoldingName.Items.AddRange(holding);
             cbDoubleHoldingName.SelectedIndex = 0;
+
+            
         }
 
         private void cbDoubleHoldingName_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbDoubleHoldingName.SelectedIndex;
             string cost = "";
-            string[] costNames = new string[] { "Wealth","Defense","Land","Power"};
             for (int i = 0;i<4;i++)
             {
                 if(dgHoldings.Rows[index].Cells[i+4].Value.ToString() != "0")
@@ -129,6 +157,60 @@ namespace WindowsFormsApp1.Forms
             lbRequirementDetails.Text = dgHoldings.Rows[index].Cells[9].Value.ToString();
 
             lbDescription.Text = dgHoldings.Rows[index].Cells[10].Value.ToString() + Environment.NewLine + Environment.NewLine + dgHoldings.Rows[index].Cells[11].Value.ToString();
+
+            dgImprovement.DataSource = House.HouseQry("WealthImprovement", dgHoldings.Rows[index].Cells[0].Value.ToString());
+            if (dgImprovement.RowCount > 0)
+            {
+                object[] improvements = new object[dgImprovement.RowCount];
+                for (int i = 0; i < dgImprovement.RowCount; i++)
+                {
+                    improvements[i] = dgImprovement.Rows[i].Cells[2].Value.ToString();
+                }
+                cbImprovementName.Items.Clear();
+                cbImprovementName.Items.AddRange(improvements);
+                cbImprovementName.SelectedIndex = 0;
+            }
+            else
+            {
+                cbImprovementName.SelectedIndex = -1;
+                cbImprovementName.Items.Clear();
+            }
+        }
+
+        private void cbImprovementName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = cbImprovementName.SelectedIndex;
+            if (index>=0)
+            {
+                if (cbSoloHoldingName.Visible)
+                {//Influence
+                    lbImprovementCostDetails.Text = dgImprovement.Rows[index].Cells[3].Value + " Influence";
+
+                    lbImprovementDescription.Text = dgImprovement.Rows[index].Cells[4].Value + Environment.NewLine + Environment.NewLine + dgImprovement.Rows[index].Cells[5].Value;
+                }
+                else
+                {//Wealth
+                    string cost = "";
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (dgImprovement.Rows[index].Cells[i + 4].Value.ToString() != "0")
+                        {
+                            if (cost != "") { cost += ", "; }
+                            cost += dgImprovement.Rows[index].Cells[i + 4].Value.ToString() + " " + costNames[i];
+                        }
+                        lbImprovementCostDetails.Text = cost;
+                        lbImprovementTimeDetails.Text = dgImprovement.Rows[index].Cells[9].Value.ToString();
+                        lbImprovementRequirementDetails.Text = dgImprovement.Rows[index].Cells[10].Value.ToString();
+
+                        lbImprovementDescription.Text = dgImprovement.Rows[index].Cells[11].Value.ToString() + Environment.NewLine + Environment.NewLine + dgImprovement.Rows[index].Cells[12].Value.ToString();
+                    }
+                }
+            }
+            else
+            {
+                lbImprovementTimeDetails.Text = lbImprovementCostDetails.Text = lbImprovementRequirementDetails.Text = lbImprovementDescription.Text = "";
+
+            }
         }
         ///// EVENTS END ////////////////////////////////////////////////////////////
 

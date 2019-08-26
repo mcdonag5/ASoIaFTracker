@@ -121,7 +121,7 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT * FROM `tbl_Land`";
                         break;
                     //tbl_LandFeature
-                    case "Land Feature":
+                    case "Land Features":
                         qry = "SELECT * FROM `tbl_LandFeature`";
                         break;
                     //tbl_Defense
