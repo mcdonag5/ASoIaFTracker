@@ -70,6 +70,7 @@
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 220F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -538,6 +539,7 @@
             this.tsbEditImprovement.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.tsbEditImprovement.Size = new System.Drawing.Size(116, 22);
             this.tsbEditImprovement.Text = "Edit Improvement";
+            this.tsbEditImprovement.Click += new System.EventHandler(this.TsbEditImprovement_Click);
             // 
             // dgHoldings
             // 

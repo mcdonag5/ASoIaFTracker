@@ -16,14 +16,14 @@ namespace WindowsFormsApp1.Forms
     {
         ///// VARIABLES START ///////////////////////////////////////////////////////
 
-        string[] costNames = new string[] { "Wealth", "Defense", "Land", "Power","Influence" };
+        string[] costNames = new string[] { "Wealth", "Defense", "Land", "Power", "Influence" };
         //Classes
         DevLog DevLog = new DevLog();
         House House = new House();
         ///// VARIABLES END /////////////////////////////////////////////////////////
 
         ///// METHODS START /////////////////////////////////////////////////////////
-        
+
         ///// METHODS END ///////////////////////////////////////////////////////////
         public ViewHoldings()
         {
@@ -37,13 +37,14 @@ namespace WindowsFormsApp1.Forms
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void CbHoldingType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tsbEditHolding.Enabled = new[] { "Defense", "Wealth", "Unit Type","Influence" }.Contains(cbHoldingType.Text) ? true : false;
+            tsbEditHolding.Enabled = new[] { "Defense", "Wealth", "Unit Type", "Influence" }.Contains(cbHoldingType.Text) ? true : false;
+            tsbEditImprovement.Enabled = new[] { "Wealth", "Influence" }.Contains(cbHoldingType.Text) ? true : false;
             cbDoubleHoldingName.Visible = cbDoubleHoldingType.Visible = cbHoldingType.Text == "Wealth" ? true : false;
             cbSoloHoldingName.Visible = !cbDoubleHoldingName.Visible;
             lbBuildTime.Visible = lbBuildTimeDetails.Visible = new[] { "Defense", "Wealth" }.Contains(cbHoldingType.Text) ? true : false;
-            lbDisciplineModifier.Visible = lbDisciplineModifierDetail.Visible = lbKeyAbilities.Visible = lbKeyAbilitiesDetails.Visible = lbBaseMovement.Visible = lbBaseMovementDetails.Visible = cbHoldingType.Text == "Unit Type" ? true:false;
+            lbDisciplineModifier.Visible = lbDisciplineModifierDetail.Visible = lbKeyAbilities.Visible = lbKeyAbilitiesDetails.Visible = lbBaseMovement.Visible = lbBaseMovementDetails.Visible = cbHoldingType.Text == "Unit Type" ? true : false;
             lbRequirement.Visible = lbRequirementDetails.Visible = cbHoldingType.Text == "Wealth" ? true : false;
-            cbImprovementName.Visible = lbImprovementCost.Visible = lbImprovementCostDetails.Visible =  lbImprovementDescription.Visible = new[] { "Influence", "Wealth" }.Contains(cbHoldingType.Text) ? true : false;
+            cbImprovementName.Visible = lbImprovementCost.Visible = lbImprovementCostDetails.Visible = lbImprovementDescription.Visible = new[] { "Influence", "Wealth" }.Contains(cbHoldingType.Text) ? true : false;
             lbImprovementTime.Visible = lbImprovementTimeDetails.Visible = lbImprovementRequirement.Visible = lbImprovementRequirementDetails.Visible = cbHoldingType.Text == "Wealth" ? true : false;
 
             if (cbHoldingType.Text != "Wealth")
@@ -77,9 +78,9 @@ namespace WindowsFormsApp1.Forms
                     break;
                 case "Land Features":
                     lbCostDetails.Text = dgHoldings.Rows[index].Cells[2].Value.ToString() + " Land";
-                    if(dgHoldings.Rows[index].Cells[3].Value.ToString() != "0") { lbCostDetails.Text += ", " + dgHoldings.Rows[index].Cells[3].Value.ToString() + " Population"; }
-                    
-                    if(Convert.ToInt32(dgHoldings.Rows[index].Cells[4].Value)>0) { description += "This feature can hold " + dgHoldings.Rows[index].Cells[4].Value + " Settlement Holdings. "; }
+                    if (dgHoldings.Rows[index].Cells[3].Value.ToString() != "0") { lbCostDetails.Text += ", " + dgHoldings.Rows[index].Cells[3].Value.ToString() + " Population"; }
+
+                    if (Convert.ToInt32(dgHoldings.Rows[index].Cells[4].Value) > 0) { description += "This feature can hold " + dgHoldings.Rows[index].Cells[4].Value + " Settlement Holdings. "; }
                     description += dgHoldings.Rows[index].Cells[5].Value.ToString();
                     break;
                 case "Defense":
@@ -104,7 +105,7 @@ namespace WindowsFormsApp1.Forms
                     description = dgHoldings.Rows[index].Cells[3].Value.ToString() + Environment.NewLine + Environment.NewLine + dgHoldings.Rows[index].Cells[4].Value.ToString();
 
                     dgImprovement.DataSource = House.HouseQry("ImprovementImprovement", dgHoldings.Rows[index].Cells[0].Value.ToString());
-                    if(dgImprovement.RowCount>0)
+                    if (dgImprovement.RowCount > 0)
                     {
                         object[] improvements = new object[dgImprovement.RowCount];
                         for (int i = 0; i < dgImprovement.RowCount; i++)
@@ -138,18 +139,18 @@ namespace WindowsFormsApp1.Forms
             cbDoubleHoldingName.Items.AddRange(holding);
             cbDoubleHoldingName.SelectedIndex = 0;
 
-            
+
         }
 
         private void CbDoubleHoldingName_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbDoubleHoldingName.SelectedIndex;
             string cost = "";
-            for (int i = 0;i<4;i++)
+            for (int i = 0; i < 4; i++)
             {
-                if(dgHoldings.Rows[index].Cells[i+4].Value.ToString() != "0")
+                if (dgHoldings.Rows[index].Cells[i + 4].Value.ToString() != "0")
                 {
-                    if(cost != "") { cost += ", "; }
+                    if (cost != "") { cost += ", "; }
                     cost += dgHoldings.Rows[index].Cells[i + 4].Value.ToString() + " " + costNames[i];
                 }
             }
@@ -181,8 +182,9 @@ namespace WindowsFormsApp1.Forms
         private void CbImprovementName_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbImprovementName.SelectedIndex;
-            if (index>=0)
+            if (index >= 0)
             {
+                tsbEditImprovement.Enabled = true;
                 if (cbSoloHoldingName.Visible)
                 {//Influence
                     lbImprovementCostDetails.Text = dgImprovement.Rows[index].Cells[3].Value + " Influence";
@@ -210,7 +212,7 @@ namespace WindowsFormsApp1.Forms
             else
             {
                 lbImprovementTimeDetails.Text = lbImprovementCostDetails.Text = lbImprovementRequirementDetails.Text = lbImprovementDescription.Text = "";
-
+                tsbEditImprovement.Enabled = false;
             }
         }
 
@@ -221,7 +223,13 @@ namespace WindowsFormsApp1.Forms
             CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding(cbHoldingType.Text, dgHoldings.Rows[index].Cells[0].Value.ToString());
             createNewWealthHolding.ShowDialog();
         }
-        ///// EVENTS END ////////////////////////////////////////////////////////////
 
+        private void TsbEditImprovement_Click(object sender, EventArgs e)
+        {
+            DevLog.LogItem("Clicked Edit Holding button for " + cbHoldingType.Text + " Improvement");
+            CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding(cbHoldingType.Text + " Improvement", dgImprovement.Rows[cbImprovementName.SelectedIndex].Cells[0].Value.ToString());
+            createNewWealthHolding.ShowDialog();
+        }
     }
+    ///// EVENTS END ////////////////////////////////////////////////////////////
 }

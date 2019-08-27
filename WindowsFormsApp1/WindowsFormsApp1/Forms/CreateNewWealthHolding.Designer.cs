@@ -307,7 +307,7 @@
             this.tbMarksmanshipDamageUpg.Size = new System.Drawing.Size(202, 29);
             this.tbMarksmanshipDamageUpg.TabIndex = 42;
             this.tbMarksmanshipDamageUpg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbMarksmanshipDamageUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbMarksmanshipDamageUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbFightingDamageUpg
             // 
@@ -322,7 +322,7 @@
             this.tbFightingDamageUpg.TabIndex = 42;
             this.tbFightingDamageUpg.Text = "0";
             this.tbFightingDamageUpg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbFightingDamageUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbFightingDamageUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbBulkUpg
             // 
@@ -337,7 +337,7 @@
             this.tbBulkUpg.TabIndex = 42;
             this.tbBulkUpg.Text = "0";
             this.tbBulkUpg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbBulkUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbBulkUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbArmorPenaltyUpg
             // 
@@ -352,7 +352,7 @@
             this.tbArmorPenaltyUpg.TabIndex = 42;
             this.tbArmorPenaltyUpg.Text = "0";
             this.tbArmorPenaltyUpg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbArmorPenaltyUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbArmorPenaltyUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbArmorRTGUpg
             // 
@@ -367,7 +367,7 @@
             this.tbArmorRTGUpg.TabIndex = 42;
             this.tbArmorRTGUpg.Text = "0";
             this.tbArmorRTGUpg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbArmorRTGUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbArmorRTGUpg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // cbKeyAbilities1
             // 
@@ -458,7 +458,7 @@
             this.tbDisciplineModifier.Size = new System.Drawing.Size(67, 29);
             this.tbDisciplineModifier.TabIndex = 41;
             this.tbDisciplineModifier.Text = "0";
-            this.tbDisciplineModifier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbDisciplineModifier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // lbDisciplineModifier
             // 
@@ -661,7 +661,7 @@
             this.tbWealth.Size = new System.Drawing.Size(42, 29);
             this.tbWealth.TabIndex = 28;
             this.tbWealth.Text = "0";
-            this.tbWealth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbWealth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbDefense
             // 
@@ -674,7 +674,7 @@
             this.tbDefense.Size = new System.Drawing.Size(42, 29);
             this.tbDefense.TabIndex = 29;
             this.tbDefense.Text = "0";
-            this.tbDefense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbDefense.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbLand
             // 
@@ -687,7 +687,7 @@
             this.tbLand.Size = new System.Drawing.Size(42, 29);
             this.tbLand.TabIndex = 30;
             this.tbLand.Text = "0";
-            this.tbLand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbLand.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbPower
             // 
@@ -700,7 +700,7 @@
             this.tbPower.Size = new System.Drawing.Size(42, 29);
             this.tbPower.TabIndex = 31;
             this.tbPower.Text = "0";
-            this.tbPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbTime
             // 
@@ -949,7 +949,7 @@
             this.tbInfluence.Size = new System.Drawing.Size(42, 29);
             this.tbInfluence.TabIndex = 78;
             this.tbInfluence.Text = "0";
-            this.tbInfluence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbInfluence.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbRequirement
             // 
@@ -1001,7 +1001,7 @@
             this.tbPopulationPenaltyReduction.Size = new System.Drawing.Size(42, 29);
             this.tbPopulationPenaltyReduction.TabIndex = 45;
             this.tbPopulationPenaltyReduction.Text = "0";
-            this.tbPopulationPenaltyReduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbPopulationPenaltyReduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbWeaLoss
             // 
@@ -1014,7 +1014,7 @@
             this.tbWeaLoss.Size = new System.Drawing.Size(42, 26);
             this.tbWeaLoss.TabIndex = 64;
             this.tbWeaLoss.Text = "0";
-            this.tbWeaLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbWeaLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbPowLoss
             // 
@@ -1027,7 +1027,7 @@
             this.tbPowLoss.Size = new System.Drawing.Size(42, 26);
             this.tbPowLoss.TabIndex = 65;
             this.tbPowLoss.Text = "0";
-            this.tbPowLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbPowLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbPopLoss
             // 
@@ -1040,7 +1040,7 @@
             this.tbPopLoss.Size = new System.Drawing.Size(42, 26);
             this.tbPopLoss.TabIndex = 67;
             this.tbPopLoss.Text = "0";
-            this.tbPopLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbPopLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbLawLoss
             // 
@@ -1053,7 +1053,7 @@
             this.tbLawLoss.Size = new System.Drawing.Size(42, 26);
             this.tbLawLoss.TabIndex = 69;
             this.tbLawLoss.Text = "0";
-            this.tbLawLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbLawLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbLanLoss
             // 
@@ -1066,7 +1066,7 @@
             this.tbLanLoss.Size = new System.Drawing.Size(42, 26);
             this.tbLanLoss.TabIndex = 71;
             this.tbLanLoss.Text = "0";
-            this.tbLanLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbLanLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbInfLoss
             // 
@@ -1079,7 +1079,7 @@
             this.tbInfLoss.Size = new System.Drawing.Size(42, 26);
             this.tbInfLoss.TabIndex = 74;
             this.tbInfLoss.Text = "0";
-            this.tbInfLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbInfLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbDefLoss
             // 
@@ -1092,7 +1092,7 @@
             this.tbDefLoss.Size = new System.Drawing.Size(42, 26);
             this.tbDefLoss.TabIndex = 75;
             this.tbDefLoss.Text = "0";
-            this.tbDefLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbDefLoss.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // lbPopulationPenaltyReduction
             // 
@@ -1240,7 +1240,7 @@
             this.tbDefGain.Size = new System.Drawing.Size(67, 26);
             this.tbDefGain.TabIndex = 73;
             this.tbDefGain.Text = "0";
-            this.tbDefGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbDefGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbInfGain
             // 
@@ -1253,7 +1253,7 @@
             this.tbInfGain.Size = new System.Drawing.Size(67, 26);
             this.tbInfGain.TabIndex = 72;
             this.tbInfGain.Text = "0";
-            this.tbInfGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbInfGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbLanGain
             // 
@@ -1266,7 +1266,7 @@
             this.tbLanGain.Size = new System.Drawing.Size(67, 26);
             this.tbLanGain.TabIndex = 70;
             this.tbLanGain.Text = "0";
-            this.tbLanGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbLanGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbLawGain
             // 
@@ -1279,7 +1279,7 @@
             this.tbLawGain.Size = new System.Drawing.Size(67, 26);
             this.tbLawGain.TabIndex = 68;
             this.tbLawGain.Text = "0";
-            this.tbLawGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbLawGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbPopGain
             // 
@@ -1292,7 +1292,7 @@
             this.tbPopGain.Size = new System.Drawing.Size(67, 26);
             this.tbPopGain.TabIndex = 66;
             this.tbPopGain.Text = "0";
-            this.tbPopGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbPopGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbPowGain
             // 
@@ -1305,7 +1305,7 @@
             this.tbPowGain.Size = new System.Drawing.Size(67, 26);
             this.tbPowGain.TabIndex = 63;
             this.tbPowGain.Text = "0";
-            this.tbPowGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbPowGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbWeaGain
             // 
@@ -1318,7 +1318,7 @@
             this.tbWeaGain.Size = new System.Drawing.Size(67, 26);
             this.tbWeaGain.TabIndex = 62;
             this.tbWeaGain.Text = "0";
-            this.tbWeaGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbWeaGain.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbLawPenaltyReduction
             // 
@@ -1331,7 +1331,7 @@
             this.tbLawPenaltyReduction.Size = new System.Drawing.Size(67, 29);
             this.tbLawPenaltyReduction.TabIndex = 44;
             this.tbLawPenaltyReduction.Text = "0";
-            this.tbLawPenaltyReduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbLawPenaltyReduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbHouseFortune
             // 
@@ -1344,7 +1344,7 @@
             this.tbHouseFortune.Size = new System.Drawing.Size(67, 29);
             this.tbHouseFortune.TabIndex = 40;
             this.tbHouseFortune.Text = "0";
-            this.tbHouseFortune.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbHouseFortune.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // lbLimit
             // 
@@ -1719,7 +1719,7 @@
             this.tbMarksmanshipDamage.Size = new System.Drawing.Size(198, 29);
             this.tbMarksmanshipDamage.TabIndex = 42;
             this.tbMarksmanshipDamage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbMarksmanshipDamage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbMarksmanshipDamage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbFightingDamage
             // 
@@ -1734,7 +1734,7 @@
             this.tbFightingDamage.TabIndex = 42;
             this.tbFightingDamage.Text = "0";
             this.tbFightingDamage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbFightingDamage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbFightingDamage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbBulk
             // 
@@ -1749,7 +1749,7 @@
             this.tbBulk.TabIndex = 42;
             this.tbBulk.Text = "0";
             this.tbBulk.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbBulk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbBulk.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbArmorPenalty
             // 
@@ -1764,7 +1764,7 @@
             this.tbArmorPenalty.TabIndex = 42;
             this.tbArmorPenalty.Text = "0";
             this.tbArmorPenalty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbArmorPenalty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbArmorPenalty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // tbArmorRTG
             // 
@@ -1779,7 +1779,7 @@
             this.tbArmorRTG.TabIndex = 42;
             this.tbArmorRTG.Text = "0";
             this.tbArmorRTG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbArmorRTG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigit_KeyPress);
+            this.tbArmorRTG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyDigitWithNegatives_KeyPress);
             // 
             // cblbMarksmanshipRange
             // 

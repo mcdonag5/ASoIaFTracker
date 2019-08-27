@@ -150,19 +150,92 @@ namespace WindowsFormsApp1.Forms
                         tbHouseAction.Text = dgEditHolding.Rows[0].Cells[29].Value.ToString();
                         break;
                     case "Wealth Improvement":
-                        
+                        lbWealthHolding.Visible = cbImprovementType.Visible = cbImprovementHolding.Visible = false;
+                        dgEditHolding.DataSource = House.HouseQry("WealthImprovementEdit", holdingID);
+
+                        tbName.Text = dgEditHolding.Rows[0].Cells[2].Value.ToString();
+                        chbLimit.Checked = Convert.ToBoolean(dgEditHolding.Rows[0].Cells[3].Value);
+                        tbWealth.Text = dgEditHolding.Rows[0].Cells[4].Value.ToString();
+                        tbDefense.Text = dgEditHolding.Rows[0].Cells[5].Value.ToString();
+                        tbLand.Text = dgEditHolding.Rows[0].Cells[6].Value.ToString();
+                        tbPower.Text = dgEditHolding.Rows[0].Cells[7].Value.ToString();
+                        tbInfluence.Text = dgEditHolding.Rows[0].Cells[8].Value.ToString();
+                        tbTime.Text = dgEditHolding.Rows[0].Cells[9].Value.ToString();
+                        tbRequirement.Text = dgEditHolding.Rows[0].Cells[10].Value.ToString();
+                        rtbDescription.Text = dgEditHolding.Rows[0].Cells[11].Value.ToString();
+                        rtbBenfits.Text = dgEditHolding.Rows[0].Cells[12].Value.ToString();
+                        tbHouseFortune.Text = dgEditHolding.Rows[0].Cells[13].Value.ToString();
+                        tbWeaGain.Text = dgEditHolding.Rows[0].Cells[14].Value.ToString();
+                        tbPowGain.Text = dgEditHolding.Rows[0].Cells[15].Value.ToString();
+                        tbPopGain.Text = dgEditHolding.Rows[0].Cells[16].Value.ToString();
+                        tbLawGain.Text = dgEditHolding.Rows[0].Cells[17].Value.ToString();
+                        tbLanGain.Text = dgEditHolding.Rows[0].Cells[18].Value.ToString();
+                        tbInfGain.Text = dgEditHolding.Rows[0].Cells[19].Value.ToString();
+                        tbDefGain.Text = dgEditHolding.Rows[0].Cells[20].Value.ToString();
+                        tbWeaLoss.Text = dgEditHolding.Rows[0].Cells[21].Value.ToString();
+                        tbPowGain.Text = dgEditHolding.Rows[0].Cells[22].Value.ToString();
+                        tbPopGain.Text = dgEditHolding.Rows[0].Cells[23].Value.ToString();
+                        tbLawGain.Text = dgEditHolding.Rows[0].Cells[24].Value.ToString();
+                        tbLanLoss.Text = dgEditHolding.Rows[0].Cells[25].Value.ToString();
+                        tbInfLoss.Text = dgEditHolding.Rows[0].Cells[26].Value.ToString();
+                        tbDefLoss.Text = dgEditHolding.Rows[0].Cells[27].Value.ToString();
+                        tbLawPenaltyReduction.Text = dgEditHolding.Rows[0].Cells[28].Value.ToString();
+                        tbPopulationPenaltyReduction.Text = dgEditHolding.Rows[0].Cells[29].Value.ToString();
+                        tbHouseAction.Text = dgEditHolding.Rows[0].Cells[30].Value.ToString();
                         break;
                     case "Influence":
+                        dgEditHolding.DataSource = House.HouseQry("Influence", holdingID);
 
+                        tbName.Text = dgEditHolding.Rows[0].Cells[1].Value.ToString();
+                        tbInfluence.Text = dgEditHolding.Rows[0].Cells[2].Value.ToString();
+                        rtbDescription.Text = dgEditHolding.Rows[0].Cells[3].Value.ToString();
+                        rtbBenfits.Text = dgEditHolding.Rows[0].Cells[4].Value.ToString();
+                        tbDefGain.Text = dgEditHolding.Rows[0].Cells[5].Value.ToString();
+                        tbInfGain.Text = dgEditHolding.Rows[0].Cells[6].Value.ToString();
+                        tbLanGain.Text = dgEditHolding.Rows[0].Cells[7].Value.ToString();
+                        tbLawGain.Text = dgEditHolding.Rows[0].Cells[8].Value.ToString();
+                        tbPopGain.Text = dgEditHolding.Rows[0].Cells[9].Value.ToString();
+                        tbPowGain.Text = dgEditHolding.Rows[0].Cells[10].Value.ToString();
+                        tbWeaGain.Text = dgEditHolding.Rows[0].Cells[11].Value.ToString();
+                        tbLawPenaltyReduction.Text = dgEditHolding.Rows[0].Cells[12].Value.ToString();
+                        tbPopulationPenaltyReduction.Text = dgEditHolding.Rows[0].Cells[13].Value.ToString();
                         break;
                     case "Influence Improvement":
-
+                        dgEditHolding.DataSource = House.HouseQry("Wealth", holdingID);
+                        dgEditHolding.DataSource = House.HouseQry("Wealth", holdingID);
                         break;
                     case "Defense":
+                        dgEditHolding.DataSource = House.HouseQry("Defense", holdingID);
 
+                        tbName.Text = dgEditHolding.Rows[0].Cells[1].Value.ToString();
+                        tbDefense.Text = dgEditHolding.Rows[0].Cells[2].Value.ToString();
+                        tbTime.Text = dgEditHolding.Rows[0].Cells[3].Value.ToString();
+                        rtbDescription.Text = dgEditHolding.Rows[0].Cells[4].Value.ToString();
+                        rtbBenfits.Text = dgEditHolding.Rows[0].Cells[5].Value.ToString();
+                        tbSpaces.Text = dgEditHolding.Rows[0].Cells[6].Value.ToString();
                         break;
                     case "Unit Type":
+                        dgEditHolding.DataSource = House.HouseQry("UnitType", holdingID);
 
+                        tbName.Text = dgEditHolding.Rows[0].Cells[1].Value.ToString();
+                        tbPower.Text = dgEditHolding.Rows[0].Cells[2].Value.ToString();
+                        tbDisciplineModifier.Text = dgEditHolding.Rows[0].Cells[3].Value.ToString();
+                        cbKeyAbilities1.Text = dgEditHolding.Rows[0].Cells[4].Value.ToString();
+                        cbKeyAbilities2.Text = dgEditHolding.Rows[0].Cells[5].Value.ToString();
+                        cbKeyAbilities3.Text = dgEditHolding.Rows[0].Cells[6].Value.ToString();
+                        rtbDescription.Text = dgEditHolding.Rows[0].Cells[7].Value.ToString();
+                        tbArmorRTG.Text = dgEditHolding.Rows[0].Cells[8].Value.ToString();
+                        tbArmorRTGUpg.Text = dgEditHolding.Rows[0].Cells[9].Value.ToString();
+                        tbArmorPenalty.Text = dgEditHolding.Rows[0].Cells[10].Value.ToString();
+                        tbArmorPenaltyUpg.Text = dgEditHolding.Rows[0].Cells[11].Value.ToString();
+                        tbBulk.Text = dgEditHolding.Rows[0].Cells[12].Value.ToString();
+                        tbBulkUpg.Text = dgEditHolding.Rows[0].Cells[13].Value.ToString();
+                        tbFightingDamage.Text = dgEditHolding.Rows[0].Cells[14].Value.ToString();
+                        tbFightingDamageUpg.Text = dgEditHolding.Rows[0].Cells[15].Value.ToString();
+                        tbMarksmanshipDamage.Text = dgEditHolding.Rows[0].Cells[16].Value.ToString();
+                        tbMarksmanshipDamageUpg.Text = dgEditHolding.Rows[0].Cells[17].Value.ToString();
+                        cblbMarksmanshipRange.Text = dgEditHolding.Rows[0].Cells[18].Value.ToString();
+                        tbMovement.Text = dgEditHolding.Rows[0].Cells[19].Value.ToString();
                         break;
                 }
             }
@@ -246,6 +319,8 @@ namespace WindowsFormsApp1.Forms
                         Validation.SetNullTo(tbWeaLoss); Validation.SetNullTo(tbPopLoss); Validation.SetNullTo(tbPopLoss); Validation.SetNullTo(tbLawLoss); Validation.SetNullTo(tbLawLoss); Validation.SetNullTo(tbInfLoss); Validation.SetNullTo(tbDefLoss);
                         Validation.SetNullTo(tbHouseFortune); Validation.SetNullTo(tbLawPenaltyReduction); Validation.SetNullTo(tbPopulationPenaltyReduction);
 
+
+
                         House.InsertWealthImprovement(dgHoldings.Rows[cbImprovementHolding.SelectedIndex].Cells[0].Value.ToString(), tbName.Text, chbLimit.Checked.ToString(), tbWealth.Text, tbDefense.Text, tbLand.Text, tbPower.Text, tbInfluence.Text, tbTime.Text, tbRequirement.Text, rtbDescription.Text, rtbBenfits.Text, tbHouseFortune.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbWeaLoss.Text, tbPowLoss.Text, tbPopLoss.Text, tbLawLoss.Text, tbLanLoss.Text, tbInfLoss.Text, tbDefLoss.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text, tbHouseAction.Text, chbRepeatable.Checked.ToString());
                         Close();
                         break;
@@ -254,7 +329,14 @@ namespace WindowsFormsApp1.Forms
                         Validation.SetNullTo(tbWeaGain); Validation.SetNullTo(tbPowGain); Validation.SetNullTo(tbPopGain); Validation.SetNullTo(tbLawGain); Validation.SetNullTo(tbLanGain); Validation.SetNullTo(tbInfGain); Validation.SetNullTo(tbDefGain);
                         Validation.SetNullTo(tbLawPenaltyReduction); Validation.SetNullTo(tbPopulationPenaltyReduction);
 
-                        House.InsertInfluence(tbName.Text, tbInfluence.Text, rtbDescription.Text, rtbBenfits.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text);
+                        if (holdingID == null)
+                        {
+                            House.InsertInfluence(tbName.Text, tbInfluence.Text, rtbDescription.Text, rtbBenfits.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text);
+                        }
+                        else
+                        {
+                            House.UpdateInfluence(holdingID, tbName.Text, tbInfluence.Text, rtbDescription.Text, rtbBenfits.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text);
+                        }
                         Close();
                         break;
                     case "Influence Improvement":
@@ -269,14 +351,28 @@ namespace WindowsFormsApp1.Forms
                         Validation.SetNullTo(tbDefense);
                         Validation.SetNullTo(tbSpaces);
 
-                        House.InsertDefense(tbName.Text, tbDefense.Text, tbTime.Text, rtbDescription.Text, rtbBenfits.Text, tbSpaces.Text);
+                        if (holdingID == null)
+                        {
+                            House.InsertDefense(tbName.Text, tbDefense.Text, tbTime.Text, rtbDescription.Text, rtbBenfits.Text, tbSpaces.Text);
+                        }
+                        else
+                        {
+                            House.UpdateDefense(holdingID, tbName.Text, tbDefense.Text, tbTime.Text, rtbDescription.Text, rtbBenfits.Text, tbSpaces.Text);
+                        }
                         Close();
                         break;
                     case "Unit Type":
                         Validation.SetNullTo(tbDisciplineModifier); Validation.SetNullTo(tbMovement);
                         Validation.SetNullTo(tbArmorRTG); Validation.SetNullTo(tbArmorRTGUpg); Validation.SetNullTo(tbFightingDamage); Validation.SetNullTo(tbFightingDamageUpg);
 
-                        House.InsertUnitType(tbName.Text, tbPower.Text, tbDisciplineModifier.Text, cbKeyAbilities1.Text, cbKeyAbilities2.Text, cbKeyAbilities3.Text, rtbDescription.Text, tbArmorRTG.Text, tbArmorRTGUpg.Text, tbArmorPenalty.Text, tbArmorPenaltyUpg.Text, tbBulk.Text, tbBulkUpg.Text, tbFightingDamage.Text, tbFightingDamageUpg.Text, tbMarksmanshipDamage.Text, tbMarksmanshipDamageUpg.Text, cblbMarksmanshipRange.Text, tbMovement.Text);
+                        if (holdingID == null)
+                        {
+                            House.InsertUnitType(tbName.Text, tbPower.Text, tbDisciplineModifier.Text, cbKeyAbilities1.Text, cbKeyAbilities2.Text, cbKeyAbilities3.Text, rtbDescription.Text, tbArmorRTG.Text, tbArmorRTGUpg.Text, tbArmorPenalty.Text, tbArmorPenaltyUpg.Text, tbBulk.Text, tbBulkUpg.Text, tbFightingDamage.Text, tbFightingDamageUpg.Text, tbMarksmanshipDamage.Text, tbMarksmanshipDamageUpg.Text, cblbMarksmanshipRange.Text, tbMovement.Text);
+                        }
+                        else
+                        {
+                            House.UpdateUnitType(holdingID, tbName.Text, tbPower.Text, tbDisciplineModifier.Text, cbKeyAbilities1.Text, cbKeyAbilities2.Text, cbKeyAbilities3.Text, rtbDescription.Text, tbArmorRTG.Text, tbArmorRTGUpg.Text, tbArmorPenalty.Text, tbArmorPenaltyUpg.Text, tbBulk.Text, tbBulkUpg.Text, tbFightingDamage.Text, tbFightingDamageUpg.Text, tbMarksmanshipDamage.Text, tbMarksmanshipDamageUpg.Text, cblbMarksmanshipRange.Text, tbMovement.Text);
+                        }
                         Close();
                         break;
                 }
@@ -294,6 +390,10 @@ namespace WindowsFormsApp1.Forms
             Validation.OnlyDigit(e);
         }
 
+        private void OnlyDigitWithNegatives_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validation.OnlyDigitWithNegatives(sender,e);
+        }
         ///// EVENTS END ////////////////////////////////////////////////////////////
 
     }

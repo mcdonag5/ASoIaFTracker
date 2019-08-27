@@ -233,6 +233,16 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT * FROM `tbl_Wealth` " +
                             "WHERE `Wea_ID` = '" + holdingID + "'";
                         break;
+                    //tbl_Influence
+                    case "Influence":
+                        qry = "SELECT * FROM `tbl_Influence` " +
+                            "WHERE `Inf_ID` = '" + holdingID + "'";
+                        break;
+                    //tbl_Defense
+                    case "Defense":
+                        qry = "SELECT * FROM `tbl_Defense` " +
+                            "WHERE `Def_ID` = '" + holdingID + "'";
+                        break;
                     //tbl_WealthImprovement
                     case "WealthImprovement":
                         qry = "SELECT * FROM `tbl_WealthImprovement` "+
@@ -242,10 +252,23 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT * FROM `tbl_WealthImprovement` " +
                             "WHERE `Wea_ID` = '" + holdingID + "' AND `WeaImp_Limit` = 0";
                         break;
+                    case "WealthImprovementEdit":
+                        qry = "SELECT * FROM `tbl_WealthImprovement` " +
+                            "WHERE `WeaImp_ID` = '" + holdingID + "'";
+                        break;
                     //tbl_InfluenceImprovemnt
                     case "ImprovementImprovement":
                         qry = "SELECT * FROM `tbl_InfluenceImprovemnt` " +
                             "WHERE `Inf_ID` = '" + holdingID + "'";
+                        break;
+                    case "InfluenceImprovemntEdit":
+                        qry = "SELECT * FROM `tbl_InfluenceImprovemnt` " +
+                            "WHERE `InfImp_ID` = '" + holdingID + "'";
+                        break;
+                    //tbl_UnitType
+                    case "UnitType":
+                        qry = "SELECT * FROM `tbl_UnitType` " +
+                            "WHERE `Uni_ID` = '" + holdingID + "'";
                         break;
                 }
                 DevLog.LogItem(qry);
@@ -847,6 +870,64 @@ namespace WindowsFormsApp1.Classes
                     "', `Wea_WealthLoss` = '" + wealthLoss + "', `Wea_PowerLoss` = '" + powerLoss + "', `Wea_PopulationLoss` = '" + populationLoss + "', `Wea_LawLoss` = '" + lawLoss + "', `Wea_LandsLoss` = '" + landLoss + "', `Wea_InfluenceLoss` = '" + influenceLoss + "', `Wea_DefenseLoss` = '" + defenseLoss + 
                     "', `Wea_LawPenaltyReduction` = '" + lawPenaltyReduction + "', `Wea_PopulationPenaltyReduction` = '" + populationPenaltyReduction + "', `Wea_HouseAction` = '" + houseAction + "' " +
                     "WHERE `Wea_ID` = '" + WeaID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_Influence
+        public void UpdateInfluence(string InfID, string name, string influenceCost, string description, string benfit, string wealthGain, string powerGain, string populationGain, string lawGain, string landGain, string influenceGain, string defenseGain, string lawPenaltyReduction, string populationPenaltyReduction)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert Influence");
+                name = SanitizingInput(name); description = SanitizingInput(description); benfit = SanitizingInput(benfit);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_Influence` " +
+                    "SET `Inf_Name` = '" + name + "', `Inf_InfluenceCost` = '" + influenceCost + "', `Inf_Description` = '" + description + "', `Inf_Benefit` = '" + benfit + 
+                    "', `Inf_DefenseGain` = '" + defenseGain + "', `Inf_InfluenceGain` = '" + influenceGain + "', `Inf_LandGain` = '" + landGain + "', `Inf_LawGain` = '" + lawGain + "', `Inf_PopulationGain` = '" + populationGain + "', `Inf_PowerGain` = '" + powerGain + "', `Inf_WealthGain` = '" + wealthGain + "', `Inf_LawPenaltyReduction` = '" + lawPenaltyReduction + "', `Inf_PopulationPenaltyReduction` = '" + populationPenaltyReduction + "' " +
+                    "WHERE `Inf_ID` = '" + InfID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_Defense
+        public void UpdateDefense(string defID, string name, string defenseCost, string time, string description, string benfit, string spaces)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert InfluenceImprovment");
+                name = SanitizingInput(name); description = SanitizingInput(description); benfit = SanitizingInput(benfit);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_Defense` " +
+                    "SET `Def_Name` = '" + name + "', `Def_DefenseCost` = '" + defenseCost + "', `Def_BuildTime` = '" + time + "', `Def_Description` = '" + description + "', `Def_Benefit` = '" + benfit + "', `Def_Spaces` = '" + spaces + "' " +
+                    "WHERE `Def_ID` = '" + defID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_UnitType
+        public void UpdateUnitType(string uniID, string name, string powerCost, string disciplineModifier, string keyAbilitie1, string keyAbilitie2, string keyAbilitie3, string description, string armorRating, string armorRatingUpg, string armorPenalty, string armorPenaltyUpg, string bulk, string bulkUpg, string fightingDamage, string fightingDamageUpg, string marksmanshipDamage, string marksmanshipDamageUpg, string marksmanshipRange, string movement)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert InfluenceImprovment");
+                name = SanitizingInput(name); description = SanitizingInput(description);
+                if (armorPenalty == "") { armorPenalty = "null"; } else { armorPenalty = "'" + armorPenalty + "'"; }
+                if (armorPenaltyUpg == "") { armorPenaltyUpg = "null"; } else { armorPenaltyUpg = "'" + armorPenaltyUpg + "'"; }
+                if (bulk == "") { bulk = "null"; } else { bulk = "'" + bulk + "'"; }
+                if (bulkUpg == "") { bulkUpg = "null"; } else { bulkUpg = "'" + bulkUpg + "'"; }
+                if (marksmanshipDamage == "") { marksmanshipDamage = "null"; } else { marksmanshipDamage = "'" + marksmanshipDamage + "'"; }
+                if (marksmanshipDamageUpg == "") { marksmanshipDamageUpg = "null"; } else { marksmanshipDamageUpg = "'" + marksmanshipDamageUpg + "'"; }
+                if (marksmanshipRange == " ") { marksmanshipRange = "null"; } else { marksmanshipRange = "'" + marksmanshipRange + "'"; }
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_UnitType` " +
+                    "SET `Uni_Name` = '" + name + "', `Uni_PowerCost` = '" + powerCost + "', `Uni_DisciplineModifier` = '" + disciplineModifier + "', `Uni_KeyAbilities` = '" + keyAbilitie1 + "', `Uni_KeyAbilitie2` = '" + keyAbilitie2 + "', `Uni_KeyAbilitie3` = '" + keyAbilitie3 + "', `Uni_Description` = '" + description +
+                    "', `Uni_ArmorRating` = '" + armorRating + "', `Uni_UpArmorRating` = '" + armorRatingUpg + "', `Uni_ArmorPenalty` = " + armorPenalty + ", `Uni_UpArmorPenalty` = " + armorPenaltyUpg + ", `Uni_Bulk` = " + bulk + ", `Uni_UpBulk` = " + bulkUpg +
+                    ", `Uni_FightingDamage` = '" + fightingDamage + "', `Uni_UpFightingDamage` = '" + fightingDamageUpg + "', `Uni_MarksmanshipDamage` = " + marksmanshipDamage + ", `Uni_UpMarksmanshipDamage` = " + marksmanshipDamageUpg + ", `Uni_MarksmanshipRange` = " + marksmanshipRange + ", `Uni_Movement` = '" + movement  + "' " +
+                    "WHERE `Uni_ID` = '" + uniID + "'";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
