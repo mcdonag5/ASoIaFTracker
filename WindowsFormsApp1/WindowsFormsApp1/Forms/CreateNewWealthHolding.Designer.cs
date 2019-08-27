@@ -131,8 +131,10 @@
             this.tbArmorRTG = new System.Windows.Forms.TextBox();
             this.cblbMarksmanshipRange = new System.Windows.Forms.ComboBox();
             this.dgHoldings = new System.Windows.Forms.DataGridView();
+            this.dgEditHolding = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgHoldings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEditHolding)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -1808,12 +1810,23 @@
             this.dgHoldings.TabIndex = 14;
             this.dgHoldings.Visible = false;
             // 
+            // dgEditHolding
+            // 
+            this.dgEditHolding.AllowUserToAddRows = false;
+            this.dgEditHolding.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEditHolding.Location = new System.Drawing.Point(337, 382);
+            this.dgEditHolding.Name = "dgEditHolding";
+            this.dgEditHolding.Size = new System.Drawing.Size(40, 40);
+            this.dgEditHolding.TabIndex = 15;
+            this.dgEditHolding.Visible = false;
+            // 
             // CreateNewWealthHolding
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(768, 805);
+            this.ClientSize = new System.Drawing.Size(732, 805);
+            this.Controls.Add(this.dgEditHolding);
             this.Controls.Add(this.dgHoldings);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "CreateNewWealthHolding";
@@ -1822,6 +1835,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgHoldings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgEditHolding)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1931,5 +1945,6 @@
         private System.Windows.Forms.TextBox tbFightingDamage;
         private System.Windows.Forms.TextBox tbBulk;
         private System.Windows.Forms.ComboBox cblbMarksmanshipRange;
+        private System.Windows.Forms.DataGridView dgEditHolding;
     }
 }

@@ -143,21 +143,21 @@ namespace WindowsFormsApp1
             createNewWealthHolding.ShowDialog();
         }
 
-        private void defenseHoldingToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DefenseHoldingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DevLog.LogItem("Create new influnce Improvement holding tool strip clicked");
             CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Defense");
             createNewWealthHolding.ShowDialog();
         }
 
-        private void unitTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void UnitTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DevLog.LogItem("Create new influnce Improvement holding tool strip clicked");
             CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding("Unit Type");
             createNewWealthHolding.ShowDialog();
         }
 
-        private void tsbViewHoldings_Click(object sender, EventArgs e)
+        private void TsbViewHoldings_Click(object sender, EventArgs e)
         {
             DevLog.LogItem("Create new influnce Improvement holding tool strip clicked");
             ViewHoldings viewHoldings = new ViewHoldings();

@@ -99,7 +99,77 @@ namespace WindowsFormsApp1.Forms
                     lbLimit.Visible = chbLimit.Visible = lbRepeatable.Visible = chbRepeatable.Visible = lbSpaces.Visible = tbSpaces.Visible = false;
                     break;
             }
-            Text = "Create new " + holdingType + " Holding";
+            if(holdingID != null)
+            {
+                Text = "Edit " + holdingType + " Holding";
+
+                switch (holdingType)
+                {
+                    case "Wealth":
+                        dgEditHolding.DataSource = House.HouseQry("Wealth", holdingID);
+
+                        tbName.Text = dgEditHolding.Rows[0].Cells[1].Value.ToString();
+                        switch(dgEditHolding.Rows[0].Cells[2].Value.ToString())
+                        {
+                            case "Lifestyle":
+                                cbWealthHoldingType.SelectedIndex = 1;
+                                break;
+                            case "Personage":
+                                cbWealthHoldingType.SelectedIndex = 2;
+                                break;
+                            case "Settlement":
+                                cbWealthHoldingType.SelectedIndex = 3;
+                                break;
+                        }
+                        chbLimit.Checked = Convert.ToBoolean(dgEditHolding.Rows[0].Cells[3].Value);
+                        tbWealth.Text = dgEditHolding.Rows[0].Cells[4].Value.ToString();
+                        tbDefense.Text = dgEditHolding.Rows[0].Cells[5].Value.ToString();
+                        tbLand.Text = dgEditHolding.Rows[0].Cells[6].Value.ToString();
+                        tbPower.Text = dgEditHolding.Rows[0].Cells[7].Value.ToString();
+                        tbTime.Text = dgEditHolding.Rows[0].Cells[8].Value.ToString();
+                        tbRequirement.Text = dgEditHolding.Rows[0].Cells[9].Value.ToString();
+                        rtbDescription.Text = dgEditHolding.Rows[0].Cells[10].Value.ToString();
+                        rtbBenfits.Text = dgEditHolding.Rows[0].Cells[11].Value.ToString();
+                        tbHouseFortune.Text = dgEditHolding.Rows[0].Cells[12].Value.ToString();
+                        tbWeaGain.Text = dgEditHolding.Rows[0].Cells[13].Value.ToString();
+                        tbPowGain.Text = dgEditHolding.Rows[0].Cells[14].Value.ToString();
+                        tbPopGain.Text = dgEditHolding.Rows[0].Cells[15].Value.ToString();
+                        tbLawGain.Text = dgEditHolding.Rows[0].Cells[16].Value.ToString();
+                        tbLanGain.Text = dgEditHolding.Rows[0].Cells[17].Value.ToString();
+                        tbInfGain.Text = dgEditHolding.Rows[0].Cells[18].Value.ToString();
+                        tbDefGain.Text = dgEditHolding.Rows[0].Cells[19].Value.ToString();
+                        tbWeaLoss.Text = dgEditHolding.Rows[0].Cells[20].Value.ToString();
+                        tbPowLoss.Text = dgEditHolding.Rows[0].Cells[21].Value.ToString();
+                        tbPopLoss.Text = dgEditHolding.Rows[0].Cells[22].Value.ToString();
+                        tbLawLoss.Text = dgEditHolding.Rows[0].Cells[23].Value.ToString();
+                        tbLanLoss.Text = dgEditHolding.Rows[0].Cells[24].Value.ToString();
+                        tbInfLoss.Text = dgEditHolding.Rows[0].Cells[25].Value.ToString();
+                        tbDefLoss.Text = dgEditHolding.Rows[0].Cells[26].Value.ToString();
+                        tbLawPenaltyReduction.Text = dgEditHolding.Rows[0].Cells[27].Value.ToString();
+                        tbPopulationPenaltyReduction.Text = dgEditHolding.Rows[0].Cells[28].Value.ToString();
+                        tbHouseAction.Text = dgEditHolding.Rows[0].Cells[29].Value.ToString();
+                        break;
+                    case "Wealth Improvement":
+                        
+                        break;
+                    case "Influence":
+
+                        break;
+                    case "Influence Improvement":
+
+                        break;
+                    case "Defense":
+
+                        break;
+                    case "Unit Type":
+
+                        break;
+                }
+            }
+            else
+            {
+                Text = "Create new " + holdingType + " Holding";
+            }
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void CbType_SelectedIndexChanged(object sender, EventArgs e)
@@ -158,7 +228,15 @@ namespace WindowsFormsApp1.Forms
                         Validation.SetNullTo(tbHouseFortune); Validation.SetNullTo(tbLawPenaltyReduction); Validation.SetNullTo(tbPopulationPenaltyReduction);
                         Validation.SetNullTo(tbRequirement, "None");
 
-                        House.InsertWealth(tbName.Text, cbWealthHoldingType.Text, chbLimit.Checked.ToString(), tbWealth.Text, tbDefense.Text, tbLand.Text, tbPower.Text, tbTime.Text, tbRequirement.Text, rtbDescription.Text, rtbBenfits.Text, tbHouseFortune.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbWeaLoss.Text, tbPowLoss.Text, tbPopLoss.Text, tbLawLoss.Text, tbLanLoss.Text, tbInfLoss.Text, tbDefLoss.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text, tbHouseAction.Text);
+                        if(holdingID == null)
+                        {
+                            House.InsertWealth(tbName.Text, cbWealthHoldingType.Text, chbLimit.Checked.ToString(), tbWealth.Text, tbDefense.Text, tbLand.Text, tbPower.Text, tbTime.Text, tbRequirement.Text, rtbDescription.Text, rtbBenfits.Text, tbHouseFortune.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbWeaLoss.Text, tbPowLoss.Text, tbPopLoss.Text, tbLawLoss.Text, tbLanLoss.Text, tbInfLoss.Text, tbDefLoss.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text, tbHouseAction.Text);
+                        }
+                        else
+                        {
+                            House.UpdateWealth(holdingID, tbName.Text, cbWealthHoldingType.Text, chbLimit.Checked.ToString(), tbWealth.Text, tbDefense.Text, tbLand.Text, tbPower.Text, tbTime.Text, tbRequirement.Text, rtbDescription.Text, rtbBenfits.Text, tbHouseFortune.Text, tbWeaGain.Text, tbPowGain.Text, tbPopGain.Text, tbLawGain.Text, tbLanGain.Text, tbInfGain.Text, tbDefGain.Text, tbWeaLoss.Text, tbPowLoss.Text, tbPopLoss.Text, tbLawLoss.Text, tbLanLoss.Text, tbInfLoss.Text, tbDefLoss.Text, tbLawPenaltyReduction.Text, tbPopulationPenaltyReduction.Text, tbHouseAction.Text);
+                        }
+                        
                         Close();
 
                         break;

@@ -46,6 +46,7 @@
             this.tsbCreateHouse = new System.Windows.Forms.ToolStripButton();
             this.tsbViewHouse = new System.Windows.Forms.ToolStripButton();
             this.tsbDeleteHouse = new System.Windows.Forms.ToolStripButton();
+            this.tsbViewHoldings = new System.Windows.Forms.ToolStripButton();
             this.tsbCreateNewHolding = new System.Windows.Forms.ToolStripDropDownButton();
             this.wealthHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wealthImprovemntToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,7 +54,6 @@
             this.influnceImprovemntToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defenseHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unitTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbViewHoldings = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -235,6 +235,17 @@
             this.tsbDeleteHouse.Text = "Delete House";
             this.tsbDeleteHouse.Click += new System.EventHandler(this.TsbDeleteHouse_Click);
             // 
+            // tsbViewHoldings
+            // 
+            this.tsbViewHoldings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbViewHoldings.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewHoldings.Image")));
+            this.tsbViewHoldings.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbViewHoldings.Name = "tsbViewHoldings";
+            this.tsbViewHoldings.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbViewHoldings.Size = new System.Drawing.Size(97, 22);
+            this.tsbViewHoldings.Text = "View Holdings";
+            this.tsbViewHoldings.Click += new System.EventHandler(this.TsbViewHoldings_Click);
+            // 
             // tsbCreateNewHolding
             // 
             this.tsbCreateNewHolding.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -285,25 +296,14 @@
             this.defenseHoldingToolStripMenuItem.Name = "defenseHoldingToolStripMenuItem";
             this.defenseHoldingToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.defenseHoldingToolStripMenuItem.Text = "Defense Holding";
-            this.defenseHoldingToolStripMenuItem.Click += new System.EventHandler(this.defenseHoldingToolStripMenuItem_Click);
+            this.defenseHoldingToolStripMenuItem.Click += new System.EventHandler(this.DefenseHoldingToolStripMenuItem_Click);
             // 
             // unitTypeToolStripMenuItem
             // 
             this.unitTypeToolStripMenuItem.Name = "unitTypeToolStripMenuItem";
             this.unitTypeToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.unitTypeToolStripMenuItem.Text = "Unit Type";
-            this.unitTypeToolStripMenuItem.Click += new System.EventHandler(this.unitTypeToolStripMenuItem_Click);
-            // 
-            // tsbViewHoldings
-            // 
-            this.tsbViewHoldings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbViewHoldings.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewHoldings.Image")));
-            this.tsbViewHoldings.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbViewHoldings.Name = "tsbViewHoldings";
-            this.tsbViewHoldings.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsbViewHoldings.Size = new System.Drawing.Size(97, 22);
-            this.tsbViewHoldings.Text = "View Holdings";
-            this.tsbViewHoldings.Click += new System.EventHandler(this.tsbViewHoldings_Click);
+            this.unitTypeToolStripMenuItem.Click += new System.EventHandler(this.UnitTypeToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -314,6 +314,7 @@
             this.ClientSize = new System.Drawing.Size(1371, 632);
             this.Controls.Add(this.dgHouseDetails);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ASoIaF Tracker";

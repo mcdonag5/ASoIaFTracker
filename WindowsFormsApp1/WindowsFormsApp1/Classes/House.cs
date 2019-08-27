@@ -228,6 +228,11 @@ namespace WindowsFormsApp1.Classes
                             "WHERE `tbl_Trade`.`LanHol_ID` = '" + holdingID + "' AND `tbl_WealthHolding`.`WeaHol_ID` = `tbl_Trade`.`WeaHol_ID` AND `tbl_LandHoldingFeature`.`LanHolFea_ID` = `tbl_WealthHolding`.`LanHolFea_ID` AND `tbl_LandHolding`.`LanHol_ID` = `tbl_LandHoldingFeature`.`LanHol_ID` AND `tbl_House`.`Hou_ID` = `tbl_LandHolding`.`Hou_ID`";
                         break;
                     //Lookup Table
+                    //tbl_Wealth
+                    case "Wealth":
+                        qry = "SELECT * FROM `tbl_Wealth` " +
+                            "WHERE `Wea_ID` = '" + holdingID + "'";
+                        break;
                     //tbl_WealthImprovement
                     case "WealthImprovement":
                         qry = "SELECT * FROM `tbl_WealthImprovement` "+
@@ -820,6 +825,28 @@ namespace WindowsFormsApp1.Classes
                     "SET `PowHol_Name` = '" + name + "', `PowHol_Training` = '" + training + "', `PowHol_Damage` = '" + damage + "', `PowHol_Disorganized` = '" + disorganized + "', `PowHol_Notes` = '" + notes + "', `PowHol_ArmorUp` = '" + armorUpg + "', `PowHol_FightingUp` = '" + fightUpg + "', `PowHol_MarksmashipUp` = '" + marksUpg + "', " +
                     "`PowHol_Agility` = '" + agility + "', `PowHol_AnimalHand` = '" + animal + "', `PowHol_Athletics` = '" + athletics + "', `PowHol_Awareness` = '" + awareness + "', `PowHol_Cunning` = '" + cunning + "', `PowHol_Endurance` = '" + endurance + "', `PowHol_Fighting` = '" + fighting + "', `PowHol_Healing` = '" + healing + "', `PowHol_Language` = '" + language + "', `PowHol_Knowledge` = '" + knowledge + "', `PowHol_Marksmanship` = '" + marksmanship + "', `PowHol_Persuasion` = '" + persuasion + "', `PowHol_Status` = '" + status + "', `PowHol_Stealth` = '" + stealth + "', `PowHol_Survival` = '" + survival + "', `PowHol_Thievery` = '" + thievery + "', `PowHol_Warfare` = '" + warfare + "', `PowHol_Will` = '" + will + "' " +
                     "WHERE `PowHol_ID` = '" + powHolID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //Update Tables
+        //tbl_Wealth
+        public void UpdateWealth(string WeaID, string name, string type, string takeSpace, string wealthCost, string defenseCost, string landCost, string powerCost, string time, string requirement, string description, string benfit, string houseFortune, string wealthGain, string powerGain, string populationGain, string lawGain, string landGain, string influenceGain, string defenseGain, string wealthLoss, string powerLoss, string populationLoss, string lawLoss, string landLoss, string influenceLoss, string defenseLoss, string lawPenaltyReduction, string populationPenaltyReduction, string houseAction)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Update Wealth ID: " + WeaID);
+                takeSpace = takeSpace == "True" ? "1" : "0";
+                name = SanitizingInput(name); time = SanitizingInput(time); requirement = SanitizingInput(requirement); description = SanitizingInput(description); benfit = SanitizingInput(benfit); houseAction = SanitizingInput(houseAction);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_Wealth` " +
+                    "SET `Wea_Name` = '" + name + "', `Wea_Type` = '" + type + "', `Wea_TakesSpace` = '" + takeSpace + "', `Wea_WealthCost` = '" + wealthCost + "', `Wea_DefenseCost` = '" + defenseCost + "', `Wea_LandCost` = '" + landCost + "', `Wea_PowerCost` = '" + powerCost + "', `Wea_Time` = '" + time + "', `Wea_Requirement` = '" + requirement + 
+                    "', `Wea_Description` = '" + description + "', `Wea_Benefits` = '" + benfit + "', `Wea_HouseFortune` = '" + houseFortune + 
+                    "', `Wea_WealthGain` = '" + wealthGain + "', `Wea_PowerGain` = '" + powerGain + "', `Wea_PopulationGain` = '" + populationGain + "', `Wea_LawGain` = '" + lawGain + "', `Wea_LandsGain` = '" + landGain + "', `Wea_InfluenceGain` = '" + influenceGain + "', `Wea_DefenseGain` = '" + defenseGain +
+                    "', `Wea_WealthLoss` = '" + wealthLoss + "', `Wea_PowerLoss` = '" + powerLoss + "', `Wea_PopulationLoss` = '" + populationLoss + "', `Wea_LawLoss` = '" + lawLoss + "', `Wea_LandsLoss` = '" + landLoss + "', `Wea_InfluenceLoss` = '" + influenceLoss + "', `Wea_DefenseLoss` = '" + defenseLoss + 
+                    "', `Wea_LawPenaltyReduction` = '" + lawPenaltyReduction + "', `Wea_PopulationPenaltyReduction` = '" + populationPenaltyReduction + "', `Wea_HouseAction` = '" + houseAction + "' " +
+                    "WHERE `Wea_ID` = '" + WeaID + "'";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();

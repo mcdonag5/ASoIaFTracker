@@ -35,7 +35,7 @@ namespace WindowsFormsApp1.Forms
             cbHoldingType.SelectedIndex = 0;
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
-        private void cbHoldingType_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbHoldingType_SelectedIndexChanged(object sender, EventArgs e)
         {
             tsbEditHolding.Enabled = new[] { "Defense", "Wealth", "Unit Type","Influence" }.Contains(cbHoldingType.Text) ? true : false;
             cbDoubleHoldingName.Visible = cbDoubleHoldingType.Visible = cbHoldingType.Text == "Wealth" ? true : false;
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
-        private void cbSoloHoldingName_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbSoloHoldingName_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbSoloHoldingName.SelectedIndex;
             string description = "";
@@ -125,7 +125,7 @@ namespace WindowsFormsApp1.Forms
             lbDescription.Text = description;
         }
 
-        private void cbDoubleHoldingType_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbDoubleHoldingType_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             dgHoldings.DataSource = House.HouseQry(cbDoubleHoldingType.Text);
@@ -141,7 +141,7 @@ namespace WindowsFormsApp1.Forms
             
         }
 
-        private void cbDoubleHoldingName_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbDoubleHoldingName_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbDoubleHoldingName.SelectedIndex;
             string cost = "";
@@ -178,7 +178,7 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
-        private void cbImprovementName_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbImprovementName_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = cbImprovementName.SelectedIndex;
             if (index>=0)
@@ -214,10 +214,11 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
-        private void tsbEditHolding_Click(object sender, EventArgs e)
+        private void TsbEditHolding_Click(object sender, EventArgs e)
         {
+            int index = cbSoloHoldingName.Visible == true ? cbSoloHoldingName.SelectedIndex : cbDoubleHoldingName.SelectedIndex;
             DevLog.LogItem("Clicked Edit Holding button for " + cbHoldingType.Text);
-            CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding(cbHoldingType.Text, dgHoldings.Rows[cbHoldingType.SelectedIndex].Cells[0].Value.ToString());
+            CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding(cbHoldingType.Text, dgHoldings.Rows[index].Cells[0].Value.ToString());
             createNewWealthHolding.ShowDialog();
         }
         ///// EVENTS END ////////////////////////////////////////////////////////////
