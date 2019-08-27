@@ -37,6 +37,7 @@ namespace WindowsFormsApp1.Forms
         ///// EVENTS START //////////////////////////////////////////////////////////
         private void cbHoldingType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            tsbEditHolding.Enabled = new[] { "Defense", "Wealth", "Unit Type","Influence" }.Contains(cbHoldingType.Text) ? true : false;
             cbDoubleHoldingName.Visible = cbDoubleHoldingType.Visible = cbHoldingType.Text == "Wealth" ? true : false;
             cbSoloHoldingName.Visible = !cbDoubleHoldingName.Visible;
             lbBuildTime.Visible = lbBuildTimeDetails.Visible = new[] { "Defense", "Wealth" }.Contains(cbHoldingType.Text) ? true : false;
@@ -211,6 +212,13 @@ namespace WindowsFormsApp1.Forms
                 lbImprovementTimeDetails.Text = lbImprovementCostDetails.Text = lbImprovementRequirementDetails.Text = lbImprovementDescription.Text = "";
 
             }
+        }
+
+        private void tsbEditHolding_Click(object sender, EventArgs e)
+        {
+            DevLog.LogItem("Clicked Edit Holding button for " + cbHoldingType.Text);
+            CreateNewWealthHolding createNewWealthHolding = new CreateNewWealthHolding(cbHoldingType.Text, dgHoldings.Rows[cbHoldingType.SelectedIndex].Cells[0].Value.ToString());
+            createNewWealthHolding.ShowDialog();
         }
         ///// EVENTS END ////////////////////////////////////////////////////////////
 

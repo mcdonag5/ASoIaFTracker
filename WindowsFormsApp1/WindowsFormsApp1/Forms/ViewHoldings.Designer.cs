@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewHoldings));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.lbRequirementDetails = new System.Windows.Forms.Label();
             this.lbRequirement = new System.Windows.Forms.Label();
@@ -57,7 +58,10 @@
             this.lbImprovementRequirementDetails = new System.Windows.Forms.Label();
             this.lbImprovementDescription = new System.Windows.Forms.Label();
             this.dgImprovement = new System.Windows.Forms.DataGridView();
+            this.tsbEditHolding = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditImprovement = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgHoldings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgImprovement)).BeginInit();
             this.SuspendLayout();
@@ -404,9 +408,12 @@
             // toolStrip1
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbEditHolding,
+            this.tsbEditImprovement});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1067, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1067, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -559,6 +566,27 @@
             this.dgImprovement.TabIndex = 16;
             this.dgImprovement.Visible = false;
             // 
+            // tsbEditHolding
+            // 
+            this.tsbEditHolding.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbEditHolding.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditHolding.Image")));
+            this.tsbEditHolding.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditHolding.Name = "tsbEditHolding";
+            this.tsbEditHolding.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbEditHolding.Size = new System.Drawing.Size(107, 24);
+            this.tsbEditHolding.Text = "Edit Holding";
+            this.tsbEditHolding.Click += new System.EventHandler(this.tsbEditHolding_Click);
+            // 
+            // tsbEditImprovement
+            // 
+            this.tsbEditImprovement.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbEditImprovement.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditImprovement.Image")));
+            this.tsbEditImprovement.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditImprovement.Name = "tsbEditImprovement";
+            this.tsbEditImprovement.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbEditImprovement.Size = new System.Drawing.Size(142, 24);
+            this.tsbEditImprovement.Text = "Edit Improvement";
+            // 
             // ViewHoldings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -574,6 +602,8 @@
             this.Load += new System.EventHandler(this.ViewHoldings_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgHoldings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgImprovement)).EndInit();
             this.ResumeLayout(false);
@@ -612,5 +642,7 @@
         private System.Windows.Forms.Label lbImprovementRequirementDetails;
         private System.Windows.Forms.Label lbImprovementDescription;
         private System.Windows.Forms.DataGridView dgImprovement;
+        private System.Windows.Forms.ToolStripButton tsbEditHolding;
+        private System.Windows.Forms.ToolStripButton tsbEditImprovement;
     }
 }
