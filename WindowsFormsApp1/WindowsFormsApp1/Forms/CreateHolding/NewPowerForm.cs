@@ -213,6 +213,16 @@ namespace WindowsFormsApp1.Forms
             }
         }
 
+        public void Health()
+        {
+            int health = 0;
+            if (tbEnd1.Text != "")
+            {
+                health = Convert.ToInt32(tbEnd1.Text) * 3;
+            }
+            lbHealth.Text = health.ToString();
+        }
+
         public void UnitDefense()
         {
             //Unit Defense = Agility + Athletics + Awareness - Armor Penalty
@@ -331,6 +341,7 @@ namespace WindowsFormsApp1.Forms
         private void tbEnd1_TextChanged(object sender, EventArgs e)
         {
             UpdateExperience();
+            Health();
         }
 
         private void tbFig1_TextChanged(object sender, EventArgs e)

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using WindowsFormsApp1.Forms;
+using WindowsFormsApp1.Forms.HouseView;
 using WindowsFormsApp1.Classes;
 
 namespace WindowsFormsApp1
@@ -49,6 +50,7 @@ namespace WindowsFormsApp1
         NewHeirForm NewHeirForm;
         NewInfluenceForm NewInfluenceForm;
         NewInfluenceImprovementForm NewInfluenceImprovementForm;
+        UpgradeDowngradeForm UpgradeDowngradeForm;
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
@@ -776,6 +778,15 @@ namespace WindowsFormsApp1
             Visible = false;
             NewHeirForm.ShowDialog();
         }
+
+        private void tsbUpgradeDowngrade_Click(object sender, EventArgs e)
+        {
+            ChangeHolding(holdingType, "");
+            UpgradeDowngradeForm = new UpgradeDowngradeForm("Defense", dgDef.Rows[currentIndex].Cells[0].Value.ToString());
+            UpgradeDowngradeForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
+            Visible = false;
+            UpgradeDowngradeForm.ShowDialog();
+        }
         //Deleting
         private void BtAddDelete1_Click(object sender, EventArgs e)
         {
@@ -974,9 +985,6 @@ namespace WindowsFormsApp1
             if (NewInfluenceForm != null) { NewInfluenceForm.Close(); }
             if (NewInfluenceImprovementForm != null) { NewInfluenceImprovementForm.Close(); }
         }
-
-
-
 
 
 

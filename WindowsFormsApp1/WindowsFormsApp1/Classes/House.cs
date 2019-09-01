@@ -204,6 +204,11 @@ namespace WindowsFormsApp1.Classes
                             "FROM `tbl_LandHoldingFeature`, `tbl_LandFeature` " +
                             "WHERE `tbl_LandHoldingFeature`.`LanHol_ID` = '" + holdingID + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID` AND `tbl_LandFeature`.`LanFea_Spaces` > '0'; ";
                         break;
+                    case "UpDown Community":
+                        qry = "SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.`LanFea_ID`, `tbl_LandFeature`.* " +
+                            "FROM `tbl_LandHoldingFeature` LEFT JOIN `tbl_LandFeature` ON `tbl_LandHoldingFeature`.`LanFea_ID` = `tbl_LandFeature`.`LanFea_ID` " +
+                            "WHERE `tbl_LandHoldingFeature`.`LanHolFea_ID` = '" + holdingID + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID`";
+                        break;
                     //tbl_WealthHoldingImprovement
                     case "WealthHoldingImprovement":
                         qry = "SELECT `tbl_WealthHoldingImprovement`.`WeaHol_ID`, `tbl_WealthHoldingImprovement`.*, `tbl_WealthImprovement`.`WeaImp_ID`, `tbl_WealthImprovement`.* "+
@@ -215,6 +220,11 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT `tbl_DefenseHolding`.*, `tbl_Defense`.`Def_ID`, `tbl_Defense`.* "+
                             "FROM `tbl_DefenseHolding`, `tbl_Defense` "+
                             "WHERE `tbl_DefenseHolding`.`LanHol_ID` = '" + holdingID + "' AND `tbl_Defense`.`Def_ID` = `tbl_DefenseHolding`.`Def_ID`; ";
+                        break;
+                    case "UpDown Defense":
+                        qry = "SELECT  `tbl_DefenseHolding`.*, `tbl_Defense`.* " +
+                            "FROM `tbl_DefenseHolding` LEFT JOIN `tbl_Defense` ON `tbl_DefenseHolding`.`Def_ID` = `tbl_Defense`.`Def_ID` " +
+                            "WHERE `tbl_DefenseHolding`.`DefHol_ID` = '"+holdingID+"' AND `tbl_Defense`.`Def_ID` = `tbl_DefenseHolding`.`Def_ID`; ";
                         break;
                     //tbl_Trade
                     case "Trade":
