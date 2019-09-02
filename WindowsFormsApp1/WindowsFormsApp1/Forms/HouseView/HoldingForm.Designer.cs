@@ -124,7 +124,7 @@
             this.lbTypeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTypeName.Name = "lbTypeName";
             this.tableLayoutPanel3.SetRowSpan(this.lbTypeName, 2);
-            this.lbTypeName.Size = new System.Drawing.Size(553, 81);
+            this.lbTypeName.Size = new System.Drawing.Size(540, 81);
             this.lbTypeName.TabIndex = 0;
             this.lbTypeName.Text = "Maester - Maester Dasher";
             this.lbTypeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -151,7 +151,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(935, 83);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(914, 83);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lbHoldingType3
@@ -161,10 +161,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHoldingType3.AutoSize = true;
             this.lbHoldingType3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoldingType3.Location = new System.Drawing.Point(626, 0);
+            this.lbHoldingType3.Location = new System.Drawing.Point(612, 0);
             this.lbHoldingType3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHoldingType3.Name = "lbHoldingType3";
-            this.lbHoldingType3.Size = new System.Drawing.Size(305, 47);
+            this.lbHoldingType3.Size = new System.Drawing.Size(298, 47);
             this.lbHoldingType3.TabIndex = 41;
             this.lbHoldingType3.Text = "Wealth Holding";
             this.lbHoldingType3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -176,10 +176,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHoldingType2.AutoSize = true;
             this.lbHoldingType2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoldingType2.Location = new System.Drawing.Point(315, 0);
+            this.lbHoldingType2.Location = new System.Drawing.Point(308, 0);
             this.lbHoldingType2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHoldingType2.Name = "lbHoldingType2";
-            this.lbHoldingType2.Size = new System.Drawing.Size(303, 47);
+            this.lbHoldingType2.Size = new System.Drawing.Size(296, 47);
             this.lbHoldingType2.TabIndex = 41;
             this.lbHoldingType2.Text = "Community and Defense Holdings";
             this.lbHoldingType2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -194,7 +194,7 @@
             this.lbHoldingType1.Location = new System.Drawing.Point(4, 0);
             this.lbHoldingType1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHoldingType1.Name = "lbHoldingType1";
-            this.lbHoldingType1.Size = new System.Drawing.Size(303, 47);
+            this.lbHoldingType1.Size = new System.Drawing.Size(296, 47);
             this.lbHoldingType1.TabIndex = 41;
             this.lbHoldingType1.Text = "Land Holdings";
             this.lbHoldingType1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,10 +207,10 @@
             this.cb3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb3.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb3.FormattingEnabled = true;
-            this.cb3.Location = new System.Drawing.Point(626, 51);
+            this.cb3.Location = new System.Drawing.Point(612, 51);
             this.cb3.Margin = new System.Windows.Forms.Padding(4);
             this.cb3.Name = "cb3";
-            this.cb3.Size = new System.Drawing.Size(305, 26);
+            this.cb3.Size = new System.Drawing.Size(298, 26);
             this.cb3.TabIndex = 2;
             this.cb3.SelectedIndexChanged += new System.EventHandler(this.CbWealthHolding_SelectedIndexChanged);
             // 
@@ -225,7 +225,7 @@
             this.cb1.Location = new System.Drawing.Point(4, 51);
             this.cb1.Margin = new System.Windows.Forms.Padding(4);
             this.cb1.Name = "cb1";
-            this.cb1.Size = new System.Drawing.Size(303, 26);
+            this.cb1.Size = new System.Drawing.Size(296, 26);
             this.cb1.TabIndex = 1;
             this.cb1.SelectedIndexChanged += new System.EventHandler(this.CbLandHolding_SelectedIndexChanged);
             // 
@@ -237,10 +237,10 @@
             this.cb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb2.FormattingEnabled = true;
-            this.cb2.Location = new System.Drawing.Point(315, 51);
+            this.cb2.Location = new System.Drawing.Point(308, 51);
             this.cb2.Margin = new System.Windows.Forms.Padding(4);
             this.cb2.Name = "cb2";
-            this.cb2.Size = new System.Drawing.Size(303, 26);
+            this.cb2.Size = new System.Drawing.Size(296, 26);
             this.cb2.TabIndex = 0;
             this.cb2.SelectedIndexChanged += new System.EventHandler(this.CbDefLanFea_SelectedIndexChanged);
             // 
@@ -256,7 +256,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 267F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel2.Controls.Add(this.btAddDelete2, 3, 6);
             this.tableLayoutPanel2.Controls.Add(this.btAddDelete3, 3, 8);
             this.tableLayoutPanel2.Controls.Add(this.btAddDelete4, 3, 10);
@@ -305,8 +304,8 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(943, 653);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(922, 758);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // btAddDelete2
@@ -371,7 +370,7 @@
             this.lbAddDesc5.Location = new System.Drawing.Point(4, 584);
             this.lbAddDesc5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc5.Name = "lbAddDesc5";
-            this.lbAddDesc5.Size = new System.Drawing.Size(935, 24);
+            this.lbAddDesc5.Size = new System.Drawing.Size(914, 24);
             this.lbAddDesc5.TabIndex = 40;
             this.lbAddDesc5.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -385,7 +384,7 @@
             this.lbAddDesc4.Location = new System.Drawing.Point(4, 522);
             this.lbAddDesc4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc4.Name = "lbAddDesc4";
-            this.lbAddDesc4.Size = new System.Drawing.Size(935, 24);
+            this.lbAddDesc4.Size = new System.Drawing.Size(914, 24);
             this.lbAddDesc4.TabIndex = 40;
             this.lbAddDesc4.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -410,7 +409,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(935, 127);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(914, 127);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
             // tbName
@@ -422,7 +421,7 @@
             this.tbName.Location = new System.Drawing.Point(4, 85);
             this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(553, 37);
+            this.tbName.Size = new System.Drawing.Size(540, 37);
             this.tbName.TabIndex = 3;
             // 
             // lbCost
@@ -432,10 +431,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCost.AutoSize = true;
             this.lbCost.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCost.Location = new System.Drawing.Point(565, 0);
+            this.lbCost.Location = new System.Drawing.Point(552, 0);
             this.lbCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(366, 45);
+            this.lbCost.Size = new System.Drawing.Size(358, 45);
             this.lbCost.TabIndex = 1;
             this.lbCost.Text = "Cost: 10 Wealth, 5 Defense";
             this.lbCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -447,10 +446,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbType.AutoSize = true;
             this.lbType.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbType.Location = new System.Drawing.Point(565, 81);
+            this.lbType.Location = new System.Drawing.Point(552, 81);
             this.lbType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(366, 46);
+            this.lbType.Size = new System.Drawing.Size(358, 46);
             this.lbType.TabIndex = 2;
             this.lbType.Text = "Personage";
             this.lbType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -461,11 +460,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chbBuilt.AutoSize = true;
             this.chbBuilt.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbBuilt.Location = new System.Drawing.Point(565, 49);
+            this.chbBuilt.Location = new System.Drawing.Point(552, 49);
             this.chbBuilt.Margin = new System.Windows.Forms.Padding(4);
             this.chbBuilt.Name = "chbBuilt";
             this.chbBuilt.Padding = new System.Windows.Forms.Padding(80, 0, 80, 0);
-            this.chbBuilt.Size = new System.Drawing.Size(366, 28);
+            this.chbBuilt.Size = new System.Drawing.Size(358, 28);
             this.chbBuilt.TabIndex = 4;
             this.chbBuilt.Text = "Built";
             this.chbBuilt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -495,7 +494,7 @@
             this.lbAddDesc3.Location = new System.Drawing.Point(4, 460);
             this.lbAddDesc3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc3.Name = "lbAddDesc3";
-            this.lbAddDesc3.Size = new System.Drawing.Size(935, 24);
+            this.lbAddDesc3.Size = new System.Drawing.Size(914, 24);
             this.lbAddDesc3.TabIndex = 40;
             this.lbAddDesc3.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -523,7 +522,7 @@
             this.lbDesc.Location = new System.Drawing.Point(4, 226);
             this.lbDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDesc.Name = "lbDesc";
-            this.lbDesc.Size = new System.Drawing.Size(935, 24);
+            this.lbDesc.Size = new System.Drawing.Size(914, 24);
             this.lbDesc.TabIndex = 2;
             this.lbDesc.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -551,7 +550,7 @@
             this.lbAddDesc2.Location = new System.Drawing.Point(4, 398);
             this.lbAddDesc2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc2.Name = "lbAddDesc2";
-            this.lbAddDesc2.Size = new System.Drawing.Size(935, 24);
+            this.lbAddDesc2.Size = new System.Drawing.Size(914, 24);
             this.lbAddDesc2.TabIndex = 40;
             this.lbAddDesc2.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -579,7 +578,7 @@
             this.lbBenfits.Location = new System.Drawing.Point(4, 250);
             this.lbBenfits.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBenfits.Name = "lbBenfits";
-            this.lbBenfits.Size = new System.Drawing.Size(935, 24);
+            this.lbBenfits.Size = new System.Drawing.Size(914, 24);
             this.lbBenfits.TabIndex = 3;
             this.lbBenfits.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -643,7 +642,7 @@
             this.rtbNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtbNotes.Name = "rtbNotes";
             this.rtbNotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbNotes.Size = new System.Drawing.Size(935, 37);
+            this.rtbNotes.Size = new System.Drawing.Size(914, 142);
             this.rtbNotes.TabIndex = 5;
             this.rtbNotes.Text = "";
             // 
@@ -671,7 +670,7 @@
             this.lbAddDesc1.Location = new System.Drawing.Point(4, 312);
             this.lbAddDesc1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc1.Name = "lbAddDesc1";
-            this.lbAddDesc1.Size = new System.Drawing.Size(935, 48);
+            this.lbAddDesc1.Size = new System.Drawing.Size(914, 48);
             this.lbAddDesc1.TabIndex = 39;
             this.lbAddDesc1.Text = "rtgwgretwadvfdfvavadsvasdvasvfgtredfvavvfgwgrtgwgrtggrtgwgtrwgretgwrtggbfgxnfgnfg" +
     "hsnsfnfgnsfgnsfgns";
@@ -776,7 +775,7 @@
             this.tsbUpgradeDowngrade});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(943, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(922, 27);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
