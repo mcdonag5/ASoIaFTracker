@@ -66,7 +66,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(631, 188);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(648, 188);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lbDescription
@@ -80,7 +80,7 @@
             this.lbDescription.Location = new System.Drawing.Point(4, 106);
             this.lbDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(623, 24);
+            this.lbDescription.Size = new System.Drawing.Size(640, 24);
             this.lbDescription.TabIndex = 88;
             this.lbDescription.Text = "10 Land";
             this.lbDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -95,7 +95,7 @@
             this.lbSpacesDetails.Location = new System.Drawing.Point(145, 75);
             this.lbSpacesDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSpacesDetails.Name = "lbSpacesDetails";
-            this.lbSpacesDetails.Size = new System.Drawing.Size(482, 31);
+            this.lbSpacesDetails.Size = new System.Drawing.Size(499, 31);
             this.lbSpacesDetails.TabIndex = 88;
             this.lbSpacesDetails.Text = "10 Land";
             this.lbSpacesDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,13 +135,14 @@
             this.btUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.btUpDown, 2);
             this.btUpDown.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btUpDown.Location = new System.Drawing.Point(542, 134);
+            this.btUpDown.Location = new System.Drawing.Point(559, 134);
             this.btUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.btUpDown.Name = "btUpDown";
             this.btUpDown.Size = new System.Drawing.Size(85, 37);
             this.btUpDown.TabIndex = 77;
-            this.btUpDown.Text = "Create";
+            this.btUpDown.Text = "Change";
             this.btUpDown.UseVisualStyleBackColor = true;
+            this.btUpDown.Click += new System.EventHandler(this.btUpDown_Click);
             // 
             // cbHolding
             // 
@@ -155,9 +156,9 @@
             this.cbHolding.Location = new System.Drawing.Point(4, 4);
             this.cbHolding.Margin = new System.Windows.Forms.Padding(4);
             this.cbHolding.Name = "cbHolding";
-            this.cbHolding.Size = new System.Drawing.Size(623, 35);
+            this.cbHolding.Size = new System.Drawing.Size(640, 35);
             this.cbHolding.TabIndex = 2;
-            this.cbHolding.SelectedIndexChanged += new System.EventHandler(this.cbHolding_SelectedIndexChanged);
+            this.cbHolding.SelectedIndexChanged += new System.EventHandler(this.CbHolding_SelectedIndexChanged);
             // 
             // lbCostDetails
             // 
@@ -169,7 +170,7 @@
             this.lbCostDetails.Location = new System.Drawing.Point(145, 44);
             this.lbCostDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCostDetails.Name = "lbCostDetails";
-            this.lbCostDetails.Size = new System.Drawing.Size(482, 31);
+            this.lbCostDetails.Size = new System.Drawing.Size(499, 31);
             this.lbCostDetails.TabIndex = 87;
             this.lbCostDetails.Text = "10 Land";
             this.lbCostDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -200,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(655, 212);
+            this.ClientSize = new System.Drawing.Size(672, 306);
             this.Controls.Add(this.dgNewList);
             this.Controls.Add(this.dgCurrent);
             this.Controls.Add(this.tableLayoutPanel1);

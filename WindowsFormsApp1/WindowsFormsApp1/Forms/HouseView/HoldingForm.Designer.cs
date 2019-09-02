@@ -917,7 +917,7 @@
             this.tsbUpgradeDowngrade.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.tsbUpgradeDowngrade.Size = new System.Drawing.Size(165, 24);
             this.tsbUpgradeDowngrade.Text = "Upgrade/Downgrade";
-            this.tsbUpgradeDowngrade.Click += new System.EventHandler(this.tsbUpgradeDowngrade_Click);
+            this.tsbUpgradeDowngrade.Click += new System.EventHandler(this.TsbUpgradeDowngrade_Click);
             // 
             // dgDef
             // 

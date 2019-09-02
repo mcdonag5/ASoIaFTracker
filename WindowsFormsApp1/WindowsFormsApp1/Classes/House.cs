@@ -124,6 +124,10 @@ namespace WindowsFormsApp1.Classes
                     case "Land Features":
                         qry = "SELECT * FROM `tbl_LandFeature`";
                         break;
+                    case "Land Features Community":
+                        qry = "SELECT * FROM `tbl_LandFeature` " +
+                            "WHERE `tbl_LandFeature`.`LanFea_Spaces` > '0';";
+                        break;
                     //tbl_Defense
                     case "Defense":
                         qry = "SELECT * FROM `tbl_Defense`" +
@@ -205,7 +209,7 @@ namespace WindowsFormsApp1.Classes
                             "WHERE `tbl_LandHoldingFeature`.`LanHol_ID` = '" + holdingID + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID` AND `tbl_LandFeature`.`LanFea_Spaces` > '0'; ";
                         break;
                     case "UpDown Community":
-                        qry = "SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.`LanFea_ID`, `tbl_LandFeature`.* " +
+                        qry = "SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.* " +
                             "FROM `tbl_LandHoldingFeature` LEFT JOIN `tbl_LandFeature` ON `tbl_LandHoldingFeature`.`LanFea_ID` = `tbl_LandFeature`.`LanFea_ID` " +
                             "WHERE `tbl_LandHoldingFeature`.`LanHolFea_ID` = '" + holdingID + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID`";
                         break;
@@ -746,6 +750,21 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+
+        public void UpdateDefenseUpgradeDowngrade(string defHolID, string newDefID)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Update Defense Holding ID: " + defHolID);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_DefenseHolding` " +
+                    "SET `Def_ID` = '" + newDefID + "' " +
+                    "WHERE `DefHol_ID` = '" + defHolID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_LandHoldingFeature
         public void UpdateLandFeatureDetails(string lanHolFeaID, string name, string notes)
         {
@@ -756,6 +775,21 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
                     "SET `LanHolFea_Name` = '" + name + "', `LanHolFea_Note` = '" + notes + "' " +
+                    "WHERE `LanHolFea_ID` = '" + lanHolFeaID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+
+        public void UpdateLandFeatureUpgradeDowngrade(string lanHolFeaID, string lanFeaID)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Update land Holding with out notes ID: " + lanHolFeaID);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
+                    "SET `LanFea_ID` = '" + lanFeaID + "' " +
                     "WHERE `LanHolFea_ID` = '" + lanHolFeaID + "'";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();

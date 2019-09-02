@@ -211,6 +211,8 @@ namespace WindowsFormsApp1
             int costPow = 0;
             int costInf = 0;
 
+            tsbUpgradeDowngrade.Visible = new[] { "Defense", "Feature" }.Contains(currentView) ? true : false;
+
             //Load new holding
             switch (holdingType)
             {
@@ -779,12 +781,18 @@ namespace WindowsFormsApp1
             NewHeirForm.ShowDialog();
         }
 
-        private void tsbUpgradeDowngrade_Click(object sender, EventArgs e)
+        private void TsbUpgradeDowngrade_Click(object sender, EventArgs e)
         {
-            ChangeHolding(holdingType, "");
-            UpgradeDowngradeForm = new UpgradeDowngradeForm("Defense", dgDef.Rows[currentIndex].Cells[0].Value.ToString());
+            string holdingID = "0";
+            switch (currentView)
+            {
+                case "Defense": holdingID = dgDef.Rows[currentIndex].Cells[0].Value.ToString(); break;
+                case "Feature": holdingID = dgLandFea.Rows[currentIndex].Cells[0].Value.ToString(); break;
+            }
+            UpgradeDowngradeForm = new UpgradeDowngradeForm(currentView, holdingID);
             UpgradeDowngradeForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
             Visible = false;
+            ChangeHolding(holdingType, "");
             UpgradeDowngradeForm.ShowDialog();
         }
         //Deleting
