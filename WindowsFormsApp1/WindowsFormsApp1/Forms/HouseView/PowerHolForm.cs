@@ -648,6 +648,7 @@ namespace WindowsFormsApp1
         //tool strip buttons
         private void TsbNewUnit_Click(object sender, EventArgs e)
         {
+            CheckAllUnitChange();
             NewPowerForm = new NewPowerForm(House.ID,House.name);
             NewPowerForm.FormClosing += new FormClosingEventHandler(PowerHolForm_Load);
             Visible = false;

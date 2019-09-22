@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using WindowsFormsApp1.Forms;
+using WindowsFormsApp1.Forms.HouseView;
 using WindowsFormsApp1.Classes;
 
 namespace WindowsFormsApp1
@@ -49,6 +50,7 @@ namespace WindowsFormsApp1
         NewHeirForm NewHeirForm;
         NewInfluenceForm NewInfluenceForm;
         NewInfluenceImprovementForm NewInfluenceImprovementForm;
+        UpgradeDowngradeForm UpgradeDowngradeForm;
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
@@ -208,6 +210,8 @@ namespace WindowsFormsApp1
             int costWea = 0;
             int costPow = 0;
             int costInf = 0;
+
+            tsbUpgradeDowngrade.Visible = new[] { "Defense", "Feature" }.Contains(currentView) ? true : false;
 
             //Load new holding
             switch (holdingType)
@@ -776,6 +780,21 @@ namespace WindowsFormsApp1
             Visible = false;
             NewHeirForm.ShowDialog();
         }
+
+        private void TsbUpgradeDowngrade_Click(object sender, EventArgs e)
+        {
+            string holdingID = "0";
+            switch (currentView)
+            {
+                case "Defense": holdingID = dgDef.Rows[currentIndex].Cells[0].Value.ToString(); break;
+                case "Feature": holdingID = dgLandFea.Rows[currentIndex].Cells[0].Value.ToString(); break;
+            }
+            UpgradeDowngradeForm = new UpgradeDowngradeForm(currentView, holdingID);
+            UpgradeDowngradeForm.FormClosing += new FormClosingEventHandler(LandsHolForm_Load);
+            Visible = false;
+            ChangeHolding(holdingType, "");
+            UpgradeDowngradeForm.ShowDialog();
+        }
         //Deleting
         private void BtAddDelete1_Click(object sender, EventArgs e)
         {
@@ -974,9 +993,6 @@ namespace WindowsFormsApp1
             if (NewInfluenceForm != null) { NewInfluenceForm.Close(); }
             if (NewInfluenceImprovementForm != null) { NewInfluenceImprovementForm.Close(); }
         }
-
-
-
 
 
 

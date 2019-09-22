@@ -86,6 +86,7 @@
             this.infImpprovmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.heirHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbDeleteCurrent = new System.Windows.Forms.ToolStripButton();
+            this.tsbUpgradeDowngrade = new System.Windows.Forms.ToolStripButton();
             this.dgDef = new System.Windows.Forms.DataGridView();
             this.dgLandFea = new System.Windows.Forms.DataGridView();
             this.dgLand = new System.Windows.Forms.DataGridView();
@@ -119,10 +120,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbTypeName.AutoSize = true;
             this.lbTypeName.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTypeName.Location = new System.Drawing.Point(3, 0);
+            this.lbTypeName.Location = new System.Drawing.Point(4, 0);
+            this.lbTypeName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTypeName.Name = "lbTypeName";
             this.tableLayoutPanel3.SetRowSpan(this.lbTypeName, 2);
-            this.lbTypeName.Size = new System.Drawing.Size(414, 66);
+            this.lbTypeName.Size = new System.Drawing.Size(540, 81);
             this.lbTypeName.TabIndex = 0;
             this.lbTypeName.Text = "Maester - Maester Dasher";
             this.lbTypeName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,12 +145,13 @@
             this.tableLayoutPanel1.Controls.Add(this.cb3, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.cb1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.cb2, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 124F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(701, 68);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 153F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(914, 83);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lbHoldingType3
@@ -158,9 +161,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHoldingType3.AutoSize = true;
             this.lbHoldingType3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoldingType3.Location = new System.Drawing.Point(469, 0);
+            this.lbHoldingType3.Location = new System.Drawing.Point(612, 0);
+            this.lbHoldingType3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHoldingType3.Name = "lbHoldingType3";
-            this.lbHoldingType3.Size = new System.Drawing.Size(229, 38);
+            this.lbHoldingType3.Size = new System.Drawing.Size(298, 47);
             this.lbHoldingType3.TabIndex = 41;
             this.lbHoldingType3.Text = "Wealth Holding";
             this.lbHoldingType3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -172,9 +176,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHoldingType2.AutoSize = true;
             this.lbHoldingType2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoldingType2.Location = new System.Drawing.Point(236, 0);
+            this.lbHoldingType2.Location = new System.Drawing.Point(308, 0);
+            this.lbHoldingType2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHoldingType2.Name = "lbHoldingType2";
-            this.lbHoldingType2.Size = new System.Drawing.Size(227, 38);
+            this.lbHoldingType2.Size = new System.Drawing.Size(296, 47);
             this.lbHoldingType2.TabIndex = 41;
             this.lbHoldingType2.Text = "Community and Defense Holdings";
             this.lbHoldingType2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,9 +191,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbHoldingType1.AutoSize = true;
             this.lbHoldingType1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHoldingType1.Location = new System.Drawing.Point(3, 0);
+            this.lbHoldingType1.Location = new System.Drawing.Point(4, 0);
+            this.lbHoldingType1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbHoldingType1.Name = "lbHoldingType1";
-            this.lbHoldingType1.Size = new System.Drawing.Size(227, 38);
+            this.lbHoldingType1.Size = new System.Drawing.Size(296, 47);
             this.lbHoldingType1.TabIndex = 41;
             this.lbHoldingType1.Text = "Land Holdings";
             this.lbHoldingType1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,9 +207,10 @@
             this.cb3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb3.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb3.FormattingEnabled = true;
-            this.cb3.Location = new System.Drawing.Point(469, 41);
+            this.cb3.Location = new System.Drawing.Point(612, 51);
+            this.cb3.Margin = new System.Windows.Forms.Padding(4);
             this.cb3.Name = "cb3";
-            this.cb3.Size = new System.Drawing.Size(229, 24);
+            this.cb3.Size = new System.Drawing.Size(298, 26);
             this.cb3.TabIndex = 2;
             this.cb3.SelectedIndexChanged += new System.EventHandler(this.CbWealthHolding_SelectedIndexChanged);
             // 
@@ -215,9 +222,10 @@
             this.cb1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb1.FormattingEnabled = true;
-            this.cb1.Location = new System.Drawing.Point(3, 41);
+            this.cb1.Location = new System.Drawing.Point(4, 51);
+            this.cb1.Margin = new System.Windows.Forms.Padding(4);
             this.cb1.Name = "cb1";
-            this.cb1.Size = new System.Drawing.Size(227, 24);
+            this.cb1.Size = new System.Drawing.Size(296, 26);
             this.cb1.TabIndex = 1;
             this.cb1.SelectedIndexChanged += new System.EventHandler(this.CbLandHolding_SelectedIndexChanged);
             // 
@@ -229,9 +237,10 @@
             this.cb2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb2.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb2.FormattingEnabled = true;
-            this.cb2.Location = new System.Drawing.Point(236, 41);
+            this.cb2.Location = new System.Drawing.Point(308, 51);
+            this.cb2.Margin = new System.Windows.Forms.Padding(4);
             this.cb2.Name = "cb2";
-            this.cb2.Size = new System.Drawing.Size(227, 24);
+            this.cb2.Size = new System.Drawing.Size(296, 26);
             this.cb2.TabIndex = 0;
             this.cb2.SelectedIndexChanged += new System.EventHandler(this.CbDefLanFea_SelectedIndexChanged);
             // 
@@ -244,10 +253,9 @@
             this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 267F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.btAddDelete2, 3, 6);
             this.tableLayoutPanel2.Controls.Add(this.btAddDelete3, 3, 8);
             this.tableLayoutPanel2.Controls.Add(this.btAddDelete4, 3, 10);
@@ -278,11 +286,12 @@
             this.tableLayoutPanel2.Controls.Add(this.lbAddType4, 0, 10);
             this.tableLayoutPanel2.Controls.Add(this.tbAddName2, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.tbAddName3, 1, 8);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 28);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 34);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 15;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -295,17 +304,18 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(707, 583);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(922, 758);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // btAddDelete2
             // 
             this.btAddDelete2.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete2.Location = new System.Drawing.Point(379, 291);
+            this.btAddDelete2.Location = new System.Drawing.Point(496, 364);
+            this.btAddDelete2.Margin = new System.Windows.Forms.Padding(4);
             this.btAddDelete2.Name = "btAddDelete2";
             this.btAddDelete2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btAddDelete2.Size = new System.Drawing.Size(51, 23);
+            this.btAddDelete2.Size = new System.Drawing.Size(68, 28);
             this.btAddDelete2.TabIndex = 58;
             this.btAddDelete2.Text = "Delete";
             this.btAddDelete2.UseVisualStyleBackColor = true;
@@ -314,10 +324,11 @@
             // btAddDelete3
             // 
             this.btAddDelete3.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete3.Location = new System.Drawing.Point(379, 341);
+            this.btAddDelete3.Location = new System.Drawing.Point(496, 426);
+            this.btAddDelete3.Margin = new System.Windows.Forms.Padding(4);
             this.btAddDelete3.Name = "btAddDelete3";
             this.btAddDelete3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btAddDelete3.Size = new System.Drawing.Size(51, 23);
+            this.btAddDelete3.Size = new System.Drawing.Size(68, 28);
             this.btAddDelete3.TabIndex = 58;
             this.btAddDelete3.Text = "Delete";
             this.btAddDelete3.UseVisualStyleBackColor = true;
@@ -326,10 +337,11 @@
             // btAddDelete4
             // 
             this.btAddDelete4.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete4.Location = new System.Drawing.Point(379, 391);
+            this.btAddDelete4.Location = new System.Drawing.Point(496, 488);
+            this.btAddDelete4.Margin = new System.Windows.Forms.Padding(4);
             this.btAddDelete4.Name = "btAddDelete4";
             this.btAddDelete4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btAddDelete4.Size = new System.Drawing.Size(51, 23);
+            this.btAddDelete4.Size = new System.Drawing.Size(68, 28);
             this.btAddDelete4.TabIndex = 58;
             this.btAddDelete4.Text = "Delete";
             this.btAddDelete4.UseVisualStyleBackColor = true;
@@ -338,10 +350,11 @@
             // btAddDelete5
             // 
             this.btAddDelete5.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete5.Location = new System.Drawing.Point(379, 441);
+            this.btAddDelete5.Location = new System.Drawing.Point(496, 550);
+            this.btAddDelete5.Margin = new System.Windows.Forms.Padding(4);
             this.btAddDelete5.Name = "btAddDelete5";
             this.btAddDelete5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btAddDelete5.Size = new System.Drawing.Size(51, 23);
+            this.btAddDelete5.Size = new System.Drawing.Size(68, 28);
             this.btAddDelete5.TabIndex = 58;
             this.btAddDelete5.Text = "Delete";
             this.btAddDelete5.UseVisualStyleBackColor = true;
@@ -354,9 +367,10 @@
             this.lbAddDesc5.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lbAddDesc5, 4);
             this.lbAddDesc5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddDesc5.Location = new System.Drawing.Point(3, 470);
+            this.lbAddDesc5.Location = new System.Drawing.Point(4, 584);
+            this.lbAddDesc5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc5.Name = "lbAddDesc5";
-            this.lbAddDesc5.Size = new System.Drawing.Size(701, 18);
+            this.lbAddDesc5.Size = new System.Drawing.Size(914, 24);
             this.lbAddDesc5.TabIndex = 40;
             this.lbAddDesc5.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -367,9 +381,10 @@
             this.lbAddDesc4.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lbAddDesc4, 4);
             this.lbAddDesc4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddDesc4.Location = new System.Drawing.Point(3, 420);
+            this.lbAddDesc4.Location = new System.Drawing.Point(4, 522);
+            this.lbAddDesc4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc4.Name = "lbAddDesc4";
-            this.lbAddDesc4.Size = new System.Drawing.Size(701, 18);
+            this.lbAddDesc4.Size = new System.Drawing.Size(914, 24);
             this.lbAddDesc4.TabIndex = 40;
             this.lbAddDesc4.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -387,13 +402,14 @@
             this.tableLayoutPanel3.Controls.Add(this.lbType, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.lbTypeName, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.chbBuilt, 1, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 77);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 95);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(701, 104);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(914, 127);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
             // tbName
@@ -402,9 +418,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbName.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbName.Location = new System.Drawing.Point(3, 69);
+            this.tbName.Location = new System.Drawing.Point(4, 85);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(414, 31);
+            this.tbName.Size = new System.Drawing.Size(540, 37);
             this.tbName.TabIndex = 3;
             // 
             // lbCost
@@ -414,9 +431,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbCost.AutoSize = true;
             this.lbCost.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCost.Location = new System.Drawing.Point(423, 0);
+            this.lbCost.Location = new System.Drawing.Point(552, 0);
+            this.lbCost.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCost.Name = "lbCost";
-            this.lbCost.Size = new System.Drawing.Size(275, 38);
+            this.lbCost.Size = new System.Drawing.Size(358, 45);
             this.lbCost.TabIndex = 1;
             this.lbCost.Text = "Cost: 10 Wealth, 5 Defense";
             this.lbCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -428,9 +446,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbType.AutoSize = true;
             this.lbType.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbType.Location = new System.Drawing.Point(423, 66);
+            this.lbType.Location = new System.Drawing.Point(552, 81);
+            this.lbType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbType.Name = "lbType";
-            this.lbType.Size = new System.Drawing.Size(275, 38);
+            this.lbType.Size = new System.Drawing.Size(358, 46);
             this.lbType.TabIndex = 2;
             this.lbType.Text = "Personage";
             this.lbType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -441,10 +460,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chbBuilt.AutoSize = true;
             this.chbBuilt.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbBuilt.Location = new System.Drawing.Point(423, 41);
+            this.chbBuilt.Location = new System.Drawing.Point(552, 49);
+            this.chbBuilt.Margin = new System.Windows.Forms.Padding(4);
             this.chbBuilt.Name = "chbBuilt";
-            this.chbBuilt.Padding = new System.Windows.Forms.Padding(60, 0, 60, 0);
-            this.chbBuilt.Size = new System.Drawing.Size(275, 22);
+            this.chbBuilt.Padding = new System.Windows.Forms.Padding(80, 0, 80, 0);
+            this.chbBuilt.Size = new System.Drawing.Size(358, 28);
             this.chbBuilt.TabIndex = 4;
             this.chbBuilt.Text = "Built";
             this.chbBuilt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -454,10 +474,11 @@
             // 
             this.chbAddBuilt5.AutoSize = true;
             this.chbAddBuilt5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt5.Location = new System.Drawing.Point(309, 441);
-            this.chbAddBuilt5.MaximumSize = new System.Drawing.Size(60, 0);
+            this.chbAddBuilt5.Location = new System.Drawing.Point(403, 550);
+            this.chbAddBuilt5.Margin = new System.Windows.Forms.Padding(4);
+            this.chbAddBuilt5.MaximumSize = new System.Drawing.Size(80, 0);
             this.chbAddBuilt5.Name = "chbAddBuilt5";
-            this.chbAddBuilt5.Size = new System.Drawing.Size(60, 22);
+            this.chbAddBuilt5.Size = new System.Drawing.Size(76, 28);
             this.chbAddBuilt5.TabIndex = 39;
             this.chbAddBuilt5.Text = "Built";
             this.chbAddBuilt5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -470,9 +491,10 @@
             this.lbAddDesc3.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lbAddDesc3, 4);
             this.lbAddDesc3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddDesc3.Location = new System.Drawing.Point(3, 370);
+            this.lbAddDesc3.Location = new System.Drawing.Point(4, 460);
+            this.lbAddDesc3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc3.Name = "lbAddDesc3";
-            this.lbAddDesc3.Size = new System.Drawing.Size(701, 18);
+            this.lbAddDesc3.Size = new System.Drawing.Size(914, 24);
             this.lbAddDesc3.TabIndex = 40;
             this.lbAddDesc3.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -480,10 +502,11 @@
             // 
             this.chbAddBuilt4.AutoSize = true;
             this.chbAddBuilt4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt4.Location = new System.Drawing.Point(309, 391);
-            this.chbAddBuilt4.MaximumSize = new System.Drawing.Size(60, 0);
+            this.chbAddBuilt4.Location = new System.Drawing.Point(403, 488);
+            this.chbAddBuilt4.Margin = new System.Windows.Forms.Padding(4);
+            this.chbAddBuilt4.MaximumSize = new System.Drawing.Size(80, 0);
             this.chbAddBuilt4.Name = "chbAddBuilt4";
-            this.chbAddBuilt4.Size = new System.Drawing.Size(60, 22);
+            this.chbAddBuilt4.Size = new System.Drawing.Size(76, 28);
             this.chbAddBuilt4.TabIndex = 39;
             this.chbAddBuilt4.Text = "Built";
             this.chbAddBuilt4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -496,9 +519,10 @@
             this.lbDesc.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lbDesc, 4);
             this.lbDesc.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDesc.Location = new System.Drawing.Point(3, 184);
+            this.lbDesc.Location = new System.Drawing.Point(4, 226);
+            this.lbDesc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDesc.Name = "lbDesc";
-            this.lbDesc.Size = new System.Drawing.Size(701, 18);
+            this.lbDesc.Size = new System.Drawing.Size(914, 24);
             this.lbDesc.TabIndex = 2;
             this.lbDesc.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -506,10 +530,11 @@
             // 
             this.chbAddBuilt3.AutoSize = true;
             this.chbAddBuilt3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt3.Location = new System.Drawing.Point(309, 341);
-            this.chbAddBuilt3.MaximumSize = new System.Drawing.Size(60, 0);
+            this.chbAddBuilt3.Location = new System.Drawing.Point(403, 426);
+            this.chbAddBuilt3.Margin = new System.Windows.Forms.Padding(4);
+            this.chbAddBuilt3.MaximumSize = new System.Drawing.Size(80, 0);
             this.chbAddBuilt3.Name = "chbAddBuilt3";
-            this.chbAddBuilt3.Size = new System.Drawing.Size(60, 22);
+            this.chbAddBuilt3.Size = new System.Drawing.Size(76, 28);
             this.chbAddBuilt3.TabIndex = 39;
             this.chbAddBuilt3.Text = "Built";
             this.chbAddBuilt3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -522,9 +547,10 @@
             this.lbAddDesc2.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lbAddDesc2, 4);
             this.lbAddDesc2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddDesc2.Location = new System.Drawing.Point(3, 320);
+            this.lbAddDesc2.Location = new System.Drawing.Point(4, 398);
+            this.lbAddDesc2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc2.Name = "lbAddDesc2";
-            this.lbAddDesc2.Size = new System.Drawing.Size(701, 18);
+            this.lbAddDesc2.Size = new System.Drawing.Size(914, 24);
             this.lbAddDesc2.TabIndex = 40;
             this.lbAddDesc2.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
@@ -532,10 +558,11 @@
             // 
             this.chbAddBuilt2.AutoSize = true;
             this.chbAddBuilt2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt2.Location = new System.Drawing.Point(309, 291);
-            this.chbAddBuilt2.MaximumSize = new System.Drawing.Size(60, 0);
+            this.chbAddBuilt2.Location = new System.Drawing.Point(403, 364);
+            this.chbAddBuilt2.Margin = new System.Windows.Forms.Padding(4);
+            this.chbAddBuilt2.MaximumSize = new System.Drawing.Size(80, 0);
             this.chbAddBuilt2.Name = "chbAddBuilt2";
-            this.chbAddBuilt2.Size = new System.Drawing.Size(60, 22);
+            this.chbAddBuilt2.Size = new System.Drawing.Size(76, 28);
             this.chbAddBuilt2.TabIndex = 39;
             this.chbAddBuilt2.Text = "Built";
             this.chbAddBuilt2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -548,19 +575,21 @@
             this.lbBenfits.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lbBenfits, 4);
             this.lbBenfits.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBenfits.Location = new System.Drawing.Point(3, 202);
+            this.lbBenfits.Location = new System.Drawing.Point(4, 250);
+            this.lbBenfits.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBenfits.Name = "lbBenfits";
-            this.lbBenfits.Size = new System.Drawing.Size(701, 18);
+            this.lbBenfits.Size = new System.Drawing.Size(914, 24);
             this.lbBenfits.TabIndex = 3;
             this.lbBenfits.Text = "fnxfnfsgnbfgxnfgnfghsnsfnfgnsfgnsfgns";
             // 
             // btAddDelete1
             // 
             this.btAddDelete1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAddDelete1.Location = new System.Drawing.Point(379, 223);
+            this.btAddDelete1.Location = new System.Drawing.Point(496, 278);
+            this.btAddDelete1.Margin = new System.Windows.Forms.Padding(4);
             this.btAddDelete1.Name = "btAddDelete1";
             this.btAddDelete1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btAddDelete1.Size = new System.Drawing.Size(51, 23);
+            this.btAddDelete1.Size = new System.Drawing.Size(68, 28);
             this.btAddDelete1.TabIndex = 57;
             this.btAddDelete1.Text = "Delete";
             this.btAddDelete1.UseVisualStyleBackColor = true;
@@ -569,21 +598,23 @@
             // tbAddName4
             // 
             this.tbAddName4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAddName4.Location = new System.Drawing.Point(109, 391);
-            this.tbAddName4.MaximumSize = new System.Drawing.Size(200, 4);
+            this.tbAddName4.Location = new System.Drawing.Point(136, 488);
+            this.tbAddName4.Margin = new System.Windows.Forms.Padding(4);
+            this.tbAddName4.MaximumSize = new System.Drawing.Size(265, 4);
             this.tbAddName4.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName4.Name = "tbAddName4";
-            this.tbAddName4.Size = new System.Drawing.Size(194, 26);
+            this.tbAddName4.Size = new System.Drawing.Size(257, 26);
             this.tbAddName4.TabIndex = 40;
             // 
             // chbAddBuilt1
             // 
             this.chbAddBuilt1.AutoSize = true;
             this.chbAddBuilt1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbAddBuilt1.Location = new System.Drawing.Point(309, 223);
-            this.chbAddBuilt1.MaximumSize = new System.Drawing.Size(60, 0);
+            this.chbAddBuilt1.Location = new System.Drawing.Point(403, 278);
+            this.chbAddBuilt1.Margin = new System.Windows.Forms.Padding(4);
+            this.chbAddBuilt1.MaximumSize = new System.Drawing.Size(80, 0);
             this.chbAddBuilt1.Name = "chbAddBuilt1";
-            this.chbAddBuilt1.Size = new System.Drawing.Size(60, 22);
+            this.chbAddBuilt1.Size = new System.Drawing.Size(76, 28);
             this.chbAddBuilt1.TabIndex = 38;
             this.chbAddBuilt1.Text = "Built";
             this.chbAddBuilt1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -592,11 +623,12 @@
             // tbAddName5
             // 
             this.tbAddName5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAddName5.Location = new System.Drawing.Point(109, 441);
-            this.tbAddName5.MaximumSize = new System.Drawing.Size(200, 4);
+            this.tbAddName5.Location = new System.Drawing.Point(136, 550);
+            this.tbAddName5.Margin = new System.Windows.Forms.Padding(4);
+            this.tbAddName5.MaximumSize = new System.Drawing.Size(265, 4);
             this.tbAddName5.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName5.Name = "tbAddName5";
-            this.tbAddName5.Size = new System.Drawing.Size(194, 26);
+            this.tbAddName5.Size = new System.Drawing.Size(257, 26);
             this.tbAddName5.TabIndex = 40;
             // 
             // rtbNotes
@@ -606,10 +638,11 @@
             this.rtbNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tableLayoutPanel2.SetColumnSpan(this.rtbNotes, 4);
             this.rtbNotes.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtbNotes.Location = new System.Drawing.Point(3, 491);
+            this.rtbNotes.Location = new System.Drawing.Point(4, 612);
+            this.rtbNotes.Margin = new System.Windows.Forms.Padding(4);
             this.rtbNotes.Name = "rtbNotes";
             this.rtbNotes.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbNotes.Size = new System.Drawing.Size(701, 89);
+            this.rtbNotes.Size = new System.Drawing.Size(914, 142);
             this.rtbNotes.TabIndex = 5;
             this.rtbNotes.Text = "";
             // 
@@ -619,9 +652,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbAddType1.AutoSize = true;
             this.lbAddType1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddType1.Location = new System.Drawing.Point(3, 220);
+            this.lbAddType1.Location = new System.Drawing.Point(4, 274);
+            this.lbAddType1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddType1.Name = "lbAddType1";
-            this.lbAddType1.Size = new System.Drawing.Size(100, 32);
+            this.lbAddType1.Size = new System.Drawing.Size(124, 38);
             this.lbAddType1.TabIndex = 38;
             this.lbAddType1.Text = "Light Frost";
             this.lbAddType1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -633,9 +667,10 @@
             this.lbAddDesc1.AutoSize = true;
             this.tableLayoutPanel2.SetColumnSpan(this.lbAddDesc1, 4);
             this.lbAddDesc1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddDesc1.Location = new System.Drawing.Point(3, 252);
+            this.lbAddDesc1.Location = new System.Drawing.Point(4, 312);
+            this.lbAddDesc1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddDesc1.Name = "lbAddDesc1";
-            this.lbAddDesc1.Size = new System.Drawing.Size(701, 36);
+            this.lbAddDesc1.Size = new System.Drawing.Size(914, 48);
             this.lbAddDesc1.TabIndex = 39;
             this.lbAddDesc1.Text = "rtgwgretwadvfdfvavadsvasdvasvfgtredfvavvfgwgrtgwgrtggrtgwgtrwgretgwrtggbfgxnfgnfg" +
     "hsnsfnfgnsfgnsfgns";
@@ -643,11 +678,12 @@
             // tbAddName1
             // 
             this.tbAddName1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAddName1.Location = new System.Drawing.Point(109, 223);
-            this.tbAddName1.MaximumSize = new System.Drawing.Size(200, 4);
+            this.tbAddName1.Location = new System.Drawing.Point(136, 278);
+            this.tbAddName1.Margin = new System.Windows.Forms.Padding(4);
+            this.tbAddName1.MaximumSize = new System.Drawing.Size(265, 4);
             this.tbAddName1.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName1.Name = "tbAddName1";
-            this.tbAddName1.Size = new System.Drawing.Size(194, 26);
+            this.tbAddName1.Size = new System.Drawing.Size(257, 30);
             this.tbAddName1.TabIndex = 38;
             // 
             // lbAddType2
@@ -656,9 +692,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbAddType2.AutoSize = true;
             this.lbAddType2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddType2.Location = new System.Drawing.Point(3, 288);
+            this.lbAddType2.Location = new System.Drawing.Point(4, 360);
+            this.lbAddType2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddType2.Name = "lbAddType2";
-            this.lbAddType2.Size = new System.Drawing.Size(100, 32);
+            this.lbAddType2.Size = new System.Drawing.Size(124, 38);
             this.lbAddType2.TabIndex = 39;
             this.lbAddType2.Text = "Light Frost";
             this.lbAddType2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -669,9 +706,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbAddType5.AutoSize = true;
             this.lbAddType5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddType5.Location = new System.Drawing.Point(3, 438);
+            this.lbAddType5.Location = new System.Drawing.Point(4, 546);
+            this.lbAddType5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddType5.Name = "lbAddType5";
-            this.lbAddType5.Size = new System.Drawing.Size(100, 32);
+            this.lbAddType5.Size = new System.Drawing.Size(124, 38);
             this.lbAddType5.TabIndex = 39;
             this.lbAddType5.Text = "Light Frost";
             this.lbAddType5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -682,9 +720,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbAddType3.AutoSize = true;
             this.lbAddType3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddType3.Location = new System.Drawing.Point(3, 338);
+            this.lbAddType3.Location = new System.Drawing.Point(4, 422);
+            this.lbAddType3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddType3.Name = "lbAddType3";
-            this.lbAddType3.Size = new System.Drawing.Size(100, 32);
+            this.lbAddType3.Size = new System.Drawing.Size(124, 38);
             this.lbAddType3.TabIndex = 39;
             this.lbAddType3.Text = "Light Frost";
             this.lbAddType3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -695,9 +734,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbAddType4.AutoSize = true;
             this.lbAddType4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAddType4.Location = new System.Drawing.Point(3, 388);
+            this.lbAddType4.Location = new System.Drawing.Point(4, 484);
+            this.lbAddType4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAddType4.Name = "lbAddType4";
-            this.lbAddType4.Size = new System.Drawing.Size(100, 32);
+            this.lbAddType4.Size = new System.Drawing.Size(124, 38);
             this.lbAddType4.TabIndex = 39;
             this.lbAddType4.Text = "Light Frost";
             this.lbAddType4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -705,33 +745,37 @@
             // tbAddName2
             // 
             this.tbAddName2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAddName2.Location = new System.Drawing.Point(109, 291);
-            this.tbAddName2.MaximumSize = new System.Drawing.Size(200, 4);
+            this.tbAddName2.Location = new System.Drawing.Point(136, 364);
+            this.tbAddName2.Margin = new System.Windows.Forms.Padding(4);
+            this.tbAddName2.MaximumSize = new System.Drawing.Size(265, 4);
             this.tbAddName2.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName2.Name = "tbAddName2";
-            this.tbAddName2.Size = new System.Drawing.Size(194, 26);
+            this.tbAddName2.Size = new System.Drawing.Size(257, 26);
             this.tbAddName2.TabIndex = 39;
             // 
             // tbAddName3
             // 
             this.tbAddName3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbAddName3.Location = new System.Drawing.Point(109, 341);
-            this.tbAddName3.MaximumSize = new System.Drawing.Size(200, 4);
+            this.tbAddName3.Location = new System.Drawing.Point(136, 426);
+            this.tbAddName3.Margin = new System.Windows.Forms.Padding(4);
+            this.tbAddName3.MaximumSize = new System.Drawing.Size(265, 4);
             this.tbAddName3.MinimumSize = new System.Drawing.Size(4, 26);
             this.tbAddName3.Name = "tbAddName3";
-            this.tbAddName3.Size = new System.Drawing.Size(194, 26);
+            this.tbAddName3.Size = new System.Drawing.Size(257, 26);
             this.tbAddName3.TabIndex = 40;
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsddbView,
             this.tsddbNewLand,
             this.tsddbNewInf,
-            this.tsbDeleteCurrent});
+            this.tsbDeleteCurrent,
+            this.tsbUpgradeDowngrade});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(707, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(922, 27);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -745,20 +789,20 @@
             this.tsddbView.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddbView.Name = "tsddbView";
             this.tsddbView.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsddbView.Size = new System.Drawing.Size(55, 22);
+            this.tsddbView.Size = new System.Drawing.Size(65, 24);
             this.tsddbView.Text = "View";
             // 
             // toolStripMenuIViewLand
             // 
             this.toolStripMenuIViewLand.Name = "toolStripMenuIViewLand";
-            this.toolStripMenuIViewLand.Size = new System.Drawing.Size(174, 22);
+            this.toolStripMenuIViewLand.Size = new System.Drawing.Size(208, 26);
             this.toolStripMenuIViewLand.Text = "Land Holdings";
             this.toolStripMenuIViewLand.Click += new System.EventHandler(this.ToolStripMenuIViewLand_Click);
             // 
             // toolStripMenuViewInf
             // 
             this.toolStripMenuViewInf.Name = "toolStripMenuViewInf";
-            this.toolStripMenuViewInf.Size = new System.Drawing.Size(174, 22);
+            this.toolStripMenuViewInf.Size = new System.Drawing.Size(208, 26);
             this.toolStripMenuViewInf.Text = "Influence Holdings";
             this.toolStripMenuViewInf.Click += new System.EventHandler(this.ToolStripMenuViewInf_Click);
             // 
@@ -775,13 +819,13 @@
             this.tsddbNewLand.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddbNewLand.Name = "tsddbNewLand";
             this.tsddbNewLand.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsddbNewLand.Size = new System.Drawing.Size(54, 22);
+            this.tsddbNewLand.Size = new System.Drawing.Size(63, 24);
             this.tsddbNewLand.Text = "New";
             // 
             // landHoldingToolStripMenuItem
             // 
             this.landHoldingToolStripMenuItem.Name = "landHoldingToolStripMenuItem";
-            this.landHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.landHoldingToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.landHoldingToolStripMenuItem.Text = "Land Holding";
             this.landHoldingToolStripMenuItem.Click += new System.EventHandler(this.LandHoldingToolStripMenuItem_Click);
             // 
@@ -789,7 +833,7 @@
             // 
             this.landFeatureToolStripMenuItem.Enabled = false;
             this.landFeatureToolStripMenuItem.Name = "landFeatureToolStripMenuItem";
-            this.landFeatureToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.landFeatureToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.landFeatureToolStripMenuItem.Text = "Land Feature";
             this.landFeatureToolStripMenuItem.Click += new System.EventHandler(this.LandFeatureToolStripMenuItem_Click);
             // 
@@ -797,7 +841,7 @@
             // 
             this.defenseHoldingToolStripMenuItem.Enabled = false;
             this.defenseHoldingToolStripMenuItem.Name = "defenseHoldingToolStripMenuItem";
-            this.defenseHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.defenseHoldingToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.defenseHoldingToolStripMenuItem.Text = "Defense Holding";
             this.defenseHoldingToolStripMenuItem.Click += new System.EventHandler(this.DefenseHoldingToolStripMenuItem_Click);
             // 
@@ -805,7 +849,7 @@
             // 
             this.wealthHoldingToolStripMenuItem.Enabled = false;
             this.wealthHoldingToolStripMenuItem.Name = "wealthHoldingToolStripMenuItem";
-            this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wealthHoldingToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.wealthHoldingToolStripMenuItem.Text = "Wealth Holding";
             this.wealthHoldingToolStripMenuItem.Click += new System.EventHandler(this.WealthHoldingToolStripMenuItem_Click);
             // 
@@ -813,7 +857,7 @@
             // 
             this.wealthImprovementToolStripMenuItem.Enabled = false;
             this.wealthImprovementToolStripMenuItem.Name = "wealthImprovementToolStripMenuItem";
-            this.wealthImprovementToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.wealthImprovementToolStripMenuItem.Size = new System.Drawing.Size(223, 26);
             this.wealthImprovementToolStripMenuItem.Text = "Wealth Improvement";
             this.wealthImprovementToolStripMenuItem.Click += new System.EventHandler(this.WealthImprovementToolStripMenuItem_Click);
             // 
@@ -828,27 +872,27 @@
             this.tsddbNewInf.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddbNewInf.Name = "tsddbNewInf";
             this.tsddbNewInf.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsddbNewInf.Size = new System.Drawing.Size(54, 22);
+            this.tsddbNewInf.Size = new System.Drawing.Size(63, 24);
             this.tsddbNewInf.Text = "New";
             // 
             // influenceHoldingToolStripMenuItem
             // 
             this.influenceHoldingToolStripMenuItem.Name = "influenceHoldingToolStripMenuItem";
-            this.influenceHoldingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.influenceHoldingToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
             this.influenceHoldingToolStripMenuItem.Text = "Influence Holding";
             this.influenceHoldingToolStripMenuItem.Click += new System.EventHandler(this.InfluenceHoldingToolStripMenuItem_Click);
             // 
             // infImpprovmentToolStripMenuItem
             // 
             this.infImpprovmentToolStripMenuItem.Name = "infImpprovmentToolStripMenuItem";
-            this.infImpprovmentToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.infImpprovmentToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
             this.infImpprovmentToolStripMenuItem.Text = "Influence Improvement";
             this.infImpprovmentToolStripMenuItem.Click += new System.EventHandler(this.InfImpprovmentToolStripMenuItem_Click);
             // 
             // heirHoldingToolStripMenuItem
             // 
             this.heirHoldingToolStripMenuItem.Name = "heirHoldingToolStripMenuItem";
-            this.heirHoldingToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.heirHoldingToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
             this.heirHoldingToolStripMenuItem.Text = "Heir Holding";
             this.heirHoldingToolStripMenuItem.Click += new System.EventHandler(this.HeirHoldingToolStripMenuItem_Click);
             // 
@@ -859,17 +903,29 @@
             this.tsbDeleteCurrent.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDeleteCurrent.Name = "tsbDeleteCurrent";
             this.tsbDeleteCurrent.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsbDeleteCurrent.Size = new System.Drawing.Size(97, 22);
+            this.tsbDeleteCurrent.Size = new System.Drawing.Size(119, 24);
             this.tsbDeleteCurrent.Text = "Delete Current";
             this.tsbDeleteCurrent.Click += new System.EventHandler(this.TsbDeleteCurrent_Click);
+            // 
+            // tsbUpgradeDowngrade
+            // 
+            this.tsbUpgradeDowngrade.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbUpgradeDowngrade.Image = ((System.Drawing.Image)(resources.GetObject("tsbUpgradeDowngrade.Image")));
+            this.tsbUpgradeDowngrade.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbUpgradeDowngrade.Name = "tsbUpgradeDowngrade";
+            this.tsbUpgradeDowngrade.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tsbUpgradeDowngrade.Size = new System.Drawing.Size(165, 24);
+            this.tsbUpgradeDowngrade.Text = "Upgrade/Downgrade";
+            this.tsbUpgradeDowngrade.Click += new System.EventHandler(this.TsbUpgradeDowngrade_Click);
             // 
             // dgDef
             // 
             this.dgDef.AllowUserToAddRows = false;
             this.dgDef.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDef.Location = new System.Drawing.Point(304, 310);
+            this.dgDef.Location = new System.Drawing.Point(405, 382);
+            this.dgDef.Margin = new System.Windows.Forms.Padding(4);
             this.dgDef.Name = "dgDef";
-            this.dgDef.Size = new System.Drawing.Size(38, 40);
+            this.dgDef.Size = new System.Drawing.Size(51, 49);
             this.dgDef.TabIndex = 35;
             this.dgDef.Visible = false;
             // 
@@ -877,9 +933,10 @@
             // 
             this.dgLandFea.AllowUserToAddRows = false;
             this.dgLandFea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgLandFea.Location = new System.Drawing.Point(304, 284);
+            this.dgLandFea.Location = new System.Drawing.Point(405, 350);
+            this.dgLandFea.Margin = new System.Windows.Forms.Padding(4);
             this.dgLandFea.Name = "dgLandFea";
-            this.dgLandFea.Size = new System.Drawing.Size(38, 32);
+            this.dgLandFea.Size = new System.Drawing.Size(51, 39);
             this.dgLandFea.TabIndex = 34;
             this.dgLandFea.Visible = false;
             // 
@@ -887,9 +944,10 @@
             // 
             this.dgLand.AllowUserToAddRows = false;
             this.dgLand.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgLand.Location = new System.Drawing.Point(304, 252);
+            this.dgLand.Location = new System.Drawing.Point(405, 310);
+            this.dgLand.Margin = new System.Windows.Forms.Padding(4);
             this.dgLand.Name = "dgLand";
-            this.dgLand.Size = new System.Drawing.Size(38, 32);
+            this.dgLand.Size = new System.Drawing.Size(51, 39);
             this.dgLand.TabIndex = 33;
             this.dgLand.Visible = false;
             // 
@@ -897,9 +955,10 @@
             // 
             this.dgWea.AllowUserToAddRows = false;
             this.dgWea.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgWea.Location = new System.Drawing.Point(304, 281);
+            this.dgWea.Location = new System.Drawing.Point(405, 346);
+            this.dgWea.Margin = new System.Windows.Forms.Padding(4);
             this.dgWea.Name = "dgWea";
-            this.dgWea.Size = new System.Drawing.Size(38, 32);
+            this.dgWea.Size = new System.Drawing.Size(51, 39);
             this.dgWea.TabIndex = 36;
             this.dgWea.Visible = false;
             // 
@@ -907,9 +966,10 @@
             // 
             this.dgImp.AllowUserToAddRows = false;
             this.dgImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgImp.Location = new System.Drawing.Point(312, 289);
+            this.dgImp.Location = new System.Drawing.Point(416, 356);
+            this.dgImp.Margin = new System.Windows.Forms.Padding(4);
             this.dgImp.Name = "dgImp";
-            this.dgImp.Size = new System.Drawing.Size(38, 32);
+            this.dgImp.Size = new System.Drawing.Size(51, 39);
             this.dgImp.TabIndex = 37;
             this.dgImp.Visible = false;
             // 
@@ -917,9 +977,10 @@
             // 
             this.dgHeir.AllowUserToAddRows = false;
             this.dgHeir.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgHeir.Location = new System.Drawing.Point(347, 290);
+            this.dgHeir.Location = new System.Drawing.Point(463, 357);
+            this.dgHeir.Margin = new System.Windows.Forms.Padding(4);
             this.dgHeir.Name = "dgHeir";
-            this.dgHeir.Size = new System.Drawing.Size(38, 32);
+            this.dgHeir.Size = new System.Drawing.Size(51, 39);
             this.dgHeir.TabIndex = 38;
             this.dgHeir.Visible = false;
             // 
@@ -927,9 +988,10 @@
             // 
             this.dgInfluence.AllowUserToAddRows = false;
             this.dgInfluence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgInfluence.Location = new System.Drawing.Point(355, 298);
+            this.dgInfluence.Location = new System.Drawing.Point(473, 367);
+            this.dgInfluence.Margin = new System.Windows.Forms.Padding(4);
             this.dgInfluence.Name = "dgInfluence";
-            this.dgInfluence.Size = new System.Drawing.Size(38, 32);
+            this.dgInfluence.Size = new System.Drawing.Size(51, 39);
             this.dgInfluence.TabIndex = 39;
             this.dgInfluence.Visible = false;
             // 
@@ -937,9 +999,10 @@
             // 
             this.dgInflImp.AllowUserToAddRows = false;
             this.dgInflImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgInflImp.Location = new System.Drawing.Point(363, 306);
+            this.dgInflImp.Location = new System.Drawing.Point(484, 377);
+            this.dgInflImp.Margin = new System.Windows.Forms.Padding(4);
             this.dgInflImp.Name = "dgInflImp";
-            this.dgInflImp.Size = new System.Drawing.Size(38, 32);
+            this.dgInflImp.Size = new System.Drawing.Size(51, 39);
             this.dgInflImp.TabIndex = 40;
             this.dgInflImp.Visible = false;
             // 
@@ -947,9 +1010,10 @@
             // 
             this.dgTrade.AllowUserToAddRows = false;
             this.dgTrade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTrade.Location = new System.Drawing.Point(326, 290);
+            this.dgTrade.Location = new System.Drawing.Point(435, 357);
+            this.dgTrade.Margin = new System.Windows.Forms.Padding(4);
             this.dgTrade.Name = "dgTrade";
-            this.dgTrade.Size = new System.Drawing.Size(38, 32);
+            this.dgTrade.Size = new System.Drawing.Size(51, 39);
             this.dgTrade.TabIndex = 41;
             this.dgTrade.Visible = false;
             // 
@@ -957,18 +1021,19 @@
             // 
             this.dgTradeImp.AllowUserToAddRows = false;
             this.dgTradeImp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgTradeImp.Location = new System.Drawing.Point(334, 298);
+            this.dgTradeImp.Location = new System.Drawing.Point(445, 367);
+            this.dgTradeImp.Margin = new System.Windows.Forms.Padding(4);
             this.dgTradeImp.Name = "dgTradeImp";
-            this.dgTradeImp.Size = new System.Drawing.Size(38, 32);
+            this.dgTradeImp.Size = new System.Drawing.Size(51, 39);
             this.dgTradeImp.TabIndex = 42;
             this.dgTradeImp.Visible = false;
             // 
             // LandsHolForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(707, 613);
+            this.ClientSize = new System.Drawing.Size(943, 754);
             this.Controls.Add(this.dgTradeImp);
             this.Controls.Add(this.dgTrade);
             this.Controls.Add(this.dgInflImp);
@@ -981,6 +1046,7 @@
             this.Controls.Add(this.dgLand);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tableLayoutPanel2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LandsHolForm";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LandsHolForm_FormClosing);
@@ -1077,5 +1143,6 @@
         private System.Windows.Forms.Label lbHoldingType1;
         private System.Windows.Forms.DataGridView dgTrade;
         private System.Windows.Forms.DataGridView dgTradeImp;
+        private System.Windows.Forms.ToolStripButton tsbUpgradeDowngrade;
     }
 }

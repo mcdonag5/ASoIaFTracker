@@ -134,6 +134,10 @@ namespace WindowsFormsApp1.Classes
                     case "Land Features":
                         qry = "SELECT * FROM `tbl_LandFeature`";
                         break;
+                    case "Land Features Community":
+                        qry = "SELECT * FROM `tbl_LandFeature` " +
+                            "WHERE `tbl_LandFeature`.`LanFea_Spaces` > '0';";
+                        break;
                     //tbl_Defense
                     case "Defense":
                         qry = "SELECT * FROM `tbl_Defense`" +
@@ -214,6 +218,11 @@ namespace WindowsFormsApp1.Classes
                             "FROM `tbl_LandHoldingFeature`, `tbl_LandFeature` " +
                             "WHERE `tbl_LandHoldingFeature`.`LanHol_ID` = '" + holdingID + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID` AND `tbl_LandFeature`.`LanFea_Spaces` > '0'; ";
                         break;
+                    case "UpDown Community":
+                        qry = "SELECT `tbl_LandHoldingFeature`.*, `tbl_LandFeature`.* " +
+                            "FROM `tbl_LandHoldingFeature` LEFT JOIN `tbl_LandFeature` ON `tbl_LandHoldingFeature`.`LanFea_ID` = `tbl_LandFeature`.`LanFea_ID` " +
+                            "WHERE `tbl_LandHoldingFeature`.`LanHolFea_ID` = '" + holdingID + "' AND `tbl_LandFeature`.`LanFea_ID` = `tbl_LandHoldingFeature`.`LanFea_ID`";
+                        break;
                     //tbl_WealthHoldingImprovement
                     case "WealthHoldingImprovement":
                         qry = "SELECT `tbl_WealthHoldingImprovement`.`WeaHol_ID`, `tbl_WealthHoldingImprovement`.*, `tbl_WealthImprovement`.`WeaImp_ID`, `tbl_WealthImprovement`.* "+
@@ -225,6 +234,11 @@ namespace WindowsFormsApp1.Classes
                         qry = "SELECT `tbl_DefenseHolding`.*, `tbl_Defense`.`Def_ID`, `tbl_Defense`.* "+
                             "FROM `tbl_DefenseHolding`, `tbl_Defense` "+
                             "WHERE `tbl_DefenseHolding`.`LanHol_ID` = '" + holdingID + "' AND `tbl_Defense`.`Def_ID` = `tbl_DefenseHolding`.`Def_ID`; ";
+                        break;
+                    case "UpDown Defense":
+                        qry = "SELECT  `tbl_DefenseHolding`.*, `tbl_Defense`.* " +
+                            "FROM `tbl_DefenseHolding` LEFT JOIN `tbl_Defense` ON `tbl_DefenseHolding`.`Def_ID` = `tbl_Defense`.`Def_ID` " +
+                            "WHERE `tbl_DefenseHolding`.`DefHol_ID` = '"+holdingID+"' AND `tbl_Defense`.`Def_ID` = `tbl_DefenseHolding`.`Def_ID`; ";
                         break;
                     //tbl_Trade
                     case "Trade":
@@ -746,6 +760,21 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+
+        public void UpdateDefenseUpgradeDowngrade(string defHolID, string newDefID)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Update Defense Holding ID: " + defHolID);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_DefenseHolding` " +
+                    "SET `Def_ID` = '" + newDefID + "' " +
+                    "WHERE `DefHol_ID` = '" + defHolID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_LandHoldingFeature
         public void UpdateLandFeatureDetails(string lanHolFeaID, string name, string notes)
         {
@@ -756,6 +785,21 @@ namespace WindowsFormsApp1.Classes
                 MySqlCommand comm = mysqlConn.conn.CreateCommand();
                 comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
                     "SET `LanHolFea_Name` = '" + name + "', `LanHolFea_Note` = '" + notes + "' " +
+                    "WHERE `LanHolFea_ID` = '" + lanHolFeaID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+
+        public void UpdateLandFeatureUpgradeDowngrade(string lanHolFeaID, string lanFeaID)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Update land Holding with out notes ID: " + lanHolFeaID);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_LandHoldingFeature` " +
+                    "SET `LanFea_ID` = '" + lanFeaID + "' " +
                     "WHERE `LanHolFea_ID` = '" + lanHolFeaID + "'";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
@@ -885,6 +929,28 @@ namespace WindowsFormsApp1.Classes
                 mysqlConn.ConnClose();
             }
         }
+        //tbl_WealthImprovement
+        public void UpdateWealthImprovement(string weaImpID, string name, string limit, string wealthCost, string defenseCost, string landCost, string powerCost, string influenceCost, string time, string requirement, string description, string benfit, string houseFortune, string wealthGain, string powerGain, string populationGain, string lawGain, string landGain, string influenceGain, string defenseGain, string wealthLoss, string powerLoss, string populationLoss, string lawLoss, string landLoss, string influenceLoss, string defenseLoss, string lawPenaltyReduction, string populationPenaltyReduction, string houseAction, string repeatable)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert WealthImprovement");
+                limit = limit == "True" ? "1" : "0";
+                repeatable = repeatable == "True" ? "1" : "0";
+                name = SanitizingInput(name); time = SanitizingInput(time); requirement = SanitizingInput(requirement); description = SanitizingInput(description); benfit = SanitizingInput(benfit); houseAction = SanitizingInput(houseAction);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_WealthImprovement` " +
+                    "SET `WeaImp_Name` = '" + name + "', `WeaImp_Limit` = '" + limit + "', `WeaImp_WealthCost` = '" + wealthCost + "', `WeaImp_DefenseCost` = '" + defenseCost + "', `WeaImp_LandCost` = '" + landCost + "', `WeaImp_PowerCost` = '" + powerCost + "', `WeaImp_InfluenceCost` = '" + influenceCost + "', `WeaImp_Time` = '" + time + "', `WeaImp_Requirement` = '" + requirement +
+                    "', `WeaImp_Description` = '" + description + "', `WeaImp_Benefits` = '" + benfit + "', `WeaImp_HouseFortune` = '" + houseFortune +
+                    "', `WeaImp_WealthGain` = '" + wealthGain + "', `WeaImp_PowerGain` = '" + powerGain + "', `WeaImp_PopulationGain` = '" + populationGain + "', `WeaImp_LawGain` = '" + lawGain + "', `WeaImp_LandsGain` = '" + landGain + "', `WeaImp_InfluenceGain` = '" + influenceGain + "', `WeaImp_DefenseGain` = '" + defenseGain +
+                    "', `WeaImp_WealthLoss` = '" + wealthLoss + "', `WeaImp_PowerLoss` = '" + powerLoss + "', `WeaImp_PopulationLoss` = '" + populationLoss + "', `WeaImp_LawLoss` = '" + lawLoss + "', `WeaImp_LandsLoss` = '" + landLoss + "', `WeaImp_InfluenceLoss` = '" + influenceLoss + "', `WeaImp_DefenseLoss` = '" + defenseLoss +
+                    "', `WeaImp_LawPenaltyReduction` = '" + lawPenaltyReduction + "', `WeaImp_PopulationPenaltyReduction` = '" + populationPenaltyReduction + "', `WeaImp_HouseAction` = '" + houseAction + "', `WeaImp_Repeatable` = '" + repeatable + "' " +
+                    "WHERE `WeaImp_ID` = '" + weaImpID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
         //tbl_Influence
         public void UpdateInfluence(string InfID, string name, string influenceCost, string description, string benfit, string wealthGain, string powerGain, string populationGain, string lawGain, string landGain, string influenceGain, string defenseGain, string lawPenaltyReduction, string populationPenaltyReduction)
         {
@@ -897,6 +963,23 @@ namespace WindowsFormsApp1.Classes
                     "SET `Inf_Name` = '" + name + "', `Inf_InfluenceCost` = '" + influenceCost + "', `Inf_Description` = '" + description + "', `Inf_Benefit` = '" + benfit + 
                     "', `Inf_DefenseGain` = '" + defenseGain + "', `Inf_InfluenceGain` = '" + influenceGain + "', `Inf_LandGain` = '" + landGain + "', `Inf_LawGain` = '" + lawGain + "', `Inf_PopulationGain` = '" + populationGain + "', `Inf_PowerGain` = '" + powerGain + "', `Inf_WealthGain` = '" + wealthGain + "', `Inf_LawPenaltyReduction` = '" + lawPenaltyReduction + "', `Inf_PopulationPenaltyReduction` = '" + populationPenaltyReduction + "' " +
                     "WHERE `Inf_ID` = '" + InfID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //tbl_InfluenceImprovemnt
+        public void UpdateInfluenceImprovment(string infImpID, string name, string influenceCost, string description, string benfit, string wealthGain, string powerGain, string populationGain, string lawGain, string landGain, string influenceGain, string defenseGain, string lawPenaltyReduction, string populationPenaltyReduction)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Insert InfluenceImprovment");
+                name = SanitizingInput(name); description = SanitizingInput(description); benfit = SanitizingInput(benfit);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_InfluenceImprovemnt` " +
+                    "SET `InfImp_Name` = '" + name + "', `InfImp_InfluenceCost` = '" + influenceCost + "', `InfImp_Description` = '" + description + "', `InfImp_Benefit` = '" + benfit +
+                    "', `InfImp_DefenseGain` = '" + defenseGain + "', `InfImp_InfluenceGain` = '" + influenceGain + "', `InfImp_LandsGain` = '" + landGain + "', `InfImp_LawGain` = '" + lawGain + "', `InfImp_PopulationGain` = '" + populationGain + "', `InfImp_PowerGain` = '" + powerGain + "', `InfImp_WealthGain` = '" + wealthGain + "', `InfImp_LawPenaltyReduction` = '" + lawPenaltyReduction + "', `InfImp_PopulationPenaltyReduction` = '" + populationPenaltyReduction + "' " +
+                    "WHERE `InfImp_ID` = '" + infImpID + "'";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();
