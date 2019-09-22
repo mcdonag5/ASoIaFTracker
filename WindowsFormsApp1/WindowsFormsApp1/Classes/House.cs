@@ -54,6 +54,16 @@ namespace WindowsFormsApp1.Classes
             return text;
         }
 
+        ///// LOGIN /////////////////////////////////////////////////////////////////
+        public bool LogIn(string username, string password)
+        {
+            string qry = "SELECT `Use_Name` " +
+                    "FROM `tbl_User` " +
+                    "WHERE `tbl_User`.`Use_Name` = '" + username + "' AND `tbl_User`.`Use_Password` = '"+password+"';";
+            DevLog.LogItem(qry);
+            return mysqlConn.Qry(qry).Tables[0].Rows.Count>0;
+        }
+
         ///// SELECT ////////////////////////////////////////////////////////////////
         public object HouseQry(string information)
         {//makes a query to the database
@@ -928,6 +938,23 @@ namespace WindowsFormsApp1.Classes
                     "', `Uni_ArmorRating` = '" + armorRating + "', `Uni_UpArmorRating` = '" + armorRatingUpg + "', `Uni_ArmorPenalty` = " + armorPenalty + ", `Uni_UpArmorPenalty` = " + armorPenaltyUpg + ", `Uni_Bulk` = " + bulk + ", `Uni_UpBulk` = " + bulkUpg +
                     ", `Uni_FightingDamage` = '" + fightingDamage + "', `Uni_UpFightingDamage` = '" + fightingDamageUpg + "', `Uni_MarksmanshipDamage` = " + marksmanshipDamage + ", `Uni_UpMarksmanshipDamage` = " + marksmanshipDamageUpg + ", `Uni_MarksmanshipRange` = " + marksmanshipRange + ", `Uni_Movement` = '" + movement  + "' " +
                     "WHERE `Uni_ID` = '" + uniID + "'";
+                DevLog.LogItem(comm.CommandText);
+                comm.ExecuteNonQuery();
+                mysqlConn.ConnClose();
+            }
+        }
+        //Users
+        //tbl_Users
+        public void UpdatePassword(string username, string password)
+        {
+            if (mysqlConn.ConnOpen())
+            {
+                DevLog.LogItem("Update password: " + username);
+                password = SanitizingInput(password);
+                MySqlCommand comm = mysqlConn.conn.CreateCommand();
+                comm.CommandText = "UPDATE `tbl_User` " +
+                    "SET `Use_Password` = '" + password + "' " +
+                    "WHERE `Use_Name` = '" + username + "'";
                 DevLog.LogItem(comm.CommandText);
                 comm.ExecuteNonQuery();
                 mysqlConn.ConnClose();

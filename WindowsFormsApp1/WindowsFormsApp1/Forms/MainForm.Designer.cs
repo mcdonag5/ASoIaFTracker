@@ -28,21 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.dgHouseDetails = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsMenu = new System.Windows.Forms.ToolStripDropDownButton();
             this.devLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbseeTestHouses = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmQryHelper = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbAllHouses = new System.Windows.Forms.ToolStripButton();
-            this.tsddViewHouse = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsbPlayerNPC = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbPlayerRoss = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsbPlayerKyle = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmChangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmmLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.tsbCreateHouse = new System.Windows.Forms.ToolStripButton();
             this.tsbViewHouse = new System.Windows.Forms.ToolStripButton();
             this.tsbDeleteHouse = new System.Windows.Forms.ToolStripButton();
@@ -54,8 +51,16 @@
             this.influnceImprovemntToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defenseHoldingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.unitTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panLogIn = new System.Windows.Forms.Panel();
+            this.btLogIn = new System.Windows.Forms.Button();
+            this.lbPassword = new System.Windows.Forms.Label();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.lbUsername = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.panLogIn.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgHouseDetails
@@ -67,36 +72,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgHouseDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgHouseDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgHouseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Georgia", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgHouseDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgHouseDetails.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgHouseDetails.Location = new System.Drawing.Point(0, 25);
             this.dgHouseDetails.Name = "dgHouseDetails";
             this.dgHouseDetails.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgHouseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Georgia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgHouseDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgHouseDetails.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgHouseDetails.Size = new System.Drawing.Size(1371, 604);
             this.dgHouseDetails.TabIndex = 13;
@@ -107,8 +112,6 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsMenu,
-            this.tsbAllHouses,
-            this.tsddViewHouse,
             this.tsbCreateHouse,
             this.tsbViewHouse,
             this.tsbDeleteHouse,
@@ -125,8 +128,9 @@
             this.tsMenu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.devLogToolStripMenuItem,
-            this.tsbseeTestHouses,
-            this.tsmQryHelper});
+            this.tsmQryHelper,
+            this.tsmChangePassword,
+            this.tsmmLogout});
             this.tsMenu.Image = ((System.Drawing.Image)(resources.GetObject("tsMenu.Image")));
             this.tsMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsMenu.Name = "tsMenu";
@@ -137,73 +141,38 @@
             // devLogToolStripMenuItem
             // 
             this.devLogToolStripMenuItem.Name = "devLogToolStripMenuItem";
-            this.devLogToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.devLogToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.devLogToolStripMenuItem.Text = "DevLog";
             this.devLogToolStripMenuItem.Click += new System.EventHandler(this.TsbMenuDevLog_Click);
             // 
-            // tsbseeTestHouses
-            // 
-            this.tsbseeTestHouses.Name = "tsbseeTestHouses";
-            this.tsbseeTestHouses.Size = new System.Drawing.Size(158, 22);
-            this.tsbseeTestHouses.Text = "See Test Houses";
-            this.tsbseeTestHouses.Click += new System.EventHandler(this.TsbseeTestHouses_Click);
-            // 
             // tsmQryHelper
             // 
+            this.tsmQryHelper.Enabled = false;
             this.tsmQryHelper.Name = "tsmQryHelper";
-            this.tsmQryHelper.Size = new System.Drawing.Size(158, 22);
+            this.tsmQryHelper.Size = new System.Drawing.Size(168, 22);
             this.tsmQryHelper.Text = "Qry Helper";
             this.tsmQryHelper.Click += new System.EventHandler(this.GetQryNumberToolStripMenuItem_Click);
             // 
-            // tsbAllHouses
+            // tsmChangePassword
             // 
-            this.tsbAllHouses.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbAllHouses.Image = ((System.Drawing.Image)(resources.GetObject("tsbAllHouses.Image")));
-            this.tsbAllHouses.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbAllHouses.Name = "tsbAllHouses";
-            this.tsbAllHouses.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsbAllHouses.Size = new System.Drawing.Size(72, 22);
-            this.tsbAllHouses.Text = "All House";
-            this.tsbAllHouses.Click += new System.EventHandler(this.TsbAllHouses_Click);
+            this.tsmChangePassword.Enabled = false;
+            this.tsmChangePassword.Name = "tsmChangePassword";
+            this.tsmChangePassword.Size = new System.Drawing.Size(168, 22);
+            this.tsmChangePassword.Text = "Change Password";
+            this.tsmChangePassword.Click += new System.EventHandler(this.tsmChangePassword_Click);
             // 
-            // tsddViewHouse
+            // tsmmLogout
             // 
-            this.tsddViewHouse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsddViewHouse.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbPlayerNPC,
-            this.tsbPlayerRoss,
-            this.tsbPlayerKyle});
-            this.tsddViewHouse.Image = ((System.Drawing.Image)(resources.GetObject("tsddViewHouse.Image")));
-            this.tsddViewHouse.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsddViewHouse.Name = "tsddViewHouse";
-            this.tsddViewHouse.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.tsddViewHouse.Size = new System.Drawing.Size(62, 22);
-            this.tsddViewHouse.Text = "Player";
-            // 
-            // tsbPlayerNPC
-            // 
-            this.tsbPlayerNPC.Name = "tsbPlayerNPC";
-            this.tsbPlayerNPC.Size = new System.Drawing.Size(98, 22);
-            this.tsbPlayerNPC.Text = "NPC";
-            this.tsbPlayerNPC.Click += new System.EventHandler(this.PlayersToolStripMenuItem_Click);
-            // 
-            // tsbPlayerRoss
-            // 
-            this.tsbPlayerRoss.Name = "tsbPlayerRoss";
-            this.tsbPlayerRoss.Size = new System.Drawing.Size(98, 22);
-            this.tsbPlayerRoss.Text = "Ross";
-            this.tsbPlayerRoss.Click += new System.EventHandler(this.PlayersToolStripMenuItem_Click);
-            // 
-            // tsbPlayerKyle
-            // 
-            this.tsbPlayerKyle.Name = "tsbPlayerKyle";
-            this.tsbPlayerKyle.Size = new System.Drawing.Size(98, 22);
-            this.tsbPlayerKyle.Text = "Kyle";
-            this.tsbPlayerKyle.Click += new System.EventHandler(this.PlayersToolStripMenuItem_Click);
+            this.tsmmLogout.Enabled = false;
+            this.tsmmLogout.Name = "tsmmLogout";
+            this.tsmmLogout.Size = new System.Drawing.Size(168, 22);
+            this.tsmmLogout.Text = "Logout";
+            this.tsmmLogout.Click += new System.EventHandler(this.TsmmLogout_Click);
             // 
             // tsbCreateHouse
             // 
             this.tsbCreateHouse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbCreateHouse.Enabled = false;
             this.tsbCreateHouse.Image = ((System.Drawing.Image)(resources.GetObject("tsbCreateHouse.Image")));
             this.tsbCreateHouse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCreateHouse.Name = "tsbCreateHouse";
@@ -215,6 +184,7 @@
             // tsbViewHouse
             // 
             this.tsbViewHouse.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbViewHouse.Enabled = false;
             this.tsbViewHouse.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewHouse.Image")));
             this.tsbViewHouse.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbViewHouse.Name = "tsbViewHouse";
@@ -238,6 +208,7 @@
             // tsbViewHoldings
             // 
             this.tsbViewHoldings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbViewHoldings.Enabled = false;
             this.tsbViewHoldings.Image = ((System.Drawing.Image)(resources.GetObject("tsbViewHoldings.Image")));
             this.tsbViewHoldings.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbViewHoldings.Name = "tsbViewHoldings";
@@ -256,6 +227,7 @@
             this.influnceImprovemntToolStripMenuItem,
             this.defenseHoldingToolStripMenuItem,
             this.unitTypeToolStripMenuItem});
+            this.tsbCreateNewHolding.Enabled = false;
             this.tsbCreateNewHolding.Image = ((System.Drawing.Image)(resources.GetObject("tsbCreateNewHolding.Image")));
             this.tsbCreateNewHolding.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCreateNewHolding.Name = "tsbCreateNewHolding";
@@ -305,6 +277,90 @@
             this.unitTypeToolStripMenuItem.Text = "Unit Type";
             this.unitTypeToolStripMenuItem.Click += new System.EventHandler(this.UnitTypeToolStripMenuItem_Click);
             // 
+            // panLogIn
+            // 
+            this.panLogIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panLogIn.Controls.Add(this.btLogIn);
+            this.panLogIn.Controls.Add(this.lbPassword);
+            this.panLogIn.Controls.Add(this.tbPassword);
+            this.panLogIn.Controls.Add(this.tbUsername);
+            this.panLogIn.Controls.Add(this.lbUsername);
+            this.panLogIn.Location = new System.Drawing.Point(0, 25);
+            this.panLogIn.Name = "panLogIn";
+            this.panLogIn.Size = new System.Drawing.Size(1371, 604);
+            this.panLogIn.TabIndex = 16;
+            // 
+            // btLogIn
+            // 
+            this.btLogIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLogIn.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btLogIn.Location = new System.Drawing.Point(823, 361);
+            this.btLogIn.Name = "btLogIn";
+            this.btLogIn.Size = new System.Drawing.Size(64, 30);
+            this.btLogIn.TabIndex = 91;
+            this.btLogIn.Text = "LogIn";
+            this.btLogIn.UseVisualStyleBackColor = true;
+            this.btLogIn.Click += new System.EventHandler(this.BtLogIn_Click);
+            // 
+            // lbPassword
+            // 
+            this.lbPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPassword.Location = new System.Drawing.Point(412, 328);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(108, 25);
+            this.lbPassword.TabIndex = 90;
+            this.lbPassword.Text = "Password:";
+            this.lbPassword.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // tbPassword
+            // 
+            this.tbPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPassword.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.Location = new System.Drawing.Point(526, 326);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '•';
+            this.tbPassword.Size = new System.Drawing.Size(361, 29);
+            this.tbPassword.TabIndex = 89;
+            this.tbPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPassword_KeyDown);
+            // 
+            // tbUsername
+            // 
+            this.tbUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbUsername.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsername.Location = new System.Drawing.Point(526, 291);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(361, 29);
+            this.tbUsername.TabIndex = 88;
+            // 
+            // lbUsername
+            // 
+            this.lbUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbUsername.AutoSize = true;
+            this.lbUsername.Font = new System.Drawing.Font("Georgia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUsername.Location = new System.Drawing.Point(405, 293);
+            this.lbUsername.Name = "lbUsername";
+            this.lbUsername.Size = new System.Drawing.Size(115, 25);
+            this.lbUsername.TabIndex = 87;
+            this.lbUsername.Text = "Username:";
+            this.lbUsername.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +368,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1371, 632);
+            this.Controls.Add(this.panLogIn);
             this.Controls.Add(this.dgHouseDetails);
             this.Controls.Add(this.toolStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -322,6 +379,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgHouseDetails)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panLogIn.ResumeLayout(false);
+            this.panLogIn.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,13 +391,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton tsMenu;
         private System.Windows.Forms.ToolStripMenuItem devLogToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton tsddViewHouse;
-        private System.Windows.Forms.ToolStripMenuItem tsbPlayerNPC;
-        private System.Windows.Forms.ToolStripMenuItem tsbPlayerRoss;
-        private System.Windows.Forms.ToolStripMenuItem tsbPlayerKyle;
-        private System.Windows.Forms.ToolStripButton tsbAllHouses;
         private System.Windows.Forms.ToolStripButton tsbCreateHouse;
-        private System.Windows.Forms.ToolStripMenuItem tsbseeTestHouses;
         private System.Windows.Forms.ToolStripButton tsbViewHouse;
         private System.Windows.Forms.ToolStripButton tsbDeleteHouse;
         private System.Windows.Forms.ToolStripMenuItem tsmQryHelper;
@@ -350,6 +403,15 @@
         private System.Windows.Forms.ToolStripMenuItem unitTypeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem defenseHoldingToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton tsbViewHoldings;
+        private System.Windows.Forms.Panel panLogIn;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label lbUsername;
+        private System.Windows.Forms.Label lbPassword;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.Button btLogIn;
+        private System.Windows.Forms.ToolStripMenuItem tsmChangePassword;
+        private System.Windows.Forms.ToolStripMenuItem tsmmLogout;
     }
 }
 

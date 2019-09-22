@@ -16,6 +16,8 @@ namespace WindowsFormsApp1
     public partial class FormMain : Form
     {
         ///// VARIABLES START //////////////////////////////////////////////////////
+        string user = "";
+        //Classes
         DevLog DevLog = new DevLog();
         House House = new House();
         ///// VARIABLES END ////////////////////////////////////////////////////////
@@ -45,9 +47,56 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dgHouseDetails.DataSource = House.HouseTableQry();
+            if (user != "")
+            {
+                dgHouseDetails.DataSource = House.HouseTableQry("Hou_Player", user);
+                tsmChangePassword.Enabled = tsmmLogout.Enabled = tsbCreateHouse.Enabled = tsbViewHouse.Enabled = tsbViewHoldings.Enabled = tsbCreateNewHolding.Enabled = true;
+                panLogIn.Visible = false;
+
+                switch (user)
+                {
+                    case "Chris":
+                        dgHouseDetails.DataSource = House.HouseTableQry();
+                        break;
+                    case "Ross":
+                        tsmQryHelper.Enabled = true;
+                        break;
+                    case "Test":
+                        tsmQryHelper.Enabled = true;
+                        break;
+                }
+            }
+            else
+            {
+                dgHouseDetails.DataSource = null;
+                tsmChangePassword.Enabled = tsmmLogout.Enabled = tsbCreateHouse.Enabled = tsbViewHouse.Enabled = tsbViewHoldings.Enabled = tsbCreateNewHolding.Enabled = tsmQryHelper.Enabled = false;
+                panLogIn.Visible = true;
+            }
         }
         ///// EVENTS START //////////////////////////////////////////////////////////
+        //logIn
+        private void BtLogIn_Click(object sender, EventArgs e)
+        {
+            if(House.LogIn(tbUsername.Text,tbPassword.Text))
+            {
+                user = tbUsername.Text;
+                tbUsername.Text = tbPassword.Text = "";
+                panLogIn.Visible = false;
+                Form1_Load(sender, e);
+            }
+        }
+
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) { BtLogIn_Click(sender, e); }
+        }
+
+        private void TsmmLogout_Click(object sender, EventArgs e)
+        {
+            user = "";
+            Form1_Load(sender, e);
+        }
+
         //Datagrid
         private void DgHouseDetails_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -163,6 +212,17 @@ namespace WindowsFormsApp1
             ViewHoldings viewHoldings = new ViewHoldings();
             viewHoldings.Show();
         }
+
+        private void tsmChangePassword_Click(object sender, EventArgs e)
+        {
+            DevLog.LogItem("Change password holding tool strip clicked");
+            changePassForm changePassForm = new changePassForm(user);
+            changePassForm.ShowDialog();
+        }
+
+        
+
+
         //Create New Holding end
 
         ///// EVENTS END ////////////////////////////////////////////////////////////

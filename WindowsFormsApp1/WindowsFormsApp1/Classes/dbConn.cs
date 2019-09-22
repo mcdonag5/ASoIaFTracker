@@ -34,10 +34,10 @@ namespace WindowsFormsApp1
 
         public void DbConfig()
         {
-            VarConfigServer = "mcdonag5.cucstudents.org";
-            VarConfigDatabase = "mcdonag_ASoIaF";
-            VarConfigUser = "mcdonag_User";
-            VarConfigPass = "JVi5Rd~[FMp$";
+            VarConfigServer = "rossmcdonagh.co.uk";
+            VarConfigDatabase = "u644624782_ASoIaF";
+            VarConfigUser = "u644624782_User";
+            VarConfigPass = "J$4BPv?dpvBrt+KT]y";
         }
         public void Connect()
         {//Connect to database (insecure, not using SSL or stored procedures)

@@ -86,6 +86,12 @@
     <Compile Include="Classes\House.cs" />
     <Compile Include="Classes\DevLog.cs" />
     <Compile Include="Classes\dbConn.cs" />
+    <Compile Include="Forms\changePassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\changePassForm.Designer.cs">
+      <DependentUpon>changePassForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CreateNewWealthHolding.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\changePassForm.resx">
+      <DependentUpon>changePassForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CreateNewWealthHolding.resx">
       <DependentUpon>CreateNewWealthHolding.cs</DependentUpon>
     </EmbeddedResource>
